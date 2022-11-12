@@ -21,18 +21,15 @@ public class AimCone : MonoBehaviour
     public InputActionReference move;
     public InputActionReference fire;
 
-    public void Start()
-    {
-        begin();
-    }
 
     public void begin()
     {
         wait = new WaitForSeconds(3);
         swap = StartCoroutine(direction());
         cone.enabled = true;
-        normal.x = t.localPosition.x;
-        normal.y = t.localPosition.y;
+        enabled = true;
+        normal.x = 0;
+        normal.y = 0;
         normal.z = -.2f;
         move.action.Enable();
         move.action.performed += onMove;
@@ -47,6 +44,7 @@ public class AimCone : MonoBehaviour
     {
         StopCoroutine(swap);
         cone.enabled = false;
+
         move.action.Disable();
         move.action.performed -= onMove;
         move.action.canceled -= off;
@@ -91,10 +89,6 @@ public class AimCone : MonoBehaviour
 
     public IEnumerator Recover()
     {
-        //cache = Vector2.MoveTowards(normal, center, 1);
-        //Debug.Log("center " + center);
-        //Debug.Log("ca " + normal);
-        //Debug.Log("dir " + directionMove);
 
         directionMove.x = center.x - normal.x;
         directionMove.y = center.y - normal.y;

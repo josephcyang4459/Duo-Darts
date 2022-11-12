@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class DartGame : MonoBehaviour
 {
@@ -11,16 +13,20 @@ public class DartGame : MonoBehaviour
 
     public AimCone aim;
 
-    public byte number = 0;
+    public byte numberOfDartsThrow = 0;
+    public byte maxTurns;
+    public TMP_Text overallScore;
+    public TMP_Text turnScore;
+    public WaitForSeconds k;
 
+    public Material flash;
+    public Material gone;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
     public bool reset;
     public GameObject g;
     public GameObject slice;
-
-
 
     public void OnValidate()
     {
@@ -44,15 +50,46 @@ public class DartGame : MonoBehaviour
 
 #endif
 
+    public void Start()
+    {
+        k = new WaitForSeconds(3);
+        BeginGame();
+    }
+
     public void BeginGame()
     {
-
+        numberOfDartsThrow = 0;
+        currentTurn = 0;
+        turnSum = 0;
+        turnScore.text = turnSum.ToString();
+        overallScore.text = overall.ToString();
         playerTurn();
+    }
+
+    public void lose()
+    {
+
+    }
+
+    public void win()
+    {
+
     }
 
     public void switchTurn()
     {
-        number = 0;
+        Debug.Log("swap");
+        turnSum = 0;
+        overall -= turnSum;
+        turnScore.text = turnSum.ToString();
+        overallScore.tag = overall.ToString();
+        numberOfDartsThrow = 0;
+        currentTurn++;
+        if (numberOfDartsThrow >+ maxTurns)
+        {
+            lose();
+        }
+
         if (currentTurn % 2 == 0)
         {
             playerTurn();
@@ -71,17 +108,44 @@ public class DartGame : MonoBehaviour
 
     private void partnerTurn()
     {
-
+        playerTurn();
     }
 
     public void gainPoints(byte b)
     {
         Debug.Log(b);
-        number++;
-        if (number > 3)
+        turnSum -= b;
+        turnScore.text = turnSum.ToString();
+        if (overall - turnSum < 0)
+        {
+            Debug.Log("BUST");
+            switchTurn();
+
+        }
+
+        if(overall - turnSum == 0)
+        {
+            win();
+        }
+
+        numberOfDartsThrow++;
+        StartCoroutine(wait());
+    }
+
+    public IEnumerator wait()
+    {
+        
+        yield return k;
+        if (numberOfDartsThrow > 3)
         {
             switchTurn();
         }
-            
+        else
+           if (currentTurn % 2 == 0)
+        {
+            playerTurn();
+        }
+        else
+            partnerTurn();
     }
 }
