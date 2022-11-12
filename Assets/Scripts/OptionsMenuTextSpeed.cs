@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class OptionsMenuTextSpeed : MonoBehaviour
 {
     public Slider Slider;
-    public TextMeshProUGUI Text;
+    public TMP_Text Text;
 
     public void Update()
     {

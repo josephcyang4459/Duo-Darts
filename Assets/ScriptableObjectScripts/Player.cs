@@ -4,8 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Player : ScriptableObject
-{
+public class Player : ScriptableObject {
     public string Name;
     public float Charisma = 1f;
     public float Intoxication = 1f;
