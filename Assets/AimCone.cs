@@ -10,13 +10,13 @@ public class AimCone : MonoBehaviour
     public float driftSpeed;
     public float moveSpeed;
     //[HideInInspector]
-    public Vector2 normal;
+    public Vector3 normal = new Vector3(0,0,-.2f);
     //[HideInInspector]
     public Vector2 directionMove;
     public Vector2 cache = Vector2.zero;
     public WaitForSeconds wait;
     public Coroutine swap;
-    public Rigidbody2D r;
+    public LayerMask layer;
 
     public InputActionReference move;
     public InputActionReference fire;
@@ -32,8 +32,8 @@ public class AimCone : MonoBehaviour
         swap = StartCoroutine(direction());
         cone.enabled = true;
         normal.x = t.localPosition.x;
-        normal.x = t.localPosition.y;
-
+        normal.y = t.localPosition.y;
+        normal.z = -.2f;
         move.action.Enable();
         move.action.performed += onMove;
         move.action.canceled += off;
@@ -68,8 +68,12 @@ public class AimCone : MonoBehaviour
 
     public void shoot(InputAction.CallbackContext c)
     {
-        
 
+        if(Physics.Raycast(t.localPosition, Vector3.forward, out RaycastHit hit, layer))
+        {
+            Debug.DrawLine(t.localPosition, hit.point, Color.black, 10);
+            hit.collider.gameObject.GetComponent<BoardCollider>().hit();
+        }
 
         enabled = false;
     }
