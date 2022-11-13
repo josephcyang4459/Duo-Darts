@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elain_Repeat
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058209
+  - rid: 4049961236948058210
+  - rid: 4049961236948058211
+  - rid: 4049961236948058212
+  - rid: 4049961236948058213
+  defaultCharacter: Elain
+  aa: {fileID: 4900000, guid: 8e095a8ab77a234438cc8f726b121482, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058209
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You see Elaine practicing alone.*'
+    - rid: 4049961236948058210
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey. Come.
+    - rid: 4049961236948058211
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You want to buy me drinks?
+    - rid: 4049961236948058212
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Good dog.
+    - rid: 4049961236948058213
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend time drinking with Elaine.* (+)'

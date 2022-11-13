@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Faye_2
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058324
+  - rid: 4049961236948058325
+  - rid: 4049961236948058326
+  - rid: 4049961236948058327
+  - rid: 4049961236948058328
+  - rid: 4049961236948058329
+  - rid: 4049961236948058330
+  - rid: 4049961236948058331
+  - rid: 4049961236948058332
+  - rid: 4049961236948058333
+  - rid: 4049961236948058334
+  - rid: 4049961236948058335
+  - rid: 4049961236948058336
+  - rid: 4049961236948058337
+  - rid: 4049961236948058338
+  - rid: 4049961236948058339
+  - rid: 4049961236948058340
+  - rid: 4049961236948058341
+  - rid: 4049961236948058342
+  - rid: 4049961236948058343
+  - rid: 4049961236948058344
+  - rid: 4049961236948058345
+  - rid: 4049961236948058346
+  - rid: 4049961236948058347
+  - rid: 4049961236948058348
+  - rid: 4049961236948058349
+  - rid: 4049961236948058350
+  - rid: 4049961236948058351
+  - rid: 4049961236948058352
+  - rid: 4049961236948058353
+  defaultCharacter: Faye
+  aa: {fileID: 4900000, guid: a4e628b7801b5274896a11c7c6d753d9, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058324
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You see Faye at the bar.*'
+    - rid: 4049961236948058325
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*The owner is talking with her while she orders a drink.*'
+    - rid: 4049961236948058326
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Owner
+    - rid: 4049961236948058327
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Faybian right?
+    - rid: 4049961236948058328
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+    - rid: 4049961236948058329
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Umm, it's actually Faye now.
+    - rid: 4049961236948058330
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Owner
+    - rid: 4049961236948058331
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's easier for me to call you Faybian though.
+    - rid: 4049961236948058332
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I've known you as Faybian for years.
+    - rid: 4049961236948058333
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Can't I just call you that?
+    - rid: 4049961236948058334
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You walk up to the conversation.*'
+    - rid: 4049961236948058335
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+    - rid: 4049961236948058336
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's you.
+    - rid: 4049961236948058337
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: The owner
+    - rid: 4049961236948058338
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Can I get you something?
+    - rid: 4049961236948058339
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: 'Whatever she ordered. '
+          responses:
+          - Sure. I'll grab that for you.
+          adjust: 1
+        - answer: 'Just fetching Faye. '
+          responses:
+          - '*The owner places Faye''s drink in front of her and moves to the next
+            customer.*'
+          adjust: 3
+        - answer: No I'm good.
+          responses:
+          - Sounds good.
+          - Anyways.
+          - '*Before he can continue his previous thought another customer calls
+            him over.*'
+          - Excuse me.
+          adjust: 0
+    - rid: 4049961236948058340
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+    - rid: 4049961236948058341
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye grabs your arm with one hand and grabs her drink with the
+          other. Leading you back to her lounge booth.*'
+    - rid: 4049961236948058342
+      type: {class: SwapBackGround, ns: , asm: Assembly-CSharp}
+      data:
+        place: Lounge
+    - rid: 4049961236948058343
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You both sit down in the booth.*'
+    - rid: 4049961236948058344
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye looks irritated.*'
+    - rid: 4049961236948058345
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I hate this league. No matter who I talk to, it's always the same
+          question.
+    - rid: 4049961236948058346
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Like, what do you think?
+    - rid: 4049961236948058347
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She sighs and drinks.*'
+    - rid: 4049961236948058348
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Maybe I should just quit and go somewhere else.
+    - rid: 4049961236948058349
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Where nobody knew me before.
+    - rid: 4049961236948058350
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: Maybe.
+          responses:
+          - '*She frowns.*'
+          - I hate 'maybe's.
+          - Is it really that bad?
+          - You're an idiot.
+          - Screw that. (++)
+          - '*Faye giggles.*'
+          - I'm a darts player first after all.
+          adjust: 0
+        - answer: '*Faye seems recomposed.*'
+          responses: []
+          adjust: 0
+        - answer: I'll keep going. Things will get better.
+          responses: []
+          adjust: 0
+    - rid: 4049961236948058351
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I love this game too much.
+    - rid: 4049961236948058352
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Thanks for getting me away from that idiot by the way.
+    - rid: 4049961236948058353
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend some time with Faye in her booth.*'

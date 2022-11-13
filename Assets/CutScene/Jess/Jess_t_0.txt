@@ -1,0 +1,21 @@
+<*You see a beautiful woman dancing.*
+<*Your eyes meet briefly and she walks over to you shortly after.*
+<Is there something you want?
+	$You.
+		&What a desperate thing for a professional to say.
+	$Nothing in particular.(+++)
+		&My mistake then.
+	$...(+)
+		&You are quite odd.
+<I just came to ask you to stop staring.
+<It’s off putting.
+<*She begins to return to her dancing, but stops and returns to you.*
+<I need a dance partner.
+<*She waits for a moment.*
+<Well...
+<Aren’t you going to ask me to dance?
+<*You take her onto the dance floor and dance with her.
+<Hey, you’re pretty good at this.
+<I’m Jessica Fletcher.
+<And I asked you to stop staring...
+<*You and Jessica dance for a while.*

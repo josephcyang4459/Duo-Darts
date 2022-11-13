@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Jess_4
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058450
+  - rid: 4049961236948058451
+  - rid: 4049961236948058452
+  - rid: 4049961236948058453
+  - rid: 4049961236948058454
+  - rid: 4049961236948058455
+  - rid: 4049961236948058456
+  - rid: 4049961236948058457
+  - rid: 4049961236948058458
+  - rid: 4049961236948058459
+  - rid: 4049961236948058460
+  - rid: 4049961236948058461
+  - rid: 4049961236948058462
+  - rid: 4049961236948058463
+  - rid: 4049961236948058464
+  - rid: 4049961236948058465
+  - rid: 4049961236948058466
+  - rid: 4049961236948058467
+  - rid: 4049961236948058468
+  - rid: 4049961236948058469
+  - rid: 4049961236948058470
+  - rid: 4049961236948058471
+  - rid: 4049961236948058472
+  - rid: 4049961236948058473
+  - rid: 4049961236948058474
+  - rid: 4049961236948058475
+  - rid: 4049961236948058476
+  defaultCharacter: Jess
+  aa: {fileID: 4900000, guid: c7894068f6920e44b9f3c46ad50563ac, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058450
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You sit next to Jessica at a table.*'
+    - rid: 4049961236948058451
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 4049961236948058452
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm glad you found some time to talk.
+    - rid: 4049961236948058453
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: There's something I've been meaning to ask you.
+    - rid: 4049961236948058454
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Lets talk for a moment though.
+    - rid: 4049961236948058455
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Jessica sighs.*'
+    - rid: 4049961236948058456
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Nobody will be my partner for the final round.
+    - rid: 4049961236948058457
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Unfortunately, it appears I scare everyone away.
+    - rid: 4049961236948058458
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Except you.
+    - rid: 4049961236948058459
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think people would call me 'prickly'.
+    - rid: 4049961236948058460
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think those people are idiots.
+    - rid: 4049961236948058461
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: They don't even know who I really am.
+    - rid: 4049961236948058462
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: They don't bother to try to get to know me.
+    - rid: 4049961236948058463
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: That's what I wanted to ask you.
+    - rid: 4049961236948058464
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: What do you think of me?
+    - rid: 4049961236948058465
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: You're amazing. -Success-
+          responses:
+          - Are you really not ashamed of your honesty?
+          adjust: 0
+        - answer: You're Jessica. -Fail-
+          responses:
+          - Nevermind.
+          - You should go.
+          - '*You leave.*'
+          adjust: 0
+        - answer: You're prickly. -Success-
+          responses:
+          - '*She smiles.*'
+          - I know you don't think that.
+          adjust: 0
+    - rid: 4049961236948058466
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think you're great.
+    - rid: 4049961236948058467
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't know why. Frankly you're a complete idiot.
+    - rid: 4049961236948058468
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And your dart skills are... Interesting at best.
+    - rid: 4049961236948058469
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: However, despite all the negatives, you seem to be a diamond in
+          the rough.
+    - rid: 4049961236948058470
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Jessica looks at you intently.*'
+    - rid: 4049961236948058471
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Please.
+    - rid: 4049961236948058472
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Consider me to be your partner for the final round.
+    - rid: 4049961236948058473
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Jessica relaxes.*'
+    - rid: 4049961236948058474
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: With that off my chest you can go.
+    - rid: 4049961236948058475
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Thank you for hearing me out.
+    - rid: 4049961236948058476
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Really.

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elain_1
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058127
+  - rid: 4049961236948058128
+  - rid: 4049961236948058129
+  - rid: 4049961236948058130
+  - rid: 4049961236948058131
+  - rid: 4049961236948058132
+  - rid: 4049961236948058133
+  - rid: 4049961236948058134
+  defaultCharacter: Elain
+  aa: {fileID: 4900000, guid: 841465ae52e7117498257276a0b19c67, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058127
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Elaine holds a trio of darts in her hands and appears to give
+          a brief prayer before speaking to you.*'
+    - rid: 4049961236948058128
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Alright dog. My prayers to myself are finished.
+    - rid: 4049961236948058129
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: ' Now try and fetch me some points this game.'
+    - rid: 4049961236948058130
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Think you can do that?
+    - rid: 4049961236948058131
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: Maybe.
+          responses:
+          - Indecision is a plague on humanity.
+          adjust: 0
+        - answer: '... '
+          responses:
+          - Oh my bad. Forgot dogs can't talk.
+          adjust: 2
+        - answer: 'Yes ma''am. '
+          responses:
+          - '*Elaine raises an eyebrow.*'
+          - You have no shame do you.
+          adjust: 3
+    - rid: 4049961236948058132
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Alright you first.
+    - rid: 4049961236948058133
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I'll need time to stop the hysterical laughter your dartplay
+          will cause me too.
+    - rid: 4049961236948058134
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: So be ready for a long game.

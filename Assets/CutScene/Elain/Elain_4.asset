@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elain_4
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058178
+  - rid: 4049961236948058179
+  - rid: 4049961236948058180
+  - rid: 4049961236948058181
+  - rid: 4049961236948058182
+  - rid: 4049961236948058183
+  - rid: 4049961236948058184
+  - rid: 4049961236948058185
+  - rid: 4049961236948058186
+  - rid: 4049961236948058187
+  - rid: 4049961236948058188
+  - rid: 4049961236948058189
+  - rid: 4049961236948058190
+  - rid: 4049961236948058191
+  - rid: 4049961236948058192
+  - rid: 4049961236948058193
+  - rid: 4049961236948058194
+  - rid: 4049961236948058195
+  - rid: 4049961236948058196
+  - rid: 4049961236948058197
+  - rid: 4049961236948058198
+  - rid: 4049961236948058199
+  - rid: 4049961236948058200
+  - rid: 4049961236948058201
+  - rid: 4049961236948058202
+  - rid: 4049961236948058203
+  - rid: 4049961236948058204
+  - rid: 4049961236948058205
+  - rid: 4049961236948058206
+  - rid: 4049961236948058207
+  - rid: 4049961236948058208
+  defaultCharacter: Elain
+  aa: {fileID: 4900000, guid: faf18d62fdc3eee488558683a3ba559c, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058178
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Elaine is sitting at the bar.*'
+    - rid: 4049961236948058179
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You sit next to her.*'
+    - rid: 4049961236948058180
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Oh. It's you.
+    - rid: 4049961236948058181
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm not really in the mood to put you down right now.
+    - rid: 4049961236948058182
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come back later.
+    - rid: 4049961236948058183
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: I'm staying.
+          responses:
+          - '*Elaine shakes her head in disbelief.'
+          adjust: 0
+        - answer: No.
+          responses:
+          - '*Elaine looks genuinely surprised at your response.*'
+          adjust: 0
+        - answer: Well if you say so...
+          responses:
+          - '*Elaine grabs your arm before you can leave and makes you remain seated.*'
+          adjust: 0
+    - rid: 4049961236948058184
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't know what sick game you've been playing all night spending
+          time with me just to get treated poorly.
+    - rid: 4049961236948058185
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: But, it has gotten me thinking about what I'm really doing to you.
+    - rid: 4049961236948058186
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's not been for good fun or some reason like that.
+    - rid: 4049961236948058187
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I genuinely think of you as less than me at all levels.
+    - rid: 4049961236948058188
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: That's what I think of everyone here.
+    - rid: 4049961236948058189
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Elaine looks at you with a look of concern.*'
+    - rid: 4049961236948058190
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Am I just a great dart player with no other redeeming qualities?
+    - rid: 4049961236948058191
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: Yes. -Fail-
+          responses:
+          - '*Elaine looks disturbed.*'
+          - Just go away.
+          adjust: 0
+        - answer: You've been great. -Success-
+          responses:
+          - '*She looks dumbfounded.*'
+          adjust: 0
+        - answer: You have redeeming qualities. -Success-
+          responses:
+          - '*She looks at you like you just saved her life.'
+          adjust: 0
+    - rid: 4049961236948058192
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You think so?
+    - rid: 4049961236948058193
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: After all the things I've said to you?
+    - rid: 4049961236948058194
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's not just you either I'm terrible to everyone.
+    - rid: 4049961236948058195
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You nod.*'
+    - rid: 4049961236948058196
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Wow.
+    - rid: 4049961236948058197
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're the first person to be appreciative of me in'
+    - rid: 4049961236948058198
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't even know. Years maybe.
+    - rid: 4049961236948058199
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She grabs a dart from one of her pockets.*'
+    - rid: 4049961236948058200
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This is for you.
+    - rid: 4049961236948058201
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're not a dog anymore.
+    - rid: 4049961236948058202
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're someone worth my respect.
+    - rid: 4049961236948058203
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She smiles.*'
+    - rid: 4049961236948058204
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Sometimes'
+    - rid: 4049961236948058205
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You know.
+    - rid: 4049961236948058206
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'd like to be your partner for the final round.
+    - rid: 4049961236948058207
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Nobody else around here gets me like you do.
+    - rid: 4049961236948058208
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend some time with the now slightly more merciful goddess
+          of darts.*'

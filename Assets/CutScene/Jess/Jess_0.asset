@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Jess_0
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058399
+  - rid: 4049961236948058400
+  - rid: 4049961236948058401
+  - rid: 4049961236948058402
+  - rid: 4049961236948058403
+  - rid: 4049961236948058404
+  - rid: 4049961236948058405
+  - rid: 4049961236948058406
+  - rid: 4049961236948058407
+  - rid: 4049961236948058408
+  - rid: 4049961236948058409
+  - rid: 4049961236948058410
+  - rid: 4049961236948058411
+  - rid: 4049961236948058412
+  - rid: 4049961236948058413
+  - rid: 4049961236948058414
+  defaultCharacter: Jess
+  aa: {fileID: 4900000, guid: a2feeec8aefe0e546aad65ee23ca86d4, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058399
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You see a beautiful woman dancing.*'
+    - rid: 4049961236948058400
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Your eyes meet briefly and she walks over to you shortly after.*'
+    - rid: 4049961236948058401
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Is there something you want?
+    - rid: 4049961236948058402
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: You.
+          responses:
+          - What a desperate thing for a professional to say.
+          adjust: 0
+        - answer: Nothing in particular.
+          responses:
+          - My mistake then.
+          adjust: 3
+        - answer: ...
+          responses:
+          - You are quite odd.
+          adjust: 1
+    - rid: 4049961236948058403
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just came to ask you to stop staring.
+    - rid: 4049961236948058404
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's off putting.
+    - rid: 4049961236948058405
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She begins to return to her dancing, but stops and returns to
+          you.*'
+    - rid: 4049961236948058406
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I need a dance partner.
+    - rid: 4049961236948058407
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She waits for a moment.*'
+    - rid: 4049961236948058408
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well...
+    - rid: 4049961236948058409
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Aren't you going to ask me to dance?
+    - rid: 4049961236948058410
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You take her onto the dance floor and dance with her.'
+    - rid: 4049961236948058411
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey, you're pretty good at this.
+    - rid: 4049961236948058412
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm Jessica Fletcher.
+    - rid: 4049961236948058413
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I asked you to stop staring...
+    - rid: 4049961236948058414
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You and Jessica dance for a while.*'

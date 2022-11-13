@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_Drepeat1
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058554
+  - rid: 4049961236948058555
+  - rid: 4049961236948058556
+  - rid: 4049961236948058557
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: cd903d95b09cf794386549946baf1c10, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058554
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You join Chad in people watching.*'
+    - rid: 4049961236948058555
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I may hate dancing, but I do love drinking.
+    - rid: 4049961236948058556
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Alright, if you\u2019re paying I\u2019ll have a few."
+    - rid: 4049961236948058557
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend time drinking with Chad.* (+)'

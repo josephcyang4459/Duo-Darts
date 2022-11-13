@@ -1,0 +1,16 @@
+<Hey, it's you.
+<Impressed? You should be. I’ve got moves.
+<I think...  <*He stares intently at you for a second.*
+<You. Me. Dance. Now.
+	$Yes. (+++)
+		&I was hoping you’d say that.
+	$Nope.
+		&It wasn’t a question.
+	$... (++)
+		&Do I have to do all the work around here?
+<*Chad grabs your arm and dances with you for a time.*
+<Hey you’re pretty good at this.
+<To think if you hadn’t drowned me at the bar I’d never get this chance.
+<I owe you one.
+<If you’re lucky that is.
+<*You and Chad dance away. He trips up often.*

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_1
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 4049961236948058546
+  - rid: 4049961236948058547
+  - rid: 4049961236948058548
+  - rid: 4049961236948058549
+  - rid: 4049961236948058550
+  - rid: 4049961236948058551
+  - rid: 4049961236948058552
+  - rid: 4049961236948058553
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: f77453494f53f914b9f47620c8fcb392, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4049961236948058546
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I can't believe I'm giving you a chance.
+    - rid: 4049961236948058547
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Remember, I'm just doing this to see if you really are nobody.
+    - rid: 4049961236948058548
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Nothing more and nothing less.
+    - rid: 4049961236948058549
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And you better hold up your end of the game.
+    - rid: 4049961236948058550
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Not that I would truly need your points. I could check out alone
+          if they'd let me.
+    - rid: 4049961236948058551
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: Cocky much?
+          responses:
+          - That's right. You still haven't seen how good I really am.
+          adjust: 0
+        - answer: 'I''d love to see a legend in action. '
+          responses:
+          - Sucking up will get you somewhere, but not as far as you might hope.
+          adjust: 2
+        - answer: 'Underestimating me? '
+          responses:
+          - '*Chad rolls his eyes dismissively.*'
+          - Just throw your darts.
+          adjust: 3
+    - rid: 4049961236948058552
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're up.
+    - rid: 4049961236948058553
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Lets see what you got.

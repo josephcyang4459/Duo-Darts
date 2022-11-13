@@ -60,23 +60,31 @@ public class AimCone : MonoBehaviour
     {
         normal.y += (directionMove.y + cache.y ) * Time.deltaTime ;
         normal.x += (directionMove.x + cache.x) * Time.deltaTime;
-        t.localPosition = normal;
-        
-        //normal.x = t.localPosition.x;
-        //normal.y = t.localPosition.y;
-        
+        t.position = normal;
+
     }
 
     public void shoot(InputAction.CallbackContext c)
     {
+        ghoot(t.position);
+       
+    }
 
-        if(Physics.Raycast(t.localPosition, Vector3.forward, out RaycastHit hit, layer))
+    public void ghoot(Vector3 h)
+    {
+
+        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, layer))
         {
-            Debug.DrawLine(t.localPosition, hit.point, Color.black, 10);
+            normal.y = h.y;
+            normal.x = h.x;
+            t.position = normal;
+            
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
-        }
 
+        }
+       
         enabled = false;
+
     }
 
     public IEnumerator direction()

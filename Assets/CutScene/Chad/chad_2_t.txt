@@ -1,0 +1,26 @@
+<*You approach Chad watching people dance from the sidelines.*
+<Lovely isn’t it?
+	$Want to dance? (+++)
+		&*Chad scoffs.*
+		&You wish.
+	$At a tournament? (++)
+		&*Chad nods.*
+		&I agree. It’s ridiculous.
+	$It is. (+)
+		&*Chad Chuckles.*
+		&You missed my point.
+<Even outside of a tournament I’m not a fan of dancing.
+<It must just give good players something to do while they wait for the final call.
+<Speaking of which. Do you think you can win this thing?
+	$Yeah. (+)
+		&That’s wishful thinking on your part.
+	$No.
+		&I know I’m here, but you could still get second place if you weren’t so pessimistic.
+	$...M (+)
+		&I can’t tell if your silence is pessimistic or optimistic.
+<Let me give you some free advice.
+<You’ll need some good luck with this crowd. And against me of course.
+<I always find myself a bit luckier after taking a second in the bathroom to calm down.
+<That’s my advice.
+<Anyways, what do you think of this?
+<*You and Chad spend time talking.*

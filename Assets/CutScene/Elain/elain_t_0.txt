@@ -1,0 +1,20 @@
+<*You sit next to a woman invested in a trio of darts sitting in front of her on the table.*
+<I don’t know you. You should leave.
+	$Why?
+		&Because I can just tell you’re ignorant and annoying.
+	$No (+)
+		&Better to be confident and annoying than be a coward and annoying.
+	$... (+++)
+		&Well if you’re gonna be good and keep your mouth shut I’ll let you stay.
+<You know what, you should stay.
+<You seem fun to belittle.
+<Especially since I have no clue who you are.
+<*She stares at you for a second.*
+<Hey. Name.
+<*She hides a smile while you give your name.*
+<Sorry, you just have the name of an amateur.
+<I’m Elaine Guzmán. Also known as the dart goddess.
+<Any conceited idiot bold enough to say they’re the best hasn’t met me yet.
+<And now that I know your name I know for sure you’re not even close to me.
+<But, like I said, I’ve been in the market for a punching bag.
+<*You sit quietly as Elaine insults you for a while.*

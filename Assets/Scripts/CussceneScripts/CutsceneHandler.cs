@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
 {
@@ -21,14 +22,29 @@ public class CutsceneHandler : MonoBehaviour
     public TMP_Text[] responses;
     public byte characterIndex;
 
+    public Partner[] partners;
+    public Image character;
+    public TMP_Text characterName;
+    public Sprite[] bgs;
+
+    public Image cutSceneBackGround;
+
+    public string loseScene;
+
+    public Schedule sc;
+
     public void Start()
     {
-        tart(cs);
+        
+        //tart(cs, 0);
     }
 
-    public void tart(CutScene c)
+    public void tart(CutScene c, byte b)
     {
+        
 
+        decideChar(c.defaultCharacter);
+        background(b);
         cs = c;
 
         dialougeCanvas.enabled = true;
@@ -43,6 +59,7 @@ public class CutsceneHandler : MonoBehaviour
         responseCanvas.enabled = false;
         interact.action.Disable();
         interact.action.performed -= takeAction;
+        sc.setTime(10);
     }
 
     public void takeAction(InputAction.CallbackContext c)
@@ -60,14 +77,25 @@ public class CutsceneHandler : MonoBehaviour
             responseIndexIndex++;
             if(responseIndexIndex>= respon.responses[responseIndex].responses.Length)
             {
+                if (respon.responses[responseIndex].adjust < 0)
+                {
+                    off();
+                    
+                    return;
+                }
+
+                partners[characterIndex].Love += respon.responses[responseIndex].adjust;
+
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
+               
+
+                
             }
            
         }
             
-        Debug.Log("gg");
         if (dh.Script.typer != null)
         {
             dh.Script.Stop();
@@ -87,7 +115,6 @@ public class CutsceneHandler : MonoBehaviour
     public void dialouge(string message)
     {
         dh.WriteDialogue(message);
-        //Debug.Log(message);
     }
 
     public void response(Response r)
@@ -104,7 +131,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeChar(string character)
     {
-        Debug.Log("change");
+        decideChar(character);
         index++;
 
         cs.blocks[index].action(this);
@@ -122,30 +149,79 @@ public class CutsceneHandler : MonoBehaviour
 
     }
 
-    private void change(string s)
+    public void changeBackground(string s)
+    {
+        decideBackGround(s);
+    }
+
+    private void partner(int i)
+    {
+        characterIndex = (byte)i;
+        character.sprite = partners[i].Expressions[0];
+        characterName.text = partners[i].Name;
+        characterName.font = partners[i].Font;
+        dh.textLabel.font = partners[i].Font;
+
+    }
+
+    private void background(int i)
+    {
+        cutSceneBackGround.sprite = bgs[i];
+    }
+
+    private void decideBackGround(string s)
     {
         switch (s.ToLower())
         {
-            case "faye":
-
+            case "lounge":
+                background(0);
                 break;
-            case "chad":
+            case "bar":
+                background(1);
                 break;
-            case "jess":
+            case "dance":
+                background(2);
                 break;
             case "elaine":
+                background(0);
 
                 break;
 
             case "owner":
+                background(0);
+                break;
+            default:
+                characterName.text = s;
+                break;
+        }
+    }
+
+    private void decideChar(string s)
+    {
+        switch (s.ToLower())
+        {
+            case "faye":
+                partner(2);
+                break;
+            case "chad":
+                partner(0);
+                break;
+            case "jess":
+                partner(1);
+                break;
+            case "elaine":
+                partner(3);
+
+                break;
+
+            case "owner":
+                partner(4);
 
                 break;
             default:
-
+                partner(5);
+                characterName.text = s;
                 break;
-
-
-
         }
 
 

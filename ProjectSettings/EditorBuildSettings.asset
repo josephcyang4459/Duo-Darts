@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b43d4e4d5b00a1c4b848cb7a60b1b9e0
+  - enabled: 1
     path: Assets/Scenes/dart.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
