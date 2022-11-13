@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(key);
+        Debug.Log(Input.GetKeyDown(key));
         if (Input.GetKeyDown(key))
         {
             paused = !paused;

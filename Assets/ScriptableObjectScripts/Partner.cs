@@ -5,14 +5,19 @@ using UnityEngine;
 using TMPro;
 
 [CreateAssetMenu]
-public class Partner : ScriptableObject
-{
+public class Partner : ScriptableObject {
     public string Name;
     public TMP_FontAsset Font;
     public float Composure = 0f;
     public float Intoxication = 0f;
     public float Love = 0f;
+    public RelatedCutScene[] RelatedCutScenes;
     public Sprite[] Expressions;
+}
 
-    public int bias = -1;
+public class RelatedCutScene {
+    public Sprite Background;
+    string Location;
+    CutScene CutScene;
+    bool completed;
 }

@@ -16,8 +16,8 @@ public class Schedule : MonoBehaviour
     public CutsceneHandler c;
 
     public TMP_Text LocationName;
-    public Canvas list;
-    public Button[] bs;
+    public Canvas EventListCanvas;
+    public Button[] EventButtons;
     public TMP_Text[] btnText;
 
     public GameObject ListCanvasBack;
