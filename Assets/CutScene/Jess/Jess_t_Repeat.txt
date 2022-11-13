@@ -1,4 +1,4 @@
 <*You sit next to Jessica and strike up a conversation.*
 <I suppose it’s nice to see you again.
 <You have something interesting to say?
-<*You spend time talking with Jessica. She seems appreciative.*
+<*You spend time talking with Jessica. She seems appreciative.* (++)

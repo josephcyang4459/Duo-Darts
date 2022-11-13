@@ -13,110 +13,95 @@ MonoBehaviour:
   m_Name: Jess_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563076
-  - rid: 3685628149437563077
-  - rid: 3685628149437563078
-  - rid: 3685628149437563079
-  - rid: 3685628149437563080
-  - rid: 3685628149437563081
-  - rid: 3685628149437563082
-  - rid: 3685628149437563083
-  - rid: 3685628149437563084
-  - rid: 3685628149437563085
-  - rid: 3685628149437563086
-  - rid: 3685628149437563087
-  - rid: 3685628149437563088
-  - rid: 3685628149437563089
-  - rid: 3685628149437563090
-  - rid: 3685628149437563091
-  - rid: 3685628149437563092
-  - rid: 3685628149437563093
-  - rid: 3685628149437563094
+  - rid: 4049961236948058477
+  - rid: 4049961236948058478
+  - rid: 4049961236948058479
+  - rid: 4049961236948058480
+  - rid: 4049961236948058481
+  - rid: 4049961236948058482
+  - rid: 4049961236948058483
+  - rid: 4049961236948058484
+  - rid: 4049961236948058485
+  - rid: 4049961236948058486
+  - rid: 4049961236948058487
+  - rid: 4049961236948058488
+  - rid: 4049961236948058489
+  - rid: 4049961236948058490
+  - rid: 4049961236948058491
+  - rid: 4049961236948058492
+  - rid: 4049961236948058493
+  - rid: 4049961236948058494
+  - rid: 4049961236948058495
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: e83a35fea461b324393d1d35d75315d2, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563076
+    - rid: 4049961236948058477
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*You run into Jessica as you walk into the bathroom.*'
-    - rid: 3685628149437563077
+    - rid: 4049961236948058478
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Oh. It's you.
-    - rid: 3685628149437563078
+    - rid: 4049961236948058479
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Don't tell anybody, but I just made a girl cry in the bathroom.
-    - rid: 3685628149437563079
+    - rid: 4049961236948058480
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I just told her her dartplay is like art.
-    - rid: 3685628149437563080
+    - rid: 4049961236948058481
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*She gasps.*'
-    - rid: 3685628149437563081
+    - rid: 4049961236948058482
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I might've said something other than art.
-    - rid: 3685628149437563082
+    - rid: 4049961236948058483
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*She stares at you for a second'
-    - rid: 3685628149437563083
+    - rid: 4049961236948058484
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*Jessica burps.*'
-    - rid: 3685628149437563084
+    - rid: 4049961236948058485
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Oh God. I'm going back inside. People can't see me this drunk.
-    - rid: 3685628149437563085
+    - rid: 4049961236948058486
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*She grabs your arm and pulls you all the way into a stall.*'
-    - rid: 3685628149437563086
+    - rid: 4049961236948058487
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Hold my hair please...
-    - rid: 3685628149437563087
+    - rid: 4049961236948058488
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*She vomits into the toilet.*'
-    - rid: 3685628149437563088
+    - rid: 4049961236948058489
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: This is your fault you know.
-    - rid: 3685628149437563089
+    - rid: 4049961236948058490
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Buying me drinks all night long.
-    - rid: 3685628149437563090
+    - rid: 4049961236948058491
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: 'I didn''t force you to drink them. '
           responses:
           - Semantics are fallacious you know.
-          adjust: 2
+          adjust: 1
         - answer: 'I''m taking responsibility. '
           responses:
           - I'd say you're doing the bare minimum by being here.
@@ -126,23 +111,19 @@ MonoBehaviour:
           - '*She laughs.*'
           - You are scum you know.
           adjust: 3
-    - rid: 3685628149437563091
+    - rid: 4049961236948058492
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*Jessica vomits again.*'
-    - rid: 3685628149437563092
+    - rid: 4049961236948058493
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Just stay here for a little while longer.
-    - rid: 3685628149437563093
+    - rid: 4049961236948058494
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: My hair won't hold itself.
-    - rid: 3685628149437563094
+    - rid: 4049961236948058495
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*You stay with Jessica for a while until she feels better.*'

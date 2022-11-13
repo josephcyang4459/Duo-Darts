@@ -13,70 +13,72 @@ MonoBehaviour:
   m_Name: Chad_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437562908
-  - rid: 3685628149437562909
-  - rid: 3685628149437562910
-  - rid: 3685628149437562911
-  - rid: 3685628149437562912
-  - rid: 3685628149437562913
-  - rid: 3685628149437562914
-  - rid: 3685628149437562915
-  - rid: 3685628149437562916
-  - rid: 3685628149437562917
-  - rid: 3685628149437562918
-  - rid: 3685628149437562919
+  - rid: 4049961236948058533
+  - rid: 4049961236948058534
+  - rid: 4049961236948058535
+  - rid: 4049961236948058536
+  - rid: 4049961236948058537
+  - rid: 4049961236948058538
+  - rid: 4049961236948058539
+  - rid: 4049961236948058540
+  - rid: 4049961236948058541
+  - rid: 4049961236948058542
+  - rid: 4049961236948058543
+  - rid: 4049961236948058544
+  - rid: 4049961236948058545
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: 2c0fcb3546a326b4a8465dd88e0c9de8, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437562908
+    - rid: 4049961236948058533
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
+        message: '*You approach Chad watching people dance from the sidelines.*'
+    - rid: 4049961236948058534
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
         message: Lovely isn't it?
-    - rid: 3685628149437562909
+    - rid: 4049961236948058535
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: 'Want to dance? '
           responses:
-          - You wish.R
+          - '*Chad scoffs.*'
+          - You wish.
           adjust: 3
         - answer: 'At a tournament? '
           responses:
+          - '*Chad nods.*'
           - I agree. It's ridiculous.
           adjust: 2
         - answer: 'It is. '
           responses:
+          - '*Chad Chuckles.*'
           - You missed my point.
           adjust: 1
-    - rid: 3685628149437562910
+    - rid: 4049961236948058536
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Even outside of a tournament I'm not a fan of dancing.
-    - rid: 3685628149437562911
+    - rid: 4049961236948058537
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: It must just give good players something to do while they wait for
           the final call.
-    - rid: 3685628149437562912
+    - rid: 4049961236948058538
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Speaking of which. Do you think you can win this thing?
-    - rid: 3685628149437562913
+    - rid: 4049961236948058539
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: 'Yeah. '
           responses:
-          - Wishful thinking on your part.
+          - That's wishful thinking on your part.
           adjust: 1
         - answer: No.
           responses:
@@ -87,34 +89,28 @@ MonoBehaviour:
           responses:
           - I can't tell if your silence is pessimistic or optimistic.
           adjust: 1
-    - rid: 3685628149437562914
+    - rid: 4049961236948058540
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Let me give you some free advice.
-    - rid: 3685628149437562915
+    - rid: 4049961236948058541
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: You'll need some good luck with this crowd. And against me of course.
-    - rid: 3685628149437562916
+    - rid: 4049961236948058542
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I always find myself a bit luckier after taking a second in the
           bathroom to calm down.
-    - rid: 3685628149437562917
+    - rid: 4049961236948058543
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: That's my advice.
-    - rid: 3685628149437562918
+    - rid: 4049961236948058544
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Anyways, what do you think of this?
-    - rid: 3685628149437562919
+    - rid: 4049961236948058545
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*You and Chad spend time talking.*'

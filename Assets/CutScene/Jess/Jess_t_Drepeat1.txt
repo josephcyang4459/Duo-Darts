@@ -1,0 +1,4 @@
+<*You sit next to Jessica.*
+<You want to buy me drinks?
+<Sure, saves me the trouble.
+<*You spend time drinking with Jessica.* (+)

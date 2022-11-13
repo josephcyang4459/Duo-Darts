@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563204
-  - rid: 3685628149437563205
-  - rid: 3685628149437563206
-  - rid: 3685628149437563207
+  - rid: 4049961236948058558
+  - rid: 4049961236948058559
+  - rid: 4049961236948058560
+  - rid: 4049961236948058561
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: a9b6b3ec5d554374195efc75af76f006, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563204
+    - rid: 4049961236948058558
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: '*You join Chad in people watching.*'
-    - rid: 3685628149437563205
+    - rid: 4049961236948058559
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Still ridiculous right?
-    - rid: 3685628149437563206
+    - rid: 4049961236948058560
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways, entertain me while I wait for my trophy.
-    - rid: 3685628149437563207
+    - rid: 4049961236948058561
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: '*You spend time talking with Chad. He seems happy to have someone
-          to talk to.*'
+          to talk to.* (++)'

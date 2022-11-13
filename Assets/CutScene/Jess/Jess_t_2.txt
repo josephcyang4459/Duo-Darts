@@ -3,11 +3,11 @@
 <You know drinking will only worsen your game.
 <Speaking of darts...
 <I’ve never heard of you before tonight.
-<Truthfully I thought you might be some lucky startup to make it here.
+<Truthfully, I thought you might be some lucky startup to make it here.
 <I guess we will see by the end of the night.
 <So. What do you want to talk about?
 	$Love. (++)
-		&Maybe after I’ve had more to drink.
+		&Maybe after I’ve had much more to drink.
 	$Death. (+++)
 		&I could’ve expected you to say something macabre or shocking like that.
 	$Taxes. (+)

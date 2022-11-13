@@ -1,0 +1,44 @@
+<*Elaine is sitting at the bar.*
+<*You sit next to her.*
+<Oh. It’s you.
+<I’m not really in the mood to put you down right now.
+<Come back later.
+	$I’m staying.
+		&*Elaine shakes her head in disbelief.
+	$No.
+		&*Elaine looks genuinely surprised at your response.*
+	$Well if you say so... 
+		&*Elaine grabs your arm before you can leave and makes you remain seated.*
+<I don’t know what sick game you’ve been playing all night spending time with me just to get treated poorly.
+<But, it has gotten me thinking about what I’m really doing to you.
+<It's not been for good fun or some reason like that.
+<I genuinely think of you as less than me at all levels.
+<That’s what I think of everyone here.
+<*Elaine looks at you with a look of concern.*
+<Am I just a great dart player with no other redeeming qualities?
+	$Yes. -Fail-
+		&*Elaine looks disturbed.*
+		&Just go away.
+	$You’ve been great. -Success-
+		&*She looks dumbfounded.*
+	$You have redeeming qualities. -Success-
+		&*She looks at you like you just saved her life.
+<You think so?
+<After all the things I’ve said to you?
+<It’s not just you either I’m terrible to everyone.
+<*You nod.*
+<Wow.
+<You’re the first person to be appreciative of me in…
+<I don’t even know. Years maybe.
+<*She grabs a dart from one of her pockets.*
+<This is for you.
+<You’re not a dog anymore.
+<You’re someone worth my respect.
+<*She smiles.*
+<Sometimes…
+<You know.
+<I’d like to be your partner for the final round.
+<Nobody else around here gets me like you do.
+<*You spend some time with the now slightly more merciful goddess of darts.*
+
+

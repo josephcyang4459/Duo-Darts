@@ -13,47 +13,42 @@ MonoBehaviour:
   m_Name: Chad_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437562920
-  - rid: 3685628149437562921
-  - rid: 3685628149437562922
-  - rid: 3685628149437562923
-  - rid: 3685628149437562924
-  - rid: 3685628149437562925
-  - rid: 3685628149437562926
-  - rid: 3685628149437562927
-  - rid: 3685628149437562928
-  - rid: 3685628149437562929
-  - rid: 3685628149437562930
+  - rid: 4049961236948058250
+  - rid: 4049961236948058251
+  - rid: 4049961236948058252
+  - rid: 4049961236948058253
+  - rid: 4049961236948058254
+  - rid: 4049961236948058255
+  - rid: 4049961236948058256
+  - rid: 4049961236948058257
+  - rid: 4049961236948058258
+  - rid: 4049961236948058259
+  - rid: 4049961236948058260
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: e56ca484d3508b54d896aaf8f6e8d0ed, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437562920
+    - rid: 4049961236948058250
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Hey, it's you.
-    - rid: 3685628149437562921
+    - rid: 4049961236948058251
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Impressed? You should be. I've got moves.
-    - rid: 3685628149437562922
+    - rid: 4049961236948058252
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I think...  <*He stares intently at you for a second.*
-    - rid: 3685628149437562923
+    - rid: 4049961236948058253
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: You. Me. Dance. Now.
-    - rid: 3685628149437562924
+    - rid: 4049961236948058254
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: 'Yes. '
           responses:
@@ -67,34 +62,28 @@ MonoBehaviour:
           responses:
           - Do I have to do all the work around here?
           adjust: 2
-    - rid: 3685628149437562925
+    - rid: 4049961236948058255
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*Chad grabs your arm and dances with you for a time.*'
-    - rid: 3685628149437562926
+    - rid: 4049961236948058256
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Hey you're pretty good at this.
-    - rid: 3685628149437562927
+    - rid: 4049961236948058257
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: To think if you hadn't drowned me at the bar I'd never get this
           chance.
-    - rid: 3685628149437562928
+    - rid: 4049961236948058258
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I owe you one.
-    - rid: 3685628149437562929
+    - rid: 4049961236948058259
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: If you're lucky that is.
-    - rid: 3685628149437562930
+    - rid: 4049961236948058260
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*You and Chad dance away. He trips up often.*'

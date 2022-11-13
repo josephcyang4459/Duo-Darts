@@ -1,0 +1,15 @@
+<*Elaine holds a trio of darts in her hands and appears to give a brief prayer before speaking to you.*
+<Alright dog. My prayers to myself are finished.
+< Now try and fetch me some points this game.
+<Think you can do that?
+	$Maybe.
+		&Indecision is a plague on humanity.
+	$... (++)
+		&Oh my bad. Forgot dogs can’t talk.
+	$Yes ma’am. (+++)
+		&*Elaine raises an eyebrow.*
+		&You have no shame do you.
+<Alright you first.
+<And I’ll need time to stop the hysterical laughter your dartplay will cause me too.
+<So be ready for a long game.
+

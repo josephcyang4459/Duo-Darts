@@ -1,15 +1,19 @@
+<*You approach Chad watching people dance from the sidelines.*
 <Lovely isn’t it?
 	$Want to dance? (+++)
-		&You wish.R
+		&*Chad scoffs.*
+		&You wish.
 	$At a tournament? (++)
+		&*Chad nods.*
 		&I agree. It’s ridiculous.
 	$It is. (+)
+		&*Chad Chuckles.*
 		&You missed my point.
 <Even outside of a tournament I’m not a fan of dancing.
 <It must just give good players something to do while they wait for the final call.
 <Speaking of which. Do you think you can win this thing?
 	$Yeah. (+)
-		&Wishful thinking on your part.
+		&That’s wishful thinking on your part.
 	$No.
 		&I know I’m here, but you could still get second place if you weren’t so pessimistic.
 	$...M (+)

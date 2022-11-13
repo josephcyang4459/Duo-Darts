@@ -1,0 +1,24 @@
+<*You walk up to Elaine who is again fidgeting with a few darts on the table in front of her.*
+<Hey dog.
+<Sit.
+<I was thinking about the tournament.
+<Is it really fair for me to even be here?
+	$Not even a little. (+++)
+		&My thoughts exactly.
+	$It’s fair.
+		&Have you had your eyes closed all night?
+		&I’m killing it.
+	$... (++)
+		&*Elaine scoffs.*
+		&You’re allowed to speak you know.
+<This tournament bothers me.
+<It’s a professional tournament, but it’s not enough for me.
+<I want to go international.
+<Bumming it in these bars and easily winning these tournaments is beneath me.
+<*She pats your head.*
+<And belittling sadists like yourself has lost its charm.
+<You know what, I have you to thank for this eureka.
+<I really do owe you one.
+<Anyways. Can you leave now?
+<You honestly smell horrible and it’s definitely noticeable.
+<*You leave Elaine to enjoy her fantasizations of international fame.*
