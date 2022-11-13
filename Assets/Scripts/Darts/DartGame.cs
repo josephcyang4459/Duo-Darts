@@ -151,12 +151,11 @@ public class DartGame : MonoBehaviour
 
         if (currentTurn % 2 == 0)
         {
-            mr.material = green;
+    
             playerTurn();
         }
         else
         {
-            mr.material = red;
             partnerTurn();
         }    
     }
@@ -169,8 +168,8 @@ public class DartGame : MonoBehaviour
 
     private void DartC(Material m)
     {
-        for( int i=0;i<3;i++)
-            Dart[i].
+        /*for( int i=0;i<3;i++)
+            Dart[i].*/
     }
 
     private void partnerTurn()

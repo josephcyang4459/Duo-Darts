@@ -11,7 +11,7 @@ public class BoardCollider : MonoBehaviour
 
     public void hit()
     {
-        gameState.Dart.go(gameState.aim.t.localPosition, point);
+        gameState.Dart.go[gameState.numberOfDartsThrow].(gameState.aim.t.localPosition, point);
         //StartCoroutine(wait());
     }
 }
