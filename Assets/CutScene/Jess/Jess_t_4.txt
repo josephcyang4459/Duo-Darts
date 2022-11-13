@@ -1,0 +1,35 @@
+<*You sit next to Jessica at a table.*
+<Hey.
+<I’m glad you found some time to talk.
+<There’s something I’ve been meaning to ask you.
+<Lets talk for a moment though.
+<*Jessica sighs.*
+<Nobody will be my partner for the final round.
+<Unfortunately, it appears I scare everyone away.
+<Except you.
+<I think people would call me “prickly”.
+<I think those people are idiots.
+<They don’t even know who I really am.
+<They don’t bother to try to get to know me.
+<That’s what I wanted to ask you.
+<What do you think of me?
+	$You’re amazing. -Success-
+		&Are you really not ashamed of your honesty?
+	$You’re Jessica. -Fail-
+		&Nevermind.
+		&You should go.
+		&*You leave.*
+	$You’re prickly. -Success-
+		&*She smiles.*
+		&I know you don’t think that.
+<I think you’re great.
+<I don’t know why. Frankly you’re a complete idiot.
+<And your dart skills are... Interesting at best.
+<However, despite all the negatives, you seem to be a diamond in the rough.
+<*Jessica looks at you intently.*
+<Please. 
+<Consider me to be your partner for the final round.
+<*Jessica relaxes.*
+<With that off my chest you can go.
+<Thank you for hearing me out.
+<Really.

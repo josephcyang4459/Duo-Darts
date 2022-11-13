@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_2
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437562908
+  - rid: 3685628149437562909
+  - rid: 3685628149437562910
+  - rid: 3685628149437562911
+  - rid: 3685628149437562912
+  - rid: 3685628149437562913
+  - rid: 3685628149437562914
+  - rid: 3685628149437562915
+  - rid: 3685628149437562916
+  - rid: 3685628149437562917
+  - rid: 3685628149437562918
+  - rid: 3685628149437562919
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: 2c0fcb3546a326b4a8465dd88e0c9de8, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437562908
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Lovely isn't it?
+    - rid: 3685628149437562909
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'Want to dance? '
+          responses:
+          - You wish.R
+          adjust: 3
+        - answer: 'At a tournament? '
+          responses:
+          - I agree. It's ridiculous.
+          adjust: 2
+        - answer: 'It is. '
+          responses:
+          - You missed my point.
+          adjust: 1
+    - rid: 3685628149437562910
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Even outside of a tournament I'm not a fan of dancing.
+    - rid: 3685628149437562911
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: It must just give good players something to do while they wait for
+          the final call.
+    - rid: 3685628149437562912
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Speaking of which. Do you think you can win this thing?
+    - rid: 3685628149437562913
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'Yeah. '
+          responses:
+          - Wishful thinking on your part.
+          adjust: 1
+        - answer: No.
+          responses:
+          - I know I'm here, but you could still get second place if you weren't
+            so pessimistic.
+          adjust: 0
+        - answer: '...M '
+          responses:
+          - I can't tell if your silence is pessimistic or optimistic.
+          adjust: 1
+    - rid: 3685628149437562914
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Let me give you some free advice.
+    - rid: 3685628149437562915
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: You'll need some good luck with this crowd. And against me of course.
+    - rid: 3685628149437562916
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I always find myself a bit luckier after taking a second in the
+          bathroom to calm down.
+    - rid: 3685628149437562917
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: That's my advice.
+    - rid: 3685628149437562918
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Anyways, what do you think of this?
+    - rid: 3685628149437562919
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*You and Chad spend time talking.*'

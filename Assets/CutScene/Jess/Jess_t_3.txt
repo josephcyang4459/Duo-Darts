@@ -1,0 +1,25 @@
+<*You run into Jessica as you walk into the bathroom.*
+<Oh. It’s you.
+<Don’t tell anybody, but I just made a girl cry in the bathroom.
+<I just told her her dartplay is like art.
+<*She gasps.*
+<I might’ve said something other than art.
+<*She stares at you for a second
+<*Jessica burps.*
+<Oh God. I’m going back inside. People can’t see me this drunk.
+<*She grabs your arm and pulls you all the way into a stall.*
+<Hold my hair please...
+<*She vomits into the toilet.*
+<This is your fault you know.
+<Buying me drinks all night long.
+	$I didn’t force you to drink them. (++)
+		&Semantics are fallacious you know.
+ $I’m taking responsibility. (++)
+	&I’d say you’re doing the bare minimum by being here.
+$You’re not enjoying this? (+++)
+	&*She laughs.*
+	&You are scum you know.
+<*Jessica vomits again.*
+<Just stay here for a little while longer.
+<My hair won’t hold itself.
+<*You stay with Jessica for a while until she feels better.*

@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Jess_2
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437563058
+  - rid: 3685628149437563059
+  - rid: 3685628149437563060
+  - rid: 3685628149437563061
+  - rid: 3685628149437563062
+  - rid: 3685628149437563063
+  - rid: 3685628149437563064
+  - rid: 3685628149437563065
+  - rid: 3685628149437563066
+  - rid: 3685628149437563067
+  - rid: 3685628149437563068
+  - rid: 3685628149437563069
+  - rid: 3685628149437563070
+  - rid: 3685628149437563071
+  - rid: 3685628149437563072
+  - rid: 3685628149437563073
+  - rid: 3685628149437563074
+  - rid: 3685628149437563075
+  defaultCharacter: Jess
+  aa: {fileID: 4900000, guid: e0a6592884b40a644a8a04b231894a8e, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437563058
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: You again?
+    - rid: 3685628149437563059
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Maybe I should've seen it coming.
+    - rid: 3685628149437563060
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: You know drinking will only worsen your game.
+    - rid: 3685628149437563061
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Speaking of darts...
+    - rid: 3685628149437563062
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I've never heard of you before tonight.
+    - rid: 3685628149437563063
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Truthfully I thought you might be some lucky startup to make it
+          here.
+    - rid: 3685628149437563064
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I guess we will see by the end of the night.
+    - rid: 3685628149437563065
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: So. What do you want to talk about?
+    - rid: 3685628149437563066
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'Love. '
+          responses:
+          - Maybe after I've had more to drink.
+          adjust: 2
+        - answer: 'Death. '
+          responses:
+          - I could've expected you to say something macabre or shocking like that.
+          adjust: 3
+        - answer: 'Taxes. '
+          responses:
+          - God help us.
+          adjust: 1
+    - rid: 3685628149437563067
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Maybe I should have asked why you keep coming up to socialize with
+          me.
+    - rid: 3685628149437563068
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Yes. That's a much better question.
+    - rid: 3685628149437563069
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*Jessica faces you and waits for an answer.*'
+    - rid: 3685628149437563070
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: So?
+    - rid: 3685628149437563071
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'Your skill. '
+          responses:
+          - It's refreshing that someone sees past the makeup to see the darts player
+            that I truly am.
+          adjust: 3
+        - answer: Your beauty.
+          responses:
+          - '*She sighs.*'
+          - At least you're trying.
+          adjust: 0
+        - answer: 'No reason in particular. '
+          responses:
+          - I call your bluff.
+          - But fine, keep the reason to yourself.
+          adjust: 2
+    - rid: 3685628149437563072
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*Jessica faces away from you toward the bar.*'
+    - rid: 3685628149437563073
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I've changed my mind again.
+    - rid: 3685628149437563074
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Let's talk about what you mentioned before.
+    - rid: 3685628149437563075
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*You and Jessica talk for a while.*'

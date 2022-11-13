@@ -1,0 +1,30 @@
+<You again?
+<Maybe I should’ve seen it coming.
+<You know drinking will only worsen your game.
+<Speaking of darts...
+<I’ve never heard of you before tonight.
+<Truthfully I thought you might be some lucky startup to make it here.
+<I guess we will see by the end of the night.
+<So. What do you want to talk about?
+	$Love. (++)
+		&Maybe after I’ve had more to drink.
+	$Death. (+++)
+		&I could’ve expected you to say something macabre or shocking like that.
+	$Taxes. (+)
+		&God help us.
+<Maybe I should have asked why you keep coming up to socialize with me.
+<Yes. That’s a much better question.
+<*Jessica faces you and waits for an answer.*
+<So?
+	$Your skill. (+++)
+		&It’s refreshing that someone sees past the makeup to see the darts player that I truly am.
+	$Your beauty.
+		&*She sighs.*
+		&At least you’re trying.
+	$No reason in particular. (++)
+		&I call your bluff.
+		&But fine, keep the reason to yourself.
+<*Jessica faces away from you toward the bar.*
+<I’ve changed my mind again. 
+<Let's talk about what you mentioned before.
+<*You and Jessica talk for a while.*

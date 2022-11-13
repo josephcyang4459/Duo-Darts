@@ -49,12 +49,16 @@ public class CutScene : ScriptableObject
                         r0.answer = removeIndication(overall[i].Substring(1));
                         List<string> rs = new();
                         i++;
+
                         
+
                         while (overall[i][0] == '&')
                         {
                             //Debug.Log("aa" + overall[i].Substring(1));
                             rs.Add(overall[i].Substring(1));
                             i++;
+                            if (overall[i] == null || overall[i].Length <= 0)
+                                break;
                         }
                         
                         r0.responses = rs.ToArray();
@@ -62,6 +66,7 @@ public class CutScene : ScriptableObject
                     }
                     i--;
                     bl.Add(rTemp);
+
                     break;
 
                 case '{':
@@ -77,8 +82,9 @@ public class CutScene : ScriptableObject
                     bl.Add(scb);
                     break;
                 case '[':
-
-                    Debug.Log("change background");
+                    SwapBackGround sbg = new SwapBackGround();
+                    sbg.place = overall[i].Substring(1);
+                    bl.Add(sbg);
                     break;
 
             }
@@ -136,7 +142,7 @@ public class CutScene : ScriptableObject
         if (s.IndexOf('+') <= 0)
             return 0;
 
-        return s.LastIndexOf('+') - s.IndexOf('+');
+        return (s.LastIndexOf('+') - s.IndexOf('+'))+1;
     }
 
 #endif
@@ -152,9 +158,7 @@ public class block
 
 public class DialougeBlock: block
 {
-#if UNITY_EDITOR
-    public string name  = "Dialouge";
-#endif
+
     public string message;
     public override void action(CutsceneHandler ch)
     {
@@ -164,9 +168,7 @@ public class DialougeBlock: block
 
 public class Response: block
 {
-#if UNITY_EDITOR
-    public string name = "Response";
-#endif
+
     public responseData[] responses;
 
     public override void action(CutsceneHandler ch)
@@ -177,9 +179,7 @@ public class Response: block
 
 public class ExpressionBlock : block
 {
-#if UNITY_EDITOR
-    public string name = "Expression";
-#endif
+
     public string expression;
 
     public override void action(CutsceneHandler ch)
@@ -191,9 +191,7 @@ public class ExpressionBlock : block
 
 public class SwapCharacterBlock : block
 {
-#if UNITY_EDITOR
-    public string name = "Swap";
-#endif
+
     public string character;
 
     public override void action(CutsceneHandler ch)
@@ -202,6 +200,20 @@ public class SwapCharacterBlock : block
     }
 
 }
+
+public class SwapBackGround : block
+{
+
+
+    public string place;
+
+    public override void action(CutsceneHandler ch)
+    {
+        ch.changeBackground(place);
+    }
+
+}
+
 
 [System.Serializable]
 public class responseData

@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Jess_1
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437563050
+  - rid: 3685628149437563051
+  - rid: 3685628149437563052
+  - rid: 3685628149437563053
+  - rid: 3685628149437563054
+  - rid: 3685628149437563055
+  - rid: 3685628149437563056
+  - rid: 3685628149437563057
+  defaultCharacter: Jess
+  aa: {fileID: 4900000, guid: c8a0d5de1c38319498227d78a8db7a42, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437563050
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I wouldn't typically partner up with someone I don't know rather
+          well.
+    - rid: 3685628149437563051
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: However, with my skills I don't mind the possibility of losing a
+          few points.
+    - rid: 3685628149437563052
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Even if you missed the board with most of your throws I still think
+          we could win with me.
+    - rid: 3685628149437563053
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: What about you?
+    - rid: 3685628149437563054
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Will you hold up your end of the game?
+    - rid: 3685628149437563055
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'I don''t miss my mark. '
+          responses:
+          - Well, aren't you the confident one.
+          adjust: 2
+        - answer: 'I haven''t decided yet. '
+          responses:
+          - Indecision is an underrated trait.
+          adjust: 3
+        - answer: 'I''ll try. '
+          responses:
+          - '*She chuckles*.'
+          - You will.
+          adjust: 1
+    - rid: 3685628149437563056
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I'll let you go first.
+    - rid: 3685628149437563057
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I would very much appreciate it if you didn't make me work too hard
+          to win.

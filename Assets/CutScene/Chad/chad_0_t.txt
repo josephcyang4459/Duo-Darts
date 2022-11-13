@@ -9,7 +9,7 @@
 		&If only the best wasn’t already sitting in front of you I might’ve believed that.
 	$... (++)
 		&I see. You want your play to prove yourself? I respect that more than you know.
-<Well then. I suppose you’ve piqued my interest for better or worse. 
+<Well then. I suppose youve piqued my interest for better or worse. 
 <You should already know my name, but I’m Chadrick Basedman.
 <Let me ask you a few more questions.
 <You spend a while talking with Chad.

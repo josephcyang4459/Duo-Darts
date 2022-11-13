@@ -26,6 +26,10 @@ public class DartGame : MonoBehaviour
     public Image[] dartimages;
     public TMP_Text[] scores;
     public Canvas dartCanvas;
+
+    public Material green;
+    public Material red;
+    public MeshRenderer mr;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -120,11 +124,13 @@ public class DartGame : MonoBehaviour
 
     private void playerTurn()
     {
+        mr.material = green;
         aim.begin();
     }
 
     private void partnerTurn()
     {
+        mr.material= red;
         playerTurn();
     }
 

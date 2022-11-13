@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_3
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437562920
+  - rid: 3685628149437562921
+  - rid: 3685628149437562922
+  - rid: 3685628149437562923
+  - rid: 3685628149437562924
+  - rid: 3685628149437562925
+  - rid: 3685628149437562926
+  - rid: 3685628149437562927
+  - rid: 3685628149437562928
+  - rid: 3685628149437562929
+  - rid: 3685628149437562930
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: e56ca484d3508b54d896aaf8f6e8d0ed, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437562920
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Hey, it's you.
+    - rid: 3685628149437562921
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Impressed? You should be. I've got moves.
+    - rid: 3685628149437562922
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I think...  <*He stares intently at you for a second.*
+    - rid: 3685628149437562923
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: You. Me. Dance. Now.
+    - rid: 3685628149437562924
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: 'Yes. '
+          responses:
+          - I was hoping you'd say that.
+          adjust: 3
+        - answer: Nope.
+          responses:
+          - It wasn't a question.
+          adjust: 0
+        - answer: '... '
+          responses:
+          - Do I have to do all the work around here?
+          adjust: 2
+    - rid: 3685628149437562925
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*Chad grabs your arm and dances with you for a time.*'
+    - rid: 3685628149437562926
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Hey you're pretty good at this.
+    - rid: 3685628149437562927
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: To think if you hadn't drowned me at the bar I'd never get this
+          chance.
+    - rid: 3685628149437562928
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I owe you one.
+    - rid: 3685628149437562929
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: If you're lucky that is.
+    - rid: 3685628149437562930
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: '*You and Chad dance away. He trips up often.*'

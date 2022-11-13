@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_Repeat
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437563204
+  - rid: 3685628149437563205
+  - rid: 3685628149437563206
+  - rid: 3685628149437563207
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: a9b6b3ec5d554374195efc75af76f006, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437563204
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You join Chad in people watching.*'
+    - rid: 3685628149437563205
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Still ridiculous right?
+    - rid: 3685628149437563206
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways, entertain me while I wait for my trophy.
+    - rid: 3685628149437563207
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend time talking with Chad. He seems happy to have someone
+          to talk to.*'

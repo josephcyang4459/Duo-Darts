@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: LoungeAdviceGuy
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437563208
+  - rid: 3685628149437563209
+  - rid: 3685628149437563210
+  - rid: 3685628149437563211
+  - rid: 3685628149437563212
+  - rid: 3685628149437563213
+  - rid: 3685628149437563214
+  - rid: 3685628149437563215
+  - rid: 3685628149437563216
+  - rid: 3685628149437563217
+  - rid: 3685628149437563218
+  - rid: 3685628149437563219
+  - rid: 3685628149437563220
+  - rid: 3685628149437563221
+  - rid: 3685628149437563222
+  - rid: 3685628149437563223
+  defaultCharacter: Lounge Guy
+  aa: {fileID: 4900000, guid: d06e66318ac86a44bac1d04e0ce46466, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437563208
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*A sketchy looking man motions to a seat next to him at a table.'
+    - rid: 3685628149437563209
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Yo. Sit.
+    - rid: 3685628149437563210
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You sit.*'
+    - rid: 3685628149437563211
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "These fools. They just don\u2019t get the art of the dart you know."
+    - rid: 3685628149437563212
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "But you... I can tell you\u2019re from a different flock."
+    - rid: 3685628149437563213
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You understand.
+    - rid: 3685628149437563214
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*He pats your back a little too hard.*'
+    - rid: 3685628149437563215
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "You\u2019re the right stuff."
+    - rid: 3685628149437563216
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "I\u2019ll be cheering for you."
+    - rid: 3685628149437563217
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "And I\u2019ll even give you some advice for free."
+    - rid: 3685628149437563218
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: When going for a high ton always think about cargo ships.
+    - rid: 3685628149437563219
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Those babies can hold so many tons of darts. It\u2019s incredible."
+    - rid: 3685628149437563220
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Not that you needed that advice, but now you have it.
+    - rid: 3685628149437563221
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*He pats your back even harder.*'
+    - rid: 3685628149437563222
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Off you go. To victory and triumph.
+    - rid: 3685628149437563223
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You leave your seat feeling motivated by the art of the dart.*'

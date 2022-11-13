@@ -33,7 +33,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void tart(CutScene c)
     {
-        change(c.defaultCharacter);
+        decideChar(c.defaultCharacter);
         cs = c;
 
         dialougeCanvas.enabled = true;
@@ -65,14 +65,24 @@ public class CutsceneHandler : MonoBehaviour
             responseIndexIndex++;
             if(responseIndexIndex>= respon.responses[responseIndex].responses.Length)
             {
+                if (respon.responses[responseIndex].adjust < 0)
+                {
+                    off();
+                    return;
+                }
+
+                partners[characterIndex].Love += respon.responses[responseIndex].adjust;
+
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
+               
+
+                
             }
            
         }
             
-        Debug.Log("gg");
         if (dh.Script.typer != null)
         {
             dh.Script.Stop();
@@ -92,7 +102,6 @@ public class CutsceneHandler : MonoBehaviour
     public void dialouge(string message)
     {
         dh.WriteDialogue(message);
-        //Debug.Log(message);
     }
 
     public void response(Response r)
@@ -109,7 +118,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeChar(string character)
     {
-        Debug.Log("change");
+        decideChar(character);
         index++;
 
         cs.blocks[index].action(this);
@@ -127,37 +136,77 @@ public class CutsceneHandler : MonoBehaviour
 
     }
 
+    public void changeBackground(string s)
+    {
+
+    }
+
     private void partner(int i)
     {
+        characterIndex = (byte)i;
         character.sprite = partners[i].Expressions[0];
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
         dh.textLabel.font = partners[i].Font;
 
     }
-    private void change(string s)
+
+    private void background(int i)
+    {
+
+    }
+
+    private void decideBackGround(string s)
+    {
+        switch (s.ToLower())
+        {
+            case "lounge":
+                background(0);
+                break;
+            case "chad":
+                background(0);
+                break;
+            case "jess":
+                background(0);
+                break;
+            case "elaine":
+                background(0);
+
+                break;
+
+            case "owner":
+                background(0);
+                break;
+            default:
+                characterName.text = s;
+                break;
+        }
+    }
+
+    private void decideChar(string s)
     {
         switch (s.ToLower())
         {
             case "faye":
-                partner(0);
+                partner(2);
                 break;
             case "chad":
                 partner(0);
                 break;
             case "jess":
-                partner(0);
+                partner(1);
                 break;
             case "elaine":
-                partner(0);
+                partner(3);
 
                 break;
 
             case "owner":
-                partner(0);
+                partner(4);
 
                 break;
             default:
+                partner(5);
                 characterName.text = s;
                 break;
         }

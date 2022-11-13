@@ -1,0 +1,12 @@
+<I can’t believe I’m giving you a chance.
+<Remember, I’m just doing this to see if you really are nobody.
+<Nothing more and nothing less.
+<And you better hold up your end of the game.
+<Not that I would truly need your points. I could check out alone if only they’d let me.
+	$Cocky much?
+		&That’s right. You still haven’t seen how good I really am.
+	$I’d love to see a legend in action. (++)
+		&Sucking up will get you somewhere, but not as far as you might hope.
+	$Underestimating me? (+++)
+		&You know...
+		&Just throw your darts.

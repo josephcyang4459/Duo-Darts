@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Chad_1
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3685628149437562902
+  - rid: 3685628149437562903
+  - rid: 3685628149437562904
+  - rid: 3685628149437562905
+  - rid: 3685628149437562906
+  - rid: 3685628149437562907
+  defaultCharacter: chad
+  aa: {fileID: 4900000, guid: f77453494f53f914b9f47620c8fcb392, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3685628149437562902
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: I can't believe I'm giving you a chance.
+    - rid: 3685628149437562903
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Remember, I'm just doing this to see if you really are nobody.
+    - rid: 3685628149437562904
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Nothing more and nothing less.
+    - rid: 3685628149437562905
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: And you better hold up your end of the game.
+    - rid: 3685628149437562906
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Dialouge
+        message: Not that I would truly need your points. I could check out alone
+          if only they'd let me.
+    - rid: 3685628149437562907
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Response
+        responses:
+        - answer: Cocky much?
+          responses:
+          - That's right. You still haven't seen how good I really am.
+          adjust: 0
+        - answer: 'I''d love to see a legend in action. '
+          responses:
+          - Sucking up will get you somewhere, but not as far as you might hope.
+          adjust: 2
+        - answer: 'Underestimating me? '
+          responses:
+          - You know...
+          - Just throw your darts.
+          adjust: 3
