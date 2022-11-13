@@ -12,10 +12,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
   m_Name: Faye_1
   m_EditorClassIdentifier: 
-  blocks: []
+  blocks:
+  - rid: 3927831878865518616
+  - rid: 3927831878865518617
+  - rid: 3927831878865518618
+  - rid: 3927831878865518619
+  - rid: 3927831878865518620
+  - rid: 3927831878865518621
+  - rid: 3927831878865518622
   defaultCharacter: Faye
-  aa: {fileID: 0}
+  aa: {fileID: 4900000, guid: f85618131ccb8ce4a9c7b8cafa54115e, type: 3}
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3927831878865518616
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Make your turns quick please.
+    - rid: 3927831878865518617
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't like being up and about especially with a crowd.
+    - rid: 3927831878865518618
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Oh yeah, I was meaning to ask if you ever attended any other tournaments.
+    - rid: 3927831878865518619
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I've never seen you before.
+    - rid: 3927831878865518620
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: 'I stick to the shadows mostly. '
+          responses:
+          - Same.
+          - We must've just missed each other then.
+          adjust: 3
+        - answer: 'I''m a regular. '
+          responses:
+          - Are you sure?
+          - I've seen just about everyone here before.
+          adjust: 1
+        - answer: 'This is my first one. '
+          responses:
+          - Oh I see.
+          - Don't worry you'll do great.
+          adjust: 2
+    - rid: 3927831878865518621
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I apologize in advance I'm not the best player here.
+    - rid: 3927831878865518622
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Here, you go first.

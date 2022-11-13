@@ -25,14 +25,24 @@ public class CutsceneHandler : MonoBehaviour
     public Partner[] partners;
     public Image character;
     public TMP_Text characterName;
+    public Sprite[] bgs;
+
+    public Image cutSceneBackGround;
+
+    public string loseScene;
+
+    public Schedule sc;
 
     public void Start()
     {
-        tart(cs);
+        
+        tart(cs, 0);
     }
 
-    public void tart(CutScene c)
+    public void tart(CutScene c, byte b)
     {
+        
+
         decideChar(c.defaultCharacter);
         cs = c;
 
@@ -48,6 +58,7 @@ public class CutsceneHandler : MonoBehaviour
         responseCanvas.enabled = false;
         interact.action.Disable();
         interact.action.performed -= takeAction;
+        sc.setTime(10);
     }
 
     public void takeAction(InputAction.CallbackContext c)
@@ -68,6 +79,7 @@ public class CutsceneHandler : MonoBehaviour
                 if (respon.responses[responseIndex].adjust < 0)
                 {
                     off();
+                    
                     return;
                 }
 
@@ -138,7 +150,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeBackground(string s)
     {
-
+        decideBackGround(s);
     }
 
     private void partner(int i)
@@ -153,7 +165,7 @@ public class CutsceneHandler : MonoBehaviour
 
     private void background(int i)
     {
-
+        cutSceneBackGround.sprite = bgs[i];
     }
 
     private void decideBackGround(string s)
@@ -163,11 +175,11 @@ public class CutsceneHandler : MonoBehaviour
             case "lounge":
                 background(0);
                 break;
-            case "chad":
-                background(0);
+            case "bar":
+                background(1);
                 break;
-            case "jess":
-                background(0);
+            case "dance":
+                background(2);
                 break;
             case "elaine":
                 background(0);

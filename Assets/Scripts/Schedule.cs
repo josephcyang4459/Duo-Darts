@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Schedule : MonoBehaviour
 {
     public int hour = 4;
@@ -20,13 +20,16 @@ public class Schedule : MonoBehaviour
     public Button[] bs;
     public TMP_Text[] btnText;
 
+    public GameObject backButton;
+
     public void Start()
     {
-        setTime();
+        setTime(0);
     }
 
-    public void setTime()
+    public void setTime(int minutes)
     {
+        timeM(minutes);
         for(int i = 0; i < locals.Length; i++)
         {
             locals[i].useing = 0;
@@ -53,6 +56,16 @@ public class Schedule : MonoBehaviour
         }
     }
 
+    private void timeM(int times)
+    {
+        minutes += times;
+        if (minutes > 60)
+        {
+            minutes -= 60;
+            hour++;
+        }
+    }
+
     public void selectLocation(int b)
     {
         LocationName.text = locals[b].name;
@@ -68,19 +81,21 @@ public class Schedule : MonoBehaviour
             else
                 break;
         }
-
+        location = (byte)b;
         list.enabled = true;
+        UI_Helper.SetSelectedUIElement(backButton);
     }
 
     public void selectEvent(int eve)
     {
         list.enabled = false;
-        locals[location].s[eve].go(c);
+        locals[location].s[eve].go(c, location);
     }
 
     public void back()
     {
         list.enabled = false;
+       
     }
 
     private bool check(EventStart t)

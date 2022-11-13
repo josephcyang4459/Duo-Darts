@@ -17,10 +17,10 @@ public class EventStart : ScriptableObject
     public bool done = false;
 
 
-    public void go(CutsceneHandler c)
+    public void go(CutsceneHandler c, byte b)
     {
         done = true;
-        c.tart(cutScene);
+        c.tart(cutScene, b);
     }
 
     

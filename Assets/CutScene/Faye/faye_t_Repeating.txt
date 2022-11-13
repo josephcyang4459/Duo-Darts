@@ -1,0 +1,4 @@
+<*You go to Faye’s booth.
+<Hey it's you.
+<Sit, lets talk for a while.
+<*You spend time with Faye. She seems relieved.*

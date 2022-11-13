@@ -69,14 +69,20 @@ public class AimCone : MonoBehaviour
 
     public void shoot(InputAction.CallbackContext c)
     {
+        ghoot(t.localPosition);
+       
+    }
 
-        if(Physics.Raycast(t.localPosition, Vector3.forward, out RaycastHit hit, layer))
+    public void ghoot(Vector3 h)
+    {
+        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, layer))
         {
             Debug.DrawLine(t.localPosition, hit.point, Color.black, 10);
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
         }
 
         enabled = false;
+
     }
 
     public IEnumerator direction()

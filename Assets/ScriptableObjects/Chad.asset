@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Chad
   Font: {fileID: 11400000, guid: 034792957c4d43946bd88090e9d9fdf8, type: 2}
-  Charisma: 1
-  Intoxication: 1
-  Love: 1
+  Composure: 13.13
+  Intoxication: 0
+  Love: 0
   Expressions:
   - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
   - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}

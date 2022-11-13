@@ -9,8 +9,8 @@ public class Partner : ScriptableObject
 {
     public string Name;
     public TMP_FontAsset Font;
-    public float Charisma = 1f;
-    public float Intoxication = 1f;
-    public float Love = 1f;
+    public float Composure = 0f;
+    public float Intoxication = 0f;
+    public float Love = 0f;
     public Sprite[] Expressions;
 }

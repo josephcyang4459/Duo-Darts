@@ -12,10 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
-  blocks: []
+  blocks:
+  - rid: 3927831878865518690
+  - rid: 3927831878865518691
+  - rid: 3927831878865518692
+  - rid: 3927831878865518693
   defaultCharacter: Faye
-  aa: {fileID: 0}
+  aa: {fileID: 4900000, guid: 30452359fab07d14ca0c144ffac8c0e0, type: 3}
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3927831878865518690
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You go to Faye''s booth.'
+    - rid: 3927831878865518691
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey it's you.
+    - rid: 3927831878865518692
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Sit, lets talk for a while.
+    - rid: 3927831878865518693
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You spend time with Faye. She seems relieved.*'

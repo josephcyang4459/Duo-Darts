@@ -44,17 +44,13 @@ public class CutScene : ScriptableObject
                     for (int j = 0; j<3; j++)
                     {
                         responseData r0 = new responseData();
-                        //Debug.Log("Answer " + overall[i].Substring(1));
                         r0.adjust = numbPlus(overall[i].Substring(1));
                         r0.answer = removeIndication(overall[i].Substring(1));
                         List<string> rs = new();
                         i++;
 
-                        
-
                         while (overall[i][0] == '&')
                         {
-                            //Debug.Log("aa" + overall[i].Substring(1));
                             rs.Add(overall[i].Substring(1));
                             i++;
                             if (overall[i] == null || overall[i].Length <= 0)
@@ -104,6 +100,10 @@ public class CutScene : ScriptableObject
         if (a == '<')
             return true;
         if (a == '{')
+            return true;
+        if (a == '[')
+            return true;
+        if (a == '>')
             return true;
         return false;
     }

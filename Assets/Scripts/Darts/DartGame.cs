@@ -1,7 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class DartGame : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class DartGame : MonoBehaviour
     public short overall = 501;
 
     public byte currentTurn = 0;
+
+    public int partnerIndex =0;
 
     public AimCone aim;
 
@@ -30,6 +34,14 @@ public class DartGame : MonoBehaviour
     public Material green;
     public Material red;
     public MeshRenderer mr;
+
+    public float driftDefault = 1f;
+
+    [SerializeReference]
+    public BoardSlice[] c;
+    public BoardCollider bullseye;
+    public Player stats;
+    public Partner[] partners;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -41,20 +53,39 @@ public class DartGame : MonoBehaviour
     {
         if (reset)
         {
+            c = new BoardSlice[20];
             for (int i = 0; i < 20; i++)
             {
 
-              
+                
                 GameObject obj = Instantiate(slice, g.transform);
+                
                 obj.transform.rotation = Quaternion.Euler(-18 * i, -90, 0);
                 for(int j = 0; j < 4; j++)
                 {
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
+                    
+                   obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
                 }
+                c[i] = obj.GetComponent<BoardSlice>();
             }
+
+            Array.Sort(c, new comparer());
+
             reset = false;
+
+            
+
+
+        }
+    }
+
+    public class comparer : IComparer<BoardSlice>
+    {
+        public int Compare(BoardSlice x, BoardSlice y)
+        {
+            return x.colliders[0].point - y.colliders[0].point;
         }
     }
 
@@ -62,12 +93,20 @@ public class DartGame : MonoBehaviour
 
     public void Start()
     {
-        
-        BeginGame();
+        Application.targetFrameRate = 60;
+        BeginGame(0);
     }
 
-    public void BeginGame()
+    public void BeginGame(int partner)
     {
+        float Accuracy = ((stats.Skill + stats.Luck) - (stats.Intoxication * 2)) / 100;
+        float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);
+        aim.driftSpeed = driftDefault * Stability;
+        aim.moveSpeed = (1.35f -((stats.Intoxication / 5) / 10)) * aim.driftSpeed;
+        float Synergy = (partners[partner].Love) + (stats.Charisma / 3);
+
+        partnerIndex = partner;
+
         dartCanvas.enabled = true;
         numberOfDartsThrow = 0;
         currentTurn = 0;
@@ -113,25 +152,57 @@ public class DartGame : MonoBehaviour
 
         if (currentTurn % 2 == 0)
         {
+            mr.material = green;
             playerTurn();
         }
         else
         {
-            //ai
+            mr.material = red;
             partnerTurn();
         }    
     }
 
     private void playerTurn()
     {
-        mr.material = green;
+       
         aim.begin();
     }
 
     private void partnerTurn()
     {
-        mr.material= red;
-        playerTurn();
+        Vector3 location;
+        if (overall > 180)
+        {
+            int pick = UnityEngine.Random.Range(17, 19);
+
+            int temp = 1;
+
+            if (partners[partnerIndex].Composure > 5)
+            {
+                temp = 0;
+            }
+
+            if (partners[partnerIndex].Composure > 10)
+            {
+                temp = 2;
+               
+            }
+
+            
+
+            location = c[pick].colliders[temp].target.position;
+
+            float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication / 5) / 10), (partners[partnerIndex].Intoxication / 5) / -10);
+
+            location.x += offset;
+            location.y += offset;
+
+            aim.ghoot(location);
+            return;
+
+
+        }
+        return;
     }
 
     public void AddPoints(byte b)

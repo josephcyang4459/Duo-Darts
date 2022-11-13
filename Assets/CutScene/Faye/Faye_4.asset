@@ -12,10 +12,129 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
   m_Name: Faye_4
   m_EditorClassIdentifier: 
-  blocks: []
+  blocks:
+  - rid: 3927831878865518669
+  - rid: 3927831878865518670
+  - rid: 3927831878865518671
+  - rid: 3927831878865518672
+  - rid: 3927831878865518673
+  - rid: 3927831878865518674
+  - rid: 3927831878865518675
+  - rid: 3927831878865518676
+  - rid: 3927831878865518677
+  - rid: 3927831878865518678
+  - rid: 3927831878865518679
+  - rid: 3927831878865518680
+  - rid: 3927831878865518681
+  - rid: 3927831878865518682
+  - rid: 3927831878865518683
+  - rid: 3927831878865518684
+  - rid: 3927831878865518685
+  - rid: 3927831878865518686
+  - rid: 3927831878865518687
+  - rid: 3927831878865518688
+  - rid: 3927831878865518689
   defaultCharacter: Faye
-  aa: {fileID: 0}
+  aa: {fileID: 4900000, guid: 9a9f2c44e3c7b9840bc1833cd4b4947a, type: 3}
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3927831878865518669
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*You see Faye watching some other players.*'
+    - rid: 3927831878865518670
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*She waves you over.*'
+    - rid: 3927831878865518671
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey. It's good to see you.
+    - rid: 3927831878865518672
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I want to practice some, but there's too many people watching the
+          dart floor.
+    - rid: 3927831878865518673
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye sighs.*'
+    - rid: 3927831878865518674
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm really too far in my own head.
+    - rid: 3927831878865518675
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Do you get nervous up there?
+    - rid: 3927831878865518676
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        responses:
+        - answer: Of course. -Success-
+          responses:
+          - I don't know how you do it without a complaint then.
+          adjust: 0
+        - answer: If I let myself. -Success-
+          responses:
+          - You're tough.
+          adjust: 0
+        - answer: Never. -Fail-
+          responses:
+          - Nevermind.
+          - '*Faye heads to her booth.*'
+          adjust: 0
+    - rid: 3927831878865518677
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just want to be the best darts player I can be.
+    - rid: 3927831878865518678
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye looks determined.*'
+    - rid: 3927831878865518679
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I love this game more than anything.
+    - rid: 3927831878865518680
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I love being good at this game more than anything.
+    - rid: 3927831878865518681
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think I can do this.
+    - rid: 3927831878865518682
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just need to be the me I want to be.
+    - rid: 3927831878865518683
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye looks at you intently.*'
+    - rid: 3927831878865518684
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Please.
+    - rid: 3927831878865518685
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Be my partner for the final round of the tournament.
+    - rid: 3927831878865518686
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: There's no one else I can imagine doing it with anyone else here.
+    - rid: 3927831878865518687
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Don't worry about answering now.
+    - rid: 3927831878865518688
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Call me over when you need me.
+    - rid: 3927831878865518689
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: '*Faye heads back to her booth with a big smile on her face.*'

@@ -1,0 +1,16 @@
+<Make your turns quick please.
+<I don’t like being up and about especially with a crowd.
+<Oh yeah, I was meaning to ask if you ever attended any other tournaments.
+<I’ve never seen you before.
+	$I stick to the shadows mostly. (+++)
+		&Same.
+		&We must’ve just missed each other then.
+	$I’m a regular. (+)
+		&Are you sure?
+		&I’ve seen just about everyone here before.
+	$This is my first one. (++)
+		&Oh I see.
+		&Don’t worry you’ll do great.
+<I apologize in advance I’m not the best player here. 
+<Here, you go first.
+
