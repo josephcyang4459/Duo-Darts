@@ -50,7 +50,6 @@ public class AttributeUpdate : MonoBehaviour {
                 if (CanvasGroup.alpha == 0) {
                     FadeOut = false;
                     InView = false;
-                    PopUpTextUI.text = "";
                 }
             }
 
@@ -62,13 +61,11 @@ public class AttributeUpdate : MonoBehaviour {
         if(FadeIn || FadeOut || InView)
             return;
 
-        Debug.Log("Attribute Text: " + attribute);
-        PopUpTextUI.text = attribute + " has been ";
+        PopUpTextUI.text = "";
+        PopUpTextUI.text += char.ToUpper(attribute[0]);
+        PopUpTextUI.text += attribute.Substring(1, attribute.Length - 2) + " has been ";
 
-        if(attribute[attribute.Length - 1] == '+')
-            PopUpTextUI.text += "increased";
-        else
-            PopUpTextUI.text += "decreased";
+        PopUpTextUI.text += (attribute[attribute.Length - 1] == '+') ? "increased" : "decreased";
 
         Player.UpdateAttribute(attribute, 1);
         ShowUI();

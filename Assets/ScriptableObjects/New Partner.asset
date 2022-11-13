@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New Partner
   m_EditorClassIdentifier: 
   Name: 
+  Font: {fileID: 0}
   Charisma: 1
   Intoxication: 1
   Love: 1
+  Expressions: []
