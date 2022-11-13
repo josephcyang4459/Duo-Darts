@@ -20,8 +20,9 @@ public class Schedule : MonoBehaviour
     public Button[] bs;
     public TMP_Text[] btnText;
 
-    public GameObject backButton;
-
+    public GameObject ListCanvasBack;
+    public Canvas LocationCanvas;
+    public GameObject LocationFirstButton;
     public void Start()
     {
         setTime(0);
@@ -82,8 +83,9 @@ public class Schedule : MonoBehaviour
                 break;
         }
         location = (byte)b;
+        LocationCanvas.enabled = false;
         list.enabled = true;
-        UI_Helper.SetSelectedUIElement(backButton);
+        UI_Helper.SetSelectedUIElement(ListCanvasBack);
     }
 
     public void selectEvent(int eve)
@@ -95,7 +97,9 @@ public class Schedule : MonoBehaviour
     public void back()
     {
         list.enabled = false;
-       
+        LocationCanvas.enabled = true;
+
+        UI_Helper.SetSelectedUIElement(LocationFirstButton);
     }
 
     private bool check(EventStart t)
@@ -141,9 +145,9 @@ public class Schedule : MonoBehaviour
                 return 1;
             case "dance":
                 return 2;
-            case "elaine":
+            case "bathroom":
                 return 3;
-            case "owner":
+            case "darts":
                 return 4;
         }
         return 255;

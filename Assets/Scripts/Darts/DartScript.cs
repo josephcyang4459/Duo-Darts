@@ -11,11 +11,11 @@ public class DartScript : MonoBehaviour
     public AnimationCurve curve;
     public byte points;
     public DartGame d;
-
+    public MeshRenderer m;
     public void go(Vector3 v, byte b)
     {
         points = b;
-        thi.localPosition = new Vector3(v.x, v.y, -11);
+        thi.localPosition = new Vector3(v.x, v.y, -15);
         destination.x = v.x;
         destination.y = v.y;
         speed = maxSpeed;
@@ -24,7 +24,7 @@ public class DartScript : MonoBehaviour
 
     public void vvvv()
     {
-        thi.localPosition = new Vector3(0, 0, -11);
+        thi.localPosition = new Vector3(0, 0, -15);
         speed = maxSpeed;
     }
 
@@ -44,6 +44,5 @@ public class DartScript : MonoBehaviour
         d.AddPoints(points);
         yield return d.k;
         d.check(points);
-        vvvv();
     }
 }

@@ -75,9 +75,14 @@ public class AimCone : MonoBehaviour
 
     public void ghoot(Vector3 h)
     {
+        
         if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, layer))
         {
-            Debug.DrawLine(t.localPosition, hit.point, Color.black, 10);
+            //Debug.Log("Gahoot");
+            //Debug.DrawLine(t.localPosition, hit.point, Color.black, 10);
+            normal.y = h.y;
+            normal.x = h.x;
+            t.localPosition = normal;
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
         }
 

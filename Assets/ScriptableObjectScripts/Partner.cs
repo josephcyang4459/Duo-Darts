@@ -13,4 +13,6 @@ public class Partner : ScriptableObject
     public float Intoxication = 0f;
     public float Love = 0f;
     public Sprite[] Expressions;
+
+    public int bias = -1;
 }

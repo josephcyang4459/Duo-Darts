@@ -134,6 +134,7 @@ public class DartGame : MonoBehaviour
         {
             dartimages[i].enabled = true;
             scores[i].text = "";
+            Dart[i].vvvv();
         }
         
         overall -= turnSum;
@@ -151,11 +152,12 @@ public class DartGame : MonoBehaviour
 
         if (currentTurn % 2 == 0)
         {
-    
+            DartC(green);
             playerTurn();
         }
         else
         {
+            DartC(red);
             partnerTurn();
         }    
     }
@@ -168,15 +170,42 @@ public class DartGame : MonoBehaviour
 
     private void DartC(Material m)
     {
-        /*for( int i=0;i<3;i++)
-            Dart[i].*/
+        for (int i = 0; i < 3; i++)
+            Dart[i].m.material = m;
     }
 
+    private void Adjust(Vector3 location, float offset)
+    {
+        
+        location.x += offset;
+        location.y += offset;
+        location.z = -5;
+        aim.ghoot(location);
+    }
     private void partnerTurn()
     {
-        Vector3 location;
+        //Vector3 location;
+        float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) *  ((partners[partnerIndex].Intoxication) / 2);
+        Debug.Log(offset);
         if (overall > 180)
         {
+
+            if (partners[partnerIndex].bias > -1)
+            {
+                if(partners[partnerIndex].bias == 0)
+                {
+
+                    Adjust(bullseye.transform.position, offset);
+                    return;
+                }
+
+                if(partners[partnerIndex].bias == 1)
+                {
+                    Adjust(c[19].colliders[2].target.position, offset);
+                    return;
+                }
+            }
+
             int pick = UnityEngine.Random.Range(17, 19);
 
             int temp = 1;
@@ -192,16 +221,11 @@ public class DartGame : MonoBehaviour
                
             }
 
-            
 
-            location = c[pick].colliders[temp].target.position;
 
-            float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication / 5) / 10), (partners[partnerIndex].Intoxication / 5) / -10);
+            Adjust(c[pick].colliders[temp].target.position, offset); ;
 
-            location.x += offset;
-            location.y += offset;
 
-            aim.ghoot(location);
             return;
 
 
