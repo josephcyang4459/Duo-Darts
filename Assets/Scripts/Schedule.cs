@@ -25,6 +25,7 @@ public class Schedule : MonoBehaviour
     public Canvas LocationCanvas;
     public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
+    
     public void Start()
     {
         setTime(0);

@@ -36,7 +36,7 @@ public class CutsceneHandler : MonoBehaviour
     public void Start()
     {
         
-        tart(cs, 0);
+        //tart(cs, 0);
     }
 
     public void tart(CutScene c, byte b)
@@ -44,6 +44,7 @@ public class CutsceneHandler : MonoBehaviour
         
 
         decideChar(c.defaultCharacter);
+        background(b);
         cs = c;
 
         dialougeCanvas.enabled = true;

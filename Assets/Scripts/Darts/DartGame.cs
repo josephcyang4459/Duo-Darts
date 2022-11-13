@@ -99,10 +99,10 @@ public class DartGame : MonoBehaviour
     public void BeginGame(int partner)
     {
         float Accuracy = ((stats.Skill + stats.Luck) - (stats.Intoxication * 2)) / 100;
+        Debug.Log(Accuracy);
         float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);
         aim.driftSpeed = driftDefault * Stability;
         aim.moveSpeed = (1.35f -((stats.Intoxication / 5) / 10)) * aim.driftSpeed;
-        float Synergy = (partners[partner].Love) + (stats.Charisma / 3);
 
         partnerIndex = partner;
 
@@ -145,7 +145,7 @@ public class DartGame : MonoBehaviour
         
         numberOfDartsThrow = 0;
         currentTurn++;
-        if (numberOfDartsThrow >+ maxTurns)
+        if (currentTurn >= maxTurns)
         {
             lose();
         }
@@ -173,21 +173,35 @@ public class DartGame : MonoBehaviour
         for (int i = 0; i < 3; i++)
             Dart[i].m.material = m;
     }
+    
+    private void gahoot(Vector3 h)
+    {
+        aim.normal.y = h.y;
+        aim.normal.x = h.x;
+        aim.t.position = aim.normal;
+        if (Physics.Raycast(aim.t.position, Vector3.forward, out RaycastHit hit, aim.layer))
+        {
+            
+
+            Debug.Log(aim.t.position);
+            hit.collider.gameObject.GetComponent<BoardCollider>().hit();
+
+        }
+    }
 
     private void Adjust(Vector3 location, float offset)
     {
         
         location.x += offset;
         location.y += offset;
-        location.z = -5;
-        aim.ghoot(location);
+        //location.z = -15;
+        gahoot(location);
     }
     private void partnerTurn()
     {
-        //Vector3 location;
         float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) *  ((partners[partnerIndex].Intoxication) / 2);
         Debug.Log(offset);
-        if (overall > 180)
+        if (overall >= 60)
         {
 
             if (partners[partnerIndex].bias > -1)
@@ -223,13 +237,35 @@ public class DartGame : MonoBehaviour
 
 
 
-            Adjust(c[pick].colliders[temp].target.position, offset); ;
-
+            Adjust(c[pick].colliders[temp].target.position, offset);
 
             return;
-
-
         }
+
+        if (overall >= 50)
+        {
+            Debug.Log("50");
+            Adjust(bullseye.transform.position, offset);
+            return;
+        }
+
+        if (overall > 20)
+        {
+            Debug.Log("30");
+            Adjust(c[6].colliders[2].target.position, offset);
+            return;
+        }
+
+        if (overall <= 20)
+        {
+            Debug.Log("20");
+            Adjust(c[overall-1].colliders[1].target.position, offset);
+            return;
+        }
+
+
+
+
         return;
     }
 
