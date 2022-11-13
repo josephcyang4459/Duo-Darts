@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AttributeUpdate : MonoBehaviour {
+    [SerializeField] private Player Player;
     [SerializeField] private CanvasGroup CanvasGroup;
-    [SerializeField] private RectTransform AttributeTransform;
-    [SerializeField] private GameObject AttributePopUpPosition;
-    [SerializeField] private int FadeSpeed = 1;
-    [SerializeField] private int StayDuration = 1;
+    [SerializeField] private RectTransform AttributePopUp;
+    [SerializeField] private RectTransform OriginalPosition;
+    [SerializeField] private RectTransform PopUpPosition;
+    [SerializeField] private TMP_Text PopUpTextUI;
+    [SerializeField] private float FadeSpeed = 1f;
+    [SerializeField] private float StayDuration = 1f;
     private bool FadeIn = false;
     private bool FadeOut = false;
     private bool InView = false;
@@ -18,7 +20,8 @@ public class AttributeUpdate : MonoBehaviour {
 
     public void Start()
     {
-        transformMuliplier = AttributeTransform.position.y - AttributePopUpPosition.transform.position.y;
+        AttributePopUp.position = OriginalPosition.position;
+        transformMuliplier = PopUpPosition.position.y - OriginalPosition.position.y;
     }
 
     public void ShowUI() {
@@ -30,13 +33,10 @@ public class AttributeUpdate : MonoBehaviour {
     }
 
     private void Update() {
-        Debug.Log("X: " + AttributeTransform.position.x + " | Y: " + AttributeTransform.position.y);
-        //Debug.Log("InViewStartTime: " + InViewStartTime + " | CurrentTime: " + Time.time);
         if(FadeIn)
             if(CanvasGroup.alpha < 1) {
                 CanvasGroup.alpha += Time.deltaTime * FadeSpeed;
-                AttributeTransform.position = Vector3.MoveTowards(AttributeTransform.position, AttributePopUpPosition.transform.position, Time.deltaTime * transformMuliplier);
-                //AttributeTransform.position = new Vector2(AttributeTransform.position.x, AttributeTransform.position.y + Time.deltaTime * 1000);
+                AttributePopUp.position = Vector3.MoveTowards(AttributePopUp.position, PopUpPosition.position, Time.deltaTime * transformMuliplier);
                 if (CanvasGroup.alpha >= 1) {
                     FadeIn = false;
                     InView = true;
@@ -46,12 +46,11 @@ public class AttributeUpdate : MonoBehaviour {
         if (FadeOut)
             if (CanvasGroup.alpha >= 0) {
                 CanvasGroup.alpha -= Time.deltaTime * FadeSpeed;
-                Debug.Log("temp: " + transformMuliplier);
-                AttributeTransform.position = Vector3.MoveTowards(AttributeTransform.position, AttributePopUpPosition.transform.position, Time.deltaTime * transformMuliplier);
-                //AttributeTransform.position = new Vector2(AttributeTransform.position.x, AttributeTransform.position.y - Time.deltaTime * 1000);
+                AttributePopUp.position = Vector3.MoveTowards(AttributePopUp.position, OriginalPosition.position, Time.deltaTime * transformMuliplier);
                 if (CanvasGroup.alpha == 0) {
                     FadeOut = false;
                     InView = false;
+                    PopUpTextUI.text = "";
                 }
             }
 
@@ -59,11 +58,19 @@ public class AttributeUpdate : MonoBehaviour {
             HideUI();
     }
 
-    public void DisplayAttribute() {
+    public void UpdateAttribute(string attribute) {
+        if(FadeIn || FadeOut || InView)
+            return;
 
-    }
+        Debug.Log("Attribute Text: " + attribute);
+        PopUpTextUI.text = attribute + " has been ";
 
-    public void UpdateAttribute() {
+        if(attribute[attribute.Length - 1] == '+')
+            PopUpTextUI.text += "increased";
+        else
+            PopUpTextUI.text += "decreased";
 
+        Player.UpdateAttribute(attribute, 1);
+        ShowUI();
     }
 }
