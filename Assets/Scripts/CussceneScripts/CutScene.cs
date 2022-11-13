@@ -6,6 +6,7 @@ public class CutScene : ScriptableObject
 {
     [SerializeReference]
     public block[] blocks;
+    public string defaultCharacter;
 
 #if UNITY_EDITOR
     public TextAsset aa;
@@ -32,7 +33,7 @@ public class CutScene : ScriptableObject
             {
 
                 case '<':
-                    Dialouge dTemp = new Dialouge();
+                    DialougeBlock dTemp = new DialougeBlock();
                     dTemp.message = overall[i].Substring(1);
                     bl.Add(dTemp);
                     break;
@@ -55,20 +56,30 @@ public class CutScene : ScriptableObject
                             rs.Add(overall[i].Substring(1));
                             i++;
                         }
+                        
                         r0.responses = rs.ToArray();
                         rTemp.responses[j] = r0;
                     }
+                    i--;
                     bl.Add(rTemp);
                     break;
 
                 case '{':
-                    Expression eTemp = new Expression();
+                    ExpressionBlock eTemp = new ExpressionBlock();
                     eTemp.expression = overall[i].Substring(1);
                     bl.Add(eTemp);
 
                     break;
 
+                case '>':
+                    SwapCharacterBlock scb = new SwapCharacterBlock();
+                    scb.character = overall[i].Substring(1);
+                    bl.Add(scb);
+                    break;
+                case '[':
 
+                    Debug.Log("change background");
+                    break;
 
             }
         }
@@ -122,7 +133,7 @@ public class CutScene : ScriptableObject
     }
     public int numbPlus(string s)
     {
-        if (s.IndexOf('+') > 0)
+        if (s.IndexOf('+') <= 0)
             return 0;
 
         return s.LastIndexOf('+') - s.IndexOf('+');
@@ -136,14 +147,16 @@ public class CutScene : ScriptableObject
 public class block
 {
 
-    public virtual void action(cutsceneHandler ch) { }
+    public virtual void action(CutsceneHandler ch) { }
 }
 
-public class Dialouge: block
+public class DialougeBlock: block
 {
+#if UNITY_EDITOR
     public string name  = "Dialouge";
+#endif
     public string message;
-    public override void action(cutsceneHandler ch)
+    public override void action(CutsceneHandler ch)
     {
         ch.dialouge(message);
     }
@@ -151,22 +164,41 @@ public class Dialouge: block
 
 public class Response: block
 {
+#if UNITY_EDITOR
     public string name = "Response";
+#endif
     public responseData[] responses;
 
-    public override void action(cutsceneHandler ch)
+    public override void action(CutsceneHandler ch)
     {
         ch.response(this);
     }
 }
 
-public class Expression : block
+public class ExpressionBlock : block
 {
+#if UNITY_EDITOR
+    public string name = "Expression";
+#endif
     public string expression;
 
-    public override void action(cutsceneHandler ch)
+    public override void action(CutsceneHandler ch)
     {
         ch.changeExpression(expression);
+    }
+
+}
+
+public class SwapCharacterBlock : block
+{
+#if UNITY_EDITOR
+    public string name = "Swap";
+#endif
+    public string character;
+
+    public override void action(CutsceneHandler ch)
+    {
+        ch.changeChar(character);
     }
 
 }
@@ -177,22 +209,4 @@ public class responseData
     public string answer;
     public string[] responses;
     public int adjust;
-}
-
-public class cutsceneHandler
-{
-    public void dialouge(string message)
-    {
-        Debug.Log(message);
-    }
-
-    public void response(Response r)
-    {
-
-    }
-
-    public void changeExpression(string b)
-    {
-
-    }
 }

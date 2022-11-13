@@ -26,11 +26,14 @@ public class AimCone : MonoBehaviour
     {
         wait = new WaitForSeconds(3);
         swap = StartCoroutine(direction());
-        cone.enabled = true;
-        enabled = true;
+       
         normal.x = 0;
         normal.y = 0;
         normal.z = -.2f;
+        t.localPosition = normal;
+        cone.enabled = true;
+        enabled = true;
+
         move.action.Enable();
         move.action.performed += onMove;
         move.action.canceled += off;
@@ -118,7 +121,9 @@ public class AimCone : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Out\a");
+        //Debug.Log("Out\a");
+        if (!cone.enabled)
+            return;
         StopCoroutine(swap);
       
         StartCoroutine(Recover());
