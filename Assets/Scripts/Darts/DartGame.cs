@@ -26,14 +26,13 @@ public class DartGame : MonoBehaviour
 
     public Material flash;
     public Material gone;
-    public DartScript Dart;
+    public DartScript[] Dart;
     public Image[] dartimages;
     public TMP_Text[] scores;
     public Canvas dartCanvas;
 
     public Material green;
     public Material red;
-    public MeshRenderer mr;
 
     public float driftDefault = 1f;
 
@@ -168,6 +167,12 @@ public class DartGame : MonoBehaviour
         aim.begin();
     }
 
+    private void DartC(Material m)
+    {
+        for( int i=0;i<3;i++)
+            Dart[i].
+    }
+
     private void partnerTurn()
     {
         Vector3 location;
@@ -177,12 +182,12 @@ public class DartGame : MonoBehaviour
 
             int temp = 1;
 
-            if (partners[partnerIndex].Composure > 5)
+            if (partners[partnerIndex].Composure >= 5)
             {
                 temp = 0;
             }
 
-            if (partners[partnerIndex].Composure > 10)
+            if (partners[partnerIndex].Composure >= 10)
             {
                 temp = 2;
                
@@ -215,6 +220,7 @@ public class DartGame : MonoBehaviour
 
     public void check(byte b)
     {
+        Debug.Log("check");
         if (overall - turnSum < 0)
         {
             turnSum = 0;
