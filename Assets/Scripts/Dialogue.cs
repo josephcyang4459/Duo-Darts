@@ -6,11 +6,7 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour {
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private TypeWriterEffect Script;
-
-    void Start() {
-        Script.Run("This is a test. Hope it works.", textLabel);
-    }
+    public TypeWriterEffect Script;
 
     public void WriteDialogue(string String) {
         Script.Run(String, textLabel);

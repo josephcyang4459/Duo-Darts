@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class DartGame : MonoBehaviour
 {
@@ -17,17 +18,21 @@ public class DartGame : MonoBehaviour
     public byte maxTurns;
     public TMP_Text overallScore;
     public TMP_Text turnScore;
-    public WaitForSeconds k;
+    public WaitForSeconds k = new WaitForSeconds(3);
 
     public Material flash;
     public Material gone;
+    public DartScript Dart;
+    public Image[] dartimages;
+    public TMP_Text[] scores;
+    public Canvas dartCanvas;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
     public bool reset;
     public GameObject g;
     public GameObject slice;
-
+   
     public void OnValidate()
     {
         if (reset)
@@ -41,7 +46,8 @@ public class DartGame : MonoBehaviour
                 for(int j = 0; j < 4; j++)
                 {
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().g = this;
+                    obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
+                    obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
                 }
             }
             reset = false;
@@ -52,12 +58,13 @@ public class DartGame : MonoBehaviour
 
     public void Start()
     {
-        k = new WaitForSeconds(3);
+        
         BeginGame();
     }
 
     public void BeginGame()
     {
+        dartCanvas.enabled = true;
         numberOfDartsThrow = 0;
         currentTurn = 0;
         turnSum = 0;
@@ -68,21 +75,31 @@ public class DartGame : MonoBehaviour
 
     public void lose()
     {
-
+        Debug.Log("lose");
+        dartCanvas.enabled = false;
     }
 
     public void win()
     {
-
+        Debug.Log("win");
+        dartCanvas.enabled = false;
     }
 
     public void switchTurn()
     {
         Debug.Log("swap");
-        turnSum = 0;
+        for( int i = 0; i < 3; i++)
+        {
+            dartimages[i].enabled = true;
+            scores[i].text = "";
+        }
+        
         overall -= turnSum;
+        turnSum = 0;
         turnScore.text = turnSum.ToString();
-        overallScore.tag = overall.ToString();
+        overallScore.text = overall.ToString();
+
+        
         numberOfDartsThrow = 0;
         currentTurn++;
         if (numberOfDartsThrow >+ maxTurns)
@@ -111,41 +128,48 @@ public class DartGame : MonoBehaviour
         playerTurn();
     }
 
-    public void gainPoints(byte b)
+    public void AddPoints(byte b)
     {
-        Debug.Log(b);
-        turnSum -= b;
+        turnSum += b;
         turnScore.text = turnSum.ToString();
-        if (overall - turnSum < 0)
-        {
-            Debug.Log("BUST");
-            switchTurn();
-
-        }
-
-        if(overall - turnSum == 0)
-        {
-            win();
-        }
-
-        numberOfDartsThrow++;
-        StartCoroutine(wait());
+        scores[numberOfDartsThrow].text = b.ToString();
+        dartimages[numberOfDartsThrow].enabled = false;
     }
 
-    public IEnumerator wait()
+    public void check(byte b)
     {
-        
-        yield return k;
-        if (numberOfDartsThrow > 3)
+        if (overall - turnSum < 0)
+        {
+            turnSum = 0;
+            Debug.Log("BUST");
+            switchTurn();
+            return;
+        }
+
+        if (overall - turnSum == 0)
+        {
+            win();
+            return;
+        }
+
+      
+        numberOfDartsThrow++;
+
+        if (numberOfDartsThrow >= 3)
         {
             switchTurn();
+            return;
         }
         else
            if (currentTurn % 2 == 0)
         {
             playerTurn();
+            return;
         }
         else
+        {
             partnerTurn();
+            return;
+        }
     }
 }

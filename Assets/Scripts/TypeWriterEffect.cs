@@ -8,12 +8,26 @@ public class TypeWriterEffect : MonoBehaviour {
     [SerializeField] private bool UseCustomSpeed;
     [SerializeField] private float CustomWriteSpeed = 10f;
     [SerializeField] private Slider TextSpeedSlider;
+    public TMP_Text textlable;
+    public string ttt;
+    public Coroutine typer;
 
     public void Run(string TextToType, TMP_Text textLabel) {
-        StartCoroutine(TypeText(TextToType, textLabel));
+        typer = StartCoroutine(TypeText(TextToType, textLabel));
+    }
+
+    public void Stop()
+    {
+        if (typer != null)
+            StopCoroutine(typer);
+        typer = null;
+        textlable.text = ttt;
+
     }
 
     private IEnumerator TypeText(string TextToType, TMP_Text textLabel) {
+        textlable = textLabel;
+        ttt = TextToType;
         float t = 0;
         int charIndex = 0;
 
@@ -34,5 +48,6 @@ public class TypeWriterEffect : MonoBehaviour {
 
             yield return null;
         }
+        typer = null;
     }
 }
