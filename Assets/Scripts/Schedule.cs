@@ -16,14 +16,16 @@ public class Schedule : MonoBehaviour
     public CutsceneHandler c;
 
     public TMP_Text LocationName;
-    public Canvas list;
-    public Button[] bs;
+    public Canvas EventListCanvas;
+    public Button[] EventButtons;
     public TMP_Text[] btnText;
+    public Sprite[] LocationSprites;
 
     public GameObject ListCanvasBack;
     public Canvas LocationCanvas;
     public GameObject LocationFirstButton;
-
+    public Image SelectedLocationImage;
+    
     public void Start()
     {
         setTime(0);
@@ -37,8 +39,8 @@ public class Schedule : MonoBehaviour
         timeM(minutes);
         for(int i = 0; i < locals.Length; i++)
         {
-            locals[i].useing = 0;
-            locals[i].s.Clear();
+            locals[i].EventButtons = 0;
+            locals[i].Events.Clear();
         }
 
         for (int i = 0; i < available.Length; i++)
@@ -49,8 +51,8 @@ public class Schedule : MonoBehaviour
             if (b < 255)
             {
                
-                locals[b].s.Add(available[i]);
-                locals[b].useing++;
+                locals[b].Events.Add(available[i]);
+                locals[b].EventButtons++;
             }
         }
 
@@ -73,34 +75,38 @@ public class Schedule : MonoBehaviour
 
     public void selectLocation(int b)
     {
-        LocationName.text = locals[b].name;
-        for (int j = 0; j < bs.Length; j++)
+        LocationName.text = locals[b].Name;
+        Debug.Log(b);
+        Debug.Log(LocationSprites[b].name);
+        SelectedLocationImage.sprite = LocationSprites[b];
+
+        for (int j = 0; j < EventButtons.Length; j++)
         {
-            if (j < locals[b].useing)
+            if (j < locals[b].EventButtons)
             {
-                btnText[j].text = locals[b].s[j].cutScene.defaultCharacter;
-                bs[j].gameObject.SetActive(true);
+                btnText[j].text = locals[b].Events[j].cutScene.defaultCharacter;
+                EventButtons[j].gameObject.SetActive(true);
             }
-            else if (bs[j].gameObject.activeSelf)
-                bs[j].gameObject.SetActive(false);
+            else if (EventButtons[j].gameObject.activeSelf)
+                EventButtons[j].gameObject.SetActive(false);
             else
                 break;
         }
         location = (byte)b;
         LocationCanvas.enabled = false;
-        list.enabled = true;
+        EventListCanvas.enabled = true;
         UI_Helper.SetSelectedUIElement(ListCanvasBack);
     }
 
     public void selectEvent(int eve)
     {
-        list.enabled = false;
-        locals[location].s[eve].go(c, location);
+        EventListCanvas.enabled = false;
+        locals[location].Events[eve].go(c, location);
     }
 
     public void back()
     {
-        list.enabled = false;
+        EventListCanvas.enabled = false;
         LocationCanvas.enabled = true;
 
         UI_Helper.SetSelectedUIElement(LocationFirstButton);
@@ -161,9 +167,9 @@ public class Schedule : MonoBehaviour
 public class Location
 {
 #if UNITY_EDITOR
-    public string name;
+    public string Name;
         #endif
-    public byte useing = 0;
+    public byte EventButtons = 0;
   
-    public List<EventStart> s = new();
+    public List<EventStart> Events = new();
 }

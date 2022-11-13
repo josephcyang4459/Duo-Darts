@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
-{
+public class PauseMenu : MonoBehaviour {
     [Header("What key triggers the menu to pop-up?")]
     public KeyCode key;
 
@@ -16,44 +15,41 @@ public class PauseMenu : MonoBehaviour
 
     bool paused = false;
 
-    void Start()
-    {
-        pauseScreen.SetActive(false);
-        Time.timeScale = 1;
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(key))
-        {
+    void Update() {
+        Debug.Log("Paused: " + paused);
+        Debug.Log("Pause Screen Activity: " + pauseScreen.activeSelf);
+        if (Input.GetKeyDown(key)) {
             paused = !paused;
             pause(paused);
         }
     }
 
-    void pause(bool p)
-    {
-        if (p)  // pauses
-        {
-            if (pauseScreen) pauseScreen.SetActive(true);
-            if (timeStop) Time.timeScale = 0;
+    void pause(bool p) {
+        if (p) {  // pauses
+            if (pauseScreen) {
+                pauseScreen.SetActive(true);
+                Debug.Log("Set Pause Screen to Active");
+            }
+                
+            if (timeStop)
+                Time.timeScale = 0;
         }
-        else    // upauses
-        {
-            if (pauseScreen) pauseScreen.SetActive(false);
-            if (timeStop) Time.timeScale = 1;
+        else {   // upauses
+            if (pauseScreen)
+                pauseScreen.SetActive(false);
+            Debug.Log("Set Pause Screen to Inactive");
+            if (timeStop)
+                Time.timeScale = 1;
         }
     }
 
     // for a UI button
-    public void pauseButton()
-    {
+    public void pauseButton() {
         paused = !paused;
         pause(paused);
     }
 
-    public void ReturnToMainMenu()
-    {
+    public void ReturnToMainMenu() {
         SceneManager.LoadScene(0);
     }
 }
