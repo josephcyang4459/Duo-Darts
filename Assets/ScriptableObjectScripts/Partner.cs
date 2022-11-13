@@ -13,6 +13,7 @@ public class Partner : ScriptableObject {
     public float Love = 0f;
     public RelatedCutScene[] RelatedCutScenes;
     public Sprite[] Expressions;
+    public int bias = -1;
 }
 
 public class RelatedCutScene {
