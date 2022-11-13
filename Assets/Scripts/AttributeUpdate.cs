@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AttributeUpdate : MonoBehaviour {
+    [SerializeField] private Player Player;
     [SerializeField] private CanvasGroup CanvasGroup;
     [SerializeField] private RectTransform AttributePopUp;
     [SerializeField] private RectTransform OriginalPosition;
     [SerializeField] private RectTransform PopUpPosition;
+    [SerializeField] private TMP_Text PopUpTextUI;
     [SerializeField] private float FadeSpeed = 1f;
     [SerializeField] private float StayDuration = 1f;
     private bool FadeIn = false;
@@ -20,7 +21,6 @@ public class AttributeUpdate : MonoBehaviour {
     public void Start()
     {
         AttributePopUp.position = OriginalPosition.position;
-        //transformMuliplier = AttributePopUp.position.y + PopUpPosition.position.y;
         transformMuliplier = PopUpPosition.position.y - OriginalPosition.position.y;
     }
 
@@ -33,9 +33,6 @@ public class AttributeUpdate : MonoBehaviour {
     }
 
     private void Update() {
-        Debug.Log("X: " + AttributePopUp.position.x + " | Y: " + AttributePopUp.position.y);
-        Debug.Log("Transform Multiplier: " + transformMuliplier);
-        //Debug.Log("InViewStartTime: " + InViewStartTime + " | CurrentTime: " + Time.time);
         if(FadeIn)
             if(CanvasGroup.alpha < 1) {
                 CanvasGroup.alpha += Time.deltaTime * FadeSpeed;
@@ -53,6 +50,7 @@ public class AttributeUpdate : MonoBehaviour {
                 if (CanvasGroup.alpha == 0) {
                     FadeOut = false;
                     InView = false;
+                    PopUpTextUI.text = "";
                 }
             }
 
@@ -60,7 +58,19 @@ public class AttributeUpdate : MonoBehaviour {
             HideUI();
     }
 
-    public void UpdateAttribute() {
+    public void UpdateAttribute(string attribute) {
+        if(FadeIn || FadeOut || InView)
+            return;
 
+        Debug.Log("Attribute Text: " + attribute);
+        PopUpTextUI.text = attribute + " has been ";
+
+        if(attribute[attribute.Length - 1] == '+')
+            PopUpTextUI.text += "increased";
+        else
+            PopUpTextUI.text += "decreased";
+
+        Player.UpdateAttribute(attribute, 1);
+        ShowUI();
     }
 }
