@@ -20,7 +20,7 @@
 	$No I’m good.
 		&Sounds good.
 		&Anyways.
-		&*Before he can continue his previous thought another customer calls him over.
+		&*Before he can continue his previous thought another customer calls him over.*
 		&Excuse me.
 >Faye
 <*Faye grabs your arm with one hand and grabs her drink with the other. Leading you back to her lounge booth.*
@@ -45,3 +45,4 @@
 <I love this game too much.
 <Thanks for getting me away from that idiot by the way.
 <*You spend some time with Faye in her booth.*
+

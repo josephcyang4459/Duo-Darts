@@ -13,102 +13,102 @@ MonoBehaviour:
   m_Name: Jess_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563188
-  - rid: 3685628149437563189
-  - rid: 3685628149437563190
-  - rid: 3685628149437563191
-  - rid: 3685628149437563192
-  - rid: 3685628149437563193
-  - rid: 3685628149437563194
-  - rid: 3685628149437563195
-  - rid: 3685628149437563196
-  - rid: 3685628149437563197
-  - rid: 3685628149437563198
-  - rid: 3685628149437563199
-  - rid: 3685628149437563200
-  - rid: 3685628149437563201
-  - rid: 3685628149437563202
-  - rid: 3685628149437563203
+  - rid: 4049961236948058399
+  - rid: 4049961236948058400
+  - rid: 4049961236948058401
+  - rid: 4049961236948058402
+  - rid: 4049961236948058403
+  - rid: 4049961236948058404
+  - rid: 4049961236948058405
+  - rid: 4049961236948058406
+  - rid: 4049961236948058407
+  - rid: 4049961236948058408
+  - rid: 4049961236948058409
+  - rid: 4049961236948058410
+  - rid: 4049961236948058411
+  - rid: 4049961236948058412
+  - rid: 4049961236948058413
+  - rid: 4049961236948058414
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: a2feeec8aefe0e546aad65ee23ca86d4, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563188
+    - rid: 4049961236948058399
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*You see a beautiful woman dancing.*\r"
-    - rid: 3685628149437563189
+        message: '*You see a beautiful woman dancing.*'
+    - rid: 4049961236948058400
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*Your eyes meet briefly and she walks over to you shortly after.*\r"
-    - rid: 3685628149437563190
+        message: '*Your eyes meet briefly and she walks over to you shortly after.*'
+    - rid: 4049961236948058401
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Is there something you want?\r"
-    - rid: 3685628149437563191
+        message: Is there something you want?
+    - rid: 4049961236948058402
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
-        - answer: "You.\r"
+        - answer: You.
           responses:
-          - "What a desperate thing for a professional to say.\r"
+          - What a desperate thing for a professional to say.
           adjust: 0
         - answer: Nothing in particular.
           responses:
-          - "My mistake then.\r"
+          - My mistake then.
           adjust: 3
         - answer: ...
           responses:
-          - "You are quite odd.\r"
+          - You are quite odd.
           adjust: 1
-    - rid: 3685628149437563192
+    - rid: 4049961236948058403
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I just came to ask you to stop staring.\r"
-    - rid: 3685628149437563193
+        message: I just came to ask you to stop staring.
+    - rid: 4049961236948058404
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "It's off putting.\r"
-    - rid: 3685628149437563194
+        message: It's off putting.
+    - rid: 4049961236948058405
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*She begins to return to her dancing, but stops and returns to
-          you.*\r"
-    - rid: 3685628149437563195
+        message: '*She begins to return to her dancing, but stops and returns to
+          you.*'
+    - rid: 4049961236948058406
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I need a dance partner.\r"
-    - rid: 3685628149437563196
+        message: I need a dance partner.
+    - rid: 4049961236948058407
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*She waits for a moment.*\r"
-    - rid: 3685628149437563197
+        message: '*She waits for a moment.*'
+    - rid: 4049961236948058408
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Well...\r"
-    - rid: 3685628149437563198
+        message: Well...
+    - rid: 4049961236948058409
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Aren't you going to ask me to dance?\r"
-    - rid: 3685628149437563199
+        message: Aren't you going to ask me to dance?
+    - rid: 4049961236948058410
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*You take her onto the dance floor and dance with her.\r"
-    - rid: 3685628149437563200
+        message: '*You take her onto the dance floor and dance with her.'
+    - rid: 4049961236948058411
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Hey, you're pretty good at this.\r"
-    - rid: 3685628149437563201
+        message: Hey, you're pretty good at this.
+    - rid: 4049961236948058412
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I'm Jessica Fletcher.\r"
-    - rid: 3685628149437563202
+        message: I'm Jessica Fletcher.
+    - rid: 4049961236948058413
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "And I asked you to stop staring...\r"
-    - rid: 3685628149437563203
+        message: And I asked you to stop staring...
+    - rid: 4049961236948058414
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "*You and Jessica dance for a while.*\r"
+        message: '*You and Jessica dance for a while.*'

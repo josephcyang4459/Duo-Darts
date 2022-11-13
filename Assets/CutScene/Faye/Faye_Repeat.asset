@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3927831878865518690
-  - rid: 3927831878865518691
-  - rid: 3927831878865518692
-  - rid: 3927831878865518693
+  - rid: 4049961236948058391
+  - rid: 4049961236948058392
+  - rid: 4049961236948058393
+  - rid: 4049961236948058394
   defaultCharacter: Faye
   aa: {fileID: 4900000, guid: 30452359fab07d14ca0c144ffac8c0e0, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3927831878865518690
+    - rid: 4049961236948058391
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You go to Faye''s booth.'
-    - rid: 3927831878865518691
+        message: '*You go to Faye''s booth.*'
+    - rid: 4049961236948058392
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey it's you.
-    - rid: 3927831878865518692
+    - rid: 4049961236948058393
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Sit, lets talk for a while.
-    - rid: 3927831878865518693
+        message: Lets talk for a while.
+    - rid: 4049961236948058394
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time with Faye. She seems relieved.*'
+        message: '*You spend time with Faye. She seems relieved.* (++)'

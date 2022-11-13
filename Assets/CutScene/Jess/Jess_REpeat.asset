@@ -13,33 +13,30 @@ MonoBehaviour:
   m_Name: Jess_REpeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563122
-  - rid: 3685628149437563123
-  - rid: 3685628149437563124
-  - rid: 3685628149437563125
+  - rid: 4049961236948058518
+  - rid: 4049961236948058519
+  - rid: 4049961236948058520
+  - rid: 4049961236948058521
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: 36207442074f9c441abebb8ec35e2876, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563122
+    - rid: 4049961236948058518
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: '*You sit next to Jessica and strike up a conversation.*'
-    - rid: 3685628149437563123
+    - rid: 4049961236948058519
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I suppose it's nice to see you again.
-    - rid: 3685628149437563124
+    - rid: 4049961236948058520
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: You have something interesting to say?
-    - rid: 3685628149437563125
+    - rid: 4049961236948058521
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
-        message: '*You spend time talking with Jessica. She seems appreciative.*'
+        message: '*You spend time talking with Jessica. She seems appreciative.*
+          (++)'

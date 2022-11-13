@@ -13,48 +13,44 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437562902
-  - rid: 3685628149437562903
-  - rid: 3685628149437562904
-  - rid: 3685628149437562905
-  - rid: 3685628149437562906
-  - rid: 3685628149437562907
+  - rid: 4049961236948058546
+  - rid: 4049961236948058547
+  - rid: 4049961236948058548
+  - rid: 4049961236948058549
+  - rid: 4049961236948058550
+  - rid: 4049961236948058551
+  - rid: 4049961236948058552
+  - rid: 4049961236948058553
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: f77453494f53f914b9f47620c8fcb392, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437562902
+    - rid: 4049961236948058546
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I can't believe I'm giving you a chance.
-    - rid: 3685628149437562903
+    - rid: 4049961236948058547
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Remember, I'm just doing this to see if you really are nobody.
-    - rid: 3685628149437562904
+    - rid: 4049961236948058548
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Nothing more and nothing less.
-    - rid: 3685628149437562905
+    - rid: 4049961236948058549
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: And you better hold up your end of the game.
-    - rid: 3685628149437562906
+    - rid: 4049961236948058550
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Not that I would truly need your points. I could check out alone
-          if only they'd let me.
-    - rid: 3685628149437562907
+          if they'd let me.
+    - rid: 4049961236948058551
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: Cocky much?
           responses:
@@ -66,6 +62,14 @@ MonoBehaviour:
           adjust: 2
         - answer: 'Underestimating me? '
           responses:
-          - You know...
+          - '*Chad rolls his eyes dismissively.*'
           - Just throw your darts.
           adjust: 3
+    - rid: 4049961236948058552
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're up.
+    - rid: 4049961236948058553
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Lets see what you got.

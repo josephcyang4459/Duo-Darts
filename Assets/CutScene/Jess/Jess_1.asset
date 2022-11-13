@@ -13,52 +13,46 @@ MonoBehaviour:
   m_Name: Jess_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563050
-  - rid: 3685628149437563051
-  - rid: 3685628149437563052
-  - rid: 3685628149437563053
-  - rid: 3685628149437563054
-  - rid: 3685628149437563055
-  - rid: 3685628149437563056
-  - rid: 3685628149437563057
+  - rid: 4049961236948058415
+  - rid: 4049961236948058416
+  - rid: 4049961236948058417
+  - rid: 4049961236948058418
+  - rid: 4049961236948058419
+  - rid: 4049961236948058420
+  - rid: 4049961236948058421
+  - rid: 4049961236948058422
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: c8a0d5de1c38319498227d78a8db7a42, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563050
+    - rid: 4049961236948058415
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I wouldn't typically partner up with someone I don't know rather
           well.
-    - rid: 3685628149437563051
+    - rid: 4049961236948058416
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: However, with my skills I don't mind the possibility of losing a
           few points.
-    - rid: 3685628149437563052
+    - rid: 4049961236948058417
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Even if you missed the board with most of your throws I still think
           we could win with me.
-    - rid: 3685628149437563053
+    - rid: 4049961236948058418
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: What about you?
-    - rid: 3685628149437563054
+    - rid: 4049961236948058419
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: Will you hold up your end of the game?
-    - rid: 3685628149437563055
+    - rid: 4049961236948058420
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Response
         responses:
         - answer: 'I don''t miss my mark. '
           responses:
@@ -73,14 +67,12 @@ MonoBehaviour:
           - '*She chuckles*.'
           - You will.
           adjust: 1
-    - rid: 3685628149437563056
+    - rid: 4049961236948058421
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I'll let you go first.
-    - rid: 3685628149437563057
+    - rid: 4049961236948058422
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Dialouge
         message: I would very much appreciate it if you didn't make me work too hard
           to win.

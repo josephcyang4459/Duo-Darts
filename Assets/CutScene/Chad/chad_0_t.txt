@@ -1,3 +1,4 @@
+<*A man stops you and gets a clear look at your face.*
 <Haven’t met you before. Who are you again?
 <I can’t remember meeting anyone with your name.
 <You must be nobody then... For now at least.
@@ -12,4 +13,4 @@
 <Well then. I suppose youve piqued my interest for better or worse. 
 <You should already know my name, but I’m Chadrick Basedman.
 <Let me ask you a few more questions.
-<You spend a while talking with Chad.
+<*You spend a while talking with Chad.*

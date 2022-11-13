@@ -12,7 +12,7 @@
 <*She vomits into the toilet.*
 <This is your fault you know.
 <Buying me drinks all night long.
-	$I didn’t force you to drink them. (++)
+	$I didn’t force you to drink them. (+)
 		&Semantics are fallacious you know.
  $I’m taking responsibility. (++)
 	&I’d say you’re doing the bare minimum by being here.
@@ -23,3 +23,4 @@ $You’re not enjoying this? (+++)
 <Just stay here for a little while longer.
 <My hair won’t hold itself.
 <*You stay with Jessica for a while until she feels better.*
+
