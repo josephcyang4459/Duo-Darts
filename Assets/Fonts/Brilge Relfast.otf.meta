@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d964e3820c4e614d9a05fc15c669cd2
+guid: 2d396fe82bb92e04f90016fbdda67b3e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Degan
+  - Brilge Relfast
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

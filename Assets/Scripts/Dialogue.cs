@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 public class Dialogue : MonoBehaviour {
-    [SerializeField] private TMP_Text textLabel;
+    public TMP_Text textLabel;
     public TypeWriterEffect Script;
 
     public void WriteDialogue(string String) {

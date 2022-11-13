@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class CutsceneHandler : MonoBehaviour
     public TMP_Text[] responses;
     public byte characterIndex;
 
+    public Partner[] partners;
+    public Image character;
+    public TMP_Text characterName;
+
     public void Start()
     {
         tart(cs);
@@ -28,7 +33,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void tart(CutScene c)
     {
-
+        change(c.defaultCharacter);
         cs = c;
 
         dialougeCanvas.enabled = true;
@@ -122,30 +127,39 @@ public class CutsceneHandler : MonoBehaviour
 
     }
 
+    private void partner(int i)
+    {
+        character.sprite = partners[i].Expressions[0];
+        characterName.text = partners[i].Name;
+        characterName.font = partners[i].Font;
+        dh.textLabel.font = partners[i].Font;
+
+    }
     private void change(string s)
     {
         switch (s.ToLower())
         {
             case "faye":
-
+                partner(0);
                 break;
             case "chad":
+                partner(0);
                 break;
             case "jess":
+                partner(0);
                 break;
             case "elaine":
+                partner(0);
 
                 break;
 
             case "owner":
+                partner(0);
 
                 break;
             default:
-
+                characterName.text = s;
                 break;
-
-
-
         }
 
 

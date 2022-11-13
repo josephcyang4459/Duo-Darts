@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee168f8b04926147a8bc4738cfabf4f, type: 3}
+  m_Name: Chad
+  m_EditorClassIdentifier: 
+  Name: Chad
+  Font: {fileID: 11400000, guid: 034792957c4d43946bd88090e9d9fdf8, type: 2}
+  Charisma: 1
+  Intoxication: 1
+  Love: 1
+  Expressions:
+  - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
+  - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
+  - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
+  - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
+  - {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
