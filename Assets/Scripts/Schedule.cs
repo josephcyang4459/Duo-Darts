@@ -30,6 +30,9 @@ public class Schedule : MonoBehaviour
 
     public void setTime(int minutes)
     {
+        LocationCanvas.enabled = true;
+
+        UI_Helper.SetSelectedUIElement(LocationFirstButton);
         timeM(minutes);
         for(int i = 0; i < locals.Length; i++)
         {
