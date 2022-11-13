@@ -173,6 +173,21 @@ public class DartGame : MonoBehaviour
         for (int i = 0; i < 3; i++)
             Dart[i].m.material = m;
     }
+    
+    private void gahoot(Vector3 h)
+    {
+        aim.normal.y = h.y;
+        aim.normal.x = h.x;
+        aim.t.position = aim.normal;
+        if (Physics.Raycast(aim.t.position, Vector3.forward, out RaycastHit hit, aim.layer))
+        {
+            
+
+            Debug.Log(aim.t.position);
+            hit.collider.gameObject.GetComponent<BoardCollider>().hit();
+
+        }
+    }
 
     private void Adjust(Vector3 location, float offset)
     {
@@ -180,7 +195,7 @@ public class DartGame : MonoBehaviour
         location.x += offset;
         location.y += offset;
         //location.z = -15;
-        aim.ghoot(location);
+        gahoot(location);
     }
     private void partnerTurn()
     {
@@ -234,7 +249,7 @@ public class DartGame : MonoBehaviour
             return;
         }
 
-        if (overall > 30)
+        if (overall > 20)
         {
             Debug.Log("30");
             Adjust(c[6].colliders[2].target.position, offset);
