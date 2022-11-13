@@ -12,29 +12,31 @@ public class DartScript : MonoBehaviour
     public byte points;
     public DartGame d;
     public MeshRenderer m;
+
     public void go(Vector3 v, byte b)
     {
         points = b;
-        thi.localPosition = new Vector3(v.x, v.y, -15);
+        thi.position = new Vector3(v.x, v.y, -15);
         destination.x = v.x;
         destination.y = v.y;
         speed = maxSpeed;
-        this.enabled = true;
+        enabled = true;
     }
 
     public void vvvv()
     {
-        thi.localPosition = new Vector3(0, 0, -15);
+        thi.position = new Vector3(0, 0, -15);
         speed = maxSpeed;
     }
 
     public void Update()
     {
-        thi.localPosition = Vector3.MoveTowards(thi.localPosition, destination, speed*Time.deltaTime);
-        speed = maxSpeed * curve.Evaluate(thi.localPosition.z);
-        if (thi.localPosition == destination)
+        thi.position = Vector3.MoveTowards(thi.position, destination, speed*Time.deltaTime);
+        speed = maxSpeed * curve.Evaluate(thi.position.z);
+        if (thi.position == destination)
         {
             enabled = false;
+            Debug.Log("eee");
             StartCoroutine(wiat());
         }
     }

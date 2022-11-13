@@ -23,6 +23,7 @@ public class Schedule : MonoBehaviour
     public GameObject ListCanvasBack;
     public Canvas LocationCanvas;
     public GameObject LocationFirstButton;
+
     public void Start()
     {
         setTime(0);
