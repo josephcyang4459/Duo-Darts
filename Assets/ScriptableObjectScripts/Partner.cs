@@ -20,7 +20,7 @@ public class Partner : ScriptableObject {
     public Sprite TextBox;
     public Sprite textLineTHing;
 
-    public int CheckLoveCutScene() {
+    public int GetCutScene() {
         for(int i = 0; i < RelatedCutScenes.Length; i++)
             if(!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
                 return i;

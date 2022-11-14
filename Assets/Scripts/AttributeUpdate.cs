@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -57,7 +58,7 @@ public class AttributeUpdate : MonoBehaviour {
             HideUI();
     }
 
-    public void UpdateAttribute(string attribute) {
+    public void UpdateAttribute(string attribute, int value) {
         if(FadeIn || FadeOut || InView)
             return;
 
@@ -65,9 +66,22 @@ public class AttributeUpdate : MonoBehaviour {
         PopUpTextUI.text += char.ToUpper(attribute[0]);
         PopUpTextUI.text += attribute.Substring(1, attribute.Length - 2) + " has been ";
 
-        PopUpTextUI.text += (attribute[attribute.Length - 1] == '+') ? "increased" : "decreased";
+        PopUpTextUI.text += (value > 0) ? "increased by " : "decreased by ";
+        PopUpTextUI.text += Mathf.Abs(value);
 
-        Player.UpdateAttribute(attribute, 1);
+        Player.UpdateAttribute(attribute, value);
         ShowUI();
+    }
+
+    public void UpdateAttributeButton(string String) {
+        string AttributeString = String.Substring(1, String.Length - 1);
+        char c = String[String.Length - 1];
+        int AttributeValue = int.Parse(c.ToString());
+
+        if (String[0].Equals('+'))
+            UpdateAttribute(AttributeString, AttributeValue);
+        else
+            UpdateAttribute(AttributeString, AttributeValue * -1);
+
     }
 }
