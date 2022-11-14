@@ -13,38 +13,38 @@ MonoBehaviour:
   m_Name: Elain_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058127
-  - rid: 4049961236948058128
-  - rid: 4049961236948058129
-  - rid: 4049961236948058130
-  - rid: 4049961236948058131
-  - rid: 4049961236948058132
-  - rid: 4049961236948058133
-  - rid: 4049961236948058134
+  - rid: 4049961239326752859
+  - rid: 4049961239326752860
+  - rid: 4049961239326752861
+  - rid: 4049961239326752862
+  - rid: 4049961239326752863
+  - rid: 4049961239326752864
+  - rid: 4049961239326752865
+  - rid: 4049961239326752866
   defaultCharacter: Elaine
   aa: {fileID: 4900000, guid: 841465ae52e7117498257276a0b19c67, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058127
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752859
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Elaine holds a trio of darts in her hands and appears to give
-          a brief prayer before speaking to you.*'
-    - rid: 4049961236948058128
+        thoughtMessage: Elaine holds a trio of darts in her hands and appears to
+          give a brief prayer before speaking to you.
+    - rid: 4049961239326752860
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Alright dog. My prayers to myself are finished.
-    - rid: 4049961236948058129
+    - rid: 4049961239326752861
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: ' Now try and fetch me some points this game.'
-    - rid: 4049961236948058130
+    - rid: 4049961239326752862
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Think you can do that?
-    - rid: 4049961236948058131
+    - rid: 4049961239326752863
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -61,16 +61,16 @@ MonoBehaviour:
           - '*Elaine raises an eyebrow.*'
           - You have no shame do you.
           adjust: 3
-    - rid: 4049961236948058132
+    - rid: 4049961239326752864
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Alright you first.
-    - rid: 4049961236948058133
+    - rid: 4049961239326752865
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I'll need time to stop the hysterical laughter your dartplay
           will cause me too.
-    - rid: 4049961236948058134
+    - rid: 4049961239326752866
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So be ready for a long game.

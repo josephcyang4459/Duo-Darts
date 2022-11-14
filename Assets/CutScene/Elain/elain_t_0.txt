@@ -1,8 +1,8 @@
 <*You sit next to a woman invested in a trio of darts sitting in front of her on the table.*
 <I don’t know you. You should leave.
-	$Why?
+	$Why? (+)
 		&Because I can just tell you’re ignorant and annoying.
-	$No (+)
+	$No (++)
 		&Better to be confident and annoying than be a coward and annoying.
 	$... (+++)
 		&Well if you’re gonna be good and keep your mouth shut I’ll let you stay.

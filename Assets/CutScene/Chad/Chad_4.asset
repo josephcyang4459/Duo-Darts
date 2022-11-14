@@ -13,73 +13,73 @@ MonoBehaviour:
   m_Name: Chad_4
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058261
-  - rid: 4049961236948058262
-  - rid: 4049961236948058263
-  - rid: 4049961236948058264
-  - rid: 4049961236948058265
-  - rid: 4049961236948058266
-  - rid: 4049961236948058267
-  - rid: 4049961236948058268
-  - rid: 4049961236948058269
-  - rid: 4049961236948058270
-  - rid: 4049961236948058271
-  - rid: 4049961236948058272
-  - rid: 4049961236948058273
-  - rid: 4049961236948058274
-  - rid: 4049961236948058275
-  - rid: 4049961236948058276
-  - rid: 4049961236948058277
-  - rid: 4049961236948058278
-  - rid: 4049961236948058279
-  - rid: 4049961236948058280
-  - rid: 4049961236948058281
-  - rid: 4049961236948058282
-  - rid: 4049961236948058283
-  - rid: 4049961236948058284
+  - rid: 4049961239326752812
+  - rid: 4049961239326752813
+  - rid: 4049961239326752814
+  - rid: 4049961239326752815
+  - rid: 4049961239326752816
+  - rid: 4049961239326752817
+  - rid: 4049961239326752818
+  - rid: 4049961239326752819
+  - rid: 4049961239326752820
+  - rid: 4049961239326752821
+  - rid: 4049961239326752822
+  - rid: 4049961239326752823
+  - rid: 4049961239326752824
+  - rid: 4049961239326752825
+  - rid: 4049961239326752826
+  - rid: 4049961239326752827
+  - rid: 4049961239326752828
+  - rid: 4049961239326752829
+  - rid: 4049961239326752830
+  - rid: 4049961239326752831
+  - rid: 4049961239326752832
+  - rid: 4049961239326752833
+  - rid: 4049961239326752834
+  - rid: 4049961239326752835
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: 66963f722cbbb8446beaca5bb8cad676, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058261
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752812
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You hear someone vomiting in the stall*'
-    - rid: 4049961236948058262
+        thoughtMessage: You hear someone vomiting in the stall
+    - rid: 4049961239326752813
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh god...
-    - rid: 4049961236948058263
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752814
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*It''s Chad''s voice.*'
-    - rid: 4049961236948058264
+        thoughtMessage: It's Chad's voice.
+    - rid: 4049961239326752815
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's you isn't it?
-    - rid: 4049961236948058265
+    - rid: 4049961239326752816
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't let anyone else into the bathroom.
-    - rid: 4049961236948058266
+    - rid: 4049961239326752817
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I came in here to relax for a minute and the pressure got to me.
-    - rid: 4049961236948058267
+    - rid: 4049961239326752818
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If anyone else finds out about this my reputation will be destroyed.
-    - rid: 4049961236948058268
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752819
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Chad sniffles and spits into the toilet.*'
-    - rid: 4049961236948058269
+        thoughtMessage: Chad sniffles and spits into the toilet.
+    - rid: 4049961239326752820
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't think I can win.
-    - rid: 4049961236948058270
+    - rid: 4049961239326752821
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -98,24 +98,24 @@ MonoBehaviour:
           - Come on.
           - Aren't you going to motivate me?
           adjust: 0
-    - rid: 4049961236948058271
+    - rid: 4049961239326752822
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's no use.
-    - rid: 4049961236948058272
+    - rid: 4049961239326752823
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: No matter what anyone does or says to me I'd still be the one who
           needed someone else.
-    - rid: 4049961236948058273
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752824
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Chad hits the stall wall.*'
-    - rid: 4049961236948058274
+        thoughtMessage: Chad hits the stall wall.
+    - rid: 4049961239326752825
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And that is just unacceptable!
-    - rid: 4049961236948058275
+    - rid: 4049961239326752826
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -133,40 +133,40 @@ MonoBehaviour:
           - No.
           - I can't.
           adjust: 0
-    - rid: 4049961236948058276
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752827
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Chad flushes the toilet.*'
-    - rid: 4049961236948058277
+        thoughtMessage: Chad flushes the toilet.
+    - rid: 4049961239326752828
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: We're at a duo's tournament you know.
-    - rid: 4049961236948058278
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752829
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Chad emerges from the stall with regained composure.*'
-    - rid: 4049961236948058279
+        thoughtMessage: Chad emerges from the stall with regained composure.
+    - rid: 4049961239326752830
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I need you.
-    - rid: 4049961236948058280
+    - rid: 4049961239326752831
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I'm ok with that if it means I can win.
-    - rid: 4049961236948058281
+    - rid: 4049961239326752832
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Please.
-    - rid: 4049961236948058282
+    - rid: 4049961239326752833
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me be your partner for the final round.
-    - rid: 4049961236948058283
+    - rid: 4049961239326752834
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You don't have to answer right now, but thank you for being here
           either way.
-    - rid: 4049961236948058284
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752835
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Chad walks past you out of the bathroom.*'
+        thoughtMessage: Chad walks past you out of the bathroom.

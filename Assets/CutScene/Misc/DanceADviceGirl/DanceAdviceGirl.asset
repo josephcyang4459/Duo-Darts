@@ -12,10 +12,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
   m_Name: DanceAdviceGirl
   m_EditorClassIdentifier: 
-  blocks: []
+  blocks:
+  - rid: 4049961239326753207
+  - rid: 4049961239326753208
+  - rid: 4049961239326753209
+  - rid: 4049961239326753210
+  - rid: 4049961239326753211
+  - rid: 4049961239326753212
+  - rid: 4049961239326753213
+  - rid: 4049961239326753214
+  - rid: 4049961239326753215
+  - rid: 4049961239326753216
+  - rid: 4049961239326753217
+  - rid: 4049961239326753218
   defaultCharacter: Dance Girl
   aa: {fileID: 4900000, guid: 13e18961ca4ae354498a089a53d5b4bb, type: 3}
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4049961239326753207
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: You approach a young woman dancing rampantly.
+    - rid: 4049961239326753208
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey! You!
+    - rid: 4049961239326753209
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Dance!
+    - rid: 4049961239326753210
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: She grabs your arms and flails you around for a while.
+    - rid: 4049961239326753211
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: Eventually she tires out and walks off to the side of the
+          dance floor with you.
+    - rid: 4049961239326753212
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're incredible!
+    - rid: 4049961239326753213
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Here's some advice!
+    - rid: 4049961239326753214
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: When you're checking out in darts imagine you're operating a cash
+          register!
+    - rid: 4049961239326753215
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It really gives you a powerful perspective!
+    - rid: 4049961239326753216
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways. Goodbye!
+    - rid: 4049961239326753217
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: She leaves you.
+    - rid: 4049961239326753218
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: You feel enlightened by her advice.

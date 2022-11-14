@@ -6,7 +6,7 @@
 <So. Give me a reason to be talking to you right now.
 	$Umm, who are you? (+++)
 		&You are quite something...
-	$I’m the best.
+	$I’m the best.(+)
 		&If only the best wasn’t already sitting in front of you I might’ve believed that.
 	$... (++)
 		&I see. You want your play to prove yourself? I respect that more than you know.

@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: Chad_Drepeat1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058554
-  - rid: 4049961236948058555
-  - rid: 4049961236948058556
-  - rid: 4049961236948058557
+  - rid: 4049961239326752836
+  - rid: 4049961239326752837
+  - rid: 4049961239326752838
+  - rid: 4049961239326752839
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: cd903d95b09cf794386549946baf1c10, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058554
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752836
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You join Chad in people watching.*'
-    - rid: 4049961236948058555
+        thoughtMessage: You join Chad in people watching.
+    - rid: 4049961239326752837
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I may hate dancing, but I do love drinking.
-    - rid: 4049961236948058556
+    - rid: 4049961239326752838
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: "Alright, if you\u2019re paying I\u2019ll have a few."
-    - rid: 4049961236948058557
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752839
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time drinking with Chad.* (+)'
+        thoughtMessage: You spend time drinking with Chad.* (+

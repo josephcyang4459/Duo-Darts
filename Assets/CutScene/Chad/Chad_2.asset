@@ -13,34 +13,34 @@ MonoBehaviour:
   m_Name: Chad_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058533
-  - rid: 4049961236948058534
-  - rid: 4049961236948058535
-  - rid: 4049961236948058536
-  - rid: 4049961236948058537
-  - rid: 4049961236948058538
-  - rid: 4049961236948058539
-  - rid: 4049961236948058540
-  - rid: 4049961236948058541
-  - rid: 4049961236948058542
-  - rid: 4049961236948058543
-  - rid: 4049961236948058544
-  - rid: 4049961236948058545
+  - rid: 4049961239326752787
+  - rid: 4049961239326752788
+  - rid: 4049961239326752789
+  - rid: 4049961239326752790
+  - rid: 4049961239326752791
+  - rid: 4049961239326752792
+  - rid: 4049961239326752793
+  - rid: 4049961239326752794
+  - rid: 4049961239326752795
+  - rid: 4049961239326752796
+  - rid: 4049961239326752797
+  - rid: 4049961239326752798
+  - rid: 4049961239326752799
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: 2c0fcb3546a326b4a8465dd88e0c9de8, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058533
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752787
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You approach Chad watching people dance from the sidelines.*'
-    - rid: 4049961236948058534
+        thoughtMessage: You approach Chad watching people dance from the sidelines.
+    - rid: 4049961239326752788
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Lovely isn't it?
-    - rid: 4049961236948058535
+    - rid: 4049961239326752789
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -59,20 +59,20 @@ MonoBehaviour:
           - '*Chad Chuckles.*'
           - You missed my point.
           adjust: 1
-    - rid: 4049961236948058536
+    - rid: 4049961239326752790
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Even outside of a tournament I'm not a fan of dancing.
-    - rid: 4049961236948058537
+    - rid: 4049961239326752791
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It must just give good players something to do while they wait for
           the final call.
-    - rid: 4049961236948058538
+    - rid: 4049961239326752792
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of which. Do you think you can win this thing?
-    - rid: 4049961236948058539
+    - rid: 4049961239326752793
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -89,28 +89,28 @@ MonoBehaviour:
           responses:
           - I can't tell if your silence is pessimistic or optimistic.
           adjust: 1
-    - rid: 4049961236948058540
+    - rid: 4049961239326752794
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me give you some free advice.
-    - rid: 4049961236948058541
+    - rid: 4049961239326752795
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You'll need some good luck with this crowd. And against me of course.
-    - rid: 4049961236948058542
+    - rid: 4049961239326752796
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I always find myself a bit luckier after taking a second in the
           bathroom to calm down.
-    - rid: 4049961236948058543
+    - rid: 4049961239326752797
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That's my advice.
-    - rid: 4049961236948058544
+    - rid: 4049961239326752798
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways, what do you think of this?
-    - rid: 4049961236948058545
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752799
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You and Chad spend time talking.*'
+        thoughtMessage: You and Chad spend time talking.

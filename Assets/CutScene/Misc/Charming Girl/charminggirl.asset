@@ -13,79 +13,79 @@ MonoBehaviour:
   m_Name: charminggirl
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058632
-  - rid: 4049961236948058633
-  - rid: 4049961236948058634
-  - rid: 4049961236948058635
-  - rid: 4049961236948058636
-  - rid: 4049961236948058637
-  - rid: 4049961236948058638
-  - rid: 4049961236948058639
-  - rid: 4049961236948058640
-  - rid: 4049961236948058641
-  - rid: 4049961236948058642
-  - rid: 4049961236948058643
-  - rid: 4049961236948058644
-  - rid: 4049961236948058645
+  - rid: 4049961239326753182
+  - rid: 4049961239326753183
+  - rid: 4049961239326753184
+  - rid: 4049961239326753185
+  - rid: 4049961239326753186
+  - rid: 4049961239326753187
+  - rid: 4049961239326753188
+  - rid: 4049961239326753189
+  - rid: 4049961239326753190
+  - rid: 4049961239326753191
+  - rid: 4049961239326753192
+  - rid: 4049961239326753193
+  - rid: 4049961239326753194
+  - rid: 4049961239326753195
   defaultCharacter: charminggirl
   aa: {fileID: 4900000, guid: 7600c04ae893eda4d86201de1bbbff19, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058632
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753182
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit next to a clearly drunk woman.*'
-    - rid: 4049961236948058633
+        thoughtMessage: You sit next to a clearly drunk woman.
+    - rid: 4049961239326753183
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey you're my friend.
-    - rid: 4049961236948058634
+    - rid: 4049961239326753184
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey bartender, look, my friend is here.
-    - rid: 4049961236948058635
+    - rid: 4049961239326753185
       type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
       data:
         character: Owner
-    - rid: 4049961236948058636
+    - rid: 4049961239326753186
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sure they are.
-    - rid: 4049961236948058637
+    - rid: 4049961239326753187
       type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
       data:
         character: Girl
-    - rid: 4049961236948058638
+    - rid: 4049961239326753188
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I know it's you.
-    - rid: 4049961236948058639
+    - rid: 4049961239326753189
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You couldn't have come at a better time.
-    - rid: 4049961236948058640
+    - rid: 4049961239326753190
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: The best way to make friends is to say they're your friend you know.
-    - rid: 4049961236948058641
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753191
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She accidentally bumps her nearly empty glass.*'
-    - rid: 4049961236948058642
+        thoughtMessage: She accidentally bumps her nearly empty glass.
+    - rid: 4049961239326753192
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: See. It worked on you. You're my best friend now.
-    - rid: 4049961236948058643
+    - rid: 4049961239326753193
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Ha!
-    - rid: 4049961236948058644
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753194
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*The woman stands up and heads to the bathroom rather suddenly.*'
-    - rid: 4049961236948058645
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: The woman stands up and heads to the bathroom rather suddenly.
+    - rid: 4049961239326753195
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You think about your new friend at the bar for a while.*'
+        thoughtMessage: You think about your new friend at the bar for a while.
