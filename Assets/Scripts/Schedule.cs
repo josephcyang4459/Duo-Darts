@@ -65,7 +65,7 @@ public class Schedule : MonoBehaviour
 
         for (int i = 0; i < partners.Length; i++)
         {
-            int checkLove = partners[i].CheckLoveCutScene();
+            int checkLove = partners[i].GetCutScene();
             if ( checkLove>= 0)
             {
                 byte b = getLocal(partners[i].RelatedCutScenes[checkLove].Location);
