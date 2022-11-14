@@ -33,6 +33,14 @@ public class CutScene : ScriptableObject
             {
 
                 case '<':
+
+                    if (overall[i][1] == '*')
+                    {
+                        Thought ttemp = new Thought();
+                        ttemp.thoughtMessage = overall[i].Substring(2, overall[i].Length - 3);
+                        bl.Add(ttemp);
+                        break;
+                    }
                     DialougeBlock dTemp = new DialougeBlock();
                     dTemp.message = overall[i].Substring(1);
                     bl.Add(dTemp);
@@ -107,6 +115,7 @@ public class CutScene : ScriptableObject
             return true;
         return false;
     }
+
 
     public string sanatize(string s)
     {
@@ -212,6 +221,16 @@ public class SwapBackGround : block
         ch.changeBackground(place);
     }
 
+}
+
+public class Thought: block
+{
+    public string thoughtMessage;
+
+    public override void action(CutsceneHandler ch)
+    {
+        ch.Thought(thoughtMessage);
+    }
 }
 
 

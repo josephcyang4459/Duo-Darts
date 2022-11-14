@@ -8,6 +8,7 @@ using TMPro;
 public class Partner : ScriptableObject {
     public string Name;
     public TMP_FontAsset Font;
+    public float textSize;
     public float Composure = 0f;
     public float Intoxication = 0f;
     public float Love = 0f;
@@ -16,6 +17,8 @@ public class Partner : ScriptableObject {
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
     public int bias = -1;
+    public Sprite TextBox;
+    public Sprite textLineTHing;
 
     public int CheckLoveCutScene() {
         for(int i = 0; i < RelatedCutScenes.Length; i++)
@@ -25,6 +28,7 @@ public class Partner : ScriptableObject {
     }
 }
 
+[System.Serializable]
 public class RelatedCutScene {
     public string Location;
     public CutScene CutScene;

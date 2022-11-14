@@ -33,10 +33,13 @@ public class CutsceneHandler : MonoBehaviour
 
     public Schedule sc;
 
+    public Image text;
+    public Image textLine;
+
     public void Start()
     {
         
-        //tart(cs, 0);
+        tart(cs, 0);
     }
 
     public void tart(CutScene c, byte b)
@@ -149,6 +152,11 @@ public class CutsceneHandler : MonoBehaviour
 
     }
 
+    public void Thought(string s)
+    {
+
+    }
+
     public void changeBackground(string s)
     {
         decideBackGround(s);
@@ -160,8 +168,13 @@ public class CutsceneHandler : MonoBehaviour
         character.sprite = partners[i].Expressions[0];
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
+        characterName.fontSize = partners[i].textSize;
         dh.textLabel.font = partners[i].Font;
 
+        text.sprite = partners[i].TextBox;
+        textLine.sprite = partners[i].textLineTHing;
+
+        dh.textLabel.fontSize = partners[i].textSize;
     }
 
     private void background(int i)

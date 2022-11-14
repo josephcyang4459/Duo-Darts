@@ -21,7 +21,7 @@ MonoBehaviour:
   - rid: 4049961236948058132
   - rid: 4049961236948058133
   - rid: 4049961236948058134
-  defaultCharacter: Elain
+  defaultCharacter: Elaine
   aa: {fileID: 4900000, guid: 841465ae52e7117498257276a0b19c67, type: 3}
   reset: 0
   references:

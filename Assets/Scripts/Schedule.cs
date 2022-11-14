@@ -12,6 +12,8 @@ public class Schedule : MonoBehaviour
 
     public Location[] locals;
 
+    public Partner[] partners;
+
     public byte location;
     public CutsceneHandler c;
 
@@ -26,6 +28,8 @@ public class Schedule : MonoBehaviour
     public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
     
+
+
     public void Start()
     {
         setTime(0);
@@ -41,6 +45,7 @@ public class Schedule : MonoBehaviour
         {
             locals[i].EventButtons = 0;
             locals[i].Events.Clear();
+            locals[i].location.Clear();
         }
 
         for (int i = 0; i < available.Length; i++)
@@ -51,14 +56,30 @@ public class Schedule : MonoBehaviour
             if (b < 255)
             {
                
-                locals[b].Events.Add(available[i]);
+                locals[b].Events.Add(available[i].cutScene);
+                locals[b].location.Add(available[i].location);
+
                 locals[b].EventButtons++;
             }
         }
 
-        for (int i = 0; i < locals.Length; i++)
+        for (int i = 0; i < partners.Length; i++)
         {
-           
+            int checkLove = partners[i].CheckLoveCutScene();
+            if ( checkLove>= 0)
+            {
+                byte b = getLocal(partners[i].RelatedCutScenes[checkLove].Location);
+
+
+                if (b < 255)
+                {
+
+                    locals[b].Events.Add(partners[i].RelatedCutScenes[checkLove].CutScene);
+                    locals[b].location.Add(partners[i].RelatedCutScenes[checkLove].Location);
+
+                    locals[b].EventButtons++;
+                }
+            }
             
         }
     }
@@ -84,7 +105,7 @@ public class Schedule : MonoBehaviour
         {
             if (j < locals[b].EventButtons)
             {
-                btnText[j].text = locals[b].Events[j].cutScene.defaultCharacter;
+                btnText[j].text = locals[b].Events[j].defaultCharacter;
                 EventButtons[j].gameObject.SetActive(true);
             }
             else if (EventButtons[j].gameObject.activeSelf)
@@ -101,7 +122,7 @@ public class Schedule : MonoBehaviour
     public void selectEvent(int eve)
     {
         EventListCanvas.enabled = false;
-        locals[location].Events[eve].go(c, location);
+        c.tart(locals[location].Events[eve],location);
     }
 
     public void back()
@@ -171,5 +192,6 @@ public class Location
         #endif
     public byte EventButtons = 0;
   
-    public List<EventStart> Events = new();
+    public List<CutScene> Events = new();
+    public List<string> location = new();
 }
