@@ -8,6 +8,8 @@ public class CutScene : ScriptableObject
     public block[] blocks;
     public string defaultCharacter;
 
+    public bool exception = false;
+
 #if UNITY_EDITOR
     public TextAsset aa;
     public bool reset;

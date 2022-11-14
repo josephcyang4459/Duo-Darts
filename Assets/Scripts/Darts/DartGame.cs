@@ -10,8 +10,8 @@ public class DartGame : MonoBehaviour
 
 
     public short turnSum = 0;
-    public short overall = 501;
-
+    public int overall = 501;
+    public int points;
     public byte currentTurn = 0;
 
     public int partnerIndex =0;
@@ -41,6 +41,8 @@ public class DartGame : MonoBehaviour
     public BoardCollider bullseye;
     public Player stats;
     public Partner[] partners;
+
+    public Schedule s;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -90,14 +92,9 @@ public class DartGame : MonoBehaviour
 
 #endif
 
-    public void Start()
-    {
-        Application.targetFrameRate = 60;
-        BeginGame(0);
-    }
-
     public void BeginGame(int partner)
     {
+        points = overall > 600 ? 10 : 5;
         float Accuracy = ((stats.Skill + stats.Luck) - (stats.Intoxication * 2)) / 100;
         Debug.Log(Accuracy);
         float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);
@@ -119,12 +116,15 @@ public class DartGame : MonoBehaviour
     {
         Debug.Log("lose");
         dartCanvas.enabled = false;
+        s.setTime(5);
     }
 
     public void win()
     {
         Debug.Log("win");
         dartCanvas.enabled = false;
+        stats.points += points;
+        s.setTime(5);
     }
 
     public void switchTurn()

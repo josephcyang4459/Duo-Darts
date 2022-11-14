@@ -11,6 +11,8 @@ public class Player : ScriptableObject {
     public float Skill = 1f;
     public float Luck = 1f;
 
+    public int points;
+
     public void UpdateAttribute(string attribute, float value) {
         attribute = attribute.ToLower();
         switch (attribute) {

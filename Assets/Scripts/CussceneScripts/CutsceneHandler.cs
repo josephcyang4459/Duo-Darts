@@ -21,6 +21,7 @@ public class CutsceneHandler : MonoBehaviour
     public Canvas responseCanvas;
     public TMP_Text[] responses;
     public byte characterIndex;
+    public DartMen dm;
 
     public Partner[] partners;
     public Image character;
@@ -36,11 +37,6 @@ public class CutsceneHandler : MonoBehaviour
     public Image text;
     public Image textLine;
 
-    public void Start()
-    {
-        
-        tart(cs, 0);
-    }
 
     public void tart(CutScene c, byte b)
     {
@@ -108,7 +104,10 @@ public class CutsceneHandler : MonoBehaviour
 
         if(index>= cs.blocks.Length)
         {
+
             off();
+            if (cs.exception)
+                dm.exception(characterIndex, sc.hour);
             return;
         }
 

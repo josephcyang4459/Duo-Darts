@@ -27,12 +27,14 @@ public class Schedule : MonoBehaviour
     public Canvas LocationCanvas;
     public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
-    
+
+    public Canvas darts;
 
 
     public void Start()
     {
         setTime(0);
+        Application.targetFrameRate = 60;
     }
 
     public void setTime(int minutes)
@@ -97,8 +99,7 @@ public class Schedule : MonoBehaviour
     public void selectLocation(int b)
     {
         LocationName.text = locals[b].Name;
-        Debug.Log(b);
-        Debug.Log(LocationSprites[b].name);
+
         SelectedLocationImage.sprite = LocationSprites[b];
 
         for (int j = 0; j < EventButtons.Length; j++)
@@ -113,6 +114,10 @@ public class Schedule : MonoBehaviour
             else
                 break;
         }
+
+        if (b == 4)
+            darts.enabled = true;
+
         location = (byte)b;
         LocationCanvas.enabled = false;
         EventListCanvas.enabled = true;
@@ -121,9 +126,18 @@ public class Schedule : MonoBehaviour
 
     public void selectEvent(int eve)
     {
+        darts.enabled = false;
         EventListCanvas.enabled = false;
         c.tart(locals[location].Events[eve],location);
     }
+
+    public void off()
+    {
+        EventListCanvas.enabled = false;
+        LocationCanvas.enabled = false;
+        darts.enabled = false;
+    }
+    
 
     public void back()
     {
