@@ -13,42 +13,42 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058546
-  - rid: 4049961236948058547
-  - rid: 4049961236948058548
-  - rid: 4049961236948058549
-  - rid: 4049961236948058550
-  - rid: 4049961236948058551
-  - rid: 4049961236948058552
-  - rid: 4049961236948058553
+  - rid: 4049961239326752779
+  - rid: 4049961239326752780
+  - rid: 4049961239326752781
+  - rid: 4049961239326752782
+  - rid: 4049961239326752783
+  - rid: 4049961239326752784
+  - rid: 4049961239326752785
+  - rid: 4049961239326752786
   defaultCharacter: chad
   aa: {fileID: 4900000, guid: f77453494f53f914b9f47620c8fcb392, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058546
+    - rid: 4049961239326752779
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I can't believe I'm giving you a chance.
-    - rid: 4049961236948058547
+    - rid: 4049961239326752780
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Remember, I'm just doing this to see if you really are nobody.
-    - rid: 4049961236948058548
+    - rid: 4049961239326752781
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nothing more and nothing less.
-    - rid: 4049961236948058549
+    - rid: 4049961239326752782
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And you better hold up your end of the game.
-    - rid: 4049961236948058550
+    - rid: 4049961239326752783
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that I would truly need your points. I could check out alone
           if they'd let me.
-    - rid: 4049961236948058551
+    - rid: 4049961239326752784
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -65,11 +65,11 @@ MonoBehaviour:
           - '*Chad rolls his eyes dismissively.*'
           - Just throw your darts.
           adjust: 3
-    - rid: 4049961236948058552
+    - rid: 4049961239326752785
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're up.
-    - rid: 4049961236948058553
+    - rid: 4049961239326752786
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Lets see what you got.

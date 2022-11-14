@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: Jess_Drepeat1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058514
-  - rid: 4049961236948058515
-  - rid: 4049961236948058516
-  - rid: 4049961236948058517
+  - rid: 4049961239326753160
+  - rid: 4049961239326753161
+  - rid: 4049961239326753162
+  - rid: 4049961239326753163
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: 575824675cd4f924b98c64a8ee1780f7, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058514
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753160
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit next to Jessica.*'
-    - rid: 4049961236948058515
+        thoughtMessage: You sit next to Jessica.
+    - rid: 4049961239326753161
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You want to buy me drinks?
-    - rid: 4049961236948058516
+    - rid: 4049961239326753162
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sure, saves me the trouble.
-    - rid: 4049961236948058517
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753163
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time drinking with Jessica.* (+)'
+        thoughtMessage: You spend time drinking with Jessica.* (+

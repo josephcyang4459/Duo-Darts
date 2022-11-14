@@ -13,36 +13,36 @@ MonoBehaviour:
   m_Name: Faye_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058317
-  - rid: 4049961236948058318
-  - rid: 4049961236948058319
-  - rid: 4049961236948058320
-  - rid: 4049961236948058321
-  - rid: 4049961236948058322
-  - rid: 4049961236948058323
+  - rid: 4049961239326752974
+  - rid: 4049961239326752975
+  - rid: 4049961239326752976
+  - rid: 4049961239326752977
+  - rid: 4049961239326752978
+  - rid: 4049961239326752979
+  - rid: 4049961239326752980
   defaultCharacter: Faye
   aa: {fileID: 4900000, guid: f85618131ccb8ce4a9c7b8cafa54115e, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058317
+    - rid: 4049961239326752974
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Make your turns quick please.
-    - rid: 4049961236948058318
+    - rid: 4049961239326752975
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't like being up and about especially with a crowd.
-    - rid: 4049961236948058319
+    - rid: 4049961239326752976
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh yeah, I was meaning to ask if you ever attended any other tournaments.
-    - rid: 4049961236948058320
+    - rid: 4049961239326752977
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've never seen you before.
-    - rid: 4049961236948058321
+    - rid: 4049961239326752978
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -61,11 +61,11 @@ MonoBehaviour:
           - Oh I see.
           - Don't worry you'll do great.
           adjust: 2
-    - rid: 4049961236948058322
+    - rid: 4049961239326752979
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I apologize in advance I'm not the best player here.
-    - rid: 4049961236948058323
+    - rid: 4049961239326752980
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, you go first.

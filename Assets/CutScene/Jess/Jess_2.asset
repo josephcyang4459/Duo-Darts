@@ -13,64 +13,64 @@ MonoBehaviour:
   m_Name: Jess_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058496
-  - rid: 4049961236948058497
-  - rid: 4049961236948058498
-  - rid: 4049961236948058499
-  - rid: 4049961236948058500
-  - rid: 4049961236948058501
-  - rid: 4049961236948058502
-  - rid: 4049961236948058503
-  - rid: 4049961236948058504
-  - rid: 4049961236948058505
-  - rid: 4049961236948058506
-  - rid: 4049961236948058507
-  - rid: 4049961236948058508
-  - rid: 4049961236948058509
-  - rid: 4049961236948058510
-  - rid: 4049961236948058511
-  - rid: 4049961236948058512
-  - rid: 4049961236948058513
+  - rid: 4049961239326753096
+  - rid: 4049961239326753097
+  - rid: 4049961239326753098
+  - rid: 4049961239326753099
+  - rid: 4049961239326753100
+  - rid: 4049961239326753101
+  - rid: 4049961239326753102
+  - rid: 4049961239326753103
+  - rid: 4049961239326753104
+  - rid: 4049961239326753105
+  - rid: 4049961239326753106
+  - rid: 4049961239326753107
+  - rid: 4049961239326753108
+  - rid: 4049961239326753109
+  - rid: 4049961239326753110
+  - rid: 4049961239326753111
+  - rid: 4049961239326753112
+  - rid: 4049961239326753113
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: e0a6592884b40a644a8a04b231894a8e, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058496
+    - rid: 4049961239326753096
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You again?
-    - rid: 4049961236948058497
+    - rid: 4049961239326753097
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should've seen it coming.
-    - rid: 4049961236948058498
+    - rid: 4049961239326753098
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know drinking will only worsen your game.
-    - rid: 4049961236948058499
+    - rid: 4049961239326753099
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of darts...
-    - rid: 4049961236948058500
+    - rid: 4049961239326753100
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've never heard of you before tonight.
-    - rid: 4049961236948058501
+    - rid: 4049961239326753101
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Truthfully, I thought you might be some lucky startup to make it
           here.
-    - rid: 4049961236948058502
+    - rid: 4049961239326753102
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I guess we will see by the end of the night.
-    - rid: 4049961236948058503
+    - rid: 4049961239326753103
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So. What do you want to talk about?
-    - rid: 4049961236948058504
+    - rid: 4049961239326753104
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -86,24 +86,24 @@ MonoBehaviour:
           responses:
           - God help us.
           adjust: 1
-    - rid: 4049961236948058505
+    - rid: 4049961239326753105
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should have asked why you keep coming up to socialize with
           me.
-    - rid: 4049961236948058506
+    - rid: 4049961239326753106
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yes. That's a much better question.
-    - rid: 4049961236948058507
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753107
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Jessica faces you and waits for an answer.*'
-    - rid: 4049961236948058508
+        thoughtMessage: Jessica faces you and waits for an answer.
+    - rid: 4049961239326753108
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So?
-    - rid: 4049961236948058509
+    - rid: 4049961239326753109
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -122,19 +122,19 @@ MonoBehaviour:
           - I call your bluff.
           - But fine, keep the reason to yourself.
           adjust: 2
-    - rid: 4049961236948058510
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753110
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Jessica faces away from you toward the bar.*'
-    - rid: 4049961236948058511
+        thoughtMessage: Jessica faces away from you toward the bar.
+    - rid: 4049961239326753111
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've changed my mind again.
-    - rid: 4049961236948058512
+    - rid: 4049961239326753112
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's talk about what you mentioned before.
-    - rid: 4049961236948058513
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753113
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You and Jessica talk for a while.*'
+        thoughtMessage: You and Jessica talk for a while.

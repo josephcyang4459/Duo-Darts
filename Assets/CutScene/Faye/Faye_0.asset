@@ -13,69 +13,69 @@ MonoBehaviour:
   m_Name: Faye_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058293
-  - rid: 4049961236948058294
-  - rid: 4049961236948058295
-  - rid: 4049961236948058296
-  - rid: 4049961236948058297
-  - rid: 4049961236948058298
-  - rid: 4049961236948058299
-  - rid: 4049961236948058300
-  - rid: 4049961236948058301
-  - rid: 4049961236948058302
-  - rid: 4049961236948058303
-  - rid: 4049961236948058304
-  - rid: 4049961236948058305
-  - rid: 4049961236948058306
-  - rid: 4049961236948058307
-  - rid: 4049961236948058308
-  - rid: 4049961236948058309
-  - rid: 4049961236948058310
-  - rid: 4049961236948058311
-  - rid: 4049961236948058312
-  - rid: 4049961236948058313
-  - rid: 4049961236948058314
-  - rid: 4049961236948058315
-  - rid: 4049961236948058316
+  - rid: 4049961239326753344
+  - rid: 4049961239326753345
+  - rid: 4049961239326753346
+  - rid: 4049961239326753347
+  - rid: 4049961239326753348
+  - rid: 4049961239326753349
+  - rid: 4049961239326753350
+  - rid: 4049961239326753351
+  - rid: 4049961239326753352
+  - rid: 4049961239326753353
+  - rid: 4049961239326753354
+  - rid: 4049961239326753355
+  - rid: 4049961239326753356
+  - rid: 4049961239326753357
+  - rid: 4049961239326753358
+  - rid: 4049961239326753359
+  - rid: 4049961239326753360
+  - rid: 4049961239326753361
+  - rid: 4049961239326753362
+  - rid: 4049961239326753363
+  - rid: 4049961239326753364
+  - rid: 4049961239326753365
+  - rid: 4049961239326753366
+  - rid: 4049961239326753367
   defaultCharacter: Faye
   aa: {fileID: 4900000, guid: ca667222526b0ed47a4d0c4174d22b80, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058293
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753344
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*While walking past a booth you accidentally trip on someone''s
-          leg. You fall face first onto the ground.'
-    - rid: 4049961236948058294
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: While walking past a booth you accidentally trip on someone's
+          leg. You fall face first onto the ground.
+    - rid: 4049961239326753345
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*A young woman is the culprit. She kneels down next to you and
-          sits you up.*'
-    - rid: 4049961236948058295
+        thoughtMessage: A young woman is the culprit. She kneels down next to you
+          and sits you up.
+    - rid: 4049961239326753346
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, that looks painful.
-    - rid: 4049961236948058296
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753347
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She grabs a drink from her table and puts the cold glass onto
-          your forehead.*'
-    - rid: 4049961236948058297
+        thoughtMessage: She grabs a drink from her table and puts the cold glass
+          onto your forehead.
+    - rid: 4049961239326753348
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: For the swelling.
-    - rid: 4049961236948058298
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753349
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*The woman tending your blunder looks away whenever you look at
-          her face.*'
-    - rid: 4049961236948058299
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: The woman tending your blunder looks away whenever you look
+          at her face.
+    - rid: 4049961239326753350
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Something about her face is catching your attention.*'
-    - rid: 4049961236948058300
+        thoughtMessage: Something about her face is catching your attention.
+    - rid: 4049961239326753351
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -90,45 +90,45 @@ MonoBehaviour:
         - answer: 'What are you looking at? '
           responses:
           - You must've really hit your head hard.
-          adjust: 1
-    - rid: 4049961236948058301
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+          adjust: 2
+    - rid: 4049961239326753352
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She helps you off the ground onto your feet.*'
-    - rid: 4049961236948058302
+        thoughtMessage: She helps you off the ground onto your feet.
+    - rid: 4049961239326753353
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Just come sit with me for a minute to relax.
-    - rid: 4049961236948058303
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753354
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit in the booth.*'
-    - rid: 4049961236948058304
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: You sit in the booth.
+    - rid: 4049961239326753355
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She sighs and moves further into the shadow of the booth.*'
-    - rid: 4049961236948058305
+        thoughtMessage: She sighs and moves further into the shadow of the booth.
+    - rid: 4049961239326753356
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Everyone's looking this way now because of you.
-    - rid: 4049961236948058306
+    - rid: 4049961239326753357
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You have any idea how stressful it can be?
-    - rid: 4049961236948058307
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753358
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You stare blankly at her.*'
-    - rid: 4049961236948058308
+        thoughtMessage: You stare blankly at her.
+    - rid: 4049961239326753359
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Transitioning I mean.
-    - rid: 4049961236948058309
+    - rid: 4049961239326753360
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm a woman. Or, you know, transitioned to a woman if that makes
           more sense to you.
-    - rid: 4049961236948058310
+    - rid: 4049961239326753361
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -136,37 +136,37 @@ MonoBehaviour:
           responses:
           - That saves me the trouble of having to explain.
           adjust: 2
-        - answer: Wait so...
+        - answer: 'Wait so... '
           responses:
           - Oh my God. I was a man and now I'm a woman.
           - What's so complicated about it?
-          adjust: 0
+          adjust: 1
         - answer: ...
           responses:
           - Please stop staring already...
           adjust: 1
-    - rid: 4049961236948058311
+    - rid: 4049961239326753362
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyway. My tournament name is Faybian Artel.
-    - rid: 4049961236948058312
+    - rid: 4049961239326753363
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Call me Faye though please.
-    - rid: 4049961236948058313
+    - rid: 4049961239326753364
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just haven't found the time to legally change it.
-    - rid: 4049961236948058314
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753365
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Faye motions away from the booth.*'
-    - rid: 4049961236948058315
+        thoughtMessage: Faye motions away from the booth.
+    - rid: 4049961239326753366
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come back later. People have their eyes on you and it's bothering
           me.
-    - rid: 4049961236948058316
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753367
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You leave Faye to her booth.*'
+        thoughtMessage: You leave Faye to her booth.
