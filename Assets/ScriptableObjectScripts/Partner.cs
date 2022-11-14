@@ -17,7 +17,7 @@ public class Partner : ScriptableObject {
     public Sprite[] Expressions;
     public int bias = -1;
 
-    public int CheckLoveCutScene() {
+    public int GetCutScene() {
         for(int i = 0; i < RelatedCutScenes.Length; i++)
             if(!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
                 return i;
