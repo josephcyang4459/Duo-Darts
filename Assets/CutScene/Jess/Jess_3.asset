@@ -13,88 +13,88 @@ MonoBehaviour:
   m_Name: Jess_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058477
-  - rid: 4049961236948058478
-  - rid: 4049961236948058479
-  - rid: 4049961236948058480
-  - rid: 4049961236948058481
-  - rid: 4049961236948058482
-  - rid: 4049961236948058483
-  - rid: 4049961236948058484
-  - rid: 4049961236948058485
-  - rid: 4049961236948058486
-  - rid: 4049961236948058487
-  - rid: 4049961236948058488
-  - rid: 4049961236948058489
-  - rid: 4049961236948058490
-  - rid: 4049961236948058491
-  - rid: 4049961236948058492
-  - rid: 4049961236948058493
-  - rid: 4049961236948058494
-  - rid: 4049961236948058495
+  - rid: 3927831885669466169
+  - rid: 3927831885669466170
+  - rid: 3927831885669466171
+  - rid: 3927831885669466172
+  - rid: 3927831885669466173
+  - rid: 3927831885669466174
+  - rid: 3927831885669466175
+  - rid: 3927831885669466176
+  - rid: 3927831885669466177
+  - rid: 3927831885669466178
+  - rid: 3927831885669466179
+  - rid: 3927831885669466180
+  - rid: 3927831885669466181
+  - rid: 3927831885669466182
+  - rid: 3927831885669466183
+  - rid: 3927831885669466184
+  - rid: 3927831885669466185
+  - rid: 3927831885669466186
+  - rid: 3927831885669466187
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: e83a35fea461b324393d1d35d75315d2, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058477
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466169
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You run into Jessica as you walk into the bathroom.*'
-    - rid: 4049961236948058478
+        thoughtMessage: You run into Jessica as you walk into the bathroom.
+    - rid: 3927831885669466170
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh. It's you.
-    - rid: 4049961236948058479
+    - rid: 3927831885669466171
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't tell anybody, but I just made a girl cry in the bathroom.
-    - rid: 4049961236948058480
+    - rid: 3927831885669466172
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just told her her dartplay is like art.
-    - rid: 4049961236948058481
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466173
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She gasps.*'
-    - rid: 4049961236948058482
+        thoughtMessage: She gasps.
+    - rid: 3927831885669466174
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I might've said something other than art.
-    - rid: 4049961236948058483
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466175
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She stares at you for a second'
-    - rid: 4049961236948058484
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: She stares at you for a secon
+    - rid: 3927831885669466176
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Jessica burps.*'
-    - rid: 4049961236948058485
+        thoughtMessage: Jessica burps.
+    - rid: 3927831885669466177
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh God. I'm going back inside. People can't see me this drunk.
-    - rid: 4049961236948058486
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466178
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She grabs your arm and pulls you all the way into a stall.*'
-    - rid: 4049961236948058487
+        thoughtMessage: She grabs your arm and pulls you all the way into a stall.
+    - rid: 3927831885669466179
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hold my hair please...
-    - rid: 4049961236948058488
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466180
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She vomits into the toilet.*'
-    - rid: 4049961236948058489
+        thoughtMessage: She vomits into the toilet.
+    - rid: 3927831885669466181
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This is your fault you know.
-    - rid: 4049961236948058490
+    - rid: 3927831885669466182
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Buying me drinks all night long.
-    - rid: 4049961236948058491
+    - rid: 3927831885669466183
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -111,19 +111,19 @@ MonoBehaviour:
           - '*She laughs.*'
           - You are scum you know.
           adjust: 3
-    - rid: 4049961236948058492
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466184
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Jessica vomits again.*'
-    - rid: 4049961236948058493
+        thoughtMessage: Jessica vomits again.
+    - rid: 3927831885669466185
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Just stay here for a little while longer.
-    - rid: 4049961236948058494
+    - rid: 3927831885669466186
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: My hair won't hold itself.
-    - rid: 4049961236948058495
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 3927831885669466187
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You stay with Jessica for a while until she feels better.*'
+        thoughtMessage: You stay with Jessica for a while until she feels better.

@@ -117,6 +117,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void dialouge(string message)
     {
+        textLine.enabled = true;
         dh.WriteDialogue(message);
     }
 
@@ -154,7 +155,8 @@ public class CutsceneHandler : MonoBehaviour
 
     public void Thought(string s)
     {
-
+        textLine.enabled = false;
+        dh.WriteDialogue(s);
     }
 
     public void changeBackground(string s)
