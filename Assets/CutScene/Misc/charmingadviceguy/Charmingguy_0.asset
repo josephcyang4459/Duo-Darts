@@ -13,66 +13,74 @@ MonoBehaviour:
   m_Name: Charmingguy_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058621
-  - rid: 4049961236948058622
-  - rid: 4049961236948058623
-  - rid: 4049961236948058624
-  - rid: 4049961236948058625
-  - rid: 4049961236948058626
-  - rid: 4049961236948058627
-  - rid: 4049961236948058628
-  - rid: 4049961236948058629
-  - rid: 4049961236948058630
-  - rid: 4049961236948058631
-  defaultCharacter: charmingguy
+  - rid: 4049961239326753196
+  - rid: 4049961239326753197
+  - rid: 4049961239326753198
+  - rid: 4049961239326753199
+  - rid: 4049961239326753200
+  - rid: 4049961239326753201
+  - rid: 4049961239326753202
+  - rid: 4049961239326753203
+  - rid: 4049961239326753204
+  - rid: 4049961239326753205
+  - rid: 4049961239326753206
+  defaultCharacter: Charming Guy
+  exception: 0
+  playerS:
+    stats:
+    - Charisma
+    values: 02000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: e5c662a4d7e215f4b9ea6c7c2aebfbdd, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058621
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753196
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*A charming man grabs your attention.*'
-    - rid: 4049961236948058622
+        thoughtMessage: A charming man grabs your attention.
+    - rid: 4049961239326753197
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come sit with me.
-    - rid: 4049961236948058623
+    - rid: 4049961239326753198
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me tell you something about relationships.
-    - rid: 4049961236948058624
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753199
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*He leans back confidently.*'
-    - rid: 4049961236948058625
+        thoughtMessage: He leans back confidently.
+    - rid: 4049961239326753200
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: With this one easy step you can get anyone to fall for you.
-    - rid: 4049961236948058626
+    - rid: 4049961239326753201
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: All you have to do is be better than you were yesterday.
-    - rid: 4049961236948058627
+    - rid: 4049961239326753202
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Eventually you'll be so incredible that if someone doesn't fall
           for you they'd be stupid.
-    - rid: 4049961236948058628
+    - rid: 4049961239326753203
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That's what I did.
-    - rid: 4049961236948058629
+    - rid: 4049961239326753204
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Haven't you already fallen for me?
-    - rid: 4049961236948058630
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753205
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You get up without saying a word.*'
-    - rid: 4049961236948058631
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: You get up without saying a word.
+    - rid: 4049961239326753206
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*After finding another seat far away from the man you consider
-          if you are better than you were yesterday.*'
+        thoughtMessage: After finding another seat far away from the man you consider
+          if you are better than you were yesterday.

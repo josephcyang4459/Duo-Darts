@@ -8,6 +8,13 @@ public class CutScene : ScriptableObject
     public block[] blocks;
     public string defaultCharacter;
 
+    public bool exception = false;
+
+    public playerStatChange playerS;
+    public PartnerStatChange partnerS;
+
+    public bool AnotherFuckingException = false;
+
 #if UNITY_EDITOR
     public TextAsset aa;
     public bool reset;
@@ -33,6 +40,14 @@ public class CutScene : ScriptableObject
             {
 
                 case '<':
+
+                    if (overall[i][1] == '*')
+                    {
+                        Thought ttemp = new Thought();
+                        ttemp.thoughtMessage = overall[i].Substring(2, overall[i].Length - 3);
+                        bl.Add(ttemp);
+                        break;
+                    }
                     DialougeBlock dTemp = new DialougeBlock();
                     dTemp.message = overall[i].Substring(1);
                     bl.Add(dTemp);
@@ -107,6 +122,7 @@ public class CutScene : ScriptableObject
             return true;
         return false;
     }
+
 
     public string sanatize(string s)
     {
@@ -214,6 +230,16 @@ public class SwapBackGround : block
 
 }
 
+public class Thought: block
+{
+    public string thoughtMessage;
+
+    public override void action(CutsceneHandler ch)
+    {
+        ch.Thought(thoughtMessage);
+    }
+}
+
 
 [System.Serializable]
 public class responseData
@@ -221,4 +247,19 @@ public class responseData
     public string answer;
     public string[] responses;
     public int adjust;
+    public bool exemption = false;
+}
+
+[System.Serializable]
+public class playerStatChange
+{
+    public string[] stats;
+    public int[] values;
+}
+
+[System.Serializable]
+public class PartnerStatChange
+{
+    public int[] stats;
+    public int[] values;
 }

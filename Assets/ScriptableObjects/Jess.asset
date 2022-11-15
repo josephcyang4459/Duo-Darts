@@ -13,14 +13,39 @@ MonoBehaviour:
   m_Name: Jess
   m_EditorClassIdentifier: 
   Name: Jess
-  Font: {fileID: 11400000, guid: 035afd0594080f74b94d464e7c7dba9e, type: 2}
+  Font: {fileID: 11400000, guid: a247a618683b9cb468929d8d3987bfe9, type: 2}
+  textSize: 100
   Composure: 0
   Intoxication: 0
   Love: 0
+  RelatedCutScenes:
+  - Location: Dance
+    CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
+    completed: 0
+    loveRequirement: 0
+  - Location: Darts
+    CutScene: {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
+    completed: 0
+    loveRequirement: 1
+  - Location: Bar
+    CutScene: {fileID: 11400000, guid: ae6f76b05eb4eeb4996874d85ab897b1, type: 2}
+    completed: 0
+    loveRequirement: 6
+  - Location: Bathroom
+    CutScene: {fileID: 11400000, guid: ec390762b3506ec4480c726b0b003747, type: 2}
+    completed: 0
+    loveRequirement: 11
+  - Location: Lounge
+    CutScene: {fileID: 11400000, guid: 3eeae9dfe138f8541b2906d9a349ada5, type: 2}
+    completed: 0
+    loveRequirement: 14
+  DefaultCutScene: {fileID: 11400000, guid: afe9e1ce4b603eb48bb054d97aa5e68a, type: 2}
+  DefaultDrinkingCutScene: {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
   Expressions:
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
+  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
+  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
+  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
+  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
+  bias: -1
+  TextBox: {fileID: 21300000, guid: 69f75bce09934d04b938cbddbc98bcaf, type: 3}
+  textLineTHing: {fileID: 21300000, guid: e36bc4d066a2db242addd78a4d4571d2, type: 3}

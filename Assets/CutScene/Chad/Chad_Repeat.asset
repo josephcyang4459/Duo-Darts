@@ -13,30 +13,38 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058558
-  - rid: 4049961236948058559
-  - rid: 4049961236948058560
-  - rid: 4049961236948058561
-  defaultCharacter: chad
+  - rid: 4049961239326752840
+  - rid: 4049961239326752841
+  - rid: 4049961239326752842
+  - rid: 4049961239326752843
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 02000000
+    values: 02000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: a9b6b3ec5d554374195efc75af76f006, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058558
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752840
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You join Chad in people watching.*'
-    - rid: 4049961236948058559
+        thoughtMessage: You join Chad in people watching.
+    - rid: 4049961239326752841
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Still ridiculous right?
-    - rid: 4049961236948058560
+    - rid: 4049961239326752842
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways, entertain me while I wait for my trophy.
-    - rid: 4049961236948058561
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752843
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time talking with Chad. He seems happy to have someone
-          to talk to.* (++)'
+        thoughtMessage: You spend time talking with Chad. He seems happy to have
+          someone to talk to.

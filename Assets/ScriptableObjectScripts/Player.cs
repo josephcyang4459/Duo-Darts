@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -10,6 +7,8 @@ public class Player : ScriptableObject {
     public float Intoxication = 1f;
     public float Skill = 1f;
     public float Luck = 1f;
+
+    public int points;
 
     public void UpdateAttribute(string attribute, float value) {
         attribute = attribute.ToLower();

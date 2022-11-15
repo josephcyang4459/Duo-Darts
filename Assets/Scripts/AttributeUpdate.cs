@@ -18,7 +18,7 @@ public class AttributeUpdate : MonoBehaviour {
     private bool InView = false;
     private float InViewStartTime;
     private float transformMuliplier;
-
+    public Queue<info> info = new();
     public void Start()
     {
         AttributePopUp.position = OriginalPosition.position;
@@ -51,6 +51,14 @@ public class AttributeUpdate : MonoBehaviour {
                 if (CanvasGroup.alpha == 0) {
                     FadeOut = false;
                     InView = false;
+
+
+                    if (info.Count > 0)
+                    {
+                        UpdateAttribute(info.Peek().stat, info.Peek().change);
+                        info.Dequeue();
+                    }
+                  
                 }
             }
 
@@ -60,11 +68,18 @@ public class AttributeUpdate : MonoBehaviour {
 
     public void UpdateAttribute(string attribute, int value) {
         if(FadeIn || FadeOut || InView)
+        {
+            info t = new info();
+            t.stat = attribute;
+            t.change = value;
+            info.Enqueue(t);
             return;
+        }
+            
 
         PopUpTextUI.text = "";
-        PopUpTextUI.text += char.ToUpper(attribute[0]);
-        PopUpTextUI.text += attribute.Substring(1, attribute.Length - 2) + " has been ";
+        //PopUpTextUI.text += char.ToUpper(attribute[0]);
+        PopUpTextUI.text += attribute + " has been ";
 
         PopUpTextUI.text += (value > 0) ? "increased by " : "decreased by ";
         PopUpTextUI.text += Mathf.Abs(value);
@@ -84,4 +99,12 @@ public class AttributeUpdate : MonoBehaviour {
             UpdateAttribute(AttributeString, AttributeValue * -1);
 
     }
+
+    
+}
+
+public class info
+{
+    public string stat;
+    public int change;
 }

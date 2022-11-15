@@ -13,72 +13,79 @@ MonoBehaviour:
   m_Name: Elain_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058152
-  - rid: 4049961236948058153
-  - rid: 4049961236948058154
-  - rid: 4049961236948058155
-  - rid: 4049961236948058156
-  - rid: 4049961236948058157
-  - rid: 4049961236948058158
-  - rid: 4049961236948058159
-  - rid: 4049961236948058160
-  - rid: 4049961236948058161
-  - rid: 4049961236948058162
-  - rid: 4049961236948058163
-  - rid: 4049961236948058164
-  - rid: 4049961236948058165
-  - rid: 4049961236948058166
-  - rid: 4049961236948058167
-  - rid: 4049961236948058168
-  - rid: 4049961236948058169
-  - rid: 4049961236948058170
-  - rid: 4049961236948058171
-  - rid: 4049961236948058172
-  - rid: 4049961236948058173
-  - rid: 4049961236948058174
-  - rid: 4049961236948058175
-  - rid: 4049961236948058176
-  - rid: 4049961236948058177
-  defaultCharacter: Elain
+  - rid: 4049961239326752884
+  - rid: 4049961239326752885
+  - rid: 4049961239326752886
+  - rid: 4049961239326752887
+  - rid: 4049961239326752888
+  - rid: 4049961239326752889
+  - rid: 4049961239326752890
+  - rid: 4049961239326752891
+  - rid: 4049961239326752892
+  - rid: 4049961239326752893
+  - rid: 4049961239326752894
+  - rid: 4049961239326752895
+  - rid: 4049961239326752896
+  - rid: 4049961239326752897
+  - rid: 4049961239326752898
+  - rid: 4049961239326752899
+  - rid: 4049961239326752900
+  - rid: 4049961239326752901
+  - rid: 4049961239326752902
+  - rid: 4049961239326752903
+  - rid: 4049961239326752904
+  - rid: 4049961239326752905
+  - rid: 4049961239326752906
+  - rid: 4049961239326752907
+  - rid: 4049961239326752908
+  - rid: 4049961239326752909
+  defaultCharacter: Elaine
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 01000000
+    values: 6079feff
   aa: {fileID: 4900000, guid: 70ddb1fd83bebe94d915c0328dcfd040, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058152
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752884
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You see Elaine throwing dart after dart at a board nearby.*'
-    - rid: 4049961236948058153
+        thoughtMessage: You see Elaine throwing dart after dart at a board nearby.
+    - rid: 4049961239326752885
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey! Doggie!
-    - rid: 4049961236948058154
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752886
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She''s plastered.*'
-    - rid: 4049961236948058155
+        thoughtMessage: She's plastered.
+    - rid: 4049961239326752887
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come here and look. Look at this trick.
-    - rid: 4049961236948058156
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752888
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Elaine sets up a throw with all three darts in hand.*'
-    - rid: 4049961236948058157
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: Elaine sets up a throw with all three darts in hand.
+    - rid: 4049961239326752889
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She throws all three at once. One hits the bullseye and the rest
-          bounce off.*'
-    - rid: 4049961236948058158
+        thoughtMessage: She throws all three at once. One hits the bullseye and the
+          rest bounce off.
+    - rid: 4049961239326752890
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come on!
-    - rid: 4049961236948058159
+    - rid: 4049961239326752891
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey doggie go stand in front of the board for me.
-    - rid: 4049961236948058160
+    - rid: 4049961239326752892
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -86,81 +93,84 @@ MonoBehaviour:
           responses:
           - Are you stupid?
           adjust: 0
+          exemption: 0
         - answer: '... '
           responses:
           - Yes! The silence is amazing.
           adjust: 2
+          exemption: 0
         - answer: 'Walk over. '
           responses:
           - Such a good dog.
           adjust: 3
-    - rid: 4049961236948058161
+          exemption: 0
+    - rid: 4049961239326752893
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Get in place now.
-    - rid: 4049961236948058162
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752894
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You stand in front of the board with your head covering most of
-          it.*'
-    - rid: 4049961236948058163
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: You stand in front of the board with your head covering most
+          of it.
+    - rid: 4049961239326752895
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*A small crowd has gathered.*'
-    - rid: 4049961236948058164
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: A small crowd has gathered.
+    - rid: 4049961239326752896
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You contemplate the actions that have led you to this moment.*'
-    - rid: 4049961236948058165
+        thoughtMessage: You contemplate the actions that have led you to this moment.
+    - rid: 4049961239326752897
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Ok I don't want to hurt my pet. So I just have to land these darts.
-    - rid: 4049961236948058166
+    - rid: 4049961239326752898
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: One next to each ear and one right above the head.
-    - rid: 4049961236948058167
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752899
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*Elaine readies her three dart trick again.*'
-    - rid: 4049961236948058168
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: Elaine readies her three dart trick again.
+    - rid: 4049961239326752900
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She throws. You close your eyes.*'
-    - rid: 4049961236948058169
+        thoughtMessage: She throws. You close your eyes.
+    - rid: 4049961239326752901
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yes! I did it!
-    - rid: 4049961236948058170
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752902
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*The darts landed just as she had called.*'
-    - rid: 4049961236948058171
+        thoughtMessage: The darts landed just as she had called.
+    - rid: 4049961239326752903
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Aren't you impressed? I'm the real dart goddess.
-    - rid: 4049961236948058172
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752904
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*The crowd claps and then they disperse.*'
-    - rid: 4049961236948058173
+        thoughtMessage: The crowd claps and then they disperse.
+    - rid: 4049961239326752905
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey. You weren't worried were you?
-    - rid: 4049961236948058174
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752906
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She gives you a hug.*'
-    - rid: 4049961236948058175
+        thoughtMessage: She gives you a hug.
+    - rid: 4049961239326752907
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That is your reward for intoxicating a goddess.
-    - rid: 4049961236948058176
+    - rid: 4049961239326752908
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Keep acting like this and you might just win my favor.
-    - rid: 4049961236948058177
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326752909
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend some time getting a mix of praise and beration from
-          the dart goddess.*'
+        thoughtMessage: You spend some time getting a mix of praise and beration
+          from the dart goddess.

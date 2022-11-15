@@ -13,30 +13,37 @@ MonoBehaviour:
   m_Name: Jess_REpeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058518
-  - rid: 4049961236948058519
-  - rid: 4049961236948058520
-  - rid: 4049961236948058521
+  - rid: 4049961239326753164
+  - rid: 4049961239326753165
+  - rid: 4049961239326753166
+  - rid: 4049961239326753167
   defaultCharacter: Jess
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 02000000
+    values: 02000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 36207442074f9c441abebb8ec35e2876, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058518
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753164
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit next to Jessica and strike up a conversation.*'
-    - rid: 4049961236948058519
+        thoughtMessage: You sit next to Jessica and strike up a conversation.
+    - rid: 4049961239326753165
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I suppose it's nice to see you again.
-    - rid: 4049961236948058520
+    - rid: 4049961239326753166
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You have something interesting to say?
-    - rid: 4049961236948058521
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753167
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time talking with Jessica. She seems appreciative.*
-          (++)'
+        thoughtMessage: You spend time talking with Jessica. She seems appreciative.

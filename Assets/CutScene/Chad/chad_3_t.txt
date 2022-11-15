@@ -1,6 +1,7 @@
 <Hey, it's you.
 <Impressed? You should be. I’ve got moves.
-<I think...  <*He stares intently at you for a second.*
+<I think...  
+<*He stares intently at you for a second.*
 <You. Me. Dance. Now.
 	$Yes. (+++)
 		&I was hoping you’d say that.

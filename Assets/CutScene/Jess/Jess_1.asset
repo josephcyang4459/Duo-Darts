@@ -13,44 +13,44 @@ MonoBehaviour:
   m_Name: Jess_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058415
-  - rid: 4049961236948058416
-  - rid: 4049961236948058417
-  - rid: 4049961236948058418
-  - rid: 4049961236948058419
-  - rid: 4049961236948058420
-  - rid: 4049961236948058421
-  - rid: 4049961236948058422
+  - rid: 4049961239326753088
+  - rid: 4049961239326753089
+  - rid: 4049961239326753090
+  - rid: 4049961239326753091
+  - rid: 4049961239326753092
+  - rid: 4049961239326753093
+  - rid: 4049961239326753094
+  - rid: 4049961239326753095
   defaultCharacter: Jess
   aa: {fileID: 4900000, guid: c8a0d5de1c38319498227d78a8db7a42, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058415
+    - rid: 4049961239326753088
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I wouldn't typically partner up with someone I don't know rather
           well.
-    - rid: 4049961236948058416
+    - rid: 4049961239326753089
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: However, with my skills I don't mind the possibility of losing a
           few points.
-    - rid: 4049961236948058417
+    - rid: 4049961239326753090
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Even if you missed the board with most of your throws I still think
           we could win with me.
-    - rid: 4049961236948058418
+    - rid: 4049961239326753091
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: What about you?
-    - rid: 4049961236948058419
+    - rid: 4049961239326753092
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Will you hold up your end of the game?
-    - rid: 4049961236948058420
+    - rid: 4049961239326753093
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -67,11 +67,11 @@ MonoBehaviour:
           - '*She chuckles*.'
           - You will.
           adjust: 1
-    - rid: 4049961236948058421
+    - rid: 4049961239326753094
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'll let you go first.
-    - rid: 4049961236948058422
+    - rid: 4049961239326753095
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I would very much appreciate it if you didn't make me work too hard

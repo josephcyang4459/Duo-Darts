@@ -13,29 +13,37 @@ MonoBehaviour:
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058391
-  - rid: 4049961236948058392
-  - rid: 4049961236948058393
-  - rid: 4049961236948058394
+  - rid: 4049961239326753052
+  - rid: 4049961239326753053
+  - rid: 4049961239326753054
+  - rid: 4049961239326753055
   defaultCharacter: Faye
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 02000000
+    values: 02000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 30452359fab07d14ca0c144ffac8c0e0, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058391
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753052
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You go to Faye''s booth.*'
-    - rid: 4049961236948058392
+        thoughtMessage: You go to Faye's booth.
+    - rid: 4049961239326753053
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey it's you.
-    - rid: 4049961236948058393
+    - rid: 4049961239326753054
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Lets talk for a while.
-    - rid: 4049961236948058394
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753055
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time with Faye. She seems relieved.* (++)'
+        thoughtMessage: You spend time with Faye. She seems relieved.

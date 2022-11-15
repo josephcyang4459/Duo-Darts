@@ -13,63 +13,72 @@ MonoBehaviour:
   m_Name: BarAdviceGuy
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628149437563224
-  - rid: 3685628149437563225
-  - rid: 3685628149437563226
-  - rid: 3685628149437563227
-  - rid: 3685628149437563228
-  - rid: 3685628149437563229
-  - rid: 3685628149437563230
-  - rid: 3685628149437563231
-  - rid: 3685628149437563232
-  - rid: 3685628149437563233
+  - rid: 4049961239326753168
+  - rid: 4049961239326753169
+  - rid: 4049961239326753170
+  - rid: 4049961239326753171
+  - rid: 4049961239326753172
+  - rid: 4049961239326753173
+  - rid: 4049961239326753174
+  - rid: 4049961239326753175
+  - rid: 4049961239326753176
+  - rid: 4049961239326753177
   defaultCharacter: Bar Guy
+  exception: 0
+  playerS:
+    stats:
+    - Skill
+    - Intoxication
+    values: 0100000001000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: f1c41ef1b354a554bb7409890a154263, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628149437563224
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753168
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit next to a man at the bar.*'
-    - rid: 3685628149437563225
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+        thoughtMessage: You sit next to a man at the bar.
+    - rid: 4049961239326753169
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*He begins talking to you without prompting.*'
-    - rid: 3685628149437563226
+        thoughtMessage: He begins talking to you without prompting.
+    - rid: 4049961239326753170
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: My boyfriend, who was also my darts partner, left me because I'm
           bad at darts.
-    - rid: 3685628149437563227
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753171
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*He looks at you with passion.*'
-    - rid: 3685628149437563228
+        thoughtMessage: He looks at you with passion.
+    - rid: 4049961239326753172
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I will not let you fail like I have.
-    - rid: 3685628149437563229
+    - rid: 4049961239326753173
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: My best advice for you to avoid my fate is to compliment something
           about your darts partner before every game.
-    - rid: 3685628149437563230
+    - rid: 4049961239326753174
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It'll make them more confident. And you'll feel better about yourself.
-    - rid: 3685628149437563231
+    - rid: 4049961239326753175
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of which, I'm gonna go cry in a bathroom stall to make
           myself feel better.
-    - rid: 3685628149437563232
+    - rid: 4049961239326753176
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Good luck in the tournament.
-    - rid: 3685628149437563233
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753177
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*He leaves you to contemplate the fickle nature of love and darts
-          over a cold drink.*'
+        thoughtMessage: He leaves you to contemplate the fickle nature of love and
+          darts over a cold drink.

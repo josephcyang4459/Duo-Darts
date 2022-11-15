@@ -13,29 +13,37 @@ MonoBehaviour:
   m_Name: Faye_Drepeat1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058395
-  - rid: 4049961236948058396
-  - rid: 4049961236948058397
-  - rid: 4049961236948058398
+  - rid: 4049961239326753048
+  - rid: 4049961239326753049
+  - rid: 4049961239326753050
+  - rid: 4049961239326753051
   defaultCharacter: Faye
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 0200000001000000
+    values: 0100000001000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 94f70d2032cbda741951ff611fde6447, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058395
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753048
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You go to Faye''s booth.*'
-    - rid: 4049961236948058396
+        thoughtMessage: You go to Faye's booth.
+    - rid: 4049961239326753049
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: A drink?
-    - rid: 4049961236948058397
+    - rid: 4049961239326753050
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If you're paying and bringing them over here then sure.
-    - rid: 4049961236948058398
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753051
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You spend time drinking with Faye.* (+)'
+        thoughtMessage: You spend time drinking with Faye.

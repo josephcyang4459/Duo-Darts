@@ -13,99 +13,99 @@ MonoBehaviour:
   m_Name: Elain_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961236948058112
-  - rid: 4049961236948058113
-  - rid: 4049961236948058114
-  - rid: 4049961236948058115
-  - rid: 4049961236948058116
-  - rid: 4049961236948058117
-  - rid: 4049961236948058118
-  - rid: 4049961236948058119
-  - rid: 4049961236948058120
-  - rid: 4049961236948058121
-  - rid: 4049961236948058122
-  - rid: 4049961236948058123
-  - rid: 4049961236948058124
-  - rid: 4049961236948058125
-  - rid: 4049961236948058126
-  defaultCharacter: Elain
+  - rid: 4049961239326753329
+  - rid: 4049961239326753330
+  - rid: 4049961239326753331
+  - rid: 4049961239326753332
+  - rid: 4049961239326753333
+  - rid: 4049961239326753334
+  - rid: 4049961239326753335
+  - rid: 4049961239326753336
+  - rid: 4049961239326753337
+  - rid: 4049961239326753338
+  - rid: 4049961239326753339
+  - rid: 4049961239326753340
+  - rid: 4049961239326753341
+  - rid: 4049961239326753342
+  - rid: 4049961239326753343
+  defaultCharacter: Elaine
   aa: {fileID: 4900000, guid: 3fd76fddc07ba8148ae0203117a10c53, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961236948058112
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753329
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit next to a woman invested in a trio of darts sitting in
-          front of her on the table.*'
-    - rid: 4049961236948058113
+        thoughtMessage: You sit next to a woman invested in a trio of darts sitting
+          in front of her on the table.
+    - rid: 4049961239326753330
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't know you. You should leave.
-    - rid: 4049961236948058114
+    - rid: 4049961239326753331
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
-        - answer: Why?
+        - answer: 'Why? '
           responses:
           - Because I can just tell you're ignorant and annoying.
-          adjust: 0
+          adjust: 1
         - answer: 'No '
           responses:
           - Better to be confident and annoying than be a coward and annoying.
-          adjust: 1
+          adjust: 2
         - answer: '... '
           responses:
           - Well if you're gonna be good and keep your mouth shut I'll let you stay.
           adjust: 3
-    - rid: 4049961236948058115
+    - rid: 4049961239326753332
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know what, you should stay.
-    - rid: 4049961236948058116
+    - rid: 4049961239326753333
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You seem fun to belittle.
-    - rid: 4049961236948058117
+    - rid: 4049961239326753334
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Especially since I have no clue who you are.
-    - rid: 4049961236948058118
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753335
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She stares at you for a second.*'
-    - rid: 4049961236948058119
+        thoughtMessage: She stares at you for a second.
+    - rid: 4049961239326753336
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey. Name.
-    - rid: 4049961236948058120
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753337
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*She hides a smile while you give your name.*'
-    - rid: 4049961236948058121
+        thoughtMessage: She hides a smile while you give your name.
+    - rid: 4049961239326753338
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sorry, you just have the name of an amateur.
-    - rid: 4049961236948058122
+    - rid: 4049961239326753339
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm Elaine Guzm'n. Also known as the dart goddess.
-    - rid: 4049961236948058123
+    - rid: 4049961239326753340
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Any conceited idiot bold enough to say they're the best hasn't met
           me yet.
-    - rid: 4049961236948058124
+    - rid: 4049961239326753341
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And now that I know your name I know for sure you're not even close
           to me.
-    - rid: 4049961236948058125
+    - rid: 4049961239326753342
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: But, like I said, I've been in the market for a punching bag.
-    - rid: 4049961236948058126
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+    - rid: 4049961239326753343
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        message: '*You sit quietly as Elaine insults you for a while.*'
+        thoughtMessage: You sit quietly as Elaine insults you for a while.

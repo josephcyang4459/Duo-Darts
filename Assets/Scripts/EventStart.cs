@@ -14,15 +14,6 @@ public class EventStart : ScriptableObject
     public string location;
     public CutScene cutScene;
 
-    public bool done = false;
-
-
-    public void go(CutsceneHandler c, byte b)
-    {
-        done = true;
-        c.tart(cutScene, b);
-    }
-
-    
+    public bool done = false;  
 }
 
