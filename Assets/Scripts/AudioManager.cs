@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         // Creates an AudioSource component from the sounds array in Unity and adds it to the CombatAudio object
+        
         foreach (Sound s in sounds)
         {
             s.Source = gameObject.AddComponent<AudioSource>();
@@ -17,6 +18,8 @@ public class AudioManager : MonoBehaviour
             s.Source.volume = s.Volume;
             s.Source.pitch = s.Pitch;
             s.Source.loop = s.Loop;
+            if(s.PlayOnStart)
+                Play(s.Name);
         }
     }
 
