@@ -1227,28 +1227,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d4ced04145ad914396622f25f24bcf3, type: 2}
   - {fileID: 11400000, guid: 0d83e6a13c25a5d4085cf32fba91742e, type: 2}
   locals:
-  - name: Lounge
-    useing: 0
-    s: []
-  - name: Bar
-    useing: 0
-    s: []
-  - name: Dance
-    useing: 0
-    s: []
+  - Name: 
+    EventButtons: 0
+    Events: []
+  - Name: 
+    EventButtons: 0
+    Events: []
+  - Name: 
+    EventButtons: 0
+    Events: []
   location: 0
   c: {fileID: 1211666563}
   LocationName: {fileID: 789275082}
-  list: {fileID: 470360907}
-  bs:
-  - {fileID: 1462992058}
-  - {fileID: 650116275}
-  - {fileID: 1037456830}
-  - {fileID: 1292859501}
-  - {fileID: 1543976212}
-  - {fileID: 1184515228}
-  - {fileID: 937616133}
-  - {fileID: 738118496}
+  EventListCanvas: {fileID: 0}
+  EventButtons: []
   btnText:
   - {fileID: 49618127}
   - {fileID: 771044915}
@@ -1258,9 +1250,11 @@ MonoBehaviour:
   - {fileID: 459524245}
   - {fileID: 1588369972}
   - {fileID: 1596874862}
+  LocationSprites: []
   ListCanvasBack: {fileID: 0}
   LocationCanvas: {fileID: 1673373043}
   LocationFirstButton: {fileID: 390282729}
+  SelectedLocationImage: {fileID: 0}
 --- !u!4 &183543932
 Transform:
   m_ObjectHideFlags: 0
