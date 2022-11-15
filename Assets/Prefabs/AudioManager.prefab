@@ -52,3 +52,10 @@ MonoBehaviour:
     Loop: 1
     PlayOnStart: 1
     Source: {fileID: 0}
+  - Name: click
+    Clip: {fileID: 8300000, guid: 99412178f6450e54bb3a2e6f5f740aa1, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    PlayOnStart: 0
+    Source: {fileID: 0}
