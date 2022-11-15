@@ -18,6 +18,14 @@ MonoBehaviour:
   - rid: 4049961239326753050
   - rid: 4049961239326753051
   defaultCharacter: Faye
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 0200000001000000
+    values: 0100000001000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 94f70d2032cbda741951ff611fde6447, type: 3}
   reset: 0
   references:
@@ -38,4 +46,4 @@ MonoBehaviour:
     - rid: 4049961239326753051
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Faye.* (+
+        thoughtMessage: You spend time drinking with Faye.

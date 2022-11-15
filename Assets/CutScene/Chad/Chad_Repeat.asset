@@ -17,7 +17,15 @@ MonoBehaviour:
   - rid: 4049961239326752841
   - rid: 4049961239326752842
   - rid: 4049961239326752843
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 02000000
+    values: 02000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: a9b6b3ec5d554374195efc75af76f006, type: 3}
   reset: 0
   references:
@@ -39,4 +47,4 @@ MonoBehaviour:
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: You spend time talking with Chad. He seems happy to have
-          someone to talk to.* (++
+          someone to talk to.

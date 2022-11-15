@@ -19,6 +19,14 @@ MonoBehaviour:
   - rid: 4049961239326752948
   - rid: 4049961239326752949
   defaultCharacter: Elaine
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 02000000
+    values: 02000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 8e095a8ab77a234438cc8f726b121482, type: 3}
   reset: 0
   references:
@@ -43,4 +51,4 @@ MonoBehaviour:
     - rid: 4049961239326752949
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Elaine.* (+
+        thoughtMessage: You spend time drinking with Elaine.

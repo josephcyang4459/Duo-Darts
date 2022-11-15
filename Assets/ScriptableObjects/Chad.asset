@@ -39,8 +39,8 @@ MonoBehaviour:
     CutScene: {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
     completed: 0
     loveRequirement: 13
-  DefaultCutScene: {fileID: 0}
-  DefaultDrinkingCutScene: {fileID: 0}
+  DefaultCutScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  DefaultDrinkingCutScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
   Expressions:
   - {fileID: 21300000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}
   - {fileID: 21300000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}

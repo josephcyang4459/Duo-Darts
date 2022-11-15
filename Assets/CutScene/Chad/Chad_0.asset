@@ -24,7 +24,14 @@ MonoBehaviour:
   - rid: 4049961239326753326
   - rid: 4049961239326753327
   - rid: 4049961239326753328
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 0
+  partnerS:
+    stats: 
+    values: 0
   aa: {fileID: 4900000, guid: bfeb7c30add75e04ab9620d4a19f16ae, type: 3}
   reset: 0
   references:

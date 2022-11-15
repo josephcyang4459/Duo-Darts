@@ -18,6 +18,14 @@ MonoBehaviour:
   - rid: 4049961239326753162
   - rid: 4049961239326753163
   defaultCharacter: Jess
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 0200000001000000
+    values: 0100000001000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 575824675cd4f924b98c64a8ee1780f7, type: 3}
   reset: 0
   references:
@@ -38,4 +46,4 @@ MonoBehaviour:
     - rid: 4049961239326753163
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Jessica.* (+
+        thoughtMessage: You spend time drinking with Jessica.

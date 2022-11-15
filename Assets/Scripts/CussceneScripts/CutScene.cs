@@ -10,6 +10,11 @@ public class CutScene : ScriptableObject
 
     public bool exception = false;
 
+    public playerStatChange playerS;
+    public PartnerStatChange partnerS;
+
+    public bool AnotherFuckingException = false;
+
 #if UNITY_EDITOR
     public TextAsset aa;
     public bool reset;
@@ -242,4 +247,19 @@ public class responseData
     public string answer;
     public string[] responses;
     public int adjust;
+    public bool exemption = false;
+}
+
+[System.Serializable]
+public class playerStatChange
+{
+    public string[] stats;
+    public int[] values;
+}
+
+[System.Serializable]
+public class PartnerStatChange
+{
+    public int[] stats;
+    public int[] values;
 }

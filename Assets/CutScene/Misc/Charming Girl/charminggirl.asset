@@ -27,7 +27,16 @@ MonoBehaviour:
   - rid: 4049961239326753193
   - rid: 4049961239326753194
   - rid: 4049961239326753195
-  defaultCharacter: charminggirl
+  defaultCharacter: Charming Girl
+  exception: 0
+  playerS:
+    stats:
+    - Charisma
+    - Intoxication
+    values: 0200000001000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: 7600c04ae893eda4d86201de1bbbff19, type: 3}
   reset: 0
   references:

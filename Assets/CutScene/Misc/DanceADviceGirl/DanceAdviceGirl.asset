@@ -26,6 +26,14 @@ MonoBehaviour:
   - rid: 4049961239326753217
   - rid: 4049961239326753218
   defaultCharacter: Dance Girl
+  exception: 0
+  playerS:
+    stats:
+    - Skill
+    values: 01000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: 13e18961ca4ae354498a089a53d5b4bb, type: 3}
   reset: 0
   references:

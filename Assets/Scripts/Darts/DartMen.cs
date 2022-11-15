@@ -12,13 +12,16 @@ public class DartMen : MonoBehaviour
     public TMP_Text[] texts;
     public int[] indices;
 
+
+    public GameObject backButtonm;
     public void begin()
     {
         dg.overall = s.hour < 7 ? 501 : 701;
         s.off();
         menue.enabled = true;
         int j = 0;
-        for( int i =0;i<p.Length;i++)
+        for (int i = 0; i < p.Length; i++)
+        {
             if (p[i].Love >= 1)
             {
                 characters[j].gameObject.SetActive(true);
@@ -26,10 +29,13 @@ public class DartMen : MonoBehaviour
                 indices[j] = i;
                 j++;
             }
-        for(int i = j; i < p.Length; i++)
-        {
-            characters[i].gameObject.SetActive(false);
+            
         }
+
+        for(int i=j;i<p.Length;i++)
+                    characters[i].gameObject.SetActive(false);
+
+        UI_Helper.SetSelectedUIElement(backButtonm);
     }
 
  
@@ -47,5 +53,9 @@ public class DartMen : MonoBehaviour
         dg.overall = hour < 7 ? 501 : 701;
         dg.BeginGame(i);
     }
-
+    public void back()
+    {
+        menue.enabled = false;
+        s.setTime(0);
+    }
 }

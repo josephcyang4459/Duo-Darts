@@ -17,7 +17,15 @@ MonoBehaviour:
   - rid: 4049961239326752837
   - rid: 4049961239326752838
   - rid: 4049961239326752839
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 0200000001000000
+    values: 0100000001000000
+  AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: cd903d95b09cf794386549946baf1c10, type: 3}
   reset: 0
   references:
@@ -38,4 +46,4 @@ MonoBehaviour:
     - rid: 4049961239326752839
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Chad.* (+
+        thoughtMessage: You spend time drinking with Chad.

@@ -38,6 +38,14 @@ MonoBehaviour:
   - rid: 4049961239326753268
   - rid: 4049961239326753269
   defaultCharacter: Owner
+  exception: 0
+  playerS:
+    stats:
+    - Intoxication
+    values: 01000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: 6cd46764fcff94746b68438be53fb78d, type: 3}
   reset: 0
   references:
@@ -83,14 +91,17 @@ MonoBehaviour:
           responses:
           - '*A heavy blush covers her surprised face.*'
           adjust: 3
+          exemption: 0
         - answer: You're a man?
           responses:
           - Shh! No talking, you're making a scene.
           adjust: 0
+          exemption: 0
         - answer: 'What are you looking at? '
           responses:
           - You must've really hit your head hard.
           adjust: 1
+          exemption: 0
     - rid: 4049961239326753254
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -136,15 +147,18 @@ MonoBehaviour:
           responses:
           - That saves me the trouble of having to explain.
           adjust: 2
+          exemption: 0
         - answer: Wait so...
           responses:
           - Oh my God. I was a man and now I'm a woman.
           - What's so complicated about it?
           adjust: 0
+          exemption: 0
         - answer: ...
           responses:
           - Please stop staring already...
           adjust: 1
+          exemption: 0
     - rid: 4049961239326753264
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

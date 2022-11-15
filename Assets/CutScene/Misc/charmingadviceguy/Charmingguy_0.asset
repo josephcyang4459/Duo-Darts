@@ -24,7 +24,15 @@ MonoBehaviour:
   - rid: 4049961239326753204
   - rid: 4049961239326753205
   - rid: 4049961239326753206
-  defaultCharacter: charmingguy
+  defaultCharacter: Charming Guy
+  exception: 0
+  playerS:
+    stats:
+    - Charisma
+    values: 02000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: e5c662a4d7e215f4b9ea6c7c2aebfbdd, type: 3}
   reset: 0
   references:

@@ -14,13 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Owner
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textSize: 72
   Composure: 0
   Intoxication: 0
   Love: 0
+  RelatedCutScenes:
+  - Location: Bar
+    CutScene: {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}
+    completed: 0
+    loveRequirement: 0
+  - Location: Bar
+    CutScene: {fileID: 11400000, guid: eafc0d680af7dd747afee4b15ba243a5, type: 2}
+    completed: 0
+    loveRequirement: 0
+  - Location: Bar
+    CutScene: {fileID: 11400000, guid: dd39ab6df9b216c45ba74df6f4f21977, type: 2}
+    completed: 0
+    loveRequirement: 0
+  DefaultCutScene: {fileID: 0}
+  DefaultDrinkingCutScene: {fileID: 0}
   Expressions:
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
-  - {fileID: 21300000, guid: 62df8b92b74498743ad00228bc453e08, type: 3}
+  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  bias: -1
+  TextBox: {fileID: 21300000, guid: e0a18bd70045dfc4f96de9e490e1eff4, type: 3}
+  textLineTHing: {fileID: 21300000, guid: a45dd30a3c5eb874482a6ee9131c14e1, type: 3}

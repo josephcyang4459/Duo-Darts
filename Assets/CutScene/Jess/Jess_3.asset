@@ -33,6 +33,13 @@ MonoBehaviour:
   - rid: 4049961239326753131
   - rid: 4049961239326753132
   defaultCharacter: Jess
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 01000000
+    values: f0d8ffff
   aa: {fileID: 4900000, guid: e83a35fea461b324393d1d35d75315d2, type: 3}
   reset: 0
   references:
@@ -102,15 +109,18 @@ MonoBehaviour:
           responses:
           - Semantics are fallacious you know.
           adjust: 1
+          exemption: 0
         - answer: 'I''m taking responsibility. '
           responses:
           - I'd say you're doing the bare minimum by being here.
           adjust: 2
+          exemption: 0
         - answer: 'You''re not enjoying this? '
           responses:
           - '*She laughs.*'
           - You are scum you know.
           adjust: 3
+          exemption: 0
     - rid: 4049961239326753129
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:

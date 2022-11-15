@@ -18,4 +18,4 @@ MonoBehaviour:
   endMinutes: 30
   location: Bathroom
   cutScene: {fileID: 11400000, guid: f776c8878f89d6e428bda2f630463aa7, type: 2}
-  done: 1
+  done: 0

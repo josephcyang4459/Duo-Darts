@@ -30,6 +30,14 @@ MonoBehaviour:
   - rid: 4049961239326753233
   - rid: 4049961239326753234
   defaultCharacter: Lounge Guy
+  exception: 0
+  playerS:
+    stats:
+    - Skill
+    values: 01000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: d06e66318ac86a44bac1d04e0ce46466, type: 3}
   reset: 0
   references:

@@ -13,30 +13,40 @@ MonoBehaviour:
   m_Name: bathroomadvice
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753178
-  - rid: 4049961239326753179
-  - rid: 4049961239326753180
-  - rid: 4049961239326753181
+  - rid: 3685628193247854592
+  - rid: 3685628193247854593
+  - rid: 3685628193247854594
+  - rid: 3685628193247854595
   defaultCharacter: Bathroomwall
+  exception: 0
+  playerS:
+    stats:
+    - Skill
+    - Intoxication
+    values: 01000000ffffffff
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: f151a4be42e86874d9cb6f5da521a4d0, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753178
+    - rid: 3685628193247854592
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: You examine a wall with scribbles on it while relieving yourself
           in the bathroom
-    - rid: 4049961239326753179
+    - rid: 3685628193247854593
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: When throwing darts think of rice balls.
-    - rid: 4049961239326753180
+    - rid: 3685628193247854594
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Trust me it helps!
-    - rid: 4049961239326753181
+    - rid: 3685628193247854595
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: You leave feeling enlightened.

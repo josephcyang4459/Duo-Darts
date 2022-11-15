@@ -24,6 +24,15 @@ MonoBehaviour:
   - rid: 4049961239326753176
   - rid: 4049961239326753177
   defaultCharacter: Bar Guy
+  exception: 0
+  playerS:
+    stats:
+    - Skill
+    - Intoxication
+    values: 0100000001000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: f1c41ef1b354a554bb7409890a154263, type: 3}
   reset: 0
   references:

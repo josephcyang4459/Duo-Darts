@@ -43,13 +43,21 @@ public class DartGame : MonoBehaviour
     public Partner[] partners;
 
     public Schedule s;
+
+    public WaitForSeconds sec = new WaitForSeconds(5);
+    public Canvas winc;
+    public Canvas losec;
+    public AudioClip ac;
+    public AudioClip hit;
+
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
     public bool reset;
     public GameObject g;
     public GameObject slice;
-   
+
+    
     public void OnValidate()
     {
         if (reset)
@@ -94,6 +102,9 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
+        s.ass.clip = ac;
+        s.ass.Play();
+
         points = overall > 600 ? 10 : 5;
         float Accuracy = ((stats.Skill + stats.Luck) - (stats.Intoxication * 2)) / 100;
         Debug.Log(Accuracy);
@@ -116,7 +127,8 @@ public class DartGame : MonoBehaviour
     {
         Debug.Log("lose");
         dartCanvas.enabled = false;
-        s.setTime(5);
+        losec.enabled = true;
+        StartCoroutine(condition());
     }
 
     public void win()
@@ -124,7 +136,8 @@ public class DartGame : MonoBehaviour
         Debug.Log("win");
         dartCanvas.enabled = false;
         stats.points += points;
-        s.setTime(5);
+        winc.enabled = true;
+        StartCoroutine(condition());
     }
 
     public void switchTurn()
@@ -183,7 +196,7 @@ public class DartGame : MonoBehaviour
         {
             
 
-            Debug.Log(aim.t.position);
+            ///Debug.Log(aim.t.position);
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
 
         }
@@ -200,8 +213,10 @@ public class DartGame : MonoBehaviour
     private void partnerTurn()
     {
         float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) *  ((partners[partnerIndex].Intoxication) / 2);
-        Debug.Log(offset);
-        if (overall >= 60)
+        //Debug.Log(offset);
+
+        int tempSc = overall - turnSum;
+        if (tempSc >= 60)
         {
 
             if (partners[partnerIndex].bias > -1)
@@ -242,24 +257,24 @@ public class DartGame : MonoBehaviour
             return;
         }
 
-        if (overall >= 50)
+        if (tempSc >= 50)
         {
             Debug.Log("50");
             Adjust(bullseye.transform.position, offset);
             return;
         }
 
-        if (overall > 20)
+        if (tempSc > 20)
         {
             Debug.Log("30");
             Adjust(c[6].colliders[2].target.position, offset);
             return;
         }
 
-        if (overall <= 20)
+        if (tempSc <= 20)
         {
             Debug.Log("20");
-            Adjust(c[overall-1].colliders[1].target.position, offset);
+            Adjust(c[tempSc - 1].colliders[1].target.position, offset);
             return;
         }
 
@@ -271,7 +286,8 @@ public class DartGame : MonoBehaviour
 
     public void AddPoints(byte b)
     {
-        turnSum += b;
+        s.ass.PlayOneShot(hit);
+           turnSum += b;
         turnScore.text = turnSum.ToString();
         scores[numberOfDartsThrow].text = b.ToString();
         dartimages[numberOfDartsThrow].enabled = false;
@@ -279,6 +295,7 @@ public class DartGame : MonoBehaviour
 
     public void check(byte b)
     {
+
         Debug.Log("check");
         if (overall - turnSum < 0)
         {
@@ -313,5 +330,16 @@ public class DartGame : MonoBehaviour
             partnerTurn();
             return;
         }
+    }
+
+    public IEnumerator condition()
+    {
+
+        yield return sec;
+
+        winc.enabled = false;
+        losec.enabled = false;
+
+            s.setTime(5);
     }
 }

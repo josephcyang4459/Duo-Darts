@@ -40,6 +40,13 @@ MonoBehaviour:
   - rid: 4049961239326752908
   - rid: 4049961239326752909
   defaultCharacter: Elaine
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 01000000
+    values: 6079feff
   aa: {fileID: 4900000, guid: 70ddb1fd83bebe94d915c0328dcfd040, type: 3}
   reset: 0
   references:
@@ -86,14 +93,17 @@ MonoBehaviour:
           responses:
           - Are you stupid?
           adjust: 0
+          exemption: 0
         - answer: '... '
           responses:
           - Yes! The silence is amazing.
           adjust: 2
+          exemption: 0
         - answer: 'Walk over. '
           responses:
           - Such a good dog.
           adjust: 3
+          exemption: 0
     - rid: 4049961239326752893
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

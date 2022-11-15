@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -11,6 +9,7 @@ public class CutsceneHandler : MonoBehaviour
     public Dialogue dh;
 
     public int index;
+    public Player p;
 
     public int responseIndex = 0;
     public int responseIndexIndex = 0;
@@ -30,26 +29,66 @@ public class CutsceneHandler : MonoBehaviour
 
     public Image cutSceneBackGround;
 
-    public string loseScene;
-
     public Schedule sc;
 
     public Image text;
     public Image textLine;
 
+    public GameObject responseButton;
+    public AttributeUpdate au;
 
+    public Canvas ac;
+    public GameObject bsss;
+    public GameObject voiddd;
     public void tart(CutScene c, byte b)
     {
-        
 
+        index = 0;
+        cs = c;
+        bbbbb();
         decideChar(c.defaultCharacter);
         background(b);
-        cs = c;
+        if (c.AnotherFuckingException)
+        {
+            UI_Helper.SetSelectedUIElement(bsss);
+            ac.enabled = true;
+            return;
+        }
+
+        UI_Helper.SetSelectedUIElement(voiddd);
 
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
         cs.blocks[index].action(this);
+    }
+    void bbbbb()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < partners[i].RelatedCutScenes.Length; j++)
+                if (partners[i].RelatedCutScenes[j].CutScene == cs)
+                {
+                    partners[i].RelatedCutScenes[j].completed = true;
+                    return;
+                }
+        }
+    }
+
+    public void choice(int i)
+    {
+        if (i == 0)
+            cs = partners[characterIndex].DefaultCutScene;
+        else
+            cs = partners[characterIndex].DefaultDrinkingCutScene;
+
+        sc.enabled = false;
+        dialougeCanvas.enabled = true;
+        interact.action.Enable();
+        interact.action.performed += takeAction;
+        UI_Helper.SetSelectedUIElement(voiddd);
+        cs.blocks[index].action(this);
+        
     }
 
     public void off()
@@ -67,19 +106,28 @@ public class CutsceneHandler : MonoBehaviour
         {
             if (responseIndex < 0)
                 return;
+
             if (dh.Script.typer != null)
             {
                 dh.Script.Stop();
                 return;
             }
-            dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
+
+            if (!respon.responses[responseIndex].exemption)
+                dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
+            else
+                Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
+
             responseIndexIndex++;
+
             if(responseIndexIndex>= respon.responses[responseIndex].responses.Length)
             {
                 if (respon.responses[responseIndex].adjust < 0)
                 {
                     off();
-                    
+                    partners[characterIndex].Love -= 99999;
+
+
                     return;
                 }
 
@@ -88,11 +136,11 @@ public class CutsceneHandler : MonoBehaviour
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
-               
 
                 
+                
             }
-           
+            return;
         }
             
         if (dh.Script.typer != null)
@@ -108,6 +156,16 @@ public class CutsceneHandler : MonoBehaviour
             off();
             if (cs.exception)
                 dm.exception(characterIndex, sc.hour);
+
+            for (int i = 0; i < cs.partnerS.stats.Length; i++)
+            {
+                partners[characterIndex].stateChange(cs.partnerS.stats[i], cs.partnerS.values[i]);
+            }
+
+            for (int i = 0; i < cs.playerS.stats.Length;i++)
+            {
+                au.UpdateAttribute(cs.playerS.stats[i], cs.playerS.values[i]);
+            }
             return;
         }
 
@@ -129,7 +187,7 @@ public class CutsceneHandler : MonoBehaviour
             responses[i].text = respon.responses[i].answer;
 
         responseCanvas.enabled = true;
-
+        UI_Helper.SetSelectedUIElement(responseButton);
     }
 
     public void changeChar(string character)
@@ -142,9 +200,13 @@ public class CutsceneHandler : MonoBehaviour
 
     public void UI_Response(int i)
     {
+        UI_Helper.SetSelectedUIElement(voiddd);
         responseCanvas.enabled = false;
         responseIndex = i;
-        dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
+        if (!respon.responses[responseIndex].exemption)
+            dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
+        else
+            Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
     }
 
     public void changeExpression(string b)

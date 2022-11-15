@@ -25,6 +25,14 @@ MonoBehaviour:
   - rid: 4049961239326753244
   - rid: 4049961239326753245
   defaultCharacter: Owner
+  exception: 0
+  playerS:
+    stats:
+    - Intoxication
+    values: 01000000
+  partnerS:
+    stats: 
+    values: 
   aa: {fileID: 4900000, guid: a8c6f0bb706392f44af64e98c7f71898, type: 3}
   reset: 0
   references:

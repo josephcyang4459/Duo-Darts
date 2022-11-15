@@ -25,7 +25,14 @@ MonoBehaviour:
   - rid: 4049961239326752809
   - rid: 4049961239326752810
   - rid: 4049961239326752811
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 01000000
+    values: f0d8ffff
   aa: {fileID: 4900000, guid: e56ca484d3508b54d896aaf8f6e8d0ed, type: 3}
   reset: 0
   references:
@@ -59,14 +66,17 @@ MonoBehaviour:
           responses:
           - I was hoping you'd say that.
           adjust: 3
+          exemption: 0
         - answer: Nope.
           responses:
           - It wasn't a question.
           adjust: 0
+          exemption: 0
         - answer: '... '
           responses:
           - Do I have to do all the work around here?
           adjust: 2
+          exemption: 0
     - rid: 4049961239326752806
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:

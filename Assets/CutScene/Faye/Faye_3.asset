@@ -30,6 +30,13 @@ MonoBehaviour:
   - rid: 4049961239326753025
   - rid: 4049961239326753026
   defaultCharacter: Faye
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 01000000
+    values: f0d8ffff
   aa: {fileID: 4900000, guid: cec04a33598bf5e429836defb8c3974e, type: 3}
   reset: 0
   references:
@@ -83,17 +90,20 @@ MonoBehaviour:
           responses:
           - You're too sweet.
           adjust: 2
+          exemption: 0
         - answer: 'If I look at it this way... '
           responses:
           - '*Faye rolls her eyes.*'
           - Oh my God.
           - The fact I can even stack them while this drunk means I deserve an award.
           adjust: 1
+          exemption: 0
         - answer: 'I could do better. '
           responses:
           - '*Faye pouts*'
           - You're so cruel.
           adjust: 3
+          exemption: 0
     - rid: 4049961239326753022
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
@@ -21,10 +18,39 @@ public class Partner : ScriptableObject {
     public Sprite textLineTHing;
 
     public int GetCutScene() {
-        for(int i = 0; i < RelatedCutScenes.Length; i++)
-            if(!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
-                return i;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            if (!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
+                if (i != 3)
+                {
+                    return i;
+
+                }
+                else if (Intoxication >= 3)
+                {
+                    return i;
+
+                }
+                else
+                    return -1;
         return -1;
+    }
+
+    public void stateChange(int stat, int change)
+    {
+        switch (stat)
+        {
+            case 0:
+                Composure += change;
+                return;
+            case 1:
+                Intoxication += change;
+                if (Intoxication < 0)
+                    Intoxication = 0;
+                return;
+            case 2:
+                Love += change;
+                return;
+        }
     }
 }
 
