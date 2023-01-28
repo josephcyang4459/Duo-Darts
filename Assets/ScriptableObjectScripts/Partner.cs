@@ -18,20 +18,18 @@ public class Partner : ScriptableObject {
     public Sprite textLineTHing;
 
     public int GetCutScene() {
-        for (int i = 0; i < RelatedCutScenes.Length; i++)
-            if (!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
-                if (i != 3)
+        for (int cutscene_index = 0; cutscene_index < RelatedCutScenes.Length; cutscene_index++)
+            if ((!RelatedCutScenes[cutscene_index].completed) && Love >= RelatedCutScenes[cutscene_index].loveRequirement)
+                if (cutscene_index != 3)
                 {
-                    return i;
-
+                    return cutscene_index;
                 }
                 else if (Intoxication >= 3)
                 {
-                    return i;
-
+                    return cutscene_index;// this should be drunk dutscene to handle
                 }
                 else
-                    return -1;
+                    return cutscene_index; // not drunk cutscene to handle
         return -1;
     }
 

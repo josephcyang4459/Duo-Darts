@@ -11,6 +11,7 @@ public class AimCone : MonoBehaviour
     public float moveSpeed;
     //[HideInInspector]
     public Vector3 normal = new Vector3(0,0,-.2f);
+    public float accuracy;
     //[HideInInspector]
     public Vector2 directionMove;
     public Vector2 cache = Vector2.zero;
@@ -67,12 +68,12 @@ public class AimCone : MonoBehaviour
     public void shoot(InputAction.CallbackContext c)
     {
         ghoot(t.position);
-       
     }
 
     public void ghoot(Vector3 h)
     {
-
+        h.y += Random.Range(-accuracy, accuracy);
+        h.x += Random.Range(-accuracy, accuracy);
         if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, layer))
         {
             normal.y = h.y;
@@ -80,7 +81,6 @@ public class AimCone : MonoBehaviour
             t.position = normal;
             
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
-
         }
        
         enabled = false;

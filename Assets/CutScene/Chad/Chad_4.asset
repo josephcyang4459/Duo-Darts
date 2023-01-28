@@ -37,7 +37,15 @@ MonoBehaviour:
   - rid: 4049961239326752833
   - rid: 4049961239326752834
   - rid: 4049961239326752835
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 66963f722cbbb8446beaca5bb8cad676, type: 3}
   reset: 0
   references:
@@ -88,16 +96,19 @@ MonoBehaviour:
           - Don't give me that line.
           - You didn't even know or care who I was until today.
           adjust: 0
+          exemption: 0
         - answer: You're right.
           responses:
           - For a second I thought you wouldn't kick me while I'm down.
           - But maybe I deserve it...
           adjust: 0
+          exemption: 0
         - answer: ...
           responses:
           - Come on.
           - Aren't you going to motivate me?
           adjust: 0
+          exemption: 0
     - rid: 4049961239326752822
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -124,15 +135,18 @@ MonoBehaviour:
           - Just leave me.
           - '*You leave* -Scene ends-'
           adjust: 0
+          exemption: 0
         - answer: Just get up. -Success-
           responses:
           - '*Chad laughs.*'
           adjust: 0
+          exemption: 0
         - answer: Then do it yourself. -Success-
           responses:
           - No.
           - I can't.
           adjust: 0
+          exemption: 0
     - rid: 4049961239326752827
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:

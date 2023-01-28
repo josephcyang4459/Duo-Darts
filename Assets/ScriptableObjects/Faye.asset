@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Faye
   Font: {fileID: 11400000, guid: 36f78ecdbb98df045a441b79bbe2893d, type: 2}
   textSize: 72
-  Composure: 0
+  Composure: 15
   Intoxication: 0
   Love: 0
   RelatedCutScenes:

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
 {
-    public CutScene cs;
+    public CutScene cutscene;
     public Dialogue dh;
 
     public int index;
@@ -19,7 +19,7 @@ public class CutsceneHandler : MonoBehaviour
     public Canvas dialougeCanvas;
     public Canvas responseCanvas;
     public TMP_Text[] responses;
-    public byte characterIndex;
+    public int characterIndex;
     public DartMen dm;
 
     public Partner[] partners;
@@ -40,11 +40,11 @@ public class CutsceneHandler : MonoBehaviour
     public Canvas ac;
     public GameObject bsss;
     public GameObject voiddd;
+
     public void tart(CutScene c, byte b)
     {
-
         index = 0;
-        cs = c;
+        cutscene = c;
         bbbbb();
         decideChar(c.defaultCharacter);
         background(b);
@@ -60,14 +60,14 @@ public class CutsceneHandler : MonoBehaviour
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
     }
     void bbbbb()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < partners[i].RelatedCutScenes.Length; j++)
-                if (partners[i].RelatedCutScenes[j].CutScene == cs)
+                if (partners[i].RelatedCutScenes[j].CutScene == cutscene)
                 {
                     partners[i].RelatedCutScenes[j].completed = true;
                     return;
@@ -78,16 +78,16 @@ public class CutsceneHandler : MonoBehaviour
     public void choice(int i)
     {
         if (i == 0)
-            cs = partners[characterIndex].DefaultCutScene;
+            cutscene = partners[characterIndex].DefaultCutScene;
         else
-            cs = partners[characterIndex].DefaultDrinkingCutScene;
+            cutscene = partners[characterIndex].DefaultDrinkingCutScene;
 
         sc.enabled = false;
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
         UI_Helper.SetSelectedUIElement(voiddd);
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
         
     }
 
@@ -102,7 +102,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void takeAction(InputAction.CallbackContext c)
     {
-        if (responding)
+        if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
                 return;
@@ -113,21 +113,14 @@ public class CutsceneHandler : MonoBehaviour
                 return;
             }
 
-            if (!respon.responses[responseIndex].exemption)
-                dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
-            else
-                Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
-
             responseIndexIndex++;
 
-            if(responseIndexIndex>= respon.responses[responseIndex].responses.Length)
+            if (responseIndexIndex>= respon.responses[responseIndex].responses.Length)
             {
                 if (respon.responses[responseIndex].adjust < 0)
                 {
-                    off();
                     partners[characterIndex].Love -= 99999;
-
-
+                    off();
                     return;
                 }
 
@@ -136,9 +129,13 @@ public class CutsceneHandler : MonoBehaviour
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
-
-                
-                
+            }
+            else
+            {
+                if (!respon.responses[responseIndex].exemption)
+                    dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
+                else
+                    Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
             }
             return;
         }
@@ -150,26 +147,26 @@ public class CutsceneHandler : MonoBehaviour
         }
         index++;
 
-        if(index>= cs.blocks.Length)
+        if(index>= cutscene.blocks.Length)
         {
 
             off();
-            if (cs.exception)
+            if (cutscene.exception)// force play darts
                 dm.exception(characterIndex, sc.hour);
 
-            for (int i = 0; i < cs.partnerS.stats.Length; i++)
+            for (int i = 0; i < cutscene.partnerS.stats.Length; i++)
             {
-                partners[characterIndex].stateChange(cs.partnerS.stats[i], cs.partnerS.values[i]);
+                partners[characterIndex].stateChange(cutscene.partnerS.stats[i], cutscene.partnerS.values[i]);
             }
 
-            for (int i = 0; i < cs.playerS.stats.Length;i++)
+            for (int i = 0; i < cutscene.playerS.stats.Length;i++)
             {
-                au.UpdateAttribute(cs.playerS.stats[i], cs.playerS.values[i]);
+                au.UpdateAttribute(cutscene.playerS.stats[i], cutscene.playerS.values[i]);
             }
             return;
         }
 
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
     }
 
     public void dialouge(string message)
@@ -195,7 +192,7 @@ public class CutsceneHandler : MonoBehaviour
         decideChar(character);
         index++;
 
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
     }
 
     public void UI_Response(int i)
@@ -203,6 +200,8 @@ public class CutsceneHandler : MonoBehaviour
         UI_Helper.SetSelectedUIElement(voiddd);
         responseCanvas.enabled = false;
         responseIndex = i;
+        responseIndexIndex = 0;
+
         if (!respon.responses[responseIndex].exemption)
             dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
         else
@@ -227,7 +226,7 @@ public class CutsceneHandler : MonoBehaviour
 
     private void partner(int i)
     {
-        characterIndex = (byte)i;
+        characterIndex = i;
         character.sprite = partners[i].Expressions[0];
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;

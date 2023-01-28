@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TypeWriterEffect : MonoBehaviour {
     [SerializeField] private bool UseCustomSpeed;
-    [SerializeField] private float CustomWriteSpeed = 10f;
+    public float CustomWriteSpeed = 10f;
     [SerializeField] private Slider TextSpeedSlider;
     public TMP_Text textlable;
     public string ttt;
