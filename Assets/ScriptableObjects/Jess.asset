@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Jess
   Font: {fileID: 11400000, guid: a247a618683b9cb468929d8d3987bfe9, type: 2}
   textSize: 100
-  Composure: 0
+  Composure: 15
   Intoxication: 0
   Love: 0
   RelatedCutScenes:

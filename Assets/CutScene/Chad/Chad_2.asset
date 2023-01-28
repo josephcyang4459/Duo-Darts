@@ -26,7 +26,15 @@ MonoBehaviour:
   - rid: 4049961239326752797
   - rid: 4049961239326752798
   - rid: 4049961239326752799
-  defaultCharacter: chad
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 2c0fcb3546a326b4a8465dd88e0c9de8, type: 3}
   reset: 0
   references:
@@ -49,16 +57,19 @@ MonoBehaviour:
           - '*Chad scoffs.*'
           - You wish.
           adjust: 3
+          exemption: 0
         - answer: 'At a tournament? '
           responses:
           - '*Chad nods.*'
           - I agree. It's ridiculous.
           adjust: 2
+          exemption: 0
         - answer: 'It is. '
           responses:
           - '*Chad Chuckles.*'
           - You missed my point.
           adjust: 1
+          exemption: 0
     - rid: 4049961239326752790
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -80,15 +91,18 @@ MonoBehaviour:
           responses:
           - That's wishful thinking on your part.
           adjust: 1
+          exemption: 0
         - answer: No.
           responses:
           - I know I'm here, but you could still get second place if you weren't
             so pessimistic.
           adjust: 0
+          exemption: 0
         - answer: '...M '
           responses:
           - I can't tell if your silence is pessimistic or optimistic.
           adjust: 1
+          exemption: 0
     - rid: 4049961239326752794
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 72
   Composure: 0
   Intoxication: 0
-  Love: 0
+  Love: 47.81
   RelatedCutScenes:
   - Location: Bar
     CutScene: {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}

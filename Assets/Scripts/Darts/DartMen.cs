@@ -12,8 +12,8 @@ public class DartMen : MonoBehaviour
     public TMP_Text[] texts;
     public int[] indices;
 
-
     public GameObject backButtonm;
+
     public void begin()
     {
         dg.overall = s.hour < 7 ? 501 : 701;

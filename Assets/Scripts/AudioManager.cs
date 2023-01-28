@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     {
         // Creates an AudioSource component from the sounds array in Unity and adds it to the CombatAudio object
         
-        foreach (Sound s in sounds)
+        foreach (Sound s in sounds)//slow
         {
             s.Source = gameObject.AddComponent<AudioSource>();
             s.Source.clip = s.Clip;
@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //no
     public void Play(string SoundName)
     {
         // Finds a specific sound related to the name and plays it
