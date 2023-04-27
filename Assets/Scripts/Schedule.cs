@@ -69,8 +69,28 @@ public class Schedule : MonoBehaviour
         }
         LocationCanvas.enabled = true;
 
-        UI_Helper.SetSelectedUIElement(LocationFirstButton);
-        timeM(minutes);
+        //UI_Helper.SetSelectedUIElement(LocationFirstButton);
+        increaseTimeByMinutes(minutes);
+
+        if (hour >= 8)
+        {
+            if (minutes >= 30)
+            {
+                Debug.Log("Now only duo dates should be available if they are not that is bug ");
+                int numberAvailable = 0;
+                for( int i = 0; i < 4;i++)
+                {
+                    if (partners[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed)
+                    {
+                        numberAvailable++;
+                    }
+                }
+                if (numberAvailable <= 0)
+                {
+                    Debug.Log("GAME OVER please send to end state");
+                }
+            }
+        }
 
         for(int i = 0; i < locals.Length; i++)
         {
@@ -128,7 +148,7 @@ public class Schedule : MonoBehaviour
                 available[i].done = true;
     }
 
-    private void timeM(int times)
+    private void increaseTimeByMinutes(int times)
     {
         minutes += times;
         if (minutes > 60)

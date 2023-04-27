@@ -21,3 +21,9 @@ public enum Characters
     Faye,
     Elaine
 }
+
+public enum PartnerCutscenes
+{
+    DrunkScene =3,
+    FinalScene
+}
