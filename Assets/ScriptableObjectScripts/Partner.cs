@@ -13,7 +13,7 @@ public class Partner : ScriptableObject {
     public CutScene DefaultCutScene;
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
-    public int bias = -1;
+    public DartTargetBias bias = DartTargetBias.None;
     public Sprite TextBox;
     public Sprite textLineTHing;
 
@@ -50,7 +50,22 @@ public class Partner : ScriptableObject {
                 return;
         }
     }
+
+#if UNITY_EDITOR
+
+    public void __resetValues()
+    {
+        Love = 0;
+        Intoxication = 0;
+        Composure = 0;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+
+#endif
 }
+
+
 
 [System.Serializable]
 public class RelatedCutScene {

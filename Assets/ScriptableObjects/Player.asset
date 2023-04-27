@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: Player
-  Charisma: 5
+  Charisma: 0
   Intoxication: 0
-  Skill: 30
+  Skill: 0
   Luck: 0
   points: 0
