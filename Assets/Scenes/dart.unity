@@ -12872,6 +12872,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
   - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
   - {fileID: 11400000, guid: 74d015bdf71cb76428402f690be77888, type: 2}
+  - {fileID: 11400000, guid: 83be2c7f05ce2cb4f99101b29adea9a1, type: 2}
+  - {fileID: 11400000, guid: ab0a7d41ea27aae4aa2006405dc0bb21, type: 2}
+  - {fileID: 11400000, guid: 39fcdac6cc21e7c4a8f5144ac3c93c25, type: 2}
+  - {fileID: 11400000, guid: 712bd6933c54e8849a3c0b0bfaba05d4, type: 2}
+  - {fileID: 11400000, guid: 8042064c8f7a72f4db4366f5f98413de, type: 2}
   - {fileID: 11400000, guid: c6b721fd4d966794a8db23e543f14331, type: 2}
   character: {fileID: 2106302472}
   characterName: {fileID: 1308288946}
@@ -13712,7 +13717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8da63c20261644942977798982c8e3a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccd588bae4c2e2747a4d11872bc8bafd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15922,7 +15927,7 @@ GameObject:
   - component: {fileID: 1390467139}
   - component: {fileID: 1390467138}
   m_Layer: 5
-  m_Name: dialoouge
+  m_Name: DialougeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23694,7 +23699,7 @@ GameObject:
   - component: {fileID: 2042875222}
   - component: {fileID: 2042875221}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GenderChoiceCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25068,7 +25073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e82c7ede7d144f14187652058024439d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0a5531d834c82840b8da0c6406524f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

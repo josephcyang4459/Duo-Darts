@@ -210,7 +210,25 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeExpression(string b)
     {
-
+        int getExpression(string b)
+        {
+            switch (b.ToLower())
+            {
+                case "lounge":
+                    return 0;
+                case "bar":
+                    return 1;
+                case "dance":
+                    return 2;
+                case "elaine":
+                    return 3;
+            }
+#if UNITY_EDITOR
+            Debug.Log("COULD NOT FIND EXPRESSION " + b);
+#endif
+            return 0;
+        }
+        character.sprite = partners[characterIndex].Expressions[getExpression(b)];
     }
 
     public void Thought(string s)
@@ -286,15 +304,33 @@ public class CutsceneHandler : MonoBehaviour
                 break;
             case "elaine":
                 partner(3);
-
                 break;
 
             case "owner":
                 partner(4);
-
                 break;
-            default:
+
+            case "bar guy":
                 partner(5);
+                break;
+            case "charming girl":
+                partner(6);
+                break;
+            case "charming guy":
+                partner(7);
+                break;
+            case "dance girl":
+                partner(8);
+                break;
+            case "lounge guy":
+                partner(9);
+                break;
+
+            default:
+#if UNITY_EDITOR
+                Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
+#endif
+                partner(10);
                 characterName.text = s;
                 break;
         }

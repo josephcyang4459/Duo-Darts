@@ -42,10 +42,10 @@ MonoBehaviour:
   DefaultCutScene: {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
   DefaultDrinkingCutScene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
   Expressions:
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
+  - {fileID: 21300000, guid: 3d1e3133f0c5e0848b0173923dd38862, type: 3}
+  - {fileID: 21300000, guid: f3032383f45496046a33ae14e8b2f1ec, type: 3}
+  - {fileID: 21300000, guid: 4dded8bc486bae14887a44db17ab468f, type: 3}
+  - {fileID: 21300000, guid: 4616aba711426864fb35446e8178876d, type: 3}
   bias: 1
   TextBox: {fileID: 21300000, guid: 1e52c750bae79e9459d6982710b44955, type: 3}
   textLineTHing: {fileID: 21300000, guid: 19b63548e4d4440459ace8e32f0e4e0a, type: 3}
