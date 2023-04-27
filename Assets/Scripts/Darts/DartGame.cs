@@ -9,18 +9,18 @@ public class DartGame : MonoBehaviour
 {
 
 
-    public short turnSum = 0;
+    public int turnSum = 0;
     public int overall = 501;
     public int points;
-    public byte currentTurn = 0;
+    public int currentTurn = 0;
 
     public int partnerIndex =0;
 
     public AimCone aim;
     [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(17, 19);
 
-    public byte numberOfDartsThrow = 0;
-    public byte maxTurns;
+    public int numberOfDartsThrow = 0;
+    public int maxTurns;
     public TMP_Text overallScore;
     public TMP_Text turnScore;
     public WaitForSeconds k = new WaitForSeconds(3);
@@ -304,34 +304,38 @@ public class DartGame : MonoBehaviour
             return;
         }
 
-        if (tempScore >= 50)
+        if (tempScore >= 50)// always goes for bullseye
         {
             //Debug.Log("50");
             Adjust(bullseye.transform.position, offset);
             return;
         }
 
-        if (tempScore > 20)
+        if (tempScore > 20)// goes for random small
         {
+            int temp = UnityEngine.Random.Range(4, 7);//from 4 to 6 so points from  15, 18, 21
             //Debug.Log("30");
-            Adjust(c[6].colliders[2].target.position, offset);
+            Adjust(c[temp].colliders[(int)PointValueTarget.Triple].target.position, offset);
             return;
         }
 
-        if (tempScore <= 20)
+        if (tempScore <= 20)//goes for single to win
         {
-            //Debug.Log("20");
-            Adjust(c[tempScore - 1].colliders[1].target.position, offset);
+            
+            int temp = UnityEngine.Random.Range(0, 10);// random for whether we go for inner or outer to add to the presentation
+            int target;
+            if (temp > 4)
+                target = (int)PointValueTarget.OuterSingle;
+            else
+                target = (int)PointValueTarget.InnerSingle;
+
+            //must adjust -1 to get correct target
+            Adjust(c[tempScore - 1].colliders[target].target.position, offset);
             return;
         }
-
-
-
-
-        return;
     }
 
-    public void AddPoints(byte b)
+    public void AddPoints(int b)
     {
         s.ass.PlayOneShot(hit);
            turnSum += b;
@@ -340,7 +344,7 @@ public class DartGame : MonoBehaviour
         dartimages[numberOfDartsThrow].enabled = false;
     }
 
-    public void check(byte b)
+    public void check(int b)
     {
 
         if (overall - turnSum < 0)

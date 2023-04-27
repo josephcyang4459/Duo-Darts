@@ -62,6 +62,23 @@ public class Partner : ScriptableObject {
             RelatedCutScenes[i].completed = false;
     }
 
+    public void __resetValues(float love, float intox, float compose)
+    {
+        Love = love;
+        Intoxication = intox;
+        Composure = compose;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+    public void __resetValues(float compose)
+    {
+        Love = 0;
+        Intoxication = 0;
+        Composure = compose;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+
 #endif
 }
 

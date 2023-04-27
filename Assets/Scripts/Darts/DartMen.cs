@@ -19,7 +19,6 @@ public class DartMen : MonoBehaviour
     public void begin()
     {
         dg.overall = s.hour < 7 ? 501 : 701;//gets correct score
-        int cutoff = s.hour < EndGameCutoff ? 1 : 15;//gets correct love cutoff
 
         s.off();
         menue.enabled = true;
@@ -29,12 +28,25 @@ public class DartMen : MonoBehaviour
         //turns on all slots
         for (int i = 0; i < p.Length; i++)
         {
-            if (p[i].Love >= cutoff)
+            if (s.hour >= 8 && s.minutes >= 30)
             {
-                characters[UIcharacterSlotUsed].gameObject.SetActive(true);
-                texts[UIcharacterSlotUsed].text = p[i].Name;
-                indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
-                UIcharacterSlotUsed++;
+                if (p[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed)
+                {
+                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
+                    texts[UIcharacterSlotUsed].text = p[i].Name;
+                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
+                    UIcharacterSlotUsed++;
+                }
+            }
+            else//normal 
+            {
+                if (p[i].Love >= 1)
+                {
+                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
+                    texts[UIcharacterSlotUsed].text = p[i].Name;
+                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
+                    UIcharacterSlotUsed++;
+                }
             }
             
         }
