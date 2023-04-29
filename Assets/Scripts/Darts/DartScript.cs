@@ -8,11 +8,11 @@ public class DartScript : MonoBehaviour
     public float maxSpeed;
     public float speed;
     public AnimationCurve curve;
-    public byte points;
+    public int points;
     public DartGame d;
     public MeshRenderer m;
 
-    public void go(Vector3 v, byte point_value)
+    public void go(Vector3 v, int point_value)
     {
         points = point_value;
         thi.position = new Vector3(v.x, v.y, -18);
@@ -44,6 +44,6 @@ public class DartScript : MonoBehaviour
     {
         d.AddPoints(points);
         yield return d.k;
-        d.check(points);
+        d.CheckForBust();
     }
 }

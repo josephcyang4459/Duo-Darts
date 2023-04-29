@@ -20,16 +20,17 @@ public class Partner : ScriptableObject {
     public int GetCutScene() {
         for (int cutscene_index = 0; cutscene_index < RelatedCutScenes.Length; cutscene_index++)
             if ((!RelatedCutScenes[cutscene_index].completed) && Love >= RelatedCutScenes[cutscene_index].loveRequirement)
-                if (cutscene_index != 3)
+            {
+                if (cutscene_index != (int)PartnerCutscenes.DrunkScene)
                 {
                     return cutscene_index;
                 }
-                else if (Intoxication >= 3)
+                //if it is drunk scene
+                if (Intoxication >= 3)
                 {
                     return cutscene_index;// this should be drunk dutscene to handle
-                }
-                else
-                    return cutscene_index; // not drunk cutscene to handle
+                }// if they are not drunk enought we move on to next one if we can
+            }
         return -1;
     }
 
@@ -52,6 +53,14 @@ public class Partner : ScriptableObject {
     }
 
 #if UNITY_EDITOR
+
+    public void OnValidate()
+    {
+        for(int i = 0; i < RelatedCutScenes.Length; i++)
+        {
+            RelatedCutScenes[i].Location = RelatedCutScenes[i].CutsceneLocation.ToString();
+        }
+    }
 
     public void __resetValues()
     {
@@ -86,7 +95,10 @@ public class Partner : ScriptableObject {
 
 [System.Serializable]
 public class RelatedCutScene {
-    public string Location;
+#if UNITY_EDITOR
+    [HideInInspector] public string Location;
+#endif
+    public Locations CutsceneLocation;
     public CutScene CutScene;
     public bool completed;
     public int loveRequirement;

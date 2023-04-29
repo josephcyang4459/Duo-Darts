@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame() {
         PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene((int)SceneNumbers.Game);
     }
 
     public void QuitGame() {
