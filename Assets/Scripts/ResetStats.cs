@@ -4,14 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Reset Stats", menuName = "Testing Tools/Stat Changer")]
 public class ResetStats : ScriptableObject
 {
+    [Header("Chad, Jess, Faye, Elaine")]
     [SerializeField] Partner[] partners;
     [SerializeField] Player Player;
     [SerializeField] __BaseStats[] BaseStats = new __BaseStats[4];
     [SerializeField] __BasePlayerStats BasePlayerStats;
-
+    [SerializeField] EventStart[] Events;
     public bool ResetToBase;
     public bool ResetToZero;
     public bool ResetToBaseAllButLoveAndIntoxication;
@@ -22,20 +23,38 @@ public class ResetStats : ScriptableObject
         for(int i = 0; i < 4; i++)
         {
             BaseStats[i].name = ((Characters)i).ToString();
+            if (partners[i].Name.CompareTo(BaseStats[i].name) != 0)
+                Debug.Log("WARNING CHARACTERS ARE IN WRONG ORDER SHOULD BE Chad, Jess, Faye, Elaine ~I will add a small fix for this later tho so don't worry ~ josh");
         }
 
         if(ResetToBase)
         {
             __resetToBase();
+            resetEvents();
             Debug.Log("all Stats have been reset to BASE");
         }
 
         if (ResetToZero)
         {
             __resetToZero();
+            resetEvents();
             Debug.Log("all Stats have been reset to ZERO");
         }
 
+        if (ResetToBaseAllButLoveAndIntoxication)
+        {
+            __resetToExceptComposure();
+            resetEvents();
+        }
+
+    }
+
+    private void resetEvents()
+    {
+        for( int i = 0; i < Events.Length; i++)
+        {
+            Events[i].done = false;
+        }
     }
     
     private void playerBase()
@@ -49,7 +68,7 @@ public class ResetStats : ScriptableObject
     private void __resetToBase()
     {
         ResetToBase = false;
-        for (int i = 0; i < partners.Length; i++)
+        for (int i = 0; i < 4; i++)
         {
             partners[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
         }
@@ -61,7 +80,7 @@ public class ResetStats : ScriptableObject
     private void __resetToExceptComposure()
     {
         ResetToBase = false;
-        for (int i = 0; i < partners.Length; i++)
+        for (int i = 0; i < 4; i++)
         {
             partners[i].__resetValues(BaseStats[i].Composure);
         }

@@ -41,7 +41,7 @@ public class CutsceneHandler : MonoBehaviour
     public GameObject bsss;
     public GameObject voiddd;
 
-    public void tart(CutScene c, byte b)
+    public void tart(CutScene c, int b)
     {
         index = 0;
         cutscene = c;
@@ -210,6 +210,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeExpression(string b)
     {
+        Debug.Log("Expressions not currently set please fix " + b);
         int getExpression(string b)
         {
             switch (b.ToLower())

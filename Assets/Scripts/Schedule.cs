@@ -14,7 +14,7 @@ public class Schedule : MonoBehaviour
 
     public Partner[] partners;
 
-    public byte location;
+    public int location;
     public CutsceneHandler c;
 
     public TMP_Text LocationName;
@@ -87,7 +87,9 @@ public class Schedule : MonoBehaviour
                 }
                 if (numberAvailable <= 0)
                 {
-                    Debug.Log("GAME OVER please send to end state");
+                    //Debug.Log("GAME OVER please send to end state");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.NoLovers);
+                    return;
                 }
             }
         }
@@ -100,12 +102,12 @@ public class Schedule : MonoBehaviour
 
         for (int i = 0; i < available.Length; i++)
         {
-            byte b = LocationOf(available[i]);
+            Locations b = LocationOf(available[i]);
 
-            if (b < 255)
+            if (b != Locations.none)
             {
-                locals[b].Events.Add(available[i].cutScene);
-                locals[b].EventsButtonUsed++;
+                locals[(int)b].Events.Add(available[i].cutScene);
+                locals[(int)b].EventsButtonUsed++;
             }
         }
 
@@ -115,23 +117,23 @@ public class Schedule : MonoBehaviour
            
             if ( checkLove>= 0)
             {
-                int b = getLocal(partners[i].RelatedCutScenes[checkLove].Location);
+                Locations locationIndex = partners[i].RelatedCutScenes[checkLove].CutsceneLocation;
 
-                if (b < 255)
+                if (locationIndex != Locations.none)
                 {
 
-                    locals[b].Events.Add(partners[i].RelatedCutScenes[checkLove].CutScene);
+                    locals[(int)locationIndex].Events.Add(partners[i].RelatedCutScenes[checkLove].CutScene);
 
-                    locals[b].EventsButtonUsed++;
+                    locals[(int)locationIndex].EventsButtonUsed++;
                 }
             }
             else
             {
                 if (partners[i].DefaultCutScene != null)
                 {
-                    int b = getLocal("lounge");
-                    locals[b].Events.Add(partners[i].DefaultCutScene);
-                    locals[b].EventsButtonUsed++;
+                    int loungeIndex = (int)Locations.lounge;
+                    locals[loungeIndex].Events.Add(partners[i].DefaultCutScene);
+                    locals[loungeIndex].EventsButtonUsed++;
                 }
             }
          
@@ -184,7 +186,7 @@ public class Schedule : MonoBehaviour
         if (b == 4)
             darts.SetActive(true);
 
-        location = (byte)b;
+        location = b;
         LocationCanvas.enabled = false;
         EventListCanvas.enabled = true;
         UI_Helper.SetSelectedUIElement(ListCanvasBack);
@@ -225,7 +227,7 @@ public class Schedule : MonoBehaviour
 
     }
 
-    private bool check(EventStart t)
+    private bool checkIfValidTime(EventStart t)
     {
         if (hour < t.hour)
             return false;
@@ -244,37 +246,20 @@ public class Schedule : MonoBehaviour
         return false;
     }
 
-    public byte LocationOf(EventStart e)
+    public Locations LocationOf(EventStart eventP)
     {
-        if (e.done)
-            return 255;
+        if (eventP.done)
+            return Locations.none;
 
-        if (check(e))
+        if (checkIfValidTime(eventP))
         {
 
-            return getLocal(e.location);
-
+            return eventP.Location;
         }
-        return 255;
+        return Locations.none;
     }
 
-    private byte getLocal(string s)
-    {
-        switch (s.ToLower())
-        {
-            case "lounge":
-                return 0;
-            case "bar":
-                return 1;
-            case "dance":
-                return 2;
-            case "bathroom":
-                return 3;
-            case "darts":
-                return 4;
-        }
-        return 255;
-    }
+
 }
 [System.Serializable]
 public class Location

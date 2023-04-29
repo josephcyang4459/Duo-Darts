@@ -14,8 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partners:
   - {fileID: 11400000, guid: e575fcd868f08ec4996b7933224505c7, type: 2}
-  - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
-  - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
   - {fileID: 11400000, guid: 2ab207ae24ac95646911cd954cb7a522, type: 2}
+  - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
+  - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
   Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
-  Reset: 0
+  BaseStats:
+  - name: Chad
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Jess
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Faye
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Elaine
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  BasePlayerStats:
+    Charisma: 1
+    Intoxication: 1
+    Skill: 1
+    Luck: 1
+  ResetToBase: 0
+  ResetToZero: 0
+  ResetToBaseAllButLoveAndIntoxication: 0
