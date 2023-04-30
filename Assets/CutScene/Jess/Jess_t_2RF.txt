@@ -1,0 +1,36 @@
+[Newln]*You find Jessica sitting at the bar.*
+[Newln]*You notice how much she stands out from others.*
+[Jess1]
+[Newln]You again?
+[Newln]Maybe I should’ve seen it coming.
+[Newln]You know drinking will only worsen your game.
+[Newln]Speaking of darts...
+[Newln]I’ve never heard of you before tonight.
+[Newln]Truthfully, I thought you might be some lucky startup to make it here.
+[Newln]I guess we will see by the end of the night.
+[Newln]So. What do you want to talk about?
+	[Display]Love. 
+		[Answer][RaiseJessLove2][Jess2]Maybe after I’ve had more to drink.
+	[Display]Death. 
+		[Answer][RaiseJessLove3][Jess2]*She laughs lightly.*
+		[Answer]I could’ve expected you to say something macabre or shocking like that.
+	[Display]Taxes. 
+		[Answer][RaiseJessLove1]God help us.
+[Jess1]
+[Newln]Maybe I should have asked why you keep coming up to socialize with me.
+[Newln]Yes. That’s a much better question.
+[Newln]*Jessica faces you and waits for an answer.*
+[Newln]So?
+	[Display]Your skill.
+		[Answer][RaiseJessLove3][Jess2]It’s refreshing that someone sees past the beauty to see the darts player that I truly am.
+	[Display]Your beauty.
+		[Answer]*She sighs.*
+		[Answer]At least you’re trying.
+	[Display]No reason in particular.
+		[Answer][RaiseJessLove2][Jess2]I’ll call that a lie.
+		[Answer]But fine, keep the reason to yourself.
+[Jess1]
+[Newln]*Jessica faces away from you toward the bar.*
+[Newln]I’ve changed my mind again. 
+[Newln]Let's talk about what you mentioned before.
+[Newln]*You and Jessica talk for a while.*[RaiseIntox1][RaiseJessIntox1]

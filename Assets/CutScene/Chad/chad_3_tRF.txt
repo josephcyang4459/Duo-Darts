@@ -1,0 +1,21 @@
+[Newln]*Chadrick is dancing…*
+[Newln]*He’s clearly obliterated…*
+[Chad4]
+[Newln]Hey, it's you.
+[Newln]Impressed? You should be.
+[Newln]I’ve got moves.
+[Newln]I think…
+[Newln]*He stares intently at you for a second.*
+[Newln]You. Me. Dance. Now.
+	[Display]Yes.
+		[Answer][RaiseChadLove3]I was hoping you’d say that.
+	[Display]Nope.
+		[Answer]It wasn’t a question.
+	[Display]...
+		[Answer][RaiseChadLove2]Do I have to do all the work around here?
+[Newln]*Chad grabs your arm and dances with you for a time.*
+[Newln]Hey you’re pretty good at this.
+[Newln]To think if you hadn’t drowned me at the bar I’d never get this chance.
+[Newln]I owe you one.
+[Newln]If you’re lucky that is.
+[Newln]*You and Chad dance away. He trips up often.*[ResetIntoxChad]

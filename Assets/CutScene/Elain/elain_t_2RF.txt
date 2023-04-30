@@ -1,0 +1,25 @@
+[Newln]*You walk up to Elaine who is again fidgeting with a few darts on the table in front of her.*
+[Newln]Hey.
+[Newln]Sit.
+[Newln]I was thinking about the tournament.
+[Newln]Is it really fair for me to even be here?
+	[Display]Not even a little.
+		[Answer][RaiseElaineLove3][Elaine2]My thoughts exactly.
+	[Display]It’s fair.
+		[Answer][Elaine3]Have you had your eyes closed all night?
+		[Answer]I’m killing it.
+	[Display]...
+		[Answer][RaiseElaineLove2][Elaine2]*Elaine scoffs.*
+		[Answer]You’re allowed to speak you know.
+[Elaine1]
+[Newln]This tournament bothers me.
+[Newln]It’s a professional tournament, but it’s not enough for me.
+[Newln]I want to go international.
+[Newln]Bumming it in these bars and easily winning these tournaments is beneath me.
+[Newln]*She pats your head.*
+[Newln]And belittling underachievers like yourself has lost its charm.
+[Newln]You know what, I have you to thank for this eureka.
+[Newln]I really do owe you one.
+[Newln]Anyways. Can you leave now?
+[Newln]You honestly smell horrible and it’s definitely noticeable.
+[Newln]*You leave Elaine to enjoy her fantasizations of international fame.*

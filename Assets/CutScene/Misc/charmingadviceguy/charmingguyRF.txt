@@ -1,0 +1,12 @@
+[Newln]*A charming man grabs your attention.*
+[CharmAdviceGuyl]
+[Newln]Come sit with me.
+[Newln]Let me tell you something about relationships.
+[Newln]*He leans back confidently.*
+[Newln]With this one easy step you can get anyone to fall for you.
+[Newln]All you have to do is be better than you were yesterday.
+[Newln]Eventually you’ll be so incredible that if someone doesn’t fall for you they’d have to be blind.
+[Newln]That’s what I did.
+[Newln]Haven’t you already fallen for me?
+[Newln]*You get up without saying a word.*
+[Newln]*After finding another seat far away from the man you consider if you are better than you were yesterday.*[RaisePlayerCharisma2]
