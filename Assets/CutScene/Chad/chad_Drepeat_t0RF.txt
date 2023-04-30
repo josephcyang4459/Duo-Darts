@@ -1,0 +1,6 @@
+[Newln]*You join Chad in people watching.*
+[Chad1]
+[Newln]Still ridiculous right?
+[Newln]Anyways, got time for a few questions?
+[Newln]*You spend time talking with Chad.*
+[Newln]*He seems to value the company.*[RaiseChadLove2]

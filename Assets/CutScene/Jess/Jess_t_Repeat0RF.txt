@@ -1,0 +1,5 @@
+[Newln]*You sit next to Jessica and strike up a conversation.*
+[Jess1]
+[Newln]I suppose it’s nice to see you again.
+[Newln]You have something interesting to say?
+[Newln]*You spend time talking with Jessica. She seems appreciative.* [RaiseJessLove2]

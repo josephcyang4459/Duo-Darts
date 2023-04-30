@@ -1,0 +1,39 @@
+[Newln]*You see Faye watching some other players.*
+[Newln]*She waves you over.*
+[Faye1]
+[Newln]Hey. 
+[Faye2]
+[Newln]It’s good to see you.
+[Faye1]
+[Newln]I want to practice some, but there’s too many people watching the dart floor.
+[Newln]*Faye sighs.*
+[Newln]I’m really too far in my own head.
+[Newln]Do you get nervous up there?
+	[Display]Of course.
+		[Answer]I don’t know how you do it without a complaint then.
+	[Display]If I let myself.
+		[Answer]You’re tough.
+	[Display]Never.
+		[Answer][Faye3]Nevermind.
+		[Answer]*Faye heads to her booth.*
+[Answer][FayeFail][SceneExit]
+[FayeSuccess]
+[Newln]I just want to be the best darts player I can be.
+[Newln]*Faye looks determined.*
+[Faye2]
+[Newln]I love this game more than anything.
+[Newln]I love being good at this game more than anything.
+[Faye1]
+[Newln]I think I can do this.
+[Newln]I just need to be the me I want to be. Everyone else can just watch.
+[Newln]*Faye looks at you intently.*
+[Newln]Please.
+[Newln]Be my partner for the final round of the tournament.
+[Newln]There’s no one else here I can imagine doing it with.
+[Newln]Don’t worry about answering now.
+[Faye2]
+[Newln]Call me over when you need me.
+[Newln]*Faye heads back to her booth with a big smile on her face.*
+
+
+

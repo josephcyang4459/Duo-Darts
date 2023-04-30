@@ -1,0 +1,21 @@
+[Newln]*A man stops you and gets a clear look at your face.*
+[Chad1]
+[Newln]Haven’t met you before. Who’re you?
+[Newln]Hmm…
+[Newln]I can’t remember meeting anyone with your name.
+[Newln]You must be nobody then. For now at least.
+[Newln]Well you’re here so I suppose you can’t be that terrible.
+[Newln]Take a seat. 
+[Newln]So. Tell me more about yourself.
+	[Display]Umm, who are you?
+		[Answer][RaiseChadLove3][Chad2]A bold question. I like that.
+	[Display]I’m the best.
+		[Answer]If only the best wasn’t already sitting in front of you I might’ve believed that.
+	[Display]...
+		[Answer][RaiseChadLove2][Chad2]I see. You want your play to prove yourself? I respect that.
+[Chad1]
+[Newln]Well, you've piqued my interest for better or worse. 
+[Newln]You should already know my name, but I’m Chadrick Basedman.
+[Newln]*When he says his name he seems to warp his face in a way that highlights his incredible facial features.*
+[Newln]Let me ask you a few more questions.
+[Newln]*Momentarily mesmerized you spend a while talking with Chadrick answering questions.*
