@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Elain_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326752945
-  - rid: 4049961239326752946
-  - rid: 4049961239326752947
-  - rid: 4049961239326752948
-  - rid: 4049961239326752949
+  - rid: 7660798460658974763
+  - rid: 7660798460658974764
+  - rid: 7660798460658974765
+  - rid: 7660798460658974766
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -27,28 +26,24 @@ MonoBehaviour:
     stats: 02000000
     values: 02000000
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: 8e095a8ab77a234438cc8f726b121482, type: 3}
+  aa: {fileID: 4900000, guid: d3df6b2b25fb607479ed3f1736fce938, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326752945
+    - rid: 7660798460658974763
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: You see Elaine practicing alone.
-    - rid: 4049961239326752946
+    - rid: 7660798460658974764
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey. Come.
-    - rid: 4049961239326752947
+    - rid: 7660798460658974765
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You want to buy me drinks?
-    - rid: 4049961239326752948
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
-      data:
-        message: Good dog.
-    - rid: 4049961239326752949
+        message: Check this trick out.
+    - rid: 7660798460658974766
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Elaine.
+        thoughtMessage: You spend time watching Elaine practice and gloat.

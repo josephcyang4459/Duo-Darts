@@ -17,7 +17,15 @@ public class Partner : ScriptableObject {
     public Sprite TextBox;
     public Sprite textLineTHing;
 
+    /// <summary>
+    /// Index of next available Cutscene or -1 if default
+    /// </summary>
+    /// <returns></returns>
     public int GetCutScene() {
+
+        if (Love < 0)
+            return -1;
+
         for (int cutscene_index = 0; cutscene_index < RelatedCutScenes.Length; cutscene_index++)
             if ((!RelatedCutScenes[cutscene_index].completed) && Love >= RelatedCutScenes[cutscene_index].loveRequirement)
             {

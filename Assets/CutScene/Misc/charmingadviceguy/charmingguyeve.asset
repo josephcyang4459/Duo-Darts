@@ -17,5 +17,6 @@ MonoBehaviour:
   endHour: 8
   endMinutes: 30
   location: Lounge
+  Location: 0
   cutScene: {fileID: 11400000, guid: c4c61a6d600a3c5468ec0f06a755141a, type: 2}
-  done: 1
+  done: 0

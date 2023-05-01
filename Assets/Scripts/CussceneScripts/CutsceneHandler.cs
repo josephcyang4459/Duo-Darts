@@ -41,13 +41,13 @@ public class CutsceneHandler : MonoBehaviour
     public GameObject bsss;
     public GameObject voiddd;
 
-    public void tart(CutScene c, int b)
+    public void PlayCutScene(CutScene c, int BackgroundIndex)
     {
         index = 0;
         cutscene = c;
-        bbbbb();
+        CompleteThisCutscene();
         decideChar(c.defaultCharacter);
-        background(b);
+        background(BackgroundIndex);
         if (c.AnotherFuckingException)
         {
             UI_Helper.SetSelectedUIElement(bsss);
@@ -62,7 +62,7 @@ public class CutsceneHandler : MonoBehaviour
         interact.action.performed += takeAction;
         cutscene.blocks[index].action(this);
     }
-    void bbbbb()
+    void CompleteThisCutscene()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -117,25 +117,13 @@ public class CutsceneHandler : MonoBehaviour
 
             if (responseIndexIndex>= respon.responses[responseIndex].responses.Length)
             {
-                if (respon.responses[responseIndex].adjust < 0)
-                {
-                    partners[characterIndex].Love -= 99999;
-                    off();
-                    return;
-                }
-
-                partners[characterIndex].Love += respon.responses[responseIndex].adjust;
-
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
             }
             else
             {
-                if (!respon.responses[responseIndex].exemption)
-                    dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
-                else
-                    Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
+                displayResponse();
             }
             return;
         }
@@ -145,24 +133,33 @@ public class CutsceneHandler : MonoBehaviour
             dh.Script.Stop();
             return;
         }
+
+        nextBlock();
+    }
+
+    public void nextBlock()
+    {
         index++;
 
-        if(index>= cutscene.blocks.Length)
+        if (index >= cutscene.blocks.Length)
         {
 
             off();
             if (cutscene.exception)// force play darts
                 dm.exception(characterIndex, sc.hour);
+            /*
 
             for (int i = 0; i < cutscene.partnerS.stats.Length; i++)
             {
                 partners[characterIndex].stateChange(cutscene.partnerS.stats[i], cutscene.partnerS.values[i]);
             }
 
-            for (int i = 0; i < cutscene.playerS.stats.Length;i++)
+            for (int i = 0; i < cutscene.playerS.stats.Length; i++)
             {
                 au.UpdateAttribute(cutscene.playerS.stats[i], cutscene.playerS.values[i]);
             }
+            
+            */
             return;
         }
 
@@ -190,9 +187,7 @@ public class CutsceneHandler : MonoBehaviour
     public void changeChar(string character)
     {
         decideChar(character);
-        index++;
-
-        cutscene.blocks[index].action(this);
+        nextBlock();
     }
 
     public void UI_Response(int i)
@@ -202,34 +197,24 @@ public class CutsceneHandler : MonoBehaviour
         responseIndex = i;
         responseIndexIndex = 0;
 
-        if (!respon.responses[responseIndex].exemption)
-            dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
-        else
-            Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
+        displayResponse();
     }
 
-    public void changeExpression(string b)
+    private void displayResponse()
     {
-        Debug.Log("Expressions not currently set please fix " + b);
-        int getExpression(string b)
-        {
-            switch (b.ToLower())
-            {
-                case "lounge":
-                    return 0;
-                case "bar":
-                    return 1;
-                case "dance":
-                    return 2;
-                case "elaine":
-                    return 3;
-            }
-#if UNITY_EDITOR
-            Debug.Log("COULD NOT FIND EXPRESSION " + b);
-#endif
-            return 0;
-        }
-        character.sprite = partners[characterIndex].Expressions[getExpression(b)];
+        respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
+        if (!respon.responses[responseIndex].responses[responseIndexIndex].exemption)
+            dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+        else
+            Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+    }
+
+    public void changeExpression(int ExpressionIndex)
+    {
+        if (character.enabled == false)
+            character.enabled = true;
+        character.sprite = partners[characterIndex].Expressions[ExpressionIndex];
+        nextBlock();
     }
 
     public void Thought(string s)
@@ -241,12 +226,15 @@ public class CutsceneHandler : MonoBehaviour
     public void changeBackground(string s)
     {
         decideBackGround(s);
+        nextBlock();
     }
 
     private void partner(int i)
     {
         characterIndex = i;
-        character.sprite = partners[i].Expressions[0];
+
+        //character.sprite = partners[i].Expressions[0];
+        character.enabled = false;
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
         characterName.fontSize = partners[i].textSize;
