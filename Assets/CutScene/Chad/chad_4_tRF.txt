@@ -1,0 +1,51 @@
+[Newln]*You hear someone vomiting in the stall*
+[Chad1]
+[Newln]Oh god...
+[Newln]*It’s Chad’s voice.*
+[Newln]It’s you isn’t it?
+[Newln]Don’t let anyone else into the bathroom.
+[Newln]I came in here to relax for a minute and the pressure got to me.
+[Newln]If anyone else finds out about this my reputation will be destroyed.
+[Newln]*Chad sniffles and spits into the toilet.*
+[Newln]I don’t think I can win.
+	[Display]But you’re Chadrick Basedman.
+		[Answer]Don’t give me that line.
+		[Answer]You didn’t even know or care who I was until today.
+	[Display]You’re right.
+		[Answer]For a second I thought you wouldn’t kick me while I’m down.
+		[Answer]But maybe I deserve it...
+	[Display]...
+		[Answer]Come on.
+		[Answer]Aren’t you going to motivate me?
+[Newln]It’s no use.
+[Newln]No matter what anyone does or says to me I’d still be the one who needed someone else.
+[Newln]*Chad hits the stall wall.*
+[Newln]And that is just unacceptable!
+	[Display]So what?
+		[Answer][Chad3]I knew you wouldn’t get it.
+[Answer]Just leave me.
+[Answer]*You leave like he asked.*
+[Answer][ChadFail][SceneExit]
+	[Display]Just get up.
+		[Answer][Chad2]*Chad laughs.*
+	[Display]Then do it yourself.
+		[Answer][Chad2]No.
+		[Answer]I can’t.
+[Newln]*Chad flushes the toilet.*
+[Chad1]
+[ChadSuccess]
+[Newln]We’re at a duo’s tournament, you know.
+[Newln]*Chad emerges from the stall with regained composure.*
+[Newln]I need you.
+[Newln]And I’m ok with that if it means I can win.
+[Newln]We can win.
+[Newln]*Chadrick lowers his head and gets down onto one knee before you.*
+[Newln]*He raises his face to reveal the most chiseled and perfectly conformed facial expression you’ve ever seen.*
+[Newln]Please. 
+[Newln]Let me be your partner for the final round.
+[Chad2]
+[Newln]You don’t have to answer right now, but thank you for being here either way.
+[Chad1]
+[Newln]*Chad gets up and walks past you out of the bathroom.*
+[Newln]*He didn’t wash his hands…*
+

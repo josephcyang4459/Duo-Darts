@@ -4,10 +4,10 @@
 [Newln]Dance!
 [Newln]*She grabs your arms and flails you around for a while.*
 [Newln]*Eventually she tires out and walks off to the side of the dance floor with you.*
-[Newln]You’re incredible!
-[Newln]Here’s some advice!
-[Newln]When you’re checking out in darts imagine you’re operating a cash register.
-[Newln]Like… 
+[Newln]Youâ€™re incredible!
+[Newln]Hereâ€™s some advice!
+[Newln]When youâ€™re checking out in darts imagine youâ€™re operating a cash register.
+[Newln]Likeâ€¦ 
 [Newln]Cha-ching!
 [Newln]You know?
 [Newln]It really gives you a powerful perspective!

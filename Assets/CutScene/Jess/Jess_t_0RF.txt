@@ -1,0 +1,24 @@
+[Newln]*You see a unique woman dancing.*
+[Newln]*Your eyes meet briefly and she walks over to you shortly after.*
+[Jess1]
+[Newln]Is there something you want?
+	[Display]You.
+		[Answer][Jess3]What a desperate thing for a professional to say.
+	[Display]Nothing in particular.
+		[Answer][Jess2][RaiseJessLove3]My mistake then.
+	[Display]...
+		[Answer][RaiseJessLove1]You are quite odd.
+[Jess1]
+[Newln]I just came to ask you to stop staring.
+[Newln]It’s off putting.
+[Newln]*She begins to return to her dancing, but stops and returns to you.*
+[Newln]I need a dance partner.
+[Newln]*She waits for a moment.*
+[Newln]Well...
+[Newln]Aren’t you going to ask me to dance?
+[Newln]*You take her onto the dance floor and dance with her.
+[Newln]You’re quite good at this.
+[Newln]*She smirks.*
+[Newln]I’m Jessica Fletcher.
+[Newln]And I asked you to stop staring...
+[Newln]*You and Jessica dance for a while.*

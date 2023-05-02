@@ -1,0 +1,5 @@
+[Newln]*You examine a wall with scribbles on it while relieving yourself in the bathroom.
+[Newln]When throwing darts, think of rice balls.
+[Newln]Trust me it helps!
+[Newln]*You leave feeling enlightened.*[LowerPlayerIntox1][RaisePlayerSkill1]
+

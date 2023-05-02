@@ -1,0 +1,6 @@
+[Newln]*You go to Faye’s booth.*
+[Faye1]
+[Newln]A drink?
+[Newln]If you’re paying and bringing them over here then sure.
+[Newln]*You spend time drinking with Faye.* [RaiseFayeLove1][RaiseFayeIntox1][RaisePlayerIntox1]
+
