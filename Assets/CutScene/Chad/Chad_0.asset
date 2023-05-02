@@ -28,11 +28,12 @@ MonoBehaviour:
   exception: 0
   playerS:
     stats: []
-    values: 0
+    values: 
   partnerS:
     stats: 
-    values: 0
-  aa: {fileID: 4900000, guid: bfeb7c30add75e04ab9620d4a19f16ae, type: 3}
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: e6d6ab74fa481114c91d1f02c395de9d, type: 3}
   reset: 0
   references:
     version: 2
@@ -68,18 +69,28 @@ MonoBehaviour:
         responses:
         - answer: 'Umm, who are you? '
           responses:
-          - You are quite something...
-          adjust: 3
+          - Message: 
+            Character: 0
+            Expression: 0
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
         - answer: I'm the best.
           responses:
-          - If only the best wasn't already sitting in front of you I might've believed
-            that.
-          adjust: 1
+          - Message: 
+            Character: 0
+            Expression: 0
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
         - answer: '... '
           responses:
-          - I see. You want your play to prove yourself? I respect that more than
-            you know.
-          adjust: 2
+          - Message: 
+            Character: 0
+            Expression: 0
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
     - rid: 4049961239326753325
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab207ae24ac95646911cd954cb7a522, type: 2}
   - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
   - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
+  - {fileID: 11400000, guid: 74d015bdf71cb76428402f690be77888, type: 2}
   Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   BaseStats:
   - name: Chad
@@ -40,6 +41,13 @@ MonoBehaviour:
     Intoxication: 1
     Skill: 1
     Luck: 1
+  Events:
+  - {fileID: 11400000, guid: c5f9f65815a54f147862b7f52fd0cf96, type: 2}
+  - {fileID: 11400000, guid: 2d16e0a8f84fa5f48894a413f74e084d, type: 2}
+  - {fileID: 11400000, guid: 5a37f1c783c402b44af12c3487995640, type: 2}
+  - {fileID: 11400000, guid: 7cd9fdab6679fe7439705395669096f8, type: 2}
+  - {fileID: 11400000, guid: 0d83e6a13c25a5d4085cf32fba91742e, type: 2}
+  - {fileID: 11400000, guid: 8d4ced04145ad914396622f25f24bcf3, type: 2}
   ResetToBase: 0
   ResetToZero: 0
   ResetToBaseAllButLoveAndIntoxication: 0

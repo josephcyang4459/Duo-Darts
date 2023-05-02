@@ -19,23 +19,28 @@ MonoBehaviour:
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
-  - Location: Lounge
+  - Location: lounge
+    CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c4dfed969452951468178461bf30a220, type: 2}
     completed: 0
     loveRequirement: 0
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 4a37a56e6224b454eab247739d2e6487, type: 2}
     completed: 0
     loveRequirement: 1
-  - Location: Bar
+  - Location: bar
+    CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: c9a08ff73aecc614d993a9b126d99b66, type: 2}
     completed: 0
     loveRequirement: 8
-  - Location: Lounge
+  - Location: lounge
+    CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c32e579fbfed8f148b49289c4e0946a4, type: 2}
     completed: 0
     loveRequirement: 13
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 5f5ac865462a22a4d990c66d58e4adf4, type: 2}
     completed: 0
     loveRequirement: 17
@@ -46,6 +51,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 154f36081fc3feb49ba5493b89971159, type: 3}
   - {fileID: 21300000, guid: 226ec28e82b1d6047a1d89f307344b90, type: 3}
   - {fileID: 21300000, guid: e284c29aae1d7b6428cc6461a12c716e, type: 3}
-  bias: -1
+  bias: 0
   TextBox: {fileID: 21300000, guid: 956932ec69a78e64dac319655f95efce, type: 3}
   textLineTHing: {fileID: 21300000, guid: 8ca11222d24b9ba4c8f2514cf547a21d, type: 3}

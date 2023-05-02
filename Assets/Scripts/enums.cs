@@ -19,7 +19,23 @@ public enum Characters
     Chad,
     Jess,
     Faye,
-    Elaine
+    Elaine,
+    Player
+}
+
+public enum PlayerSkills
+{
+     Charisma,
+     Intoxication,
+     Skill,
+     Luck
+}
+
+public enum Stats
+{
+    Composure,
+    Intoxication,
+    Love
 }
 
 public enum PartnerCutscenes
@@ -41,6 +57,12 @@ public enum SceneNumbers
 
 }
 
+public enum Expressions
+{
+    nuetral, positive, negative, drunk, ForCutscene
+}
+
+
 public enum Locations
 {
      lounge,
@@ -50,3 +72,24 @@ public enum Locations
      darts,
      none
 }
+
+#if UNITY_EDITOR
+
+public enum __CutsceneActions
+{
+    Dialouge,
+    Thought,
+    Expression,
+    BackGround,
+    Prompt,
+    Answer,
+    ChangeStat,
+    ChangeBackground,
+    ExitScene,
+    ResetIntox,
+    Fail,
+    Success,
+    ERROR
+}
+
+#endif

@@ -26,6 +26,35 @@ public class Player : ScriptableObject {
                 Luck += value;
                 break;
             default:
+
+#if UNITY_EDITOR
+                Debug.Log("NOT A SKILL "+attribute);
+#endif
+                break;
+        }
+    }
+
+    public void UpdateAttribute(PlayerSkills attribute, float value)
+    {
+        switch (attribute)
+        {
+            case PlayerSkills.Charisma:
+                Charisma += value;
+                break;
+            case PlayerSkills.Intoxication:
+                Intoxication += value;
+                break;
+            case PlayerSkills.Skill:
+                Skill += value;
+                break;
+            case PlayerSkills.Luck:
+                Luck += value;
+                break;
+            default:
+
+#if UNITY_EDITOR
+                Debug.Log("NOT A SKILL " + attribute);
+#endif
                 break;
         }
     }

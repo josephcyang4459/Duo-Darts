@@ -60,6 +60,56 @@ public class Schedule : MonoBehaviour
         setTime(0);
     }
 
+    private void setLocations()
+    {
+        for (int i = 0; i < locals.Length; i++)
+        {
+            locals[i].EventsButtonUsed = 0;
+            locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
+        }
+        //events
+        for (int i = 0; i < available.Length; i++)
+        {
+            Locations b = LocationOf(available[i]);
+
+            if (b != Locations.none)
+            {
+                locals[(int)b].Events.Add(available[i].cutScene);
+                locals[(int)b].EventsButtonUsed++;
+            }
+        }
+
+        for (int i = 0; i < partners.Length; i++)
+        {
+            int availableCutSceneIndex = partners[i].GetCutScene();
+
+            if (availableCutSceneIndex >= 0)
+            {
+                Locations locationIndex = partners[i].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
+
+                if (locationIndex != Locations.none)
+                {
+
+                    locals[(int)locationIndex].Events.Add(partners[i].RelatedCutScenes[availableCutSceneIndex].CutScene);
+
+                    locals[(int)locationIndex].EventsButtonUsed++;
+                }
+            }
+            else
+            {
+                if (partners[i].DefaultCutScene != null)
+                {
+                    int loungeIndex = (int)Locations.lounge;
+                    locals[loungeIndex].Events.Add(partners[i].DefaultCutScene);
+                    locals[loungeIndex].EventsButtonUsed++;
+                }
+            }
+
+
+
+        }
+    }
+
     public void setTime(int minutes)
     {
         if (ass.clip != song0)
@@ -94,52 +144,7 @@ public class Schedule : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < locals.Length; i++)
-        {
-            locals[i].EventsButtonUsed = 0;
-            locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
-        }
-
-        for (int i = 0; i < available.Length; i++)
-        {
-            Locations b = LocationOf(available[i]);
-
-            if (b != Locations.none)
-            {
-                locals[(int)b].Events.Add(available[i].cutScene);
-                locals[(int)b].EventsButtonUsed++;
-            }
-        }
-
-        for (int i = 0; i < partners.Length; i++)
-        {
-            int checkLove = partners[i].GetCutScene();
-           
-            if ( checkLove>= 0)
-            {
-                Locations locationIndex = partners[i].RelatedCutScenes[checkLove].CutsceneLocation;
-
-                if (locationIndex != Locations.none)
-                {
-
-                    locals[(int)locationIndex].Events.Add(partners[i].RelatedCutScenes[checkLove].CutScene);
-
-                    locals[(int)locationIndex].EventsButtonUsed++;
-                }
-            }
-            else
-            {
-                if (partners[i].DefaultCutScene != null)
-                {
-                    int loungeIndex = (int)Locations.lounge;
-                    locals[loungeIndex].Events.Add(partners[i].DefaultCutScene);
-                    locals[loungeIndex].EventsButtonUsed++;
-                }
-            }
-         
-
-            
-        }
+        setLocations();
     }
 
     private void doCheck(CutScene c)
@@ -189,7 +194,7 @@ public class Schedule : MonoBehaviour
         location = b;
         LocationCanvas.enabled = false;
         EventListCanvas.enabled = true;
-        UI_Helper.SetSelectedUIElement(ListCanvasBack);
+        //UI_Helper.SetSelectedUIElement(ListCanvasBack);
     }
 
     public void selectEvent(int eve)
@@ -197,7 +202,7 @@ public class Schedule : MonoBehaviour
         doCheck(locals[location].Events[eve]);
         darts.SetActive(false);
         EventListCanvas.enabled = false;
-        c.tart(locals[location].Events[eve],location);
+        c.PlayCutScene(locals[location].Events[eve],location);
     }
 
     public void off()
