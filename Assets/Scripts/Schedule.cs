@@ -40,13 +40,21 @@ public class Schedule : MonoBehaviour
     public GameObject g;
     public TypeWriterEffect writer;
 
+    public TMP_Text TimeText;
+    public Canvas TimeCanvas;
+
     public void Start()
     {
-
+        TimeText.text = timeAsString();
         UI_Helper.SetSelectedUIElement(g);
         Application.targetFrameRate = 60;
         ass.volume = PlayerPrefs.GetFloat("volume", .5f);
         writer.CustomWriteSpeed = PlayerPrefs.GetFloat("textSpeed", 10);
+    }
+
+    private string timeAsString()
+    {
+        return hour + ":" + (minutes==0?"00":minutes.ToString()) + "PM";
     }
 
     public void click()
@@ -121,7 +129,7 @@ public class Schedule : MonoBehaviour
 
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
         increaseTimeByMinutes(minutes);
-
+        
         if (hour >= 8)
         {
             if (minutes >= 30)
@@ -163,6 +171,9 @@ public class Schedule : MonoBehaviour
             minutes -= 60;
             hour++;
         }
+
+        TimeCanvas.enabled = true;
+        TimeText.text = timeAsString();
     }
 
     public void LocationImage(int b)
@@ -207,6 +218,7 @@ public class Schedule : MonoBehaviour
 
     public void off()
     {
+        TimeCanvas.enabled = false;
         EventListCanvas.enabled = false;
         LocationCanvas.enabled = false;
         darts.SetActive( false);
