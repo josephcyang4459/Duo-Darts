@@ -13,19 +13,26 @@ MonoBehaviour:
   m_Name: Chad_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326752787
-  - rid: 4049961239326752788
-  - rid: 4049961239326752789
-  - rid: 4049961239326752790
-  - rid: 4049961239326752791
-  - rid: 4049961239326752792
-  - rid: 4049961239326752793
-  - rid: 4049961239326752794
-  - rid: 4049961239326752795
-  - rid: 4049961239326752796
-  - rid: 4049961239326752797
-  - rid: 4049961239326752798
-  - rid: 4049961239326752799
+  - rid: 3415138150063276612
+  - rid: 3415138150063276613
+  - rid: 3415138150063276614
+  - rid: 3415138150063276615
+  - rid: 3415138150063276616
+  - rid: 3415138150063276617
+  - rid: 3415138150063276618
+  - rid: 3415138150063276619
+  - rid: 3415138150063276620
+  - rid: 3415138150063276621
+  - rid: 3415138150063276622
+  - rid: 3415138150063276623
+  - rid: 3415138150063276624
+  - rid: 3415138150063276625
+  - rid: 3415138150063276626
+  - rid: 3415138150063276627
+  - rid: 3415138150063276628
+  - rid: 3415138150063276629
+  - rid: 3415138150063276630
+  - rid: 3415138150063276631
   defaultCharacter: Chad
   exception: 0
   playerS:
@@ -35,96 +42,160 @@ MonoBehaviour:
     stats: 
     values: 
   AnotherFuckingException: 0
-  aa: {fileID: 4900000, guid: 2c0fcb3546a326b4a8465dd88e0c9de8, type: 3}
+  aa: {fileID: 4900000, guid: 5b6e966039d34f44cb44994d7b5214cc, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326752787
+    - rid: 3415138150063276612
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138150063276613
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You approach Chad watching people dance from the sidelines.
-    - rid: 4049961239326752788
+        thoughtMessage: '*You approach Chad watching people dance from the sidelines.*'
+    - rid: 3415138150063276614
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He notices you and nods.*'
+    - rid: 3415138150063276615
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Lovely isn't it?
-    - rid: 4049961239326752789
+        message: You need something?
+    - rid: 3415138150063276616
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'Want to dance? '
+        - answer: Want to dance?
           responses:
-          - '*Chad scoffs.*'
-          - You wish.
-          adjust: 3
-          exemption: 0
-        - answer: 'At a tournament? '
+          - Message: 
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 3
+            exemption: 1
+          - Message: 
+            Character: 0
+            Expression: 2
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: '?'
           responses:
-          - '*Chad nods.*'
-          - I agree. It's ridiculous.
-          adjust: 2
-          exemption: 0
-        - answer: 'It is. '
+          - Message: 
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 2
+            exemption: 1
+          - Message: 
+            Character: 0
+            Expression: 2
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: Just observing.
           responses:
-          - '*Chad Chuckles.*'
-          - You missed my point.
-          adjust: 1
-          exemption: 0
-    - rid: 4049961239326752790
+          - Message: 
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 1
+            exemption: 1
+          - Message: Me or the dancing?
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+    - rid: 3415138150063276617
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Even outside of a tournament I'm not a fan of dancing.
-    - rid: 4049961239326752791
+    - rid: 3415138150063276618
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It must just give good players something to do while they wait for
           the final call.
-    - rid: 4049961239326752792
+    - rid: 3415138150063276619
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Speaking of which. Do you think you can win this thing?
-    - rid: 4049961239326752793
+        message: Speaking of which.
+    - rid: 3415138150063276620
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Do you think you can win this thing?
+    - rid: 3415138150063276621
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'Yeah. '
+        - answer: Yeah.
           responses:
-          - That's wishful thinking on your part.
-          adjust: 1
-          exemption: 0
+          - Message: 
+            Character: 0
+            Expression: 2
+            Stat: 0
+            AdjustValue: 1
+            exemption: 0
         - answer: No.
           responses:
-          - I know I'm here, but you could still get second place if you weren't
-            so pessimistic.
-          adjust: 0
-          exemption: 0
-        - answer: '...M '
+          - Message: I know I'm here, but you could still get second place if you
+              weren't so pessimistic.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: I'm not sure.
           responses:
-          - I can't tell if your silence is pessimistic or optimistic.
-          adjust: 1
-          exemption: 0
-    - rid: 4049961239326752794
+          - Message: 
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 1
+            exemption: 0
+    - rid: 3415138150063276622
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me give you some free advice.
-    - rid: 4049961239326752795
+    - rid: 3415138150063276623
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You'll need some good luck with this crowd. And against me of course.
-    - rid: 4049961239326752796
+        message: You'll need some good luck with this crowd.
+    - rid: 3415138150063276624
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chadrick raises an eyebrow and smirks.*'
+    - rid: 3415138150063276625
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And against me of course.
+    - rid: 3415138150063276626
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I always find myself a bit luckier after taking a second in the
           bathroom to calm down.
-    - rid: 4049961239326752797
+    - rid: 3415138150063276627
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And if you're tipsy you might sober up a bit from the chill in there.
+    - rid: 3415138150063276628
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That's my advice.
-    - rid: 4049961239326752798
+    - rid: 3415138150063276629
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Anyways, what do you think of this?
-    - rid: 4049961239326752799
+        message: Anyways, I have a few more questions for you.
+    - rid: 3415138150063276630
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You and Chad spend time talking.
+        thoughtMessage: '*You and Chad spend time talking.*'
+    - rid: 3415138150063276631
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*His questions are more personal this time around.*'

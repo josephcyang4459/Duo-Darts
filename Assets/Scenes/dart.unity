@@ -1443,8 +1443,8 @@ MonoBehaviour:
   song0: {fileID: 8300000, guid: 293eb5cc5784d1d4cb69e7ec35a50f19, type: 3}
   cli: {fileID: 8300000, guid: ee59a797ddaa4534aac34630a6d1bba5, type: 3}
   mf:
-  - {fileID: 21300000, guid: 8da63c20261644942977798982c8e3a5, type: 3}
-  - {fileID: 21300000, guid: e82c7ede7d144f14187652058024439d, type: 3}
+  - {fileID: 21300000, guid: ccd588bae4c2e2747a4d11872bc8bafd, type: 3}
+  - {fileID: 21300000, guid: d0a5531d834c82840b8da0c6406524f1, type: 3}
   plyr: {fileID: 1095193379}
   g: {fileID: 1288483499}
   writer: {fileID: 1994920906}
@@ -12420,7 +12420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 785, y: 465}
+  m_AnchoredPosition: {x: -785, y: -465}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162148363
@@ -14922,7 +14922,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22588,7 +22588,7 @@ GameObject:
   - component: {fileID: 1919161307}
   - component: {fileID: 1919161306}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TimeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23531,6 +23531,7 @@ MonoBehaviour:
   TextSpeedSlider: {fileID: 0}
   textlable: {fileID: 1632188470}
   ttt: 
+  writing: 0
 --- !u!114 &1994920907
 MonoBehaviour:
   m_ObjectHideFlags: 0

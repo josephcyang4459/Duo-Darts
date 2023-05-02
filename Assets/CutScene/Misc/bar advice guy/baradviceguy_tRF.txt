@@ -1,11 +1,11 @@
 [Newln]*You sit next to a man at the bar.*
-[BarAdviceGuy]
+[BarAdviceGuy0]
 [Newln]*He begins talking to you without prompting.*
-[Newln]My boyfriend, who was also my darts partner, left me because I’m bad at darts.
+[Newln]My boyfriend, who was also my darts partner, left me because Iâ€™m bad at darts.
 [Newln]*He looks at you with passion.*
 [Newln]I will not let you fail like I have.
 [Newln]My best advice for you to avoid my fate is to compliment something about your darts partner before every game.
-[Newln]It’ll make them more confident. And you’ll feel better about yourself.
-[Newln]Speaking of which, I’m gonna go cry in a bathroom stall to make myself feel better.
+[Newln]Itâ€™ll make them more confident. And youâ€™ll feel better about yourself.
+[Newln]Speaking of which, Iâ€™m gonna go cry in a bathroom stall to make myself feel better.
 [Newln]Good luck in the tournament.
 [Newln]*He leaves you to contemplate the fickle nature of love and darts over a cold drink.*[RaisePlayerIntox1][RaisePlayerSkill1]

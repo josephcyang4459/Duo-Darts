@@ -1,4 +1,5 @@
 [Newln]*A sketchy looking man motions to a seat next to him at a table.
+[LoungeAdviceGuy1]
 [Newln]Yo. Sit.
 [Newln]*You sit.*
 [Newln]These fools. They just don’t get the art of the dart, you know?

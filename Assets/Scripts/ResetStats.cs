@@ -72,7 +72,7 @@ public class ResetStats : ScriptableObject
         {
             partners[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
         }
-
+        partners[4].__resetValues();
         playerBase();
        
     }
@@ -84,7 +84,7 @@ public class ResetStats : ScriptableObject
         {
             partners[i].__resetValues(BaseStats[i].Composure);
         }
-
+        partners[4].__resetValues();
         playerBase();
 
     }

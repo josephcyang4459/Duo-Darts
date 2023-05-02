@@ -102,12 +102,13 @@ public class CutsceneHandler : MonoBehaviour
 
     public void takeAction(InputAction.CallbackContext c)
     {
+        Debug.Log(index);
         if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
                 return;
 
-            if (dh.Script.typer != null)
+            if (dh.Script.writing)
             {
                 dh.Script.Stop();
                 return;
@@ -115,11 +116,14 @@ public class CutsceneHandler : MonoBehaviour
 
             responseIndexIndex++;
 
-            if (responseIndexIndex>= respon.responses[responseIndex].responses.Length)
+            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length)
             {
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
+                //Debug.Log("Done resonding");
+                dh.Script.Stop();
+                nextBlock();
             }
             else
             {
@@ -128,7 +132,7 @@ public class CutsceneHandler : MonoBehaviour
             return;
         }
             
-        if (dh.Script.typer != null)
+        if (dh.Script.writing)
         {
             dh.Script.Stop();
             return;
@@ -181,7 +185,7 @@ public class CutsceneHandler : MonoBehaviour
             responses[i].text = respon.responses[i].answer;
 
         responseCanvas.enabled = true;
-        UI_Helper.SetSelectedUIElement(responseButton);
+        //UI_Helper.SetSelectedUIElement(responseButton);
     }
 
     public void changeChar(string character)
@@ -192,7 +196,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void UI_Response(int i)
     {
-        UI_Helper.SetSelectedUIElement(voiddd);
+        //UI_Helper.SetSelectedUIElement(voiddd);
         responseCanvas.enabled = false;
         responseIndex = i;
         responseIndexIndex = 0;

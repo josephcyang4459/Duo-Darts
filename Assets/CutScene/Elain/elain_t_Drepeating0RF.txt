@@ -4,3 +4,4 @@
 [Newln]You want to buy me drinks?
 [Newln]Good.
 [Newln]*You spend time drinking with Elaine.* [RaiseElaineLove1][RaiseElaineIntox1][RaisePlayerIntox1]
+

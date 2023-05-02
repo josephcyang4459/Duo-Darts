@@ -20,6 +20,12 @@ public enum Characters
     Jess,
     Faye,
     Elaine,
+    Owner,
+    BarGuy,
+    CharmingGirl,
+    CharmingGuy,
+    DanceGirl,
+    LoungeGuy,
     Player
 }
 
