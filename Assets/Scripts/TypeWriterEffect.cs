@@ -11,21 +11,25 @@ public class TypeWriterEffect : MonoBehaviour {
     public TMP_Text textlable;
     public string ttt;
     public Coroutine typer;
+    public bool writing;
 
     public void Run(string TextToType, TMP_Text textLabel) {
+        writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
         typer = StartCoroutine(TypeText(TextToType, textLabel));
     }
 
     public void Stop()
     {
         if (typer != null)
-            StopCoroutine(typer);
+            StopAllCoroutines();
+        writing = false;
         typer = null;
         textlable.text = ttt;
 
     }
 
     private IEnumerator TypeText(string TextToType, TMP_Text textLabel) {
+      
         textlable = textLabel;
         ttt = TextToType;
         float t = 0;
@@ -48,6 +52,8 @@ public class TypeWriterEffect : MonoBehaviour {
 
             yield return null;
         }
+        
         typer = null;
+        writing = false;
     }
 }

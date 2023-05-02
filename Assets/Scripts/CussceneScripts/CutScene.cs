@@ -27,7 +27,7 @@ public class CutScene : ScriptableObject
 
         reset = false;
         string[] overall = aa.text.Split('\n');
-        List<block> actionBlocks = new List<block>();
+        List<block> blockList = new List<block>();
 
         string[] forTags;
         
@@ -37,22 +37,30 @@ public class CutScene : ScriptableObject
 
         for (int currentLine = 0; currentLine < overall.Length; currentLine++)
         {
+            if (overall[currentLine] == null)
+                break;
+            if (overall[currentLine].Length <= 0)
+                break;
             var h = __getAction(overall[currentLine]);
-            Debug.Log(h);
+            //Debug.Log(h);
 
             switch (h)
             {
                 case __CutsceneActions.Dialouge:
                     DialougeBlock tempD = new DialougeBlock();
                     tempD.message = __fix(overall[currentLine]);
-                    actionBlocks.Add(tempD);
+                    blockList.Add(tempD);
 
                     forTags = __getAllTags(overall[currentLine]);
                     if (forTags.Length > 1)
                     {
                         for (int i = 0; i < forTags.Length; i++)
                         {
-                            __getDialougeOrThoughtAttachment(forTags[i]);
+                            block tempted = __getDialougeOrThoughtAttachment(forTags[i]);
+                            
+                            if (tempted != null)
+                                blockList.Add(tempted);
+                            else Debug.Log("Found " + forTags[i]);
                         }
                     }
 
@@ -60,14 +68,19 @@ public class CutScene : ScriptableObject
                 case __CutsceneActions.Thought:
                     Thought tempT = new Thought();
                     tempT.thoughtMessage = __fix(overall[currentLine]);
-                    actionBlocks.Add(tempT);
+                    blockList.Add(tempT);
 
                     forTags = __getAllTags(overall[currentLine]);
                     if (forTags.Length > 1)
                     {
                         for (int i = 0; i < forTags.Length; i++)
                         {
-                            __getDialougeOrThoughtAttachment(forTags[i]);
+                           
+                            block tempted = __getDialougeOrThoughtAttachment(forTags[i]);
+
+                            if (tempted != null)
+                                blockList.Add(tempted);
+                            else Debug.Log("Found "+forTags[i]);
                         }
                     }
                     break;
@@ -89,22 +102,24 @@ public class CutScene : ScriptableObject
                             responses.Add(__getNPCResponse(overall[currentLine]));
                             currentLine++;
                         }
+                        PRD.responses = responses.ToArray();
                         tempR.responses[currentResponse] = PRD;
                     }// for 3 responses
-                    actionBlocks.Add(tempR);
+                    blockList.Add(tempR);
                     break;
                 case __CutsceneActions.Expression:
                     ExpressionBlock tempE = new ExpressionBlock();
+                    //Debug.Log(overall[currentLine]);
                     tempE.expression = (Expressions)__getNumberFrom(overall[currentLine]);
-                    Debug.Log("EXpression block not done yet");
+                    blockList.Add(tempE);
                     break;
                 default:
-                    Debug.Log(__getAction(overall[currentLine] + " Not implemented"));
+                    Debug.Log(__getAction(overall[currentLine]) + "-> Not implemented ->" +overall[currentLine]);
                     break;
 
             }
         }
-        blocks = actionBlocks.ToArray();
+        blocks = blockList.ToArray();
         
         Debug.Log("Done");
         
@@ -113,7 +128,7 @@ public class CutScene : ScriptableObject
     Stats __GetSkill(string s)
     {
 
-        if (s.Contains("Intoxication"))
+        if (s.Contains("Intox"))
             return Stats.Intoxication;
 
         if (s.Contains("Love"))
@@ -144,7 +159,9 @@ public class CutScene : ScriptableObject
 
     block __getDialougeOrThoughtAttachment(string ss)
     {
-        switch (__getAction(ss))
+        var g = __getAction(ss);
+        //Debug.Log(g);
+        switch (g)
         {
             case __CutsceneActions.Expression:
                 ExpressionBlock tempDe = new ExpressionBlock();
@@ -167,6 +184,13 @@ public class CutScene : ScriptableObject
                     PCS.Adjust = __getNumberFrom(ss);
                     return PCS;
                 }
+            case __CutsceneActions.ResetIntox:
+               
+                    ChangeStat PCSee = new ChangeStat();
+                    PCSee.Character = __getCharactersFrom(ss);
+                    PCSee.Stat = __GetSkill(ss);
+                    PCSee.Adjust = -1000000;
+                    return PCSee;
 
         }
         return null;
@@ -209,7 +233,7 @@ public class CutScene : ScriptableObject
 
     int __getNumberFrom(string fullText)
     {
-        char[] aca = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '+' };
+        char[] aca = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', };
         List<char> chars = new(aca);
 
         string temp = "";
@@ -217,7 +241,7 @@ public class CutScene : ScriptableObject
         {
             if (chars.Contains(fullText[i]))
             {
-                temp += fullText;
+                temp += fullText[i];
             }
         }
 
@@ -231,9 +255,11 @@ public class CutScene : ScriptableObject
         if (fullText.Contains("Faye"))
             return Characters.Faye;
         if (fullText.Contains("Jess"))
-            return Characters.Chad;
+            return Characters.Jess;
         if (fullText.Contains("Elaine"))
-            return Characters.Chad;
+            return Characters.Elaine;
+        if (fullText.Contains("Owner"))
+            return Characters.Owner;
 
         return Characters.Player;
     }
@@ -244,7 +270,12 @@ public class CutScene : ScriptableObject
 
         for(int i = h.Count - 1; i >= 0; i--)
         {
-            if (h[i][0] != '[')
+            if (h[i].Length > 0)
+            {
+                if (!h[i].Contains ('['))
+                    h.RemoveAt(i);
+            }
+            else
                 h.RemoveAt(i);
         }
         return h.ToArray();
@@ -252,7 +283,18 @@ public class CutScene : ScriptableObject
 
     private string __fix(string s)
     {
-        return __removeBrokenChars(s.Substring(s.LastIndexOf(']')).Trim());
+        string ss = __removeBrokenChars(s.Substring(s.IndexOf(']')+1).Trim());
+        string[] sa;
+        if (ss.Contains('[') || ss.Contains(']'))
+        {
+            sa = ss.Split('[');
+        }
+        else return ss;
+        for (int i = 0; i < sa.Length; i++)
+            if (!sa[i].Contains(']'))
+                return sa[i];
+
+        return null;
     }
 
     private string __firstTag(string s)
@@ -263,16 +305,23 @@ public class CutScene : ScriptableObject
             if (s[nextIndex] == ']')
                 break;
         }
+        if (nextIndex >= s.Length)
+            nextIndex = s.Length - 1;
         return s.Substring(firstindex, nextIndex);
     }
 
     private __CutsceneActions __getAction(string s)
     {
-        string tempActionName = __firstTag(s);
-        Debug.Log(tempActionName);
+        if (s.Length <= 0)
+            return __CutsceneActions.ERROR;
+        if(s ==null)
+            return __CutsceneActions.ERROR;
+
+        string tempActionName = ((s.Contains('[')&&s.Contains(']'))?__firstTag(s):s);
+        //Debug.Log(tempActionName);
         if (tempActionName.Contains("Newln"))
         {
-            if (tempActionName.Contains('*'))
+            if (s.Contains('*'))
                 return __CutsceneActions.Thought;
             else
                 return __CutsceneActions.Dialouge;
@@ -300,7 +349,9 @@ public class CutScene : ScriptableObject
         if (tempActionName.Contains("Success"))
             return __CutsceneActions.Success;
 
-        if (tempActionName.Contains("Chad") || tempActionName.Contains("Faye") || tempActionName.Contains("Elaine") || tempActionName.Contains("Jess"))
+        if (tempActionName.Contains("Chad") || tempActionName.Contains("Faye") || tempActionName.Contains("Elaine") || tempActionName.Contains("Jess") || tempActionName.Contains("Owner")
+            || tempActionName.Contains("BarAdviceGuy") || tempActionName.Contains("CharmAdviceGirl") || tempActionName.Contains("CharmAdviceGuy")
+            || tempActionName.Contains("DanceAdviceGirl") || tempActionName.Contains("LoungeAdviceGuy"))
             return __CutsceneActions.Expression;
 
         if (tempActionName.Contains("Area"))
@@ -371,6 +422,9 @@ public class DialougeBlock: block
 
 public class Response: block
 {
+#if UNITY_EDITOR
+    [SerializeField] [HideInInspector] string name = "Call & Response";
+#endif
     //3 responses
     public PlayerResponseData[] responses;
 
@@ -382,6 +436,9 @@ public class Response: block
 
 public class ChangeStat: block
 {
+#if UNITY_EDITOR
+    [SerializeField] [HideInInspector] string name = "Change Stat Block";
+#endif
     public Characters Character;
     public Stats Stat;
     public int Adjust;
@@ -395,6 +452,9 @@ public class ChangeStat: block
 
 public class PlayerChangeStat : block
 {
+#if UNITY_EDITOR
+    [SerializeField] [HideInInspector] string name = "Change Player Stat Block";
+#endif
     public PlayerSkills Stat;
     public int Adjust;
 
@@ -407,7 +467,9 @@ public class PlayerChangeStat : block
 
 public class ExpressionBlock : block
 {
-
+#if UNITY_EDITOR
+    [SerializeField] [HideInInspector] string name = "Expression Block";
+#endif
     public Expressions expression;
 
     public override void action(CutsceneHandler ch)

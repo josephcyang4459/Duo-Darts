@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Owner_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753235
-  - rid: 4049961239326753236
-  - rid: 4049961239326753237
-  - rid: 4049961239326753238
-  - rid: 4049961239326753239
-  - rid: 4049961239326753240
-  - rid: 4049961239326753241
-  - rid: 4049961239326753242
-  - rid: 4049961239326753243
-  - rid: 4049961239326753244
-  - rid: 4049961239326753245
+  - rid: 3415138150063276862
+  - rid: 3415138150063276863
+  - rid: 3415138150063276864
+  - rid: 3415138150063276865
+  - rid: 3415138150063276866
+  - rid: 3415138150063276867
+  - rid: 3415138150063276868
+  - rid: 3415138150063276869
+  - rid: 3415138150063276870
+  - rid: 3415138150063276871
+  - rid: 3415138150063276872
+  - rid: 3415138150063276873
+  - rid: 3415138150063276874
+  - rid: 3415138150063276875
   defaultCharacter: Owner
   exception: 0
   playerS:
@@ -33,58 +36,73 @@ MonoBehaviour:
   partnerS:
     stats: 
     values: 
-  aa: {fileID: 4900000, guid: a8c6f0bb706392f44af64e98c7f71898, type: 3}
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 3e0fd19edcbb06f44821b96f1fc55c6a, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753235
+    - rid: 3415138150063276862
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You order a drink.
-    - rid: 4049961239326753236
+        thoughtMessage: '*You order a drink.*'
+    - rid: 3415138150063276863
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: The owner tending the bar strikes up a conversation with
-          you.
-    - rid: 4049961239326753237
+        thoughtMessage: '*The owner tending the bar strikes up a conversation with
+          you.*'
+    - rid: 3415138150063276864
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138150063276865
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Have you seen the bathroom?
-    - rid: 4049961239326753238
+    - rid: 3415138150063276866
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You might be wondering why there's only one.
-    - rid: 4049961239326753239
+    - rid: 3415138150063276867
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Thanks to the push for gender neutral bathrooms I had an incredible
           idea for the bar one day.
-    - rid: 4049961239326753240
+    - rid: 3415138150063276868
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If I have just a gender neutral bathroom that means I don't have
           to waste money renovating two bathrooms AND a gender neutral bathroom.
-    - rid: 4049961239326753241
+    - rid: 3415138150063276869
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So I decided to only have a gender neutral bathroom and with the
           money I saved I made it an incredible bathroom.
-    - rid: 4049961239326753242
+    - rid: 3415138150063276870
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: If only people wouldn't draw on the walls and vomit on the floor.
-    - rid: 4049961239326753243
+        message: If only people didn't scribble on the walls and vomit on the floor.
+    - rid: 3415138150063276871
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I should've opened a family restaurant or something like that. Then
-          my life would be perfect.
-    - rid: 4049961239326753244
+        message: I should've opened a family restaurant or something like that.
+    - rid: 3415138150063276872
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Then my life would be perfect.
+    - rid: 3415138150063276873
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways. Enjoy your drink.
-    - rid: 4049961239326753245
+    - rid: 3415138150063276874
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time pondering the financial efficiency of supporting
-          progressive views on gender.
+        thoughtMessage: '*You spend time pondering the financial efficiency of supporting
+          progressive views on gender.*'
+    - rid: 3415138150063276875
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 3
+        Adjust: 1
