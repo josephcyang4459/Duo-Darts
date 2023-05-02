@@ -95,6 +95,7 @@ public class CutScene : ScriptableObject
                     break;
                 case __CutsceneActions.Expression:
                     ExpressionBlock tempE = new ExpressionBlock();
+                    tempE.expression = (Expressions)__getNumberFrom(overall[currentLine]);
                     Debug.Log("EXpression block not done yet");
                     break;
                 default:
