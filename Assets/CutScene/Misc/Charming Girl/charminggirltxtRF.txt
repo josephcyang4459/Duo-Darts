@@ -1,0 +1,16 @@
+[Newln]*You sit next to a clearly drunk woman.*
+[CharmAdviceGirl0]
+[Newln]Hey, you're my friend.
+[Newln]Hey bartender, look, my friend is here.
+[Owner1]
+[Newln]Sure they are.
+[BarAdviceGirl]
+[Newln]I know it’s you.
+[Newln]You couldn’t have come at a better time.
+[Newln]I have a secret for only you.
+[Newln]The best way to make friends is to say they’re your friend you know.
+[Newln]*She accidentally bumps her empty glass.*
+[Newln]See. It worked on you. You’re my best friend now.
+[Newln]Ha!
+[Newln]*The woman stands up and heads to the bathroom rather suddenly.*
+[Newln]*You think about your new friend at the bar for a while.*[RaisePlayerIntox1][RaisePlayerCharisma2]

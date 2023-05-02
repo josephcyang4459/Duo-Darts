@@ -1,0 +1,5 @@
+[Newln]*You see Elaine practicing alone.*
+[Newln]Hey. 
+[Newln]Come here.
+[Newln]Check this trick out.
+[Newln]*You spend time watching Elaine practice and gloat.* [RaiseElaineLove2]

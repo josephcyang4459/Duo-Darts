@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <*While walking past a booth you accidentally trip on someone’s leg. You fall face first onto the ground.
 <*A young woman is the culprit. She kneels down next to you and sits you up.*
 <Here, that looks painful.
@@ -34,3 +35,14 @@
 <Come back later. People have their eyes on you and it's bothering me.
 <*You leave Faye to her booth.*
 
+=======
+[Newln]*You order a drink.*
+[Newln]*The owner tending the bar strikes up a conversation with you.*
+[Owner1]
+[Newln]You know, my wife threw a knife at me the other day.
+[Newln]I thought it was wrong of her to do that, but then realized I forgot to do the dishes earlier that day.
+[Newln]So I guess I had it coming.
+[Newln]I love my wife so much.
+[Newln]Anyways. Enjoy your drink.
+[Newln]*You consider the possible benefits of remaining single over a cold drink.*[RaisePlayerIntox1]
+>>>>>>> Stashed changes
