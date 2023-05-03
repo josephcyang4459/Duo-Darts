@@ -11,6 +11,7 @@ public class Partner : ScriptableObject {
     public float Love = 0f;
     public RelatedCutScene[] RelatedCutScenes;
     public CutScene DefaultCutScene;
+    public CutScene DefaultRepeatingScene;
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
     public DartTargetBias bias = DartTargetBias.None;

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Elain_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7660798460658974763
-  - rid: 7660798460658974764
-  - rid: 7660798460658974765
-  - rid: 7660798460658974766
+  - rid: 3415138152484438228
+  - rid: 3415138152484438229
+  - rid: 3415138152484438230
+  - rid: 3415138152484438231
+  - rid: 3415138152484438232
+  - rid: 3415138152484438233
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -26,24 +28,35 @@ MonoBehaviour:
     stats: 02000000
     values: 02000000
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: d3df6b2b25fb607479ed3f1736fce938, type: 3}
+  aa: {fileID: 4900000, guid: f4620f001b4a6894c93d0dd09fc217fb, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 7660798460658974763
+    - rid: 3415138152484438228
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You see Elaine practicing alone.
-    - rid: 7660798460658974764
+        thoughtMessage: '*You see Elaine practicing alone.*'
+    - rid: 3415138152484438229
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Hey. Come.
-    - rid: 7660798460658974765
+        message: Hey.
+    - rid: 3415138152484438230
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come here.
+    - rid: 3415138152484438231
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Check this trick out.
-    - rid: 7660798460658974766
+    - rid: 3415138152484438232
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time watching Elaine practice and gloat.
+        thoughtMessage: '*You spend time watching Elaine practice and gloat.* '
+    - rid: 3415138152484438233
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 3
+        Stat: 2
+        Adjust: 2

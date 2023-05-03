@@ -37,7 +37,7 @@ public class CutsceneHandler : MonoBehaviour
     public GameObject responseButton;
     public AttributeUpdate au;
 
-    public Canvas ac;
+    public Canvas DefaultCanvass;
     public GameObject bsss;
     public GameObject voiddd;
 
@@ -48,14 +48,6 @@ public class CutsceneHandler : MonoBehaviour
         CompleteThisCutscene();
         decideChar(c.defaultCharacter);
         background(BackgroundIndex);
-        if (c.AnotherFuckingException)
-        {
-            UI_Helper.SetSelectedUIElement(bsss);
-            ac.enabled = true;
-            return;
-        }
-
-        UI_Helper.SetSelectedUIElement(voiddd);
 
         dialougeCanvas.enabled = true;
         interact.action.Enable();
@@ -83,12 +75,12 @@ public class CutsceneHandler : MonoBehaviour
             cutscene = partners[characterIndex].DefaultDrinkingCutScene;
 
         sc.enabled = false;
+        index = 0;
+        DefaultCanvass.enabled = false;
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
-        UI_Helper.SetSelectedUIElement(voiddd);
         cutscene.blocks[index].action(this);
-        
     }
 
     public void off()
@@ -99,6 +91,16 @@ public class CutsceneHandler : MonoBehaviour
         interact.action.performed -= takeAction;
         sc.setTime(10);
     }
+
+    public void PresentChoices()
+    {
+        DefaultCanvass.enabled = true;
+        dialougeCanvas.enabled = false;
+        dialougeCanvas.enabled = false;
+        interact.action.Disable();
+        interact.action.performed += takeAction;
+    }
+
 
     public void takeAction(InputAction.CallbackContext c)
     {
