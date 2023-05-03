@@ -13,160 +13,229 @@ MonoBehaviour:
   m_Name: Jess_4
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753133
-  - rid: 4049961239326753134
-  - rid: 4049961239326753135
-  - rid: 4049961239326753136
-  - rid: 4049961239326753137
-  - rid: 4049961239326753138
-  - rid: 4049961239326753139
-  - rid: 4049961239326753140
-  - rid: 4049961239326753141
-  - rid: 4049961239326753142
-  - rid: 4049961239326753143
-  - rid: 4049961239326753144
-  - rid: 4049961239326753145
-  - rid: 4049961239326753146
-  - rid: 4049961239326753147
-  - rid: 4049961239326753148
-  - rid: 4049961239326753149
-  - rid: 4049961239326753150
-  - rid: 4049961239326753151
-  - rid: 4049961239326753152
-  - rid: 4049961239326753153
-  - rid: 4049961239326753154
-  - rid: 4049961239326753155
-  - rid: 4049961239326753156
-  - rid: 4049961239326753157
-  - rid: 4049961239326753158
-  - rid: 4049961239326753159
+  - rid: 3415138152484438456
+  - rid: 3415138152484438457
+  - rid: 3415138152484438458
+  - rid: 3415138152484438459
+  - rid: 3415138152484438460
+  - rid: 3415138152484438461
+  - rid: 3415138152484438462
+  - rid: 3415138152484438463
+  - rid: 3415138152484438464
+  - rid: 3415138152484438465
+  - rid: 3415138152484438466
+  - rid: 3415138152484438467
+  - rid: 3415138152484438468
+  - rid: 3415138152484438469
+  - rid: 3415138152484438470
+  - rid: 3415138152484438471
+  - rid: 3415138152484438472
+  - rid: 3415138152484438473
+  - rid: 3415138152484438474
+  - rid: 3415138152484438475
+  - rid: 3415138152484438476
+  - rid: 3415138152484438477
+  - rid: 3415138152484438478
+  - rid: 3415138152484438479
+  - rid: 3415138152484438480
+  - rid: 3415138152484438481
+  - rid: 3415138152484438482
+  - rid: 3415138152484438483
+  - rid: 3415138152484438484
+  - rid: 3415138152484438485
+  - rid: 3415138152484438486
   defaultCharacter: Jess
-  aa: {fileID: 4900000, guid: c7894068f6920e44b9f3c46ad50563ac, type: 3}
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 9a82132992764154fb5a199b2f480a2d, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753133
+    - rid: 3415138152484438456
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You sit next to Jessica at a table.
-    - rid: 4049961239326753134
+        thoughtMessage: '*You sit next to Jessica at a lounge table.*'
+    - rid: 3415138152484438457
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138152484438458
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Hey.
-    - rid: 4049961239326753135
+        message: Hello.
+    - rid: 3415138152484438459
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I'm glad you found some time to talk.
-    - rid: 4049961239326753136
+        message: I'm glad you found some time.
+    - rid: 3415138152484438460
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: There's something I've been meaning to ask you.
-    - rid: 4049961239326753137
+    - rid: 3415138152484438461
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Lets talk for a moment though.
-    - rid: 4049961239326753138
+        message: Let's talk for a moment before that though.
+    - rid: 3415138152484438462
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Jessica sighs.
-    - rid: 4049961239326753139
+        thoughtMessage: '*Jessica sighs.*'
+    - rid: 3415138152484438463
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nobody will be my partner for the final round.
-    - rid: 4049961239326753140
+    - rid: 3415138152484438464
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Unfortunately, it appears I scare everyone away.
-    - rid: 4049961239326753141
+    - rid: 3415138152484438465
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Except you.
-    - rid: 4049961239326753142
+    - rid: 3415138152484438466
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I think people would call me 'prickly'.
-    - rid: 4049961239326753143
+        message: I think people would call me 'odd'.
+    - rid: 3415138152484438467
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I think those people are idiots.
-    - rid: 4049961239326753144
+        message: I think those people are odd.
+    - rid: 3415138152484438468
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Or maybe just intelligent.
+    - rid: 3415138152484438469
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: They don't even know who I really am.
-    - rid: 4049961239326753145
+    - rid: 3415138152484438470
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: They don't bother to try to get to know me.
-    - rid: 4049961239326753146
+    - rid: 3415138152484438471
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That's what I wanted to ask you.
-    - rid: 4049961239326753147
+    - rid: 3415138152484438472
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: What do you think of me?
-    - rid: 4049961239326753148
+    - rid: 3415138152484438473
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: You're amazing. -Success-
+        - answer: You're amazing.
           responses:
-          - Are you really not ashamed of your honesty?
-          adjust: 0
-        - answer: You're Jessica. -Fail-
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: You're Jessica.
           responses:
-          - Nevermind.
-          - You should go.
-          - '*You leave.*'
-          adjust: 0
-        - answer: You're prickly. -Success-
+          - Message: 
+            Character: 1
+            Expression: 3
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+          - Message: You should go.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+          - Message: '*You leave.*'
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 1
+          - Message: 
+            Character: 1
+            Expression: 4
+            Stat: 0
+            AdjustValue: -10000000
+            exemption: 0
+        - answer: You're prickly.
           responses:
-          - '*She smiles.*'
-          - I know you don't think that.
-          adjust: 0
-    - rid: 4049961239326753149
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 0
+            exemption: 1
+          - Message: I know you don't think that.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+          - Message: And even if you do, you've earned that opinion.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+    - rid: 3415138152484438474
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I think you're great.
-    - rid: 4049961239326753150
+        message: Well, I think you're great.
+    - rid: 3415138152484438475
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I don't know why. Frankly you're a complete idiot.
-    - rid: 4049961239326753151
+        message: I don't know why.
+    - rid: 3415138152484438476
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: And your dart skills are... Interesting at best.
-    - rid: 4049961239326753152
+        message: Frankly, you're a complete idiot.
+    - rid: 3415138152484438477
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And your dart skills are...
+    - rid: 3415138152484438478
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Interesting at best.
+    - rid: 3415138152484438479
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: However, despite all the negatives, you seem to be a diamond in
           the rough.
-    - rid: 4049961239326753153
+    - rid: 3415138152484438480
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Jessica looks at you intently.
-    - rid: 4049961239326753154
+        thoughtMessage: '*Jessica looks at you intently.*'
+    - rid: 3415138152484438481
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Please.
-    - rid: 4049961239326753155
+    - rid: 3415138152484438482
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Consider me to be your partner for the final round.
-    - rid: 4049961239326753156
+    - rid: 3415138152484438483
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Jessica relaxes.
-    - rid: 4049961239326753157
+        thoughtMessage: '*Jessica relaxes.*'
+    - rid: 3415138152484438484
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: With that off my chest you can go.
-    - rid: 4049961239326753158
+    - rid: 3415138152484438485
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Thank you for hearing me out.
-    - rid: 4049961239326753159
+    - rid: 3415138152484438486
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Really.

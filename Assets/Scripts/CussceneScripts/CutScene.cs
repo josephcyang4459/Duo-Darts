@@ -11,10 +11,12 @@ public class CutScene : ScriptableObject
 
     public bool exception = false;
 
-    public playerStatChange playerS;
-    public PartnerStatChange partnerS;
-
     public bool AnotherFuckingException = false;
+
+    public virtual CutScene GetDefaultScene(int index)
+    {
+        return null;
+    }
 
 #if UNITY_EDITOR
     public const int FAIL_VALUE = -10000000;
@@ -514,28 +516,7 @@ public class Thought: block
     }
 }
 
-public class PresentOptions: block
-{
-    public override void action(CutsceneHandler ch)
-    {
-        //ch.Thought(thoughtMessage);
-        //ch.PresentDefaults(drinkingBlock,DefaultBlock);
-        //then in ch make the choice and skip to that block
-    }
 
-}
-
-public class EndWithStatChange : block
-{
-    [SerializeReference]
-    public PartnerStatChange[] StatChanges;
-    public override void action(CutsceneHandler ch)
-    {
-        //ch.Thought(thoughtMessage);
-        //if (ch.option ==
-    }
-
-}
 
 
 [System.Serializable]

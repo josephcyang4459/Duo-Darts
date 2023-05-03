@@ -13,128 +13,210 @@ MonoBehaviour:
   m_Name: Jess_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753096
-  - rid: 4049961239326753097
-  - rid: 4049961239326753098
-  - rid: 4049961239326753099
-  - rid: 4049961239326753100
-  - rid: 4049961239326753101
-  - rid: 4049961239326753102
-  - rid: 4049961239326753103
-  - rid: 4049961239326753104
-  - rid: 4049961239326753105
-  - rid: 4049961239326753106
-  - rid: 4049961239326753107
-  - rid: 4049961239326753108
-  - rid: 4049961239326753109
-  - rid: 4049961239326753110
-  - rid: 4049961239326753111
-  - rid: 4049961239326753112
-  - rid: 4049961239326753113
+  - rid: 3415138152484438412
+  - rid: 3415138152484438413
+  - rid: 3415138152484438414
+  - rid: 3415138152484438415
+  - rid: 3415138152484438416
+  - rid: 3415138152484438417
+  - rid: 3415138152484438418
+  - rid: 3415138152484438419
+  - rid: 3415138152484438420
+  - rid: 3415138152484438421
+  - rid: 3415138152484438422
+  - rid: 3415138152484438423
+  - rid: 3415138152484438424
+  - rid: 3415138152484438425
+  - rid: 3415138152484438426
+  - rid: 3415138152484438427
+  - rid: 3415138152484438428
+  - rid: 3415138152484438429
+  - rid: 3415138152484438430
+  - rid: 3415138152484438431
+  - rid: 3415138152484438432
+  - rid: 3415138152484438433
+  - rid: 3415138152484438434
   defaultCharacter: Jess
-  aa: {fileID: 4900000, guid: e0a6592884b40a644a8a04b231894a8e, type: 3}
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 172eb73922c795f4a906c92328c6f934, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753096
+    - rid: 3415138152484438412
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You find Jessica sitting at the bar.*'
+    - rid: 3415138152484438413
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You notice how much she stands out from others.*'
+    - rid: 3415138152484438414
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138152484438415
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You again?
-    - rid: 4049961239326753097
+    - rid: 3415138152484438416
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should've seen it coming.
-    - rid: 4049961239326753098
+    - rid: 3415138152484438417
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know drinking will only worsen your game.
-    - rid: 4049961239326753099
+    - rid: 3415138152484438418
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of darts...
-    - rid: 4049961239326753100
+    - rid: 3415138152484438419
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've never heard of you before tonight.
-    - rid: 4049961239326753101
+    - rid: 3415138152484438420
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Truthfully, I thought you might be some lucky startup to make it
           here.
-    - rid: 4049961239326753102
+    - rid: 3415138152484438421
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I guess we will see by the end of the night.
-    - rid: 4049961239326753103
+    - rid: 3415138152484438422
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So. What do you want to talk about?
-    - rid: 4049961239326753104
+    - rid: 3415138152484438423
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'Love. '
+        - answer: Love.
           responses:
-          - Maybe after I've had much more to drink.
-          adjust: 2
-        - answer: 'Death. '
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 2
+            exemption: 0
+        - answer: Death.
           responses:
-          - I could've expected you to say something macabre or shocking like that.
-          adjust: 3
-        - answer: 'Taxes. '
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 1
+          - Message: I could've expected you to say something macabre or shocking
+              like that.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: Taxes.
           responses:
-          - God help us.
-          adjust: 1
-    - rid: 4049961239326753105
+          - Message: 
+            Character: 1
+            Expression: 4
+            Stat: 0
+            AdjustValue: 1
+            exemption: 0
+    - rid: 3415138152484438424
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should have asked why you keep coming up to socialize with
           me.
-    - rid: 4049961239326753106
+    - rid: 3415138152484438425
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yes. That's a much better question.
-    - rid: 4049961239326753107
+    - rid: 3415138152484438426
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Jessica faces you and waits for an answer.
-    - rid: 4049961239326753108
+        thoughtMessage: '*Jessica faces you and waits for an answer.*'
+    - rid: 3415138152484438427
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So?
-    - rid: 4049961239326753109
+    - rid: 3415138152484438428
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'Your skill. '
+        - answer: Your skill.
           responses:
-          - It's refreshing that someone sees past the makeup to see the darts player
-            that I truly am.
-          adjust: 3
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 0
         - answer: Your beauty.
           responses:
-          - '*She sighs.*'
-          - At least you're trying.
-          adjust: 0
-        - answer: 'No reason in particular. '
+          - Message: '*She sighs.*'
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 1
+          - Message: At least you're trying.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: No reason in particular.
           responses:
-          - I call your bluff.
-          - But fine, keep the reason to yourself.
-          adjust: 2
-    - rid: 4049961239326753110
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 2
+            exemption: 0
+          - Message: But fine, keep the reason to yourself.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+    - rid: 3415138152484438429
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Jessica faces away from you toward the bar.
-    - rid: 4049961239326753111
+        thoughtMessage: '*Jessica faces away from you toward the bar.*'
+    - rid: 3415138152484438430
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've changed my mind again.
-    - rid: 4049961239326753112
+    - rid: 3415138152484438431
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's talk about what you mentioned before.
-    - rid: 4049961239326753113
+    - rid: 3415138152484438432
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You and Jessica talk for a while.
+        thoughtMessage: '*You and Jessica talk for a while.*'
+    - rid: 3415138152484438433
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 1
+        Stat: 1
+        Adjust: 1
+    - rid: 3415138152484438434
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 1
+        Stat: 1
+        Adjust: 1

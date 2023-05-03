@@ -13,59 +13,112 @@ MonoBehaviour:
   m_Name: Faye_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326752974
-  - rid: 4049961239326752975
-  - rid: 4049961239326752976
-  - rid: 4049961239326752977
-  - rid: 4049961239326752978
-  - rid: 4049961239326752979
-  - rid: 4049961239326752980
+  - rid: 3415138152484438279
+  - rid: 3415138152484438280
+  - rid: 3415138152484438281
+  - rid: 3415138152484438282
+  - rid: 3415138152484438283
+  - rid: 3415138152484438284
+  - rid: 3415138152484438285
+  - rid: 3415138152484438286
+  - rid: 3415138152484438287
+  - rid: 3415138152484438288
   defaultCharacter: Faye
-  aa: {fileID: 4900000, guid: f85618131ccb8ce4a9c7b8cafa54115e, type: 3}
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 1737d36c798a107499fccc828018f945, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326752974
+    - rid: 3415138152484438279
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138152484438280
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye looks nervous.*'
+    - rid: 3415138152484438281
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Make your turns quick please.
-    - rid: 4049961239326752975
+    - rid: 3415138152484438282
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I don't like being up and about especially with a crowd.
-    - rid: 4049961239326752976
+        message: I don't like being up and about, especially with a crowd.
+    - rid: 3415138152484438283
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Oh yeah, I was meaning to ask if you ever attended any other tournaments.
-    - rid: 4049961239326752977
+        message: And yeah, I was meaning to ask if you ever attended any other tournaments.
+    - rid: 3415138152484438284
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I've never seen you before.
-    - rid: 4049961239326752978
+        message: You don't look familiar, but people don't always look the same from
+          one meet to the next.
+    - rid: 3415138152484438285
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'I stick to the shadows mostly. '
+        - answer: I stick to the shadows mostly.
           responses:
-          - Same.
-          - We must've just missed each other then.
-          adjust: 3
-        - answer: 'I''m a regular. '
+          - Message: 
+            Character: 2
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 0
+          - Message: We must've just missed each other then.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: I'm a regular.
           responses:
-          - Are you sure?
-          - I've seen just about everyone here before.
-          adjust: 1
-        - answer: 'This is my first one. '
+          - Message: 
+            Character: 2
+            Expression: 4
+            Stat: 0
+            AdjustValue: 1
+            exemption: 0
+          - Message: I've seen just about everyone here before.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: This is my first one.
           responses:
-          - Oh I see.
-          - Don't worry you'll do great.
-          adjust: 2
-    - rid: 4049961239326752979
+          - Message: 
+            Character: 2
+            Expression: 4
+            Stat: 0
+            AdjustValue: 2
+            exemption: 0
+          - Message: Don't worry. You'll probably do ok.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+    - rid: 3415138152484438286
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye focuses up.*'
+    - rid: 3415138152484438287
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I apologize in advance I'm not the best player here.
-    - rid: 4049961239326752980
+        message: I apologize in advance that I'm not the best player here.
+    - rid: 3415138152484438288
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, you go first.

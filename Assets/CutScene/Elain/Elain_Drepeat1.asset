@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Elain_Drepeat1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7660798460658974758
-  - rid: 7660798460658974759
-  - rid: 7660798460658974760
-  - rid: 7660798460658974761
-  - rid: 7660798460658974762
+  - rid: 3415138152484438240
+  - rid: 3415138152484438241
+  - rid: 3415138152484438242
+  - rid: 3415138152484438243
+  - rid: 3415138152484438244
+  - rid: 3415138152484438245
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -27,28 +28,35 @@ MonoBehaviour:
     stats: 0200000001000000
     values: 0100000001000000
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: 8e095a8ab77a234438cc8f726b121482, type: 3}
+  aa: {fileID: 4900000, guid: d3df6b2b25fb607479ed3f1736fce938, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 7660798460658974758
+    - rid: 3415138152484438240
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You see Elaine practicing alone.
-    - rid: 7660798460658974759
+        thoughtMessage: '*You see Elaine practicing alone.*'
+    - rid: 3415138152484438241
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Hey. Come.
-    - rid: 7660798460658974760
+        message: Hey.
+    - rid: 3415138152484438242
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You want to buy me drinks?
-    - rid: 7660798460658974761
+        message: Come here.
+    - rid: 3415138152484438243
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Good dog.
-    - rid: 7660798460658974762
+        message: Check this trick out.
+    - rid: 3415138152484438244
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Elaine.
+        thoughtMessage: '*You spend time watching Elaine practice and gloat.* '
+    - rid: 3415138152484438245
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 3
+        Stat: 2
+        Adjust: 2

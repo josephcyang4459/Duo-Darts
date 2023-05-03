@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: Jess_Drepeat1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753160
-  - rid: 4049961239326753161
-  - rid: 4049961239326753162
-  - rid: 4049961239326753163
+  - rid: 3415138152484438493
+  - rid: 3415138152484438494
+  - rid: 3415138152484438495
+  - rid: 3415138152484438496
+  - rid: 3415138152484438497
+  - rid: 3415138152484438498
+  - rid: 3415138152484438499
+  - rid: 3415138152484438500
+  - rid: 3415138152484438501
   defaultCharacter: Jess
   exception: 0
   playerS:
@@ -31,19 +36,49 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753160
+    - rid: 3415138152484438493
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You sit next to Jessica.
-    - rid: 4049961239326753161
+        thoughtMessage: '*You sit next to Jessica.*'
+    - rid: 3415138152484438494
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138152484438495
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You want to buy me drinks?
-    - rid: 4049961239326753162
+    - rid: 3415138152484438496
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 2
+    - rid: 3415138152484438497
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sure, saves me the trouble.
-    - rid: 4049961239326753163
+    - rid: 3415138152484438498
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time drinking with Jessica.
+        thoughtMessage: '*You spend time drinking with Jessica.* '
+    - rid: 3415138152484438499
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 1
+        Stat: 2
+        Adjust: 1
+    - rid: 3415138152484438500
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 1
+        Stat: 1
+        Adjust: 1
+    - rid: 3415138152484438501
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 3
+        Adjust: 1

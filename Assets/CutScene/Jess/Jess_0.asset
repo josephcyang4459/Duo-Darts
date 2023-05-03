@@ -13,103 +13,135 @@ MonoBehaviour:
   m_Name: Jess_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753368
-  - rid: 4049961239326753369
-  - rid: 4049961239326753370
-  - rid: 4049961239326753371
-  - rid: 4049961239326753372
-  - rid: 4049961239326753373
-  - rid: 4049961239326753374
-  - rid: 4049961239326753375
-  - rid: 4049961239326753376
-  - rid: 4049961239326753377
-  - rid: 4049961239326753378
-  - rid: 4049961239326753379
-  - rid: 4049961239326753380
-  - rid: 4049961239326753381
-  - rid: 4049961239326753382
-  - rid: 4049961239326753383
+  - rid: 3415138152484438385
+  - rid: 3415138152484438386
+  - rid: 3415138152484438387
+  - rid: 3415138152484438388
+  - rid: 3415138152484438389
+  - rid: 3415138152484438390
+  - rid: 3415138152484438391
+  - rid: 3415138152484438392
+  - rid: 3415138152484438393
+  - rid: 3415138152484438394
+  - rid: 3415138152484438395
+  - rid: 3415138152484438396
+  - rid: 3415138152484438397
+  - rid: 3415138152484438398
+  - rid: 3415138152484438399
+  - rid: 3415138152484438400
+  - rid: 3415138152484438401
+  - rid: 3415138152484438402
   defaultCharacter: Jess
-  aa: {fileID: 4900000, guid: a2feeec8aefe0e546aad65ee23ca86d4, type: 3}
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: e33b234e3c9177241abc0d08d97fe1e9, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753368
+    - rid: 3415138152484438385
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You see a beautiful woman dancing.
-    - rid: 4049961239326753369
+        thoughtMessage: '*You see a unique woman dancing.*'
+    - rid: 3415138152484438386
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Your eyes meet briefly and she walks over to you shortly
-          after.
-    - rid: 4049961239326753370
+        thoughtMessage: '*Your eyes meet briefly and she walks over to you shortly
+          after.*'
+    - rid: 3415138152484438387
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138152484438388
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Is there something you want?
-    - rid: 4049961239326753371
+    - rid: 3415138152484438389
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
-        - answer: 'You. '
+        - answer: You.
           responses:
-          - What a desperate thing for a professional to say.
-          adjust: 1
+          - Message: 
+            Character: 1
+            Expression: 3
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
         - answer: Nothing in particular.
           responses:
-          - My mistake then.
-          adjust: 3
+          - Message: 
+            Character: 1
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 0
         - answer: ...
           responses:
-          - You are quite odd.
-          adjust: 2
-    - rid: 4049961239326753372
+          - Message: 
+            Character: 1
+            Expression: 4
+            Stat: 0
+            AdjustValue: 1
+            exemption: 0
+    - rid: 3415138152484438390
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just came to ask you to stop staring.
-    - rid: 4049961239326753373
+    - rid: 3415138152484438391
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's off putting.
-    - rid: 4049961239326753374
+    - rid: 3415138152484438392
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: She begins to return to her dancing, but stops and returns
-          to you.
-    - rid: 4049961239326753375
+        thoughtMessage: '*She begins to return to her dancing, but stops and returns
+          to you.*'
+    - rid: 3415138152484438393
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I need a dance partner.
-    - rid: 4049961239326753376
+    - rid: 3415138152484438394
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: She waits for a moment.
-    - rid: 4049961239326753377
+        thoughtMessage: '*She waits for a moment.*'
+    - rid: 3415138152484438395
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well...
-    - rid: 4049961239326753378
+    - rid: 3415138152484438396
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Aren't you going to ask me to dance?
-    - rid: 4049961239326753379
+    - rid: 3415138152484438397
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You take her onto the dance floor and dance with her
-    - rid: 4049961239326753380
+        thoughtMessage: '*You take her onto the dance floor and dance with her.'
+    - rid: 3415138152484438398
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Hey, you're pretty good at this.
-    - rid: 4049961239326753381
+        message: You're quite good at this.
+    - rid: 3415138152484438399
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She smirks.*'
+    - rid: 3415138152484438400
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm Jessica Fletcher.
-    - rid: 4049961239326753382
+    - rid: 3415138152484438401
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I asked you to stop staring...
-    - rid: 4049961239326753383
+    - rid: 3415138152484438402
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You and Jessica dance for a while.
+        thoughtMessage: '*You and Jessica dance for a while.*'
