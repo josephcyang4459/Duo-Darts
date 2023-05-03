@@ -1,0 +1,21 @@
+[Newln]*You sit next to a woman invested in a trio of darts sitting in front of her on the table.*
+[Newln]I don’t know you. You should leave.
+	[Display]Why?
+		[Answer]Because I can just tell that you’re annoying.
+	[Display]No.
+		[Answer][RaiseElaineLove1][Elaine2]Better to be brave and annoying than be a coward and annoying.
+	[Display]... 
+		[Answer][RaiseElaineLove3][Elaine2]Well if you’re gonna be agreeable and keep your mouth shut I’ll let you stay.
+[Elaine1]
+[Newln]You know what, you should stay.
+[Newln]You seem fun to belittle.
+[Newln]Especially since I have no clue who you are.
+[Newln]*She stares at you for a second.*
+[Newln]Name.
+[Newln]*She hides a smile while you give your name.*
+[Newln]Sorry, you just have the name of an amateur.
+[Newln]I’m Elaine Guzmán. Also known as the dart goddess.
+[Newln]Any conceited idiot bold enough to say they’re the best hasn’t met me yet.
+[Newln]And now that I know your name I know for sure you’re not even close to me.
+[Newln]But, like I said, I’ve been in the market for a punching bag.
+[Newln]*You sit quietly as Elaine insults you for a while.*

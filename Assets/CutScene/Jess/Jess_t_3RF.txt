@@ -1,0 +1,29 @@
+[Jess4]
+[Newln]*You run into Jessica as you walk into the bathroom.*
+[Newln]Oh. It’s you.
+[Newln]Don’t tell anybody, but I just made a girl cry in the bathroom.
+[Newln]I just told her her dartplay is like art.
+[Newln]*She gasps.*
+[Newln]I might’ve said something other than art.
+[Newln]*She stares at you for a second
+[Newln]*Jessica burps.*
+[Newln]Oh God.
+[Newln]I’m going back inside. People can’t see me this drunk.
+[Newln]*She grabs your arm and pulls you all the way into a stall.*
+[Newln]Hold my hair please...
+[Newln]*She vomits into the toilet.*
+[Newln]This is your fault.
+[Newln]Buying me drinks all night long.
+	[Display]I didn’t force you to drink them. 
+		[Answer][RaiseJessLove1]Semantics are fallacious, you know.
+ [Display]I’m taking responsibility. 
+	[Answer][RaiseJessLove2]I’d say you’re doing the bare minimum by being here.
+[Display]You’re not enjoying this? 
+	[Answer][RaiseJessLove3]*She laughs.*
+	[Answer]I think you are scum, you know.
+[Newln]*Jessica vomits again.*
+[Newln]Just stay here for a little while longer.
+[Newln]I have to say you are a lovely hair holder by the way.
+[Newln]*You stay with Jessica for a while until she feels better.*[ResetIntoxJess]
+
+

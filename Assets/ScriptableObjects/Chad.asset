@@ -15,35 +15,43 @@ MonoBehaviour:
   Name: Chad
   Font: {fileID: 11400000, guid: 034792957c4d43946bd88090e9d9fdf8, type: 2}
   textSize: 72
-  Composure: 0
+  Composure: 3
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
-  - Location: Lounge
+  - Location: lounge
+    CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: d83e331b94818354a81eba13e5d59042, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 98875e2447f695246a1c33669b932a9b, type: 2}
     completed: 0
     loveRequirement: 1
-  - Location: Dance
+  - Location: dance
+    CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: 58c99b5db0254e94cbfb3ceeda7550c8, type: 2}
     completed: 0
     loveRequirement: 6
-  - Location: Dance
+  - Location: dance
+    CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
     completed: 0
     loveRequirement: 10
-  - Location: Bathroom
+  - Location: bathroom
+    CutsceneLocation: 3
     CutScene: {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
     completed: 0
     loveRequirement: 13
-  DefaultCutScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  DefaultCutScene: {fileID: 11400000, guid: 5fcccc1e348025545966f489b9d40460, type: 2}
+  DefaultRepeatingScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
   DefaultDrinkingCutScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
   Expressions:
-  - {fileID: 21300000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}
-  - {fileID: 21300000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}
-  bias: 0
+  - {fileID: 21300000, guid: 07d179330ed9fd74f800a5d457b070b4, type: 3}
+  - {fileID: 21300000, guid: 193cfd2a572733a489518819c74606f7, type: 3}
+  - {fileID: 21300000, guid: 35acf267eb2c9134d8d8b0a3a6ac6745, type: 3}
+  - {fileID: 21300000, guid: ca6ca36481e95174783dd8a21ea372be, type: 3}
+  bias: 1
   TextBox: {fileID: 21300000, guid: e0a18bd70045dfc4f96de9e490e1eff4, type: 3}
   textLineTHing: {fileID: 21300000, guid: a45dd30a3c5eb874482a6ee9131c14e1, type: 3}

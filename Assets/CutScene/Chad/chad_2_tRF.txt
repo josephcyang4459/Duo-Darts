@@ -1,0 +1,35 @@
+[Chad1]
+[Newln]*You approach Chad watching people dance from the sidelines.*
+[Newln]*He notices you and nods.*
+[Newln]You need something?
+	[Display]Want to dance? 
+		[Answer][RaiseChadLove3]*Chad scoffs.*
+		[Answer][Chad2]You wish.
+	[Display]?
+		[Answer][RaiseChadLove2]*Chad nods.*
+		[Answer][Chad2]I agree. It’s ridiculous.
+	[Display]Just observing.
+		[Answer][RaiseChadLove1]*Chad Chuckles.*
+		[Answer]Me or the dancing?
+[Chad1]
+[Newln]Even outside of a tournament I’m not a fan of dancing.
+[Newln]It must just give good players something to do while they wait for the final call.
+[Newln]Speaking of which.
+[Newln]Do you think you can win this thing?
+	[Display]Yeah.
+		[Answer][RaiseChadLove1][Chad2]Maybe if I were your partner.
+	[Display]No.
+		[Answer]I know I’m here, but you could still get second place if you weren’t so pessimistic.
+	[Display]I’m not sure.
+		[Answer][RaiseChadLove1]I can’t tell if you’re being pessimistic or humble…
+[Chad1]
+[Newln]Let me give you some free advice.
+[Newln]You’ll need some good luck with this crowd.
+[Newln]*Chadrick raises an eyebrow and smirks.*
+[Newln]And against me of course.
+[Newln]I always find myself a bit luckier after taking a second in the bathroom to calm down.
+[Newln]And if you’re tipsy you might sober up a bit from the chill in there.
+[Newln]That’s my advice.
+[Newln]Anyways, I have a few more questions for you.
+[Newln]*You and Chad spend time talking.*
+[Newln]*His questions are more personal this time around.*

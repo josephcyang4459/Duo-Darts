@@ -13,63 +13,89 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326752779
-  - rid: 4049961239326752780
-  - rid: 4049961239326752781
-  - rid: 4049961239326752782
-  - rid: 4049961239326752783
-  - rid: 4049961239326752784
-  - rid: 4049961239326752785
-  - rid: 4049961239326752786
-  defaultCharacter: chad
-  aa: {fileID: 4900000, guid: f77453494f53f914b9f47620c8fcb392, type: 3}
+  - rid: 3415138150063276603
+  - rid: 3415138150063276604
+  - rid: 3415138150063276605
+  - rid: 3415138150063276606
+  - rid: 3415138150063276607
+  - rid: 3415138150063276608
+  - rid: 3415138150063276609
+  - rid: 3415138150063276610
+  - rid: 3415138150063276611
+  defaultCharacter: Chad
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 327b5d729bf135f43acd9152f8f6492c, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326752779
+    - rid: 3415138150063276603
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        name: Expression Block
+        expression: 1
+    - rid: 3415138150063276604
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I can't believe I'm giving you a chance.
-    - rid: 4049961239326752780
+    - rid: 3415138150063276605
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Remember, I'm just doing this to see if you really are nobody.
-    - rid: 4049961239326752781
+        message: Remember, I'm just doing this to see if you're somebody worth watching.
+    - rid: 3415138150063276606
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nothing more and nothing less.
-    - rid: 4049961239326752782
+    - rid: 3415138150063276607
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And you better hold up your end of the game.
-    - rid: 4049961239326752783
+    - rid: 3415138150063276608
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Not that I would truly need your points. I could check out alone
-          if they'd let me.
-    - rid: 4049961239326752784
+        message: Not that I would need your points. I could check out alone if they'd
+          let me.
+    - rid: 3415138150063276609
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
+        name: Call & Response
         responses:
         - answer: Cocky much?
           responses:
-          - That's right. You still haven't seen how good I really am.
-          adjust: 0
-        - answer: 'I''d love to see a legend in action. '
+          - Message: That's right. You still haven't seen how good I really am.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: I'd love to see a legend in action.
           responses:
-          - Sucking up will get you somewhere, but not as far as you might hope.
-          adjust: 2
-        - answer: 'Underestimating me? '
+          - Message: 
+            Character: 0
+            Expression: 2
+            Stat: 0
+            AdjustValue: 2
+            exemption: 0
+        - answer: Underestimating me?
           responses:
-          - '*Chad rolls his eyes dismissively.*'
-          - Just throw your darts.
-          adjust: 3
-    - rid: 4049961239326752785
+          - Message: 
+            Character: 0
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 0
+    - rid: 3415138150063276610
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You're up.
-    - rid: 4049961239326752786
+        message: Now, we're up.
+    - rid: 3415138150063276611
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Lets see what you got.
+        message: Let's see what you got.

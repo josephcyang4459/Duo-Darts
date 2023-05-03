@@ -1,0 +1,47 @@
+[Newln]*While walking past a booth you accidentally trip on someone’s leg. You fall face first onto the ground.
+[Faye1]
+[Newln]*A young woman is the culprit. She kneels down next to you and sits you up.*
+[Newln]Here, that looks painful.
+[Newln]*She grabs a drink from her table and puts the cold glass onto your forehead.*
+[Newln]For the swelling.
+[Newln]*The woman tending your blunder looks away whenever you look at her face.*
+[Newln]*Something about her face is catching your attention.*
+	[Display]You’re a beautiful woman. 
+		[Answer][RaiseFayeLove3]*A heavy blush covers her face.*
+	[Display]You’re a man?
+		[Answer][Faye3]*She casts a disapproving face.*
+	[Display]What are you looking at?
+[Answer][RaiseFayeLove1]Umm, nothing.
+[Faye1]
+[Newln]*She helps you off the ground onto your feet.*	
+[Newln]Just come sit with me for a minute to recover.
+[Newln]*You sit in the booth.*
+[Newln]*You notice the upholstery to be only average in quality.*
+[Newln]*The woman sighs and moves further into the shadow of the booth.*
+[Newln]Everyone’s looking this way now because of you.
+[Newln]I wish this was easier…
+[Newln]*You stare blankly at her.*
+[Newln]You’re new aren’t you.
+[Newln]Well I’ll tell you since everyone else knows anyway.
+[Newln]I’m a woman. Or, you know, transitioned to a woman if that makes more sense to you.
+	[Display]Makes sense to me.
+		[Answer][RaiseFayeLove2][Faye2]That saves me the trouble of having to explain.
+	[Display]Wait so... 
+		[Answer][Faye3]That reaction is the worst. Why’s it so hard to understand?
+	[Display]...
+		[Answer][RaiseFayeLove1]Please stop staring already... 
+[Faye1]
+[Newln]Anyway. My tournament name is Faybian Artel.
+[Newln]Call me Faye though please.
+[Newln]I just haven’t found the time to legally change it.
+[Newln]*She bumps her head against the back of the booth in a small concession.*
+[Newln]Or the money…
+[Newln]It’s not cheap doing this.
+[Newln]*Faye motions away from the booth.*
+[Newln]If you’re interested in talking then come back later.
+[Newln]People have their eyes on you and it's bothering me.
+[Newln]Sorry.
+[Newln]*You leave Faye to her booth.*
+[Newln]*You notice how hard it is to see her even just a few feet away from the booth.*
+
+

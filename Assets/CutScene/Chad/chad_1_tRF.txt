@@ -1,0 +1,15 @@
+[Chad1]
+[Newln]I can’t believe I’m giving you a chance.
+[Newln]Remember, I’m just doing this to see if you’re somebody worth watching.
+[Newln]Nothing more and nothing less.
+[Newln]And you better hold up your end of the game.
+[Newln]Not that I would need your points. I could check out alone if they’d let me.
+	[Display]Cocky much?
+		[Answer]That’s right. You still haven’t seen how good I really am.
+	[Display]I’d love to see a legend in action.
+		[Answer][RaiseChadLove2][Chad2]Sucking up will get you somewhere, but not as far as you might hope.
+	[Display]Underestimating me?
+		[Answer][RaiseChadLove3][Chad2]Just throw your darts.
+[Chad1]
+[Newln]Now, we’re up.
+[Newln]Let's see what you got.

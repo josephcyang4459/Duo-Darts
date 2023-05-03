@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: bathroomadvice
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3685628193247854592
-  - rid: 3685628193247854593
-  - rid: 3685628193247854594
-  - rid: 3685628193247854595
+  - rid: 3415138150063276720
+  - rid: 3415138150063276721
+  - rid: 3415138150063276722
+  - rid: 3415138150063276723
+  - rid: 3415138150063276724
+  - rid: 3415138150063276725
   defaultCharacter: Bathroomwall
   exception: 0
   playerS:
@@ -28,25 +30,37 @@ MonoBehaviour:
     stats: 
     values: 
   AnotherFuckingException: 0
-  aa: {fileID: 4900000, guid: f151a4be42e86874d9cb6f5da521a4d0, type: 3}
+  aa: {fileID: 4900000, guid: f11dd3178e130cb47bc6332994918bad, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3685628193247854592
+    - rid: 3415138150063276720
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You examine a wall with scribbles on it while relieving yourself
-          in the bathroom
-    - rid: 3685628193247854593
+        thoughtMessage: '*You examine a wall with scribbles on it while relieving
+          yourself in the bathroom.'
+    - rid: 3415138150063276721
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: When throwing darts think of rice balls.
-    - rid: 3685628193247854594
+        message: When throwing darts, think of rice balls.
+    - rid: 3415138150063276722
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Trust me it helps!
-    - rid: 3685628193247854595
+    - rid: 3415138150063276723
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You leave feeling enlightened.
+        thoughtMessage: '*You leave feeling enlightened.*'
+    - rid: 3415138150063276724
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 3
+        Adjust: 1
+    - rid: 3415138150063276725
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 2
+        Adjust: 1

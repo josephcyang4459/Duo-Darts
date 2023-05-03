@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326752840
-  - rid: 4049961239326752841
-  - rid: 4049961239326752842
-  - rid: 4049961239326752843
+  - rid: 3415138150063276541
+  - rid: 3415138150063276542
+  - rid: 3415138150063276543
+  - rid: 3415138150063276544
+  - rid: 3415138150063276545
+  - rid: 3415138150063276546
+  - rid: 3415138150063276547
+  - rid: 3415138150063276548
   defaultCharacter: Chad
   exception: 0
   playerS:
@@ -26,25 +30,48 @@ MonoBehaviour:
     stats: 02000000
     values: 02000000
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: a9b6b3ec5d554374195efc75af76f006, type: 3}
+  aa: {fileID: 4900000, guid: d41c0aaa9ab99e544b8da86a5a0ca4e3, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326752840
+    - rid: 3415138150063276541
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You join Chad in people watching.
-    - rid: 4049961239326752841
+        thoughtMessage: '*You join Chad in people watching.*'
+    - rid: 3415138150063276542
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Still ridiculous right?
-    - rid: 4049961239326752842
+        message: Drinking?
+    - rid: 3415138150063276543
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Anyways, entertain me while I wait for my trophy.
-    - rid: 4049961239326752843
+        message: "I can say for sure that\u2019s better than dancing."
+    - rid: 3415138150063276544
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "If you\u2019re paying I\u2019ll have a few."
+    - rid: 3415138150063276545
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You spend time talking with Chad. He seems happy to have
-          someone to talk to.
+        thoughtMessage: '*You spend time drinking with Chad.*'
+    - rid: 3415138150063276546
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 0
+        Stat: 2
+        Adjust: 1
+    - rid: 3415138150063276547
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 0
+        Stat: 1
+        Adjust: 1
+    - rid: 3415138150063276548
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 3
+        Adjust: 1

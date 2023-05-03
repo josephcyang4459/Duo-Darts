@@ -9,17 +9,18 @@ public class DartGame : MonoBehaviour
 {
 
 
-    public short turnSum = 0;
+    public int turnSum = 0;
     public int overall = 501;
     public int points;
-    public byte currentTurn = 0;
+    public int currentTurn = 0;
 
     public int partnerIndex =0;
 
     public AimCone aim;
+    [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(17, 19);
 
-    public byte numberOfDartsThrow = 0;
-    public byte maxTurns;
+    public int numberOfDartsThrow = 0;
+    public int maxTurns;
     public TMP_Text overallScore;
     public TMP_Text turnScore;
     public WaitForSeconds k = new WaitForSeconds(3);
@@ -36,8 +37,7 @@ public class DartGame : MonoBehaviour
 
     public float driftDefault = 1f;
 
-    [SerializeReference]
-    public BoardSlice[] c;
+    [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
     public Player stats;
     public Partner[] partners;
@@ -49,6 +49,9 @@ public class DartGame : MonoBehaviour
     public Canvas losec;
     public AudioClip ac;
     public AudioClip hit;
+    public SpriteRenderer board;
+
+   
 
 #if UNITY_EDITOR
     public byte[] order;
@@ -70,10 +73,10 @@ public class DartGame : MonoBehaviour
                 GameObject obj = Instantiate(slice, g.transform);
                 
                 obj.transform.rotation = Quaternion.Euler(-18 * i, -90, 0);
-                for(int j = 0; j < 4; j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    
-                   obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
+
+                    obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
                 }
@@ -83,10 +86,6 @@ public class DartGame : MonoBehaviour
             Array.Sort(c, new comparer());
 
             reset = false;
-
-            
-
-
         }
     }
 
@@ -97,57 +96,102 @@ public class DartGame : MonoBehaviour
             return x.colliders[0].point - y.colliders[0].point;
         }
     }
-
 #endif
 
     public void BeginGame(int partner)
     {
+        UI_Helper.SetSelectedUIElement(s.c.voiddd);
+        board.enabled = true;
+        DartC(green);
         s.ass.clip = ac;
         s.ass.Play();
-
         points = overall > 600 ? 10 : 5;
-        float Accuracy = ((stats.Skill + stats.Luck) - (stats.Intoxication * 2)) / 100;
-        Debug.Log(Accuracy);
-        float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);
+        aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy fucking math
+        //Debug.Log(Accuracy);
+        float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);// gooffy ass
         aim.driftSpeed = driftDefault * Stability;
-        aim.moveSpeed = (1.35f -((stats.Intoxication / 5) / 10)) * aim.driftSpeed;
+        aim.moveSpeed = (1.35f -((stats.Intoxication / 5) / 10)) * aim.driftSpeed;// more goofy ass math
 
         partnerIndex = partner;
+
+        for (int i = 0; i < 3; i++)
+        {
+            dartimages[i].enabled = true;
+            scores[i].text = "";
+            Dart[i].reset_position();
+        }
+
+        turnSum = 0;
+        turnScore.text = turnSum.ToString();
+        overallScore.text = overall.ToString();
+
+
+        numberOfDartsThrow = 0;
 
         dartCanvas.enabled = true;
         numberOfDartsThrow = 0;
         currentTurn = 0;
-        turnSum = 0;
         turnScore.text = turnSum.ToString();
         overallScore.text = overall.ToString();
         playerTurn();
     }
 
-    public void lose()
+    public void Lose()
     {
-        Debug.Log("lose");
+        //Debug.Log("lose");
+        board.enabled = false;
         dartCanvas.enabled = false;
         losec.enabled = true;
+
+        if (s.hour == 8)
+            if (s.minutes > 50)
+            {
+                Debug.Log("PLAY BAD ENDING HERE");
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FailedLastGame);
+            }
+
         StartCoroutine(condition());
     }
 
-    public void win()
+    public void Win()
     {
-        Debug.Log("win");
+        //Debug.Log("win");
+        board.enabled = false;
         dartCanvas.enabled = false;
-        stats.points += points;
+        stats.TotalPointsScoredAcrossAllDartMatches += points;
         winc.enabled = true;
+        if (s.hour == 8)
+            if (s.minutes > 50)
+            {
+                Debug.Log("PLAY GOOD ENDING HERE");
+                switch ((Characters)partnerIndex)
+                {
+                    case Characters.Chad:
+                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ChadEnding);
+                        return;
+                    case Characters.Elaine:
+                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ElaineEnding);
+                        return;
+                    case Characters.Jess:
+                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.JessEnding);
+                        return;
+                    case Characters.Faye:
+                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FayeEnding);
+                        return;
+                }
+            }
+               
         StartCoroutine(condition());
     }
 
-    public void switchTurn()
+    public void SwitchTurn()
     {
-        Debug.Log("swap");
+        //Debug.Log("swap");
         for( int i = 0; i < 3; i++)
         {
             dartimages[i].enabled = true;
             scores[i].text = "";
-            Dart[i].vvvv();
+            Dart[i].reset_position();
         }
         
         overall -= turnSum;
@@ -160,7 +204,8 @@ public class DartGame : MonoBehaviour
         currentTurn++;
         if (currentTurn >= maxTurns)
         {
-            lose();
+            Lose();
+            return;
         }
 
         if (currentTurn % 2 == 0)
@@ -187,6 +232,7 @@ public class DartGame : MonoBehaviour
             Dart[i].m.material = m;
     }
     
+    //used to hit the board
     private void gahoot(Vector3 h)
     {
         aim.normal.y = h.y;
@@ -194,11 +240,8 @@ public class DartGame : MonoBehaviour
         aim.t.position = aim.normal;
         if (Physics.Raycast(aim.t.position, Vector3.forward, out RaycastHit hit, aim.layer))
         {
-            
-
             ///Debug.Log(aim.t.position);
             hit.collider.gameObject.GetComponent<BoardCollider>().hit();
-
         }
     }
 
@@ -210,104 +253,129 @@ public class DartGame : MonoBehaviour
         //location.z = -15;
         gahoot(location);
     }
-    private void partnerTurn()
+
+    private void partnerTurn()//wow really hideous
     {
         float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) *  ((partners[partnerIndex].Intoxication) / 2);
         //Debug.Log(offset);
 
-        int tempSc = overall - turnSum;
-        if (tempSc >= 60)
+        void OverSixtyPick()
         {
 
-            if (partners[partnerIndex].bias > -1)
+            if (partners[partnerIndex].bias == DartTargetBias.Bullseye)//chad
             {
-                if(partners[partnerIndex].bias == 0)
-                {
 
-                    Adjust(bullseye.transform.position, offset);
-                    return;
-                }
-
-                if(partners[partnerIndex].bias == 1)
-                {
-                    Adjust(c[19].colliders[2].target.position, offset);
-                    return;
-                }
+                Adjust(bullseye.transform.position, offset);
+                return;
             }
 
-            int pick = UnityEngine.Random.Range(17, 19);
+            if (partners[partnerIndex].bias == DartTargetBias.Sixty)//elaine
+            {
+                Adjust(c[19].colliders[2].target.position, offset);
+                return;
+            }
 
-            int temp = 1;
+
+            int pick = UnityEngine.Random.Range(NuetralAITargetRange.x, NuetralAITargetRange.y+1);
+
+            PointValueTarget temp = PointValueTarget.OuterSingle;
 
             if (partners[partnerIndex].Composure >= 5)
             {
                 temp = 0;
             }
 
-            if (partners[partnerIndex].Composure >= 10)
+            if (partners[partnerIndex].Composure >= 10)// high composure
             {
-                temp = 2;
-               
+                int trye = UnityEngine.Random.Range(0, 10);
+
+                if (trye > 7)// 8,9 20% chance to go for triple
+                {
+                    Adjust(c[19].colliders[(int)PointValueTarget.Triple].target.position, offset);
+                    return;
+                }
+
+                if (trye > 4)// 5,6,7 30% chance to go for bullseye
+                {
+                    Adjust(bullseye.transform.position, offset);
+                    return;
+                }
+
+                temp = PointValueTarget.Double;
+
             }
 
 
 
-            Adjust(c[pick].colliders[temp].target.position, offset);
+            Adjust(c[pick].colliders[(int)temp].target.position, offset);
 
             return;
         }
 
-        if (tempSc >= 50)
+        int tempScore = overall - turnSum;
+        if (tempScore >= 60)// this is where they would go for big numbers
         {
-            Debug.Log("50");
+            OverSixtyPick();
+            return;
+        }
+
+        if (tempScore >= 50)// always goes for bullseye
+        {
             Adjust(bullseye.transform.position, offset);
             return;
         }
 
-        if (tempSc > 20)
+        if (tempScore > 20)// goes for random small
         {
-            Debug.Log("30");
-            Adjust(c[6].colliders[2].target.position, offset);
+            int temp = UnityEngine.Random.Range(4, 7);//from 4 to 6 so points from  15, 18, 21
+            Adjust(c[temp].colliders[(int)PointValueTarget.Triple].target.position, offset);
             return;
         }
 
-        if (tempSc <= 20)
+        if (tempScore <= 20)//goes for single to win
         {
-            Debug.Log("20");
-            Adjust(c[tempSc - 1].colliders[1].target.position, offset);
+            
+            int temp = UnityEngine.Random.Range(0, 10);// random for whether we go for inner or outer to add to the presentation
+            int target;
+            if (temp > 4)
+                target = (int)PointValueTarget.OuterSingle;
+            else
+                target = (int)PointValueTarget.InnerSingle;
+
+            //must adjust -1 to get correct target
+            Adjust(c[tempScore - 1].colliders[target].target.position, offset);
             return;
         }
-
-
-
-
-        return;
     }
 
-    public void AddPoints(byte b)
+    /// <summary>
+    /// called by DartScript for some reason
+    /// </summary>
+    public void AddPoints(int newPoints)
     {
         s.ass.PlayOneShot(hit);
-           turnSum += b;
+        turnSum += newPoints;
         turnScore.text = turnSum.ToString();
-        scores[numberOfDartsThrow].text = b.ToString();
+        scores[numberOfDartsThrow].text = newPoints.ToString();
         dartimages[numberOfDartsThrow].enabled = false;
     }
 
-    public void check(byte b)
+    /// <summary>
+    /// called by DartScript for some reason
+    /// </summary>
+    public void CheckForBust()
     {
 
-        Debug.Log("check");
         if (overall - turnSum < 0)
         {
             turnSum = 0;
-            Debug.Log("BUST");
-            switchTurn();
+            SwitchTurn();
             return;
         }
 
         if (overall - turnSum == 0)
         {
-            win();
+            Win();
             return;
         }
 
@@ -316,7 +384,7 @@ public class DartGame : MonoBehaviour
 
         if (numberOfDartsThrow >= 3)
         {
-            switchTurn();
+            SwitchTurn();
             return;
         }
         else
@@ -336,10 +404,10 @@ public class DartGame : MonoBehaviour
     {
 
         yield return sec;
-
+        
         winc.enabled = false;
         losec.enabled = false;
-
-            s.setTime(5);
+        board.enabled = false;
+        s.setTime(5);
     }
 }

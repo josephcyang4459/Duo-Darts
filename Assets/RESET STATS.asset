@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce794c17f50e28439461628f638a683, type: 3}
+  m_Name: RESET STATS
+  m_EditorClassIdentifier: 
+  partners:
+  - {fileID: 11400000, guid: e575fcd868f08ec4996b7933224505c7, type: 2}
+  - {fileID: 11400000, guid: 2ab207ae24ac95646911cd954cb7a522, type: 2}
+  - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
+  - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
+  - {fileID: 11400000, guid: 74d015bdf71cb76428402f690be77888, type: 2}
+  Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
+  BaseStats:
+  - name: Chad
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Jess
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Faye
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  - name: Elaine
+    Composure: 0
+    Intoxication: 0
+    Love: 0
+  BasePlayerStats:
+    Charisma: 1
+    Intoxication: 1
+    Skill: 1
+    Luck: 1
+  Events:
+  - {fileID: 11400000, guid: c5f9f65815a54f147862b7f52fd0cf96, type: 2}
+  - {fileID: 11400000, guid: 2d16e0a8f84fa5f48894a413f74e084d, type: 2}
+  - {fileID: 11400000, guid: 5a37f1c783c402b44af12c3487995640, type: 2}
+  - {fileID: 11400000, guid: 7cd9fdab6679fe7439705395669096f8, type: 2}
+  - {fileID: 11400000, guid: 0d83e6a13c25a5d4085cf32fba91742e, type: 2}
+  - {fileID: 11400000, guid: 8d4ced04145ad914396622f25f24bcf3, type: 2}
+  ResetToBase: 0
+  ResetToZero: 0
+  ResetToBaseAllButLoveAndIntoxication: 0

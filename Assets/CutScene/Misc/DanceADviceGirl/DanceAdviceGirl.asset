@@ -13,18 +13,22 @@ MonoBehaviour:
   m_Name: DanceAdviceGirl
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 4049961239326753207
-  - rid: 4049961239326753208
-  - rid: 4049961239326753209
-  - rid: 4049961239326753210
-  - rid: 4049961239326753211
-  - rid: 4049961239326753212
-  - rid: 4049961239326753213
-  - rid: 4049961239326753214
-  - rid: 4049961239326753215
-  - rid: 4049961239326753216
-  - rid: 4049961239326753217
-  - rid: 4049961239326753218
+  - rid: 3415138150063276765
+  - rid: 3415138150063276766
+  - rid: 3415138150063276767
+  - rid: 3415138150063276768
+  - rid: 3415138150063276769
+  - rid: 3415138150063276770
+  - rid: 3415138150063276771
+  - rid: 3415138150063276772
+  - rid: 3415138150063276773
+  - rid: 3415138150063276774
+  - rid: 3415138150063276775
+  - rid: 3415138150063276776
+  - rid: 3415138150063276777
+  - rid: 3415138150063276778
+  - rid: 3415138150063276779
+  - rid: 3415138150063276780
   defaultCharacter: Dance Girl
   exception: 0
   playerS:
@@ -34,58 +38,77 @@ MonoBehaviour:
   partnerS:
     stats: 
     values: 
-  aa: {fileID: 4900000, guid: 13e18961ca4ae354498a089a53d5b4bb, type: 3}
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 5a3a459d1a213e449811ba3abd24fc10, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 4049961239326753207
+    - rid: 3415138150063276765
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You approach a young woman dancing rampantly.
-    - rid: 4049961239326753208
+        thoughtMessage: '*You approach a young woman dancing rampantly.*'
+    - rid: 3415138150063276766
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey! You!
-    - rid: 4049961239326753209
+    - rid: 3415138150063276767
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Dance!
-    - rid: 4049961239326753210
+    - rid: 3415138150063276768
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: She grabs your arms and flails you around for a while.
-    - rid: 4049961239326753211
+        thoughtMessage: '*She grabs your arms and flails you around for a while.*'
+    - rid: 3415138150063276769
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: Eventually she tires out and walks off to the side of the
-          dance floor with you.
-    - rid: 4049961239326753212
+        thoughtMessage: '*Eventually she tires out and walks off to the side of the
+          dance floor with you.*'
+    - rid: 3415138150063276770
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're incredible!
-    - rid: 4049961239326753213
+    - rid: 3415138150063276771
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here's some advice!
-    - rid: 4049961239326753214
+    - rid: 3415138150063276772
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: When you're checking out in darts imagine you're operating a cash
-          register!
-    - rid: 4049961239326753215
+          register.
+    - rid: 3415138150063276773
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Like'
+    - rid: 3415138150063276774
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Cha-ching!
+    - rid: 3415138150063276775
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You know?
+    - rid: 3415138150063276776
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It really gives you a powerful perspective!
-    - rid: 4049961239326753216
+    - rid: 3415138150063276777
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways. Goodbye!
-    - rid: 4049961239326753217
+    - rid: 3415138150063276778
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: She leaves you.
-    - rid: 4049961239326753218
+        thoughtMessage: '*She leaves you.*'
+    - rid: 3415138150063276779
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: You feel enlightened by her advice.
+        thoughtMessage: '*You feel enlightened by her advice.*'
+    - rid: 3415138150063276780
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Player Stat Block
+        Stat: 2
+        Adjust: 1

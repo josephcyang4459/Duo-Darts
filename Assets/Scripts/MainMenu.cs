@@ -1,11 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
+
+    public GameObject button;
+
+    public void Start()
+    {
+        UI_Helper.SetSelectedUIElement(button);
+    }
+
     public void PlayGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene((int)SceneNumbers.Game);
     }
 
     public void QuitGame() {

@@ -4,6 +4,8 @@ using TMPro;
 
 public class DartMen : MonoBehaviour
 {
+    [SerializeField] int EndGameCutoff;
+    [SerializeField] int MaxLoveNeeded;
     public Canvas menue;
     public DartGame dg;
     public Schedule s;
@@ -12,27 +14,45 @@ public class DartMen : MonoBehaviour
     public TMP_Text[] texts;
     public int[] indices;
 
-
     public GameObject backButtonm;
+
     public void begin()
     {
-        dg.overall = s.hour < 7 ? 501 : 701;
+        dg.overall = s.hour < 7 ? 501 : 701;//gets correct score
+
         s.off();
         menue.enabled = true;
-        int j = 0;
+        int UIcharacterSlotUsed = 0;
+       
+
+        //turns on all slots
         for (int i = 0; i < p.Length; i++)
         {
-            if (p[i].Love >= 1)
+            if (s.hour >= 8 && s.minutes >= 30)
             {
-                characters[j].gameObject.SetActive(true);
-                texts[j].text = p[i].Name;
-                indices[j] = i;
-                j++;
+                if (p[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed)
+                {
+                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
+                    texts[UIcharacterSlotUsed].text = p[i].Name;
+                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
+                    UIcharacterSlotUsed++;
+                }
+            }
+            else//normal 
+            {
+                if (p[i].Love >= 1)
+                {
+                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
+                    texts[UIcharacterSlotUsed].text = p[i].Name;
+                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
+                    UIcharacterSlotUsed++;
+                }
             }
             
         }
 
-        for(int i=j;i<p.Length;i++)
+        //sets all other slots off
+        for(int i=UIcharacterSlotUsed;i<p.Length;i++)
                     characters[i].gameObject.SetActive(false);
 
         UI_Helper.SetSelectedUIElement(backButtonm);
@@ -47,12 +67,17 @@ public class DartMen : MonoBehaviour
 
     }
 
-
-    public void exception(int i, int hour)
+    /// <summary>
+    /// used to begin a game with the supplied character
+    /// </summary>
+    /// <param name="characterIndex"></param>
+    /// <param name="currentHour"></param>
+    public void exception(int characterIndex, int currentHour)
     {
-        dg.overall = hour < 7 ? 501 : 701;
-        dg.BeginGame(i);
+        dg.overall = currentHour < 7 ? 501 : 701;
+        dg.BeginGame(characterIndex);
     }
+
     public void back()
     {
         menue.enabled = false;

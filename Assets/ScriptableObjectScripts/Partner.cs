@@ -11,27 +11,35 @@ public class Partner : ScriptableObject {
     public float Love = 0f;
     public RelatedCutScene[] RelatedCutScenes;
     public CutScene DefaultCutScene;
+    public CutScene DefaultRepeatingScene;
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
-    public int bias = -1;
+    public DartTargetBias bias = DartTargetBias.None;
     public Sprite TextBox;
     public Sprite textLineTHing;
 
+    /// <summary>
+    /// Index of next available Cutscene or -1 if default
+    /// </summary>
+    /// <returns></returns>
     public int GetCutScene() {
-        for (int i = 0; i < RelatedCutScenes.Length; i++)
-            if (!RelatedCutScenes[i].completed && Love >= RelatedCutScenes[i].loveRequirement)
-                if (i != 3)
-                {
-                    return i;
 
-                }
-                else if (Intoxication >= 3)
-                {
-                    return i;
+        if (Love < 0)
+            return -1;
 
+        for (int cutscene_index = 0; cutscene_index < RelatedCutScenes.Length; cutscene_index++)
+            if ((!RelatedCutScenes[cutscene_index].completed) && Love >= RelatedCutScenes[cutscene_index].loveRequirement)
+            {
+                if (cutscene_index != (int)PartnerCutscenes.DrunkScene)
+                {
+                    return cutscene_index;
                 }
-                else
-                    return -1;
+                //if it is drunk scene
+                if (Intoxication >= 3)
+                {
+                    return cutscene_index;// this should be drunk dutscene to handle
+                }// if they are not drunk enought we move on to next one if we can
+            }
         return -1;
     }
 
@@ -52,11 +60,54 @@ public class Partner : ScriptableObject {
                 return;
         }
     }
+
+#if UNITY_EDITOR
+
+    public void OnValidate()
+    {
+        for(int i = 0; i < RelatedCutScenes.Length; i++)
+        {
+            RelatedCutScenes[i].Location = RelatedCutScenes[i].CutsceneLocation.ToString();
+        }
+    }
+
+    public void __resetValues()
+    {
+        Love = 0;
+        Intoxication = 0;
+        Composure = 0;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+
+    public void __resetValues(float love, float intox, float compose)
+    {
+        Love = love;
+        Intoxication = intox;
+        Composure = compose;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+    public void __resetValues(float compose)
+    {
+        Love = 0;
+        Intoxication = 0;
+        Composure = compose;
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            RelatedCutScenes[i].completed = false;
+    }
+
+#endif
 }
+
+
 
 [System.Serializable]
 public class RelatedCutScene {
-    public string Location;
+#if UNITY_EDITOR
+    [HideInInspector] public string Location;
+#endif
+    public Locations CutsceneLocation;
     public CutScene CutScene;
     public bool completed;
     public int loveRequirement;

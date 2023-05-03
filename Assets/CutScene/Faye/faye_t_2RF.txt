@@ -1,0 +1,52 @@
+[Newln]*You see Faye at the bar.*
+[Newln]*The owner is talking with her while she orders a drink.*
+[Newln]*You move closer to hear what they’re saying.*
+[Owner1]
+[Newln]Faybian right?
+[Faye1]
+[Newln]Umm, it’s actually Faye now.
+[Owner1]
+[Newln]It’s easier for me to call you Faybian though.
+[Newln]I’ve known you as Faybian for years. 
+[Newln]Can’t I just call you that?
+[Newln]*You walk up to the conversation.*
+[Faye2]
+[Newln]It’s you.
+[Owner1]
+[Newln]Can I get you something?
+	[Display]Whatever she ordered. 
+		[Answer][RaiseFayeLove1]Sure. I’ll grab that for you.
+		[Answer]*The owner turns around to prepare the drink.*
+	[Display]Just fetching Faye. 
+		[Answer][RaiseFayeLove3]*The owner places Faye’s drink in front of her and moves to the next customer.*
+	[Display]No I’m good.
+		[Answer]Sounds good.
+		[Answer]Anyways.
+		[Answer]*Before he can continue his previous thought, another customer calls him over.*
+		[Answer]Excuse me.
+[Faye1]
+[Newln]*Faye grabs your arm with one hand and grabs her drink with the other. Leading you back to her lounge booth.*
+[Lounge]
+[Newln]*You both sit down in the booth.*
+[Newln]*Faye looks irritated.*
+[Faye3]
+[Newln]I hate this league. No matter who I talk to, it's always the same question.
+[Newln]Like, do they think they can just determine who I am and I just have to deal with that?
+[Faye1]
+[Newln]*She sighs and drinks.*
+[Newln]Maybe I should just quit and go somewhere else.
+[Newln]Where nobody knew me before.
+	[Display]Maybe.
+		[Answer][RaiseFayeLove1]*She frowns.*
+		[Answer]I hate ‘maybe’s’.
+	[Answer]Is it really that bad?
+		[Answer][Faye3]Yes.
+	[Answer]Screw that.
+		[Answer][RaiseFayeLove2][Faye2]*Faye smiles lightly.*
+		[Answer]I’m a darts player first after all.
+[Faye1]
+[Newln]*Faye becomes recomposed.*
+[Newln]I’ll keep going. Things will get better.
+[Newln]I love this game too much.
+[Newln]Thanks for getting me away from that idiot by the way.
+[Newln]*You spend some time with Faye in her booth.*

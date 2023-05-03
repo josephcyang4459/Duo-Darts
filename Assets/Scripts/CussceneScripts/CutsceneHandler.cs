@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
 {
-    public CutScene cs;
+    public CutScene cutscene;
     public Dialogue dh;
 
     public int index;
@@ -19,7 +19,7 @@ public class CutsceneHandler : MonoBehaviour
     public Canvas dialougeCanvas;
     public Canvas responseCanvas;
     public TMP_Text[] responses;
-    public byte characterIndex;
+    public int characterIndex;
     public DartMen dm;
 
     public Partner[] partners;
@@ -37,37 +37,29 @@ public class CutsceneHandler : MonoBehaviour
     public GameObject responseButton;
     public AttributeUpdate au;
 
-    public Canvas ac;
+    public Canvas DefaultCanvass;
     public GameObject bsss;
     public GameObject voiddd;
-    public void tart(CutScene c, byte b)
+
+    public void PlayCutScene(CutScene c, int BackgroundIndex)
     {
-
         index = 0;
-        cs = c;
-        bbbbb();
+        cutscene = c;
+        CompleteThisCutscene();
         decideChar(c.defaultCharacter);
-        background(b);
-        if (c.AnotherFuckingException)
-        {
-            UI_Helper.SetSelectedUIElement(bsss);
-            ac.enabled = true;
-            return;
-        }
-
-        UI_Helper.SetSelectedUIElement(voiddd);
+        background(BackgroundIndex);
 
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
     }
-    void bbbbb()
+    void CompleteThisCutscene()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < partners[i].RelatedCutScenes.Length; j++)
-                if (partners[i].RelatedCutScenes[j].CutScene == cs)
+                if (partners[i].RelatedCutScenes[j].CutScene == cutscene)
                 {
                     partners[i].RelatedCutScenes[j].completed = true;
                     return;
@@ -78,17 +70,17 @@ public class CutsceneHandler : MonoBehaviour
     public void choice(int i)
     {
         if (i == 0)
-            cs = partners[characterIndex].DefaultCutScene;
+            cutscene = partners[characterIndex].DefaultCutScene;
         else
-            cs = partners[characterIndex].DefaultDrinkingCutScene;
+            cutscene = partners[characterIndex].DefaultDrinkingCutScene;
 
         sc.enabled = false;
+        index = 0;
+        DefaultCanvass.enabled = false;
         dialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += takeAction;
-        UI_Helper.SetSelectedUIElement(voiddd);
-        cs.blocks[index].action(this);
-        
+        cutscene.blocks[index].action(this);
     }
 
     public void off()
@@ -100,76 +92,84 @@ public class CutsceneHandler : MonoBehaviour
         sc.setTime(10);
     }
 
+    public void PresentChoices()
+    {
+        DefaultCanvass.enabled = true;
+        dialougeCanvas.enabled = false;
+        dialougeCanvas.enabled = false;
+        interact.action.Disable();
+        interact.action.performed += takeAction;
+    }
+
+
     public void takeAction(InputAction.CallbackContext c)
     {
-        if (responding)
+        Debug.Log(index);
+        if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
                 return;
 
-            if (dh.Script.typer != null)
+            if (dh.Script.writing)
             {
                 dh.Script.Stop();
                 return;
             }
 
-            if (!respon.responses[responseIndex].exemption)
-                dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
-            else
-                Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
-
             responseIndexIndex++;
 
-            if(responseIndexIndex>= respon.responses[responseIndex].responses.Length)
+            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length)
             {
-                if (respon.responses[responseIndex].adjust < 0)
-                {
-                    off();
-                    partners[characterIndex].Love -= 99999;
-
-
-                    return;
-                }
-
-                partners[characterIndex].Love += respon.responses[responseIndex].adjust;
-
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
-
-                
-                
+                //Debug.Log("Done resonding");
+                dh.Script.Stop();
+                nextBlock();
+            }
+            else
+            {
+                displayResponse();
             }
             return;
         }
             
-        if (dh.Script.typer != null)
+        if (dh.Script.writing)
         {
             dh.Script.Stop();
             return;
         }
+
+        nextBlock();
+    }
+
+    public void nextBlock()
+    {
         index++;
 
-        if(index>= cs.blocks.Length)
+        if (index >= cutscene.blocks.Length)
         {
 
             off();
-            if (cs.exception)
+            if (cutscene.exception)// force play darts
                 dm.exception(characterIndex, sc.hour);
+            /*
 
-            for (int i = 0; i < cs.partnerS.stats.Length; i++)
+            for (int i = 0; i < cutscene.partnerS.stats.Length; i++)
             {
-                partners[characterIndex].stateChange(cs.partnerS.stats[i], cs.partnerS.values[i]);
+                partners[characterIndex].stateChange(cutscene.partnerS.stats[i], cutscene.partnerS.values[i]);
             }
 
-            for (int i = 0; i < cs.playerS.stats.Length;i++)
+            for (int i = 0; i < cutscene.playerS.stats.Length; i++)
             {
-                au.UpdateAttribute(cs.playerS.stats[i], cs.playerS.values[i]);
+                au.UpdateAttribute(cutscene.playerS.stats[i], cutscene.playerS.values[i]);
             }
+            
+            */
             return;
         }
 
-        cs.blocks[index].action(this);
+        cutscene.blocks[index].action(this);
     }
 
     public void dialouge(string message)
@@ -187,31 +187,40 @@ public class CutsceneHandler : MonoBehaviour
             responses[i].text = respon.responses[i].answer;
 
         responseCanvas.enabled = true;
-        UI_Helper.SetSelectedUIElement(responseButton);
+        //UI_Helper.SetSelectedUIElement(responseButton);
     }
 
     public void changeChar(string character)
     {
         decideChar(character);
-        index++;
-
-        cs.blocks[index].action(this);
+        nextBlock();
     }
 
     public void UI_Response(int i)
     {
-        UI_Helper.SetSelectedUIElement(voiddd);
+        //UI_Helper.SetSelectedUIElement(voiddd);
         responseCanvas.enabled = false;
         responseIndex = i;
-        if (!respon.responses[responseIndex].exemption)
-            dialouge(respon.responses[responseIndex].responses[responseIndexIndex]);
-        else
-            Thought(respon.responses[responseIndex].responses[responseIndexIndex]);
+        responseIndexIndex = 0;
+
+        displayResponse();
     }
 
-    public void changeExpression(string b)
+    private void displayResponse()
     {
+        respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
+        if (!respon.responses[responseIndex].responses[responseIndexIndex].exemption)
+            dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+        else
+            Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+    }
 
+    public void changeExpression(int ExpressionIndex)
+    {
+        if (character.enabled == false)
+            character.enabled = true;
+        character.sprite = partners[characterIndex].Expressions[ExpressionIndex];
+        nextBlock();
     }
 
     public void Thought(string s)
@@ -223,12 +232,15 @@ public class CutsceneHandler : MonoBehaviour
     public void changeBackground(string s)
     {
         decideBackGround(s);
+        nextBlock();
     }
 
     private void partner(int i)
     {
-        characterIndex = (byte)i;
-        character.sprite = partners[i].Expressions[0];
+        characterIndex = i;
+
+        //character.sprite = partners[i].Expressions[0];
+        character.enabled = false;
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
         characterName.fontSize = partners[i].textSize;
@@ -287,15 +299,33 @@ public class CutsceneHandler : MonoBehaviour
                 break;
             case "elaine":
                 partner(3);
-
                 break;
 
             case "owner":
                 partner(4);
-
                 break;
-            default:
+
+            case "bar guy":
                 partner(5);
+                break;
+            case "charming girl":
+                partner(6);
+                break;
+            case "charming guy":
+                partner(7);
+                break;
+            case "dance girl":
+                partner(8);
+                break;
+            case "lounge guy":
+                partner(9);
+                break;
+
+            default:
+#if UNITY_EDITOR
+                Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
+#endif
+                partner(10);
                 characterName.text = s;
                 break;
         }

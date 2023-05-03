@@ -14,7 +14,7 @@ public class Schedule : MonoBehaviour
 
     public Partner[] partners;
 
-    public byte location;
+    public int location;
     public CutsceneHandler c;
 
     public TMP_Text LocationName;
@@ -28,7 +28,7 @@ public class Schedule : MonoBehaviour
     public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
 
-    public Canvas darts;
+    public GameObject darts;
 
     public Image LocationLocationImage;
     public AudioSource ass;
@@ -38,12 +38,23 @@ public class Schedule : MonoBehaviour
     public Sprite[] mf;
     public Image plyr;
     public GameObject g;
+    public TypeWriterEffect writer;
+
+    public TMP_Text TimeText;
+    public Canvas TimeCanvas;
 
     public void Start()
     {
-
+        TimeText.text = timeAsString();
         UI_Helper.SetSelectedUIElement(g);
         Application.targetFrameRate = 60;
+        ass.volume = PlayerPrefs.GetFloat("volume", .5f);
+        writer.CustomWriteSpeed = PlayerPrefs.GetFloat("textSpeed", 10);
+    }
+
+    private string timeAsString()
+    {
+        return hour + ":" + (minutes==0?"00":minutes.ToString()) + "PM";
     }
 
     public void click()
@@ -57,6 +68,56 @@ public class Schedule : MonoBehaviour
         setTime(0);
     }
 
+    private void setLocations()
+    {
+        for (int i = 0; i < locals.Length; i++)
+        {
+            locals[i].EventsButtonUsed = 0;
+            locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
+        }
+        //events
+        for (int i = 0; i < available.Length; i++)
+        {
+            Locations b = LocationOf(available[i]);
+
+            if (b != Locations.none)
+            {
+                locals[(int)b].Events.Add(available[i].cutScene);
+                locals[(int)b].EventsButtonUsed++;
+            }
+        }
+
+        for (int i = 0; i < partners.Length; i++)
+        {
+            int availableCutSceneIndex = partners[i].GetCutScene();
+
+            if (availableCutSceneIndex >= 0)
+            {
+                Locations locationIndex = partners[i].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
+
+                if (locationIndex != Locations.none)
+                {
+
+                    locals[(int)locationIndex].Events.Add(partners[i].RelatedCutScenes[availableCutSceneIndex].CutScene);
+
+                    locals[(int)locationIndex].EventsButtonUsed++;
+                }
+            }
+            else
+            {
+                if (partners[i].DefaultCutScene != null)
+                {
+                    int loungeIndex = (int)Locations.lounge;
+                    locals[loungeIndex].Events.Add(partners[i].DefaultCutScene);
+                    locals[loungeIndex].EventsButtonUsed++;
+                }
+            }
+
+
+
+        }
+    }
+
     public void setTime(int minutes)
     {
         if (ass.clip != song0)
@@ -66,61 +127,32 @@ public class Schedule : MonoBehaviour
         }
         LocationCanvas.enabled = true;
 
-        UI_Helper.SetSelectedUIElement(LocationFirstButton);
-        timeM(minutes);
-
-        for(int i = 0; i < locals.Length; i++)
+        //UI_Helper.SetSelectedUIElement(LocationFirstButton);
+        increaseTimeByMinutes(minutes);
+        
+        if (hour >= 8)
         {
-            locals[i].EventsButtonUsed = 0;
-            locals[i].Events.Clear();
-        }
-
-        for (int i = 0; i < available.Length; i++)
-        {
-            byte b = LocationOf(available[i]);
-
-
-            if (b < 255)
+            if (minutes >= 30)
             {
-               
-                locals[b].Events.Add(available[i].cutScene);
-
-
-                locals[b].EventsButtonUsed++;
-            }
-        }
-
-        for (int i = 0; i < partners.Length; i++)
-        {
-            int checkLove = partners[i].GetCutScene();
-           
-            if ( checkLove>= 0)
-            {
-                byte b = getLocal(partners[i].RelatedCutScenes[checkLove].Location);
-
-                if (b < 255)
+                Debug.Log("Now only duo dates should be available if they are not that is bug ");
+                int numberAvailable = 0;
+                for( int i = 0; i < 4;i++)
                 {
-
-                    locals[b].Events.Add(partners[i].RelatedCutScenes[checkLove].CutScene);
-
-                    locals[b].EventsButtonUsed++;
-                }
-
-                else
-                {
-                    if (partners[i].DefaultCutScene != null)
+                    if (partners[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed)
                     {
-
-                        locals[b].Events.Add(partners[i].DefaultCutScene);
-
-                        locals[b].EventsButtonUsed++;
+                        numberAvailable++;
                     }
                 }
+                if (numberAvailable <= 0)
+                {
+                    //Debug.Log("GAME OVER please send to end state");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.NoLovers);
+                    return;
+                }
             }
-            
-
-            
         }
+
+        setLocations();
     }
 
     private void doCheck(CutScene c)
@@ -131,7 +163,7 @@ public class Schedule : MonoBehaviour
                 available[i].done = true;
     }
 
-    private void timeM(int times)
+    private void increaseTimeByMinutes(int times)
     {
         minutes += times;
         if (minutes > 60)
@@ -139,6 +171,9 @@ public class Schedule : MonoBehaviour
             minutes -= 60;
             hour++;
         }
+
+        TimeCanvas.enabled = true;
+        TimeText.text = timeAsString();
     }
 
     public void LocationImage(int b)
@@ -165,35 +200,40 @@ public class Schedule : MonoBehaviour
         }
 
         if (b == 4)
-            darts.enabled = true;
+            darts.SetActive(true);
 
-        location = (byte)b;
+        location = b;
         LocationCanvas.enabled = false;
         EventListCanvas.enabled = true;
-        UI_Helper.SetSelectedUIElement(ListCanvasBack);
+        //UI_Helper.SetSelectedUIElement(ListCanvasBack);
     }
 
     public void selectEvent(int eve)
     {
         doCheck(locals[location].Events[eve]);
-        darts.enabled = false;
+        darts.SetActive(false);
         EventListCanvas.enabled = false;
-        c.tart(locals[location].Events[eve],location);
+        c.PlayCutScene(locals[location].Events[eve],location);
     }
 
     public void off()
     {
+        TimeCanvas.enabled = false;
         EventListCanvas.enabled = false;
         LocationCanvas.enabled = false;
-        darts.enabled = false;
+        darts.SetActive( false);
     }
     
+    public void quit()
+    {
+        Application.Quit();
+    }
 
     public void back()
     {
         EventListCanvas.enabled = false;
         LocationCanvas.enabled = true;
-        darts.enabled = false;
+        darts.SetActive( false);
 
         UI_Helper.SetSelectedUIElement(LocationFirstButton);
     }
@@ -204,7 +244,7 @@ public class Schedule : MonoBehaviour
 
     }
 
-    private bool check(EventStart t)
+    private bool checkIfValidTime(EventStart t)
     {
         if (hour < t.hour)
             return false;
@@ -223,37 +263,20 @@ public class Schedule : MonoBehaviour
         return false;
     }
 
-    public byte LocationOf(EventStart e)
+    public Locations LocationOf(EventStart eventP)
     {
-        if (e.done)
-            return 255;
+        if (eventP.done)
+            return Locations.none;
 
-        if (check(e))
+        if (checkIfValidTime(eventP))
         {
 
-            return getLocal(e.location);
-
+            return eventP.Location;
         }
-        return 255;
+        return Locations.none;
     }
 
-    private byte getLocal(string s)
-    {
-        switch (s.ToLower())
-        {
-            case "lounge":
-                return 0;
-            case "bar":
-                return 1;
-            case "dance":
-                return 2;
-            case "bathroom":
-                return 3;
-            case "darts":
-                return 4;
-        }
-        return 255;
-    }
+
 }
 [System.Serializable]
 public class Location

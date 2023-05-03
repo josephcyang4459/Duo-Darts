@@ -19,33 +19,38 @@ MonoBehaviour:
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
-  - Location: Bar
+  - Location: bar
+    CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: 7558c8147eb4bc444a0b57fc213cc70a, type: 2}
     completed: 0
     loveRequirement: 0
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 1a0742d3a6e97b248aa52ccb53ec947e, type: 2}
     completed: 0
     loveRequirement: 1
-  - Location: Lounge
+  - Location: lounge
+    CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c2ecdc124adbf624193f562947fec5a3, type: 2}
     completed: 0
     loveRequirement: 6
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
     completed: 0
     loveRequirement: 10
   - Location: bar
+    CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: c1e8044e3aa34134dbb9c3daa02b2b4f, type: 2}
     completed: 0
     loveRequirement: 14
-  DefaultCutScene: {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
-  DefaultDrinkingCutScene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
+  DefaultCutScene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
+  DefaultDrinkingCutScene: {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
   Expressions:
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  - {fileID: 21300000, guid: 5e417889e58486a4aa2830c06d21c2ba, type: 3}
-  bias: 1
+  - {fileID: 21300000, guid: 3d1e3133f0c5e0848b0173923dd38862, type: 3}
+  - {fileID: 21300000, guid: f3032383f45496046a33ae14e8b2f1ec, type: 3}
+  - {fileID: 21300000, guid: 4dded8bc486bae14887a44db17ab468f, type: 3}
+  - {fileID: 21300000, guid: 4616aba711426864fb35446e8178876d, type: 3}
+  bias: 2
   TextBox: {fileID: 21300000, guid: 1e52c750bae79e9459d6982710b44955, type: 3}
   textLineTHing: {fileID: 21300000, guid: 19b63548e4d4440459ace8e32f0e4e0a, type: 3}

@@ -19,33 +19,38 @@ MonoBehaviour:
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
-  - Location: Dance
+  - Location: dance
+    CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
     completed: 0
     loveRequirement: 0
-  - Location: Darts
+  - Location: darts
+    CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
     completed: 0
     loveRequirement: 1
-  - Location: Bar
+  - Location: bar
+    CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: ae6f76b05eb4eeb4996874d85ab897b1, type: 2}
     completed: 0
     loveRequirement: 6
-  - Location: Bathroom
+  - Location: bathroom
+    CutsceneLocation: 3
     CutScene: {fileID: 11400000, guid: ec390762b3506ec4480c726b0b003747, type: 2}
     completed: 0
     loveRequirement: 11
-  - Location: Lounge
+  - Location: lounge
+    CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: 3eeae9dfe138f8541b2906d9a349ada5, type: 2}
     completed: 0
     loveRequirement: 14
   DefaultCutScene: {fileID: 11400000, guid: afe9e1ce4b603eb48bb054d97aa5e68a, type: 2}
   DefaultDrinkingCutScene: {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
   Expressions:
-  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
-  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
-  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
-  - {fileID: 21300000, guid: 13a65026e4791624eba27151fea0b4c0, type: 3}
-  bias: -1
+  - {fileID: 21300000, guid: 3d99098584fc1c24f8424c86c03ffb13, type: 3}
+  - {fileID: 21300000, guid: a7875c291e330f7489cb916343346e50, type: 3}
+  - {fileID: 21300000, guid: ab4482c1877c1ab4994ea8c6c82ed12a, type: 3}
+  - {fileID: 21300000, guid: 484d2db5db8dc144b8a45acbda62ff4f, type: 3}
+  bias: 0
   TextBox: {fileID: 21300000, guid: 69f75bce09934d04b938cbddbc98bcaf, type: 3}
   textLineTHing: {fileID: 21300000, guid: e36bc4d066a2db242addd78a4d4571d2, type: 3}

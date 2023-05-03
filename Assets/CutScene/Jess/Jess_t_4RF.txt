@@ -1,0 +1,44 @@
+[Newln]*You sit next to Jessica at a lounge table.*
+[Jess1]
+[Newln]Hello.
+[Newln]I’m glad you found some time.
+[Newln]There’s something I’ve been meaning to ask you.
+[Newln]Let's talk for a moment before that though.
+[Newln]*Jessica sighs.*
+[Newln]Nobody will be my partner for the final round.
+[Newln]Unfortunately, it appears I scare everyone away.
+[Newln]Except you.
+[Newln]I think people would call me “odd”.
+[Newln]I think those people are odd.
+[Newln]Or maybe just intelligent.
+[Newln]They don’t even know who I really am.
+[Newln]They don’t bother to try to get to know me.
+[Newln]That’s what I wanted to ask you.
+[Newln]What do you think of me?
+	[Display]You’re amazing.
+		[Answer][Jess2]Are you really not ashamed of your honesty?
+	[Display]You’re Jessica.
+		[Answer][Jess3]Nevermind.
+		[Answer]You should go.
+		[Answer]*You leave.*
+		[Answer][JessFail][SceneExit]
+	[Display]You’re prickly.
+		[Answer][Jess2]*She smiles.*
+		[Answer]I know you don’t think that.
+		[Answer]And even if you do, you’ve earned that opinion.
+[Jess1]
+[JessSuccess]
+[Newln]Well, I think you’re great.
+[Newln]I don’t know why. 
+[Newln]Frankly, you’re a complete idiot.
+[Newln]And your dart skills are... 
+[Newln]Interesting at best.
+[Newln]However, despite all the negatives, you seem to be a diamond in the rough.
+[Newln]*Jessica looks at you intently.*
+[Newln]Please. 
+[Newln]Consider me to be your partner for the final round.
+[Newln]*Jessica relaxes.*
+[Newln]With that off my chest you can go.
+[Newln]Thank you for hearing me out.
+[Newln]Really.
+
