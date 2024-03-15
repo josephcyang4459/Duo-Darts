@@ -28,7 +28,7 @@ public class Schedule : MonoBehaviour
     public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
 
-    public GameObject darts;
+    public GameObject DartButtonGameObject;
 
     public Image LocationLocationImage;
     public AudioSource ass;
@@ -129,7 +129,12 @@ public class Schedule : MonoBehaviour
 
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
         increaseTimeByMinutes(minutes);
-        
+
+        if (hour >= 9)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
+        }
+
         if (hour >= 8)
         {
             if (minutes >= 30)
@@ -138,7 +143,7 @@ public class Schedule : MonoBehaviour
                 int numberAvailable = 0;
                 for( int i = 0; i < 4;i++)
                 {
-                    if (partners[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed)
+                    if (partners[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && partners[i].Love>0)
                     {
                         numberAvailable++;
                     }
@@ -200,7 +205,7 @@ public class Schedule : MonoBehaviour
         }
 
         if (b == 4)
-            darts.SetActive(true);
+            DartButtonGameObject.SetActive(true);
 
         location = b;
         LocationCanvas.enabled = false;
@@ -211,7 +216,7 @@ public class Schedule : MonoBehaviour
     public void selectEvent(int eve)
     {
         doCheck(locals[location].Events[eve]);
-        darts.SetActive(false);
+        DartButtonGameObject.SetActive(false);
         EventListCanvas.enabled = false;
         c.PlayCutScene(locals[location].Events[eve],location);
     }
@@ -221,7 +226,7 @@ public class Schedule : MonoBehaviour
         TimeCanvas.enabled = false;
         EventListCanvas.enabled = false;
         LocationCanvas.enabled = false;
-        darts.SetActive( false);
+        DartButtonGameObject.SetActive( false);
     }
     
     public void quit()
@@ -233,7 +238,7 @@ public class Schedule : MonoBehaviour
     {
         EventListCanvas.enabled = false;
         LocationCanvas.enabled = true;
-        darts.SetActive( false);
+        DartButtonGameObject.SetActive( false);
 
         UI_Helper.SetSelectedUIElement(LocationFirstButton);
     }

@@ -51,6 +51,7 @@ public class ResetStats : ScriptableObject
 
     private void resetEvents()
     {
+       
         for( int i = 0; i < Events.Length; i++)
         {
             Events[i].done = false;
@@ -79,7 +80,7 @@ public class ResetStats : ScriptableObject
 
     private void __resetToExceptComposure()
     {
-        ResetToBase = false;
+        ResetToBaseAllButLoveAndIntoxication = false;
         for (int i = 0; i < 4; i++)
         {
             partners[i].__resetValues(BaseStats[i].Composure);
@@ -91,12 +92,12 @@ public class ResetStats : ScriptableObject
 
     private void __resetToZero()
     {
-        ResetToBase = false;
+        ResetToZero = false;
         for (int i = 0; i < partners.Length; i++)
         {
             partners[i].__resetValues();
         }
-
+        Player.TotalPointsScoredAcrossAllDartMatches = 0;
         Player.Charisma = 0;
         Player.Intoxication = 0;
         Player.Luck = 0;
@@ -120,9 +121,10 @@ class __BaseStats
 [System.Serializable]
 class __BasePlayerStats
 {
-    public float Charisma = 1f;
-    public float Intoxication = 1f;
-    public float Skill = 1f;
-    public float Luck = 1f;
+    public float Charisma = 0f;
+    public float Intoxication = 0f;
+    public float Skill = 0f;
+    public float Luck = 0f;
+    public float Points =0f;
 }
 #endif

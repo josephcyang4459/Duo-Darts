@@ -40,7 +40,7 @@ public class DartMen : MonoBehaviour
             }
             else//normal 
             {
-                if (p[i].Love >= 1)
+                if (p[i].RelatedCutScenes[0].completed)
                 {
                     characters[UIcharacterSlotUsed].gameObject.SetActive(true);
                     texts[UIcharacterSlotUsed].text = p[i].Name;
