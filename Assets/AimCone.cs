@@ -21,7 +21,8 @@ public class AimCone : MonoBehaviour
 
     public InputActionReference move;
     public InputActionReference fire;
-
+    public Vector2 LowerBounds;
+    public Vector2 UpperBounds;
 
     public void begin()
     {
@@ -61,6 +62,8 @@ public class AimCone : MonoBehaviour
     {
         normal.y += (directionMove.y + cache.y ) * Time.deltaTime ;
         normal.x += (directionMove.x + cache.x) * Time.deltaTime;
+        normal.y = Mathf.Clamp(normal.y, LowerBounds.y, UpperBounds.y);
+        normal.x = Mathf.Clamp(normal.x, LowerBounds.x, UpperBounds.x);
         t.position = normal;
 
     }

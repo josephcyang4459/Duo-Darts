@@ -19,6 +19,7 @@ public class AttributeUpdate : MonoBehaviour {
     private float InViewStartTime;
     private float transformMuliplier;
     public Queue<info> info = new();
+
     public void Start()
     {
         AttributePopUp.position = OriginalPosition.position;

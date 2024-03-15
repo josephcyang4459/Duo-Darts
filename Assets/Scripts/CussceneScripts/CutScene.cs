@@ -424,9 +424,6 @@ public class DialougeBlock: block
 
 public class Response: block
 {
-#if UNITY_EDITOR
-    [SerializeField] [HideInInspector] string name = "Call & Response";
-#endif
     //3 responses
     public PlayerResponseData[] responses;
 
@@ -438,9 +435,6 @@ public class Response: block
 
 public class ChangeStat: block
 {
-#if UNITY_EDITOR
-    [SerializeField] [HideInInspector] string name = "Change Stat Block";
-#endif
     public Characters Character;
     public Stats Stat;
     public int Adjust;
@@ -454,9 +448,6 @@ public class ChangeStat: block
 
 public class PlayerChangeStat : block
 {
-#if UNITY_EDITOR
-    [SerializeField] [HideInInspector] string name = "Change Player Stat Block";
-#endif
     public PlayerSkills Stat;
     public int Adjust;
 
@@ -469,9 +460,6 @@ public class PlayerChangeStat : block
 
 public class ExpressionBlock : block
 {
-#if UNITY_EDITOR
-    [SerializeField] [HideInInspector] string name = "Expression Block";
-#endif
     public Expressions expression;
 
     public override void action(CutsceneHandler ch)

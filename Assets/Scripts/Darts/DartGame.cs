@@ -106,11 +106,11 @@ public class DartGame : MonoBehaviour
         s.ass.clip = ac;
         s.ass.Play();
         points = overall > 600 ? 10 : 5;
-        aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy fucking math
+        aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);
         float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);// gooffy ass
         aim.driftSpeed = driftDefault * Stability;
-        aim.moveSpeed = (1.35f -((stats.Intoxication / 5) / 10)) * aim.driftSpeed;// more goofy ass math
+        //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
 
         partnerIndex = partner;
 
@@ -147,7 +147,7 @@ public class DartGame : MonoBehaviour
             if (s.minutes > 50)
             {
                 Debug.Log("PLAY BAD ENDING HERE");
-                UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FailedLastGame);
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
             }
 
         StartCoroutine(condition());
@@ -161,7 +161,7 @@ public class DartGame : MonoBehaviour
         stats.TotalPointsScoredAcrossAllDartMatches += points;
         winc.enabled = true;
         if (s.hour == 8)
-            if (s.minutes > 50)
+            if (s.minutes > 30)
             {
                 Debug.Log("PLAY GOOD ENDING HERE");
                 switch ((Characters)partnerIndex)

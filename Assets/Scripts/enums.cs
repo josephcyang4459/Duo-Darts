@@ -54,7 +54,7 @@ public enum SceneNumbers
 {
     Game = 1,
     NoLovers,
-    FailedLastGame,
+    DidNotWinTheTournament,
     ChadEnding,
     ElaineEnding,
     JessEnding,
