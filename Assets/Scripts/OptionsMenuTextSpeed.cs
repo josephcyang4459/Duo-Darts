@@ -12,6 +12,8 @@ public class OptionsMenuTextSpeed : MonoBehaviour
 
     private void Start()
     {
+        volume_slider.value = PlayerPrefs.GetFloat("volume", .5f);
+        Slider.value = PlayerPrefs.GetFloat("textSpeed", 10);
         volume_text.text = volume_slider.value.ToString();
         Text.text = Slider.value.ToString();
     }

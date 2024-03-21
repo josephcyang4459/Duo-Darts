@@ -15,14 +15,14 @@ MonoBehaviour:
   Name: Chad
   Font: {fileID: 11400000, guid: 034792957c4d43946bd88090e9d9fdf8, type: 2}
   textSize: 72
-  Composure: 3
+  Composure: 0
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: d83e331b94818354a81eba13e5d59042, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4

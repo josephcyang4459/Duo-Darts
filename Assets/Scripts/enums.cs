@@ -79,6 +79,13 @@ public enum Locations
      none
 }
 
+public enum Controls
+{
+    Pause,
+    DartsGame,
+    Cutscene,
+}
+
 #if UNITY_EDITOR
 
 public enum __CutsceneActions

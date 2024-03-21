@@ -62,10 +62,11 @@ public class Schedule : MonoBehaviour
         ass.PlayOneShot(cli);
     } 
 
-    public void mfc(int i)
+    public void ChooseCharacterGender(int i)
     {
         plyr.sprite = mf[i];
         setTime(0);
+        PauseMenu.inst.SetEnabled(true);
     }
 
     private void setLocations()
@@ -229,10 +230,6 @@ public class Schedule : MonoBehaviour
         DartButtonGameObject.SetActive( false);
     }
     
-    public void quit()
-    {
-        Application.Quit();
-    }
 
     public void back()
     {

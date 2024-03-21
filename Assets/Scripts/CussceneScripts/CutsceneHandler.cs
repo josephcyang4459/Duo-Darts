@@ -43,10 +43,12 @@ public class CutsceneHandler : MonoBehaviour
 
     public void PlayCutScene(CutScene c, int BackgroundIndex)
     {
+        PauseMenu.inst.SetEnabled(false);
+        ControlTutuorialUI.inst.SetControl((int)Controls.Cutscene, true);
         index = 0;
         cutscene = c;
         CompleteThisCutscene();
-        decideChar(c.defaultCharacter);
+        DecideCharacter(c.defaultCharacter);
         background(BackgroundIndex);
 
         dialougeCanvas.enabled = true;
@@ -85,6 +87,8 @@ public class CutsceneHandler : MonoBehaviour
 
     public void off()
     {
+        PauseMenu.inst.SetEnabled(true);
+        ControlTutuorialUI.inst.SetControl((int)Controls.Cutscene, false);
         dialougeCanvas.enabled = false;
         responseCanvas.enabled = false;
         interact.action.Disable();
@@ -192,7 +196,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void changeChar(string character)
     {
-        decideChar(character);
+        DecideCharacter(character);
         nextBlock();
     }
 
@@ -239,8 +243,8 @@ public class CutsceneHandler : MonoBehaviour
     {
         characterIndex = i;
 
-        //character.sprite = partners[i].Expressions[0];
-        character.enabled = false;
+        character.sprite = partners[i].Expressions[0];
+        character.enabled = true;
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
         characterName.fontSize = partners[i].textSize;
@@ -284,7 +288,7 @@ public class CutsceneHandler : MonoBehaviour
         }
     }
 
-    private void decideChar(string s)
+    private void DecideCharacter(string s)
     {
         switch (s.ToLower())
         {

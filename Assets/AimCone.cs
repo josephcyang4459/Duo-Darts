@@ -87,7 +87,6 @@ public class AimCone : MonoBehaviour
         }
        
         enabled = false;
-
     }
 
     public IEnumerator direction()
