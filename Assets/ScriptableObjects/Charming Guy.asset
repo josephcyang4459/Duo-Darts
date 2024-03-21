@@ -20,6 +20,7 @@ MonoBehaviour:
   Love: 0
   RelatedCutScenes: []
   DefaultCutScene: {fileID: 0}
+  DefaultRepeatingScene: {fileID: 0}
   DefaultDrinkingCutScene: {fileID: 0}
   Expressions:
   - {fileID: 21300000, guid: d4ccafbe538298541bb0cb04781ca353, type: 3}
@@ -28,5 +29,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   bias: -1
-  TextBox: {fileID: 21300000, guid: e0a18bd70045dfc4f96de9e490e1eff4, type: 3}
-  textLineTHing: {fileID: 21300000, guid: a45dd30a3c5eb874482a6ee9131c14e1, type: 3}
+  TextBox: {fileID: 21300000, guid: af3d0f2d7262aa44cb43ddef42a230dc, type: 3}
+  textLineTHing: {fileID: 21300000, guid: 001edf5aaf0efa4489823fa456932d87, type: 3}

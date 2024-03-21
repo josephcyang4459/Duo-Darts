@@ -1,55 +1,57 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour {
-    [Header("What key triggers the menu to pop-up?")]
-    public KeyCode key;
+public class PauseMenu : MonoBehaviour
+{
+    public static PauseMenu inst;
+    [SerializeField] InputActionReference PauseInput;
+    [SerializeField] bool Enabled;
+    [SerializeField] Canvas PauseCanvas;
 
-    [Header("Does time stop when paused?")]
-    public bool timeStop = true;
-
-    [Header("GameObject that turns on when paused (UI)")]
-    public GameObject pauseScreen;
-
-    bool paused = false;
-
-    void Update() {
-        Debug.Log("Paused: " + paused);
-        Debug.Log("Pause Screen Activity: " + pauseScreen.activeSelf);
-        if (Input.GetKeyDown(key)) {
-            paused = !paused;
-            pause(paused);
-        }
+    public void Awake()
+    {
+        inst = this;
     }
 
-    void pause(bool p) {
-        if (p) {  // pauses
-            if (pauseScreen) {
-                pauseScreen.SetActive(true);
-                Debug.Log("Set Pause Screen to Active");
-            }
-                
-            if (timeStop)
-                Time.timeScale = 0;
-        }
-        else {   // upauses
-            if (pauseScreen)
-                pauseScreen.SetActive(false);
-            Debug.Log("Set Pause Screen to Inactive");
-            if (timeStop)
-                Time.timeScale = 1;
-        }
+    public void SetEnabled(bool enabled)
+    {
+        if (enabled)
+            EnablePause();
+        else
+            UnenablePause();
+        Enabled = enabled;
     }
 
-    // for a UI button
-    public void pauseButton() {
-        paused = !paused;
-        pause(paused);
+    void EnablePause()
+    {
+        ControlTutuorialUI.inst.SetControl((int)Controls.Pause, true);
+        PauseInput.action.Enable();
+        PauseInput.action.performed += ActivatePauseMenu;
     }
 
-    public void ReturnToMainMenu() {
+    void UnenablePause()
+    {
+        ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
+        PauseInput.action.Disable();
+        PauseInput.action.performed -= ActivatePauseMenu;
+    }
+
+    void ActivatePauseMenu(InputAction.CallbackContext c)
+    {
+        PauseCanvas.enabled = !PauseCanvas.enabled;
+    }
+
+    public void ExitToMain()
+    {
         SceneManager.LoadScene(0);
+        System.GC.Collect();
+    }
+
+    public void ExitToDesktop()
+    {
+        Application.Quit();
     }
 }

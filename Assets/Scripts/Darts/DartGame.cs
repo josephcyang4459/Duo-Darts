@@ -100,7 +100,9 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
+        PauseMenu.inst.SetEnabled(false);
         UI_Helper.SetSelectedUIElement(s.c.voiddd);
+        ControlTutuorialUI.inst.SetControl((int)Controls.DartsGame, true);
         board.enabled = true;
         DartC(green);
         s.ass.clip = ac;
@@ -108,8 +110,9 @@ public class DartGame : MonoBehaviour
         points = overall > 600 ? 10 : 5;
         aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);
-        float Stability = (30/stats.Skill) + ((stats.Intoxication/3) / 10);// gooffy ass
-        aim.driftSpeed = driftDefault * Stability;
+        //float Stability = Math.Clamp((30/stats.Skill) + ((stats.Intoxication/3) / 10), 1,100);// gooffy ass
+        //aim.driftSpeed = driftDefault * Stability;
+        aim.driftSpeed = driftDefault;
         //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
 
         partnerIndex = partner;
@@ -139,8 +142,7 @@ public class DartGame : MonoBehaviour
     public void Lose()
     {
         //Debug.Log("lose");
-        board.enabled = false;
-        dartCanvas.enabled = false;
+        GameEnd();
         losec.enabled = true;
 
         if (s.hour == 8)
@@ -150,14 +152,13 @@ public class DartGame : MonoBehaviour
                 UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
             }
 
-        StartCoroutine(condition());
+        StartCoroutine(WaitToEnd());
     }
 
     public void Win()
     {
         //Debug.Log("win");
-        board.enabled = false;
-        dartCanvas.enabled = false;
+        GameEnd();
         stats.TotalPointsScoredAcrossAllDartMatches += points;
         winc.enabled = true;
         if (s.hour == 8)
@@ -181,7 +182,13 @@ public class DartGame : MonoBehaviour
                 }
             }
                
-        StartCoroutine(condition());
+        StartCoroutine(WaitToEnd());
+    }
+
+    void GameEnd()
+    {
+        board.enabled = false;
+        dartCanvas.enabled = false;
     }
 
     public void SwitchTurn()
@@ -375,6 +382,10 @@ public class DartGame : MonoBehaviour
 
         if (overall - turnSum == 0)
         {
+            for (int i = 0; i < 3; i++)
+            {
+                Dart[i].reset_position();
+            }
             Win();
             return;
         }
@@ -400,14 +411,15 @@ public class DartGame : MonoBehaviour
         }
     }
 
-    public IEnumerator condition()
+    public IEnumerator WaitToEnd()
     {
-
+        ControlTutuorialUI.inst.SetControl((int)Controls.DartsGame, false);
         yield return sec;
         
         winc.enabled = false;
         losec.enabled = false;
         board.enabled = false;
+        PauseMenu.inst.SetEnabled(true);
         s.setTime(5);
     }
 }
