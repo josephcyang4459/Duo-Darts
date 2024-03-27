@@ -15,7 +15,6 @@ public class Schedule : MonoBehaviour
     public Partner[] partners;
 
     public int location;
-    public CutsceneHandler c;
 
     public TMP_Text LocationName;
     public Canvas EventListCanvas;
@@ -31,25 +30,23 @@ public class Schedule : MonoBehaviour
     public GameObject DartButtonGameObject;
 
     public Image LocationLocationImage;
-    public AudioSource ass;
     public AudioClip song0;
     public AudioClip cli;
 
-    public Sprite[] mf;
-    public Image plyr;
     public GameObject g;
-    public TypeWriterEffect writer;
 
     public TMP_Text TimeText;
     public Canvas TimeCanvas;
 
+    public DartMen DartsMenu;
+
     public void Start()
     {
+        Audio.inst.PlaySong(song0);
         TimeText.text = timeAsString();
         UI_Helper.SetSelectedUIElement(g);
-        Application.targetFrameRate = 60;
-        ass.volume = PlayerPrefs.GetFloat("volume", .5f);
-        writer.CustomWriteSpeed = PlayerPrefs.GetFloat("textSpeed", 10);
+        
+        CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
     }
 
     private string timeAsString()
@@ -59,12 +56,12 @@ public class Schedule : MonoBehaviour
 
     public void click()
     {
-        ass.PlayOneShot(cli);
+        Audio.inst.PlayClip(cli);
     } 
 
     public void ChooseCharacterGender(int i)
     {
-        plyr.sprite = mf[i];
+        CutsceneHandler.inst.SetCharacterSprite(i);
         setTime(0);
         PauseMenu.inst.SetEnabled(true);
     }
@@ -119,17 +116,13 @@ public class Schedule : MonoBehaviour
         }
     }
 
-    public void setTime(int minutes)
+    public void setTime(TimeBlocks time)
     {
-        if (ass.clip != song0)
-        {
-            ass.clip = song0;
-            ass.Play();
-        }
+        Audio.inst.PlaySong(song0);
         LocationCanvas.enabled = true;
 
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
-        increaseTimeByMinutes(minutes);
+        increaseTimeByMinutes((int)time);
 
         if (hour >= 9)
         {
@@ -219,7 +212,7 @@ public class Schedule : MonoBehaviour
         doCheck(locals[location].Events[eve]);
         DartButtonGameObject.SetActive(false);
         EventListCanvas.enabled = false;
-        c.PlayCutScene(locals[location].Events[eve],location);
+        CutsceneHandler.inst.PlayCutScene(locals[location].Events[eve],location);
     }
 
     public void off()

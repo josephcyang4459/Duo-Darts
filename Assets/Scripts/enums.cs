@@ -52,15 +52,21 @@ public enum PartnerCutscenes
 
 public enum SceneNumbers
 {
-    Game = 1,
+    MainMenu,
+    Game,
+    Credits,
     NoLovers,
     DidNotWinTheTournament,
     ChadEnding,
     ElaineEnding,
     JessEnding,
-    FayeEnding
+    FayeEnding,
+}
 
-
+public enum TimeBlocks
+{
+    Short =5,
+    Long = 10
 }
 
 public enum Expressions

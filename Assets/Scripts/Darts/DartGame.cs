@@ -101,12 +101,11 @@ public class DartGame : MonoBehaviour
     public void BeginGame(int partner)
     {
         PauseMenu.inst.SetEnabled(false);
-        UI_Helper.SetSelectedUIElement(s.c.voiddd);
+        //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         ControlTutuorialUI.inst.SetControl((int)Controls.DartsGame, true);
         board.enabled = true;
         DartC(green);
-        s.ass.clip = ac;
-        s.ass.Play();
+        Audio.inst.PlaySong(ac);
         points = overall > 600 ? 10 : 5;
         aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);
@@ -360,7 +359,7 @@ public class DartGame : MonoBehaviour
     /// </summary>
     public void AddPoints(int newPoints)
     {
-        s.ass.PlayOneShot(hit);
+        Audio.inst.PlayClip(hit);
         turnSum += newPoints;
         turnScore.text = turnSum.ToString();
         scores[numberOfDartsThrow].text = newPoints.ToString();
@@ -420,6 +419,6 @@ public class DartGame : MonoBehaviour
         losec.enabled = false;
         board.enabled = false;
         PauseMenu.inst.SetEnabled(true);
-        s.setTime(5);
+        s.setTime(TimeBlocks.Short);
     }
 }

@@ -5,41 +5,58 @@ using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
 {
-    public CutScene cutscene;
-    public Dialogue dh;
+    public static CutsceneHandler inst;
+    [SerializeField] CutScene cutscene;
+    [SerializeField] Dialogue dh;
+    [SerializeField] Player p;
+    [SerializeField] Partner[] partners;
+    [SerializeField] InputActionReference interact;
+    [Space]
+    [SerializeField] Canvas dialougeCanvas;
+    [SerializeField] Image character;
+    [SerializeField] TMP_Text characterName;
+    [SerializeField] Image TextBox;
+    [SerializeField] Image TextLine;
+    [SerializeField] Canvas responseCanvas;
+    [SerializeField] Image ResponsePortrait;
+    [SerializeField] GameObject responseButton;
+    [SerializeField] TMP_Text[] responses;
+    [SerializeField] Canvas DefaultCanvass;
+    [SerializeField] Image cutSceneBackGround;
+    [SerializeField] Sprite[] bgs;
+    [SerializeField] Sprite[] CharacterPortraits;
+    [Space]
+    [SerializeField] int characterIndex;
+    [SerializeField] int index;
+    [SerializeField] Response respon;
+    [SerializeField] bool responding;
+    [SerializeField] int responseIndex = 0;
+    [SerializeField] int responseIndexIndex = 0;
 
-    public int index;
-    public Player p;
+    public DartMen DartsMenu;
+    public Schedule Schedule;
 
-    public int responseIndex = 0;
-    public int responseIndexIndex = 0;
-    public InputActionReference interact;
-    public Response respon;
-    public bool responding;
-    public Canvas dialougeCanvas;
-    public Canvas responseCanvas;
-    public TMP_Text[] responses;
-    public int characterIndex;
-    public DartMen dm;
+    public void Awake()
+    {
+        if(inst != null)
+        {
+            DestroyImmediate(this);
+            return;
+        }
+        inst = this;
+        DontDestroyOnLoad(this);
+    }
 
-    public Partner[] partners;
-    public Image character;
-    public TMP_Text characterName;
-    public Sprite[] bgs;
+    public void SetCharacterSprite(int i)
+    {
+        ResponsePortrait.sprite = CharacterPortraits[i];
+    }
 
-    public Image cutSceneBackGround;
-
-    public Schedule sc;
-
-    public Image text;
-    public Image textLine;
-
-    public GameObject responseButton;
-    public AttributeUpdate au;
-
-    public Canvas DefaultCanvass;
-    public GameObject bsss;
-    public GameObject voiddd;
+    public void SetUpForMainGame(DartMen dartsMenu,Schedule schedule)
+    {
+        DartsMenu = dartsMenu;
+        Schedule = schedule;
+    }
 
     public void PlayCutScene(CutScene c, int BackgroundIndex)
     {
@@ -76,7 +93,7 @@ public class CutsceneHandler : MonoBehaviour
         else
             cutscene = partners[characterIndex].DefaultDrinkingCutScene;
 
-        sc.enabled = false;
+        Schedule.enabled = false;
         index = 0;
         DefaultCanvass.enabled = false;
         dialougeCanvas.enabled = true;
@@ -85,7 +102,7 @@ public class CutsceneHandler : MonoBehaviour
         cutscene.blocks[index].action(this);
     }
 
-    public void off()
+    public void EndCutscene()
     {
         PauseMenu.inst.SetEnabled(true);
         ControlTutuorialUI.inst.SetControl((int)Controls.Cutscene, false);
@@ -93,7 +110,7 @@ public class CutsceneHandler : MonoBehaviour
         responseCanvas.enabled = false;
         interact.action.Disable();
         interact.action.performed -= takeAction;
-        sc.setTime(10);
+        Schedule!.setTime(TimeBlocks.Long);
     }
 
     public void PresentChoices()
@@ -108,7 +125,6 @@ public class CutsceneHandler : MonoBehaviour
 
     public void takeAction(InputAction.CallbackContext c)
     {
-        Debug.Log(index);
         if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
@@ -154,22 +170,9 @@ public class CutsceneHandler : MonoBehaviour
         if (index >= cutscene.blocks.Length)
         {
 
-            off();
+            EndCutscene();
             if (cutscene.exception)// force play darts
-                dm.exception(characterIndex, sc.hour);
-            /*
-
-            for (int i = 0; i < cutscene.partnerS.stats.Length; i++)
-            {
-                partners[characterIndex].stateChange(cutscene.partnerS.stats[i], cutscene.partnerS.values[i]);
-            }
-
-            for (int i = 0; i < cutscene.playerS.stats.Length; i++)
-            {
-                au.UpdateAttribute(cutscene.playerS.stats[i], cutscene.playerS.values[i]);
-            }
-            
-            */
+                DartsMenu.exception(characterIndex, Schedule.hour);
             return;
         }
 
@@ -178,7 +181,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void dialouge(string message)
     {
-        textLine.enabled = true;
+        TextLine.enabled = true;
         dh.WriteDialogue(message);
     }
 
@@ -229,7 +232,7 @@ public class CutsceneHandler : MonoBehaviour
 
     public void Thought(string s)
     {
-        textLine.enabled = false;
+        TextLine.enabled = false;
         dh.WriteDialogue(s);
     }
 
@@ -248,12 +251,9 @@ public class CutsceneHandler : MonoBehaviour
         characterName.text = partners[i].Name;
         characterName.font = partners[i].Font;
         characterName.fontSize = partners[i].textSize;
-        dh.textLabel.font = partners[i].Font;
 
-        text.sprite = partners[i].TextBox;
-        textLine.sprite = partners[i].textLineTHing;
-
-        dh.textLabel.fontSize = partners[i].textSize;
+        TextBox.sprite = partners[i].TextBox;
+        TextLine.sprite = partners[i].textLineTHing;
     }
 
     private void background(int i)

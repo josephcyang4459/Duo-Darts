@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ControlTutuorialUI : MonoBehaviour
 {
@@ -10,17 +12,19 @@ public class ControlTutuorialUI : MonoBehaviour
     public GameObject PartialShow;
     public GameObject[] UI_ControlGroups;
     public InputActionReference ShowHideInput;
-    [SerializeField] bool Showing;
+    [SerializeField] bool Showing = true;
     [SerializeField] bool[] ShouldShow;
     private void Awake()
     {
         inst = this;
-        Showing = true;
+        Showing = false;
+        FullShow.SetActive(false);
+        PartialShow.SetActive(true);
         ShowHideInput.action.Enable();
         ShowHideInput.action.performed += ShowHide;
     }
 
-    public void ShowHide(InputAction.CallbackContext c)
+    void ShowHide(InputAction.CallbackContext c)
     {
         Showing = !Showing;
         if(Showing)
@@ -43,21 +47,53 @@ public class ControlTutuorialUI : MonoBehaviour
 
     public void SetControl(int control, bool active)
     {
-        UI_ControlGroups[control].SetActive(active);
+        if (Showing)
+            UI_ControlGroups[control].SetActive(active);
         ShouldShow[control] = active;
     }
 
-    public void OnDestroy()
+    void OnDestroy()
     {
         ShowHideInput.action.Disable();
-        ShowHideInput.action.performed += ShowHide;
+        ShowHideInput.action.performed -= ShowHide;
     }
 
 #if UNITY_EDITOR
-
+    [SerializeField] float __Opacity;
+    [SerializeField] bool __setOpacity;
     private void OnValidate()
     {
         ShouldShow = new bool[UI_ControlGroups.Length];
+        if (__setOpacity)
+        {
+            __setOpacity = false;
+            __setOpacityF();
+        }
+    }
+   
+    void __setOpacityF()
+    {
+        __setOpacityForC(FullShow);
+        foreach (GameObject g in UI_ControlGroups)
+            __setOpacityForC(g);
+    }
+
+    void __setOpacityForC(GameObject g)
+    {
+        Image[] temp = g.GetComponentsInChildren<Image>();
+        foreach(Image i in temp)
+        {
+            Color c = i.color;
+            c.a = __Opacity;
+            i.color = c;
+        }
+        TMP_Text[] text = g.GetComponentsInChildren<TMP_Text>();
+        foreach (TMP_Text t in text)
+        {
+            Color c = t.color;
+            c.a = __Opacity;
+            t.color = c;
+        }
     }
 
 #endif
