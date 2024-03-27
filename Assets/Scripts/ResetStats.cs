@@ -60,7 +60,6 @@ public class ResetStats : ScriptableObject
     
     private void playerBase()
     {
-        Player.Charisma = BasePlayerStats.Charisma;
         Player.Intoxication = BasePlayerStats.Intoxication;
         Player.Luck = BasePlayerStats.Luck;
         Player.Skill = BasePlayerStats.Skill;
@@ -98,7 +97,6 @@ public class ResetStats : ScriptableObject
             partners[i].__resetValues();
         }
         Player.TotalPointsScoredAcrossAllDartMatches = 0;
-        Player.Charisma = 0;
         Player.Intoxication = 0;
         Player.Luck = 0;
         Player.Skill = 0;

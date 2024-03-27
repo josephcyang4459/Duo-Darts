@@ -441,7 +441,7 @@ public class ChangeStat: block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.sc.partners[(int)Character].stateChange((int)Stat, Adjust);
+        ch.Schedule.partners[(int)Character].stateChange((int)Stat, Adjust);
         ch.nextBlock();
     }
 }
@@ -453,7 +453,8 @@ public class PlayerChangeStat : block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.p.UpdateAttribute(Stat, Adjust);
+        AttributeUpdate.inst.UpdateAttribute(Stat, Adjust);
+        //ch.p.UpdateAttribute(Stat, Adjust);
         ch.nextBlock();
     }
 }
@@ -529,10 +530,13 @@ public class NPCResponseData
         if (Expression != Expressions.ForCutscene)
             handler.changeExpression((int)Expression);
         if (AdjustValue != 0)
-            handler.sc.partners[(int)Character].stateChange((int)Stat, AdjustValue);
+        {
+            handler.Schedule.partners[(int)Character].stateChange((int)Stat, AdjustValue);
+        }
+            
         if (AdjustValue < -100)
         {
-            handler.off();
+            handler.EndCutscene();
         }
     }
 }

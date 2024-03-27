@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 
 public class AttributeUpdate : MonoBehaviour {
+    public static AttributeUpdate inst;
     [SerializeField] private Player Player;
     [SerializeField] private CanvasGroup CanvasGroup;
     [SerializeField] private RectTransform AttributePopUp;
@@ -22,8 +23,9 @@ public class AttributeUpdate : MonoBehaviour {
 
     public void Start()
     {
+        inst = this;
         AttributePopUp.position = OriginalPosition.position;
-        transformMuliplier = PopUpPosition.position.y - OriginalPosition.position.y;
+        transformMuliplier = MathF.Abs(PopUpPosition.position.y - OriginalPosition.position.y);
     }
 
     public void ShowUI() {
@@ -87,6 +89,27 @@ public class AttributeUpdate : MonoBehaviour {
 
         Player.UpdateAttribute(attribute, value);
         ShowUI();
+    }
+
+    string AttributeName(PlayerSkills skill)
+    {
+        switch (skill)
+        {
+            case PlayerSkills.Charisma:
+                return "charisma";
+            case PlayerSkills.Intoxication:
+                return "intoxication";
+            case PlayerSkills.Skill:
+                return "skill";
+            case PlayerSkills.Luck:
+                return "luck";
+        }
+        return null;
+    }
+
+    public void UpdateAttribute(PlayerSkills skill, int value)
+    {
+            UpdateAttribute(AttributeName(skill), value);
     }
 
     public void UpdateAttributeButton(string String) {
