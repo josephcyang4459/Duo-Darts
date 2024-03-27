@@ -61,7 +61,6 @@ public class CutsceneHandler : MonoBehaviour
     public void PlayCutScene(CutScene c, int BackgroundIndex)
     {
         PauseMenu.inst.SetEnabled(false);
-        ControlTutuorialUI.inst.SetControl((int)Controls.Cutscene, true);
         index = 0;
         cutscene = c;
         CompleteThisCutscene();
@@ -105,7 +104,6 @@ public class CutsceneHandler : MonoBehaviour
     public void EndCutscene()
     {
         PauseMenu.inst.SetEnabled(true);
-        ControlTutuorialUI.inst.SetControl((int)Controls.Cutscene, false);
         dialougeCanvas.enabled = false;
         responseCanvas.enabled = false;
         interact.action.Disable();

@@ -119,7 +119,6 @@ class __BaseStats
 [System.Serializable]
 class __BasePlayerStats
 {
-    public float Charisma = 0f;
     public float Intoxication = 0f;
     public float Skill = 0f;
     public float Luck = 0f;

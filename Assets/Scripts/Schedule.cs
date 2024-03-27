@@ -165,7 +165,7 @@ public class Schedule : MonoBehaviour
     private void increaseTimeByMinutes(int times)
     {
         minutes += times;
-        if (minutes > 60)
+        if (minutes >= 60)
         {
             minutes -= 60;
             hour++;

@@ -37,7 +37,6 @@ MonoBehaviour:
     Intoxication: 0
     Love: 0
   BasePlayerStats:
-    Charisma: 1
     Intoxication: 1
     Skill: 1
     Luck: 1
