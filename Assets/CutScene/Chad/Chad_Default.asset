@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chad_Default
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 2969782634460217346
+  - rid: 6642624258973368614
   defaultCharacter: Chad
   exception: 0
   AnotherFuckingException: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2969782634460217346
+    - rid: 6642624258973368614
       type: {class: DefaultScene/PresentOptions, ns: , asm: Assembly-CSharp}
       data:
         name: present options

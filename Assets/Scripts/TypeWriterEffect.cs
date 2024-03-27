@@ -13,6 +13,16 @@ public class TypeWriterEffect : MonoBehaviour {
     public Coroutine typer;
     public bool writing;
 
+    public void Start()
+    {
+        OptionsMenu.TextSpeedChange += TextSpeedChange; 
+    }
+
+    public void TextSpeedChange(float value)
+    {
+        CustomWriteSpeed = value;
+    }
+
     public void Run(string TextToType, TMP_Text textLabel) {
         writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
         typer = StartCoroutine(TypeText(TextToType, textLabel));

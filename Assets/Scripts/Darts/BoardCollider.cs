@@ -9,6 +9,6 @@ public class BoardCollider : MonoBehaviour
 
     public void hit()
     {
-        gameState.Dart[gameState.numberOfDartsThrow].go(gameState.aim.t.position, point);
+        gameState.Dart.go(gameState.aim.t.position, point);
     }
 }

@@ -67,6 +67,6 @@ public class OptionsMenu : MonoBehaviour
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         PlayerPrefs.SetFloat("textSpeed", TextSpeedSlider.value);
         Audio.inst.PlayClip(Clip);
-        //TextSpeedChange(TextSpeedSlider.value);
+        TextSpeedChange(TextSpeedSlider.value);
     }
 }

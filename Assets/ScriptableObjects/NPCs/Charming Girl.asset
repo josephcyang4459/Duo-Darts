@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Charming Girl
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  textSize: 72
+  textSize: 50
   Composure: 0
   Intoxication: 0
   Love: 0
@@ -28,6 +28,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
-  bias: -1
+  bias: 0
   TextBox: {fileID: 21300000, guid: af3d0f2d7262aa44cb43ddef42a230dc, type: 3}
   textLineTHing: {fileID: 21300000, guid: 001edf5aaf0efa4489823fa456932d87, type: 3}

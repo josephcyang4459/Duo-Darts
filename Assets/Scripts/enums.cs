@@ -31,7 +31,6 @@ public enum Characters
 
 public enum PlayerSkills
 {
-     Charisma,
      Intoxication,
      Skill,
      Luck
@@ -74,6 +73,11 @@ public enum Expressions
     nuetral, positive, negative, drunk, ForCutscene
 }
 
+public enum AudioClips
+{
+    Click,
+    Dart,
+}
 
 public enum Locations
 {

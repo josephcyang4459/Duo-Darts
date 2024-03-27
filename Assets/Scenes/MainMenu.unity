@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1349318526898414974, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7372549
+      objectReference: {fileID: 0}
     - target: {fileID: 1349318526898414975, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -226,6 +230,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutScene Handler
       objectReference: {fileID: 0}
+    - target: {fileID: 1349318527506392674, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318527506392674, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318527506392674, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UI_Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527506392674, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527506392674, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CutsceneHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UI_Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClickSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CutsceneHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527518292814, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1349318527535037854, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -266,17 +314,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 166171171}
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UI_Response
       objectReference: {fileID: 0}
-    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClickSound
       objectReference: {fileID: 0}
-    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CutsceneHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318528247735477, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1349318528317906413, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_fontSize
@@ -439,6 +499,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40bb3d3bbc4b48543b8c6e499653c2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &166171171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6471953790856357863, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+  m_PrefabInstance: {fileID: 113879630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4a675a547814c4d8a3f03dd7306baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &499819913 stripped
@@ -2166,6 +2237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Source: {fileID: 2051021035}
+  ClickSound: {fileID: 8300000, guid: ee59a797ddaa4534aac34630a6d1bba5, type: 3}
+  DartSound: {fileID: 8300000, guid: f1a71d2dd3038eb4cbac84c7048dec8a, type: 3}
 --- !u!82 &2051021035
 AudioSource:
   m_ObjectHideFlags: 0

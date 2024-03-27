@@ -1,5 +1,3 @@
-
-#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,22 +22,18 @@ public class ResetStats : ScriptableObject
         for(int i = 0; i < 4; i++)
         {
             BaseStats[i].name = ((Characters)i).ToString();
-            if (characters.list[i].Name.CompareTo(BaseStats[i].name) != 0)
-                Debug.Log("WARNING CHARACTERS ARE IN WRONG ORDER SHOULD BE Chad, Jess, Faye, Elaine ~I will add a small fix for this later tho so don't worry ~ josh");
         }
 
         if(ResetToBase)
         {
             __resetToBase();
             resetEvents();
-            Debug.Log("all Stats have been reset to BASE");
         }
 
         if (ResetToZero)
         {
             __resetToZero();
             resetEvents();
-            Debug.Log("all Stats have been reset to ZERO");
         }
 
         if (ResetToBaseAllButLoveAndIntoxication)
@@ -124,4 +118,3 @@ class __BasePlayerStats
     public float Luck = 0f;
     public float Points =0f;
 }
-#endif
