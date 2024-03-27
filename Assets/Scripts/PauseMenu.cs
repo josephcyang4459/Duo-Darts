@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour, Caller
     [SerializeField] Canvas PauseOptionsCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] bool CurrentState;
+
     public void Awake()
     {
         if(inst !=null)

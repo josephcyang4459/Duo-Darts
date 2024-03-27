@@ -25,8 +25,6 @@ public class DartGame : MonoBehaviour
     public TMP_Text turnScore;
     public WaitForSeconds k = new WaitForSeconds(3);
 
-    public Material flash;
-    public Material gone;
     public DartScript[] Dart;
     public Image[] dartimages;
     public TMP_Text[] scores;
@@ -51,8 +49,6 @@ public class DartGame : MonoBehaviour
     public AudioClip hit;
     public SpriteRenderer board;
 
-   
-
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -75,8 +71,7 @@ public class DartGame : MonoBehaviour
                 obj.transform.rotation = Quaternion.Euler(-18 * i, -90, 0);
                 for (int j = 0; j < 4; j++)
                 {
-
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (byte)(order[i] * multiplication[j]);
+                    obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (order[i] * multiplication[j]);
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
                 }
@@ -91,9 +86,9 @@ public class DartGame : MonoBehaviour
 
     public class comparer : IComparer<BoardSlice>
     {
-        public int Compare(BoardSlice x, BoardSlice y)
+        public int Compare(BoardSlice a, BoardSlice b)
         {
-            return x.colliders[0].point - y.colliders[0].point;
+            return a.colliders[0].point - b.colliders[0].point;
         }
     }
 #endif
@@ -102,7 +97,6 @@ public class DartGame : MonoBehaviour
     {
         PauseMenu.inst.SetEnabled(false);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
-        ControlTutuorialUI.inst.SetControl((int)Controls.DartsGame, true);
         board.enabled = true;
         DartC(green);
         Audio.inst.PlaySong(ac);
@@ -412,7 +406,6 @@ public class DartGame : MonoBehaviour
 
     public IEnumerator WaitToEnd()
     {
-        ControlTutuorialUI.inst.SetControl((int)Controls.DartsGame, false);
         yield return sec;
         
         winc.enabled = false;
