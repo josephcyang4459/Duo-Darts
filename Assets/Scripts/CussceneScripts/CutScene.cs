@@ -441,7 +441,7 @@ public class ChangeStat: block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.Schedule.partners[(int)Character].stateChange((int)Stat, Adjust);
+        ch.Schedule.characters.list[(int)Character].stateChange((int)Stat, Adjust);
         ch.nextBlock();
     }
 }
@@ -531,7 +531,7 @@ public class NPCResponseData
             handler.changeExpression((int)Expression);
         if (AdjustValue != 0)
         {
-            handler.Schedule.partners[(int)Character].stateChange((int)Stat, AdjustValue);
+            handler.Schedule.characters.list[(int)Character].stateChange((int)Stat, AdjustValue);
         }
             
         if (AdjustValue < -100)

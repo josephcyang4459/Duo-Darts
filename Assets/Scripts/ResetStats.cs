@@ -8,22 +8,23 @@ using UnityEngine;
 public class ResetStats : ScriptableObject
 {
     [Header("Chad, Jess, Faye, Elaine")]
-    [SerializeField] Partner[] partners;
     [SerializeField] Player Player;
     [SerializeField] __BaseStats[] BaseStats = new __BaseStats[4];
     [SerializeField] __BasePlayerStats BasePlayerStats;
     [SerializeField] EventStart[] Events;
+    public CharacterList characters;
     public bool ResetToBase;
     public bool ResetToZero;
     public bool ResetToBaseAllButLoveAndIntoxication;
 
     public void OnValidate()
     {
+        characters = CutsceneHandler.inst.characters;
 
         for(int i = 0; i < 4; i++)
         {
             BaseStats[i].name = ((Characters)i).ToString();
-            if (partners[i].Name.CompareTo(BaseStats[i].name) != 0)
+            if (characters.list[i].Name.CompareTo(BaseStats[i].name) != 0)
                 Debug.Log("WARNING CHARACTERS ARE IN WRONG ORDER SHOULD BE Chad, Jess, Faye, Elaine ~I will add a small fix for this later tho so don't worry ~ josh");
         }
 
@@ -70,9 +71,9 @@ public class ResetStats : ScriptableObject
         ResetToBase = false;
         for (int i = 0; i < 4; i++)
         {
-            partners[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
+            characters.list[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
         }
-        partners[4].__resetValues();
+        characters.list[4].__resetValues();
         playerBase();
        
     }
@@ -82,9 +83,9 @@ public class ResetStats : ScriptableObject
         ResetToBaseAllButLoveAndIntoxication = false;
         for (int i = 0; i < 4; i++)
         {
-            partners[i].__resetValues(BaseStats[i].Composure);
+            characters.list[i].__resetValues(BaseStats[i].Composure);
         }
-        partners[4].__resetValues();
+        characters.list[4].__resetValues();
         playerBase();
 
     }
@@ -92,10 +93,9 @@ public class ResetStats : ScriptableObject
     private void __resetToZero()
     {
         ResetToZero = false;
-        for (int i = 0; i < partners.Length; i++)
-        {
-            partners[i].__resetValues();
-        }
+        for (int i = 0; i < characters.list.Count; i++)
+            characters.list[i].__resetValues();
+
         Player.TotalPointsScoredAcrossAllDartMatches = 0;
         Player.Intoxication = 0;
         Player.Luck = 0;

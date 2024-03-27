@@ -12,7 +12,7 @@ public class Schedule : MonoBehaviour
 
     public Location[] locals;
 
-    public Partner[] partners;
+    public CharacterList characters;
 
     public int location;
 
@@ -47,6 +47,7 @@ public class Schedule : MonoBehaviour
         UI_Helper.SetSelectedUIElement(g);
         
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
+        characters = CutsceneHandler.inst.characters;
     }
 
     private string timeAsString()
@@ -85,28 +86,28 @@ public class Schedule : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < partners.Length; i++)
+        for (int i = 0; i < characters.list.Count; i++)
         {
-            int availableCutSceneIndex = partners[i].GetCutScene();
+            int availableCutSceneIndex = characters.list[i].GetCutScene();
 
             if (availableCutSceneIndex >= 0)
             {
-                Locations locationIndex = partners[i].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
+                Locations locationIndex = characters.list[i].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
 
                 if (locationIndex != Locations.none)
                 {
 
-                    locals[(int)locationIndex].Events.Add(partners[i].RelatedCutScenes[availableCutSceneIndex].CutScene);
+                    locals[(int)locationIndex].Events.Add(characters.list[i].RelatedCutScenes[availableCutSceneIndex].CutScene);
 
                     locals[(int)locationIndex].EventsButtonUsed++;
                 }
             }
             else
             {
-                if (partners[i].DefaultCutScene != null)
+                if (characters.list[i].DefaultCutScene != null)
                 {
                     int loungeIndex = (int)Locations.lounge;
-                    locals[loungeIndex].Events.Add(partners[i].DefaultCutScene);
+                    locals[loungeIndex].Events.Add(characters.list[i].DefaultCutScene);
                     locals[loungeIndex].EventsButtonUsed++;
                 }
             }
@@ -137,7 +138,7 @@ public class Schedule : MonoBehaviour
                 int numberAvailable = 0;
                 for( int i = 0; i < 4;i++)
                 {
-                    if (partners[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && partners[i].Love>0)
+                    if (characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && characters.list[i].Love>0)
                     {
                         numberAvailable++;
                     }

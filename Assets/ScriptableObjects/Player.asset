@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: Player
-  Charisma: 0
   Intoxication: 0
   Skill: 0
   Luck: 0
-  points: 0
+  TotalPointsScoredAcrossAllDartMatches: 0

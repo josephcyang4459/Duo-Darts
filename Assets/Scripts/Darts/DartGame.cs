@@ -7,8 +7,6 @@ using System;
 
 public class DartGame : MonoBehaviour
 {
-
-
     public int turnSum = 0;
     public int overall = 501;
     public int points;
@@ -38,7 +36,7 @@ public class DartGame : MonoBehaviour
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
     public Player stats;
-    public Partner[] partners;
+    public CharacterList characters;
 
     public Schedule s;
 
@@ -95,6 +93,7 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
+        characters = CutsceneHandler.inst.characters;
         PauseMenu.inst.SetEnabled(false);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
@@ -256,20 +255,20 @@ public class DartGame : MonoBehaviour
 
     private void partnerTurn()//wow really hideous
     {
-        float offset = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) *  ((partners[partnerIndex].Intoxication) / 2);
+        float offset = UnityEngine.Random.Range(((characters.list[partnerIndex].Intoxication) / -7) - .1f, ((characters.list[partnerIndex].Intoxication) / 7) + .1f) *  ((characters.list[partnerIndex].Intoxication) / 2);
         //Debug.Log(offset);
 
         void OverSixtyPick()
         {
 
-            if (partners[partnerIndex].bias == DartTargetBias.Bullseye)//chad
+            if (characters.list[partnerIndex].bias == DartTargetBias.Bullseye)//chad
             {
 
                 Adjust(bullseye.transform.position, offset);
                 return;
             }
 
-            if (partners[partnerIndex].bias == DartTargetBias.Sixty)//elaine
+            if (characters.list[partnerIndex].bias == DartTargetBias.Sixty)//elaine
             {
                 Adjust(c[19].colliders[2].target.position, offset);
                 return;
@@ -280,12 +279,12 @@ public class DartGame : MonoBehaviour
 
             PointValueTarget temp = PointValueTarget.OuterSingle;
 
-            if (partners[partnerIndex].Composure >= 5)
+            if (characters.list[partnerIndex].Composure >= 5)
             {
                 temp = 0;
             }
 
-            if (partners[partnerIndex].Composure >= 10)// high composure
+            if (characters.list[partnerIndex].Composure >= 10)// high composure
             {
                 int trye = UnityEngine.Random.Range(0, 10);
 
