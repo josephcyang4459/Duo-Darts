@@ -13,77 +13,69 @@ MonoBehaviour:
   m_Name: Chad_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276632
-  - rid: 3415138150063276633
-  - rid: 3415138150063276634
-  - rid: 3415138150063276635
-  - rid: 3415138150063276636
-  - rid: 3415138150063276637
-  - rid: 3415138150063276638
-  - rid: 3415138150063276639
-  - rid: 3415138150063276640
-  - rid: 3415138150063276641
-  - rid: 3415138150063276642
-  - rid: 3415138150063276643
-  - rid: 3415138150063276644
-  - rid: 3415138150063276645
-  - rid: 3415138150063276646
-  - rid: 3415138150063276647
+  - rid: 6642624258973368568
+  - rid: 6642624258973368569
+  - rid: 6642624258973368570
+  - rid: 6642624258973368571
+  - rid: 6642624258973368572
+  - rid: 6642624258973368573
+  - rid: 6642624258973368574
+  - rid: 6642624258973368575
+  - rid: 6642624258973368576
+  - rid: 6642624258973368577
+  - rid: 6642624258973368578
+  - rid: 6642624258973368579
+  - rid: 6642624258973368580
+  - rid: 6642624258973368581
+  - rid: 6642624258973368582
+  - rid: 6642624258973368583
   defaultCharacter: Chad
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 01000000
-    values: f0d8ffff
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 7111ce1b648f487418341afa90b080a6, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276632
+    - rid: 6642624258973368568
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chadrick is dancing''*'
-    - rid: 3415138150063276633
+    - rid: 6642624258973368569
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He''s clearly obliterated''*'
-    - rid: 3415138150063276634
+    - rid: 6642624258973368570
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 4
-    - rid: 3415138150063276635
+        expression: 3
+    - rid: 6642624258973368571
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey, it's you.
-    - rid: 3415138150063276636
+    - rid: 6642624258973368572
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Impressed? You should be.
-    - rid: 3415138150063276637
+    - rid: 6642624258973368573
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've got moves.
-    - rid: 3415138150063276638
+    - rid: 6642624258973368574
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I think'
-    - rid: 3415138150063276639
+    - rid: 6642624258973368575
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He stares intently at you for a second.*'
-    - rid: 3415138150063276640
+    - rid: 6642624258973368576
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You. Me. Dance. Now.
-    - rid: 3415138150063276641
+    - rid: 6642624258973368577
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Yes.
           responses:
@@ -109,31 +101,30 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 2
             exemption: 0
-    - rid: 3415138150063276642
+    - rid: 6642624258973368578
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey you're pretty good at this.
-    - rid: 3415138150063276643
+    - rid: 6642624258973368579
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: To think if you hadn't drowned me at the bar I'd never get this
           chance.
-    - rid: 3415138150063276644
+    - rid: 6642624258973368580
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I owe you one.
-    - rid: 3415138150063276645
+    - rid: 6642624258973368581
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If you're lucky that is.
-    - rid: 3415138150063276646
+    - rid: 6642624258973368582
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You and Chad dance away. He trips up often.*'
-    - rid: 3415138150063276647
+    - rid: 6642624258973368583
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 0
         Stat: 1
         Adjust: -1000000

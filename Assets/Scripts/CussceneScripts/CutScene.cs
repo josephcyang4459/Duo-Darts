@@ -26,7 +26,7 @@ public class CutScene : ScriptableObject
     {
         if (!reset)
             return;
-
+        string currentCharacter = defaultCharacter;
         reset = false;
         string[] overall = aa.text.Split('\n');
         List<block> blockList = new List<block>();
@@ -110,10 +110,22 @@ public class CutScene : ScriptableObject
                     blockList.Add(tempR);
                     break;
                 case __CutsceneActions.Expression:
-                    ExpressionBlock tempE = new ExpressionBlock();
-                    //Debug.Log(overall[currentLine]);
-                    tempE.expression = (Expressions)__getNumberFrom(overall[currentLine]);
-                    blockList.Add(tempE);
+                    if (__getCharactersNameFrom(overall[currentLine]).CompareTo(currentCharacter) != 0){
+                        currentCharacter = overall[currentLine];
+                        SwapCharacterBlock tempSC = new SwapCharacterBlock();
+                        tempSC.character = __getCharactersNameFrom(overall[currentLine]);
+                        tempSC.Expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
+                        blockList.Add(tempSC);
+                    }
+                    else
+                    {
+                        ExpressionBlock tempE = new ExpressionBlock();
+                        //Debug.Log(overall[currentLine]);
+                        tempE.expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
+                        blockList.Add(tempE);
+                    }
+                    
+                    
                     break;
                 default:
                     Debug.Log(__getAction(overall[currentLine]) + "-> Not implemented ->" +overall[currentLine]);
@@ -129,7 +141,7 @@ public class CutScene : ScriptableObject
 
     Stats __GetSkill(string s)
     {
-
+       
         if (s.Contains("Intox"))
             return Stats.Intoxication;
 
@@ -145,7 +157,7 @@ public class CutScene : ScriptableObject
     PlayerSkills __GetPSkill(string s)
     {
         if (s.Contains("Charisma"))
-            return PlayerSkills.Charisma;
+            return PlayerSkills.Skill;
 
         if (s.Contains("Intoxication"))
             return PlayerSkills.Intoxication;
@@ -226,7 +238,7 @@ public class CutScene : ScriptableObject
                     break;
                 case __CutsceneActions.Expression:
                     NPCR.Character = __getCharactersFrom(s[currentTag]);
-                    NPCR.Expression = (Expressions)__getNumberFrom(s[currentTag]);
+                    NPCR.Expression = (Expressions)(__getNumberFrom(s[currentTag])-1);
                     break;
             }
         }
@@ -262,8 +274,34 @@ public class CutScene : ScriptableObject
             return Characters.Elaine;
         if (fullText.Contains("Owner"))
             return Characters.Owner;
-
+        if (fullText.Contains("BarGuy"))
+            return Characters.BarGuy;
+        if (fullText.Contains("BarAdviceGirl"))
+            return Characters.CharmingGirl;
+        if (fullText.Contains("BarGuy"))
+            return Characters.BarGuy;
         return Characters.Player;
+    }
+
+    private string __getCharactersNameFrom(string fullText)
+    {
+        if (fullText.Contains("Chad"))
+            return "Chad";
+        if (fullText.Contains("Faye"))
+            return "Faye";
+        if (fullText.Contains("Jess"))
+            return "Jess";
+        if (fullText.Contains("Elaine"))
+            return "Elaine";
+        if (fullText.Contains("Owner"))
+            return "Owner";
+        if (fullText.Contains("BarGuy"))
+            return "Bar Guy";
+        if (fullText.Contains("BarAdviceGirl"))
+            return "Charming Girl";
+        if (fullText.Contains("BarGuy"))
+            return "Bar Guy";
+        return "";
     }
 
     private string[] __getAllTags(string s)
@@ -352,7 +390,7 @@ public class CutScene : ScriptableObject
             return __CutsceneActions.Success;
 
         if (tempActionName.Contains("Chad") || tempActionName.Contains("Faye") || tempActionName.Contains("Elaine") || tempActionName.Contains("Jess") || tempActionName.Contains("Owner")
-            || tempActionName.Contains("BarAdviceGuy") || tempActionName.Contains("CharmAdviceGirl") || tempActionName.Contains("CharmAdviceGuy")
+            || tempActionName.Contains("BarAdviceGuy") || tempActionName.Contains("BarAdviceGirl") || tempActionName.Contains("CharmAdviceGuy")
             || tempActionName.Contains("DanceAdviceGirl") || tempActionName.Contains("LoungeAdviceGuy"))
             return __CutsceneActions.Expression;
 
@@ -465,7 +503,7 @@ public class ExpressionBlock : block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.changeExpression((int)expression);
+        ch.ChangeExpression((int)expression);
     }
 
 }
@@ -474,10 +512,10 @@ public class SwapCharacterBlock : block
 {
 
     public string character;
-
+    public Expressions Expression;
     public override void action(CutsceneHandler ch)
     {
-        ch.changeChar(character);
+        ch.ChangeCharacter(character, Expression);
     }
 
 }
@@ -528,7 +566,7 @@ public class NPCResponseData
     public void Adjust(CutsceneHandler handler)
     {
         if (Expression != Expressions.ForCutscene)
-            handler.changeExpression((int)Expression);
+            handler.ChangeExpression((int)Expression);
         if (AdjustValue != 0)
         {
             handler.Schedule.partners[(int)Character].stateChange((int)Stat, AdjustValue);

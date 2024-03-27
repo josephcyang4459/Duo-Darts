@@ -13,95 +13,87 @@ MonoBehaviour:
   m_Name: Chad_4
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276678
-  - rid: 3415138150063276679
-  - rid: 3415138150063276680
-  - rid: 3415138150063276681
-  - rid: 3415138150063276682
-  - rid: 3415138150063276683
-  - rid: 3415138150063276684
-  - rid: 3415138150063276685
-  - rid: 3415138150063276686
-  - rid: 3415138150063276687
-  - rid: 3415138150063276688
-  - rid: 3415138150063276689
-  - rid: 3415138150063276690
-  - rid: 3415138150063276691
-  - rid: 3415138150063276692
-  - rid: 3415138150063276693
-  - rid: 3415138150063276694
-  - rid: 3415138150063276695
-  - rid: 3415138150063276696
-  - rid: 3415138150063276697
-  - rid: 3415138150063276698
-  - rid: 3415138150063276699
-  - rid: 3415138150063276700
-  - rid: 3415138150063276701
-  - rid: 3415138150063276702
-  - rid: 3415138150063276703
-  - rid: 3415138150063276704
-  - rid: 3415138150063276705
-  - rid: 3415138150063276706
-  - rid: 3415138150063276707
+  - rid: 6642624258973368584
+  - rid: 6642624258973368585
+  - rid: 6642624258973368586
+  - rid: 6642624258973368587
+  - rid: 6642624258973368588
+  - rid: 6642624258973368589
+  - rid: 6642624258973368590
+  - rid: 6642624258973368591
+  - rid: 6642624258973368592
+  - rid: 6642624258973368593
+  - rid: 6642624258973368594
+  - rid: 6642624258973368595
+  - rid: 6642624258973368596
+  - rid: 6642624258973368597
+  - rid: 6642624258973368598
+  - rid: 6642624258973368599
+  - rid: 6642624258973368600
+  - rid: 6642624258973368601
+  - rid: 6642624258973368602
+  - rid: 6642624258973368603
+  - rid: 6642624258973368604
+  - rid: 6642624258973368605
+  - rid: 6642624258973368606
+  - rid: 6642624258973368607
+  - rid: 6642624258973368608
+  - rid: 6642624258973368609
+  - rid: 6642624258973368610
+  - rid: 6642624258973368611
+  - rid: 6642624258973368612
+  - rid: 6642624258973368613
   defaultCharacter: Chad
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 9868f6d3d1696c641a2e54cbb1499456, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276678
+    - rid: 6642624258973368584
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You hear someone vomiting in the stall*'
-    - rid: 3415138150063276679
+    - rid: 6642624258973368585
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276680
+        expression: 0
+    - rid: 6642624258973368586
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh god...
-    - rid: 3415138150063276681
+    - rid: 6642624258973368587
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*It''s Chad''s voice.*'
-    - rid: 3415138150063276682
+    - rid: 6642624258973368588
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's you isn't it?
-    - rid: 3415138150063276683
+    - rid: 6642624258973368589
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't let anyone else into the bathroom.
-    - rid: 3415138150063276684
+    - rid: 6642624258973368590
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I came in here to relax for a minute and the pressure got to me.
-    - rid: 3415138150063276685
+    - rid: 6642624258973368591
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If anyone else finds out about this my reputation will be destroyed.
-    - rid: 3415138150063276686
+    - rid: 6642624258973368592
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chad sniffles and spits into the toilet.*'
-    - rid: 3415138150063276687
+    - rid: 6642624258973368593
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't think I can win.
-    - rid: 3415138150063276688
+    - rid: 6642624258973368594
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: But you're Chadrick Basedman.
           responses:
@@ -145,29 +137,28 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             exemption: 0
-    - rid: 3415138150063276689
+    - rid: 6642624258973368595
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: No matter what anyone does or says to me I'd still be the one who
           needed someone else.
-    - rid: 3415138150063276690
+    - rid: 6642624258973368596
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chad hits the stall wall.*'
-    - rid: 3415138150063276691
+    - rid: 6642624258973368597
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And that is just unacceptable!
-    - rid: 3415138150063276692
+    - rid: 6642624258973368598
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: So what?
           responses:
           - Message: 
             Character: 0
-            Expression: 3
+            Expression: 2
             Stat: 0
             AdjustValue: 0
             exemption: 0
@@ -193,7 +184,7 @@ MonoBehaviour:
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 0
             exemption: 1
@@ -201,7 +192,7 @@ MonoBehaviour:
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 0
             exemption: 0
@@ -211,69 +202,66 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             exemption: 0
-    - rid: 3415138150063276693
+    - rid: 6642624258973368599
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276694
+        expression: 0
+    - rid: 6642624258973368600
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: We're at a duo's tournament, you know.
-    - rid: 3415138150063276695
+    - rid: 6642624258973368601
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chad emerges from the stall with regained composure.*'
-    - rid: 3415138150063276696
+    - rid: 6642624258973368602
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I need you.
-    - rid: 3415138150063276697
+    - rid: 6642624258973368603
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I'm ok with that if it means I can win.
-    - rid: 3415138150063276698
+    - rid: 6642624258973368604
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: We can win.
-    - rid: 3415138150063276699
+    - rid: 6642624258973368605
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chadrick lowers his head and gets down onto one knee before
           you.*'
-    - rid: 3415138150063276700
+    - rid: 6642624258973368606
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He raises his face to reveal the most chiseled and perfectly
           conformed facial expression you''ve ever seen.*'
-    - rid: 3415138150063276701
+    - rid: 6642624258973368607
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Please.
-    - rid: 3415138150063276702
+    - rid: 6642624258973368608
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me be your partner for the final round.
-    - rid: 3415138150063276703
+    - rid: 6642624258973368609
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 2
-    - rid: 3415138150063276704
+        expression: 1
+    - rid: 6642624258973368610
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You don't have to answer right now, but thank you for being here
           either way.
-    - rid: 3415138150063276705
+    - rid: 6642624258973368611
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276706
+        expression: 0
+    - rid: 6642624258973368612
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chad gets up and walks past you out of the bathroom.*'
-    - rid: 3415138150063276707
+    - rid: 6642624258973368613
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He didn''t wash his hands''*'

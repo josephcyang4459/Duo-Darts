@@ -6,12 +6,15 @@ public class Audio : MonoBehaviour
 {
     public static Audio inst;
     [SerializeField] AudioSource Source;
+    [SerializeField] AudioClip ClickSound;
+    [SerializeField] AudioClip DartSound;
+
 
     private void Awake()
     {
         if (inst != null)
         {
-            DestroyImmediate(this);
+            Destroy(this);
             return;
         }
 
@@ -32,6 +35,15 @@ public class Audio : MonoBehaviour
         if (Source.mute)
             Source.mute = false;
         Source.volume = value;
+    }
+
+    public void PlayClip(AudioClips clip)
+    {
+        switch (clip)
+        {
+            case AudioClips.Click: PlayClip(ClickSound);return;
+            case AudioClips.Dart: PlayClip(DartSound);return;
+        }
     }
 
     public void PlayClip(AudioClip clip)

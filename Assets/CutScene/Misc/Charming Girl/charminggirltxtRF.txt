@@ -1,10 +1,10 @@
 [Newln]*You sit next to a clearly drunk woman.*
-[CharmAdviceGirl0]
+[BarAdviceGirl1]
 [Newln]Hey, you're my friend.
 [Newln]Hey bartender, look, my friend is here.
 [Owner1]
 [Newln]Sure they are.
-[BarAdviceGirl]
+[BarAdviceGirl1]
 [Newln]I know it’s you.
 [Newln]You couldn’t have come at a better time.
 [Newln]I have a secret for only you.

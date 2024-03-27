@@ -13,82 +13,74 @@ MonoBehaviour:
   m_Name: Chad_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276588
-  - rid: 3415138150063276589
-  - rid: 3415138150063276590
-  - rid: 3415138150063276591
-  - rid: 3415138150063276592
-  - rid: 3415138150063276593
-  - rid: 3415138150063276594
-  - rid: 3415138150063276595
-  - rid: 3415138150063276596
-  - rid: 3415138150063276597
-  - rid: 3415138150063276598
-  - rid: 3415138150063276599
-  - rid: 3415138150063276600
-  - rid: 3415138150063276601
-  - rid: 3415138150063276602
+  - rid: 6642624258973368524
+  - rid: 6642624258973368525
+  - rid: 6642624258973368526
+  - rid: 6642624258973368527
+  - rid: 6642624258973368528
+  - rid: 6642624258973368529
+  - rid: 6642624258973368530
+  - rid: 6642624258973368531
+  - rid: 6642624258973368532
+  - rid: 6642624258973368533
+  - rid: 6642624258973368534
+  - rid: 6642624258973368535
+  - rid: 6642624258973368536
+  - rid: 6642624258973368537
+  - rid: 6642624258973368538
   defaultCharacter: Chad
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: e6d6ab74fa481114c91d1f02c395de9d, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276588
+    - rid: 6642624258973368524
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A man stops you and gets a clear look at your face.*'
-    - rid: 3415138150063276589
+    - rid: 6642624258973368525
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276590
+        expression: 0
+    - rid: 6642624258973368526
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Haven't met you before. Who're you?
-    - rid: 3415138150063276591
+    - rid: 6642624258973368527
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hmm'
-    - rid: 3415138150063276592
+    - rid: 6642624258973368528
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I can't remember meeting anyone with your name.
-    - rid: 3415138150063276593
+    - rid: 6642624258973368529
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You must be nobody then. For now at least.
-    - rid: 3415138150063276594
+    - rid: 6642624258973368530
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well you're here so I suppose you can't be that terrible.
-    - rid: 3415138150063276595
+    - rid: 6642624258973368531
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Take a seat.
-    - rid: 3415138150063276596
+    - rid: 6642624258973368532
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So. Tell me more about yourself.
-    - rid: 3415138150063276597
+    - rid: 6642624258973368533
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Umm, who are you?
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 3
             exemption: 0
@@ -105,28 +97,28 @@ MonoBehaviour:
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 2
             exemption: 0
-    - rid: 3415138150063276598
+    - rid: 6642624258973368534
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well, you've piqued my interest for better or worse.
-    - rid: 3415138150063276599
+    - rid: 6642624258973368535
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You should already know my name, but I'm Chadrick Basedman.
-    - rid: 3415138150063276600
+    - rid: 6642624258973368536
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*When he says his name he seems to warp his face in a way
           that highlights his incredible facial features.*'
-    - rid: 3415138150063276601
+    - rid: 6642624258973368537
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me ask you a few more questions.
-    - rid: 3415138150063276602
+    - rid: 6642624258973368538
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Momentarily mesmerized you spend a while talking with Chadrick
