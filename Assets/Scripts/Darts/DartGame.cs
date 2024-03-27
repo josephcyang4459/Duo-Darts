@@ -7,6 +7,7 @@ using System;
 
 public class DartGame : MonoBehaviour
 {
+    public CharacterList Partners;
     public Vector2 MissClamp = new Vector2(-4, 4);
     public DartVisual Visuals;
     public int turnSum = 0;
@@ -31,7 +32,6 @@ public class DartGame : MonoBehaviour
     public BoardCollider bullseye;
     public BoardCollider Miss;
     public Player stats;
-    public CharacterList characters;
 
     public Schedule s;
 
@@ -87,7 +87,6 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
-        characters = CutsceneHandler.inst.characters;
         PauseMenu.inst.SetEnabled(false);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
@@ -225,7 +224,7 @@ public class DartGame : MonoBehaviour
     {
         float OffsetMath()
         {
-            float f = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) * ((partners[partnerIndex].Intoxication) / 2);
+            float f = UnityEngine.Random.Range(((Partners.list[partnerIndex].Intoxication) / -7) - .1f, ((Partners.list[partnerIndex].Intoxication) / 7) + .1f) * ((Partners.list[partnerIndex].Intoxication) / 2);
             //f = Mathf.Clamp(f, (f > 0) ? .05f : -5f, (f > 0) ? 5 : -.05f);
             return f;
         }
@@ -249,14 +248,14 @@ public class DartGame : MonoBehaviour
         void OverSixtyPick()
         {
 
-            if (characters.list[partnerIndex].bias == DartTargetBias.Bullseye)//chad
+            if (Partners.list[partnerIndex].bias == DartTargetBias.Bullseye)//chad
             {
 
                 Adjust(bullseye.transform.position);
                 return;
             }
 
-            if (characters.list[partnerIndex].bias == DartTargetBias.Sixty)//elaine
+            if (Partners.list[partnerIndex].bias == DartTargetBias.Sixty)//elaine
             {
                 Adjust(c[19].colliders[2].target.position);
                 return;
@@ -267,12 +266,12 @@ public class DartGame : MonoBehaviour
             Debug.Log(pick);
             PointValueTarget temp = PointValueTarget.OuterSingle;
 
-            if (characters.list[partnerIndex].Composure >= 5)
+            if (Partners.list[partnerIndex].Composure >= 5)
             {
                 temp = 0;
             }
 
-            if (characters.list[partnerIndex].Composure >= 10)// high composure
+            if (Partners.list[partnerIndex].Composure >= 10)// high composure
             {
                 int trye = UnityEngine.Random.Range(0, 10);
 
