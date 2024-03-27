@@ -13,54 +13,44 @@ MonoBehaviour:
   m_Name: bathroomadvice
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276720
-  - rid: 3415138150063276721
-  - rid: 3415138150063276722
-  - rid: 3415138150063276723
-  - rid: 3415138150063276724
-  - rid: 3415138150063276725
+  - rid: 6642624258973368615
+  - rid: 6642624258973368616
+  - rid: 6642624258973368617
+  - rid: 6642624258973368618
+  - rid: 6642624258973368619
+  - rid: 6642624258973368620
   defaultCharacter: Bathroomwall
   exception: 0
-  playerS:
-    stats:
-    - Skill
-    - Intoxication
-    values: 01000000ffffffff
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: f11dd3178e130cb47bc6332994918bad, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276720
+    - rid: 6642624258973368615
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You examine a wall with scribbles on it while relieving
           yourself in the bathroom.'
-    - rid: 3415138150063276721
+    - rid: 6642624258973368616
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: When throwing darts, think of rice balls.
-    - rid: 3415138150063276722
+    - rid: 6642624258973368617
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Trust me it helps!
-    - rid: 3415138150063276723
+    - rid: 6642624258973368618
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave feeling enlightened.*'
-    - rid: 3415138150063276724
+    - rid: 6642624258973368619
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
-        Adjust: 1
-    - rid: 3415138150063276725
-      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
-      data:
-        name: Change Player Stat Block
         Stat: 2
+        Adjust: 1
+    - rid: 6642624258973368620
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Stat: 1
         Adjust: 1

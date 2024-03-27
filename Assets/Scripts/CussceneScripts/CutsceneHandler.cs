@@ -9,11 +9,11 @@ public class CutsceneHandler : MonoBehaviour
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
     [SerializeField] Player p;
-    [SerializeField] Partner[] partners;
+    [SerializeField] public CharacterList characters;
     [SerializeField] InputActionReference interact;
     [Space]
     [SerializeField] Canvas dialougeCanvas;
-    [SerializeField] Image character;
+    [SerializeField] Image characterImg;
     [SerializeField] TMP_Text characterName;
     [SerializeField] Image TextBox;
     [SerializeField] Image TextLine;
@@ -38,13 +38,18 @@ public class CutsceneHandler : MonoBehaviour
 
     public void Awake()
     {
-        if(inst != null)
+        if (inst != null)
         {
-            DestroyImmediate(this);
+            Destroy(this);
             return;
         }
         inst = this;
         DontDestroyOnLoad(this);
+    }
+
+    public void PlayClickSound()
+    {
+        Audio.inst.PlayClip(AudioClips.Click);
     }
 
     public void SetCharacterSprite(int i)
@@ -65,7 +70,7 @@ public class CutsceneHandler : MonoBehaviour
         cutscene = c;
         CompleteThisCutscene();
         DecideCharacter(c.defaultCharacter);
-        background(BackgroundIndex);
+        SetBackGroundVisual(BackgroundIndex);
 
         dialougeCanvas.enabled = true;
         interact.action.Enable();
@@ -76,10 +81,10 @@ public class CutsceneHandler : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            for (int j = 0; j < partners[i].RelatedCutScenes.Length; j++)
-                if (partners[i].RelatedCutScenes[j].CutScene == cutscene)
+            for (int j = 0; j < characters.list[i].RelatedCutScenes.Length; j++)
+                if (characters.list[i].RelatedCutScenes[j].CutScene == cutscene)
                 {
-                    partners[i].RelatedCutScenes[j].completed = true;
+                    characters.list[i].RelatedCutScenes[j].completed = true;
                     return;
                 }
         }
@@ -88,9 +93,9 @@ public class CutsceneHandler : MonoBehaviour
     public void choice(int i)
     {
         if (i == 0)
-            cutscene = partners[characterIndex].DefaultCutScene;
+            cutscene = characters.list[characterIndex].DefaultRepeatingScene;
         else
-            cutscene = partners[characterIndex].DefaultDrinkingCutScene;
+            cutscene = characters.list[characterIndex].DefaultDrinkingCutScene;
 
         Schedule.enabled = false;
         index = 0;
@@ -195,10 +200,10 @@ public class CutsceneHandler : MonoBehaviour
         //UI_Helper.SetSelectedUIElement(responseButton);
     }
 
-    public void changeChar(string character)
+    public void ChangeCharacter(string character, Expressions expression)
     {
         DecideCharacter(character);
-        nextBlock();
+        ChangeExpression((int)expression);
     }
 
     public void UI_Response(int i)
@@ -220,11 +225,11 @@ public class CutsceneHandler : MonoBehaviour
             Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void changeExpression(int ExpressionIndex)
+    public void ChangeExpression(int ExpressionIndex)
     {
-        if (character.enabled == false)
-            character.enabled = true;
-        character.sprite = partners[characterIndex].Expressions[ExpressionIndex];
+        if (characterImg.enabled == false)
+            characterImg.enabled = true;
+        characterImg.sprite = characters.list[characterIndex].Expressions[ExpressionIndex];
         nextBlock();
     }
 
@@ -240,21 +245,21 @@ public class CutsceneHandler : MonoBehaviour
         nextBlock();
     }
 
-    private void partner(int i)
+    private void SetPartnerVisual(int i)
     {
         characterIndex = i;
 
-        character.sprite = partners[i].Expressions[0];
-        character.enabled = true;
-        characterName.text = partners[i].Name;
-        characterName.font = partners[i].Font;
-        characterName.fontSize = partners[i].textSize;
+        characterImg.sprite = characters.list[i].Expressions[0];
+        characterImg.enabled = true;
+        characterName.text = characters.list[i].Name;
+        characterName.font = characters.list[i].Font;
+        characterName.fontSize = characters.list[i].textSize;
 
-        TextBox.sprite = partners[i].TextBox;
-        TextLine.sprite = partners[i].textLineTHing;
+        TextBox.sprite = characters.list[i].TextBox;
+        TextLine.sprite = characters.list[i].textLineTHing;
     }
 
-    private void background(int i)
+    private void SetBackGroundVisual(int i)
     {
         cutSceneBackGround.sprite = bgs[i];
     }
@@ -264,21 +269,21 @@ public class CutsceneHandler : MonoBehaviour
         switch (s.ToLower())
         {
             case "lounge":
-                background(0);
+                SetBackGroundVisual(0);
                 break;
             case "bar":
-                background(1);
+                SetBackGroundVisual(1);
                 break;
             case "dance":
-                background(2);
+                SetBackGroundVisual(2);
                 break;
             case "elaine":
-                background(0);
+                SetBackGroundVisual(0);
 
                 break;
 
             case "owner":
-                background(0);
+                SetBackGroundVisual(0);
                 break;
             default:
                 characterName.text = s;
@@ -291,47 +296,42 @@ public class CutsceneHandler : MonoBehaviour
         switch (s.ToLower())
         {
             case "faye":
-                partner(2);
+                SetPartnerVisual(2);
                 break;
             case "chad":
-                partner(0);
+                SetPartnerVisual(0);
                 break;
             case "jess":
-                partner(1);
+                SetPartnerVisual(1);
                 break;
             case "elaine":
-                partner(3);
+                SetPartnerVisual(3);
                 break;
-
             case "owner":
-                partner(4);
+                SetPartnerVisual(4);
                 break;
-
             case "bar guy":
-                partner(5);
+                SetPartnerVisual(5);
                 break;
             case "charming girl":
-                partner(6);
+                SetPartnerVisual(6);
                 break;
             case "charming guy":
-                partner(7);
+                SetPartnerVisual(7);
                 break;
             case "dance girl":
-                partner(8);
+                SetPartnerVisual(8);
                 break;
             case "lounge guy":
-                partner(9);
+                SetPartnerVisual(9);
                 break;
-
             default:
 #if UNITY_EDITOR
                 Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
 #endif
-                partner(10);
+                SetPartnerVisual(10);
                 characterName.text = s;
                 break;
         }
-
-
     }
 }

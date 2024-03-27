@@ -16,7 +16,6 @@ MonoBehaviour:
   minutes: 30
   endHour: 7
   endMinutes: 30
-  location: Bar
   Location: 1
   cutScene: {fileID: 11400000, guid: 5dfed64b7b4ef9c40a32c8b7c38136e0, type: 2}
   done: 0

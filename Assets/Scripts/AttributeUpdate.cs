@@ -95,8 +95,6 @@ public class AttributeUpdate : MonoBehaviour {
     {
         switch (skill)
         {
-            case PlayerSkills.Charisma:
-                return "charisma";
             case PlayerSkills.Intoxication:
                 return "intoxication";
             case PlayerSkills.Skill:

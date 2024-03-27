@@ -1,5 +1,3 @@
-
-#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,37 +6,34 @@ using UnityEngine;
 public class ResetStats : ScriptableObject
 {
     [Header("Chad, Jess, Faye, Elaine")]
-    [SerializeField] Partner[] partners;
     [SerializeField] Player Player;
     [SerializeField] __BaseStats[] BaseStats = new __BaseStats[4];
     [SerializeField] __BasePlayerStats BasePlayerStats;
     [SerializeField] EventStart[] Events;
+    public CharacterList characters;
     public bool ResetToBase;
     public bool ResetToZero;
     public bool ResetToBaseAllButLoveAndIntoxication;
 
     public void OnValidate()
     {
+        characters = CutsceneHandler.inst.characters;
 
         for(int i = 0; i < 4; i++)
         {
             BaseStats[i].name = ((Characters)i).ToString();
-            if (partners[i].Name.CompareTo(BaseStats[i].name) != 0)
-                Debug.Log("WARNING CHARACTERS ARE IN WRONG ORDER SHOULD BE Chad, Jess, Faye, Elaine ~I will add a small fix for this later tho so don't worry ~ josh");
         }
 
         if(ResetToBase)
         {
             __resetToBase();
             resetEvents();
-            Debug.Log("all Stats have been reset to BASE");
         }
 
         if (ResetToZero)
         {
             __resetToZero();
             resetEvents();
-            Debug.Log("all Stats have been reset to ZERO");
         }
 
         if (ResetToBaseAllButLoveAndIntoxication)
@@ -70,9 +65,9 @@ public class ResetStats : ScriptableObject
         ResetToBase = false;
         for (int i = 0; i < 4; i++)
         {
-            partners[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
+            characters.list[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
         }
-        partners[4].__resetValues();
+        characters.list[4].__resetValues();
         playerBase();
        
     }
@@ -82,9 +77,9 @@ public class ResetStats : ScriptableObject
         ResetToBaseAllButLoveAndIntoxication = false;
         for (int i = 0; i < 4; i++)
         {
-            partners[i].__resetValues(BaseStats[i].Composure);
+            characters.list[i].__resetValues(BaseStats[i].Composure);
         }
-        partners[4].__resetValues();
+        characters.list[4].__resetValues();
         playerBase();
 
     }
@@ -92,10 +87,9 @@ public class ResetStats : ScriptableObject
     private void __resetToZero()
     {
         ResetToZero = false;
-        for (int i = 0; i < partners.Length; i++)
-        {
-            partners[i].__resetValues();
-        }
+        for (int i = 0; i < characters.list.Count; i++)
+            characters.list[i].__resetValues();
+
         Player.TotalPointsScoredAcrossAllDartMatches = 0;
         Player.Intoxication = 0;
         Player.Luck = 0;
@@ -124,4 +118,3 @@ class __BasePlayerStats
     public float Luck = 0f;
     public float Points =0f;
 }
-#endif

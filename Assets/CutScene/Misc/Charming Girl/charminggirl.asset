@@ -13,104 +13,106 @@ MonoBehaviour:
   m_Name: charminggirl
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276909
-  - rid: 3415138150063276910
-  - rid: 3415138150063276911
-  - rid: 3415138150063276912
-  - rid: 3415138150063276913
-  - rid: 3415138150063276914
-  - rid: 3415138150063276915
-  - rid: 3415138150063276916
-  - rid: 3415138150063276917
-  - rid: 3415138150063276918
-  - rid: 3415138150063276919
-  - rid: 3415138150063276920
-  - rid: 3415138150063276921
-  - rid: 3415138150063276922
-  - rid: 3415138150063276923
-  - rid: 3415138150063276924
+  - rid: 6642624258973368506
+  - rid: 6642624258973368507
+  - rid: 6642624258973368508
+  - rid: 6642624258973368509
+  - rid: 6642624258973368510
+  - rid: 6642624258973368511
+  - rid: 6642624258973368512
+  - rid: 6642624258973368513
+  - rid: 6642624258973368514
+  - rid: 6642624258973368515
+  - rid: 6642624258973368516
+  - rid: 6642624258973368517
+  - rid: 6642624258973368518
+  - rid: 6642624258973368519
+  - rid: 6642624258973368520
+  - rid: 6642624258973368521
+  - rid: 6642624258973368522
+  - rid: 6642624258973368523
   defaultCharacter: Charming Girl
   exception: 0
-  playerS:
-    stats:
-    - Charisma
-    - Intoxication
-    values: 0200000001000000
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 1e27e020be6ca4842a6d8bb6c490e6b2, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276909
+    - rid: 6642624258973368506
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to a clearly drunk woman.*'
-    - rid: 3415138150063276910
+    - rid: 6642624258973368507
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 6642624258973368508
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey, you're my friend.
-    - rid: 3415138150063276911
+    - rid: 6642624258973368509
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey bartender, look, my friend is here.
-    - rid: 3415138150063276912
-      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+    - rid: 6642624258973368510
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276913
+        character: Owner
+        Expression: 0
+    - rid: 6642624258973368511
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sure they are.
-    - rid: 3415138150063276914
+    - rid: 6642624258973368512
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Charming Girl
+        Expression: 0
+    - rid: 6642624258973368513
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I know it's you.
-    - rid: 3415138150063276915
+        message: "I know it\u2019s you."
+    - rid: 6642624258973368514
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You couldn't have come at a better time.
-    - rid: 3415138150063276916
+        message: "You couldn\u2019t have come at a better time."
+    - rid: 6642624258973368515
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I have a secret for only you.
-    - rid: 3415138150063276917
+    - rid: 6642624258973368516
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: The best way to make friends is to say they're your friend you know.
-    - rid: 3415138150063276918
+        message: "The best way to make friends is to say they\u2019re your friend
+          you know."
+    - rid: 6642624258973368517
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She accidentally bumps her empty glass.*'
-    - rid: 3415138150063276919
+    - rid: 6642624258973368518
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: See. It worked on you. You're my best friend now.
-    - rid: 3415138150063276920
+        message: "See. It worked on you. You\u2019re my best friend now."
+    - rid: 6642624258973368519
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Ha!
-    - rid: 3415138150063276921
+    - rid: 6642624258973368520
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The woman stands up and heads to the bathroom rather suddenly.*'
-    - rid: 3415138150063276922
+    - rid: 6642624258973368521
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You think about your new friend at the bar for a while.*'
-    - rid: 3415138150063276923
+    - rid: 6642624258973368522
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
+        Stat: 2
         Adjust: 1
-    - rid: 3415138150063276924
+    - rid: 6642624258973368523
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 0
+        Stat: 1
         Adjust: 2

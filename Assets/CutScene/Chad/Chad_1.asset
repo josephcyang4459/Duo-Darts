@@ -13,59 +13,51 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276603
-  - rid: 3415138150063276604
-  - rid: 3415138150063276605
-  - rid: 3415138150063276606
-  - rid: 3415138150063276607
-  - rid: 3415138150063276608
-  - rid: 3415138150063276609
-  - rid: 3415138150063276610
-  - rid: 3415138150063276611
+  - rid: 6642624258973368539
+  - rid: 6642624258973368540
+  - rid: 6642624258973368541
+  - rid: 6642624258973368542
+  - rid: 6642624258973368543
+  - rid: 6642624258973368544
+  - rid: 6642624258973368545
+  - rid: 6642624258973368546
+  - rid: 6642624258973368547
   defaultCharacter: Chad
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 327b5d729bf135f43acd9152f8f6492c, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276603
+    - rid: 6642624258973368539
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138150063276604
+        expression: 0
+    - rid: 6642624258973368540
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I can't believe I'm giving you a chance.
-    - rid: 3415138150063276605
+    - rid: 6642624258973368541
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Remember, I'm just doing this to see if you're somebody worth watching.
-    - rid: 3415138150063276606
+    - rid: 6642624258973368542
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nothing more and nothing less.
-    - rid: 3415138150063276607
+    - rid: 6642624258973368543
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And you better hold up your end of the game.
-    - rid: 3415138150063276608
+    - rid: 6642624258973368544
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that I would need your points. I could check out alone if they'd
           let me.
-    - rid: 3415138150063276609
+    - rid: 6642624258973368545
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Cocky much?
           responses:
@@ -79,7 +71,7 @@ MonoBehaviour:
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 2
             exemption: 0
@@ -87,15 +79,15 @@ MonoBehaviour:
           responses:
           - Message: 
             Character: 0
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 3
             exemption: 0
-    - rid: 3415138150063276610
+    - rid: 6642624258973368546
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Now, we're up.
-    - rid: 3415138150063276611
+    - rid: 6642624258973368547
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's see what you got.

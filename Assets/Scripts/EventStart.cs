@@ -11,7 +11,6 @@ public class EventStart : ScriptableObject
 
     public byte endHour;
     public byte endMinutes;
-    public string location;
     public Locations Location;
     public CutScene cutScene;
 

@@ -23,14 +23,8 @@ MonoBehaviour:
   - rid: 3415138150063276548
   defaultCharacter: Chad
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 02000000
-    values: 02000000
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: d41c0aaa9ab99e544b8da86a5a0ca4e3, type: 3}
+  aa: {fileID: 4900000, guid: e8efc09b89131e247837dbd6d0e63e11, type: 3}
   reset: 0
   references:
     version: 2
@@ -58,20 +52,17 @@ MonoBehaviour:
     - rid: 3415138150063276546
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 0
         Stat: 2
         Adjust: 1
     - rid: 3415138150063276547
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 0
         Stat: 1
         Adjust: 1
     - rid: 3415138150063276548
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
         Stat: 3
         Adjust: 1
