@@ -13,4 +13,4 @@
 [Newln]See. It worked on you. You’re my best friend now.
 [Newln]Ha!
 [Newln]*The woman stands up and heads to the bathroom rather suddenly.*
-[Newln]*You think about your new friend at the bar for a while.*[RaisePlayerIntox1][RaisePlayerCharisma2]
+[Newln]*You think about your new friend at the bar for a while.*[RaisePlayerIntox1][RaisePlayerSkill2]

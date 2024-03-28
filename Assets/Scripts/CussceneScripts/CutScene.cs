@@ -156,9 +156,6 @@ public class CutScene : ScriptableObject
 
     PlayerSkills __GetPSkill(string s)
     {
-        if (s.Contains("Charisma"))
-            return PlayerSkills.Skill;
-
         if (s.Contains("Intoxication"))
             return PlayerSkills.Intoxication;
 
