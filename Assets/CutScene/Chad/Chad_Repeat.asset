@@ -64,5 +64,5 @@ MonoBehaviour:
     - rid: 3415138150063276548
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        Stat: 3
+        Stat: 0
         Adjust: 1

@@ -27,14 +27,6 @@ MonoBehaviour:
   - rid: 3415138150063276908
   defaultCharacter: Bar Guy
   exception: 0
-  playerS:
-    stats:
-    - Skill
-    - Intoxication
-    values: 0100000001000000
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 9cdd3b4285517c64dbbb12a33c016ee1, type: 3}
   reset: 0
@@ -88,12 +80,10 @@ MonoBehaviour:
     - rid: 3415138150063276907
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
+        Stat: 1
         Adjust: 1
     - rid: 3415138150063276908
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
         Stat: 2
         Adjust: 1
