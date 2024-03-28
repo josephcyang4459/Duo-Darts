@@ -225,7 +225,7 @@ public class DartGame : MonoBehaviour
     {
         float OffsetMath()
         {
-            float f = UnityEngine.Random.Range(((partners[partnerIndex].Intoxication) / -7) - .1f, ((partners[partnerIndex].Intoxication) / 7) + .1f) * ((partners[partnerIndex].Intoxication) / 2);
+            float f = UnityEngine.Random.Range(((characters.list[partnerIndex].Intoxication) / -7) - .1f, ((characters.list[partnerIndex].Intoxication) / 7) + .1f) * ((characters.list[partnerIndex].Intoxication) / 2);
             //f = Mathf.Clamp(f, (f > 0) ? .05f : -5f, (f > 0) ? 5 : -.05f);
             return f;
         }
