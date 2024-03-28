@@ -8,22 +8,25 @@ using System;
 public class DartGame : MonoBehaviour
 {
     public CharacterList Partners;
-    public Vector2 MissClamp = new Vector2(-4, 4);
+    public Player stats;
     public DartVisual Visuals;
+    public AimCone aim;
+    public DartScript Dart;
+
+
+    public int partnerIndex = 0;
     public int turnSum = 0;
     public int overall = 501;
     public int points;
     public int currentTurn = 0;
 
-    public int partnerIndex =0;
-
-    public AimCone aim;
-    [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(17, 19);
-
     public int numberOfDartsThrow = 0;
     public int maxTurns;
 
-    public DartScript Dart;
+
+    [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(16, 19);
+
+
     public Canvas dartCanvas;
 
     public float driftDefault = 1f;
@@ -31,9 +34,6 @@ public class DartGame : MonoBehaviour
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
     public BoardCollider Miss;
-    public Player stats;
-
-    public Schedule s;
 
     public WaitForSeconds sec = new WaitForSeconds(5);
     public Canvas winc;
@@ -41,6 +41,7 @@ public class DartGame : MonoBehaviour
     public AudioClip ac;
     public SpriteRenderer board;
 
+    public Schedule s;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -87,10 +88,13 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
-        PauseMenu.inst.SetEnabled(false);
+        if (PauseMenu.inst != null)
+            PauseMenu.inst.SetEnabled(false);
+        if (Audio.inst != null)
+            Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
-        Audio.inst.PlaySong(ac);
+      
         points = overall > 600 ? 10 : 5;
         aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);

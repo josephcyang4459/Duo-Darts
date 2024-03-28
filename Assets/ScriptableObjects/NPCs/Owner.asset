@@ -15,14 +15,14 @@ MonoBehaviour:
   Name: Owner
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   textSize: 72
-  Composure: 0
+  Composure: 158
   Intoxication: 0
   Love: 0
   RelatedCutScenes:
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: bar
     CutsceneLocation: 1
@@ -38,8 +38,6 @@ MonoBehaviour:
   DefaultRepeatingScene: {fileID: 0}
   DefaultDrinkingCutScene: {fileID: 0}
   Expressions:
-  - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
-  - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}

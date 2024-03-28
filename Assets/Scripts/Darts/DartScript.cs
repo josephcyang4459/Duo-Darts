@@ -39,6 +39,7 @@ public class DartScript : MonoBehaviour
             case 1: CurrentDartTransform = JessDarts[dartIndex]; return;
             case 2: CurrentDartTransform = FayeDarts[dartIndex]; return;
             case 3: CurrentDartTransform = ElaineDarts[dartIndex]; return;
+            default: CurrentDartTransform = PlayerDarts[dartIndex]; return;
         }
     }
 
@@ -63,7 +64,7 @@ public class DartScript : MonoBehaviour
                 case 2:return FayeDarts;
                 case 3: return ElaineDarts;
             }
-            return null;
+            return PlayerDarts;
         }
         foreach (Transform t in PlayerDarts)
         {
