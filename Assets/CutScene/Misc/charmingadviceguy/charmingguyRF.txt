@@ -9,4 +9,4 @@
 [Newln]That’s what I did.
 [Newln]Haven’t you already fallen for me?
 [Newln]*You get up without saying a word.*
-[Newln]*After finding another seat far away from the man you consider if you are better than you were yesterday.*[RaisePlayerCharisma2]
+[Newln]*After finding another seat far away from the man you consider if you are better than you were yesterday.*[RaisePlayerSkill2]

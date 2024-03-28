@@ -15,7 +15,6 @@ Any increase in any stat has now been changed from "(+)" variants to their own f
 	Love increases now follow the flag "[RaiseCharacterNameLoveX]"
 	Intoxication increases now follow the flag "[RaiseCharacterNameIntoxX]"
 	Intoxication decreases now follow the flag "[LowerPlayerIntoxX]"
-	Charisma increases now follow the flag "[RaisePlayerCharismaX]
 	Skill increases now follow the flag "[RaisePlayerSkillX]
 	Intoxication decreases now follow the flag "[LowerPlayerIntoxX]"
 	
