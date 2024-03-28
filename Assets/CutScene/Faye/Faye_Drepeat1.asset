@@ -23,12 +23,6 @@ MonoBehaviour:
   - rid: 3415138152484438378
   defaultCharacter: Faye
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 0200000001000000
-    values: 0100000001000000
   AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: ac730fca1a5b2974db4f6ee831656a59, type: 3}
   reset: 0
@@ -42,7 +36,6 @@ MonoBehaviour:
     - rid: 3415138152484438372
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 1
     - rid: 3415138152484438373
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -59,20 +52,17 @@ MonoBehaviour:
     - rid: 3415138152484438376
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 2
         Stat: 2
         Adjust: 1
     - rid: 3415138152484438377
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 2
         Stat: 1
         Adjust: 1
     - rid: 3415138152484438378
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
+        Stat: 0
         Adjust: 1

@@ -29,13 +29,6 @@ MonoBehaviour:
   - rid: 3415138150063276875
   defaultCharacter: Owner
   exception: 0
-  playerS:
-    stats:
-    - Intoxication
-    values: 01000000
-  partnerS:
-    stats: 
-    values: 
   AnotherFuckingException: 0
   aa: {fileID: 4900000, guid: 3e0fd19edcbb06f44821b96f1fc55c6a, type: 3}
   reset: 0
@@ -54,7 +47,6 @@ MonoBehaviour:
     - rid: 3415138150063276864
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 1
     - rid: 3415138150063276865
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -103,6 +95,5 @@ MonoBehaviour:
     - rid: 3415138150063276875
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
+        Stat: 2
         Adjust: 1

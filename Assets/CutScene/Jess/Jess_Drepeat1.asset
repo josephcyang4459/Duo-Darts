@@ -24,12 +24,6 @@ MonoBehaviour:
   - rid: 3415138152484438501
   defaultCharacter: Jess
   exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 0200000001000000
-    values: 0100000001000000
   AnotherFuckingException: 1
   aa: {fileID: 4900000, guid: 575824675cd4f924b98c64a8ee1780f7, type: 3}
   reset: 0
@@ -43,7 +37,6 @@ MonoBehaviour:
     - rid: 3415138152484438494
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 1
     - rid: 3415138152484438495
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -52,7 +45,6 @@ MonoBehaviour:
     - rid: 3415138152484438496
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 2
     - rid: 3415138152484438497
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -65,20 +57,17 @@ MonoBehaviour:
     - rid: 3415138152484438499
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 2
         Adjust: 1
     - rid: 3415138152484438500
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 1
         Adjust: 1
     - rid: 3415138152484438501
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 3
+        Stat: 0
         Adjust: 1
