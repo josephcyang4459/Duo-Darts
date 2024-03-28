@@ -2,4 +2,4 @@
 [Newln]Drinking?
 [Newln]I can say for sure that’s better than dancing.
 [Newln]If you’re paying I’ll have a few.
-[Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerintox1]
+[Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerIntox1]

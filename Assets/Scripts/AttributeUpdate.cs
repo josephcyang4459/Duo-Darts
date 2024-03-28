@@ -21,20 +21,15 @@ public class AttributeUpdate : MonoBehaviour {
     private float transformMuliplier;
     public Queue<info> info = new();
 
-    public void Start()
-    {
+    public void Start() {
         inst = this;
         AttributePopUp.position = OriginalPosition.position;
         transformMuliplier = MathF.Abs(PopUpPosition.position.y - OriginalPosition.position.y);
     }
 
-    public void ShowUI() {
-        FadeIn = true;
-    }
+    public void ShowUI() { FadeIn = true; }
 
-    public void HideUI() {
-        FadeOut = true;
-    }
+    public void HideUI() { FadeOut = true; }
 
     private void Update() {
         if(FadeIn)
@@ -55,13 +50,10 @@ public class AttributeUpdate : MonoBehaviour {
                     FadeOut = false;
                     InView = false;
 
-
-                    if (info.Count > 0)
-                    {
+                    if (info.Count > 0) {
                         UpdateAttribute(info.Peek().stat, info.Peek().change);
                         info.Dequeue();
                     }
-                  
                 }
             }
 
@@ -70,20 +62,14 @@ public class AttributeUpdate : MonoBehaviour {
     }
 
     public void UpdateAttribute(string attribute, int value) {
-        if(FadeIn || FadeOut || InView)
-        {
-            info t = new info();
-            t.stat = attribute;
-            t.change = value;
+        if(FadeIn || FadeOut || InView) {
+            info t = new info { stat = attribute, change = value };
             info.Enqueue(t);
             return;
         }
             
-
         PopUpTextUI.text = "";
-        //PopUpTextUI.text += char.ToUpper(attribute[0]);
         PopUpTextUI.text += attribute + " has been ";
-
         PopUpTextUI.text += (value > 0) ? "increased by " : "decreased by ";
         PopUpTextUI.text += Mathf.Abs(value);
 
@@ -91,10 +77,8 @@ public class AttributeUpdate : MonoBehaviour {
         ShowUI();
     }
 
-    string AttributeName(PlayerSkills skill)
-    {
-        switch (skill)
-        {
+    string AttributeName(PlayerSkills skill) {
+        switch (skill) {
             case PlayerSkills.Intoxication:
                 return "intoxication";
             case PlayerSkills.Skill:
@@ -105,28 +89,23 @@ public class AttributeUpdate : MonoBehaviour {
         return null;
     }
 
-    public void UpdateAttribute(PlayerSkills skill, int value)
-    {
-            UpdateAttribute(AttributeName(skill), value);
-    }
+    public void UpdateAttribute(PlayerSkills skill, int value) { UpdateAttribute(AttributeName(skill), value); }
 
     public void UpdateAttributeButton(string String) {
         string AttributeString = String.Substring(1, String.Length - 1);
         char c = String[String.Length - 1];
         int AttributeValue = int.Parse(c.ToString());
 
-        if (String[0].Equals('+'))
-            UpdateAttribute(AttributeString, AttributeValue);
-        else
-            UpdateAttribute(AttributeString, AttributeValue * -1);
+        if (!String[0].Equals('+'))
+            AttributeValue *= -1;
 
+        UpdateAttribute(AttributeString, AttributeValue);
     }
 
     
 }
 
-public class info
-{
+public class info {
     public string stat;
     public int change;
 }
