@@ -52,7 +52,9 @@ public class Schedule : MonoBehaviour
 
     private string timeAsString()
     {
-        return hour + ":" + (minutes==0?"00":minutes.ToString()) + "PM";
+        string minutesString = (minutes < 10) ? "0" : "";
+        minutesString += minutes.ToString();
+        return hour + ":" + minutesString + "PM";
     }
 
     public void click()
