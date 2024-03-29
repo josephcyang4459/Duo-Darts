@@ -80,7 +80,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void ControllerOptionsFunction(int index)
     {
-        if (Toggles[index] == null) return;
+        if (Toggles[index] == null) return; // This it temporary code for now. toggles list being full of null values at the moment.
         if (!Toggles[index].isOn) return;
 
         for (int i = 0; i < 3; i++)
