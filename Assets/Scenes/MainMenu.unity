@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 977564480}
-  OriginalPosition: {x: -186, y: -37.5, z: 0}
-  NewPosition: {x: -186, y: -37.5, z: 0}
+  OriginalPosition: {x: 128.6719, y: 112.343765, z: 0}
+  NewPosition: {x: 128.6719, y: 112.343765, z: 0}
   speed: 10
   Limits: {x: 25, y: 10}
   Jiggling: 0
@@ -752,8 +752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 1205292088}
-  OriginalPosition: {x: 839, y: -37.5, z: 0}
-  NewPosition: {x: 839, y: -37.5, z: 0}
+  OriginalPosition: {x: 714.84375, y: 112.343765, z: 0}
+  NewPosition: {x: 714.84375, y: 112.343765, z: 0}
   speed: 10
   Limits: {x: 25, y: 10}
   Jiggling: 0
@@ -893,8 +893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 1388165906}
-  OriginalPosition: {x: 1284, y: -37.5, z: 0}
-  NewPosition: {x: 1284, y: -37.5, z: 0}
+  OriginalPosition: {x: 969.3281, y: 112.343765, z: 0}
+  NewPosition: {x: 969.3281, y: 112.343765, z: 0}
   speed: 10
   Limits: {x: 25, y: 10}
   Jiggling: 0
@@ -1034,8 +1034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 1489824898}
-  OriginalPosition: {x: 259, y: -37.5, z: 0}
-  NewPosition: {x: 259, y: -37.5, z: 0}
+  OriginalPosition: {x: 383.15625, y: 112.343765, z: 0}
+  NewPosition: {x: 383.15625, y: 112.343765, z: 0}
   speed: 10
   Limits: {x: 25, y: 10}
   Jiggling: 0

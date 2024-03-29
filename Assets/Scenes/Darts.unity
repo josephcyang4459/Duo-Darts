@@ -713,8 +713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentImage: {fileID: 770061092}
-  StartingLocation: {x: 2276, y: 484, z: 0}
-  EndLocation: {x: 1379, y: 484, z: 0}
+  StartingLocation: {x: 1865, y: 256.5, z: 0}
+  EndLocation: {x: 968, y: 256.5, z: 0}
   MoveSpeed:
     serializedVersion: 2
     m_Curve:
@@ -2369,6 +2369,10 @@ PrefabInstance:
       propertyPath: StandAlone
       value: 
       objectReference: {fileID: 201597167}
+    - target: {fileID: 7917560275646839228, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
     - target: {fileID: 7917560275768366532, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -2957,6 +2961,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1349318527543546159, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349318527703410613, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
