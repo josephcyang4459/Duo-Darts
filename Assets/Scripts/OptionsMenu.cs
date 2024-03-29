@@ -29,9 +29,10 @@ public class OptionsMenu : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-           
-        DontDestroyOnLoad(this);
+
         inst = this;
+        DontDestroyOnLoad(this);
+
         VolumeSlider.value = PlayerPrefs.GetFloat("volume", .5f)*10;
         TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 10);
         VolumeText.text = VolumeSlider.value.ToString();
@@ -79,8 +80,9 @@ public class OptionsMenu : MonoBehaviour
 
     public void ControllerOptionsFunction(int index)
     {
-        if (!Toggles[index].isOn)
-            return;
+        if (Toggles[index] == null) return;
+        if (!Toggles[index].isOn) return;
+
         for (int i = 0; i < 3; i++)
         {
             Toggles[i].isOn = i == index;
