@@ -4,8 +4,6 @@ using TMPro;
 
 public class DartMen : MonoBehaviour
 {
-    [SerializeField] int EndGameCutoff;
-    [SerializeField] int MaxLoveNeeded;
     public Canvas menue;
     public DartGame dg;
     public Schedule s;
@@ -14,9 +12,9 @@ public class DartMen : MonoBehaviour
     public TMP_Text[] texts;
     public int[] indices;
 
-    public GameObject backButtonm;
+    public GameObject FirstSelectButton;
 
-    public void begin()
+    public void ShowPartnerSelectMenu()
     {
         dg.ScoreNeededToWin = s.hour < 7 ? 501 : 701;//gets correct score
 
@@ -55,7 +53,7 @@ public class DartMen : MonoBehaviour
         for(int i=UIcharacterSlotUsed;i<p.Length;i++)
                     characters[i].gameObject.SetActive(false);
 
-        UI_Helper.SetSelectedUIElement(backButtonm);
+        UIState.inst.SetAsSelectedButton(FirstSelectButton);
     }
 
  
@@ -63,6 +61,7 @@ public class DartMen : MonoBehaviour
     {
         menue.enabled = false;
         s.off();
+        UIState.inst.SetInteractableUIState(false);
         dg.BeginGame(indices[i]);
 
     }

@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour, Caller
 
     [SerializeField] GameObject FirstSelected;
     GameObject returnGameObjectButton;
+    bool returnState;
     public void Awake()
     {
         if(inst !=null)
@@ -60,12 +61,15 @@ public class PauseMenu : MonoBehaviour, Caller
         if (CurrentState)
         {
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
+            returnState = UIState.inst.GetCurrentState();
+            UIState.inst.SetInteractableUIState(true);
             OptionsMenu.inst.HideOptions();
             UIState.inst.SetAsSelectedButton(FirstSelected);
         }
         else
         {
             UIState.inst.SetAsSelectedButton(returnGameObjectButton);
+            UIState.inst.SetInteractableUIState(returnState);
         }
             
     }
@@ -75,6 +79,7 @@ public class PauseMenu : MonoBehaviour, Caller
         if (enabled)
             UnenablePause();
     }
+
 
     public void ShowOptions()
     {

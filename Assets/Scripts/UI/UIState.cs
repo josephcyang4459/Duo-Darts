@@ -1,4 +1,3 @@
-
 using UnityEngine.EventSystems;
 using UnityEngine;
 
@@ -39,8 +38,13 @@ public class UIState : MonoBehaviour
         return CurrentFirstSelected;
     }
 
-    public void SetUIAsInteractable(bool enabled)
+    public void SetInteractableUIState(bool enabled)
     {
-        EventSystem.enabled = enabled;
+        //EventSystem.enabled = enabled;
+    }
+
+    public bool GetCurrentState()
+    {
+        return EventSystem.enabled;
     }
 }
