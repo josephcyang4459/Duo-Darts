@@ -11,11 +11,13 @@ public class PauseMenu : MonoBehaviour, Caller
     [SerializeField] Canvas BackGround;
     [SerializeField] bool CurrentState;
 
+    [SerializeField] GameObject FirstSelected;
+    GameObject returnGameObjectButton;
     public void Awake()
     {
         if(inst !=null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(this);
@@ -47,11 +49,25 @@ public class PauseMenu : MonoBehaviour, Caller
 
     void ActivatePauseMenu(InputAction.CallbackContext c)
     {
+        PauseMenueStateChange();
+    }
+
+    void PauseMenueStateChange()
+    {
         CurrentState = !CurrentState;
         PauseOptionsCanvas.enabled = CurrentState;
         BackGround.enabled = CurrentState;
         if (CurrentState)
+        {
+            returnGameObjectButton = UIState.inst.GetCurrentSelected();
             OptionsMenu.inst.HideOptions();
+            UIState.inst.SetAsSelectedButton(FirstSelected);
+        }
+        else
+        {
+            UIState.inst.SetAsSelectedButton(returnGameObjectButton);
+        }
+            
     }
 
     private void OnDestroy()
@@ -68,6 +84,7 @@ public class PauseMenu : MonoBehaviour, Caller
 
     public void ExitToMain()
     {
+        PauseMenueStateChange();
         SceneManager.LoadScene(0);
         System.GC.Collect();
     }
@@ -79,6 +96,7 @@ public class PauseMenu : MonoBehaviour, Caller
 
     public void Ping()
     {
+        UIState.inst.SetAsSelectedButton(FirstSelected);
         PauseOptionsCanvas.enabled = true;
     }
 }

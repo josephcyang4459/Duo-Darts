@@ -11,8 +11,12 @@ public class OptionsMenu : MonoBehaviour
 
     public Slider VolumeSlider;
     public TMP_Text VolumeText;
+
+    [SerializeField] Toggle[] Toggles;
+
     [SerializeField] Caller Caller;
-    [SerializeField] AudioClip Clip;
+
+    [SerializeField] GameObject FirstSelected;
 
     public delegate void SettingChange(float value);
     public static event SettingChange VolumeChange;
@@ -22,7 +26,7 @@ public class OptionsMenu : MonoBehaviour
     {
         if (inst != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
            
@@ -32,18 +36,21 @@ public class OptionsMenu : MonoBehaviour
         TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 10);
         VolumeText.text = VolumeSlider.value.ToString();
         TextSpeedText.text = TextSpeedSlider.value.ToString();
+        ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));
     }
 
     public void ShowOptions(Caller caller)
     {
         Caller = caller;
         Canvas.enabled = true;
+        UIState.inst.SetAsSelectedButton(FirstSelected);
     }
 
     public void HideOptions()
     {
         if (!Canvas.enabled)
             return;
+        PlayerPrefs.Save();
         Canvas.enabled = false;
         if (Caller != null)
         {
@@ -58,7 +65,7 @@ public class OptionsMenu : MonoBehaviour
         VolumeText.text = VolumeSlider.value.ToString();
         float realVolume = VolumeSlider.value / 10f;
         PlayerPrefs.SetFloat("volume", realVolume);
-        Audio.inst.PlayClip(Clip);
+        Audio.inst.PlayClip(AudioClips.Click);
         VolumeChange(realVolume);
     }
 
@@ -66,7 +73,26 @@ public class OptionsMenu : MonoBehaviour
     {
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         PlayerPrefs.SetFloat("textSpeed", TextSpeedSlider.value);
-        Audio.inst.PlayClip(Clip);
+        Audio.inst.PlayClip(AudioClips.Click);
         TextSpeedChange(TextSpeedSlider.value);
+    }
+
+    public void ControllerOptionsFunction(int index)
+    {
+        if (!Toggles[index].isOn)
+            return;
+        for (int i = 0; i < 3; i++)
+        {
+            Toggles[i].isOn = i == index ? true : false;
+            Toggles[i].interactable = i == index ? true : false;
+        }
+            
+        PlayerPrefs.SetInt("controller", index);
+        switch (index)
+        {
+            case 0: ControlState.inst.SetControlState(ControllerState.UseIfConnected);return;
+            case 1: ControlState.inst.SetControlState(ControllerState.ForceKeyboard);return;
+            case 2: ControlState.inst.SetControlState(ControllerState.ForceController);return;
+        }
     }
 }

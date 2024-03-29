@@ -14,7 +14,7 @@ public class Audio : MonoBehaviour
     {
         if (inst != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
 
@@ -54,7 +54,9 @@ public class Audio : MonoBehaviour
     public void PlaySong(AudioClip clip)
     {
         if (Source.clip == clip)
-            return;
+            if (Source.isPlaying)
+                return;
+
         Source.clip = clip;
         Source.Play();
      

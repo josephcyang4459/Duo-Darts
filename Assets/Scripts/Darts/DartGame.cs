@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using TMPro;
-using UnityEngine.UI;
 using System;
 
 public class DartGame : MonoBehaviour
@@ -16,7 +14,7 @@ public class DartGame : MonoBehaviour
 
     public int partnerIndex = 0;
     public int turnSum = 0;
-    public int overall = 501;
+    public int ScoreNeededToWin = 501;
     public int points;
     public int currentTurn = 0;
 
@@ -42,6 +40,7 @@ public class DartGame : MonoBehaviour
     public SpriteRenderer board;
 
     public Schedule s;
+    public DartMenu_StandAlone StandAlone;
 #if UNITY_EDITOR
     public byte[] order;
     public byte[] multiplication;
@@ -88,14 +87,14 @@ public class DartGame : MonoBehaviour
 
     public void BeginGame(int partner)
     {
-        if (PauseMenu.inst != null)
+
+        if (s != null)
             PauseMenu.inst.SetEnabled(false);
-        if (Audio.inst != null)
-            Audio.inst.PlaySong(ac);
+        Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
       
-        points = overall > 600 ? 10 : 5;
+        points = ScoreNeededToWin > 600 ? 10 : 5;
         aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck),0,100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);
         //float Stability = Math.Clamp((30/stats.Skill) + ((stats.Intoxication/3) / 10), 1,100);// gooffy ass
@@ -110,7 +109,7 @@ public class DartGame : MonoBehaviour
 
         turnSum = 0;
 
-        Visuals.SetScores(turnSum, overall);
+        Visuals.SetScores(turnSum, ScoreNeededToWin);
 
         numberOfDartsThrow = 0;
 
@@ -125,13 +124,16 @@ public class DartGame : MonoBehaviour
         //Debug.Log("lose");
         GameEnd();
         losec.enabled = true;
-
-        if (s.hour == 8)
-            if (s.minutes > 50)
-            {
-                Debug.Log("PLAY BAD ENDING HERE");
-                UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
-            }
+        if(s != null)
+        {
+            if (s.hour == 8)
+                if (s.minutes > 50)
+                {
+                    Debug.Log("PLAY BAD ENDING HERE");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
+                }
+        }
+       
 
         StartCoroutine(WaitToEnd());
     }
@@ -140,28 +142,32 @@ public class DartGame : MonoBehaviour
     {
         //Debug.Log("win");
         GameEnd();
-        stats.TotalPointsScoredAcrossAllDartMatches += points;
         winc.enabled = true;
-        if (s.hour == 8)
-            if (s.minutes > 30)
-            {
-                Debug.Log("PLAY GOOD ENDING HERE");
-                switch ((Characters)partnerIndex)
+        if(s!=null)
+        {
+            stats.TotalPointsScoredAcrossAllDartMatches += points;
+            if (s.hour == 8)
+                if (s.minutes > 30)
                 {
-                    case Characters.Chad:
-                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ChadEnding);
-                        return;
-                    case Characters.Elaine:
-                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ElaineEnding);
-                        return;
-                    case Characters.Jess:
-                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.JessEnding);
-                        return;
-                    case Characters.Faye:
-                        UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FayeEnding);
-                        return;
+                    Debug.Log("PLAY GOOD ENDING HERE");
+                    switch ((Characters)partnerIndex)
+                    {
+                        case Characters.Chad:
+                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ChadEnding);
+                            return;
+                        case Characters.Elaine:
+                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ElaineEnding);
+                            return;
+                        case Characters.Jess:
+                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.JessEnding);
+                            return;
+                        case Characters.Faye:
+                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FayeEnding);
+                            return;
+                    }
                 }
-            }
+        }
+       
                
         StartCoroutine(WaitToEnd());
     }
@@ -179,9 +185,9 @@ public class DartGame : MonoBehaviour
         //Debug.Log("swap");
         Visuals.SetDartScore();
 
-        overall -= turnSum;
+        ScoreNeededToWin -= turnSum;
         turnSum = 0;
-        Visuals.SetScores(turnSum, overall);
+        Visuals.SetScores(turnSum, ScoreNeededToWin);
 
 
         numberOfDartsThrow = 0;
@@ -302,7 +308,7 @@ public class DartGame : MonoBehaviour
             return;
         }
 
-        int tempScore = overall - turnSum;
+        int tempScore = ScoreNeededToWin - turnSum;
         if (tempScore >= 60)// this is where they would go for big numbers
         {
             OverSixtyPick();
@@ -355,14 +361,14 @@ public class DartGame : MonoBehaviour
     public void CheckForBust()
     {
 
-        if (overall - turnSum < 0)
+        if (ScoreNeededToWin - turnSum < 0)
         {
             turnSum = 0;
             SwitchTurn();
             return;
         }
 
-        if (overall - turnSum == 0)
+        if (ScoreNeededToWin - turnSum == 0)
         {
             Dart.reset_position();
             Win();
@@ -398,6 +404,14 @@ public class DartGame : MonoBehaviour
         losec.enabled = false;
         board.enabled = false;
         PauseMenu.inst.SetEnabled(true);
-        s.setTime(TimeBlocks.Short);
+        if (s != null)
+        {
+            s.setTime(TimeBlocks.Short);
+        }
+        else
+        {
+            StandAlone.BeginSetUp();
+        }
+        
     }
 }

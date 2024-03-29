@@ -1,35 +1,101 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DartMenu_StandAlone : MonoBehaviour
+public class DartMenu_StandAlone : MonoBehaviour, Caller
 {
-
-
     [SerializeField] CharacterList Characters;
     [SerializeField] DartGame DartGame;
-    [SerializeField] FillImage Fill;
+    [SerializeField] ImageFill Fill;
+    [SerializeField] ImageSlide Slide;
+    [SerializeField] ImageSmoothFill[] BorderFills;
+    [SerializeField] UIAnimationElement ScoreAnimationEnterHead;
+    [SerializeField] UIAnimationElement ScoreAnimationLeaveHead;
     [SerializeField] Canvas PartnerCanvas;
+    [SerializeField] Canvas ScoreCanvas;
     [SerializeField] Image[] PartnerButtonImages;
+    [SerializeField] Vector3 PartnerLocationOffset;
+    [SerializeField] Image[] ScoreButtonImages;
+    [SerializeField] Vector3 ScoreLocationOffset;
     [SerializeField] Image Portrait;
-    [SerializeField] Image[] Borders;
+    [SerializeField] int PartnerIndex;
+    [SerializeField] bool TurnOffScoreCanvas;
+    [SerializeField] GameObject FirstPartnerButton;
+    [SerializeField] GameObject FirstScoreButton;
+    public void Start()
+    {
+        PauseMenu.inst.SetEnabled(true);
+        BeginSetUp();
+    }
+
+    public void BeginSetUp()
+    {
+        Audio.inst.StopSong();
+        PartnerCanvas.enabled = true;
+        //EventSystem.current.enabled = true;
+        UIState.inst.SetUIAsInteractable(true);
+        UIState.inst.SetAsSelectedButton(FirstPartnerButton);
+    }
 
     public void StartGameWithPartner(int i)
     {
-        PartnerCanvas.enabled = false;
-        DartGame.BeginGame(i);
-        
+        PartnerIndex = i;
+        ScoreCanvas.enabled = true;
+        ScoreAnimationEnterHead.Begin(this);
+        DartSticker.inst.SetVisible(false);
+        Fill.ClearImages();
+        TurnOffScoreCanvas = false;
     }
 
     public void ShowCharacterPortrait(int i)
     {
-        Fill.SetCurrentImageToFill(PartnerButtonImages[i] ,Vector2.zero);
+        if (Portrait.sprite == Characters.list[i].Expressions[0])
+            return;
+        Audio.inst.PlayClip(AudioClips.Click);
         Portrait.sprite = Characters.list[i].Expressions[0];
-        foreach(Image image in Borders)
+        Slide.BeginSlide();
+        Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset);
+
+        float fill = (float)i / (float)(Characters.list.Length - 2);
+        foreach (ImageSmoothFill image in BorderFills)
         {
-            image.fillAmount = (float)i / (float)(Characters.list.Length - 2);
+            image.FillTo(fill);
         }
+    }
+
+    public void HoverScoreButton(int i)
+    {
+        Audio.inst.PlayClip(AudioClips.Click);
+        Fill.SetCurrentImageToFill(ScoreButtonImages[i], ((RectTransform)ScoreButtonImages[i].transform).position + ScoreLocationOffset);
+    }
+
+    public void BackToPartnerScreen()
+    {
+        Fill.ClearImages();
+        DartSticker.inst.SetVisible(false);
+        TurnOffScoreCanvas = true;
+        ScoreAnimationLeaveHead.Begin(this);
+    }
+
+    public void SetScore(int i)
+    {
+        DartGame.ScoreNeededToWin = (i == 0 ? 501 : 701);
+        PartnerCanvas.enabled = false;
+        ScoreCanvas.enabled = false;
+        ScoreAnimationLeaveHead.ReachEndState();
+        UIState.inst.SetUIAsInteractable(false);
+        DartSticker.inst.SetVisible(false);
+        DartGame.BeginGame(PartnerIndex);
+        
+    }
+    public void Ping()
+    {
+        if (TurnOffScoreCanvas)
+        {
+            ScoreCanvas.enabled = false;
+            UIState.inst.SetAsSelectedButton(FirstPartnerButton);
+        }
+        else
+            UIState.inst.SetAsSelectedButton(FirstScoreButton);
     }
 
 #if UNITY_EDITOR
@@ -50,6 +116,8 @@ public class DartMenu_StandAlone : MonoBehaviour
             }
         }
     }
+
+   
 
 #endif
 

@@ -14,10 +14,10 @@ public class ResetStats : ScriptableObject
 
     public void ResetStatsAndCompletionToBase()
     {
-        ResetToBase = false;
+        
         for (int i = 0; i < 5; i++)
         {
-            characters.list[i].__resetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
+            characters.list[i].ResetValues(BaseStats[i].Love, BaseStats[i].Intoxication, BaseStats[i].Composure);
         }
         playerBase();
         resetEvents();
@@ -55,6 +55,7 @@ public class ResetStats : ScriptableObject
 
         if(ResetToBase)
         {
+            ResetToBase = false;
             ResetStatsAndCompletionToBase();
             resetEvents();
         }
