@@ -5,7 +5,7 @@ using System;
 
 public class DartGame : MonoBehaviour
 {
-    public CharacterList Partners;
+    public CharacterList characters;
     public Player stats;
     public DartVisual Visuals;
     public AimCone aim;
@@ -258,14 +258,14 @@ public class DartGame : MonoBehaviour
         void OverSixtyPick()
         {
 
-            if (Partners.list[partnerIndex].bias == DartTargetBias.Bullseye)//chad
+            if (characters.list[partnerIndex].bias == DartTargetBias.Bullseye)//chad
             {
 
                 Adjust(bullseye.transform.position);
                 return;
             }
 
-            if (Partners.list[partnerIndex].bias == DartTargetBias.Sixty)//elaine
+            if (characters.list[partnerIndex].bias == DartTargetBias.Sixty)//elaine
             {
                 Adjust(c[19].colliders[2].target.position);
                 return;
@@ -276,12 +276,12 @@ public class DartGame : MonoBehaviour
             Debug.Log(pick);
             PointValueTarget temp = PointValueTarget.OuterSingle;
 
-            if (Partners.list[partnerIndex].Composure >= 5)
+            if (characters.list[partnerIndex].Composure >= 5)
             {
                 temp = 0;
             }
 
-            if (Partners.list[partnerIndex].Composure >= 10)// high composure
+            if (characters.list[partnerIndex].Composure >= 10)// high composure
             {
                 int trye = UnityEngine.Random.Range(0, 10);
 
