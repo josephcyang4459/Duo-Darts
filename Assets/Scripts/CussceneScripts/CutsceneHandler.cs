@@ -40,7 +40,7 @@ public class CutsceneHandler : MonoBehaviour
     {
         if (inst != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
         inst = this;

@@ -4,6 +4,5 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class CharacterList : ScriptableObject {
-    [SerializeField]
-    public List<Partner> list;
+    public Partner[] list;
 }

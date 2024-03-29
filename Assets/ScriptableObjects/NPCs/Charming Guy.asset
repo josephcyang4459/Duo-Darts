@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Charming Guy
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   textSize: 72
-  Composure: 0
+  Composure: 3
   Intoxication: 0
   Love: 0
   RelatedCutScenes: []

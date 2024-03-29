@@ -11,9 +11,13 @@ public class OptionsMenu : MonoBehaviour
 
     public Slider VolumeSlider;
     public TMP_Text VolumeText;
-    [SerializeField] Caller Caller;
-    [SerializeField] AudioClip Clip;
 
+    [SerializeField] Toggle[] Toggles;
+
+    [SerializeField] Caller Caller;
+
+    [SerializeField] GameObject FirstSelected;
+    [SerializeField] GameObject ReturnButton;
     public delegate void SettingChange(float value);
     public static event SettingChange VolumeChange;
     public static event SettingChange TextSpeedChange;
@@ -22,7 +26,7 @@ public class OptionsMenu : MonoBehaviour
     {
         if (inst != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
            
@@ -32,18 +36,21 @@ public class OptionsMenu : MonoBehaviour
         TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 10);
         VolumeText.text = VolumeSlider.value.ToString();
         TextSpeedText.text = TextSpeedSlider.value.ToString();
+        ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));
     }
 
     public void ShowOptions(Caller caller)
     {
         Caller = caller;
         Canvas.enabled = true;
+        UIState.inst.SetAsSelectedButton(FirstSelected);
     }
 
     public void HideOptions()
     {
         if (!Canvas.enabled)
             return;
+        PlayerPrefs.Save();
         Canvas.enabled = false;
         if (Caller != null)
         {
@@ -58,7 +65,7 @@ public class OptionsMenu : MonoBehaviour
         VolumeText.text = VolumeSlider.value.ToString();
         float realVolume = VolumeSlider.value / 10f;
         PlayerPrefs.SetFloat("volume", realVolume);
-        Audio.inst.PlayClip(Clip);
+        Audio.inst.PlayClip(AudioClips.Click);
         VolumeChange(realVolume);
     }
 
@@ -66,7 +73,28 @@ public class OptionsMenu : MonoBehaviour
     {
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         PlayerPrefs.SetFloat("textSpeed", TextSpeedSlider.value);
-        Audio.inst.PlayClip(Clip);
+        Audio.inst.PlayClip(AudioClips.Click);
         TextSpeedChange(TextSpeedSlider.value);
+    }
+
+    public void ControllerOptionsFunction(int index)
+    {
+        if (!Toggles[index].isOn)
+            return;
+        for (int i = 0; i < 3; i++)
+        {
+            Toggles[i].isOn = i == index;
+            Toggles[i].interactable = i != index;
+        }
+      
+        Audio.inst.PlayClip(AudioClips.Click);
+        PlayerPrefs.SetInt("controller", index);
+        switch (index)
+        {
+            case 0: ControlState.inst.SetControlState(ControllerState.UseIfConnected);break;
+            case 1: ControlState.inst.SetControlState(ControllerState.ForceKeyboard);break;
+            case 2: ControlState.inst.SetControlState(ControllerState.ForceController);break;
+        }
+        UIState.inst.SetAsSelectedButton(ReturnButton);
     }
 }
