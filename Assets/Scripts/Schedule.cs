@@ -22,19 +22,20 @@ public class Schedule : MonoBehaviour
     public TMP_Text[] btnText;
     public Sprite[] LocationSprites;
 
-    public GameObject ListCanvasBack;
+   
     public Canvas LocationCanvas;
-    public GameObject LocationFirstButton;
     public Image SelectedLocationImage;
 
     public GameObject DartButtonGameObject;
+   
 
     public Image LocationLocationImage;
     public AudioClip song0;
     public AudioClip cli;
 
-    public GameObject g;
-
+    public GameObject FirstLocationButton;
+    public GameObject FirstEventButton;
+    public GameObject GenderChoiceButton;
     public TMP_Text TimeText;
     public Canvas TimeCanvas;
 
@@ -44,8 +45,8 @@ public class Schedule : MonoBehaviour
     {
         Audio.inst.PlaySong(song0);
         TimeText.text = timeAsString();
-        UI_Helper.SetSelectedUIElement(g);
-        
+        UIState.inst.SetAsSelectedButton(GenderChoiceButton);
+        UIState.inst.SetInteractableUIState(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
         characters = CutsceneHandler.inst.characters;
     }
@@ -64,6 +65,7 @@ public class Schedule : MonoBehaviour
     {
         CutsceneHandler.inst.SetCharacterSprite(i);
         setTime(0);
+        UIState.inst.SetAsSelectedButton(FirstLocationButton);
         PauseMenu.inst.SetEnabled(true);
     }
 
@@ -205,7 +207,7 @@ public class Schedule : MonoBehaviour
         location = b;
         LocationCanvas.enabled = false;
         EventListCanvas.enabled = true;
-        //UI_Helper.SetSelectedUIElement(ListCanvasBack);
+        UIState.inst.SetAsSelectedButton(FirstEventButton);
     }
 
     public void selectEvent(int eve)
@@ -231,7 +233,7 @@ public class Schedule : MonoBehaviour
         LocationCanvas.enabled = true;
         DartButtonGameObject.SetActive( false);
 
-        UI_Helper.SetSelectedUIElement(LocationFirstButton);
+        UIState.inst.SetAsSelectedButton(FirstLocationButton);
     }
 
 

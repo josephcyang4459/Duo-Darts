@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -29,7 +27,6 @@ public class DartSticker : MonoBehaviour
         DontDestroyOnLoad(this);
         inst = this;
         First = true;
-        Debug.Log("Orgin "+Location.position);
     }
     public void LevelLoad(Scene s, LoadSceneMode m)
     {
@@ -60,12 +57,8 @@ public class DartSticker : MonoBehaviour
         DartImage.enabled = true;
         DartImage.sprite = FlyingSprite;
         TargetLocation = newLocation;
-        Debug.Log("Old "+Location.position);
-        Debug.Log("Target " + newLocation);
-        Debug.Log("Staring " + newLocation + StartingDistanceFromTargetInPixels);
         //Location.SetPositionAndRotation(newLocation + StartingDistanceFromTargetInPixels, Location.rotation);
         Location.position = newLocation + StartingDistanceFromTargetInPixels;
-        Debug.Log("Nerw "+Location.position);
         enabled = true;
         
     }
@@ -80,7 +73,6 @@ public class DartSticker : MonoBehaviour
         Location.position = Vector2.MoveTowards(Location.position, TargetLocation, PixelsTraveledPerSecond * Time.deltaTime);
         if(Vector2.Distance(Location.position, TargetLocation) <.005f)
         {
-            Debug.Log("final " + Location.position);
             DartImage.sprite = StuckSprite;
             Audio.inst.PlayClip(AudioClips.Dart);
             enabled = false;

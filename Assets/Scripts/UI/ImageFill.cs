@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +12,6 @@ public class ImageFill : MonoBehaviour
     public void SetCurrentImageToFill(Image newImage, Vector2 newTarget)
     {
         Target = newTarget;
-        Debug.Log("Target " + Target);
         ShootDart = true;
         SetCurrent(newImage);
        

@@ -32,13 +32,15 @@ public class ControlState : MonoBehaviour, Caller
     public void SetControlState(ControllerState newState)
     {
         UseConnectedState = newState;
+        ShowControlAnimation();
     }
 
     public void ShowControlAnimation()
     {
         if (CurrentlyAnimating)
             return;
-        ControlImage.sprite = ControllerConnected ? ControllerSprite : MouseSprite;
+        CurrentlyAnimating = true;
+        ControlImage.sprite = IsUsingController() ? ControllerSprite : MouseSprite;
         AnimationHead.Begin(this);
     }
 
@@ -55,10 +57,7 @@ public class ControlState : MonoBehaviour, Caller
 
     void DeviceChange(InputDevice device, InputDeviceChange change)
     {
-        if (UseConnectedState != ControllerState.UseIfConnected)
-            return;
-
-        bool connected = ControllerConnected;
+        bool connected = IsUsingController();
         switch (change)
         {
             case InputDeviceChange.Added:
@@ -68,7 +67,8 @@ public class ControlState : MonoBehaviour, Caller
                 if (IsController(device))
                 {
                     ControllerConnected = true;
-                    UIState.inst.ControllerConnected();
+                    if (IsUsingController())
+                        UIState.inst.ControllerConnected();
                 }
                 break;
             case InputDeviceChange.Disconnected:
@@ -81,7 +81,7 @@ public class ControlState : MonoBehaviour, Caller
                 break;
         }
 
-        if (connected != ControllerConnected)
+        if (connected != IsUsingController())
             ShowControlAnimation();
     }
 
@@ -90,15 +90,16 @@ public class ControlState : MonoBehaviour, Caller
         ControllerConnected = false;
         for (int i = 0; i < InputSystem.devices.Count; i++)
         {
-            if(IsController(InputSystem.devices[i]))
+            if (IsController(InputSystem.devices[i]))
             {
+                ControllerConnected = true;
+                if (!IsUsingController())
+                    return;
                 if (UIState.inst != null)
                     UIState.inst.ControllerConnected();
-                ControllerConnected = true;
-                return;
             }
         }
-        
+
     }
 
     bool IsController(InputDevice type)

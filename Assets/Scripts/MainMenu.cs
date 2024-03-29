@@ -29,20 +29,19 @@ public class MainMenu : MonoBehaviour, Caller {
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
         Audio.inst.StopSong();
-        //DartSticker.inst.SetVisible(false);
+        UIState.inst.SetInteractableUIState(true);
         Ping();
-        //UI_Helper.SetSelectedUIElement(button);
     }
 
     public void ShowOptions()
     {
+        DartSticker.inst.SetVisible(false);
         MainMenueCanvas.enabled = false;
         OptionsMenu.inst.ShowOptions(this);
     }
 
     public void ShowCredits()
     {
-        
         SceneManager.LoadScene((int)SceneNumbers.Credits);
     }
 
@@ -58,6 +57,7 @@ public class MainMenu : MonoBehaviour, Caller {
     }
 
     public void QuitGame() {
+        DartSticker.inst.SetVisible(false);
         Application.Quit();
     }
 

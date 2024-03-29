@@ -32,7 +32,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller
         Audio.inst.StopSong();
         PartnerCanvas.enabled = true;
         //EventSystem.current.enabled = true;
-        UIState.inst.SetUIAsInteractable(true);
+        UIState.inst.SetInteractableUIState(true);
         UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }
 
@@ -82,7 +82,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller
         PartnerCanvas.enabled = false;
         ScoreCanvas.enabled = false;
         ScoreAnimationLeaveHead.ReachEndState();
-        UIState.inst.SetUIAsInteractable(false);
+        UIState.inst.SetInteractableUIState(false);
         DartSticker.inst.SetVisible(false);
         DartGame.BeginGame(PartnerIndex);
         
