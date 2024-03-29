@@ -3,4 +3,4 @@
 [Newln]You want to buy me drinks?
 [Jess2]
 [Newln]Sure, saves me the trouble.
-[Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerintox1]
+[Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerIntox1]

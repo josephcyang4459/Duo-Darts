@@ -80,11 +80,9 @@ public class Partner : ScriptableObject {
         }
     }
 
-    public void __resetValues()
-    {
-        Love = 0;
-        Intoxication = 0;
-        Composure = 0;
+    public void __resetValues() {
+        Love = 0; Intoxication = 0; Composure = 0;
+
         for (int i = 0; i < RelatedCutScenes.Length; i++)
             RelatedCutScenes[i].completed = false;
     }

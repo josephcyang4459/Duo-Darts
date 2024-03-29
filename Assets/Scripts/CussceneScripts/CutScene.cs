@@ -156,9 +156,6 @@ public class CutScene : ScriptableObject
 
     PlayerSkills __GetPSkill(string s)
     {
-        if (s.Contains("Charisma"))
-            return PlayerSkills.Skill;
-
         if (s.Contains("Intoxication"))
             return PlayerSkills.Intoxication;
 
@@ -199,12 +196,11 @@ public class CutScene : ScriptableObject
                     return PCS;
                 }
             case __CutsceneActions.ResetIntox:
-               
-                    ChangeStat PCSee = new ChangeStat();
-                    PCSee.Character = __getCharactersFrom(ss);
-                    PCSee.Stat = __GetSkill(ss);
-                    PCSee.Adjust = -1000000;
-                    return PCSee;
+                ChangeStat PCSee = new ChangeStat();
+                PCSee.Character = __getCharactersFrom(ss);
+                PCSee.Stat = __GetSkill(ss);
+                PCSee.Adjust = -1000000;
+                return PCSee;
 
         }
         return null;
