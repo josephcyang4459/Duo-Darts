@@ -13,7 +13,7 @@ public class TypeWriterEffect : MonoBehaviour {
     public Coroutine typer;
     public bool writing;
 
-    public void Start()
+    public void Awake()
     {
         OptionsMenu.TextSpeedChange += TextSpeedChange; 
     }

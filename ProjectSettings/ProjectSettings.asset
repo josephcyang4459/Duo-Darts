@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}
+  - logo: {fileID: 21300000, guid: 4cc35168696386e478c02d078de445b6, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -136,7 +136,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 0
-  bundleVersion: .9.3
+  bundleVersion: .9.4
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -275,7 +275,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: b58b5a82f48309b4598fedc243d6f898, type: 3}
+      m_Icon: {fileID: 2800000, guid: 59096bd7eedef644db7f1965cf414a9d, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

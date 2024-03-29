@@ -53,6 +53,7 @@ public enum SceneNumbers
 {
     MainMenu,
     Game,
+    Darts,
     Credits,
     NoLovers,
     DidNotWinTheTournament,
@@ -89,12 +90,13 @@ public enum Locations
      none
 }
 
-public enum Controls
+public enum ControllerState
 {
-    Pause,
-    DartsGame,
-    Cutscene,
+    UseIfConnected,
+    ForceKeyboard,
+    ForceController
 }
+
 
 #if UNITY_EDITOR
 

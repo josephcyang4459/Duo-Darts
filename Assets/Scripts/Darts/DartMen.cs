@@ -18,7 +18,7 @@ public class DartMen : MonoBehaviour
 
     public void begin()
     {
-        dg.overall = s.hour < 7 ? 501 : 701;//gets correct score
+        dg.ScoreNeededToWin = s.hour < 7 ? 501 : 701;//gets correct score
 
         s.off();
         menue.enabled = true;
@@ -74,7 +74,7 @@ public class DartMen : MonoBehaviour
     /// <param name="currentHour"></param>
     public void exception(int characterIndex, int currentHour)
     {
-        dg.overall = currentHour < 7 ? 501 : 701;
+        dg.ScoreNeededToWin = currentHour < 7 ? 501 : 701;
         dg.BeginGame(characterIndex);
     }
 

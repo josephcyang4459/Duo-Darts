@@ -139,10 +139,10 @@ RectTransform:
   m_Father: {fileID: 1349318527535037854}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36.648}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -793, y: 426}
-  m_SizeDelta: {x: -1420, y: -980}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1349318526898414973
 CanvasRenderer:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7372549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 6471953790856357863}
   m_Layer: 0
   m_Name: ----CutScene-------
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,21 +520,10 @@ MonoBehaviour:
   cutscene: {fileID: 0}
   dh: {fileID: 1349318528139589136}
   p: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
-  partners:
-  - {fileID: 11400000, guid: e575fcd868f08ec4996b7933224505c7, type: 2}
-  - {fileID: 11400000, guid: 2ab207ae24ac95646911cd954cb7a522, type: 2}
-  - {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
-  - {fileID: 11400000, guid: 776167e56230cf34fa2659b1d7d3deeb, type: 2}
-  - {fileID: 11400000, guid: 74d015bdf71cb76428402f690be77888, type: 2}
-  - {fileID: 11400000, guid: 83be2c7f05ce2cb4f99101b29adea9a1, type: 2}
-  - {fileID: 11400000, guid: ab0a7d41ea27aae4aa2006405dc0bb21, type: 2}
-  - {fileID: 11400000, guid: 39fcdac6cc21e7c4a8f5144ac3c93c25, type: 2}
-  - {fileID: 11400000, guid: 712bd6933c54e8849a3c0b0bfaba05d4, type: 2}
-  - {fileID: 11400000, guid: 8042064c8f7a72f4db4366f5f98413de, type: 2}
-  - {fileID: 11400000, guid: c6b721fd4d966794a8db23e543f14331, type: 2}
+  characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   interact: {fileID: 6692025020985450312, guid: 0436482055235fb43825f893cacf9475, type: 3}
   dialougeCanvas: {fileID: 1349318527535037855}
-  character: {fileID: 1349318528263472595}
+  characterImg: {fileID: 1349318528263472595}
   characterName: {fileID: 1349318527987614313}
   TextBox: {fileID: 1349318527361611300}
   TextLine: {fileID: 1349318528412877901}
@@ -685,7 +674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6471953790856357863}
         m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
         m_MethodName: UI_Response
         m_Mode: 3
@@ -697,9 +686,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Schedule, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 6471953790856357863}
+        m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -831,21 +820,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6471953790856357863}
         m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
         m_MethodName: UI_Response
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Schedule, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 6471953790856357863}
+        m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -881,7 +870,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349318527535037850}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2213,21 +2202,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6471953790856357863}
         m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
         m_MethodName: UI_Response
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Schedule, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 6471953790856357863}
+        m_TargetAssemblyTypeName: CutsceneHandler, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2381,8 +2370,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ebjgbjgbjgeableagbkgbeakl
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 36f78ecdbb98df045a441b79bbe2893d, type: 2}
-  m_sharedMaterial: {fileID: 2163577062301369927, guid: 36f78ecdbb98df045a441b79bbe2893d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2406,8 +2395,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2474,7 +2463,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349318528320504069}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0

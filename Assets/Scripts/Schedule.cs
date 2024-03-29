@@ -86,7 +86,7 @@ public class Schedule : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < characters.list.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
             int availableCutSceneIndex = characters.list[i].GetCutScene();
 

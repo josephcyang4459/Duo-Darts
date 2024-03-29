@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: DEFAULT
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  textSize: 72
+  textSize: 40
   Composure: 0
   Intoxication: 0
   Love: 0
