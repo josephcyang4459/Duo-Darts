@@ -46,9 +46,8 @@ public class Schedule : MonoBehaviour
         Audio.inst.PlaySong(song0);
         TimeText.text = timeAsString();
         UIState.inst.SetAsSelectedButton(GenderChoiceButton);
-        UIState.inst.SetInteractableUIState(true);
+        UIState.inst.SetInteractable(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
-        characters = CutsceneHandler.inst.characters;
     }
 
     private string timeAsString()
@@ -66,9 +65,9 @@ public class Schedule : MonoBehaviour
     public void ChooseCharacterGender(int i)
     {
         CutsceneHandler.inst.SetCharacterSprite(i);
-        setTime(0);
-        UIState.inst.SetAsSelectedButton(FirstLocationButton);
         PauseMenu.inst.SetEnabled(true);
+        setTime(0);
+        
     }
 
     private void setLocations()
@@ -125,7 +124,7 @@ public class Schedule : MonoBehaviour
     {
         Audio.inst.PlaySong(song0);
         LocationCanvas.enabled = true;
-
+        //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
         increaseTimeByMinutes((int)time);
 

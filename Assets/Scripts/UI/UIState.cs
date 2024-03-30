@@ -38,7 +38,7 @@ public class UIState : MonoBehaviour
         return CurrentFirstSelected;
     }
 
-    public void SetInteractableUIState(bool enabled)
+    public void SetInteractable(bool enabled)
     {
         //EventSystem.enabled = enabled;
     }

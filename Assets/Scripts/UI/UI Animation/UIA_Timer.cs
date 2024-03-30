@@ -13,7 +13,7 @@ public class UIA_Timer : UIAnimationElement
 
     public override void ReachEndState()
     {
-        Pass();
+        PassToNextEndState();
     }
 
     private void FixedUpdate()

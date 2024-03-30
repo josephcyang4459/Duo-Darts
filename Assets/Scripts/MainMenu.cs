@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour, Caller {
+public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] Color[] Colors;
     [SerializeField] int Index;
     [SerializeField] float Speed;
@@ -28,8 +27,12 @@ public class MainMenu : MonoBehaviour, Caller {
     {
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
-        Audio.inst.StopSong();
-        UIState.inst.SetInteractableUIState(true);
+        TransitionManager.inst.ReadyToEnterScene(this);
+    }
+
+    public void EnterScene() {
+        PauseMenu.inst.SetEnabled(false);
+        UIState.inst.SetInteractable(true);
         Ping();
     }
 
@@ -42,22 +45,20 @@ public class MainMenu : MonoBehaviour, Caller {
 
     public void ShowCredits()
     {
-        SceneManager.LoadScene((int)SceneNumbers.Credits);
+        TransitionManager.inst.GoToScene(SceneNumbers.Credits);
     }
 
     public void PlayDarts()
     {
-        SceneManager.LoadScene((int)SceneNumbers.Darts);
+        TransitionManager.inst.GoToScene(SceneNumbers.Darts);
     }
 
     public void PlayGame() {
         
-        System.GC.Collect();
-        SceneManager.LoadScene((int)SceneNumbers.Game);
+        TransitionManager.inst.GoToScene(SceneNumbers.Game);
     }
 
     public void QuitGame() {
-        DartSticker.inst.SetVisible(false);
         Application.Quit();
     }
 

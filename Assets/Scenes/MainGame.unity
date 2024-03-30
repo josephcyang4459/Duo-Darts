@@ -388,7 +388,7 @@ MonoBehaviour:
   - Name: Darts
     EventsButtonUsed: 0
     Events: []
-  characters: {fileID: 0}
+  characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   location: 0
   LocationName: {fileID: 789275082}
   EventListCanvas: {fileID: 470360907}
@@ -416,15 +416,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7990af239f2102a42838caf75bb82c2e, type: 3}
   - {fileID: 21300000, guid: 4d5875e19c6336342a90e5b30579ac91, type: 3}
   - {fileID: 21300000, guid: 0ead0a0671943fd4db7b1a22e7fc1861, type: 3}
-  ListCanvasBack: {fileID: 1291131178}
   LocationCanvas: {fileID: 5841400000959213199}
-  LocationFirstButton: {fileID: 5841400001972968933}
   SelectedLocationImage: {fileID: 1696795899}
   DartButtonGameObject: {fileID: 1426603408}
   LocationLocationImage: {fileID: 1294976672}
   song0: {fileID: 8300000, guid: 293eb5cc5784d1d4cb69e7ec35a50f19, type: 3}
   cli: {fileID: 8300000, guid: ee59a797ddaa4534aac34630a6d1bba5, type: 3}
-  g: {fileID: 1288483499}
+  FirstLocationButton: {fileID: 0}
+  FirstEventButton: {fileID: 0}
+  GenderChoiceButton: {fileID: 0}
   TimeText: {fileID: 1342881975}
   TimeCanvas: {fileID: 1919161308}
   DartsMenu: {fileID: 347492561}
@@ -777,8 +777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2edad74ce7909d49802db18e88dcc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndGameCutoff: 0
-  MaxLoveNeeded: 0
   menue: {fileID: 1103727442}
   dg: {fileID: 1572333208}
   s: {fileID: 183543931}
@@ -798,7 +796,7 @@ MonoBehaviour:
   - {fileID: 1083333680}
   - {fileID: 1512685809}
   indices: ffffffffffffffffffffffffffffffff
-  backButtonm: {fileID: 1235160073}
+  FirstSelectButton: {fileID: 0}
 --- !u!1 &459524243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,11 +2485,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184515226}
   m_CullTransparentMesh: 1
---- !u!1 &1235160073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7917560275845550893, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
-  m_PrefabInstance: {fileID: 7239586940465408954}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285111286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,7 +3593,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 347492561}
         m_TargetAssemblyTypeName: DartMen, Assembly-CSharp
-        m_MethodName: begin
+        m_MethodName: ShowPartnerSelectMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

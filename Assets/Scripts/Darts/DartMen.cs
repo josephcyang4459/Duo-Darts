@@ -61,7 +61,7 @@ public class DartMen : MonoBehaviour
     {
         menue.enabled = false;
         s.off();
-        UIState.inst.SetInteractableUIState(false);
+        UIState.inst.SetInteractable(false);
         dg.BeginGame(indices[i]);
 
     }

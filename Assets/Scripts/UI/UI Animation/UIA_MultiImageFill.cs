@@ -10,19 +10,21 @@ public class UIA_MultiImageFill : UIAnimationElement
     float TargetFill;
     [SerializeField] float Speed;
     [SerializeField] [Range(0,2)] float SubsequentOffset;
-    public override void Begin(Caller caller)
-    {
+    [SerializeField] Direction Behavior = Direction.Auto;
+
+    float GetDirection() {
+        if (Behavior == Direction.Auto)
+            return CurrentFill < .1 ? 1 : 0;
+        if (Behavior == Direction.Fill)
+            return 1;
+        return 0;
+    }
+
+    public override void Begin(Caller caller) {
         Caller = caller;
         CurrentFill = Images[0].fillAmount;
-        if (CurrentFill < .1f)
-        {
-            TargetFill = 1;
-           
-        }
-        else
-        {
-            TargetFill = 0;
-        }
+        TargetFill = GetDirection();
+
         enabled = true;
     }
 
@@ -34,10 +36,10 @@ public class UIA_MultiImageFill : UIAnimationElement
 
     public override void ReachEndState()
     {
-        CurrentFill = CurrentFill<.1f?1:0;
+        CurrentFill = GetDirection();
         for (int i = 0; i < Images.Length; i++)
             Images[i].fillAmount = CurrentFill;
-        End();
+        PassToNextEndState();
     }
 
 
@@ -51,4 +53,9 @@ public class UIA_MultiImageFill : UIAnimationElement
             End();
     }
 
+    enum Direction {
+        Auto,
+        Fill,
+        Empty
+    }
 }

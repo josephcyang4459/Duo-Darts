@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour, Caller
 {
@@ -44,6 +43,8 @@ public class PauseMenu : MonoBehaviour, Caller
     void UnenablePause()
     {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
+        CurrentState = false;
+        ConsequencesOfCurrentState();
         PauseInput.action.Disable();
         PauseInput.action.performed -= ActivatePauseMenu;
     }
@@ -56,22 +57,24 @@ public class PauseMenu : MonoBehaviour, Caller
     void PauseMenueStateChange()
     {
         CurrentState = !CurrentState;
+        ConsequencesOfCurrentState();
+    }
+
+
+    void ConsequencesOfCurrentState() {
         PauseOptionsCanvas.enabled = CurrentState;
         BackGround.enabled = CurrentState;
-        if (CurrentState)
-        {
+        if (CurrentState) {
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
             returnState = UIState.inst.GetCurrentState();
-            UIState.inst.SetInteractableUIState(true);
+            UIState.inst.SetInteractable(true);
             OptionsMenu.inst.HideOptions();
             UIState.inst.SetAsSelectedButton(FirstSelected);
         }
-        else
-        {
+        else {
             UIState.inst.SetAsSelectedButton(returnGameObjectButton);
-            UIState.inst.SetInteractableUIState(returnState);
+            UIState.inst.SetInteractable(returnState);
         }
-            
     }
 
     private void OnDestroy()
@@ -89,9 +92,8 @@ public class PauseMenu : MonoBehaviour, Caller
 
     public void ExitToMain()
     {
-        PauseMenueStateChange();
-        SceneManager.LoadScene(0);
-        System.GC.Collect();
+        //PauseMenueStateChange();
+        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
     public void ExitToDesktop()

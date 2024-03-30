@@ -10,6 +10,10 @@ public abstract class UIAnimationElement : MonoBehaviour
 
     public abstract void ReachEndState();
 
+    public void PassToNextEndState() {
+        if (CallWhenComplete != null)
+            CallWhenComplete.ReachEndState();
+    }
 
     public void Pass()
     {

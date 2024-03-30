@@ -16307,7 +16307,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917560275057393037}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -17688,7 +17688,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917560275646839217}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -17725,19 +17725,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b38d7c715342c74bb039d241cec15c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Partners: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
-  MissClamp: {x: 2.5, y: 2.5}
+  characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
+  stats: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   Visuals: {fileID: 7917560275646839230}
+  aim: {fileID: 7917560275988162777}
+  Dart: {fileID: 7917560275646839229}
+  partnerIndex: 0
   turnSum: 0
-  overall: 49
+  ScoreNeededToWin: 501
   points: 0
   currentTurn: 0
-  partnerIndex: 0
-  aim: {fileID: 7917560275988162777}
-  NuetralAITargetRange: {x: 17, y: 19}
   numberOfDartsThrow: 0
   maxTurns: 5
-  Dart: {fileID: 7917560275646839229}
+  NuetralAITargetRange: {x: 17, y: 19}
+  BaseOffset: 0.1
+  MaxOffset: 4
   dartCanvas: {fileID: 7917560275768366587}
   driftDefault: 1
   c:
@@ -17762,13 +17764,13 @@ MonoBehaviour:
   - {fileID: 7239586941869945722}
   - {fileID: 7917560275280031204}
   bullseye: {fileID: 1923462898247035485}
-  Miss: {fileID: 0}
-  stats: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
-  s: {fileID: 0}
+  Miss: {fileID: 7917560275204523332}
   winc: {fileID: 7917560275057393033}
   losec: {fileID: 7917560276996041007}
   ac: {fileID: 8300000, guid: a1dd567813813ac4ea7df707099d3517, type: 3}
   board: {fileID: 7917560276893073959}
+  s: {fileID: 0}
+  StandAlone: {fileID: 0}
   order: 140112040d060a0f021103130710080b0e090c05
   multiplication: 02010301
   reset: 0
@@ -17923,7 +17925,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917560275768366584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -18461,7 +18463,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917560275984847989}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -20972,7 +20974,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917560276996040995}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0

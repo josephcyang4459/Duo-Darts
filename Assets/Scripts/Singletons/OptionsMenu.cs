@@ -22,10 +22,8 @@ public class OptionsMenu : MonoBehaviour
     public static event SettingChange VolumeChange;
     public static event SettingChange TextSpeedChange;
 
-    private void Start()
-    {
-        if (inst != null)
-        {
+    private void Start(){
+        if (inst != null){
             Destroy(gameObject);
             return;
         }
@@ -40,15 +38,14 @@ public class OptionsMenu : MonoBehaviour
         ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));
     }
 
-    public void ShowOptions(Caller caller)
-    {
+    public void ShowOptions(Caller caller){
         Caller = caller;
         Canvas.enabled = true;
+        DartSticker.inst.SetVisible(false);
         UIState.inst.SetAsSelectedButton(FirstSelected);
     }
 
-    public void HideOptions()
-    {
+    public void HideOptions(){
         if (!Canvas.enabled)
             return;
         PlayerPrefs.Save();
@@ -61,8 +58,7 @@ public class OptionsMenu : MonoBehaviour
       
     }
 
-    public void VolumeSliderFunction()
-    {
+    public void VolumeSliderFunction(){
         VolumeText.text = VolumeSlider.value.ToString();
         float realVolume = VolumeSlider.value / 10f;
         PlayerPrefs.SetFloat("volume", realVolume);
@@ -70,29 +66,24 @@ public class OptionsMenu : MonoBehaviour
         VolumeChange(realVolume);
     }
 
-    public void TextSpeedSliderFunction()
-    {
+    public void TextSpeedSliderFunction(){
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         PlayerPrefs.SetFloat("textSpeed", TextSpeedSlider.value);
         Audio.inst.PlayClip(AudioClips.Click);
         TextSpeedChange(TextSpeedSlider.value);
     }
 
-    public void ControllerOptionsFunction(int index)
-    {
-        if (Toggles[index] == null) return; // This it temporary code for now. toggles list being full of null values at the moment.
+    public void ControllerOptionsFunction(int index){
         if (!Toggles[index].isOn) return;
 
-        for (int i = 0; i < 3; i++)
-        {
+        for (int i = 0; i < 3; i++){
             Toggles[i].isOn = i == index;
             Toggles[i].interactable = i != index;
         }
       
         Audio.inst.PlayClip(AudioClips.Click);
         PlayerPrefs.SetInt("controller", index);
-        switch (index)
-        {
+        switch (index){
             case 0: ControlState.inst.SetControlState(ControllerState.UseIfConnected);break;
             case 1: ControlState.inst.SetControlState(ControllerState.ForceKeyboard);break;
             case 2: ControlState.inst.SetControlState(ControllerState.ForceController);break;

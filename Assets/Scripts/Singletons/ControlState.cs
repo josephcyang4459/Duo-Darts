@@ -37,8 +37,9 @@ public class ControlState : MonoBehaviour, Caller
 
     public void ShowControlAnimation()
     {
-        if (CurrentlyAnimating)
-            return;
+        if (CurrentlyAnimating) {
+            AnimationHead.ReachEndState();
+        }
         CurrentlyAnimating = true;
         ControlImage.sprite = IsUsingController() ? ControllerSprite : MouseSprite;
         AnimationHead.Begin(this);
