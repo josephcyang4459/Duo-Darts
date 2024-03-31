@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chad
   m_EditorClassIdentifier: 
   Name: Chad
-  Font: {fileID: 11400000, guid: 034792957c4d43946bd88090e9d9fdf8, type: 2}
+  Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   textSize: 72
   Composure: 0
   Intoxication: 0

@@ -10,46 +10,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
-  m_Name: bathroomadvice
+  m_Name: Bathroom Wall
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 6642624258973368615
-  - rid: 6642624258973368616
-  - rid: 6642624258973368617
-  - rid: 6642624258973368618
-  - rid: 6642624258973368619
-  - rid: 6642624258973368620
-  defaultCharacter: Bathroomwall
-  exception: 0
-  AnotherFuckingException: 0
+  - rid: 6642624350020960876
+  - rid: 6642624350020960877
+  - rid: 6642624350020960878
+  - rid: 6642624350020960879
+  - rid: 6642624350020960880
+  - rid: 6642624350020960881
+  defaultCharacter: Bathroom Wall
+  ForceDarts: 0
   aa: {fileID: 4900000, guid: f11dd3178e130cb47bc6332994918bad, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 6642624258973368615
+    - rid: 6642624350020960876
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You examine a wall with scribbles on it while relieving
           yourself in the bathroom.'
-    - rid: 6642624258973368616
+    - rid: 6642624350020960877
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: When throwing darts, think of rice balls.
-    - rid: 6642624258973368617
+    - rid: 6642624350020960878
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Trust me it helps!
-    - rid: 6642624258973368618
+    - rid: 6642624350020960879
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave feeling enlightened.*'
-    - rid: 6642624258973368619
+    - rid: 6642624350020960880
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 2
         Adjust: 1
-    - rid: 6642624258973368620
+    - rid: 6642624350020960881
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 1

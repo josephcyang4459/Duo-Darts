@@ -73,7 +73,9 @@ public class DartMen : MonoBehaviour
     /// <param name="currentHour"></param>
     public void exception(int characterIndex, int currentHour)
     {
-        dg.ScoreNeededToWin = currentHour < 7 ? 501 : 701;
+        s.LocationCanvas.enabled = false;
+        s.EventListCanvas.enabled = false;
+        dg.ScoreNeededToWin = currentHour < 7 ? 3 : 701;
         dg.BeginGame(characterIndex);
     }
 

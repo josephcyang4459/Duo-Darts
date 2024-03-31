@@ -13,102 +13,98 @@ MonoBehaviour:
   m_Name: DanceAdviceGirl
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276765
-  - rid: 3415138150063276766
-  - rid: 3415138150063276767
-  - rid: 3415138150063276768
-  - rid: 3415138150063276769
-  - rid: 3415138150063276770
-  - rid: 3415138150063276771
-  - rid: 3415138150063276772
-  - rid: 3415138150063276773
-  - rid: 3415138150063276774
-  - rid: 3415138150063276775
-  - rid: 3415138150063276776
-  - rid: 3415138150063276777
-  - rid: 3415138150063276778
-  - rid: 3415138150063276779
-  - rid: 3415138150063276780
+  - rid: 6642624351303631597
+  - rid: 6642624351303631598
+  - rid: 6642624351303631599
+  - rid: 6642624351303631600
+  - rid: 6642624351303631601
+  - rid: 6642624351303631602
+  - rid: 6642624351303631603
+  - rid: 6642624351303631604
+  - rid: 6642624351303631605
+  - rid: 6642624351303631606
+  - rid: 6642624351303631607
+  - rid: 6642624351303631608
+  - rid: 6642624351303631609
+  - rid: 6642624351303631610
+  - rid: 6642624351303631611
+  - rid: 6642624351303631612
+  - rid: 6642624351303631613
   defaultCharacter: Dance Girl
-  exception: 0
-  playerS:
-    stats:
-    - Skill
-    values: 01000000
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
+  ForceDarts: 0
   aa: {fileID: 4900000, guid: 5a3a459d1a213e449811ba3abd24fc10, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276765
+    - rid: 6642624351303631597
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You approach a young woman dancing rampantly.*'
-    - rid: 3415138150063276766
+    - rid: 6642624351303631598
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 6642624351303631599
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey! You!
-    - rid: 3415138150063276767
+    - rid: 6642624351303631600
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Dance!
-    - rid: 3415138150063276768
+    - rid: 6642624351303631601
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs your arms and flails you around for a while.*'
-    - rid: 3415138150063276769
+    - rid: 6642624351303631602
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Eventually she tires out and walks off to the side of the
           dance floor with you.*'
-    - rid: 3415138150063276770
+    - rid: 6642624351303631603
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You're incredible!
-    - rid: 3415138150063276771
+        message: "You\u2019re incredible!"
+    - rid: 6642624351303631604
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Here's some advice!
-    - rid: 3415138150063276772
+        message: "Here\u2019s some advice!"
+    - rid: 6642624351303631605
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: When you're checking out in darts imagine you're operating a cash
-          register.
-    - rid: 3415138150063276773
+        message: "When you\u2019re checking out in darts imagine you\u2019re operating
+          a cash register."
+    - rid: 6642624351303631606
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Like'
-    - rid: 3415138150063276774
+        message: Like...
+    - rid: 6642624351303631607
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Cha-ching!
-    - rid: 3415138150063276775
+    - rid: 6642624351303631608
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know?
-    - rid: 3415138150063276776
+    - rid: 6642624351303631609
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It really gives you a powerful perspective!
-    - rid: 3415138150063276777
+    - rid: 6642624351303631610
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways. Goodbye!
-    - rid: 3415138150063276778
+    - rid: 6642624351303631611
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She leaves you.*'
-    - rid: 3415138150063276779
+    - rid: 6642624351303631612
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You feel enlightened by her advice.*'
-    - rid: 3415138150063276780
+    - rid: 6642624351303631613
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Player Stat Block
-        Stat: 2
+        Stat: 1
         Adjust: 1

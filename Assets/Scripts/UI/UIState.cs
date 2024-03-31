@@ -19,28 +19,26 @@ public class UIState : MonoBehaviour
 
     public void SetAsSelectedButton(GameObject gameObject)
     {
-        if (!ControlState.inst.IsUsingController())
-        {
-            CurrentFirstSelected = gameObject;
-            return;
-        }
+        CurrentFirstSelected = gameObject;
         EventSystem.SetSelectedGameObject(gameObject);
     }
 
     public void ControllerConnected()
     {
-        if (EventSystem.enabled)
-            EventSystem.SetSelectedGameObject(CurrentFirstSelected);
+        if (EventSystem.enabled) {
+            EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
+        }
+            
     }
 
     public GameObject GetCurrentSelected()
     {
-        return CurrentFirstSelected;
+        return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected;
     }
 
     public void SetInteractable(bool enabled)
     {
-        //EventSystem.enabled = enabled;
+        EventSystem.enabled = enabled;
     }
 
     public bool GetCurrentState()

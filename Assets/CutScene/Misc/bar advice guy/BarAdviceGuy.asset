@@ -13,77 +13,82 @@ MonoBehaviour:
   m_Name: BarAdviceGuy
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276897
-  - rid: 3415138150063276898
-  - rid: 3415138150063276899
-  - rid: 3415138150063276900
-  - rid: 3415138150063276901
-  - rid: 3415138150063276902
-  - rid: 3415138150063276903
-  - rid: 3415138150063276904
-  - rid: 3415138150063276905
-  - rid: 3415138150063276906
-  - rid: 3415138150063276907
-  - rid: 3415138150063276908
+  - rid: 6642624351303631514
+  - rid: 6642624351303631515
+  - rid: 6642624351303631516
+  - rid: 6642624351303631517
+  - rid: 6642624351303631518
+  - rid: 6642624351303631519
+  - rid: 6642624351303631520
+  - rid: 6642624351303631521
+  - rid: 6642624351303631522
+  - rid: 6642624351303631523
+  - rid: 6642624351303631524
+  - rid: 6642624351303631525
+  - rid: 6642624351303631526
   defaultCharacter: Bar Guy
-  exception: 0
-  AnotherFuckingException: 0
+  ForceDarts: 0
   aa: {fileID: 4900000, guid: 9cdd3b4285517c64dbbb12a33c016ee1, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276897
+    - rid: 6642624351303631514
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to a man at the bar.*'
-    - rid: 3415138150063276898
+    - rid: 6642624351303631515
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 6642624351303631516
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He begins talking to you without prompting.*'
-    - rid: 3415138150063276899
+    - rid: 6642624351303631517
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: My boyfriend, who was also my darts partner, left me because I'm
-          bad at darts.
-    - rid: 3415138150063276900
+        message: "My boyfriend, who was also my darts partner, left me because I\u2019m
+          bad at darts."
+    - rid: 6642624351303631518
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He looks at you with passion.*'
-    - rid: 3415138150063276901
+    - rid: 6642624351303631519
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I will not let you fail like I have.
-    - rid: 3415138150063276902
+    - rid: 6642624351303631520
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: My best advice for you to avoid my fate is to compliment something
           about your darts partner before every game.
-    - rid: 3415138150063276903
+    - rid: 6642624351303631521
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: It'll make them more confident. And you'll feel better about yourself.
-    - rid: 3415138150063276904
+        message: "It\u2019ll make them more confident. And you\u2019ll feel better
+          about yourself."
+    - rid: 6642624351303631522
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Speaking of which, I'm gonna go cry in a bathroom stall to make
-          myself feel better.
-    - rid: 3415138150063276905
+        message: "Speaking of which, I\u2019m gonna go cry in a bathroom stall to
+          make myself feel better."
+    - rid: 6642624351303631523
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Good luck in the tournament.
-    - rid: 3415138150063276906
+    - rid: 6642624351303631524
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He leaves you to contemplate the fickle nature of love
           and darts over a cold drink.*'
-    - rid: 3415138150063276907
-      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
-      data:
-        Stat: 1
-        Adjust: 1
-    - rid: 3415138150063276908
+    - rid: 6642624351303631525
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 2
+        Adjust: 1
+    - rid: 6642624351303631526
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Stat: 1
         Adjust: 1

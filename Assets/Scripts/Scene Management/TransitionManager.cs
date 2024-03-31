@@ -20,6 +20,7 @@ public class TransitionManager : MonoBehaviour, Caller {
         Audio.inst.StopSong();
         PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
+        DartSticker.inst.SetVisible(false);
         NextScene = nextScene;
         State = AnimationState.Exiting;
         TransitionAnimationHeads[(int)NextScene].Enter(this);
@@ -51,6 +52,10 @@ public class TransitionManager : MonoBehaviour, Caller {
             case AnimationState.Exiting: ExitScene(); break;
         }
         State = AnimationState.Passive;
+    }
+
+    public SceneNumbers GetCurrentScene() {
+        return NextScene;
     }
 
     [System.Serializable]

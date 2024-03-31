@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: Chad_Default
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 6642624258973368614
+  - rid: 6642624353882079233
   defaultCharacter: Chad
-  exception: 0
-  AnotherFuckingException: 0
+  ForceDarts: 0
   aa: {fileID: 0}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 6642624258973368614
+    - rid: 6642624353882079233
       type: {class: DefaultScene/PresentOptions, ns: , asm: Assembly-CSharp}
       data:
         name: present options

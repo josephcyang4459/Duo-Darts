@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
-  m_Name: charminggirl
+  m_Name: CharmingAdviceGirl
   m_EditorClassIdentifier: 
   blocks:
   - rid: 6642624258973368506

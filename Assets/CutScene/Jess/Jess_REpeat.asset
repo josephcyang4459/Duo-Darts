@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
-  m_Name: Jess_REpeat
+  m_Name: Jess_Repeat
   m_EditorClassIdentifier: 
   blocks:
   - rid: 3415138152484438487
@@ -20,14 +20,7 @@ MonoBehaviour:
   - rid: 3415138152484438491
   - rid: 3415138152484438492
   defaultCharacter: Jess
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 02000000
-    values: 02000000
-  AnotherFuckingException: 1
+  ForceDarts: 0
   aa: {fileID: 4900000, guid: ad9b55d26cb6c394c8013109d47c4546, type: 3}
   reset: 0
   references:
@@ -40,7 +33,6 @@ MonoBehaviour:
     - rid: 3415138152484438488
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 1
     - rid: 3415138152484438489
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -57,7 +49,6 @@ MonoBehaviour:
     - rid: 3415138152484438492
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 2
         Adjust: 2

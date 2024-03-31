@@ -2749,7 +2749,7 @@ MonoBehaviour:
   CallWhenComplete: {fileID: 0}
   Objects:
   - {fileID: 135899326}
-  IntendedState: 0
+  IntendedState: 1
 --- !u!114 &1160697163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2769,7 +2769,7 @@ MonoBehaviour:
   - {fileID: 1699223150}
   Speed: 3
   SubsequentOffset: 0.12
-  Behavior: 0
+  Behavior: 1
 --- !u!1 &1196138199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,7 +4635,7 @@ MonoBehaviour:
   CallWhenComplete: {fileID: 1559286036}
   Objects:
   - {fileID: 135899326}
-  IntendedState: 0
+  IntendedState: 2
 --- !u!114 &1559286036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4655,7 +4655,7 @@ MonoBehaviour:
   - {fileID: 1699223150}
   Speed: 3
   SubsequentOffset: 0.12
-  Behavior: 0
+  Behavior: 2
 --- !u!4 &1559286037
 Transform:
   m_ObjectHideFlags: 0

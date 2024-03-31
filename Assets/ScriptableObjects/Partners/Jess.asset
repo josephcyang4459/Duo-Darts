@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jess
   m_EditorClassIdentifier: 
   Name: Jess
-  Font: {fileID: 11400000, guid: a247a618683b9cb468929d8d3987bfe9, type: 2}
+  Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   textSize: 100
   Composure: 0
   Intoxication: 22

@@ -16,7 +16,7 @@ MonoBehaviour:
   Font: {fileID: 11400000, guid: ee6a3cbe0970fa444923a95721746650, type: 2}
   textSize: 72
   Composure: 0
-  Intoxication: 0
+  Intoxication: 4
   Love: 0
   RelatedCutScenes:
   - Location: bar

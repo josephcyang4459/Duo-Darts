@@ -39,6 +39,7 @@ public class Audio : MonoBehaviour
 
     public void PlayClip(AudioClips clip)
     {
+        return;
         switch (clip)
         {
             case AudioClips.Click: PlayClip(ClickSound);return;
@@ -48,11 +49,13 @@ public class Audio : MonoBehaviour
 
     public void PlayClip(AudioClip clip)
     {
+        return;
         Source.PlayOneShot(clip);
     }
 
     public void PlaySong(AudioClip clip)
     {
+        return;
         if (Source.clip == clip)
             if (Source.isPlaying)
                 return;

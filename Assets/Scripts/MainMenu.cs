@@ -55,7 +55,7 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     public void PlayGame() {
         
-        TransitionManager.inst.GoToScene(SceneNumbers.Game);
+        TransitionManager.inst.GoToScene(SceneNumbers.Story);
     }
 
     public void QuitGame() {

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Schedule : MonoBehaviour
+public class Schedule : MonoBehaviour, SceneEntrance
 {
     public int hour = 4;
     public int minutes =0;
@@ -40,15 +40,24 @@ public class Schedule : MonoBehaviour
     public Canvas TimeCanvas;
 
     public DartMen DartsMenu;
-
+    public ResetStats ResetStats;
     public void Start()
     {
         Audio.inst.PlaySong(song0);
         TimeText.text = timeAsString();
+        ResetStats.ResetStatsAndCompletionToBase();
+        TransitionManager.inst.ReadyToEnterScene(this);
+        
+    }
+
+    public void EnterScene() {
+        Debug.Log("here");
         UIState.inst.SetAsSelectedButton(GenderChoiceButton);
+        PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
     }
+
 
     private string timeAsString()
     {
@@ -89,7 +98,7 @@ public class Schedule : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             int availableCutSceneIndex = characters.list[i].GetCutScene();
 
@@ -122,6 +131,8 @@ public class Schedule : MonoBehaviour
 
     public void setTime(TimeBlocks time)
     {
+        CharacterStatUI.inst.UpdateUI();
+        UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(song0);
         LocationCanvas.enabled = true;
         //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE

@@ -52,7 +52,7 @@ public enum PartnerCutscenes
 public enum SceneNumbers
 {
     MainMenu,
-    Game,
+    Story,
     Darts,
     Credits,
     NoLovers,

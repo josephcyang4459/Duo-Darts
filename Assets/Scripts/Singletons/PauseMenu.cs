@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour, Caller
     [SerializeField] InputActionReference PauseInput;
     [SerializeField] bool Enabled;
     [SerializeField] Canvas PauseOptionsCanvas;
+    [SerializeField] Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
+    
     [SerializeField] bool CurrentState;
 
     [SerializeField] GameObject FirstSelected;
@@ -24,12 +26,12 @@ public class PauseMenu : MonoBehaviour, Caller
         inst = this;
     }
 
-    public void SetEnabled(bool enabled)
+    public void SetEnabled(bool enabled, bool setFirstButtonUponUnenable =true)
     {
         if (enabled)
             EnablePause();
         else
-            UnenablePause();
+            UnenablePause(setFirstButtonUponUnenable);
         Enabled = enabled;
     }
 
@@ -40,11 +42,11 @@ public class PauseMenu : MonoBehaviour, Caller
         PauseInput.action.performed += ActivatePauseMenu;
     }
 
-    void UnenablePause()
+    void UnenablePause(bool setFirstButtonUponUnenable = true)
     {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
         CurrentState = false;
-        ConsequencesOfCurrentState();
+        ConsequencesOfCurrentState(setFirstButtonUponUnenable);
         PauseInput.action.Disable();
         PauseInput.action.performed -= ActivatePauseMenu;
     }
@@ -61,9 +63,12 @@ public class PauseMenu : MonoBehaviour, Caller
     }
 
 
-    void ConsequencesOfCurrentState() {
+    void ConsequencesOfCurrentState(bool setFirstButtonUponUnenable = true) {
         PauseOptionsCanvas.enabled = CurrentState;
         BackGround.enabled = CurrentState;
+        if(TransitionManager.inst!=null)
+        if (TransitionManager.inst.GetCurrentScene() == SceneNumbers.Story)
+            StoryOptionsCanvas.enabled = CurrentState;
         if (CurrentState) {
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
             returnState = UIState.inst.GetCurrentState();
@@ -72,15 +77,18 @@ public class PauseMenu : MonoBehaviour, Caller
             UIState.inst.SetAsSelectedButton(FirstSelected);
         }
         else {
-            UIState.inst.SetAsSelectedButton(returnGameObjectButton);
+            if (setFirstButtonUponUnenable)
+                UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);
         }
     }
 
     private void OnDestroy()
     {
-        if (enabled)
-            UnenablePause();
+        if (enabled) {
+            PauseInput.action.Disable();
+            PauseInput.action.performed -= ActivatePauseMenu;
+        }
     }
 
 

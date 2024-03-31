@@ -428,6 +428,7 @@ MonoBehaviour:
   TimeText: {fileID: 1342881975}
   TimeCanvas: {fileID: 1919161308}
   DartsMenu: {fileID: 347492561}
+  ResetStats: {fileID: 11400000, guid: 67b7c963547ceac4a958ba5570236c36, type: 2}
 --- !u!4 &183543932
 Transform:
   m_ObjectHideFlags: 0
@@ -8726,6 +8727,10 @@ PrefabInstance:
       propertyPath: s
       value: 
       objectReference: {fileID: 183543931}
+    - target: {fileID: 7917560275768366587, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7917560275845550889, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8774,6 +8779,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 183543931}
+    - target: {fileID: 7917560275951059252, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917560275951059252, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7917560276092323636, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8822,5 +8835,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 183543931}
+    - target: {fileID: 7917560276967148626, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917560276967148626, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917560276987008026, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917560276987008026, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}

@@ -12,6 +12,9 @@ public class PauseUI : MonoBehaviour
     {
         Fill.SetCurrentImageToFill(ButtonImages[i], DartLocations[i]);
     }
+    public void ClearFill() {
+        Fill.ClearImages();
+    }
 #if UNITY_EDITOR
     [SerializeField] Transform __ButtonHolder;
     [SerializeField] Transform[] __TargetLocations;

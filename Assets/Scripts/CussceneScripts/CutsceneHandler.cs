@@ -159,7 +159,7 @@ public class CutsceneHandler : MonoBehaviour {
         if (index >= cutscene.blocks.Length) {
 
             EndCutscene();
-            if (cutscene.exception)// force play darts
+            if (cutscene.ForceDarts)// force play darts
                 DartsMenu.exception(characterIndex, Schedule.hour);
             return;
         }
@@ -200,17 +200,18 @@ public class CutsceneHandler : MonoBehaviour {
 
     private void displayResponse() {
         respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
-        if (!respon.responses[responseIndex].responses[responseIndexIndex].exemption)
+        if (!respon.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
             dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
         else
             Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int ExpressionIndex) {
+    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock =true) {
         if (characterImg.enabled == false)
             characterImg.enabled = true;
         characterImg.sprite = characters.list[characterIndex].Expressions[ExpressionIndex];
-        nextBlock();
+        if (GoToNextBlock)
+            nextBlock();
     }
 
     public void Thought(string s) {
