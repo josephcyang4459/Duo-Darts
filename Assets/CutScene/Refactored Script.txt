@@ -3,7 +3,7 @@ Scene One (Lounge) (0 Love) (Refactored)
 [Newln]*A man with intense, striking features catches your attention. He catches the glance, motioning you to come closer.*
 [Chad1]
 [Newln]Haven’t met you before. Who’re you?
-[Newln]Hmm…
+[Newln]Hmm...
 [Newln]I can’t remember meeting anyone with your name.
 [Newln]You must be nobody then. For now at least. Don’t worry, even I started from the bottom.
 [Chad2]
@@ -69,7 +69,7 @@ Scene Three (Dance floor) (6 Love) (Refactored)
         [Display]No.
                 [Answer]I know I’m here, but you could still get second place if you weren’t so pessimistic.
         [Display]I’m not sure.
-                [Answer][RaiseChadLove1]I can’t tell if you’re being pessimistic or humble…
+                [Answer][RaiseChadLove1]I can’t tell if you’re being pessimistic or humble...
 [Chad1]
 [Newln]Let me give you some free advice.
 [Newln]You’ll need some good luck with this crowd.
@@ -92,13 +92,13 @@ Scene Three (Dance floor) (6 Love) (Refactored)
 
 
 Scene Four Optional (Dance floor) - Requires drunk Chad (10 Love) (Removes all Intox) (Refactored)
-[Newln]*Chadrick is dancing…*
-[Newln]*He’s clearly obliterated…*
+[Newln]*Chadrick is dancing...*
+[Newln]*He’s clearly obliterated...*
 [Chad4]
 [Newln]Hey, it's you.
 [Newln]Impressed? You should be.
 [Newln]I’ve got moves.
-[Newln]I think…
+[Newln]I think...
 [Newln]*He stares intently at you for a second.*
 [Newln]You. Me. Dance. Now.
         [Display]Yes.
@@ -167,7 +167,7 @@ Scene Five (Bathroom) (13 Love)
 [Newln]You don’t have to answer right now, but thank you for being here either way.
 [Chad1]
 [Newln]*Chad gets up and walks past you out of the bathroom.*
-[Newln]*He didn’t wash his hands…*
+[Newln]*He didn’t wash his hands...*
 
 
 
@@ -218,7 +218,7 @@ Scene One (Lounge) (0 Love) (Refactored)
 [Newln]*The woman sighs and moves further into the shadow of the booth.*
 [Newln]Everyone’s looking this way now because of you.
 [Newln]Well, really it's my fault. Should’ve watched my reach.
-[Newln]I wish this was easier…
+[Newln]I wish this was easier...
 [Newln]*You stare blankly at her, a look lacking context.*
 [Newln]You’re new aren’t you.
 [Newln]Well I’ll tell you since everyone else knows anyway.
@@ -234,7 +234,7 @@ Scene One (Lounge) (0 Love) (Refactored)
 [Newln]Call me Faye though please.
 [Newln]I just haven’t found the time to legally change it.
 [Newln]*She bumps her head against the back of the booth in a small concession.*
-[Newln]Or the money…
+[Newln]Or the money...
 [Newln]It’s not cheap doing this.
 [Newln]*Faye motions away from the booth.*
 [Newln]If you’re interested in talking then come back later.
@@ -359,7 +359,7 @@ Scene Four Optional (Lounge) Requires Drunk Faye (13 Love)  (Removes all Intox) 
 [Newln]*Faye points to you while holding one of the glasses like a microphone.*
 [Newln]Without them I’d never have gotten this drunk.
 [Newln]They are my inspiration.
-[Newln]And I’d also like to thank…
+[Newln]And I’d also like to thank...
 [Newln]*She pauses, lost in thought.*
 [Newln]What was their name?
 [Newln]*You spend some time attending Faye’s imaginary award ceremony under the table.*[ResetFayeIntox]
@@ -583,7 +583,7 @@ Scene Five (Lounge) (14 Love) (Refactored)
 [Newln]Well, I think you’re great.
 [Newln]I don’t know why. 
 [Newln]Frankly, you’re a complete idiot.
-[Newln]And your dart skills are…
+[Newln]And your dart skills are...
 [Jess2]
 [Newln]Interesting at best.
 [Jess1]
@@ -794,14 +794,14 @@ Scene Five (Bar) (14 Love) (Refactored)
 [Newln]*You nod.*
 [Elaine2]
 [Newln]Wow.
-[Newln]You’re the first person to be appreciative of me in…
+[Newln]You’re the first person to be appreciative of me in...
 [Newln]I don’t even know. Maybe my whole life.
 [Newln]*She grabs a dart from one of her pockets.*
 [Newln]This is for you.
 [Newln]You’re not beneath me anymore.
 [Newln]You’re someone worth my respect.
 [Newln]*She smiles.*
-[Newln]Sometimes…
+[Newln]Sometimes...
 [Elaine1]
 [Newln]You know.
 [Newln]I’d like to be your partner for the final round.
@@ -882,7 +882,7 @@ Dance Advice Girl (Dance Floor Available 630pm - 730pm) (+ Skill) (Refactored)
 [Newln]You’re incredible!
 [Newln]Here’s some advice!
 [Newln]When you’re checking out in darts imagine you’re operating a cash register.
-[Newln]Like… 
+[Newln]Like... 
 [Newln]Cha-ching!
 [Newln]You know?
 [Newln]It really gives you a powerful perspective!
