@@ -1,5 +1,0 @@
-[Newln]*You go to Faye’s booth.*
-[Faye1]
-[Newln]Hey it's you.
-[Newln]Let's talk for a while.
-[Newln]*You spend time with Faye. She seems relieved.* [RaiseFayeLove2]

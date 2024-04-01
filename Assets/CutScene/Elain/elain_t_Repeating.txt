@@ -1,5 +1,0 @@
-<*You see Elaine practicing alone.*
-<Hey. Come.
-<You want to buy me drinks?
-<Good dog.
-<*You spend time drinking with Elaine.* (+)

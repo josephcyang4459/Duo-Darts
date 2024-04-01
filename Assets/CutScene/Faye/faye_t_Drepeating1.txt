@@ -1,5 +1,0 @@
-<*You go to Faye’s booth.*
-<A drink?
-<If you’re paying and bringing them over here then sure.
-<*You spend time drinking with Faye.* (+)
-
