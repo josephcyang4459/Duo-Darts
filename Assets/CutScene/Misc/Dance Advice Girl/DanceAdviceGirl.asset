@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: DanceAdviceGirl
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 6642624351303631597
+  - rid: 6642624351303631598
+  - rid: 6642624351303631599
+  - rid: 6642624351303631600
+  - rid: 6642624351303631601
+  - rid: 6642624351303631602
+  - rid: 6642624351303631603
+  - rid: 6642624351303631604
+  - rid: 6642624351303631605
+  - rid: 6642624351303631606
+  - rid: 6642624351303631607
+  - rid: 6642624351303631608
+  - rid: 6642624351303631609
+  - rid: 6642624351303631610
+  - rid: 6642624351303631611
+  - rid: 6642624351303631612
+  - rid: 6642624351303631613
+  defaultCharacter: Dance Girl
+  ForceDarts: 0
+  aa: {fileID: 4900000, guid: 5a3a459d1a213e449811ba3abd24fc10, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 6642624351303631597
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You approach a young woman dancing rampantly.*'
+    - rid: 6642624351303631598
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 6642624351303631599
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey! You!
+    - rid: 6642624351303631600
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Dance!
+    - rid: 6642624351303631601
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She grabs your arms and flails you around for a while.*'
+    - rid: 6642624351303631602
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Eventually she tires out and walks off to the side of the
+          dance floor with you.*'
+    - rid: 6642624351303631603
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "You\u2019re incredible!"
+    - rid: 6642624351303631604
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Here\u2019s some advice!"
+    - rid: 6642624351303631605
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "When you\u2019re checking out in darts imagine you\u2019re operating
+          a cash register."
+    - rid: 6642624351303631606
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Like...
+    - rid: 6642624351303631607
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Cha-ching!
+    - rid: 6642624351303631608
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You know?
+    - rid: 6642624351303631609
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It really gives you a powerful perspective!
+    - rid: 6642624351303631610
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways. Goodbye!
+    - rid: 6642624351303631611
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She leaves you.*'
+    - rid: 6642624351303631612
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You feel enlightened by her advice.*'
+    - rid: 6642624351303631613
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Stat: 1
+        Adjust: 1

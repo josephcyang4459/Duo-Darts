@@ -22,14 +22,7 @@ MonoBehaviour:
   - rid: 3415138152484438146
   - rid: 3415138152484438147
   defaultCharacter: Elaine
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
+  ForceDarts: 1
   aa: {fileID: 4900000, guid: 57aa404884aec9d40994c3f6b1961f6d, type: 3}
   reset: 0
   references:
@@ -55,7 +48,6 @@ MonoBehaviour:
     - rid: 3415138152484438144
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Maybe.
           responses:
@@ -64,7 +56,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: ...
           responses:
           - Message: 
@@ -72,7 +64,7 @@ MonoBehaviour:
             Expression: 2
             Stat: 0
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Yes ma'am.
           responses:
           - Message: 
@@ -80,13 +72,13 @@ MonoBehaviour:
             Expression: 2
             Stat: 0
             AdjustValue: 3
-            exemption: 1
+            ResponseIsPlayerThought: 0
           - Message: You have no shame do you.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
     - rid: 3415138152484438145
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

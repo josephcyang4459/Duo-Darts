@@ -23,14 +23,7 @@ MonoBehaviour:
   - rid: 3415138152484438410
   - rid: 3415138152484438411
   defaultCharacter: Jess
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
+  ForceDarts: 1
   aa: {fileID: 4900000, guid: c8907fa3944846340a74cf42e17e13ae, type: 3}
   reset: 0
   references:
@@ -39,7 +32,6 @@ MonoBehaviour:
     - rid: 3415138152484438403
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
         expression: 1
     - rid: 3415138152484438404
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -67,7 +59,6 @@ MonoBehaviour:
     - rid: 3415138152484438409
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: I don't miss my mark.
           responses:
@@ -76,7 +67,7 @@ MonoBehaviour:
             Expression: 2
             Stat: 0
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: I haven't decided yet.
           responses:
           - Message: 
@@ -84,7 +75,7 @@ MonoBehaviour:
             Expression: 2
             Stat: 0
             AdjustValue: 3
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: I'll try.
           responses:
           - Message: 
@@ -92,13 +83,13 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 1
-            exemption: 1
+            ResponseIsPlayerThought: 0
           - Message: I suppose we both will.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
     - rid: 3415138152484438410
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

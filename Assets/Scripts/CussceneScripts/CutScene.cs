@@ -9,9 +9,9 @@ public class CutScene : ScriptableObject
     public block[] blocks;
     public string defaultCharacter;
 
-    public bool exception = false;
+    public bool ForceDarts = false;
 
-    public bool AnotherFuckingException = false;
+    //public bool AnotherFuckingException = false;
 
     public virtual CutScene GetDefaultScene(int index)
     {
@@ -20,46 +20,39 @@ public class CutScene : ScriptableObject
 
 #if UNITY_EDITOR
     public const int FAIL_VALUE = -10000000;
+    [Header("These are no longer being updated please use Cutscene Parser")]
     public TextAsset aa;
     public bool reset;
-    public void OnValidate()
-    {
-        if (!reset)
-            return;
+
+    public void __resetCutScene(string[] overall) {
         string currentCharacter = defaultCharacter;
-        reset = false;
-        string[] overall = aa.text.Split('\n');
         List<block> blockList = new List<block>();
 
         string[] forTags;
-        
+
         for (int i = 0; i < overall.Length; i++)
             if (overall[i] != null || overall[i].Length > 0)
                 overall[i] = __removeBrokenChars(overall[i].Trim());
 
-        for (int currentLine = 0; currentLine < overall.Length; currentLine++)
-        {
+        for (int currentLine = 0; currentLine < overall.Length; currentLine++) {
             if (overall[currentLine] == null)
                 break;
             if (overall[currentLine].Length <= 0)
                 break;
-            var h = __getAction(overall[currentLine]);
+            __CutsceneActions h = __getAction(overall[currentLine]);
             //Debug.Log(h);
 
-            switch (h)
-            {
+            switch (h) {
                 case __CutsceneActions.Dialouge:
                     DialougeBlock tempD = new DialougeBlock();
-                    tempD.message = __fix(overall[currentLine]);
+                    tempD.message = __removeTags(overall[currentLine]);
                     blockList.Add(tempD);
 
                     forTags = __getAllTags(overall[currentLine]);
-                    if (forTags.Length > 1)
-                    {
-                        for (int i = 0; i < forTags.Length; i++)
-                        {
+                    if (forTags.Length > 1) {
+                        for (int i = 0; i < forTags.Length; i++) {
                             block tempted = __getDialougeOrThoughtAttachment(forTags[i]);
-                            
+
                             if (tempted != null)
                                 blockList.Add(tempted);
                             else Debug.Log("Found " + forTags[i]);
@@ -69,20 +62,17 @@ public class CutScene : ScriptableObject
                     break;
                 case __CutsceneActions.Thought:
                     Thought tempT = new Thought();
-                    tempT.thoughtMessage = __fix(overall[currentLine]);
+                    tempT.thoughtMessage = __removeTags(overall[currentLine]);
                     blockList.Add(tempT);
 
                     forTags = __getAllTags(overall[currentLine]);
-                    if (forTags.Length > 1)
-                    {
-                        for (int i = 0; i < forTags.Length; i++)
-                        {
-                           
-                            block tempted = __getDialougeOrThoughtAttachment(forTags[i]);
+                    if (forTags.Length > 1) {
+                        for (int i = 0; i < forTags.Length; i++) {
 
-                            if (tempted != null)
+                            block tempted = __getDialougeOrThoughtAttachment(forTags[i]);
+                            if (tempted != null) {
                                 blockList.Add(tempted);
-                            else Debug.Log("Found "+forTags[i]);
+                            }
                         }
                     }
                     break;
@@ -91,52 +81,71 @@ public class CutScene : ScriptableObject
                     Response tempR = new Response();
                     tempR.responses = new PlayerResponseData[3];
 
-                    for( int currentResponse = 0; currentResponse < 3; currentResponse++)
-                    {
+                    for (int currentResponse = 0; currentResponse < 3; currentResponse++) {
                         if (__getAction(overall[currentLine]) != __CutsceneActions.Prompt)
                             break;
                         PlayerResponseData PRD = new PlayerResponseData();
-                        PRD.answer = __fix(overall[currentLine]);
+                        PRD.answer = __removeTags(overall[currentLine]);
                         currentLine++;
                         List<NPCResponseData> responses = new();
-                        while(__getAction(overall[currentLine]) == __CutsceneActions.Answer)
-                        {
+                        while (__getAction(overall[currentLine]) == __CutsceneActions.Answer) {
                             responses.Add(__getNPCResponse(overall[currentLine]));
                             currentLine++;
                         }
+                        
                         PRD.responses = responses.ToArray();
                         tempR.responses[currentResponse] = PRD;
                     }// for 3 responses
+                    currentLine--;
                     blockList.Add(tempR);
+                    Debug.Log(overall[currentLine]);
                     break;
                 case __CutsceneActions.Expression:
-                    if (__getCharactersNameFrom(overall[currentLine]).CompareTo(currentCharacter) != 0){
+                    if (__getCharactersNameFrom(overall[currentLine]).CompareTo(currentCharacter) != 0) {
                         currentCharacter = overall[currentLine];
                         SwapCharacterBlock tempSC = new SwapCharacterBlock();
                         tempSC.character = __getCharactersNameFrom(overall[currentLine]);
                         tempSC.Expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
                         blockList.Add(tempSC);
                     }
-                    else
-                    {
+                    else {
                         ExpressionBlock tempE = new ExpressionBlock();
                         //Debug.Log(overall[currentLine]);
                         tempE.expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
                         blockList.Add(tempE);
                     }
-                    
-                    
+
+
+                    break;
+                case __CutsceneActions.ChangeBackground:
+                    SwapBackGround bgs  = new SwapBackGround();
+                    bgs.place = __GetPlace(overall[currentLine]);
+                    blockList.Add(bgs);
                     break;
                 default:
-                    Debug.Log(__getAction(overall[currentLine]) + "-> Not implemented ->" +overall[currentLine]);
+                    Debug.Log("From "+name+" Action \""+__getAction(overall[currentLine]) + "\" Is Not implemented @ Line "+currentLine+" \"" + overall[currentLine]+"\'");
                     break;
 
             }
         }
         blocks = blockList.ToArray();
-        
-        Debug.Log("Done");
-        
+
+        Debug.Log(name +" Reset Is Complete");
+
+    }
+
+    public void OnValidate()
+    {
+        if (!reset)
+            return;
+        reset = false;
+        __resetCutScene(aa.text.Split('\n'));
+    }
+
+    string __GetPlace(string s) {
+        if (s.Contains("Lounge"))
+            return "Lounge";
+        return "Lounge";
     }
 
     Stats __GetSkill(string s)
@@ -209,15 +218,17 @@ public class CutScene : ScriptableObject
     NPCResponseData __getNPCResponse(string line)
     {
         NPCResponseData NPCR = new();
-        NPCR.Message = __fix(line);
+        Debug.Log(line);
+        NPCR.Message = __removeTags(line);
         NPCR.Expression = Expressions.ForCutscene;
         NPCR.AdjustValue = 0;
+  
         if (line.Contains('*'))
         {
-            NPCR.exemption = true;
+            NPCR.ResponseIsPlayerThought = true;
         }
         else
-            NPCR.exemption = false;
+            NPCR.ResponseIsPlayerThought = false;
 
         string[] s = __getAllTags(line);
         for (int currentTag = 0; currentTag < s.Length; currentTag++)
@@ -225,6 +236,7 @@ public class CutScene : ScriptableObject
             switch (__getAction(s[currentTag]))
             {
                 case __CutsceneActions.ChangeStat:
+                    NPCR.Stat = __GetSkill(s[currentTag]);
                     NPCR.Character = __getCharactersFrom(s[currentTag]);
                     NPCR.AdjustValue = __getNumberFrom(s[currentTag]);
                     break;
@@ -243,7 +255,7 @@ public class CutScene : ScriptableObject
 
     int __getNumberFrom(string fullText)
     {
-        char[] aca = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', };
+        char[] aca = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         List<char> chars = new(aca);
 
         string temp = "";
@@ -291,11 +303,17 @@ public class CutScene : ScriptableObject
             return "Elaine";
         if (fullText.Contains("Owner"))
             return "Owner";
-        if (fullText.Contains("BarGuy"))
+        if (fullText.Contains("BarAdviceGuy"))
             return "Bar Guy";
+        if (fullText.Contains("CharmAdviceGuy"))
+            return "Charming Guy";
+        if (fullText.Contains("LoungeAdviceGuy"))
+            return "Lounge Guy";
         if (fullText.Contains("BarAdviceGirl"))
             return "Charming Girl";
-        if (fullText.Contains("BarGuy"))
+        if (fullText.Contains("DanceAdviceGirl"))
+            return "Dance Girl";
+        if (fullText.Contains("BarAdviceGuy"))
             return "Bar Guy";
         return "";
     }
@@ -317,20 +335,43 @@ public class CutScene : ScriptableObject
         return h.ToArray();
     }
 
-    private string __fix(string s)
-    {
-        string ss = __removeBrokenChars(s.Substring(s.IndexOf(']')+1).Trim());
-        string[] sa;
-        if (ss.Contains('[') || ss.Contains(']'))
-        {
-            sa = ss.Split('[');
-        }
-        else return ss;
-        for (int i = 0; i < sa.Length; i++)
-            if (!sa[i].Contains(']'))
-                return sa[i];
+    List<int>  __allCharIndex(string s, char c) {
+        List<int> temp = new();
+        for (int i = 0; i < s.Length; i++)
+            if (s[i] == c)
+                temp.Add(i);
+        return temp;
+    }
 
-        return null;
+    string __inbetween(string s, List<int> open, List<int> closed) {
+        string temp = "";
+        for(int i = 1; i < open.Count; i++) {
+            if (open[i] - closed[i - 1] != 0)
+                if (s.Substring(closed[i - 1]+1, open[i] - closed[i - 1]).Trim().Length > 0)
+                    return s.Substring(closed[i - 1]+1, open[i] - closed[i - 1]-1).Trim();
+        }
+        return temp;
+    }
+
+    private string __removeTags(string s)
+    {
+        List<int> open = __allCharIndex(s, '[');
+        if(open.Count == 1) {
+            if (open[0] == 0) {
+                if (s.LastIndexOf(']') == s.Length - 1)
+                    return "";
+                else
+                    return __removeBrokenChars(s.Substring(s.LastIndexOf(']') + 1).Trim());
+            }
+                
+        }
+        if (open.Count > 1) {
+            List<int> close = __allCharIndex(s, ']');
+            if (close[close.Count - 1] == s.Length - 1)
+                return __inbetween(s, open, close);
+            return __removeBrokenChars(s.Substring(s.LastIndexOf(']') + 1).Trim());
+        }
+        return "";
     }
 
     private string __firstTag(string s)
@@ -403,18 +444,19 @@ public class CutScene : ScriptableObject
 
     public string __removeBrokenChars(string s)
     {
+        if (s.Length <= 0)
+            return null;
         string temp = "";
         for (int i = 0; i < s.Length; i++)
         {
             if (s[i] == '�')
                 temp += '\'';
             else
+                if (s[i] == '…')
+                temp += "...";
+            else
                 temp += s[i];
         }
-
-        if (s.Length <= 0)
-            return null;
-
 
         return temp;
     }
@@ -518,8 +560,6 @@ public class SwapCharacterBlock : block
 
 public class SwapBackGround : block
 {
-
-
     public string place;
 
     public override void action(CutsceneHandler ch)
@@ -557,12 +597,12 @@ public class NPCResponseData
     public Expressions Expression;
     public Stats Stat;
     public int AdjustValue =0;
-    public bool exemption;
+    public bool ResponseIsPlayerThought;
 
     public void Adjust(CutsceneHandler handler)
     {
         if (Expression != Expressions.ForCutscene)
-            handler.ChangeExpression((int)Expression);
+            handler.ChangeExpression((int)Expression, false);
         if (AdjustValue != 0)
         {
             handler.Schedule.characters.list[(int)Character].stateChange((int)Stat, AdjustValue);

@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36395e13c9fba2948b8ca1ce48b6d7e1, type: 3}
   m_Name: Faye_Default
   m_EditorClassIdentifier: 
-  blocks: []
-  defaultCharacter: 
-  exception: 0
-  AnotherFuckingException: 0
+  blocks:
+  - rid: 6642624353882079235
+  defaultCharacter: Faye
+  ForceDarts: 0
   aa: {fileID: 0}
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6642624353882079235
+      type: {class: DefaultScene/PresentOptions, ns: , asm: Assembly-CSharp}
+      data:
+        name: present options

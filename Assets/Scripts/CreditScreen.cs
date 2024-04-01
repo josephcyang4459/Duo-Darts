@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CreditScreen : MonoBehaviour, Caller
+public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
 {
 
     [SerializeField] Vector3 Offset;
@@ -19,6 +18,10 @@ public class CreditScreen : MonoBehaviour, Caller
 
     public void Start()
     {
+        TransitionManager.inst.ReadyToEnterScene(this);
+    }
+
+    public void EnterScene() {
         UIState.inst.SetAsSelectedButton(FirstSelectedButton);
         foreach (TextCycle t in TextCycles)
             t.SetText(0);
@@ -41,7 +44,7 @@ public class CreditScreen : MonoBehaviour, Caller
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene(0);
+        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
     public void Ping()

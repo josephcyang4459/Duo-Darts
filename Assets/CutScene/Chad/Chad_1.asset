@@ -23,8 +23,7 @@ MonoBehaviour:
   - rid: 6642624258973368546
   - rid: 6642624258973368547
   defaultCharacter: Chad
-  exception: 0
-  AnotherFuckingException: 0
+  ForceDarts: 1
   aa: {fileID: 4900000, guid: 327b5d729bf135f43acd9152f8f6492c, type: 3}
   reset: 0
   references:
@@ -66,7 +65,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: I'd love to see a legend in action.
           responses:
           - Message: 
@@ -74,7 +73,7 @@ MonoBehaviour:
             Expression: 1
             Stat: 0
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Underestimating me?
           responses:
           - Message: 
@@ -82,7 +81,7 @@ MonoBehaviour:
             Expression: 1
             Stat: 0
             AdjustValue: 3
-            exemption: 0
+            ResponseIsPlayerThought: 0
     - rid: 6642624258973368546
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:

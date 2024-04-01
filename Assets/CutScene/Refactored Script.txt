@@ -1,0 +1,986 @@
+﻿Needs to be checked for expression changes once makai makes expre
+Scene One (Lounge) (0 Love) (Refactored)
+[Newln]*A man with intense, striking features catches your attention. He catches the glance, motioning you to come closer.*
+[Chad1]
+[Newln]Haven’t met you before. Who’re you?
+[Newln]Hmm…
+[Newln]I can’t remember meeting anyone with your name.
+[Newln]You must be nobody then. For now at least. Don’t worry, even I started from the bottom.
+[Chad2]
+[Newln]That and you’re here so I suppose you’ve got to have some potential.
+[Newln]Take a seat.
+[Chad1]
+[Newln]So. Tell me more about yourself.
+        [Display]Should I know you already?
+                [Answer][RaiseChadLove3][Chad2]A bold question. I like that.
+        [Display]I’m the best.
+                [Answer][RaiseChadLove1]If only the best wasn’t already sitting in front of you I might’ve believed that.
+        [Display]...
+                [Answer][RaiseChadLove2][Chad2]I see. You want your play to prove yourself? I respect that.
+[Chad1]
+[Newln]Well, you've piqued my interest for better or worse. 
+[Newln]You really should already know my name, but I’m Chadrick Basedman.
+[Chad2]
+[Newln]*When he says his name he seems to warp his face in a way that highlights his incredible facial features.*
+[Newln]Let me ask you a few more questions.
+[Newln]*Momentarily mesmerized you spend a while listening to Chadrick.*
+[Newln]*Despite saying he would ask you questions, he finds ways to bring himself up more than anything.*
+
+
+Scene Two (Before a game of darts) (1 Love) (Refactored)
+[Chad1]
+[Newln]I can’t say I’ve always been the one to give an upstart a chance.
+[Newln]Then again, great men can always be greater, so I’ll call this a social experiment for myself.
+[Newln]Nothing more and nothing less.
+[Newln]And you better hold up your end of the game.
+[Newln]Not that I would need your points. I could check out alone if they’d let me.
+        [Display]Cocky much?
+                [Answer]That’s right. You still haven’t seen how good I really am.
+        [Display]I’d love to see a legend in action.
+                [Answer][RaiseChadLove2][Chad2]Blatant flattery will get you somewhere, but not as far as you might hope.
+        [Display]Underestimating me?
+                [Answer][RaiseChadLove3][Chad2]Just throw your darts.
+[Chad1]
+[Newln]Now, we’re up.
+[Newln]Let's see what you’ve got.
+
+
+Scene Three (Dance floor) (6 Love) (Refactored)
+[Chad1]
+[Newln]*You approach Chad watching people dance from the sidelines.*
+[Newln]*He notices you and nods.*
+[Newln]You need something?
+        [Display]Want to dance? 
+                [Answer][RaiseChadLove3]*Chad scoffs.*
+                [Answer][Chad2]You wish.
+        [Display]Just avoiding dancing.
+                [Answer][RaiseChadLove2]*Chad nods.*
+                [Answer][Chad2]I agree. It’s ridiculous.
+        [Display]Just observing.
+                [Answer][RaiseChadLove1]*Chad Chuckles.*
+                [Answer][Chad2]Me or the dancing?
+[Chad1]
+[Newln]Even outside of a tournament I’m not a fan of dancing.
+[Newln]I think it just gives good players something to do while they wait for the final call.
+[Newln]Speaking of which.
+[Newln]Do you think you have what it takes to win this whole thing?
+        [Display]Yeah.
+                [Answer][RaiseChadLove1][Chad2]Maybe if I were your partner.
+        [Display]No.
+                [Answer]I know I’m here, but you could still get second place if you weren’t so pessimistic.
+        [Display]I’m not sure.
+                [Answer][RaiseChadLove1]I can’t tell if you’re being pessimistic or humble…
+[Chad1]
+[Newln]Let me give you some free advice.
+[Newln]You’ll need some good luck with this crowd.
+[Chad2]
+[Newln]*Chadrick raises an eyebrow and smirks.*
+[Newln]And against me of course.
+[Newln]I always find myself a bit luckier after taking a second in the bathroom to calm down.
+[Chad1]
+[Newln]And if you’re tipsy you might just sober up a bit from the chill in there.
+[Newln]Not that I’d know from personal experience.
+[Chad2]
+[Newln]I hold my drinks better than anyone
+[Chad1]
+[Newln]But, for the average person, that’s my advice.
+[Newln]Anyways, I have a few more questions for you.
+[Newln]*You and Chad spend time talking.*
+[Newln]*Unlike before, he focuses the conversation on you. His questions are irrelevant to darts, mostly about your life outside the game.*
+
+
+
+
+Scene Four Optional (Dance floor) - Requires drunk Chad (10 Love) (Removes all Intox) (Refactored)
+[Newln]*Chadrick is dancing…*
+[Newln]*He’s clearly obliterated…*
+[Chad4]
+[Newln]Hey, it's you.
+[Newln]Impressed? You should be.
+[Newln]I’ve got moves.
+[Newln]I think…
+[Newln]*He stares intently at you for a second.*
+[Newln]You. Me. Dance. Now.
+        [Display]Yes.
+                [Answer][RaiseChadLove3]I was hoping you’d say that.
+        [Display]Nope.
+                [Answer]It wasn’t a question.
+        [Display]...
+                [Answer][RaiseChadLove2]Do I have to do all the work around here?
+[Newln]*Chad grabs your arm and dances with you for a time.*
+[Newln]Hey you’re pretty good at this.
+[Newln]To think if you hadn’t drowned me at the bar I’d never get this chance.
+[Newln]I owe you one.
+[Newln]If you’re lucky that is.
+[Newln]*You and Chad dance away. He trips up often.*[ResetIntoxChad]
+
+
+
+
+Scene Five (Bathroom) (13 Love)
+[Newln]*You hear someone vomiting in the stall*
+[Chad1]
+[Newln]Oh god...
+[Newln]*It’s Chad’s voice.*
+[Newln]It’s you isn’t it?
+[Newln]Don’t let anyone else into the bathroom.
+[Newln]I came in here to relax for a minute and the pressure got to me.
+[Newln]If anyone else finds out about this my reputation will be destroyed.
+[Newln]*Chad sniffles and spits into the toilet.*
+[Newln]I don’t think I can win.
+        [Display]But you’re Chadrick Basedman.
+                [Answer]Don’t give me that line.
+                [Answer]You didn’t even know or care who I was until today.
+        [Display]You’re right.
+                [Answer]For a second I thought you wouldn’t kick me while I’m down.
+                [Answer]But maybe I deserve it...
+        [Display]...
+                [Answer]Come on.
+                [Answer]Aren’t you going to motivate me?
+[Newln]It’s no use.
+[Newln]No matter what anyone does or says to me I’d still be the one who needed someone else.
+[Newln]*Chad hits the stall wall.*
+[Newln]And that is just unacceptable.
+        [Display]So what?
+                [Answer][Chad3]I knew you wouldn’t get it.
+[Answer]Just leave me.
+[Answer]*You leave like he asked.*
+[Answer][ChadFail][SceneExit]
+        [Display]Just get up.
+                [Answer][Chad2]*Chad laughs.*
+        [Display]Then do it yourself.
+                [Answer][Chad2]No.
+                [Answer]I can’t.
+[Newln]*Chad flushes the toilet.*
+[Chad1]
+[ChadSuccess]
+[Newln]We’re at a duo’s tournament, you know.
+[Newln]*Chad emerges from the stall with regained composure.*
+[Newln]I need you.
+[Newln]And I’m ok with that if it means I can win.
+[Newln]We can win.
+[Newln]*Chadrick lowers his head and gets down onto one knee before you.*
+[Chad2]
+[Newln]*He raises his face to reveal the most chiseled and perfectly conformed facial expression you’ve ever seen.*
+[Newln]Please. 
+[Newln]Let me be your partner for the final round.
+[Newln]You don’t have to answer right now, but thank you for being here either way.
+[Chad1]
+[Newln]*Chad gets up and walks past you out of the bathroom.*
+[Newln]*He didn’t wash his hands…*
+
+
+
+
+Intermediate Scene Dance Floor (Repeating) (1 Love)
+[Newln]*You join Chad in people watching.*
+[Chad1]
+[Newln]Always fun to watch.
+[Newln]Anyways, got time for a few questions?
+[Newln]*You spend time talking with Chad.*
+[Newln]*He seems to value the company.*[RaiseChadLove2]
+
+
+Intermediate Scene Dance Floor (Repeating) (1 Love) (+Intoxication)
+[Newln]*You join Chad in people watching.*
+[Chad1]
+[Newln]Drinking?
+[Newln]I can say for sure that’s better than dancing.
+[Newln]If you’re paying I’ll have a few.
+[Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerIntox1]
+
+
+
+
+Faye/Faybian Artel (Faye)
+
+
+Scene One (Lounge) (0 Love) (Refactored)
+[Newln]*While walking past a booth, you accidentally trip on someone’s leg. You fall face first onto the ground.
+[Faye1]
+[Newln]*A young woman is the culprit. She kneels down next to you and sits you up.*
+[Newln]Ugh, me and my long legs. Here, that looks painful.
+[Newln]*She grabs a drink from her table and puts the cold glass onto your forehead.*
+[Newln]For the swelling.
+[Newln]*The woman tending your blunder looks away whenever you look at her face.*
+[Newln]*Something about her face is catching your attention.*
+        [Display]You’re a beautiful woman. 
+                [Answer][RaiseFayeLove3][Faye2]*A heavy blush covers her face.*
+        [Display]You’re a man?
+                [Answer][Faye3]*She casts a disapproving face.*
+        [Display]What are you looking at?
+[Answer][RaiseFayeLove1]Umm, nothing.
+[Faye1]
+[Newln]*She helps you off the ground onto your feet.*        
+[Newln]Just come sit with me for a minute to recover.
+[Newln]*You sit in the booth.*
+[Newln]*You notice the upholstery to be only average in quality.*
+[Newln]*The woman sighs and moves further into the shadow of the booth.*
+[Newln]Everyone’s looking this way now because of you.
+[Newln]Well, really it's my fault. Should’ve watched my reach.
+[Newln]I wish this was easier…
+[Newln]*You stare blankly at her, a look lacking context.*
+[Newln]You’re new aren’t you.
+[Newln]Well I’ll tell you since everyone else knows anyway.
+[Newln]I’m a woman. Or, you know, transitioned to a woman if that makes more sense to you.
+        [Display]Makes sense to me.
+                [Answer][RaiseFayeLove2][Faye2]That saves me the trouble of having to explain.
+        [Display]Wait so... 
+                [Answer][Faye3]That reaction is the worst. Why’s it so hard to understand?
+        [Display]...
+                [Answer][RaiseFayeLove1]Please stop staring already... 
+[Faye1]
+[Newln]Anyway. My tournament name is Faybian Artel.
+[Newln]Call me Faye though please.
+[Newln]I just haven’t found the time to legally change it.
+[Newln]*She bumps her head against the back of the booth in a small concession.*
+[Newln]Or the money…
+[Newln]It’s not cheap doing this.
+[Newln]*Faye motions away from the booth.*
+[Newln]If you’re interested in talking then come back later.
+[Newln]People have their eyes on you and it's bothering me.
+[Newln]Sorry.
+[Newln]*You leave Faye to her booth.*
+[Newln]*You notice how hard it is to see her even just a few feet away from the booth.*
+
+
+
+
+Scene Two (Darts) (1 Love) (Refactored)
+[Faye1]
+[Newln]*Faye looks nervous.*
+[Newln]Make your turns quick please.
+[Newln]I don’t like being up and about, especially with a crowd.
+[Newln]And yeah, I was meaning to ask if you ever attended any other tournaments.
+[Newln]You didn’t look familiar, but people don’t always look the same from one meet to the next.
+        [Display]I stick to the shadows.
+                [Answer][RaiseFayeLove3][Faye2]Same.
+                [Answer]We must’ve just missed each other then.
+        [Display]I’m a regular. 
+                [Answer][RaiseFayeLove1]Really?
+                [Answer]I’ve seen just about everyone here before.
+        [Display]This is my first one. 
+                [Answer][RaiseFayeLove2]Oh I see.
+                [Answer][Faye2]Don’t worry. You’ll probably do ok.
+[Faye1]
+[Newln]*Faye focuses up.*
+[Newln]I apologize in advance that I'm not the best player here. 
+[Newln]Here, you go first.
+
+
+
+
+Scene Three (Bar) (8 Love) (Refactored)
+[Newln]*You see Faye at the bar.*
+[Newln]*The owner is talking with her while she orders a drink.*
+[Newln]*You move closer to hear what they’re saying.*
+[Owner1]
+[Newln]Going on your tab, right Fabyian?
+[Faye1]
+[Newln]Umm, it’s actually Faye now.
+[Owner1]
+[Newln]It’s easier for me to call you Faybian though.
+[Newln]I’ve known that name for years. You and my daughter have been friends since you were little, you know.
+[Newln]Can’t I just call you that?
+[Newln]*You walk up to the conversation.*
+[Faye2]
+[Newln]*Faye notices you, looking over.*
+[Newln]It’s you.
+[Owner1]
+[Newln]Can I get you something?
+        [Display]Whatever she ordered. 
+                [Answer][RaiseFayeLove1]Sure. I’ll grab that for you.
+                [Answer]*The owner turns around to prepare the drink.*
+        [Display]Just fetching Faye. 
+                [Answer][RaiseFayeLove3]*The owner places Faye’s drink in front of her and moves to the next customer.*
+        [Display]No I’m good.
+                [Answer]Sounds good.
+                [Answer]Anyways.
+                [Answer]*Before he can continue his previous thought, another customer calls him over.*
+                [Answer]Excuse me.
+[Faye1]
+[Newln]*Faye grabs your arm with one hand and grabs her drink with the other. Leading you back to her lounge booth.*
+[AreaLounge]
+[Newln]*You both sit down in the booth.*
+[Faye3]
+[Newln]*Faye looks irritated.*
+[Newln]I hate this league. No matter who I talk to, it's always the same question.
+[Newln]Like, do they think they can just determine who I am and I just have to deal with that?
+[Faye1]
+[Newln]*She sighs and drinks.*
+[Newln]Maybe I should just quit and go somewhere else.
+[Newln]Where nobody knew me before.
+        [Display]Maybe.
+                [Answer][RaiseFayeLove1]*She frowns.*
+                [Answer]I hate ‘maybe’s’.
+        [Answer]Is it really that bad?
+                [Answer][Faye3]Yes.
+        [Answer]Screw that.
+                [Answer][RaiseFayeLove2][Faye2]*Faye smiles lightly.*
+                [Answer]I’m a darts player first after all.
+[Faye1]
+[Newln]I worry too much about it. It’s almost obsessive.
+[Newln]I think I’m better off just being who I am.
+[Newln]It’s time to get over worrying about all the little things that come with that.
+[Newln]*Faye becomes recomposed.*
+[Newln]I’ll keep going. Things will get better.
+[Faye2]
+[Newln]I love this game too much.
+[Newln]Thanks for helping get me away from that idiot by the way.
+[Newln]*You spend some time with Faye in her booth.*
+
+
+
+
+Scene Four Optional (Lounge) Requires Drunk Faye (13 Love)  (Removes all Intox) (Refactored)
+[Newln]*You walk up to Faye’s booth, but she’s not there.
+[Newln]*Suddenly, you feel a pull on your leg.*
+[Faye4]
+[Newln]Hey. Down here.
+[Newln]*You look down to see Faye hiding underneath the table.*
+[Newln]Come down here.
+[Newln]It’s so nice down here.
+[Newln]*You find yourself huddled with Faye underneath the table.*
+[Newln]*She has lined empty glasses along the wall.*
+[Newln]*The total is staggering.*
+[Newln]Look! My masterpiece.
+[Newln]Isn’t it beautiful?
+        [Display]It’s artwork. [RaiseFayeLove2]
+                [Answer]You're too sweet.
+        [Display]If I look at it this way... 
+                [Answer][RaiseFayeLove1]*Faye rolls her eyes.*
+                [Answer]Oh my god.
+                [Answer]The fact I can even stack them while this drunk I think I deserve an award.
+        [Display]I could do better.
+                [Answer][RaiseLove3]*Faye pouts*
+                [Answer]You’re so cruel.
+[Newln]*She sways a bit, but then she straightens herself out.*
+[Newln]I’d like to dedicate my masterpiece to this jerk.
+[Newln]*Faye points to you while holding one of the glasses like a microphone.*
+[Newln]Without them I’d never have gotten this drunk.
+[Newln]They are my inspiration.
+[Newln]And I’d also like to thank…
+[Newln]*She pauses, lost in thought.*
+[Newln]What was their name?
+[Newln]*You spend some time attending Faye’s imaginary award ceremony under the table.*[ResetFayeIntox]
+
+
+
+
+Scene Five (Darts) (17 Love) (Refactored)
+[Newln]*You see Faye watching some other players.*
+[Newln]*She waves you over.*
+[Faye1]
+[Newln]Hey. 
+[Faye2]
+[Newln]It’s good to see you.
+[Faye1]
+[Newln]I want to practice some, but there’s too many people watching the dart floor.
+[Newln]*Faye sighs.*
+[Newln]I’m really too far in my own head. This isn’t even about being seen.
+[Newln]I feel like they always judge my play.
+[Newln]Do you get nervous up there?
+        [Display]Of course.
+                [Answer]I don’t know how you do it without a complaint then.
+        [Display]If I let myself.
+                [Answer]You’re tough.
+        [Display]Never.
+                [Answer][Faye3]Nevermind.
+                [Answer]*Faye heads to her booth.*
+[Answer][FayeFail][SceneExit]
+[FayeSuccess]
+[Newln]I just want to be the best darts player I can be.
+[Newln]*Faye looks determined.*
+[Faye2]
+[Newln]I love this game more than anything.
+[Newln]I love being good at this game more than anything.
+[Faye1]
+[Newln]I know I can do this.
+[Faye2]
+[Newln]I just need to be the me I want to be. Everyone else can just watch.
+[Faye1]
+[Newln]*Faye looks at you intently.*
+[Newln]You’ve been an incredible listener for me. I think I just needed to get it out.
+[Newln]Please.
+[Newln]Be my partner for the final round of the tournament.
+[Faye2]
+[Newln]There’s no one else here I can imagine doing it with.
+[Newln]You don’t have to worry about answering now.
+[Newln]Call me over when you’re ready.
+[Newln]*Faye heads back to her booth with a big smile on her face.*
+
+
+
+
+Intermediate Scene (Lounge) (1 Love) (Refactored)
+[Newln]*You go to Faye’s booth.*
+[Faye1]
+[Newln]Hey it's you.
+[Newln]Let's talk for a while.
+[Newln]*You spend time with Faye. She seems relieved.* [RaiseFayeLove2]
+
+
+Intermediate Drinking Scene (Lounge) (+ Intoxication) (1 Love) (Refactored)
+[Newln]*You go to Faye’s booth.*
+[Faye1]
+[Newln]A drink?
+[Newln]If you’re paying and bringing them over here then sure.
+[Newln]*You spend time drinking with Faye.* [RaiseFayeLove1][RaiseFayeIntox1][RaisePlayerIntox1]
+Jessica Fletcher
+
+
+Scene One (Dance floor) (0 Love) (Refactored)
+[Newln]*You see a unique woman dancing.*
+[Newln]*Your eyes meet briefly and she walks over to you shortly after.*
+[Jess1]
+[Newln]Is there something you want?
+        [Display]You.
+                [Answer][Jess3]What a desperate thing for a professional to say.
+        [Display]Nothing in particular.
+                [Answer][Jess2][RaiseJessLove3]My mistake then.
+        [Display]...
+                [Answer][RaiseJessLove1]You are quite odd.
+[Jess1]
+[Newln]I just came to ask you to stop staring.
+[Newln]It’s off putting.
+[Newln]*She begins to return to her dancing, but stops and returns to you.*
+[Newln]I need a dance partner.
+[Newln]*She waits for a moment.*
+[Newln]Well...
+[Newln]Aren’t you going to ask me to dance?
+[Newln]*You take her onto the dance floor and dance with her.
+[Newln]You’re quite good at this.
+[Newln]*She smirks.*
+[Newln]I’m Jessica Fletcher.
+[Newln]And I asked you to stop staring...
+[Newln]*You and Jessica dance for a while.*
+
+
+Scene Two (Darts) (1 Love) (Refactored)
+[Jess1]
+[Newln]I wouldn’t typically partner up with someone I don’t know rather well.
+[Newln]However, with my skills I don’t mind the possibility of losing out on a few points.
+[Newln]Even if you missed the board with most of your throws, I still think we could pull through.
+[Newln]What about you?
+[Newln]Will you hold up your end of the game?
+        [Display]I don’t miss my mark. 
+                [Answer][RaiseJessLove2][Jess2]Well, aren’t you the confident one.
+        [Display]I haven’t decided yet. 
+                [Answer][RaiseJessLove3][Jess2]Indecision is an underrated trait.
+        [Display]I’ll try. 
+                [Answer][RaiseJessLove1]*She chuckles*.
+                [Answer]I suppose we both will.
+[Jess1]
+[Newln]I’ll let you go first.
+[Newln]I would very much appreciate it if you didn’t make me work too hard to win.
+
+
+Scene Three (Bar) (+ Intoxication) (6 Love) (Refactored)
+[Newln]*You find Jessica sitting at the bar.*
+[Newln]*You notice how much she stands out from others. She looks like blood in blue water.*
+[Jess1]
+[Newln]You again?
+[Newln]Maybe I should’ve seen it coming.
+[Newln]You know drinking will only worsen your game.
+[Newln]Speaking of darts...
+[Newln]I’ve never heard of you before tonight.
+[Newln]Truthfully, I thought you might be some lucky startup to make it here.
+[Newln]I guess we will see by the end of the event.
+[Jess2]
+[Newln]If we both make it that far. Though, I feel confident enough with my share of that.
+[Jess1]
+[Newln]So. What do you want to talk about?
+        [Display]Love. 
+                [Answer][RaiseJessLove2][Jess2]Maybe after I’ve had more to drink.
+        [Display]Death. 
+                [Answer][RaiseJessLove3][Jess2]*She laughs lightly.*
+                [Answer]I could’ve expected you to say something macabre and shocking like that.
+        [Display]Taxes. 
+                [Answer][RaiseJessLove1]God help us.
+[Jess1]
+[Newln]Maybe I should have asked why you keep coming up to socialize with me.
+[Newln]Yes. That’s a much better question.
+[Newln]*Jessica faces you and waits for an answer.*
+[Newln]So?
+        [Display]Your skill.
+                [Answer][RaiseJessLove3][Jess2]It’s refreshing that someone sees past the beauty to see the darts player that I truly am.
+        [Display]Your beauty.
+                [Answer]*She sighs.*
+                [Answer]At least you’re trying.
+        [Display]No reason in particular.
+                [Answer][RaiseJessLove2][Jess2]I’ll call that a lie.
+                [Answer]But fine, keep the reason to yourself.
+[Jess1]
+[Newln]*Jessica faces away from you toward the bar.*
+[Newln]I’ve changed my mind again. 
+[Newln]Let's talk about what you mentioned before, as irrelevant as it is.
+[Newln]*You and Jessica talk for a while.*[RaiseIntox1][RaiseJessIntox1]
+
+
+Scene Four Optional (Bathroom) - Requires drunk Jessica (Removes all Intox) (11 Love) (Refactored)
+[Jess4]
+[Newln]*You run into Jessica as you walk into the bathroom.*
+[Newln]Oh. It’s you.
+[Newln]Don’t tell anybody, but I just made a girl cry in the bathroom.
+[Newln]I just told her her dartplay is like art.
+[Newln]*She gasps.*
+[Newln]I might’ve said something other than art.
+[Newln]*She stares at you for a second
+[Newln]*Jessica burps.*
+[Newln]Oh god.
+[Newln]I’m going back inside. People can’t see me this drunk.
+[Newln]*She grabs your arm and pulls you all the way into a stall.*
+[Newln]Hold my hair please...
+[Newln]*She vomits into the toilet.*
+[Newln]This is your fault.
+[Newln]Buying me drinks all night long.
+        [Display]I didn’t force you to drink them. 
+                [Answer][RaiseJessLove1]Semantics are fallacious, you know.
+ [Display]I’m taking responsibility. 
+        [Answer][RaiseJessLove2]I’d say you’re doing the bare minimum by being here.
+[Display]You’re not enjoying this? 
+        [Answer][RaiseJessLove3]*She laughs.*
+        [Answer]I think you are scum, you know.
+[Newln]*Jessica vomits again.*
+[Newln]Just stay here for a little while longer.
+[Newln]I have to say you are a lovely hair holder by the way.
+[Newln]*You stay with Jessica for a while until she feels better.*[ResetIntoxJess]
+
+
+Scene Five (Lounge) (14 Love) (Refactored)
+[Newln]*You sit next to Jessica at a lounge table.*
+[Jess1]
+[Newln]Hello.
+[Jess2]
+[Newln]I’m glad you found some time for another visit.
+[Jess1]
+[Newln]There’s something I’ve been meaning to ask you.
+[Newln]Let's talk for a moment before that though.
+[Newln]*Jessica sighs.*
+[Newln]It seems that nobody will be my partner for the final round.
+[Newln]Unfortunately, it appears I scare everyone away.
+[Newln]Except you.
+[Newln]I think people would call me “odd”.
+[Newln]I think those people are odd.
+[Newln]Or maybe just intelligent.
+[Newln]They don’t even know who I really am.
+[Newln]They don’t bother to try to get to know me.
+[Newln]That’s what I wanted to ask you.
+[Newln]What do you think of me?
+        [Display]You’re amazing.
+                [Answer][Jess2]Are you really not ashamed of your honesty?
+        [Display]You’re Jessica.
+                [Answer][Jess3]Nevermind.
+                [Answer]You should go.
+                [Answer]*You leave.*
+                [Answer][JessFail][SceneExit]
+        [Display]You’re prickly.
+                [Answer][Jess2]*She smiles.*
+                [Answer]I know you don’t think that.
+                [Answer]And even if you do, you’ve earned that opinion.
+[Jess1]
+[JessSuccess]
+[Newln]Well, I think you’re great.
+[Newln]I don’t know why. 
+[Newln]Frankly, you’re a complete idiot.
+[Newln]And your dart skills are…
+[Jess2]
+[Newln]Interesting at best.
+[Jess1]
+[Newln]However, despite all the negatives, you seem to be a diamond in the rough.
+[Newln]*Jessica looks at you intently.*
+[Newln]Please. 
+[Newln]Consider me to be your partner for the final round.
+[Newln]*Jessica relaxes.*
+[Newln]With that off my chest you can go. I don’t need an answer this minute. It’s smart to think over a big choice like that.
+[Jess2]
+[Newln]I didn’t have to though.
+[Jess1]
+[Newln]Thank you for hearing me out either way. I hope it’s not too unexpected of a request.
+[Jess2]
+[Newln]Really.
+
+
+Intermediate Scene (Lounge Repeating) (1 Love) (Refactored)
+[Newln]*You sit next to Jessica and strike up a conversation.*
+[Jess1]
+[Newln]I suppose it’s nice to see you again.
+[Jess2]
+[Newln]You have something interesting to say?
+[Newln]*You spend time talking with Jessica. She seems appreciative.* [RaiseJessLove2]
+
+
+Intermediate Scene (Lounge Repeating) (+ Intoxication) (1 Love) (refactored)
+[Newln]*You sit next to Jessica.*
+[Jess1]
+[Newln]You want to buy me drinks?
+[Jess2]
+[Newln]Sure, saves me the trouble.
+[Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerIntox1]
+
+
+
+
+Elaine Guzmán
+
+
+Scene One (Bar) (0 Love) (Refactored)
+[Newln]*You sit next to a woman invested in a trio of darts sitting in front of her on the table.*
+[Elaine1]
+[Newln]I don’t know you. You should leave.
+        [Display]Why?
+                [Answer]Because, I can just tell that you’re annoying.
+        [Display]No.
+                [Answer][RaiseElaineLove1][Elaine2]Better to be brave and annoying than be a coward and annoying.
+        [Display]... 
+                [Answer][RaiseElaineLove3][Elaine2]Well if you’re gonna be agreeable and keep your mouth shut I’ll let you stay.
+[Elaine1]
+[Newln]You know what, you should stay.
+[Elaine2]
+[Newln]You seem fun to belittle.
+[Newln]Especially since I have no clue who you are.
+[Elaine1]
+[Newln]*She stares at you for a second.*
+[Newln]Name.
+[Newln]*She hides a smile while you give your name.*
+[Elaine2]
+[Newln]Sorry, you just have the name of an amateur.
+[Elaine1]
+[Newln]I’m Elaine Guzmán. Also known as the dart goddess.
+[Newln]Any conceited idiot bold enough to say they’re the best hasn’t met me yet.
+[Elaine2]
+[Newln]Not even that Chadrick freak can keep up with me.
+[Elaine1]
+[Newln]And now that I know your name I know for sure you’re not even close to me.
+[Newln]But, like I said, I’ve been in the market for a punching bag.
+[Elaine3]
+[Newln]So don’t act like I didn’t warn you.
+[Elaine1]
+[Newln]*You sit quietly as Elaine insults you for a while.*
+
+
+
+
+Scene Two (Darts) (1 Love) (Refactored)
+[Newln]*Elaine holds a trio of darts in her hands and appears to give a brief prayer before speaking to you.*
+[Elaine1]
+[Newln]Alright. My prayers to myself are finished.
+[Newln]Now try and fetch me some points this game.
+[Newln]Think you can do that?
+        [Display]Maybe.
+                [Answer]Indecision is a plague on humanity.
+        [Display]... 
+                [Answer][RaiseElaineLove2][Elaine2]Oh, my bad. Forgot I told you to shut up before.
+        [Display]Yes ma’am. 
+                [Answer][RaiseElaineLove3][Elaine2]*Elaine raises an eyebrow.*
+                [Answer]You have no shame do you.
+[Elaine1]
+[Newln]Alright you first.
+[Newln]And I’ll need time to stop the hysterical laughter your dartplay will bring out of me.
+[Elaine2]
+[Newln]So be ready for a long game.
+
+
+Scene Three (Lounge) (6 Love) (Refactored)
+[Newln]*You walk up to Elaine who is again fidgeting with a few darts on the table in front of her.*
+[Elaine1]
+[Newln]Hey.
+[Newln]*She seems like she's out of fire, simmering rather than the usual crackling.*
+[Newln]Sit.
+[Newln]I was thinking about the tournament.
+[Newln]Is it really fair for me to even be here?
+        [Display]Not even a little.
+                [Answer][RaiseElaineLove3][Elaine2]My thoughts exactly.
+        [Display]It’s fair.
+                [Answer][Elaine3]Have you had your eyes closed all night?
+                [Answer]I’m killing it.
+        [Display]...
+                [Answer][RaiseElaineLove2][Elaine2]*Elaine scoffs.*
+                [Answer]You’re allowed to speak you know.
+[Elaine1]
+[Newln]This tournament bothers me.
+[Newln]It’s a professional tournament, but it’s not enough for me.
+[Newln]I want to go international.
+[Newln]Bumming it in these bars and easily winning these tournaments is beneath me.
+[Elaine2]
+[Newln]*She pats your head.*
+[Newln]And belittling underachievers like yourself has lost its charm.
+[Newln]You know what, I have you to thank for this eureka.
+[Elaine1]
+[Newln]I really do owe you one.
+[Newln]Anyways. Can you leave now?
+[Elaine3]
+[Newln]You honestly smell horrible and it’s definitely noticeable.
+[Elaine1]
+[Newln]*You leave Elaine to enjoy her fantasizations of international fame, but you find yourself picturing it as well.*
+
+
+Scene Four Optional (Darts) (Removes all Intox) (10 Love) (Refactored)
+[Elaine4]
+[Newln]*You see Elaine throwing dart after dart at a board nearby.*
+[Newln]Hey! Doggie!
+[Newln]*She’s plastered.*
+[Newln]Come here and look. Look at this trick.
+[Newln]*Elaine sets up a throw with all three darts in hand.*
+[Newln]*She throws all three at once. One hits the bullseye and the rest bounce off.*
+[Newln]Come on!
+[Newln]Hey, go stand in front of the board for me.
+        [Display]Why?
+                [Answer]Are you stupid?
+        [Display]...
+                [Answer][RaiseElaineLove2]Yes! The silence is so loud from you.
+        [Display]*Walk over.*
+                [Answer][RaiseElaineLove3]Good. Very good.
+[Newln]Get in place.
+[Newln]Now.
+[Newln]*You stand in front of the board with your head covering most of it.*
+[Newln]*A small crowd has gathered.*
+[Newln]*You contemplate the actions that have led you to this moment.*
+[Newln]So I just have to land these darts without disfiguring you.
+[Newln]One next to each ear and one right above the head.
+[Newln]Easy.
+[Newln]*Elaine readies her three dart trick again.*
+[Newln]*She throws. You close your eyes.*
+[Newln]Yes! I did it!
+[Newln]*The darts landed just as she had called.*
+[Newln]Aren’t you impressed? I’m a real deal dart goddess.
+[Newln]*The crowd claps and then they disperse.*
+[Newln]*Elaine walks over to you with a wide smile.*
+[Newln]Hey. 
+[Newln]You weren’t worried were you?
+[Newln]*She gives you a strangle-like hug.*
+[Newln]This is your reward for Intoxicating this goddess.
+[Newln]Keep acting like that and you might just win my divine favor.
+[Newln]*You spend some time getting a mix of praise and beration from her.*[ResetElaineIntox]
+
+
+
+
+Scene Five (Bar) (14 Love) (Refactored)
+[Elaine1]
+[Newln]*Elaine is sitting at the bar.*
+[Newln]*You sit next to her.*
+[Elaine2]
+[Newln]Oh. It’s you.
+[Elaine1]
+[Newln]I’m not really in the mood to put you down right now.
+[Newln]Come back later.
+        [Display]I’m staying.
+                [Answer]*Elaine shakes her head in disbelief.
+        [Display]No.
+                [Answer]*Elaine looks genuinely surprised at your response.*
+        [Display]Well if you say so... 
+                [Answer]*Elaine grabs your arm before you can leave and makes you remain seated.*
+[Newln]I don’t know what sick game you’ve been playing all night spending time with me just to get treated poorly.
+[Newln]But, it has gotten me thinking about what I’m really doing to you.
+[Newln]It's not been for good fun or some reason like that.
+[Newln]I genuinely think of you as less than me at all levels.
+[Newln]That’s what I think of everyone here.
+[Newln]*Elaine looks at you with a look of concern.*
+[Newln]Am I just a great dart player with no other redeeming qualities?
+        [Display]Yes.
+                [Answer][Elaine3]*Elaine looks disturbed.*
+                [Answer]Just go away.
+[Answer][ElaineFail][SceneExit]
+        [Display]You’ve been great.
+                [Answer][Elaine2]*She looks dumbfounded.*
+        [Display]You have redeeming qualities.
+                [Answer][Elaine2]*She looks at you like you just saved her life.
+[Elaine1]
+[ElaineSuccess]
+[Newln]You think so?
+[Newln]After all the things I’ve said to you?
+[Newln]It’s not just you either, I'm terrible to everyone.
+[Newln]*You nod.*
+[Elaine2]
+[Newln]Wow.
+[Newln]You’re the first person to be appreciative of me in…
+[Newln]I don’t even know. Maybe my whole life.
+[Newln]*She grabs a dart from one of her pockets.*
+[Newln]This is for you.
+[Newln]You’re not beneath me anymore.
+[Newln]You’re someone worth my respect.
+[Newln]*She smiles.*
+[Newln]Sometimes…
+[Elaine1]
+[Newln]You know.
+[Newln]I’d like to be your partner for the final round.
+[Newln]Nobody else around here gets me like you do.
+[Newln]*You spend some time with the now slightly more merciful goddess of darts.*
+
+
+Intermediate Scene (Darts) (1 Love) (Refactored)
+[Newln]*You see Elaine practicing alone.*
+[Elaine1]
+[Newln]Hey.
+[Newln]Come here.
+[Elaine2]
+[Newln]Check this trick out.
+[Newln]*You spend time watching Elaine practice and gloat.* [RaiseElaineLove2]
+
+
+Intermediate Scene (Darts) (1 Love) (Refactored)
+[Newln]*You see Elaine practicing alone.*
+[Newln]Hey.
+[Newln]Come.
+[Newln]You want to buy me drinks?
+[Newln]Good.
+[Newln]*You spend time drinking with Elaine.* [RaiseElaineLove1][RaiseElaineIntox1][RaisePlayerIntox1]
+
+
+
+
+
+
+        
+Miscellaneous Characters
+
+
+Lounge Advice Guy (Lounge Available 6pm-7pm) (+ Skill) (Refactored)
+[Newln]*A sketchy looking man motions to a seat next to him at a table.
+[LoungeAdviceGuy1]
+[Newln]Yo. Sit.
+[Newln]*You sit.*
+[Newln]These fools. They just don’t get the art of the dart, you know?
+[Newln]But you... I can tell you’re from a different flock.
+[Newln]You understand.
+[Newln]*He pats your back a little too hard.*
+[Newln]You’re the right stuff.
+[Newln]I’ll be cheering for you.
+[Newln]And I’ll even give you some free advice.
+[Newln]When going for a high ton, always think about cargo ships.
+[Newln]Those babies can hold so many tons of darts. It’s incredible.
+[Newln]Not that you needed that advice, but now you have it.
+[Newln]*He pats your back even harder.*
+[Newln]Off you go. To victory and triumph.
+[Newln]*You leave your seat feeling motivated by the art of the dart.*[RaisePlayerSkill1]
+
+
+
+
+Bar Advice Guy (Bar Available 7pm-8pm) (+ Skill) (+ Intoxication) (Refactored)
+[Newln]*You sit next to a man at the bar.*
+[BarAdviceGuy1]
+[Newln]*He begins talking to you without prompting.*
+[Newln]My boyfriend, who was also my darts partner, left me because I’m bad at darts.
+[Newln]*He looks at you with passion.*
+[Newln]I will not let you fail like I have.
+[Newln]My best advice for you to avoid my fate is to compliment something about your darts partner before every game.
+[Newln]It’ll make them more confident. And you’ll feel better about yourself.
+[Newln]Speaking of which, I’m gonna go cry in a bathroom stall to make myself feel better.
+[Newln]Good luck in the tournament.
+[Newln]*He leaves you to contemplate the fickle nature of love and darts over a cold drink.*[RaisePlayerIntox1][RaisePlayerSkill1]
+
+
+Dance Advice Girl (Dance Floor Available 630pm - 730pm) (+ Skill) (Refactored)
+[Newln]*You approach a young woman dancing rampantly.*
+[DanceAdviceGirl1]
+[Newln]Hey! You!
+[Newln]Dance!
+[Newln]*She grabs your arms and flails you around for a while.*
+[Newln]*Eventually she tires out and walks off to the side of the dance floor with you.*
+[Newln]You’re incredible!
+[Newln]Here’s some advice!
+[Newln]When you’re checking out in darts imagine you’re operating a cash register.
+[Newln]Like… 
+[Newln]Cha-ching!
+[Newln]You know?
+[Newln]It really gives you a powerful perspective!
+[Newln]Anyways. Goodbye!
+[Newln]*She leaves you.*
+[Newln]*You feel enlightened by her advice.*[RaisePlayerSkill1]
+
+
+Charming Advice Girl (Bar Available 630pm - 730pm) (++ Skill) (+ Intoxication) (Refactored)
+[Newln]*You sit next to a clearly drunk woman.*
+[BarAdviceGirl1]
+[Newln]Hey, you're my friend.
+[Newln]Hey bartender, look, my friend is here.
+[Owner1]
+[Newln]Sure they are.
+[BarAdviceGirl1]
+[Newln]I know it’s you.
+[Newln]You couldn’t have come at a better time.
+[Newln]I have a secret for only you.
+[Newln]The best way to make friends is to say they’re your friend you know.
+[Newln]*She accidentally bumps her empty glass.*
+[Newln]See. It worked on you. You’re my best friend now.
+[Newln]Ha!
+[Newln]*The woman stands up and heads to the bathroom rather suddenly.*
+[Newln]*You think about your new friend at the bar for a while.*[RaisePlayerIntox1][RaisePlayerSkill2]
+
+
+
+
+
+
+Charming Advice Guy (Lounge Available 730pm - 830pm) (++ Skill) (Refactored)
+[Newln]*A charming man grabs your attention.*
+[CharmAdviceGuy1]
+[Newln]Come sit with me.
+[Newln]Let me tell you something about relationships.
+[Newln]*He leans back confidently.*
+[Newln]With this one easy step you can get anyone to fall for you.
+[Newln]All you have to do is be better than you were yesterday.
+[Newln]Eventually you’ll be so incredible that if someone doesn’t fall for you they’d have to be blind.
+[Newln]That’s what I did.
+[Newln]Haven’t you already fallen for me?
+[Newln]*You get up without saying a word.*
+[Newln]*After finding another seat far away from the man you consider if you are better than you were yesterday.*[RaisePlayerSkill2]
+
+
+Bathroom Advice Wall (Bathroom Available 7pm-830pm) (+ Skill) (- Intoxication)
+[Newln]*You examine a wall with scribbles on it while relieving yourself in the bathroom.
+[Newln]When throwing darts, think of rice balls.
+[Newln]Trust me it helps!
+[Newln]*You leave feeling enlightened.*[LowerPlayerIntox1][RaisePlayerSkill1]
+
+
+
+
+Owner (Available all night, scene is random and scenes are not repeatable)
+
+
+Random Scene One (+ Intoxication) (Refactored)
+[Newln]*You order a drink.*
+[Newln]*The owner tending the bar strikes up a conversation with you.*
+[Owner1]
+[Newln]Have you seen the bathroom?
+[Newln]You might be wondering why there’s only one.
+[Newln]Thanks to the push for gender neutral bathrooms I had an incredible idea for the bar one day.
+[Newln]If I have just a gender neutral bathroom that means I don’t have to waste money renovating two bathrooms AND a gender neutral bathroom.
+[Newln]So I decided to only have a gender neutral bathroom and with the money I saved I made it an incredible bathroom.
+[Newln]If only people didn’t scribble on the walls and vomit on the floor.
+[Newln]I should’ve opened a family restaurant or something like that.
+[Newln]Then my life would be perfect.
+[Newln]Anyways. Enjoy your drink.
+[Newln]*You spend time pondering the financial efficiency of supporting progressive views on gender.*[RaisePlayerIntox1]
+
+
+
+
+Random Scene Two (+ Intoxication) (Refactored)
+[Newln]*You order a drink.*
+[Newln]*The owner tending the bar strikes up a conversation with you.*
+[Owner1]
+[Newln]You know, my wife threw a knife at me the other day.
+[Newln]I thought it was wrong of her to do that, but then realized I forgot to do the dishes earlier that day.
+[Newln]So I guess I had it coming.
+[Newln]I love my wife so much.
+[Newln]Anyways. Enjoy your drink.
+[Newln]*You consider the possible benefits of remaining single over a cold drink.*[RaisePlayerIntox1]
+
+
+
+
+Random Scene Three (+ Intoxication) (Refactored)
+[Newln]*You order a drink.*
+[Newln]*The owner tending the bar strikes up a conversation with you.*
+[Owner1]
+[Newln]When they asked me to host this dart tournament I was a bit upset.
+[Newln]Place was rented out to have a wedding today.
+[Newln]So I had to tell them they couldn’t get married since the tournament organizers always pay me too much to pass up.
+[Newln]Needless to say my daughter hasn’t spoken to me since.
+[Newln]I even gave her the money back.
+[Newln]Love her to bits, but she always overreacts to things like that.
+[Newln]Anyways. Enjoy your drink.[RaisePlayerIntox1]
