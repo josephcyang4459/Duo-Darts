@@ -3,8 +3,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
 
-public class CutsceneHandler : MonoBehaviour
-{
+public class CutsceneHandler : MonoBehaviour {
     public static CutsceneHandler inst;
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
@@ -36,10 +35,8 @@ public class CutsceneHandler : MonoBehaviour
     public DartMen DartsMenu;
     public Schedule Schedule;
 
-    public void Awake()
-    {
-        if (inst != null)
-        {
+    public void Awake() {
+        if (inst != null) {
             Destroy(gameObject);
             return;
         }
@@ -47,29 +44,26 @@ public class CutsceneHandler : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void PlayClickSound()
-    {
+    public void PlayClickSound() {
         Audio.inst.PlayClip(AudioClips.Click);
     }
 
-    public void SetCharacterSprite(int i)
-    {
+    public void SetCharacterSprite(int i) {
         ResponsePortrait.sprite = CharacterPortraits[i];
     }
 
-    public void SetUpForMainGame(DartMen dartsMenu,Schedule schedule)
-    {
+    public void SetUpForMainGame(DartMen dartsMenu, Schedule schedule) {
         DartsMenu = dartsMenu;
         Schedule = schedule;
     }
 
-    public void PlayCutScene(CutScene c, int BackgroundIndex)
-    {
+    public void PlayCutScene(CutScene c, int BackgroundIndex) {
         PauseMenu.inst.SetEnabled(false);
+        UIState.inst.SetInteractable(false);
         index = 0;
         cutscene = c;
         CompleteThisCutscene();
-        DecideCharacter(c.defaultCharacter);
+        DecideCharacter(c.defaultCharacter, false);
         SetBackGroundVisual(BackgroundIndex);
 
         dialougeCanvas.enabled = true;
@@ -77,26 +71,23 @@ public class CutsceneHandler : MonoBehaviour
         interact.action.performed += takeAction;
         cutscene.blocks[index].action(this);
     }
-    void CompleteThisCutscene()
-    {
-        for (int i = 0; i < 5; i++)
-        {
+
+    void CompleteThisCutscene() {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < characters.list[i].RelatedCutScenes.Length; j++)
-                if (characters.list[i].RelatedCutScenes[j].CutScene == cutscene)
-                {
+                if (characters.list[i].RelatedCutScenes[j].CutScene == cutscene) {
                     characters.list[i].RelatedCutScenes[j].completed = true;
                     return;
                 }
         }
     }
 
-    public void choice(int i)
-    {
+    public void choice(int i) {
         if (i == 0)
             cutscene = characters.list[characterIndex].DefaultRepeatingScene;
         else
             cutscene = characters.list[characterIndex].DefaultDrinkingCutScene;
-
+        UIState.inst.SetInteractable(false);
         Schedule.enabled = false;
         index = 0;
         DefaultCanvass.enabled = false;
@@ -106,9 +97,9 @@ public class CutsceneHandler : MonoBehaviour
         cutscene.blocks[index].action(this);
     }
 
-    public void EndCutscene()
-    {
+    public void EndCutscene() {
         PauseMenu.inst.SetEnabled(true);
+        UIState.inst.SetInteractable(true);
         dialougeCanvas.enabled = false;
         responseCanvas.enabled = false;
         interact.action.Disable();
@@ -116,8 +107,9 @@ public class CutsceneHandler : MonoBehaviour
         Schedule!.setTime(TimeBlocks.Long);
     }
 
-    public void PresentChoices()
-    {
+    public void PresentChoices() {
+        UIState.inst.SetInteractable(true);
+        //-----------------------------------------------------------------------------------------******-----+++++++------------Set BUTTON HERE
         DefaultCanvass.enabled = true;
         dialougeCanvas.enabled = false;
         dialougeCanvas.enabled = false;
@@ -126,23 +118,20 @@ public class CutsceneHandler : MonoBehaviour
     }
 
 
-    public void takeAction(InputAction.CallbackContext c)
-    {
+    public void takeAction(InputAction.CallbackContext c) {
         if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
                 return;
 
-            if (dh.Script.writing)
-            {
+            if (dh.Script.writing) {
                 dh.Script.Stop();
                 return;
             }
 
             responseIndexIndex++;
 
-            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length)
-            {
+            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length) {
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
@@ -150,15 +139,13 @@ public class CutsceneHandler : MonoBehaviour
                 dh.Script.Stop();
                 nextBlock();
             }
-            else
-            {
+            else {
                 displayResponse();
             }
             return;
         }
-            
-        if (dh.Script.writing)
-        {
+
+        if (dh.Script.writing) {
             dh.Script.Stop();
             return;
         }
@@ -166,15 +153,13 @@ public class CutsceneHandler : MonoBehaviour
         nextBlock();
     }
 
-    public void nextBlock()
-    {
+    public void nextBlock() {
         index++;
 
-        if (index >= cutscene.blocks.Length)
-        {
+        if (index >= cutscene.blocks.Length) {
 
             EndCutscene();
-            if (cutscene.exception)// force play darts
+            if (cutscene.ForceDarts)// force play darts
                 DartsMenu.exception(characterIndex, Schedule.hour);
             return;
         }
@@ -182,14 +167,14 @@ public class CutsceneHandler : MonoBehaviour
         cutscene.blocks[index].action(this);
     }
 
-    public void dialouge(string message)
-    {
+    public void dialouge(string message) {
         TextLine.enabled = true;
         dh.WriteDialogue(message);
     }
 
-    public void response(Response r)
-    {
+    public void response(Response r) {
+        //-------------------------**********------------------------------+++++++++++++--------------------------------------Set BUTTON HERE
+        UIState.inst.SetInteractable(true);
         respon = r;
         responding = true;
         responseIndex = -1;
@@ -197,18 +182,15 @@ public class CutsceneHandler : MonoBehaviour
             responses[i].text = respon.responses[i].answer;
 
         responseCanvas.enabled = true;
-        //UI_Helper.SetSelectedUIElement(responseButton);
     }
 
-    public void ChangeCharacter(string character, Expressions expression)
-    {
+    public void ChangeCharacter(string character, Expressions expression) {
         DecideCharacter(character);
         ChangeExpression((int)expression);
     }
 
-    public void UI_Response(int i)
-    {
-        //UI_Helper.SetSelectedUIElement(voiddd);
+    public void UI_Response(int i) {
+        UIState.inst.SetInteractable(false);
         responseCanvas.enabled = false;
         responseIndex = i;
         responseIndexIndex = 0;
@@ -216,41 +198,37 @@ public class CutsceneHandler : MonoBehaviour
         displayResponse();
     }
 
-    private void displayResponse()
-    {
+    private void displayResponse() {
         respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
-        if (!respon.responses[responseIndex].responses[responseIndexIndex].exemption)
+        if (!respon.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
             dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
         else
             Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int ExpressionIndex)
-    {
+    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock =true) {
         if (characterImg.enabled == false)
             characterImg.enabled = true;
         characterImg.sprite = characters.list[characterIndex].Expressions[ExpressionIndex];
-        nextBlock();
+        if (GoToNextBlock)
+            nextBlock();
     }
 
-    public void Thought(string s)
-    {
+    public void Thought(string s) {
         TextLine.enabled = false;
         dh.WriteDialogue(s);
     }
 
-    public void changeBackground(string s)
-    {
+    public void changeBackground(string s) {
         decideBackGround(s);
         nextBlock();
     }
 
-    private void SetPartnerVisual(int i)
-    {
+    private void SetPartnerVisual(int i, bool showPartnerVisual) {
         characterIndex = i;
 
         characterImg.sprite = characters.list[i].Expressions[0];
-        characterImg.enabled = true;
+        characterImg.enabled = showPartnerVisual;
         characterName.text = characters.list[i].Name;
         characterName.font = characters.list[i].Font;
         characterName.fontSize = characters.list[i].textSize;
@@ -259,15 +237,12 @@ public class CutsceneHandler : MonoBehaviour
         TextLine.sprite = characters.list[i].textLineTHing;
     }
 
-    private void SetBackGroundVisual(int i)
-    {
+    private void SetBackGroundVisual(int i) {
         cutSceneBackGround.sprite = bgs[i];
     }
 
-    private void decideBackGround(string s)
-    {
-        switch (s.ToLower())
-        {
+    private void decideBackGround(string s) {
+        switch (s.ToLower()) {
             case "lounge":
                 SetBackGroundVisual(0);
                 break;
@@ -279,57 +254,47 @@ public class CutsceneHandler : MonoBehaviour
                 break;
             case "elaine":
                 SetBackGroundVisual(0);
-
-                break;
-
-            case "owner":
-                SetBackGroundVisual(0);
-                break;
-            default:
-                characterName.text = s;
                 break;
         }
     }
 
-    private void DecideCharacter(string s)
-    {
-        switch (s.ToLower())
-        {
+    private void DecideCharacter(string s, bool showPartner =true) {
+        switch (s.ToLower()) {
             case "faye":
-                SetPartnerVisual(2);
+                SetPartnerVisual(2, showPartner);
                 break;
             case "chad":
-                SetPartnerVisual(0);
+                SetPartnerVisual(0, showPartner);
                 break;
             case "jess":
-                SetPartnerVisual(1);
+                SetPartnerVisual(1, showPartner);
                 break;
             case "elaine":
-                SetPartnerVisual(3);
+                SetPartnerVisual(3, showPartner);
                 break;
             case "owner":
-                SetPartnerVisual(4);
+                SetPartnerVisual(4, showPartner);
                 break;
             case "bar guy":
-                SetPartnerVisual(5);
+                SetPartnerVisual(5, showPartner);
                 break;
             case "charming girl":
-                SetPartnerVisual(6);
+                SetPartnerVisual(6, showPartner);
                 break;
             case "charming guy":
-                SetPartnerVisual(7);
+                SetPartnerVisual(7, showPartner);
                 break;
             case "dance girl":
-                SetPartnerVisual(8);
+                SetPartnerVisual(8, showPartner);
                 break;
             case "lounge guy":
-                SetPartnerVisual(9);
+                SetPartnerVisual(9, showPartner);
                 break;
             default:
 #if UNITY_EDITOR
                 Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
 #endif
-                SetPartnerVisual(10);
+                SetPartnerVisual(10, showPartner);
                 characterName.text = s;
                 break;
         }

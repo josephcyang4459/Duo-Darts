@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elain_Drepeat
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3415138152484438240
+  - rid: 3415138152484438241
+  - rid: 3415138152484438242
+  - rid: 3415138152484438243
+  - rid: 3415138152484438244
+  - rid: 3415138152484438245
+  defaultCharacter: Elaine
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 0200000001000000
+    values: 0100000001000000
+  AnotherFuckingException: 1
+  aa: {fileID: 4900000, guid: d3df6b2b25fb607479ed3f1736fce938, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3415138152484438240
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see Elaine practicing alone.*'
+    - rid: 3415138152484438241
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 3415138152484438242
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come here.
+    - rid: 3415138152484438243
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Check this trick out.
+    - rid: 3415138152484438244
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time watching Elaine practice and gloat.* '
+    - rid: 3415138152484438245
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        name: Change Stat Block
+        Character: 3
+        Stat: 2
+        Adjust: 2

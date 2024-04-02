@@ -13,100 +13,89 @@ MonoBehaviour:
   m_Name: Faye_4
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438343
-  - rid: 3415138152484438344
-  - rid: 3415138152484438345
-  - rid: 3415138152484438346
-  - rid: 3415138152484438347
-  - rid: 3415138152484438348
-  - rid: 3415138152484438349
-  - rid: 3415138152484438350
-  - rid: 3415138152484438351
-  - rid: 3415138152484438352
-  - rid: 3415138152484438353
-  - rid: 3415138152484438354
-  - rid: 3415138152484438355
-  - rid: 3415138152484438356
-  - rid: 3415138152484438357
-  - rid: 3415138152484438358
-  - rid: 3415138152484438359
-  - rid: 3415138152484438360
-  - rid: 3415138152484438361
-  - rid: 3415138152484438362
-  - rid: 3415138152484438363
-  - rid: 3415138152484438364
-  - rid: 3415138152484438365
-  - rid: 3415138152484438366
-  - rid: 3415138152484438367
-  - rid: 3415138152484438368
-  - rid: 3415138152484438369
-  - rid: 3415138152484438370
+  - rid: 6642624350133420160
+  - rid: 6642624350133420161
+  - rid: 6642624350133420162
+  - rid: 6642624350133420163
+  - rid: 6642624350133420164
+  - rid: 6642624350133420165
+  - rid: 6642624350133420166
+  - rid: 6642624350133420167
+  - rid: 6642624350133420168
+  - rid: 6642624350133420169
+  - rid: 6642624350133420170
+  - rid: 6642624350133420171
+  - rid: 6642624350133420172
+  - rid: 6642624350133420173
+  - rid: 6642624350133420174
+  - rid: 6642624350133420175
+  - rid: 6642624350133420176
+  - rid: 6642624350133420177
+  - rid: 6642624350133420178
+  - rid: 6642624350133420179
+  - rid: 6642624350133420180
+  - rid: 6642624350133420181
+  - rid: 6642624350133420182
+  - rid: 6642624350133420183
+  - rid: 6642624350133420184
+  - rid: 6642624350133420185
+  - rid: 6642624350133420186
+  - rid: 6642624350133420187
   defaultCharacter: Faye
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
+  ForceDarts: 0
   aa: {fileID: 4900000, guid: bee9c173b0b6d8444a349b537065587b, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438343
+    - rid: 6642624350133420160
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Faye watching some other players.*'
-    - rid: 3415138152484438344
+    - rid: 6642624350133420161
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She waves you over.*'
-    - rid: 3415138152484438345
+    - rid: 6642624350133420162
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438346
+        expression: 0
+    - rid: 6642624350133420163
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 3415138152484438347
+    - rid: 6642624350133420164
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 2
-    - rid: 3415138152484438348
+        expression: 1
+    - rid: 6642624350133420165
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's good to see you.
-    - rid: 3415138152484438349
+    - rid: 6642624350133420166
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438350
+        expression: 0
+    - rid: 6642624350133420167
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I want to practice some, but there's too many people watching the
           dart floor.
-    - rid: 3415138152484438351
+    - rid: 6642624350133420168
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye sighs.*'
-    - rid: 3415138152484438352
+    - rid: 6642624350133420169
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm really too far in my own head.
-    - rid: 3415138152484438353
+    - rid: 6642624350133420170
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Do you get nervous up there?
-    - rid: 3415138152484438354
+    - rid: 6642624350133420171
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Of course.
           responses:
@@ -115,7 +104,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: If I let myself.
           responses:
           - Message: You're tough.
@@ -123,91 +112,88 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Never.
           responses:
-          - Message: 
+          - Message: Nevermind.
             Character: 2
-            Expression: 3
+            Expression: 2
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
           - Message: '*Faye heads to her booth.*'
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 1
+            ResponseIsPlayerThought: 1
           - Message: 
             Character: 2
             Expression: 4
             Stat: 0
             AdjustValue: -10000000
-            exemption: 0
-    - rid: 3415138152484438355
+            ResponseIsPlayerThought: 0
+    - rid: 6642624350133420172
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just want to be the best darts player I can be.
-    - rid: 3415138152484438356
+    - rid: 6642624350133420173
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye looks determined.*'
-    - rid: 3415138152484438357
+    - rid: 6642624350133420174
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 2
-    - rid: 3415138152484438358
+        expression: 1
+    - rid: 6642624350133420175
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I love this game more than anything.
-    - rid: 3415138152484438359
+    - rid: 6642624350133420176
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I love being good at this game more than anything.
-    - rid: 3415138152484438360
+    - rid: 6642624350133420177
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438361
+        expression: 0
+    - rid: 6642624350133420178
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I think I can do this.
-    - rid: 3415138152484438362
+    - rid: 6642624350133420179
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just need to be the me I want to be. Everyone else can just watch.
-    - rid: 3415138152484438363
+    - rid: 6642624350133420180
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye looks at you intently.*'
-    - rid: 3415138152484438364
+    - rid: 6642624350133420181
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Please.
-    - rid: 3415138152484438365
+    - rid: 6642624350133420182
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Be my partner for the final round of the tournament.
-    - rid: 3415138152484438366
+    - rid: 6642624350133420183
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: There's no one else here I can imagine doing it with.
-    - rid: 3415138152484438367
+    - rid: 6642624350133420184
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't worry about answering now.
-    - rid: 3415138152484438368
+    - rid: 6642624350133420185
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 2
-    - rid: 3415138152484438369
+        expression: 1
+    - rid: 6642624350133420186
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Call me over when you need me.
-    - rid: 3415138152484438370
+    - rid: 6642624350133420187
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye heads back to her booth with a big smile on her face.*'

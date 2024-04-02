@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DartMenu_StandAlone : MonoBehaviour, Caller
+public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
 {
     [SerializeField] CharacterList Characters;
     [SerializeField] DartGame DartGame;
@@ -23,6 +23,11 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller
     [SerializeField] GameObject FirstScoreButton;
     public void Start()
     {
+        TransitionManager.inst.ReadyToEnterScene(this);
+      
+    }
+
+    public void EnterScene() {
         PauseMenu.inst.SetEnabled(true);
         BeginSetUp();
     }
@@ -32,7 +37,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller
         Audio.inst.StopSong();
         PartnerCanvas.enabled = true;
         //EventSystem.current.enabled = true;
-        UIState.inst.SetInteractableUIState(true);
+        UIState.inst.SetInteractable(true);
         UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }
 
@@ -82,7 +87,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller
         PartnerCanvas.enabled = false;
         ScoreCanvas.enabled = false;
         ScoreAnimationLeaveHead.ReachEndState();
-        UIState.inst.SetInteractableUIState(false);
+        UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
         DartGame.BeginGame(PartnerIndex);
         

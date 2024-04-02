@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041d59184047ae14b863447b3c465d14, type: 3}
+  m_Name: Cutscene Parser
+  m_EditorClassIdentifier: 
+  Cutscenes:
+  - {fileID: 11400000, guid: d83e331b94818354a81eba13e5d59042, type: 2}
+  - {fileID: 11400000, guid: 98875e2447f695246a1c33669b932a9b, type: 2}
+  - {fileID: 11400000, guid: 58c99b5db0254e94cbfb3ceeda7550c8, type: 2}
+  - {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
+  - {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
+  - {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
+  - {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  - {fileID: 11400000, guid: c4dfed969452951468178461bf30a220, type: 2}
+  - {fileID: 11400000, guid: 4a37a56e6224b454eab247739d2e6487, type: 2}
+  - {fileID: 11400000, guid: c9a08ff73aecc614d993a9b126d99b66, type: 2}
+  - {fileID: 11400000, guid: c32e579fbfed8f148b49289c4e0946a4, type: 2}
+  - {fileID: 11400000, guid: 5f5ac865462a22a4d990c66d58e4adf4, type: 2}
+  - {fileID: 11400000, guid: d89d6071d0c6f6c43834f84b3e1b9738, type: 2}
+  - {fileID: 11400000, guid: 78736f0a7a0b21846ae49128799bee2c, type: 2}
+  - {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
+  - {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
+  - {fileID: 11400000, guid: ae6f76b05eb4eeb4996874d85ab897b1, type: 2}
+  - {fileID: 11400000, guid: ec390762b3506ec4480c726b0b003747, type: 2}
+  - {fileID: 11400000, guid: 3eeae9dfe138f8541b2906d9a349ada5, type: 2}
+  - {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
+  - {fileID: 11400000, guid: afe9e1ce4b603eb48bb054d97aa5e68a, type: 2}
+  - {fileID: 11400000, guid: 7558c8147eb4bc444a0b57fc213cc70a, type: 2}
+  - {fileID: 11400000, guid: 1a0742d3a6e97b248aa52ccb53ec947e, type: 2}
+  - {fileID: 11400000, guid: c2ecdc124adbf624193f562947fec5a3, type: 2}
+  - {fileID: 11400000, guid: adaf0d923d9143e44880e5f3720ec782, type: 2}
+  - {fileID: 11400000, guid: c1e8044e3aa34134dbb9c3daa02b2b4f, type: 2}
+  - {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
+  - {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
+  - {fileID: 11400000, guid: 7a13e4c6503642a45a14fcbb3d9e1e8c, type: 2}
+  - {fileID: 11400000, guid: f6b30a4fdb0085d468e37c6d36be48df, type: 2}
+  - {fileID: 11400000, guid: 2f2f76b7f0814724a8348f50a0f0ff24, type: 2}
+  - {fileID: 11400000, guid: 5dfed64b7b4ef9c40a32c8b7c38136e0, type: 2}
+  - {fileID: 11400000, guid: c4c61a6d600a3c5468ec0f06a755141a, type: 2}
+  - {fileID: 11400000, guid: f776c8878f89d6e428bda2f630463aa7, type: 2}
+  - {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}
+  - {fileID: 11400000, guid: eafc0d680af7dd747afee4b15ba243a5, type: 2}
+  - {fileID: 11400000, guid: dd39ab6df9b216c45ba74df6f4f21977, type: 2}
+  Script: {fileID: 4900000, guid: b8f7a73b6da87c34d8508268ca0eb1c1, type: 3}
+  TryParse: 0
+  SendToCutscenes: 1
+  ChunkData:
+  - BestGuess: Chad
+    Header: "Needs to be checked for expression changes once makai makes expre\rScene
+      One (Lounge) (0 Love) (Refactored)\r"
+    ChunkStart: 2
+    ChunkEnd: 26
+    FirstLine: "[Newln]*A man with intense, striking features catches your attention.
+      He catches the glance, motioning you to come closer.*\r"
+    LastLine: "[Newln]*Despite saying he would ask you questions, he finds ways to
+      bring himself up more than anything.*\r"
+  - BestGuess: Chad
+    Header: "\r\rScene Two (Before a game of darts) (1 Love) (Refactored)\r"
+    ChunkStart: 30
+    ChunkEnd: 44
+    FirstLine: "[Chad1]\r"
+    LastLine: "[Newln]Let's see what you\u2019ve got.\r"
+  - BestGuess: Chad
+    Header: "\r\rScene Three (Dance floor) (6 Love) (Refactored)\r"
+    ChunkStart: 48
+    ChunkEnd: 88
+    FirstLine: "[Chad1]\r"
+    LastLine: "[Newln]*Unlike before, he focuses the conversation on you. His questions
+      are irrelevant to darts, mostly about your life outside the game.*\r"
+  - BestGuess: Chad
+    Header: "\r\r\r\rScene Four Optional (Dance floor) - Requires drunk Chad (10
+      Love) (Removes all Intox) (Refactored)\r"
+    ChunkStart: 94
+    ChunkEnd: 114
+    FirstLine: "[Newln]*Chadrick is dancing\u2026*\r"
+    LastLine: "[Newln]*You and Chad dance away. He trips up often.*[ResetIntoxChad]\r"
+  - BestGuess: Chad
+    Header: "\r\r\r\rScene Five (Bathroom) (13 Love)\r"
+    ChunkStart: 120
+    ChunkEnd: 169
+    FirstLine: "[Newln]*You hear someone vomiting in the stall*\r"
+    LastLine: "[Newln]*He didn\u2019t wash his hands\u2026*\r"
+  - BestGuess: Chad
+    Header: "\r\r\r\rIntermediate Scene Dance Floor (Repeating) (1 Love)\r"
+    ChunkStart: 175
+    ChunkEnd: 180
+    FirstLine: "[Newln]*You join Chad in people watching.*\r"
+    LastLine: "[Newln]*He seems to value the company.*[RaiseChadLove2]\r"
+  - BestGuess: Chad
+    Header: "\r\rIntermediate Scene Dance Floor (Repeating) (1 Love) (+Intoxication)\r"
+    ChunkStart: 184
+    ChunkEnd: 189
+    FirstLine: "[Newln]*You join Chad in people watching.*\r"
+    LastLine: "[Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerIntox1]\r"
+  - BestGuess: Faye
+    Header: "\r\r\r\rFaye/Faybian Artel (Faye)\r\r\rScene One (Lounge) (0 Love) (Refactored)\r"
+    ChunkStart: 198
+    ChunkEnd: 243
+    FirstLine: "[Newln]*While walking past a booth, you accidentally trip on someone\u2019s
+      leg. You fall face first onto the ground.\r"
+    LastLine: "[Newln]*You notice how hard it is to see her even just a few feet
+      away from the booth.*\r"
+  - BestGuess: Faye
+    Header: "\r\r\r\rScene Two (Darts) (1 Love) (Refactored)\r"
+    ChunkStart: 249
+    ChunkEnd: 267
+    FirstLine: "[Faye1]\r"
+    LastLine: "[Newln]Here, you go first.\r"
+  - BestGuess: Owner
+    Header: "\r\r\r\rScene Three (Bar) (8 Love) (Refactored)\r"
+    ChunkStart: 273
+    ChunkEnd: 329
+    FirstLine: "[Newln]*You see Faye at the bar.*\r"
+    LastLine: "[Newln]*You spend some time with Faye in her booth.*\r"
+  - BestGuess: Faye
+    Header: "\r\r\r\rScene Four Optional (Lounge) Requires Drunk Faye (13 Love) 
+      (Removes all Intox) (Refactored)\r"
+    ChunkStart: 335
+    ChunkEnd: 364
+    FirstLine: "[Newln]*You walk up to Faye\u2019s booth, but she\u2019s not there.\r"
+    LastLine: "[Newln]*You spend some time attending Faye\u2019s imaginary award
+      ceremony under the table.*[ResetFayeIntox]\r"
+  - BestGuess: Faye
+    Header: "\r\r\r\rScene Five (Darts) (17 Love) (Refactored)\r"
+    ChunkStart: 370
+    ChunkEnd: 409
+    FirstLine: "[Newln]*You see Faye watching some other players.*\r"
+    LastLine: "[Newln]*Faye heads back to her booth with a big smile on her face.*\r"
+  - BestGuess: Faye
+    Header: "\r\r\r\rIntermediate Scene (Lounge) (1 Love) (Refactored)\r"
+    ChunkStart: 415
+    ChunkEnd: 419
+    FirstLine: "[Newln]*You go to Faye\u2019s booth.*\r"
+    LastLine: "[Newln]*You spend time with Faye. She seems relieved.* [RaiseFayeLove2]\r"
+  - BestGuess: Faye
+    Header: "\r\rIntermediate Drinking Scene (Lounge) (+ Intoxication) (1 Love) (Refactored)\r"
+    ChunkStart: 423
+    ChunkEnd: 427
+    FirstLine: "[Newln]*You go to Faye\u2019s booth.*\r"
+    LastLine: "[Newln]*You spend time drinking with Faye.* [RaiseFayeLove1][RaiseFayeIntox1][RaisePlayerIntox1]\r"
+  - BestGuess: Jess
+    Header: "Jessica Fletcher\r\r\rScene One (Dance floor) (0 Love) (Refactored)\r"
+    ChunkStart: 432
+    ChunkEnd: 455
+    FirstLine: "[Newln]*You see a unique woman dancing.*\r"
+    LastLine: "[Newln]*You and Jessica dance for a while.*\r"
+  - BestGuess: Jess
+    Header: "\r\rScene Two (Darts) (1 Love) (Refactored)\r"
+    ChunkStart: 459
+    ChunkEnd: 474
+    FirstLine: "[Jess1]\r"
+    LastLine: "[Newln]I would very much appreciate it if you didn\u2019t make me
+      work too hard to win.\r"
+  - BestGuess: Jess
+    Header: "\r\rScene Three (Bar) (+ Intoxication) (6 Love) (Refactored)\r"
+    ChunkStart: 478
+    ChunkEnd: 516
+    FirstLine: "[Newln]*You find Jessica sitting at the bar.*\r"
+    LastLine: "[Newln]*You and Jessica talk for a while.*[RaiseIntox1][RaiseJessIntox1]\r"
+  - BestGuess: Jess
+    Header: "\r\rScene Four Optional (Bathroom) - Requires drunk Jessica (Removes
+      all Intox) (11 Love) (Refactored)\r"
+    ChunkStart: 520
+    ChunkEnd: 546
+    FirstLine: "[Jess4]\r"
+    LastLine: "[Newln]*You stay with Jessica for a while until she feels better.*[ResetIntoxJess]\r"
+  - BestGuess: Jess
+    Header: "\r\rScene Five (Lounge) (14 Love) (Refactored)\r"
+    ChunkStart: 550
+    ChunkEnd: 600
+    FirstLine: "[Newln]*You sit next to Jessica at a lounge table.*\r"
+    LastLine: "[Newln]Really.\r"
+  - BestGuess: Jess
+    Header: "\r\rIntermediate Scene (Lounge Repeating) (1 Love) (Refactored)\r"
+    ChunkStart: 604
+    ChunkEnd: 609
+    FirstLine: "[Newln]*You sit next to Jessica and strike up a conversation.*\r"
+    LastLine: "[Newln]*You spend time talking with Jessica. She seems appreciative.*
+      [RaiseJessLove2]\r"
+  - BestGuess: Jess
+    Header: "\r\rIntermediate Scene (Lounge Repeating) (+ Intoxication) (1 Love)
+      (refactored)\r"
+    ChunkStart: 613
+    ChunkEnd: 618
+    FirstLine: "[Newln]*You sit next to Jessica.*\r"
+    LastLine: "[Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerIntox1]\r"
+  - BestGuess: Elaine
+    Header: "\r\r\r\rElaine Guzm\xE1n\r\r\rScene One (Bar) (0 Love) (Refactored)\r"
+    ChunkStart: 627
+    ChunkEnd: 658
+    FirstLine: "[Newln]*You sit next to a woman invested in a trio of darts sitting
+      in front of her on the table.*\r"
+    LastLine: "[Newln]*You sit quietly as Elaine insults you for a while.*\r"
+  - BestGuess: Elaine
+    Header: "\r\r\r\rScene Two (Darts) (1 Love) (Refactored)\r"
+    ChunkStart: 664
+    ChunkEnd: 680
+    FirstLine: "[Newln]*Elaine holds a trio of darts in her hands and appears to
+      give a brief prayer before speaking to you.*\r"
+    LastLine: "[Newln]So be ready for a long game.\r"
+  - BestGuess: Elaine
+    Header: "\r\rScene Three (Lounge) (6 Love) (Refactored)\r"
+    ChunkStart: 684
+    ChunkEnd: 714
+    FirstLine: "[Newln]*You walk up to Elaine who is again fidgeting with a few darts
+      on the table in front of her.*\r"
+    LastLine: "[Newln]*You leave Elaine to enjoy her fantasizations of international
+      fame, but you find yourself picturing it as well.*\r"
+  - BestGuess: Elaine
+    Header: "\r\rScene Four Optional (Darts) (Removes all Intox) (10 Love) (Refactored)\r"
+    ChunkStart: 718
+    ChunkEnd: 753
+    FirstLine: "[Elaine4]\r"
+    LastLine: "[Newln]*You spend some time getting a mix of praise and beration from
+      her.*[ResetElaineIntox]\r"
+  - BestGuess: Elaine
+    Header: "\r\r\r\rScene Five (Bar) (14 Love) (Refactored)\r"
+    ChunkStart: 759
+    ChunkEnd: 808
+    FirstLine: "[Elaine1]\r"
+    LastLine: "[Newln]*You spend some time with the now slightly more merciful goddess
+      of darts.*\r"
+  - BestGuess: Elaine
+    Header: "\r\rIntermediate Scene (Darts) (1 Love) (Refactored)\r"
+    ChunkStart: 812
+    ChunkEnd: 818
+    FirstLine: "[Newln]*You see Elaine practicing alone.*\r"
+    LastLine: "[Newln]*You spend time watching Elaine practice and gloat.* [RaiseElaineLove2]\r"
+  - BestGuess: IDK
+    Header: "\r\rIntermediate Scene (Darts) (1 Love) (Refactored)\r"
+    ChunkStart: 822
+    ChunkEnd: 827
+    FirstLine: "[Newln]*You see Elaine practicing alone.*\r"
+    LastLine: "[Newln]*You spend time drinking with Elaine.* [RaiseElaineLove1][RaiseElaineIntox1][RaisePlayerIntox1]\r"
+  - BestGuess: IDK
+    Header: "\r\r\r\r\r\r        \rMiscellaneous Characters\r\r\rLounge Advice Guy
+      (Lounge Available 6pm-7pm) (+ Skill) (Refactored)\r"
+    ChunkStart: 839
+    ChunkEnd: 855
+    FirstLine: "[Newln]*A sketchy looking man motions to a seat next to him at a
+      table.\r"
+    LastLine: "[Newln]*You leave your seat feeling motivated by the art of the dart.*[RaisePlayerSkill1]\r"
+  - BestGuess: IDK
+    Header: "\r\r\r\rBar Advice Guy (Bar Available 7pm-8pm) (+ Skill) (+ Intoxication)
+      (Refactored)\r"
+    ChunkStart: 861
+    ChunkEnd: 871
+    FirstLine: "[Newln]*You sit next to a man at the bar.*\r"
+    LastLine: "[Newln]*He leaves you to contemplate the fickle nature of love and
+      darts over a cold drink.*[RaisePlayerIntox1][RaisePlayerSkill1]\r"
+  - BestGuess: IDK
+    Header: "\r\rDance Advice Girl (Dance Floor Available 630pm - 730pm) (+ Skill)
+      (Refactored)\r"
+    ChunkStart: 875
+    ChunkEnd: 890
+    FirstLine: "[Newln]*You approach a young woman dancing rampantly.*\r"
+    LastLine: "[Newln]*You feel enlightened by her advice.*[RaisePlayerSkill1]\r"
+  - BestGuess: Charming Girl
+    Header: "\r\rCharming Advice Girl (Bar Available 630pm - 730pm) (++ Skill) (+
+      Intoxication) (Refactored)\r"
+    ChunkStart: 894
+    ChunkEnd: 909
+    FirstLine: "[Newln]*You sit next to a clearly drunk woman.*\r"
+    LastLine: "[Newln]*You think about your new friend at the bar for a while.*[RaisePlayerIntox1][RaisePlayerSkill2]\r"
+  - BestGuess: Charming Advice Guy
+    Header: "\r\r\r\r\r\rCharming Advice Guy (Lounge Available 730pm - 830pm) (++
+      Skill) (Refactored)\r"
+    ChunkStart: 917
+    ChunkEnd: 928
+    FirstLine: "[Newln]*A charming man grabs your attention.*\r"
+    LastLine: "[Newln]*After finding another seat far away from the man you consider
+      if you are better than you were yesterday.*[RaisePlayerSkill2]\r"
+  - BestGuess: IDK
+    Header: "\r\rBathroom Advice Wall (Bathroom Available 7pm-830pm) (+ Skill) (-
+      Intoxication)\r"
+    ChunkStart: 932
+    ChunkEnd: 935
+    FirstLine: "[Newln]*You examine a wall with scribbles on it while relieving yourself
+      in the bathroom.\r"
+    LastLine: "[Newln]*You leave feeling enlightened.*[LowerPlayerIntox1][RaisePlayerSkill1]\r"
+  - BestGuess: Owner
+    Header: "\r\r\r\rOwner (Available all night, scene is random and scenes are not
+      repeatable)\r\r\rRandom Scene One (+ Intoxication) (Refactored)\r"
+    ChunkStart: 944
+    ChunkEnd: 956
+    FirstLine: "[Newln]*You order a drink.*\r"
+    LastLine: "[Newln]*You spend time pondering the financial efficiency of supporting
+      progressive views on gender.*[RaisePlayerIntox1]\r"
+  - BestGuess: Owner
+    Header: "\r\r\r\rRandom Scene Two (+ Intoxication) (Refactored)\r"
+    ChunkStart: 962
+    ChunkEnd: 970
+    FirstLine: "[Newln]*You order a drink.*\r"
+    LastLine: "[Newln]*You consider the possible benefits of remaining single over
+      a cold drink.*[RaisePlayerIntox1]\r"
+  - BestGuess: Owner
+    Header: "\r\r\r\rRandom Scene Three (+ Intoxication) (Refactored)\r"
+    ChunkStart: 976
+    ChunkEnd: 985
+    FirstLine: "[Newln]*You order a drink.*\r"
+    LastLine: '[Newln]Anyways. Enjoy your drink.[RaisePlayerIntox1]'

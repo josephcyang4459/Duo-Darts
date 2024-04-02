@@ -10,29 +10,25 @@ public class DartVisual : MonoBehaviour
     [SerializeField] TMP_Text TurnScore;
     public Image[] dartimages;
     public TMP_Text[] scores;
-    
-    public void SetScores(int turnScore, int overallScore)
-    {
+
+    public void SetTurnAndOverallScores(int turnScore, int overallScore) {
         TurnScore.text = turnScore.ToString();
         OverallScore.text = overallScore.ToString();
     }
 
-    public void SetDartScore(int dartIndex, int score)
-    {
+    public void SetDartScore(int dartIndex, int score) {
         scores[dartIndex].text = score.ToString();
         dartimages[dartIndex].enabled = false;
     }
-    public void SetDartScore()
-    {
-        for(int i = 0; i < 3; i++)
-        {
+
+    public void SetDartScore() {
+        for (int i = 0; i < 3; i++) {
             scores[i].text = "";
             dartimages[i].enabled = true;
         }
-        
     }
-    public void SetTurnScore(int turnScore)
-    {
+
+    public void SetTurnScore(int turnScore) {
         TurnScore.text = turnScore.ToString();
     }
 }
