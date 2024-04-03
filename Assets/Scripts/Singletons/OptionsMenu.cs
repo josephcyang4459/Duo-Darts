@@ -12,7 +12,7 @@ public class OptionsMenu : MonoBehaviour
     public Slider VolumeSlider;
     public TMP_Text VolumeText;
 
-    [SerializeField] Toggle[] Toggles;
+    [SerializeField] UIToggle[] Toggles;
 
     [SerializeField] Caller Caller;
 
@@ -74,11 +74,9 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void ControllerOptionsFunction(int index){
-        if (Toggles[index] == null || !Toggles[index].isOn) return;
-
-        for (int i = 0; i < 3; i++){
-            Toggles[i].isOn = i == index;
-            Toggles[i].interactable = i != index;
+        for (int i = 0; i < 3; i++) {
+            Toggles[i].ChangeStateNoInvoke(i == index);
+            Toggles[i].SetInteractable(i != index);
         }
       
         Audio.inst.PlayClip(AudioClips.Click);

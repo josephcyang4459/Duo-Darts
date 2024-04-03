@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIA_MultiImageFill : UIAnimationElement
 {
-    [SerializeField] Image[] Images;
+    public Image[] Images;
     float CurrentFill;
     float TargetFill;
     [SerializeField] float Speed;

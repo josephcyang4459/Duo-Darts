@@ -7,8 +7,8 @@ public class BoardCollider : MonoBehaviour
     public MeshRenderer mr;
     public Transform target;
 
-    public void hit()
+    public void hit(Vector3 position)
     {
-        gameState.Dart.go(gameState.aim.t.position, point);
+        gameState.Dart.ShootDart(position, point);
     }
 }

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518f34ee2634c3c42bb518b616dcb59a, type: 3}
+  m_Name: Faye AI
+  m_EditorClassIdentifier: 
+  BaseOffset: 0.1
+  DoubleRange: {x: 17, y: 20}
+  Partner: {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
+  StatToUse: 2
+  Tiers:
+  - StatCutOff: 4
+    TierData:
+      Sixty: 0.2
+      Bullseye: 0.3
+      Double: 0.5
+      Single: 0
+  - StatCutOff: 8
+    TierData:
+      Sixty: 0.4
+      Bullseye: 0.4
+      Double: 0.2
+      Single: 0
+  - StatCutOff: 199999
+    TierData:
+      Sixty: 0.6
+      Bullseye: 0.4
+      Double: 0
+      Single: 0
+  __rectify: 0

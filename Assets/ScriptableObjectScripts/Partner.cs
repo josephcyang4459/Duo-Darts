@@ -14,7 +14,7 @@ public class Partner : ScriptableObject {
     public CutScene DefaultRepeatingScene;
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
-    public DartTargetBias bias = DartTargetBias.None;
+    public DartAI AI;
     public Sprite TextBox;
     public Sprite textLineTHing;
 

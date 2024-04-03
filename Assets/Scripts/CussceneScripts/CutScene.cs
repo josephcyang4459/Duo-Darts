@@ -20,10 +20,6 @@ public class CutScene : ScriptableObject
 
 #if UNITY_EDITOR
     public const int FAIL_VALUE = -10000000;
-    [Header("These are no longer being updated please use Cutscene Parser")]
-    public TextAsset aa;
-    public bool reset;
-
     public void __resetCutScene(string[] overall) {
         string currentCharacter = defaultCharacter;
         List<block> blockList = new List<block>();
@@ -134,13 +130,6 @@ public class CutScene : ScriptableObject
 
     }
 
-    public void OnValidate()
-    {
-        if (!reset)
-            return;
-        reset = false;
-        __resetCutScene(aa.text.Split('\n'));
-    }
 
     string __GetPlace(string s) {
         if (s.Contains("Lounge"))

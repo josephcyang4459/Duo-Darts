@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class GroupImageFill : MonoBehaviour
 {
-    [SerializeField] Fillable CurrentImage;
+    [SerializeReference] Fillable CurrentImage;
     [SerializeField] Vector2 Target;
-    [SerializeField] List<Fillable> OldImages;
+    [SerializeReference] List<Fillable> OldImages =new();
     [SerializeField] float FillPerSecond;
     [SerializeField] bool ShootDart;
+
     public void SetCurrentImageToFill(Fillable newImage, Vector2 newTarget) {
         Target = newTarget;
         ShootDart = true;
