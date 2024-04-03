@@ -1,18 +1,17 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class UIState : MonoBehaviour
-{
+public class UIState : MonoBehaviour {
     public static UIState inst;
     [SerializeField] EventSystem EventSystem;
     [SerializeField] GameObject CurrentFirstSelected;
-    public void Awake()
-    {
-        if(inst != null)
-        {
+
+    public void Awake() {
+        if(inst != null) {
             Destroy(gameObject);
             return;
         }
+
         DontDestroyOnLoad(this);
         inst = this;
     }
@@ -24,26 +23,14 @@ public class UIState : MonoBehaviour
         }
     }
 
-    public void ControllerConnected()
-    {
-        if (EventSystem.enabled) {
+    public void ControllerConnected() {
+        if (EventSystem.enabled)
             EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
-        }
-            
     }
 
-    public GameObject GetCurrentSelected()
-    {
-        return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected;
-    }
+    public GameObject GetCurrentSelected() {  return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected; }
 
-    public void SetInteractable(bool enabled)
-    {
-        EventSystem.enabled = enabled;
-    }
+    public void SetInteractable(bool enabled) { EventSystem.enabled = enabled; }
 
-    public bool GetCurrentState()
-    {
-        return EventSystem.enabled;
-    }
+    public bool GetCurrentState() { return EventSystem.enabled; }
 }

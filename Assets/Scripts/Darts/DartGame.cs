@@ -16,16 +16,15 @@ public class DartGame : MonoBehaviour {
     public int ScoreNeededToWin = 501;
     public int points;
     public int currentTurn = 0;
-
     public int numberOfDartsThrow = 0;
     public int maxTurns;
+    public bool firstTimePlaying;
 
 
     [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(16, 19);
     [SerializeField] float BaseOffset = .1f;
     [SerializeField] float MaxOffset = 4;
     public Canvas dartCanvas;
-
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -79,21 +78,20 @@ public class DartGame : MonoBehaviour {
     }
 #endif
 
-    public void BeginGame(int partner) {
+    public void BeginGame() {
         Aim.SetUpDependants();
         DartSticker.inst.SetVisible(false);
         PauseMenu.inst.SetEnabled(false);
         Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
-
         points = ScoreNeededToWin > 600 ? 10 : 5;
         //Debug.Log(Accuracy);
         //float Stability = Math.Clamp((30/stats.Skill) + ((stats.Intoxication/3) / 10), 1,100);// gooffy ass
         //aim.driftSpeed = driftDefault * Stability;
         //aim.driftSpeed = driftDefault;
         //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
-        partnerIndex = partner;
+        
         Dart.SetUp(partnerIndex);
         Dart.reset_position();
         Visuals.SetDartScore();
@@ -102,6 +100,9 @@ public class DartGame : MonoBehaviour {
         Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
         numberOfDartsThrow = 0;
         dartCanvas.enabled = true;
+
+
+
 
         playerTurn();
     }
