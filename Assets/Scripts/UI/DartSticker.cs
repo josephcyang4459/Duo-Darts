@@ -48,6 +48,8 @@ public class DartSticker : MonoBehaviour
 
     public void NewLocation(Vector2 newLocation)
     {
+        if (!UIState.inst.GetCurrentState())
+            return;
         if (First)
         {
             if (SkipFirstInteractionOfLevel())

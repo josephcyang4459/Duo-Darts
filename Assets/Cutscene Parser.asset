@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd39ab6df9b216c45ba74df6f4f21977, type: 2}
   Script: {fileID: 4900000, guid: b8f7a73b6da87c34d8508268ca0eb1c1, type: 3}
   TryParse: 0
-  SendToCutscenes: 1
+  SendToCutscenes: 0
   ChunkData:
   - BestGuess: Chad
     Header: "Needs to be checked for expression changes once makai makes expre\rScene
@@ -115,7 +115,7 @@ MonoBehaviour:
     ChunkEnd: 267
     FirstLine: "[Faye1]\r"
     LastLine: "[Newln]Here, you go first.\r"
-  - BestGuess: Owner
+  - BestGuess: Faye
     Header: "\r\r\r\rScene Three (Bar) (8 Love) (Refactored)\r"
     ChunkStart: 273
     ChunkEnd: 329
@@ -257,7 +257,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You sit next to a man at the bar.*\r"
     LastLine: "[Newln]*He leaves you to contemplate the fickle nature of love and
       darts over a cold drink.*[RaisePlayerIntox1][RaisePlayerSkill1]\r"
-  - BestGuess: IDK
+  - BestGuess: Dancing Girl
     Header: "\r\rDance Advice Girl (Dance Floor Available 630pm - 730pm) (+ Skill)
       (Refactored)\r"
     ChunkStart: 875

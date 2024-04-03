@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class DartPlayerAim : MonoBehaviour
 {
-    public float MinDriftSpeed;//2
-    public float MaxDriftSpeed;//3
-    public float MinBloomDiameter;//.1f
-    public float MaxBloomDiameter;//1
     [SerializeField] Player Player;
     [SerializeField] SpriteRenderer AimSprite;
     [SerializeField] Transform AimPosition;
@@ -26,13 +22,16 @@ public class DartPlayerAim : MonoBehaviour
         CurrentLocation.y += y;
     }
 
+    public void SetUpDependants() {
+        Drift.SetUp(Player.Intoxication, Player.Skill);
+        Bloom.SetUp();
+    }
+
     public void BeginPlayerAim() {
         AimSprite.enabled = true;
         CurrentLocation = StartingLocation;
         AimPosition.position = CurrentLocation;
-        Drift.SetUp(Player.Intoxication, Player.Skill);
-        Control.SetUp();
-        Bloom.SetUp(Player.Luck);
+        Control.BeginMovement();
         fire.action.Enable();
         fire.action.performed += Shoot;
         enabled = true;

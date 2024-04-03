@@ -9,7 +9,7 @@ public class DartGame : MonoBehaviour {
     public DartScript Dart;
     public DartPlayerAim Aim;
 
-    [SerializeField] LayerMask Layer;
+    [SerializeField] DartsSettings Settings;
 
     public int partnerIndex = 0;
     public int turnSum = 0;
@@ -80,6 +80,7 @@ public class DartGame : MonoBehaviour {
 #endif
 
     public void BeginGame(int partner) {
+        Aim.SetUpDependants();
         DartSticker.inst.SetVisible(false);
         PauseMenu.inst.SetEnabled(false);
         Audio.inst.PlaySong(ac);
@@ -185,7 +186,7 @@ public class DartGame : MonoBehaviour {
     //used to hit the board
     private void PartnerShootDart(Vector3 h) {
         h.z = -.2f;
-        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, 12, Layer)) {
+        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, 12, Settings.DartsLayerMask)) {
             ///Debug.Log(aim.t.position);
             hit.collider.gameObject.GetComponent<BoardCollider>().hit(h);
         }

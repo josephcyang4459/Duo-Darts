@@ -5,6 +5,8 @@ using UnityEngine;
 public class DartPlayerAim_Bloom : MonoBehaviour
 {
     [SerializeField] DartPlayerAim Aim;
+    [SerializeField] DartsSettings Settings;
+    [SerializeField] Player Player;
     public float BloomSpeed;
     public Transform t;
     public float BloomMax;
@@ -12,9 +14,9 @@ public class DartPlayerAim_Bloom : MonoBehaviour
     public float CurrentBloom;
     public float TargetBloom;
     public Vector3 Size;
-    public void SetUp(float luck) {
-        BloomMin = Aim.MinBloomDiameter;
-        BloomMax = Mathf.Clamp(Aim.MaxBloomDiameter - (luck / 10), BloomMin*2, Aim.MaxBloomDiameter);
+    public void SetUp() {
+        BloomMin = Mathf.Clamp(Settings.BaseBloomDiameter - (Player.Luck / Settings.MinBloomLuckWeight), 0, Settings.BaseBloomDiameter);
+        BloomMax = Mathf.Clamp(Settings.MaxBloomDiameter - (Player.Skill / Settings.MaxBloomSkillWeight), BloomMin*2, Settings.MaxBloomDiameter);
         CurrentBloom = (BloomMax - BloomMin) / 2;
         TargetBloom = BloomMax;
         Size.x = CurrentBloom;

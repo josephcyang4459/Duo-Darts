@@ -11,7 +11,7 @@ public class DartPlayerAim_Control : MonoBehaviour
     public float MoveSpeed;
     public Vector2 cache = Vector2.zero;
 
-    public void SetUp() {
+    public void BeginMovement() {
         
 
         move.action.Enable();

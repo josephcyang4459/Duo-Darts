@@ -128,22 +128,99 @@ public class __CutsceneParser : ScriptableObject
             return "Elaine";
         if (full.Contains("owner"))
             return "Owner";
-        if (full.Contains("barguy"))
+        if (full.Contains("baradviceguy"))
             return "Bar Guy";
+        if (full.Contains("danceadvicegirl"))
+            return "Dancing Girl";
         if (full.Contains("baradvicegirl"))
             return "Charming Girl";
+        if (full.Contains("loungeadviceguy"))
+            return "Lounge Guy";
         if (full.Contains("charmadviceguy"))
             return "Charming Advice Guy";
         return null;
     }
 
-    string FirstCharacterExpressionInChunk(int startIndex,int endIndex, string[] s) {
-        for (int i = startIndex; i < endIndex; i++)
-            if (GetCharactersNameFromLine(s[i]) != null)
-                return GetCharactersNameFromLine(s[i]);
-        return "IDK";
+    private bool IsPartner(string full) {
+
+        if (full.Contains("chad"))
+            return true;
+        if (full.Contains("faye"))
+            return true;
+        if (full.Contains("jess"))
+            return true;
+        if (full.Contains("elaine"))
+            return true;
+        return false;
     }
 
+    string MostReferncedCharacterExpressionInChunk(int startIndex,int endIndex, string[] s) {
+        List<string> name =new();
+        List<int> occurance = new();
+        for (int i = startIndex; i < endIndex; i++)
+            if (GetCharactersNameFromLine(s[i]) != null) {
+                if (name.Contains(GetCharactersNameFromLine(s[i])))
+                    occurance[name.IndexOf(GetCharactersNameFromLine(s[i]))]++;
+                else {
+                    name.Add(GetCharactersNameFromLine(s[i]));
+                    occurance.Add(1);
+                }
+            }
+        if(occurance.Count==0)
+            return "IDK";
+        int most = 0;
+        for(int i = 0; i < occurance.Count; i++) {
+            if (occurance[i] > occurance[most])
+                most = i;
+        }
+        return name[most];
+       
+    }
+
+    int FindSceneIndexInHeader(string header) {
+        string check = "scene ";
+        int index = header.IndexOf(check)+ check.Length;
+        int number= GetNumber(header.Substring(index, 6));
+        return number;
+    }
+
+    int GetNumber(string s) {
+        if (s.Contains("one"))
+            return 1;
+        if (s.Contains("two"))
+            return 2;
+        if (s.Contains("three"))
+            return 3;
+        if (s.Contains("four"))
+            return 4;
+        if (s.Contains("five"))
+            return 5;
+        if (s.Contains("six"))
+            return 6;
+        return -1;
+    }
+
+    string GetStatFromFinalLine(string lastLine) {
+        if (lastLine.ToLower().Contains("playerintox"))
+            return "Drinking";
+        return "Hangout";
+    }
+
+    string PartnerScene(string name, int chunkData) {
+        if(IsPartner(name.ToLower())) {
+            int number= FindSceneIndexInHeader(ChunkData[chunkData].Header.ToLower());
+            if (number > -1)
+                return name + " Scene " + number;
+            else
+                return name + " " + GetStatFromFinalLine(ChunkData[chunkData].LastLine) + " Scene";
+        }
+        if (name.ToLower().Contains("owner")) {
+            return name + " Scene " + FindSceneIndexInHeader(ChunkData[chunkData].Header.ToLower());
+        }
+
+
+        return name;
+    }
 
     void ParseFile() {
 
@@ -153,13 +230,14 @@ public class __CutsceneParser : ScriptableObject
         GenerateChunks(parsedText);
 
         ChunkData[0].Header = ConcatFromArray(parsedText, 0, ChunkData[0].ChunkStart-1);
-        ChunkData[0].BestGuess = FirstCharacterExpressionInChunk(ChunkData[0].ChunkStart, ChunkData[0].ChunkEnd, parsedText);
+        ChunkData[0].BestGuess = MostReferncedCharacterExpressionInChunk(ChunkData[0].ChunkStart, ChunkData[0].ChunkEnd, parsedText);
         for (int i = 0; i < ChunkData.Count; i++) {
             ChunkData[i].Header = ConcatFromArray(parsedText, i==0?0:ChunkData[i - 1].ChunkEnd+1, ChunkData[i].ChunkStart-1);
             if (i != 0)
                 if (Mathf.Abs(ChunkData[i].ChunkStart - ChunkData[i - 1].ChunkEnd) < 3)
                     Debug.Log("Pretty close there bud check if chunks are correct @" + i + " & @" + (i - 1));
-            ChunkData[i].BestGuess = FirstCharacterExpressionInChunk(ChunkData[i].ChunkStart, ChunkData[i].ChunkEnd, parsedText);
+            string name = MostReferncedCharacterExpressionInChunk(ChunkData[i].ChunkStart, ChunkData[i].ChunkEnd, parsedText);
+            ChunkData[i].BestGuess = PartnerScene(name, i);
         }
         if (SendToCutscenes)
             SendToCutscenesFunction(parsedText);

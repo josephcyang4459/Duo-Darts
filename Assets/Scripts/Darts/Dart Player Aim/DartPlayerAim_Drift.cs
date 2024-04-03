@@ -5,6 +5,7 @@ using UnityEngine;
 public class DartPlayerAim_Drift : MonoBehaviour
 {
     [SerializeField] DartPlayerAim Aim;
+    [SerializeField] DartsSettings Settings;
     [SerializeField] float DriftSpeed;
     [SerializeField] Vector2 center;
     [SerializeField] Vector2 XBounds;
@@ -15,7 +16,7 @@ public class DartPlayerAim_Drift : MonoBehaviour
 
     public void SetUp(float intoxication, float skill) {
         float tempSpeed = (intoxication * 1.25f) - skill ;
-        DriftSpeed = Mathf.Clamp(tempSpeed, Aim.MinDriftSpeed, Aim.MaxDriftSpeed);
+        DriftSpeed = Mathf.Clamp(tempSpeed, Settings.MinDriftSpeed, Settings.MaxDriftSpeed);
         float tempTime = 3 - (intoxication) / 3;
         TimeToNewLocation = Mathf.Clamp(tempTime, .5f, 3);
         NewRandomDirection();

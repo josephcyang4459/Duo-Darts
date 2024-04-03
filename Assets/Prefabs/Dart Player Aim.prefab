@@ -48,11 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968840471847f14418678b86754feea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDriftSpeed: 2
-  MaxDriftSpeed: 3
-  MinBloomDiameter: 0.3
-  MaxBloomDiameter: 1.5
   Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
+  AimSprite: {fileID: 8593354426165874088}
   AimPosition: {fileID: 8593354426165874095}
   CurrentLocation: {x: 0, y: 0, z: -0.2}
   StartingLocation: {x: 0, y: 0, z: -0.2}
@@ -77,13 +74,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aim: {fileID: 8593354425541238232}
+  Settings: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
   DriftSpeed: 1
   center: {x: 0, y: 0}
   XBounds: {x: -5, y: 5}
   YBounds: {x: -5, y: 5}
   TimeToNewLocation: 3
   directionMove: {x: 0, y: 0}
-  State: 0
 --- !u!114 &8593354425541238234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aim: {fileID: 8593354425541238232}
+  Settings: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
+  Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   BloomSpeed: 1
   t: {fileID: 8593354426165874095}
   BloomMax: 0
