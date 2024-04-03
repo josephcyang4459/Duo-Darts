@@ -74,7 +74,7 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void ControllerOptionsFunction(int index){
-        if (!Toggles[index].isOn) return;
+        if (Toggles[index] == null || !Toggles[index].isOn) return;
 
         for (int i = 0; i < 3; i++){
             Toggles[i].isOn = i == index;
