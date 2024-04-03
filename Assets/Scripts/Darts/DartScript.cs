@@ -43,7 +43,7 @@ public class DartScript : MonoBehaviour
         }
     }
 
-    public void go(Vector3 v, int point_value)
+    public void ShootDart(Vector3 v, int point_value)
     {
         points = point_value;
         CurrentDartTransform.position = new Vector3(v.x, v.y, -18);

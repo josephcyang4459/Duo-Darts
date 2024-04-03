@@ -17,10 +17,11 @@ public class UIState : MonoBehaviour
         inst = this;
     }
 
-    public void SetAsSelectedButton(GameObject gameObject)
-    {
+    public void SetAsSelectedButton(GameObject gameObject) {
         CurrentFirstSelected = gameObject;
-        EventSystem.SetSelectedGameObject(gameObject);
+        if (ControlState.inst.IsUsingController()) {
+            EventSystem.SetSelectedGameObject(gameObject);
+        }
     }
 
     public void ControllerConnected()

@@ -42,6 +42,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
-  bias: 0
+  AI: {fileID: 11400000, guid: 1b7421afe6f94e9409aefddab0b86745, type: 2}
   TextBox: {fileID: 21300000, guid: af3d0f2d7262aa44cb43ddef42a230dc, type: 3}
   textLineTHing: {fileID: 21300000, guid: 001edf5aaf0efa4489823fa456932d87, type: 3}

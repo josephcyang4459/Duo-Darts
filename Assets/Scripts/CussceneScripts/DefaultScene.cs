@@ -19,7 +19,8 @@ public class DefaultScene : CutScene
     }
 
 #if UNITY_EDITOR
-    private new void OnValidate()
+    public bool reset;
+    private void OnValidate()
     {
         if (reset)
         {

@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LocationSelecterUI : MonoBehaviour, Caller {
+    [SerializeField] Canvas LocationSelectorCanvas;
+    [SerializeField] EventSelectorUI EventSelector;
     [SerializeField] UIAnimationElement EnterAnimationHead;
     [SerializeField] UIAnimationElement ExitAnimationHead;
     [SerializeField] AnimationState State;
     [SerializeField] ImageFill Fill;
     [SerializeField] Image[] FillImages;
-    public Button b;
     int SelectedLocation;
     public void Start() {
         State = AnimationState.Passive;
@@ -22,11 +23,14 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     }
 
     public void BeginGoToLocation(int index) {
+        ExitAnimationHead.ReachEndState();
         SelectedLocation = index;
-        BeginExit();
+        LocationSelectorCanvas.enabled = false;
+        EventSelector.SetLocation(index);
     }
 
     public void BeginEntrance() {
+        LocationSelectorCanvas.enabled = true;
         UIState.inst.SetInteractable(false);
         State = AnimationState.Enter;
         EnterAnimationHead.Begin(this);
@@ -35,7 +39,6 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     public void BeginExit() {
         UIState.inst.SetInteractable(false);
         State = AnimationState.Exit;
-        ExitAnimationHead.Begin(this);
     }
 
     void Enter() {

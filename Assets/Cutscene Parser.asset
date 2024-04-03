@@ -81,14 +81,14 @@ MonoBehaviour:
       Love) (Removes all Intox) (Refactored)\r"
     ChunkStart: 94
     ChunkEnd: 114
-    FirstLine: "[Newln]*Chadrick is dancing\u2026*\r"
+    FirstLine: "[Newln]*Chadrick is dancing...*\r"
     LastLine: "[Newln]*You and Chad dance away. He trips up often.*[ResetIntoxChad]\r"
   - BestGuess: Chad
     Header: "\r\r\r\rScene Five (Bathroom) (13 Love)\r"
     ChunkStart: 120
     ChunkEnd: 169
     FirstLine: "[Newln]*You hear someone vomiting in the stall*\r"
-    LastLine: "[Newln]*He didn\u2019t wash his hands\u2026*\r"
+    LastLine: "[Newln]*He didn\u2019t wash his hands...*\r"
   - BestGuess: Chad
     Header: "\r\r\r\rIntermediate Scene Dance Floor (Repeating) (1 Love)\r"
     ChunkStart: 175

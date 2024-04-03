@@ -3,8 +3,11 @@ using UnityEngine.UI;
 
 public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
 {
-    [SerializeField] CharacterList Characters;
+    [SerializeField] Player Player;
+    [SerializeField] CharacterList Partners;
     [SerializeField] DartGame DartGame;
+    [SerializeField] DartMenu_StandAlone_Options Options;
+    [SerializeField] float TipsyIntoxValue;
     [SerializeField] ImageFill Fill;
     [SerializeField] ImageSlide Slide;
     [SerializeField] ImageSmoothFill[] BorderFills;
@@ -21,6 +24,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
     [SerializeField] bool TurnOffScoreCanvas;
     [SerializeField] GameObject FirstPartnerButton;
     [SerializeField] GameObject FirstScoreButton;
+
     public void Start()
     {
         TransitionManager.inst.ReadyToEnterScene(this);
@@ -41,8 +45,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
         UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }
 
-    public void StartGameWithPartner(int i)
-    {
+    public void StartGameWithPartner(int i) {
         PartnerIndex = i;
         ScoreCanvas.enabled = true;
         ScoreAnimationEnterHead.Begin(this);
@@ -53,14 +56,14 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
 
     public void ShowCharacterPortrait(int i)
     {
-        if (Portrait.sprite == Characters.list[i].Expressions[0])
+        if (Portrait.sprite == Partners.list[i].Expressions[0])
             return;
         Audio.inst.PlayClip(AudioClips.Click);
-        Portrait.sprite = Characters.list[i].Expressions[0];
+        Portrait.sprite = Partners.list[i].Expressions[0];
         Slide.BeginSlide();
         Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset);
 
-        float fill = (float)i / (float)(Characters.list.Length - 2);
+        float fill = (float)i / (float)(Partners.list.Length - 2);
         foreach (ImageSmoothFill image in BorderFills)
         {
             image.FillTo(fill);
@@ -83,6 +86,9 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
 
     public void SetScore(int i)
     {
+        if (PartnerIndex != (int)Characters.CharmingGirl)
+            Partners.list[PartnerIndex].Intoxication = Options.TipsyPartner ? TipsyIntoxValue : 0;
+        Player.Intoxication = Options.TipsyPlayer ? TipsyIntoxValue : 0;
         DartGame.ScoreNeededToWin = (i == 0 ? 501 : 701);
         PartnerCanvas.enabled = false;
         ScoreCanvas.enabled = false;
@@ -104,20 +110,31 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
     }
 
 #if UNITY_EDITOR
+    [SerializeField] ColorSwatch __KeyColors;
     [SerializeField] Transform __buttonHolder;
+    [SerializeField] float __fontSize;
+    [SerializeField] TMPro.FontStyles __style;
+    [SerializeField] bool __useAllUpper;
     [SerializeField] bool __reset;
 
     private void OnValidate()
     {
         if (__reset)
         {
-            __reset = false;
+           
             TMPro.TMP_Text[] temp = __buttonHolder.GetComponentsInChildren<TMPro.TMP_Text>();
+            if (__fontSize == 0)
+                __fontSize = temp[0].fontSize;
+            __reset = false;
             PartnerButtonImages = new Image[temp.Length];
             for(int i = 0; i < temp.Length; i++)
             {
-                temp[i].text = Characters.list[i].Name;
+
+                temp[i].text = __useAllUpper ? Partners.list[i].Name.ToUpper() : Partners.list[i].Name;
+                temp[i].fontSize = __fontSize;
+                temp[i].fontStyle = __style;
                 PartnerButtonImages[i] = temp[i].gameObject.transform.parent.GetComponent<Image>();
+                PartnerButtonImages[i].color = __KeyColors.colors[i];
             }
         }
     }

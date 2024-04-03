@@ -6,9 +6,10 @@ public class DartGame : MonoBehaviour {
     public CharacterList characters;
     public Player stats;
     public DartVisual Visuals;
-    public AimCone aim;
     public DartScript Dart;
+    public DartPlayerAim Aim;
 
+    [SerializeField] LayerMask Layer;
 
     public int partnerIndex = 0;
     public int turnSum = 0;
@@ -25,7 +26,6 @@ public class DartGame : MonoBehaviour {
     [SerializeField] float MaxOffset = 4;
     public Canvas dartCanvas;
 
-    public float driftDefault = 1f;
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -80,17 +80,17 @@ public class DartGame : MonoBehaviour {
 #endif
 
     public void BeginGame(int partner) {
+        DartSticker.inst.SetVisible(false);
         PauseMenu.inst.SetEnabled(false);
         Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
 
         points = ScoreNeededToWin > 600 ? 10 : 5;
-        aim.accuracy = (Mathf.Clamp((stats.Intoxication * 2) - (stats.Skill + stats.Luck), 0, 100)) / 10;// crazy f+ucking math
         //Debug.Log(Accuracy);
         //float Stability = Math.Clamp((30/stats.Skill) + ((stats.Intoxication/3) / 10), 1,100);// gooffy ass
         //aim.driftSpeed = driftDefault * Stability;
-        aim.driftSpeed = driftDefault;
+        //aim.driftSpeed = driftDefault;
         //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
         partnerIndex = partner;
         Dart.SetUp(partnerIndex);
@@ -168,127 +168,64 @@ public class DartGame : MonoBehaviour {
         }
 
         if (currentTurn % 2 == 0) {
-
             playerTurn();
         }
         else {
-            partnerTurn();
+            PartnerTurn();
         }
     }
 
     private void playerTurn() {
         Dart.SetCurrentDart(numberOfDartsThrow, true);
-        aim.begin();
+        Aim.BeginPlayerAim();
     }
 
     //used to hit the board
-    private void gahoot(Vector3 h) {
-        aim.normal.x = h.x;
-        aim.normal.y = h.y;
-        aim.t.position = aim.normal;
-        if (Physics.Raycast(aim.t.position, Vector3.forward, out RaycastHit hit, aim.layer)) {
+    private void PartnerShootDart(Vector3 h) {
+        h.z = -.2f;
+        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, 12, Layer)) {
             ///Debug.Log(aim.t.position);
-            hit.collider.gameObject.GetComponent<BoardCollider>().hit();
+            hit.collider.gameObject.GetComponent<BoardCollider>().hit(h);
         }
         else
-            Miss.hit();
+            Miss.hit(h);
     }
 
-    private void Adjust(Vector3 location) {
+    void Adjust(Vector3 location, float baseOffset) {
         float OffsetMath() {
-            float f = UnityEngine.Random.Range((characters.list[partnerIndex].Intoxication / -7) - BaseOffset, (characters.list[partnerIndex].Intoxication / 7) + BaseOffset);
+            float f = Random.Range((characters.list[partnerIndex].Intoxication / -7) - baseOffset, (characters.list[partnerIndex].Intoxication / 7) + baseOffset);
             f = Mathf.Clamp(f, -MaxOffset, MaxOffset);
             return f;
         }
 
         float offsetX = OffsetMath();
         float offsetY = OffsetMath();
-        Debug.Log(offsetX + " " + offsetY);
         location.x += offsetX;
         //Mathf.Clamp(location.x, -MissClamp.x, MissClamp.x);
         location.y += offsetY;
         //Mathf.Clamp(location.y, -MissClamp.y, MissClamp.y);
-        Debug.Log(location);
         //location.z = -15;
-        gahoot(location);
+        PartnerShootDart(location);
     }
 
-    private void partnerTurn()//wow really hideous
+    public void PartnerTarget(int score, int ring, float baseOffset) {
+        Adjust(c[score - 1].colliders[ring].target.position, baseOffset);
+    }
+    /// <summary>
+    /// Bullseye
+    /// </summary>
+    /// <param name="baseOffset"></param>
+    public void PartnerTarget(float baseOffset) {
+        Debug.Log(50);
+        Adjust(bullseye.transform.position, baseOffset);
+    }
+
+    private void PartnerTurn()//wow really hideous
     {
         Dart.SetCurrentDart(numberOfDartsThrow, false);
-        void OverSixtyPick() {
-
-            if (characters.list[partnerIndex].bias == DartTargetBias.Bullseye) {
-                Adjust(bullseye.transform.position);
-                return;
-            }
-
-            if (characters.list[partnerIndex].bias == DartTargetBias.Sixty) {
-                Adjust(c[19].colliders[2].target.position);
-                return;
-            }
-            //nuetral AI
-            int pick = Random.Range(NuetralAITargetRange.x, NuetralAITargetRange.y + 1);
-
-            int randomNumberBetween0_9 = Random.Range(0, 10);
-            if (characters.list[partnerIndex].Composure < 4)
-            {
-                if (randomNumberBetween0_9 > 5)// 9,8,7,6 40% chance to go for bullseye
-                {
-                    Adjust(bullseye.transform.position);
-                    return;
-                }
-                Adjust(c[pick].colliders[(int)PointValueTarget.Double].target.position);
-                return;
-            }
-
-            if (characters.list[partnerIndex].Composure >= 4) {
-                if (randomNumberBetween0_9 > 5)// 7,8,9,6 40% chance to go for triple
-                {
-                    Adjust(c[19].colliders[(int)PointValueTarget.Triple].target.position);
-                    return;
-                }
-                if (randomNumberBetween0_9 < 3)// 0,1,2 30% chance to go for bullseye
-                {
-                    Adjust(bullseye.transform.position);
-                    return;
-                }
-                Adjust(c[pick].colliders[(int)PointValueTarget.Double].target.position);
-                return;
-            }
-
-            PointValueTarget temp = Random.Range(0, 10) > 4 ? PointValueTarget.OuterSingle : PointValueTarget.InnerSingle;
-            Adjust(c[pick].colliders[(int)temp].target.position);
-            return;
-        }
-
         int tempScore = ScoreNeededToWin - turnSum;
-        if (tempScore >= 60)// this is where they would go for big numbers
-        {
-            OverSixtyPick();
-            return;
-        }
-
-        if (tempScore >= 50)// always goes for bullseye
-        {
-            Adjust(bullseye.transform.position);
-            return;
-        }
-
-        if (tempScore > 20)// goes for random small
-        {
-            int temp = Random.Range(4, 7);//from 4 to 6 so points from  15, 18, 21
-            Adjust(c[temp].colliders[(int)PointValueTarget.Triple].target.position);
-            return;
-        }
-
-        if (tempScore <= 20)//goes for single to win
-        {// Whether we Inner or Outer Just to add to the presentation
-            int target = Random.Range(0, 10) > 4 ? (int)PointValueTarget.OuterSingle : (int)PointValueTarget.InnerSingle;
-            //must adjust -1 to get correct target
-            Adjust(c[tempScore - 1].colliders[target].target.position);
-            return;
-        }
+        characters.list[partnerIndex].AI.SelectTarget(tempScore, this);
+        return;
     }
 
     /// <summary>
@@ -330,7 +267,7 @@ public class DartGame : MonoBehaviour {
             return;
         }
         else {
-            partnerTurn();
+            PartnerTurn();
             return;
         }
     }
