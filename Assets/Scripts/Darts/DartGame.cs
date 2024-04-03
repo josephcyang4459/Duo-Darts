@@ -158,10 +158,12 @@ public class DartGame : MonoBehaviour {
 
         ScoreNeededToWin -= turnSum;
         turnSum = 0;
-        Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
-
         numberOfDartsThrow = 0;
         currentTurn++;
+        Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
+
+       
+       
         if (currentTurn >= maxTurns) {
             Lose();
             return;

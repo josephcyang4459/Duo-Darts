@@ -15,7 +15,7 @@ public class DartVisual : MonoBehaviour
     public void SetTurnAndOverallScores(int turnScore, int overallScore, int currentTurn, int maxTurn) {
         remainingScoreText.text = "Remaining: " + overallScore.ToString();
         currentScoreText.text = "Current: " + turnScore.ToString();
-        turnText.text = "Turn: " + currentTurn.ToString() + " / " + maxTurn.ToString();
+        turnText.text = "Turns Remaining: " + (maxTurn - (currentTurn+1)); ;
     }
 
     public void SetDartScore(int dartIndex, int score) {
