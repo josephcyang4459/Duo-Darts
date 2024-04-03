@@ -38,6 +38,7 @@ public class DartGame : MonoBehaviour {
 
     public Schedule s;
     public DartMenu_StandAlone StandAlone;
+    [SerializeField] GameObject Tutorial;
 
 #if UNITY_EDITOR
     [Header("||-----EDITOR ONLY-----||")]
@@ -51,22 +52,21 @@ public class DartGame : MonoBehaviour {
     public void OnValidate() {
         if (reset) {
             c = new BoardSlice[20];
+
             for (int i = 0; i < 20; i++) {
-
-
                 GameObject obj = Instantiate(slice, g.transform);
-
                 obj.transform.rotation = Quaternion.Euler(-18 * i, -90, 0);
+
                 for (int j = 0; j < 4; j++) {
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (order[i] * multiplication[j]);
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
                     obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
                 }
+
                 c[i] = obj.GetComponent<BoardSlice>();
             }
 
             System.Array.Sort(c, new comparer());
-
             reset = false;
         }
     }
@@ -79,6 +79,11 @@ public class DartGame : MonoBehaviour {
 #endif
 
     public void BeginGame() {
+        if (firstTimePlaying) {
+            showTutorial();
+            return;
+        }
+
         Aim.SetUpDependants();
         DartSticker.inst.SetVisible(false);
         PauseMenu.inst.SetEnabled(false);
@@ -171,12 +176,10 @@ public class DartGame : MonoBehaviour {
             return;
         }
 
-        if (currentTurn % 2 == 0) {
+        if (currentTurn % 2 == 0)
             playerTurn();
-        }
-        else {
+        else
             PartnerTurn();
-        }
     }
 
     private void playerTurn() {
@@ -212,9 +215,8 @@ public class DartGame : MonoBehaviour {
         PartnerShootDart(location);
     }
 
-    public void PartnerTarget(int score, int ring, float baseOffset) {
-        Adjust(c[score - 1].colliders[ring].target.position, baseOffset);
-    }
+    public void PartnerTarget(int score, int ring, float baseOffset) { Adjust(c[score - 1].colliders[ring].target.position, baseOffset); }
+
     /// <summary>
     /// Bullseye
     /// </summary>
@@ -224,7 +226,7 @@ public class DartGame : MonoBehaviour {
         Adjust(bullseye.transform.position, baseOffset);
     }
 
-    private void PartnerTurn()//wow really hideous
+    private void PartnerTurn() //wow really hideous
     {
         Dart.SetCurrentDart(numberOfDartsThrow, false);
         int tempScore = ScoreNeededToWin - turnSum;
@@ -258,7 +260,6 @@ public class DartGame : MonoBehaviour {
             return;
         }
 
-
         numberOfDartsThrow++;
 
         if (numberOfDartsThrow >= 3) {
@@ -283,12 +284,18 @@ public class DartGame : MonoBehaviour {
         losec.enabled = false;
         board.enabled = false;
         PauseMenu.inst.SetEnabled(true);
-        if (s != null) {
+        if (s != null)
             s.setTime(TimeBlocks.Short);
-        }
-        else {
+        else
             StandAlone.BeginSetUp();
-        }
+    }
 
+    public void showTutorial() { Tutorial.SetActive(true); }
+
+    public void hideTutorial() {
+        Tutorial.SetActive(false);
+        firstTimePlaying = false;
+        UIState.inst.SetInteractable(false);
+        BeginGame();
     }
 }

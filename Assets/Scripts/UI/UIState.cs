@@ -18,9 +18,8 @@ public class UIState : MonoBehaviour {
 
     public void SetAsSelectedButton(GameObject gameObject) {
         CurrentFirstSelected = gameObject;
-        if (ControlState.inst.IsUsingController()) {
+        if (ControlState.inst.IsUsingController())
             EventSystem.SetSelectedGameObject(gameObject);
-        }
     }
 
     public void ControllerConnected() {

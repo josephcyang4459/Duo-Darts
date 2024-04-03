@@ -24,11 +24,8 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] bool TurnOffScoreCanvas;
     [SerializeField] GameObject FirstPartnerButton;
     [SerializeField] GameObject FirstScoreButton;
-    [SerializeField] GameObject Tutorial;
 
-    public void Start() {
-        TransitionManager.inst.ReadyToEnterScene(this);
-    }
+    public void Start() { TransitionManager.inst.ReadyToEnterScene(this); }
 
     public void EnterScene() {
         PauseMenu.inst.SetEnabled(true);
@@ -60,8 +57,8 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         Portrait.sprite = Partners.list[i].Expressions[0];
         Slide.BeginSlide();
         Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset);
-
         float fill = (float)i / (float)(Partners.list.Length - 2);
+
         foreach (ImageSmoothFill image in BorderFills)
             image.FillTo(fill);
     }
@@ -84,7 +81,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
             case (int)Characters.DanceGirl: return true;
             case (int)Characters.LoungeGuy: return true;
         }
-        return false;  
+        return false;
     }
 
     public void SetScore(int i) {
@@ -100,7 +97,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         DartGame.partnerIndex = PartnerIndex;
 
         if (DartGame.firstTimePlaying)
-            showTutorial();
+            DartGame.showTutorial();
         else
             DartGame.BeginGame();
     }
@@ -111,15 +108,6 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
             UIState.inst.SetAsSelectedButton(FirstPartnerButton);
         } else
             UIState.inst.SetAsSelectedButton(FirstScoreButton);
-    }
-
-    public void showTutorial() { Tutorial.SetActive(true); }
-
-    public void hideTutorial() {
-        Tutorial.SetActive(false);
-        DartGame.firstTimePlaying = false;
-        UIState.inst.SetInteractable(false);
-        DartGame.BeginGame();
     }
 
 #if UNITY_EDITOR

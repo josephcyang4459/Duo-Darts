@@ -49,7 +49,6 @@ public class DartMen : MonoBehaviour {
     public void selctPartner(int i) {
         menue.enabled = false;
         s.off();
-        UIState.inst.SetInteractable(false);
         dg.partnerIndex = (indices[i]);
         dg.BeginGame();
     }
