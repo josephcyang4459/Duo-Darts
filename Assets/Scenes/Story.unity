@@ -8781,11 +8781,11 @@ PrefabInstance:
       objectReference: {fileID: 183543931}
     - target: {fileID: 7917560275951059252, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_fontSize
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7917560275951059252, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_fontSizeBase
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7917560276092323636, guid: 0a18a80c48ecef140be6d32b3f8a6721, type: 3}
       propertyPath: m_AnchorMax.y

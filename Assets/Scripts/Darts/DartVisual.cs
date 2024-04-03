@@ -4,13 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DartVisual : MonoBehaviour
-{
+public class DartVisual : MonoBehaviour {
     [SerializeField] TMP_Text remainingScoreText;
     [SerializeField] TMP_Text currentScoreText;
     [SerializeField] TMP_Text turnText;
     public Image[] dartimages;
     public TMP_Text[] scoreTexts;
+
 
     public void SetTurnAndOverallScores(int turnScore, int overallScore, int currentTurn, int maxTurn) {
         remainingScoreText.text = "Remaining: " + overallScore.ToString();

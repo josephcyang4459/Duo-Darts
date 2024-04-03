@@ -1,8 +1,8 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
-{
+public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] Player Player;
     [SerializeField] CharacterList Partners;
     [SerializeField] DartGame DartGame;
@@ -25,19 +25,14 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
     [SerializeField] GameObject FirstPartnerButton;
     [SerializeField] GameObject FirstScoreButton;
 
-    public void Start()
-    {
-        TransitionManager.inst.ReadyToEnterScene(this);
-      
-    }
+    public void Start() { TransitionManager.inst.ReadyToEnterScene(this); }
 
     public void EnterScene() {
         PauseMenu.inst.SetEnabled(true);
         BeginSetUp();
     }
 
-    public void BeginSetUp()
-    {
+    public void BeginSetUp() {
         Audio.inst.StopSong();
         PartnerCanvas.enabled = true;
         //EventSystem.current.enabled = true;
@@ -54,30 +49,26 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
         TurnOffScoreCanvas = false;
     }
 
-    public void ShowCharacterPortrait(int i)
-    {
+    public void ShowCharacterPortrait(int i) {
         if (Portrait.sprite == Partners.list[i].Expressions[0])
             return;
+
         Audio.inst.PlayClip(AudioClips.Click);
         Portrait.sprite = Partners.list[i].Expressions[0];
         Slide.BeginSlide();
         Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset);
-
         float fill = (float)i / (float)(Partners.list.Length - 2);
+
         foreach (ImageSmoothFill image in BorderFills)
-        {
             image.FillTo(fill);
-        }
     }
 
-    public void HoverScoreButton(int i)
-    {
+    public void HoverScoreButton(int i) {
         Audio.inst.PlayClip(AudioClips.Click);
         Fill.SetCurrentImageToFill(ScoreButtonImages[i], ((RectTransform)ScoreButtonImages[i].transform).position + ScoreLocationOffset);
     }
 
-    public void BackToPartnerScreen()
-    {
+    public void BackToPartnerScreen() {
         Fill.ClearImages();
         DartSticker.inst.SetVisible(false);
         TurnOffScoreCanvas = true;
@@ -90,31 +81,32 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
             case (int)Characters.DanceGirl: return true;
             case (int)Characters.LoungeGuy: return true;
         }
-        return false;  
+        return false;
     }
 
-    public void SetScore(int i)
-    {
+    public void SetScore(int i) {
         if (!CharacterIsAlreadyDrunkCharacter(PartnerIndex))
             Partners.list[PartnerIndex].Intoxication = Options.TipsyPartner ? TipsyIntoxValue : 0;
+
         Player.Intoxication = Options.TipsyPlayer ? TipsyIntoxValue : 0;
         DartGame.ScoreNeededToWin = (i == 0 ? 501 : 701);
         PartnerCanvas.enabled = false;
         ScoreCanvas.enabled = false;
         ScoreAnimationLeaveHead.ReachEndState();
-        UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
-        DartGame.BeginGame(PartnerIndex);
-        
+        DartGame.partnerIndex = PartnerIndex;
+
+        if (DartGame.firstTimePlaying)
+            DartGame.showTutorial();
+        else
+            DartGame.BeginGame();
     }
-    public void Ping()
-    {
-        if (TurnOffScoreCanvas)
-        {
+
+    public void Ping() {
+        if (TurnOffScoreCanvas) {
             ScoreCanvas.enabled = false;
             UIState.inst.SetAsSelectedButton(FirstPartnerButton);
-        }
-        else
+        } else
             UIState.inst.SetAsSelectedButton(FirstScoreButton);
     }
 
@@ -126,19 +118,16 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
     [SerializeField] bool __useAllUpper;
     [SerializeField] bool __reset;
 
-    private void OnValidate()
-    {
-        if (__reset)
-        {
-           
+    private void OnValidate() {
+        if (__reset) {
+            __reset = false;
             TMPro.TMP_Text[] temp = __buttonHolder.GetComponentsInChildren<TMPro.TMP_Text>();
+            PartnerButtonImages = new Image[temp.Length];
+
             if (__fontSize == 0)
                 __fontSize = temp[0].fontSize;
-            __reset = false;
-            PartnerButtonImages = new Image[temp.Length];
-            for(int i = 0; i < temp.Length; i++)
-            {
 
+            for(int i = 0; i < temp.Length; i++) {
                 temp[i].text = __useAllUpper ? Partners.list[i].Name.ToUpper() : Partners.list[i].Name;
                 temp[i].fontSize = __fontSize;
                 temp[i].fontStyle = __style;
@@ -147,9 +136,5 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
             }
         }
     }
-
-   
-
 #endif
-
 }
