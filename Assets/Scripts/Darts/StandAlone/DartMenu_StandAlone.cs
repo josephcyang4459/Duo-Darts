@@ -84,9 +84,18 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance
         ScoreAnimationLeaveHead.Begin(this);
     }
 
+    bool CharacterIsAlreadyDrunkCharacter(int i) {
+        switch (i) {
+            case (int)Characters.CharmingGirl: return true;
+            case (int)Characters.DanceGirl: return true;
+            case (int)Characters.LoungeGuy: return true;
+        }
+        return false;  
+    }
+
     public void SetScore(int i)
     {
-        if (PartnerIndex != (int)Characters.CharmingGirl)
+        if (!CharacterIsAlreadyDrunkCharacter(PartnerIndex))
             Partners.list[PartnerIndex].Intoxication = Options.TipsyPartner ? TipsyIntoxValue : 0;
         Player.Intoxication = Options.TipsyPlayer ? TipsyIntoxValue : 0;
         DartGame.ScoreNeededToWin = (i == 0 ? 501 : 701);

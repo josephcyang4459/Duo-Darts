@@ -72,11 +72,12 @@ public class PauseMenu : MonoBehaviour, Caller
         if (CurrentState) {
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
             returnState = UIState.inst.GetCurrentState();
-            UIState.inst.SetInteractable(true);
             OptionsMenu.inst.HideOptions();
+            UIState.inst.SetInteractable(true);
             UIState.inst.SetAsSelectedButton(FirstSelected);
         }
         else {
+            OptionsMenu.inst.HideOptions();
             if (setFirstButtonUponUnenable)
                 UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);
