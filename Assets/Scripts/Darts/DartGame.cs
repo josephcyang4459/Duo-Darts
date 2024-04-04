@@ -20,9 +20,6 @@ public class DartGame : MonoBehaviour {
     public int numberOfDartsThrow = 0;
     public int maxTurns;
 
-
-    [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(16, 19);
-    [SerializeField] float BaseOffset = .1f;
     [SerializeField] float MaxOffset = 4;
     public Canvas dartCanvas;
 
@@ -235,7 +232,17 @@ public class DartGame : MonoBehaviour {
     /// called by DartScript for some reason
     /// </summary>
     public void AddPoints(int newPoints) {
-        Audio.inst.PlayClip(AudioClips.Dart);
+        Debug.Log("SHOULD BE SPECIFIC DART FOR SPECIFIC EFFECT");
+        if (newPoints == 50) {
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Medium, AudioReverbPreset.Alley);
+        }
+        else if(newPoints == 60) {
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Hard, AudioReverbPreset.Dizzy);
+        }
+        else {
+            Audio.inst.PlayClip(AudioClips.RandomDart);
+        }
+       
         turnSum += newPoints;
         Visuals.SetTurnScore(turnSum);
         Visuals.SetDartScore(numberOfDartsThrow, newPoints);

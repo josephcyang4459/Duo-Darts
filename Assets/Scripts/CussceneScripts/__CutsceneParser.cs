@@ -8,26 +8,33 @@ public class __CutsceneParser : ScriptableObject
 {
     [SerializeField] CutScene[] Cutscenes;
     [SerializeField] TextAsset Script;
-
+    [SerializeField] List<CutScene> NotFound;
     [SerializeField] bool TryParse;
     [SerializeField] bool SendToCutscenes;
     [SerializeField] List<ParserChunk> ChunkData = new();
-
+    [SerializeField] int RepeatingHangoutSceneIndex;
     private void OnValidate() {
         if (TryParse) {
             TryParse = false;
             ParseFile();
         }
+        if (SendToCutscenes) {
+            SendToCutscenes = false;
+            SendToCutscenesFunction();
+        }
     }
 
-    void SendToCutscenesFunction(string[] s) {
+    void SendToCutscenesFunction() {
 
+        string[] parcedText = Script.text.Split('\n');
         for (int chunkIndex = 0; chunkIndex < Cutscenes.Length; chunkIndex++) {
 
-            string[] temp = new string[ChunkData[chunkIndex].ChunkEnd - ChunkData[chunkIndex].ChunkStart+1];
-            for (int tempArrayIndex = 0, fullArrayIndex =ChunkData[chunkIndex].ChunkStart; tempArrayIndex < temp.Length; tempArrayIndex++,fullArrayIndex++)
-                temp[tempArrayIndex] = s[fullArrayIndex];
-            Cutscenes[chunkIndex].__resetCutScene(temp);
+            if (ChunkData[chunkIndex].IsCutscene) {
+                string[] temp = new string[ChunkData[chunkIndex].ChunkEnd - ChunkData[chunkIndex].ChunkStart + 1];
+                for (int tempArrayIndex = 0, fullArrayIndex = ChunkData[chunkIndex].ChunkStart; tempArrayIndex < temp.Length; tempArrayIndex++, fullArrayIndex++)
+                    temp[tempArrayIndex] = parcedText[fullArrayIndex];
+                ChunkData[chunkIndex].AssociatedCutscene.__resetCutScene(temp);
+            }
         }
 
     }
@@ -131,13 +138,13 @@ public class __CutsceneParser : ScriptableObject
         if (full.Contains("baradviceguy"))
             return "Bar Guy";
         if (full.Contains("danceadvicegirl"))
-            return "Dancing Girl";
+            return "Dance Girl";
         if (full.Contains("baradvicegirl"))
             return "Charming Girl";
         if (full.Contains("loungeadviceguy"))
             return "Lounge Guy";
         if (full.Contains("charmadviceguy"))
-            return "Charming Advice Guy";
+            return "Charming Guy";
         return null;
     }
 
@@ -150,6 +157,17 @@ public class __CutsceneParser : ScriptableObject
         if (full.Contains("jess"))
             return true;
         if (full.Contains("elaine"))
+            return true;
+        return false;
+    }
+
+
+    private bool IsCutScene(string line) {
+        if (line.ToLower().Contains("newln"))
+            return true;
+        if (line.Contains("Chad") || line.Contains("Faye") || line.Contains("Elaine") || line.Contains("Jess") || line.Contains("Owner")
+     || line.Contains("BarAdviceGuy") || line.Contains("BarAdviceGirl") || line.Contains("CharmAdviceGuy")
+     || line.Contains("DanceAdviceGirl") || line.Contains("LoungeAdviceGuy"))
             return true;
         return false;
     }
@@ -206,53 +224,127 @@ public class __CutsceneParser : ScriptableObject
         return "Hangout";
     }
 
-    string PartnerScene(string name, int chunkData) {
+    int GetRepeatIndexFromFinalLine(string s) {
+        if (s.ToLower().Contains("playerintox"))
+            return RepeatingHangoutSceneIndex+1;
+        return RepeatingHangoutSceneIndex;
+    }
+
+    int GetPartnerIndex(string full) {
+        if (full.ToLower().Contains("chad"))
+            return 0;
+        if (full.ToLower().Contains("faye"))
+            return 1;
+        if (full.ToLower().Contains("jess"))
+            return 2;
+        if (full.ToLower().Contains("elaine"))
+            return 3;
+        if (full.ToLower().Contains("owner"))
+            return 4;
+        return -1;
+    }
+
+    string PartnerScene(string name, int chunkIndex) {
         if(IsPartner(name.ToLower())) {
-            int number= FindSceneIndexInHeader(ChunkData[chunkData].Header.ToLower());
-            if (number > -1)
+            int number= FindSceneIndexInHeader(ChunkData[chunkIndex].Header.ToLower());
+
+            if (number > -1) {
+                ChunkData[chunkIndex].CutsceneIndex = number-1;
+                ChunkData[chunkIndex].CharacterName = name;
                 return name + " Scene " + number;
-            else
-                return name + " " + GetStatFromFinalLine(ChunkData[chunkData].LastLine) + " Scene";
+            }
+            else {
+                ChunkData[chunkIndex].CharacterName = name;
+                ChunkData[chunkIndex].CutsceneIndex = GetRepeatIndexFromFinalLine(ChunkData[chunkIndex].LastLine);
+                return name + " " + GetStatFromFinalLine(ChunkData[chunkIndex].LastLine) + " Scene";
+            }
+               
         }
         if (name.ToLower().Contains("owner")) {
-            return name + " Scene " + FindSceneIndexInHeader(ChunkData[chunkData].Header.ToLower());
+            int number = FindSceneIndexInHeader(ChunkData[chunkIndex].Header.ToLower());
+            ChunkData[chunkIndex].CutsceneIndex = number;
+            ChunkData[chunkIndex].CharacterName = name;
+            return name + " Scene " + number;
         }
-
-
+        ChunkData[chunkIndex].CharacterName = name;
+        ChunkData[chunkIndex].CutsceneIndex = -1;
         return name;
+    }
+
+    void SetBestGuessCutscene() {
+        for (int chunkIndex = 0; chunkIndex < ChunkData.Count; chunkIndex++) {
+
+            if (ChunkData[chunkIndex].IsCutscene) {
+                if (ChunkData[chunkIndex].CutsceneIndex > -1) {
+                    int characterIndex = 0;
+                    for (int i = 0; i < Cutscenes.Length; i++) {
+                        if (Cutscenes[i].defaultCharacter.ToLower().CompareTo(ChunkData[chunkIndex].CharacterName.ToLower()) == 0) {
+                            if (characterIndex == ChunkData[chunkIndex].CutsceneIndex) {
+                                characterIndex = -1;
+                                ChunkData[i].AssociatedCutscene = Cutscenes[i];
+                                NotFound.Remove(Cutscenes[i]);
+                            }
+                            else {
+                                characterIndex++;
+                            }
+                        }
+                    }
+                }
+                else {
+                    for (int i = 0; i < Cutscenes.Length; i++) {
+                        if (Cutscenes[i].defaultCharacter.ToLower().CompareTo(ChunkData[chunkIndex].CharacterName.ToLower()) == 0) {
+                            ChunkData[i].AssociatedCutscene = Cutscenes[i];
+                            NotFound.Remove(Cutscenes[i]);
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 
     void ParseFile() {
 
         string[] parsedText = Script.text.Split('\n');
 
-
+        NotFound = new List<CutScene>(Cutscenes);
         GenerateChunks(parsedText);
 
-        ChunkData[0].Header = ConcatFromArray(parsedText, 0, ChunkData[0].ChunkStart-1);
+        ChunkData[0].Header = ConcatFromArray(parsedText, 0, ChunkData[0].ChunkStart - 1);
         ChunkData[0].BestGuess = MostReferncedCharacterExpressionInChunk(ChunkData[0].ChunkStart, ChunkData[0].ChunkEnd, parsedText);
-        for (int i = 0; i < ChunkData.Count; i++) {
-            ChunkData[i].Header = ConcatFromArray(parsedText, i==0?0:ChunkData[i - 1].ChunkEnd+1, ChunkData[i].ChunkStart-1);
-            if (i != 0)
-                if (Mathf.Abs(ChunkData[i].ChunkStart - ChunkData[i - 1].ChunkEnd) < 3)
-                    Debug.Log("Pretty close there bud check if chunks are correct @" + i + " & @" + (i - 1));
-            string name = MostReferncedCharacterExpressionInChunk(ChunkData[i].ChunkStart, ChunkData[i].ChunkEnd, parsedText);
-            ChunkData[i].BestGuess = PartnerScene(name, i);
+        for (int chunkIndex = 0; chunkIndex < ChunkData.Count; chunkIndex++) {
+            ChunkData[chunkIndex].Header = ConcatFromArray(parsedText, chunkIndex == 0 ? 0 : ChunkData[chunkIndex - 1].ChunkEnd + 1, ChunkData[chunkIndex].ChunkStart - 1);
+            if (chunkIndex != 0)
+                if (Mathf.Abs(ChunkData[chunkIndex].ChunkStart - ChunkData[chunkIndex - 1].ChunkEnd) < 3)
+                    Debug.Log("Pretty close there bud check if chunks are correct @" + chunkIndex + " & @" + (chunkIndex - 1));
+            ChunkData[chunkIndex].IsCutscene = IsCutScene(ChunkData[chunkIndex].FirstLine);
+            if (ChunkData[chunkIndex].IsCutscene) {
+                string name = MostReferncedCharacterExpressionInChunk(ChunkData[chunkIndex].ChunkStart, ChunkData[chunkIndex].ChunkEnd, parsedText);
+                ChunkData[chunkIndex].BestGuess = PartnerScene(name, chunkIndex);
+            }
+            else {
+                ChunkData[chunkIndex].BestGuess = "Not a cutscene";
+            }
+
         }
-        if (SendToCutscenes)
-            SendToCutscenesFunction(parsedText);
+
+        SetBestGuessCutscene();
         System.GC.Collect();
     }
 
     [System.Serializable]
     class ParserChunk {
         public string BestGuess;
+        public bool IsCutscene;
         public string Header;
         public int ChunkStart;
         public int ChunkEnd;
         public string FirstLine;
         public string LastLine;
 
+        public string CharacterName;
+        public int CutsceneIndex;
+        public CutScene AssociatedCutscene;
     }
 }
 #endif
