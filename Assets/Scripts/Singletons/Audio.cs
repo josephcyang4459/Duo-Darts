@@ -50,13 +50,12 @@ public class Audio : MonoBehaviour
     }
 
     public void PlayDartClipReverb(DartAudioClips clip, AudioReverbPreset preset) {
-        //ReverbZone.reverbPreset = preset;
+        ReverbZone.reverbPreset = preset;
         ReverbSource.PlayOneShot(DartClips.List[(int)clip]);
     }
 
     public void PlayClip(AudioClip clip)
     {
-        Debug.Log("CLIP");
         MainSource.PlayOneShot(clip);
     }
 
