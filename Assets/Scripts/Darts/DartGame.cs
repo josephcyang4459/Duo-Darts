@@ -124,17 +124,17 @@ public class DartGame : MonoBehaviour {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (s.hour == 8)
                 if (s.minutes > 30) {
-                    switch ((Characters)partnerIndex) {
-                        case Characters.Chad:
+                    switch ((CharacterNames)partnerIndex) {
+                        case CharacterNames.Chad:
                             UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ChadEnding);
                             return;
-                        case Characters.Elaine:
+                        case CharacterNames.Elaine:
                             UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ElaineEnding);
                             return;
-                        case Characters.Jess:
+                        case CharacterNames.Jess:
                             UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.JessEnding);
                             return;
-                        case Characters.Faye:
+                        case CharacterNames.Faye:
                             UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FayeEnding);
                             return;
                     }
@@ -231,7 +231,6 @@ public class DartGame : MonoBehaviour {
     /// called by DartScript for some reason
     /// </summary>
     public void AddPoints(int newPoints) {
-        Debug.Log("SHOULD BE SPECIFIC DART FOR SPECIFIC EFFECT");
         if (newPoints == 50) {
             Audio.inst.PlayDartClipReverb(DartAudioClips.Sharp, AudioReverbPreset.Cave);
         }

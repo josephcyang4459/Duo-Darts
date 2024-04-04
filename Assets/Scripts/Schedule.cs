@@ -37,22 +37,31 @@ public class Schedule : MonoBehaviour, SceneEntrance
     public GameObject GenderChoiceButton;
     public TMP_Text TimeText;
     public Canvas TimeCanvas;
-
+  
     public DartMen DartsMenu;
     public ResetStats ResetStats;
+    public SaveHandler SaveHandler;
+    public Canvas GenderChoiceCanvas;
     public void Start()
     {
         Audio.inst.PlaySong(song0);
         TimeText.text = timeAsString();
-        ResetStats.ResetStatsAndCompletionToBase();
+        int fileIndex = TransitionManager.inst.GetFileIndex();
+        if (fileIndex > -1) {
+            SaveHandler.LoadFromFile(fileIndex);
+            GenderChoiceCanvas.enabled = false;
+            System.GC.Collect();
+        }
+        else
+            ResetStats.ResetStatsAndCompletionToBase();
+        
         TransitionManager.inst.ReadyToEnterScene(this);
         
     }
 
     public void EnterScene() {
-        Debug.Log("here");
         UIState.inst.SetAsSelectedButton(GenderChoiceButton);
-        PauseMenu.inst.SetEnabled(false);
+        PauseMenu.inst.SetEnabled(TransitionManager.inst.GetFileIndex() > -1);
         UIState.inst.SetInteractable(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
     }

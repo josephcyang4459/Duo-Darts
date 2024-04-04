@@ -6,6 +6,7 @@ public class UIState : MonoBehaviour
     public static UIState inst;
     [SerializeField] EventSystem EventSystem;
     [SerializeField] GameObject CurrentFirstSelected;
+    [SerializeField] bool IsUsingController;
     public void Awake()
     {
         if(inst != null)
@@ -14,18 +15,22 @@ public class UIState : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this);
+        ControlState.UsingController += ControllerConnected;
         inst = this;
     }
 
     public void SetAsSelectedButton(GameObject gameObject) {
         CurrentFirstSelected = gameObject;
-        if (ControlState.inst.IsUsingController()) {
+        if (IsUsingController) {
             EventSystem.SetSelectedGameObject(gameObject);
         }
     }
 
-    public void ControllerConnected()
+    public void ControllerConnected(bool state)
     {
+        IsUsingController = state;
+        if (!state)
+            return;
         if (EventSystem.enabled) {
             EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
         }

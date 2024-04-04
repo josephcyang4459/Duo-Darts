@@ -7,6 +7,7 @@ public class TransitionManager : MonoBehaviour, Caller {
     [SerializeField] SceneNumbers NextScene;
     [SerializeField] SceneEntrance CurrentSceneEntrance;
     [SerializeField] SceneTransitionAnimation[] TransitionAnimationHeads;
+    [SerializeField] int FileIndex;
     void Awake() {
         if (inst != null) {
             Destroy(gameObject);
@@ -14,6 +15,14 @@ public class TransitionManager : MonoBehaviour, Caller {
         }
         DontDestroyOnLoad(this);
         inst = this;
+    }
+
+    public void SetFileIndex(int index) {
+        FileIndex = index;
+    }
+
+    public int GetFileIndex() {
+        return FileIndex;
     }
 
     public void GoToScene(SceneNumbers nextScene) {

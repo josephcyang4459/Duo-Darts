@@ -50,7 +50,7 @@ public class ResetStats : ScriptableObject
     {
         for(int i = 0; i < BaseStats.Length; i++)
         {
-            BaseStats[i].name = ((Characters)i).ToString();
+            BaseStats[i].name = ((CharacterNames)i).ToString();
         }
 
         if(ResetToBase)

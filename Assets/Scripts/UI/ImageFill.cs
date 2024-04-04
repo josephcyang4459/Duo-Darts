@@ -39,8 +39,10 @@ public class ImageFill : MonoBehaviour
     public void ClearImages()
     {
         enabled = false;
-        CurrentImage.fillAmount = 0;
-        CurrentImage = null;
+        if (CurrentImage != null) {
+            CurrentImage.fillAmount = 0;
+            CurrentImage = null;
+        }
         for (int i = OldImages.Count - 1; i >= 0; i--)
         {
             OldImages[i].fillAmount = 0;
