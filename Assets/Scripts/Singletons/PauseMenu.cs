@@ -1,24 +1,27 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PauseMenu : MonoBehaviour, Caller
-{
+public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
     [SerializeField] InputActionReference PauseInput;
     [SerializeField] bool Enabled;
     [SerializeField] Canvas PauseOptionsCanvas;
     [SerializeField] Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
-    
-    [SerializeField] bool CurrentState;
 
+    [SerializeField] bool CurrentState;
+    [SerializeField] bool IsInStory;
     [SerializeField] GameObject FirstSelected;
+    [SerializeField] GameObject StoryFirstSelected;
     GameObject returnGameObjectButton;
     bool returnState;
-    public void Awake()
-    {
-        if(inst !=null)
-        {
+
+    public void IsInStoryScene(bool isInStory) {
+        IsInStory = isInStory;
+    }
+
+    public void Awake() {
+        if (inst != null) {
             Destroy(gameObject);
             return;
         }
@@ -26,8 +29,7 @@ public class PauseMenu : MonoBehaviour, Caller
         inst = this;
     }
 
-    public void SetEnabled(bool enabled, bool setFirstButtonUponUnenable =true)
-    {
+    public void SetEnabled(bool enabled, bool setFirstButtonUponUnenable = true) {
         if (enabled)
             EnablePause();
         else
@@ -35,15 +37,13 @@ public class PauseMenu : MonoBehaviour, Caller
         Enabled = enabled;
     }
 
-    void EnablePause()
-    {
+    void EnablePause() {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, true);
         PauseInput.action.Enable();
         PauseInput.action.performed += ActivatePauseMenu;
     }
 
-    void UnenablePause(bool setFirstButtonUponUnenable = true)
-    {
+    void UnenablePause(bool setFirstButtonUponUnenable = true) {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
         CurrentState = false;
         ConsequencesOfCurrentState(setFirstButtonUponUnenable);
@@ -51,68 +51,72 @@ public class PauseMenu : MonoBehaviour, Caller
         PauseInput.action.performed -= ActivatePauseMenu;
     }
 
-    void ActivatePauseMenu(InputAction.CallbackContext c)
-    {
+    void ActivatePauseMenu(InputAction.CallbackContext c) {
         PauseMenueStateChange();
     }
 
-    void PauseMenueStateChange()
-    {
+    void PauseMenueStateChange() {
         CurrentState = !CurrentState;
         ConsequencesOfCurrentState();
     }
 
-
-    void ConsequencesOfCurrentState(bool setFirstButtonUponUnenable = true) {
-        PauseOptionsCanvas.enabled = CurrentState;
-        BackGround.enabled = CurrentState;
-        if(TransitionManager.inst!=null)
-        if (TransitionManager.inst.GetCurrentScene() == SceneNumbers.Story)
-            StoryOptionsCanvas.enabled = CurrentState;
-        if (CurrentState) {
-            returnGameObjectButton = UIState.inst.GetCurrentSelected();
-            returnState = UIState.inst.GetCurrentState();
-            OptionsMenu.inst.HideOptions();
-            UIState.inst.SetInteractable(true);
-            UIState.inst.SetAsSelectedButton(FirstSelected);
+    void SetCorrectCanvas(bool state) {
+        if (IsInStory) {
+            StoryOptionsCanvas.enabled = state;
         }
         else {
-            OptionsMenu.inst.HideOptions();
+            PauseOptionsCanvas.enabled = state;
+        }
+    }
+
+    void ConsequencesOfCurrentState(bool setFirstButtonUponUnenable = true) {
+        BackGround.enabled = CurrentState;
+        SetCorrectCanvas(CurrentState);
+
+        if (CurrentState) {
+
+            returnGameObjectButton = UIState.inst.GetCurrentSelected();
+            returnState = UIState.inst.GetCurrentState();
+            OptionsMenu.inst.HideOptionsNoCall();
+            UIState.inst.SetInteractable(true);
+            if (IsInStory) {
+                UIState.inst.SetAsSelectedButton(StoryFirstSelected);
+            }
+            else {
+                UIState.inst.SetAsSelectedButton(FirstSelected);
+            }
+            
+        }
+        else {
+            OptionsMenu.inst.HideOptionsNoCall();
             if (setFirstButtonUponUnenable)
                 UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);
         }
     }
 
-    private void OnDestroy()
-    {
-        if (enabled) {
+    private void OnDestroy() {
+        if (Enabled) {
             PauseInput.action.Disable();
             PauseInput.action.performed -= ActivatePauseMenu;
         }
     }
 
-
-    public void ShowOptions()
-    {
-        PauseOptionsCanvas.enabled = false;
+    public void ShowOptions() {
+        SetCorrectCanvas(false);
         OptionsMenu.inst.ShowOptions(this);
     }
 
-    public void ExitToMain()
-    {
-        //PauseMenueStateChange();
+    public void ExitToMain() {
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
-    public void ExitToDesktop()
-    {
+    public void ExitToDesktop() {
         Application.Quit();
     }
 
-    public void Ping()
-    {
+    public void Ping() {
+        SetCorrectCanvas(true);
         UIState.inst.SetAsSelectedButton(FirstSelected);
-        PauseOptionsCanvas.enabled = true;
     }
 }

@@ -45,6 +45,11 @@ public class OptionsMenu : MonoBehaviour
         UIState.inst.SetAsSelectedButton(FirstSelected);
     }
 
+    public void HideOptionsNoCall() {
+        Caller = null;
+        HideOptions();
+    }
+
     public void HideOptions(){
         if (!Canvas.enabled)
             return;

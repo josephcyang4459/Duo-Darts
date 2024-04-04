@@ -35,6 +35,7 @@ public class TransitionManager : MonoBehaviour, Caller {
 
     void EnterScene() {
         TransitionAnimationHeads[(int)NextScene].TransitionCanvas.enabled = false;
+        PauseMenu.inst.IsInStoryScene(NextScene == SceneNumbers.Story);
         PauseMenu.inst.SetEnabled(true);
         UIState.inst.SetInteractable(true);
         CurrentSceneEntrance.EnterScene();

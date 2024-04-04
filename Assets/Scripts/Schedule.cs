@@ -31,7 +31,6 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
     public Image LocationLocationImage;
     public AudioClip song0;
-    public AudioClip cli;
 
     public GameObject FirstLocationButton;
     public GameObject FirstEventButton;
@@ -68,7 +67,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
     public void click()
     {
-        Audio.inst.PlayClip(cli);
+        Audio.inst.PlayClip(AudioClips.Click);
     } 
 
     public void ChooseCharacterGender(int i)

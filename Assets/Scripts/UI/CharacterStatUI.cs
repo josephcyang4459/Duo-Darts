@@ -1,12 +1,18 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharacterStatUI : MonoBehaviour
 {
     public static CharacterStatUI inst;
     [SerializeField] CharacterList Characters;
     [SerializeField] Player Player;
-    [SerializeField] TMP_Text Text;
+    [SerializeField] Image[] PartnerImages;
+    [SerializeField] Color NotYetInteractedWith;
+    [Header("TEMP-------------------------------")]
+    [SerializeField] TMP_Text PlayerText;
+    [Header("TEMP")]
+    [SerializeField] TMP_Text[] Texts;
 
     public void Start() {
         if (inst != null) {
@@ -19,14 +25,42 @@ public class CharacterStatUI : MonoBehaviour
 
     }
 
-    public void UpdateUI() {
-        string temp = "";
-        temp += "Player: =====\n" + "INTOX: " + Player.Intoxication + "\n" + "SKILL: " + Player.Skill
-            + "\n" + "LUCK: " + Player.Luck+"\n";
-        for(int i=0;i<4;i++)
-        temp += Characters.list[i].Name +": =====\n" + "INTOX: " + Characters.list[i].Intoxication + "\n" + "SKILL: " + Characters.list[i].Composure
-          + "\n" + "LOVE: " + Characters.list[i].Love+ "\n";
+    public void CheckCharacter(int i) {
+        PartnerImages[i].color = Color.white;
+        if (Characters.list[i].Love < -100) {
+            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.negative];
+            return;
+        }
+        if (Characters.list[i].RelatedCutScenes[Characters.list[i].RelatedCutScenes.Length - 1].completed) {
+            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.positive];
+            return;
+        }
+        if (Characters.list[i].Intoxication >= 3) {
+            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.drunk];
+            return;
+        }
+        if (Characters.list[i].RelatedCutScenes[0].completed) {
+            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.nuetral];
+            return;
+        }
+        PartnerImages[i].color = NotYetInteractedWith;
+    }
 
-        Text.text = temp;
+    public void UpdateUI() {
+        for (int i = 0; i < 4; i++) {
+            CheckCharacter(i);
+        }
+        TEMPUI();
+    }
+
+    public void TEMPUI() {
+        Debug.Log("REMOVE FOR RELEASE");
+        string temp = "";
+        temp += "Player:\n" + "INTOX: " + Player.Intoxication + "\n" + "SKILL: " + Player.Skill
+            + "\n" + "LUCK: " + Player.Luck + "\n";
+        PlayerText.text = temp;
+        for (int i = 0; i < 4; i++)
+            Texts[i].text = Characters.list[i].Name + ":\n" + "INTOX: " + Characters.list[i].Intoxication + "\n" + "SKILL: " + Characters.list[i].Composure
+          + "\n" + "LOVE: " + Characters.list[i].Love + "\n";
     }
 }

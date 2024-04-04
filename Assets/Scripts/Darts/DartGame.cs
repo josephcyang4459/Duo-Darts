@@ -20,9 +20,6 @@ public class DartGame : MonoBehaviour {
     public int maxTurns;
     public bool firstTimePlaying;
 
-
-    [SerializeField] Vector2Int NuetralAITargetRange = new Vector2Int(16, 19);
-    [SerializeField] float BaseOffset = .1f;
     [SerializeField] float MaxOffset = 4;
     public Canvas dartCanvas;
 
@@ -47,7 +44,6 @@ public class DartGame : MonoBehaviour {
     public bool reset;
     public GameObject g;
     public GameObject slice;
-
 
     public void OnValidate() {
         if (reset) {
@@ -85,8 +81,8 @@ public class DartGame : MonoBehaviour {
         }
 
         Aim.SetUpDependants();
-        DartSticker.inst.SetVisible(false);
-        PauseMenu.inst.SetEnabled(false);
+        /*DartSticker.inst.SetVisible(false);
+        PauseMenu.inst.SetEnabled(false);*/
         Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
@@ -238,7 +234,20 @@ public class DartGame : MonoBehaviour {
     /// called by DartScript for some reason
     /// </summary>
     public void AddPoints(int newPoints) {
-        Audio.inst.PlayClip(AudioClips.Dart);
+        Debug.Log("SHOULD BE SPECIFIC DART FOR SPECIFIC EFFECT");
+        if (newPoints == 50) {
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Sharp, AudioReverbPreset.Cave);
+        }
+        else if(newPoints == 60) {
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Flat, AudioReverbPreset.Drugged);
+        }
+        else if(newPoints==0){
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Soft, AudioReverbPreset.Bathroom);
+        }
+        else {
+            Audio.inst.PlayClip(AudioClips.RandomDart);
+        }
+       
         turnSum += newPoints;
         Visuals.SetTurnScore(turnSum);
         Visuals.SetDartScore(numberOfDartsThrow, newPoints);
@@ -283,7 +292,7 @@ public class DartGame : MonoBehaviour {
         winc.enabled = false;
         losec.enabled = false;
         board.enabled = false;
-        PauseMenu.inst.SetEnabled(true);
+        // PauseMenu.inst.SetEnabled(true);
         if (s != null)
             s.setTime(TimeBlocks.Short);
         else

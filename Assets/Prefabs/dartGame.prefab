@@ -18251,7 +18251,7 @@ MonoBehaviour:
   - {fileID: 6848928709636958226}
   - {fileID: 6848928709925359230}
   PartnerIndex: 0
-  maxSpeed: 80
+  maxSpeed: 150
   speed: 80
   curve:
     serializedVersion: 2
