@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5597809902705116332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 999.98364, y: 525.4618, z: -5.3535776}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,7 +146,7 @@ MonoBehaviour:
   MainSource: {fileID: 5597809902705116334}
   ReverbSource: {fileID: 156362720}
   ReverbZone: {fileID: 156362719}
-  ClickSound: {fileID: 8300000, guid: ee59a797ddaa4534aac34630a6d1bba5, type: 3}
+  ClickSound: {fileID: 8300000, guid: eac0a837ff027ab419a80d1a28269be4, type: 3}
   DartClips: {fileID: 11400000, guid: 40bed4585efef544282c56eb1f11c32f, type: 2}
 --- !u!167 &156362719
 AudioReverbZone:

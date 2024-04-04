@@ -45,7 +45,6 @@ public class DartGame : MonoBehaviour {
     public GameObject g;
     public GameObject slice;
 
-
     public void OnValidate() {
         if (reset) {
             c = new BoardSlice[20];
@@ -78,8 +77,8 @@ public class DartGame : MonoBehaviour {
 
     public void BeginGame(int partner) {
         Aim.SetUpDependants();
-        DartSticker.inst.SetVisible(false);
-        PauseMenu.inst.SetEnabled(false);
+        /*DartSticker.inst.SetVisible(false);
+        PauseMenu.inst.SetEnabled(false);*/
         Audio.inst.PlaySong(ac);
         //UI_Helper.SetSelectedUIElement(s.c.voiddd);
         board.enabled = true;
@@ -234,10 +233,13 @@ public class DartGame : MonoBehaviour {
     public void AddPoints(int newPoints) {
         Debug.Log("SHOULD BE SPECIFIC DART FOR SPECIFIC EFFECT");
         if (newPoints == 50) {
-            Audio.inst.PlayDartClipReverb(DartAudioClips.Medium, AudioReverbPreset.Alley);
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Sharp, AudioReverbPreset.Cave);
         }
         else if(newPoints == 60) {
-            Audio.inst.PlayDartClipReverb(DartAudioClips.Hard, AudioReverbPreset.Dizzy);
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Flat, AudioReverbPreset.Drugged);
+        }
+        else if(newPoints==0){
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Soft, AudioReverbPreset.Bathroom);
         }
         else {
             Audio.inst.PlayClip(AudioClips.RandomDart);
@@ -288,7 +290,7 @@ public class DartGame : MonoBehaviour {
         winc.enabled = false;
         losec.enabled = false;
         board.enabled = false;
-        PauseMenu.inst.SetEnabled(true);
+        //PauseMenu.inst.SetEnabled(true);
         if (s != null) {
             s.setTime(TimeBlocks.Short);
         }
