@@ -36,7 +36,6 @@ public class CutScene : ScriptableObject
             if (overall[currentLine].Length <= 0)
                 break;
             __CutsceneActions h = __getAction(overall[currentLine]);
-            //Debug.Log(h);
 
             switch (h) {
                 case __CutsceneActions.Dialouge:
@@ -94,7 +93,6 @@ public class CutScene : ScriptableObject
                     }// for 3 responses
                     currentLine--;
                     blockList.Add(tempR);
-                    Debug.Log(overall[currentLine]);
                     break;
                 case __CutsceneActions.Expression:
                     if (__getCharactersNameFrom(overall[currentLine]).CompareTo(currentCharacter) != 0) {
@@ -106,7 +104,6 @@ public class CutScene : ScriptableObject
                     }
                     else {
                         ExpressionBlock tempE = new ExpressionBlock();
-                        //Debug.Log(overall[currentLine]);
                         tempE.expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
                         blockList.Add(tempE);
                     }
@@ -154,7 +151,7 @@ public class CutScene : ScriptableObject
 
     PlayerSkills __GetPSkill(string s)
     {
-        if (s.Contains("Intoxication"))
+        if (s.Contains("Intox"))
             return PlayerSkills.Intoxication;
 
         if (s.Contains("Skill"))
@@ -164,6 +161,12 @@ public class CutScene : ScriptableObject
             return PlayerSkills.Luck;
 
         return PlayerSkills.Luck;
+    }
+
+    int __GetSign(string s) {
+        if(s.Contains("Lower")) 
+            return -1;
+        return 1;
     }
 
     block __getDialougeOrThoughtAttachment(string ss)
@@ -182,7 +185,7 @@ public class CutScene : ScriptableObject
                 {
                     PlayerChangeStat dPCS = new PlayerChangeStat();
                     dPCS.Stat = __GetPSkill(ss);
-                    dPCS.Adjust = __getNumberFrom(ss);
+                    dPCS.Adjust = __getNumberFrom(ss) * __GetSign(ss);
                     return dPCS;
                 }
                 else
@@ -190,7 +193,7 @@ public class CutScene : ScriptableObject
                     ChangeStat PCS = new ChangeStat();
                     PCS.Character = __getCharactersFrom(ss);
                     PCS.Stat = __GetSkill(ss);
-                    PCS.Adjust = __getNumberFrom(ss);
+                    PCS.Adjust = __getNumberFrom(ss) * __GetSign(ss);
                     return PCS;
                 }
             case __CutsceneActions.ResetIntox:
@@ -207,7 +210,6 @@ public class CutScene : ScriptableObject
     NPCResponseData __getNPCResponse(string line)
     {
         NPCResponseData NPCR = new();
-        Debug.Log(line);
         NPCR.Message = __removeTags(line);
         NPCR.Expression = Expressions.ForCutscene;
         NPCR.AdjustValue = 0;
@@ -384,7 +386,6 @@ public class CutScene : ScriptableObject
             return __CutsceneActions.ERROR;
 
         string tempActionName = ((s.Contains('[')&&s.Contains(']'))?__firstTag(s):s);
-        //Debug.Log(tempActionName);
         if (tempActionName.Contains("Newln"))
         {
             if (s.Contains('*'))

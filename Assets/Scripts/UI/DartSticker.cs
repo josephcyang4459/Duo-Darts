@@ -76,7 +76,8 @@ public class DartSticker : MonoBehaviour
         if(Vector2.Distance(Location.position, TargetLocation) <.005f)
         {
             DartImage.sprite = StuckSprite;
-            Audio.inst.PlayClip(AudioClips.Dart);
+            //Audio.inst.PlayDartClipReverb((DartAudioClips)Random.Range(0,3), AudioReverbPreset.Bathroom);
+            Audio.inst.PlayClip(AudioClips.RandomDart);
             enabled = false;
         }
 

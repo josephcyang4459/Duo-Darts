@@ -77,7 +77,13 @@ public enum Expressions
 public enum AudioClips
 {
     Click,
-    Dart,
+    RandomDart,
+}
+
+public enum DartAudioClips {
+    Soft,
+    Medium,
+    Hard
 }
 
 public enum Locations

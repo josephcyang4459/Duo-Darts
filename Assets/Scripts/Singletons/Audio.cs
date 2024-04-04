@@ -5,10 +5,11 @@ using UnityEngine;
 public class Audio : MonoBehaviour
 {
     public static Audio inst;
-    [SerializeField] AudioSource Source;
+    [SerializeField] AudioSource MainSource;
+    [SerializeField] AudioSource ReverbSource;
+    [SerializeField] AudioReverbZone ReverbZone;
     [SerializeField] AudioClip ClickSound;
-    [SerializeField] AudioClip DartSound;
-
+    [SerializeField] AudioClipList DartClips;
 
     private void Awake()
     {
@@ -24,49 +25,55 @@ public class Audio : MonoBehaviour
         ChangeVolume(PlayerPrefs.GetFloat("volume", .5f));
     }
 
-    public void ChangeVolume(float value)
-    {
-        if (Mathf.Approximately(value, 0))
-        {
-            Source.mute = true;
+    public void ChangeVolume(float value) {
+        if (Mathf.Approximately(value, 0)) {
+            MainSource.mute = true;
+            ReverbSource.mute = true;
             return;
         }
 
-        if (Source.mute)
-            Source.mute = false;
-        Source.volume = value;
+        if (MainSource.mute)
+            MainSource.mute = false;
+        MainSource.volume = value;
+        if (ReverbSource.mute)
+            ReverbSource.mute = false;
+        ReverbSource.volume = value;
     }
 
     public void PlayClip(AudioClips clip)
     {
-        return;
         switch (clip)
         {
-            case AudioClips.Click: PlayClip(ClickSound);return;
-            case AudioClips.Dart: PlayClip(DartSound);return;
+            //case AudioClips.Click: PlayClip(ClickSound);return;
+            case AudioClips.RandomDart: PlayClip(DartClips.List[Random.Range(0,DartClips.List.Length)]);return;
         }
+    }
+
+    public void PlayDartClipReverb(DartAudioClips clip, AudioReverbPreset preset) {
+        //ReverbZone.reverbPreset = preset;
+        ReverbSource.PlayOneShot(DartClips.List[(int)clip]);
     }
 
     public void PlayClip(AudioClip clip)
     {
-        return;
-        Source.PlayOneShot(clip);
+        Debug.Log("CLIP");
+        MainSource.PlayOneShot(clip);
     }
 
     public void PlaySong(AudioClip clip)
     {
         return;
-        if (Source.clip == clip)
-            if (Source.isPlaying)
+        if (MainSource.clip == clip)
+            if (MainSource.isPlaying)
                 return;
 
-        Source.clip = clip;
-        Source.Play();
+        MainSource.clip = clip;
+        MainSource.Play();
      
     }
 
     public void StopSong()
     {
-        Source.Stop();
+        MainSource.Stop();
     }
 }
