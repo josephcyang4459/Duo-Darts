@@ -14,7 +14,7 @@ public enum DartTargetBias
     Sixty
 }
 
-public enum Characters
+public enum CharacterNames
 {
     Chad,
     Jess,
@@ -103,6 +103,11 @@ public enum ControllerState
     ForceController
 }
 
+public enum SystemFileParse {
+    VersionNumber,
+    Hour,
+    Minute
+}
 
 #if UNITY_EDITOR
 

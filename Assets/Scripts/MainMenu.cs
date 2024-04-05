@@ -9,17 +9,15 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] TMP_Text text;
     [SerializeField] Canvas MainMenueCanvas;
     [SerializeField] Vector3 ButtonOffset;
-    [SerializeField] Image[] ButtonImagesLeft;
-    [SerializeField] Image[] ButtonImagesRight;
-    [SerializeField] ImageFill FillSectionLeft;
-    [SerializeField] ImageFill FillSectionRight;
+    [SerializeField] FileUI FileUI;
+    [SerializeField] Fillable_Image[] ButtonImages;
+    [SerializeField] GroupImageFill FillSection;
 
     [SerializeField] GameObject FirstSelected;
     public void HoverButton(int i)
     {
         Audio.inst.PlayClip(AudioClips.Click);
-        FillSectionLeft.SetCurrentImageToFill(ButtonImagesLeft[i], ((RectTransform)ButtonImagesLeft[i].transform).position + ButtonOffset);
-        FillSectionRight.SetCurrentImageToFill(ButtonImagesRight[i]);
+        FillSection.SetCurrentImageToFill(ButtonImages[i], (ButtonImages[i].Images[1].transform).position + ButtonOffset);
     }
 
 
@@ -54,7 +52,11 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     }
 
     public void PlayGame() {
-        
+        FileUI.BeginShowLoadMenu(this);
+    }
+
+    public void SetLoadFileAndGoToStory(int index) {
+        TransitionManager.inst.SetFileIndex(index);
         TransitionManager.inst.GoToScene(SceneNumbers.Story);
     }
 
@@ -88,16 +90,13 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     void __swapDirection()
     {
-        int newRightDirection = ButtonImagesLeft[0].fillOrigin;
-        int newLeftDirection = ButtonImagesRight[0].fillOrigin;
+        int newRightDirection = ButtonImages[0].Images[0].fillOrigin;
+        int newLeftDirection = ButtonImages[0].Images[1].fillOrigin;
 
-        for (int i = 0; i < ButtonImagesLeft.Length; i++)
+        for (int i = 0; i < ButtonImages.Length; i++)
         {
-            ButtonImagesLeft[i].fillOrigin = newLeftDirection;
-        }
-        for (int i = 0; i < ButtonImagesRight.Length; i++)
-        {
-            ButtonImagesRight[i].fillOrigin = newRightDirection;
+            ButtonImages[i].Images[0].fillOrigin = newLeftDirection;
+            ButtonImages[i].Images[1].fillOrigin = newRightDirection;
         }
     }
 
@@ -113,13 +112,10 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
         if (__setColor)
         {
             __setColor = false;
-            for (int i = 0; i < ButtonImagesLeft.Length; i++)
+            for (int i = 0; i < ButtonImages.Length; i++)
             {
-                ButtonImagesLeft[i].color = __Color;
-            }
-            for (int i = 0; i < ButtonImagesRight.Length; i++)
-            {
-                ButtonImagesRight[i].color = __Color;
+                ButtonImages[i].Images[0].color = __Color;
+                ButtonImages[i].Images[1].color = __Color;
             }
         }
     }

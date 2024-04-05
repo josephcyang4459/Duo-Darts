@@ -13,6 +13,10 @@ public class DartSticker : MonoBehaviour
     [SerializeField] float PixelsTraveledPerSecond;
     Vector2 TargetLocation;
     bool First;
+    bool CurrentlyUsingController;
+    bool CurrentUIState;
+
+
 
     public void Awake()
     {
@@ -22,18 +26,22 @@ public class DartSticker : MonoBehaviour
             return;
         }
         SceneManager.sceneLoaded += LevelLoad;
+        ControlState.UsingController += IsUsingController;
         SetVisible(true);
         enabled = false;
         DontDestroyOnLoad(this);
         inst = this;
         First = true;
     }
-    public void LevelLoad(Scene s, LoadSceneMode m)
-    {
+
+    public void IsUsingController(bool b) {
+        CurrentlyUsingController = b;
+    }
+
+    public void LevelLoad(Scene s, LoadSceneMode m) {
         SetVisible(false);
-        if (ControlState.inst != null)
-            if (ControlState.inst.IsUsingController())
-                First = true;
+        if (CurrentlyUsingController)
+            First = true;
     }
 
     bool SkipFirstInteractionOfLevel()
@@ -41,7 +49,7 @@ public class DartSticker : MonoBehaviour
         First = false;
         if (ControlState.inst == null)
             return true;
-        if (ControlState.inst.IsUsingController())
+        if (CurrentlyUsingController)
             return true;
         return false;
     }

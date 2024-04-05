@@ -39,6 +39,13 @@ public class EventSelectorUI : MonoBehaviour, Caller
         }
     }
 
+    public void HideUI() {
+        ExitButtons.ReachEndState();
+        ExitListAnimation.ReachEndState();
+        EventSelectorCanvas.enabled = false;
+        EventButtonsCanvas.enabled = false;
+    }
+
     void ShowButtons() {
         State = AnimationState.EnterButtons;
         EventButtonsCanvas.enabled = true;

@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeClock : MonoBehaviour
 {
+    [SerializeField] Canvas TimeCanvas;
     [SerializeField] Image HoursTens;
     [SerializeField] Image HoursOnes;
     [SerializeField] Image MinutesTens;
@@ -12,6 +11,10 @@ public class TimeClock : MonoBehaviour
 
     [SerializeField] SpriteCollection SevenSegmentSprites;
     [SerializeField] ColorSwatch TimeColors;
+
+    public void SetVisible(bool state) {
+        TimeCanvas.enabled = state;
+    }
 
     public void SetTime(int hour, int minute) {
         HoursTens.sprite = SevenSegmentSprites.Sprites[hour < 10 ? 0 : 1];

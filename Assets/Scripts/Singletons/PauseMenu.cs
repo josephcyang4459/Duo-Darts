@@ -115,6 +115,10 @@ public class PauseMenu : MonoBehaviour, Caller {
         Application.Quit();
     }
 
+    public void Save() {
+        SaveHandler.inst.BeginShowSaveMenu();
+    }
+
     public void Ping() {
         SetCorrectCanvas(true);
         UIState.inst.SetAsSelectedButton(FirstSelected);
