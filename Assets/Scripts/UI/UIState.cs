@@ -1,8 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class UIState : MonoBehaviour
-{
+public class UIState : MonoBehaviour {
     public static UIState inst;
     [SerializeField] EventSystem EventSystem;
     [SerializeField] GameObject CurrentFirstSelected;
@@ -14,6 +13,7 @@ public class UIState : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         DontDestroyOnLoad(this);
         ControlState.UsingController += ControllerConnected;
         inst = this;
@@ -23,7 +23,6 @@ public class UIState : MonoBehaviour
         CurrentFirstSelected = gameObject;
         if (IsUsingController) {
             EventSystem.SetSelectedGameObject(gameObject);
-        }
     }
 
     public void ControllerConnected(bool state)
@@ -33,22 +32,11 @@ public class UIState : MonoBehaviour
             return;
         if (EventSystem.enabled) {
             EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
-        }
-            
     }
 
-    public GameObject GetCurrentSelected()
-    {
-        return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected;
-    }
+    public GameObject GetCurrentSelected() {  return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected; }
 
-    public void SetInteractable(bool enabled)
-    {
-        EventSystem.enabled = enabled;
-    }
+    public void SetInteractable(bool enabled) { EventSystem.enabled = enabled; }
 
-    public bool GetCurrentState()
-    {
-        return EventSystem.enabled;
-    }
+    public bool GetCurrentState() { return EventSystem.enabled; }
 }
