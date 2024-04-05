@@ -15,7 +15,6 @@ public class DartMen : MonoBehaviour {
 
     public void ShowPartnerSelectMenu() {
         dg.ScoreNeededToWin = s.hour < 7 ? 501 : 701;//gets correct score
-
         s.off();
         menue.enabled = true;
         int UIcharacterSlotUsed = 0;
@@ -58,9 +57,11 @@ public class DartMen : MonoBehaviour {
     /// </summary>
     /// <param name="characterIndex"></param>
     /// <param name="currentHour"></param>
-    public void exception(int characterIndex, int currentHour) {
-        s.LocationCanvas.enabled = false;
-        s.EventListCanvas.enabled = false;
+    public void exception(int characterIndex, int currentHour)
+    {
+        s.off();
+        //s.LocationCanvas.enabled = false;
+        //s.EventListCanvas.enabled = false;
         dg.ScoreNeededToWin = currentHour < 7 ? 3 : 701;
         dg.partnerIndex = characterIndex;
         dg.BeginGame();

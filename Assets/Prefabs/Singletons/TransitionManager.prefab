@@ -936,6 +936,7 @@ MonoBehaviour:
     TransitionCanvas: {fileID: 6756991127190686994}
     EnterAnimationHead: {fileID: 6756991127190687007}
     ExitAnimationHead: {fileID: 6756991127190687006}
+  FileIndex: 0
 --- !u!1 &6756991127443312703
 GameObject:
   m_ObjectHideFlags: 0

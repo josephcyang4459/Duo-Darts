@@ -15,6 +15,9 @@ public class ControlState : MonoBehaviour, Caller
     [SerializeField] UIAnimationElement AnimationHead;
     bool CurrentlyAnimating;
 
+    public delegate void State(bool state);
+    public static event State UsingController;
+
     void Awake()
     {
         if(inst != null)
@@ -68,8 +71,7 @@ public class ControlState : MonoBehaviour, Caller
                 if (IsController(device))
                 {
                     ControllerConnected = true;
-                    if (IsUsingController())
-                        UIState.inst.ControllerConnected();
+                    UsingController(IsUsingController());
                 }
                 break;
             case InputDeviceChange.Disconnected:
@@ -97,7 +99,7 @@ public class ControlState : MonoBehaviour, Caller
                 if (!IsUsingController())
                     return;
                 if (UIState.inst != null)
-                    UIState.inst.ControllerConnected();
+                    UsingController(true);
             }
         }
 

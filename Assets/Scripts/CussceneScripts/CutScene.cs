@@ -181,7 +181,7 @@ public class CutScene : ScriptableObject
                 return tempDe;
 
             case __CutsceneActions.ChangeStat:
-                if (__getCharactersFrom(ss) == Characters.Player)
+                if (__getCharactersFrom(ss) == CharacterNames.Player)
                 {
                     PlayerChangeStat dPCS = new PlayerChangeStat();
                     dPCS.Stat = __GetPSkill(ss);
@@ -261,25 +261,25 @@ public class CutScene : ScriptableObject
         return int.Parse(temp);
     }
 
-    private Characters __getCharactersFrom(string fullText)
+    private CharacterNames __getCharactersFrom(string fullText)
     {
         if (fullText.Contains("Chad"))
-            return Characters.Chad;
+            return CharacterNames.Chad;
         if (fullText.Contains("Faye"))
-            return Characters.Faye;
+            return CharacterNames.Faye;
         if (fullText.Contains("Jess"))
-            return Characters.Jess;
+            return CharacterNames.Jess;
         if (fullText.Contains("Elaine"))
-            return Characters.Elaine;
+            return CharacterNames.Elaine;
         if (fullText.Contains("Owner"))
-            return Characters.Owner;
+            return CharacterNames.Owner;
         if (fullText.Contains("BarGuy"))
-            return Characters.BarGuy;
+            return CharacterNames.BarGuy;
         if (fullText.Contains("BarAdviceGirl"))
-            return Characters.CharmingGirl;
+            return CharacterNames.CharmingGirl;
         if (fullText.Contains("BarGuy"))
-            return Characters.BarGuy;
-        return Characters.Player;
+            return CharacterNames.BarGuy;
+        return CharacterNames.Player;
     }
 
     private string __getCharactersNameFrom(string fullText)
@@ -501,7 +501,7 @@ public class Response: block
 
 public class ChangeStat: block
 {
-    public Characters Character;
+    public CharacterNames Character;
     public Stats Stat;
     public int Adjust;
 
@@ -583,7 +583,7 @@ public class PlayerResponseData
 public class NPCResponseData 
 {
     public string Message;
-    public Characters Character;
+    public CharacterNames Character;
     public Expressions Expression;
     public Stats Stat;
     public int AdjustValue =0;

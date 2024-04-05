@@ -77,9 +77,9 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
 
     bool CharacterIsAlreadyDrunkCharacter(int i) {
         switch (i) {
-            case (int)Characters.CharmingGirl: return true;
-            case (int)Characters.DanceGirl: return true;
-            case (int)Characters.LoungeGuy: return true;
+            case (int)CharacterNames.CharmingGirl: return true;
+            case (int)CharacterNames.DanceGirl: return true;
+            case (int)CharacterNames.LoungeGuy: return true;
         }
         return false;
     }

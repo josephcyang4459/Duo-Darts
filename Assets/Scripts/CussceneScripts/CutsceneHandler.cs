@@ -44,6 +44,10 @@ public class CutsceneHandler : MonoBehaviour {
         DontDestroyOnLoad(this);
     }
 
+    public int PlayerPortriatIndex() {
+        return ResponsePortrait.sprite == CharacterPortraits[0] ? 0 : 1;
+    }
+
     public void PlayClickSound() {
         Audio.inst.PlayClip(AudioClips.Click);
     }

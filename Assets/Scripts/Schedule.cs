@@ -7,8 +7,9 @@ public class Schedule : MonoBehaviour, SceneEntrance
 {
     public int hour = 4;
     public int minutes =0;
+    [SerializeField] TimeClock Clock;
 
-    public EventStart[] available;
+    public EventList available;
 
     public Location[] locals;
 
@@ -16,18 +17,16 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
     public int location;
 
-    public TMP_Text LocationName;
     public Canvas EventListCanvas;
     public Button[] EventButtons;
     public TMP_Text[] btnText;
     public Sprite[] LocationSprites;
-
-   
-    public Canvas LocationCanvas;
+    public LocationSelecterUI LocationSelector;
+    public EventSelectorUI EventSelector;
+    //public Canvas LocationCanvas;
     public Image SelectedLocationImage;
 
     public GameObject DartButtonGameObject;
-   
 
     public Image LocationLocationImage;
     public AudioClip song0;
@@ -35,34 +34,36 @@ public class Schedule : MonoBehaviour, SceneEntrance
     public GameObject FirstLocationButton;
     public GameObject FirstEventButton;
     public GameObject GenderChoiceButton;
-    public TMP_Text TimeText;
-    public Canvas TimeCanvas;
-
+  
     public DartMen DartsMenu;
     public ResetStats ResetStats;
+    public SaveHandler SaveHandler;
+    public Canvas GenderChoiceCanvas;
     public void Start()
     {
         Audio.inst.PlaySong(song0);
-        TimeText.text = timeAsString();
-        ResetStats.ResetStatsAndCompletionToBase();
+        int fileIndex = TransitionManager.inst.GetFileIndex();
+        if (fileIndex > -1) {
+            SaveHandler.LoadFromFile(fileIndex);
+            GenderChoiceCanvas.enabled = false;
+            System.GC.Collect();
+        }
+        else
+            ResetStats.ResetStatsAndCompletionToBase();
+        
         TransitionManager.inst.ReadyToEnterScene(this);
         
     }
 
     public void EnterScene() {
-        Debug.Log("here");
         UIState.inst.SetAsSelectedButton(GenderChoiceButton);
-        PauseMenu.inst.SetEnabled(false);
+        if(TransitionManager.inst.GetFileIndex() > -1)
+        {
+            PauseMenu.inst.SetEnabled(true);
+            setTime(0);
+        }
         UIState.inst.SetInteractable(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
-    }
-
-
-    private string timeAsString()
-    {
-        string minutesString = (minutes < 10) ? "0" : "";
-        minutesString += minutes.ToString();
-        return hour + ":" + minutesString + "PM";
     }
 
     public void click()
@@ -86,13 +87,13 @@ public class Schedule : MonoBehaviour, SceneEntrance
             locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
         }
         //events
-        for (int i = 0; i < available.Length; i++)
+        for (int i = 0; i < available.List.Length; i++)
         {
-            Locations b = LocationOf(available[i]);
+            Locations b = LocationOf(available.List[i]);
 
             if (b != Locations.none)
             {
-                locals[(int)b].Events.Add(available[i].cutScene);
+                locals[(int)b].Events.Add(available.List[i].cutScene);
                 locals[(int)b].EventsButtonUsed++;
             }
         }
@@ -133,10 +134,10 @@ public class Schedule : MonoBehaviour, SceneEntrance
         CharacterStatUI.inst.UpdateUI();
         UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(song0);
-        LocationCanvas.enabled = true;
+        LocationSelector.BeginEntrance();
         //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
-        increaseTimeByMinutes((int)time);
+        IncreaseTimeByMinutes((int)time);
 
         if (hour >= 9)
         {
@@ -168,15 +169,14 @@ public class Schedule : MonoBehaviour, SceneEntrance
         setLocations();
     }
 
-    private void doCheck(CutScene c)
+    private void SetEventCutsceneComplete(CutScene c)
     {
-
-        for (int i = 0; i < available.Length; i++)
-            if (available[i].cutScene == c)
-                available[i].done = true;
+        for (int i = 0; i < available.List.Length; i++)
+            if (available.List[i].cutScene == c)
+                available.List[i].done = true;
     }
 
-    private void increaseTimeByMinutes(int times)
+    private void IncreaseTimeByMinutes(int times)
     {
         minutes += times;
         if (minutes >= 60)
@@ -185,8 +185,8 @@ public class Schedule : MonoBehaviour, SceneEntrance
             hour++;
         }
 
-        TimeCanvas.enabled = true;
-        TimeText.text = timeAsString();
+        Clock.SetVisible(true);
+        Clock.SetTime(hour, minutes);
     }
 
     public void LocationImage(int b)
@@ -194,16 +194,22 @@ public class Schedule : MonoBehaviour, SceneEntrance
         LocationLocationImage.sprite = LocationSprites[b];
     }
 
-    public void selectLocation(int b)
+    public void SetEventsForLocation(int locationIndex)
     {
-        LocationName.text = locals[b].Name;
-        SelectedLocationImage.sprite = LocationSprites[b];
-
-        for (int j = 0; j < EventButtons.Length; j++)
+        //LocationName.text = locals[b].Name;
+        SelectedLocationImage.sprite = LocationSprites[locationIndex];
+        int starting =0;
+        if (locationIndex == (int)Locations.darts) {
+            btnText[0].text = "DARTS";
+            EventButtons[0].gameObject.SetActive(true);
+            starting = 1;
+        }
+           
+        for (int j = starting; j < EventButtons.Length; j++)
         {
-            if (j < locals[b].EventsButtonUsed)
+            if (j < locals[locationIndex].EventsButtonUsed)
             {
-                btnText[j].text = locals[b].Events[j].defaultCharacter;
+                btnText[j].text = locals[locationIndex].Events[j].defaultCharacter;
                 EventButtons[j].gameObject.SetActive(true);
             }
             else if (EventButtons[j].gameObject.activeSelf)
@@ -212,45 +218,41 @@ public class Schedule : MonoBehaviour, SceneEntrance
                 break;
         }
 
-        if (b == 4)
-            DartButtonGameObject.SetActive(true);
-
-        location = b;
-        LocationCanvas.enabled = false;
-        EventListCanvas.enabled = true;
-        UIState.inst.SetAsSelectedButton(FirstEventButton);
+        location = locationIndex;
     }
 
-    public void selectEvent(int eve)
+    public void SelectEvent(int eventIndex)
     {
-        doCheck(locals[location].Events[eve]);
-        DartButtonGameObject.SetActive(false);
-        EventListCanvas.enabled = false;
-        CutsceneHandler.inst.PlayCutScene(locals[location].Events[eve],location);
+        if(location == (int)Locations.darts) {
+            if (eventIndex == 0) {
+                EventSelector.HideUI();
+                DartsMenu.ShowPartnerSelectMenu();
+                return;
+            }
+            eventIndex -= 1;
+        }
+            
+        
+        SetEventCutsceneComplete(locals[location].Events[eventIndex]);
+        EventSelector.HideUI();
+        CutsceneHandler.inst.PlayCutScene(locals[location].Events[eventIndex],location);
     }
 
     public void off()
     {
-        TimeCanvas.enabled = false;
-        EventListCanvas.enabled = false;
-        LocationCanvas.enabled = false;
+        Clock.SetVisible(false);
+        EventSelector.HideUI();
+        //LocationCanvas.enabled = false;
         DartButtonGameObject.SetActive( false);
     }
     
-
     public void back()
     {
         EventListCanvas.enabled = false;
-        LocationCanvas.enabled = true;
-        DartButtonGameObject.SetActive( false);
+        //LocationCanvas.enabled = true;
+        DartButtonGameObject.SetActive(false);
 
         UIState.inst.SetAsSelectedButton(FirstLocationButton);
-    }
-
-
-    public void pick()
-    {
-
     }
 
     private bool checkIfValidTime(EventStart t)

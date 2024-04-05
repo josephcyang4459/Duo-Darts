@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e78487141e88f8948a16d340be3cb9c4, type: 3}
-  m_Name: bathroomadviceeve
+  m_Name: CharmingGirl_Event
   m_EditorClassIdentifier: 
-  hour: 7
-  minutes: 0
-  endHour: 8
+  hour: 6
+  minutes: 30
+  endHour: 7
   endMinutes: 30
-  location: Bathroom
-  Location: 3
-  cutScene: {fileID: 11400000, guid: f776c8878f89d6e428bda2f630463aa7, type: 2}
+  Location: 1
+  cutScene: {fileID: 11400000, guid: 5dfed64b7b4ef9c40a32c8b7c38136e0, type: 2}
   done: 0

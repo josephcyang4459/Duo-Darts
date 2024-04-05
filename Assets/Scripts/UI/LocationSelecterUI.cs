@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LocationSelecterUI : MonoBehaviour, Caller {
+    [SerializeField] Schedule Schedule;
     [SerializeField] Canvas LocationSelectorCanvas;
     [SerializeField] EventSelectorUI EventSelector;
     [SerializeField] UIAnimationElement EnterAnimationHead;
@@ -11,14 +12,16 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     [SerializeField] AnimationState State;
     [SerializeField] ImageFill Fill;
     [SerializeField] Image[] FillImages;
+    [SerializeField] Image BackgroundImage;
+    [SerializeField] SpriteCollection SpriteCollection;
     int SelectedLocation;
     public void Start() {
         State = AnimationState.Passive;
-        BeginEntrance();
         SelectedLocation = 0;
     }
 
     public void SelectButton(int i) {
+        BackgroundImage.sprite = SpriteCollection.Sprites[i];
         Fill.SetCurrentImageToFill(FillImages[i]);
     }
 
@@ -26,6 +29,7 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
         ExitAnimationHead.ReachEndState();
         SelectedLocation = index;
         LocationSelectorCanvas.enabled = false;
+        Schedule.SetEventsForLocation(index);
         EventSelector.SetLocation(index);
     }
 
@@ -42,16 +46,15 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     }
 
     void Enter() {
-        Debug.Log("Entered");
-      
+        UIState.inst.SetInteractable(true);
+
     }
 
     void Exit() {
-        Debug.Log("Exited");
+        
     }
 
     public void Ping() {
-        UIState.inst.SetInteractable(true);
         switch (State) {
             case AnimationState.Enter: Enter(); break;
             case AnimationState.Exit: Exit(); break;

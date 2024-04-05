@@ -1668,8 +1668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6409263141756164631}
   - component: {fileID: 6409263141756164624}
-  - component: {fileID: 1027326819}
-  - component: {fileID: 1027326820}
+  - component: {fileID: 2121245712}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1724,26 +1723,30 @@ MonoBehaviour:
   Speed: 0.1
   text: {fileID: 1486877067}
   MainMenueCanvas: {fileID: 0}
-  ButtonOffset: {x: 350, y: 20, z: 0}
-  ButtonImagesLeft:
-  - {fileID: 4563013988065306254}
-  - {fileID: 5366094127677629649}
-  - {fileID: 5065542146819511211}
-  - {fileID: 2374823882202840160}
-  - {fileID: 1098629288277556969}
-  ButtonImagesRight:
-  - {fileID: 2619345483594727594}
-  - {fileID: 7795543789533754205}
-  - {fileID: 6610762730935657732}
-  - {fileID: 5207517508094755012}
-  - {fileID: 88516512795888041}
-  FillSectionLeft: {fileID: 1027326819}
-  FillSectionRight: {fileID: 1027326820}
+  ButtonOffset: {x: 75, y: 20, z: 0}
+  FileUI: {fileID: 0}
+  ButtonImages:
+  - Images:
+    - {fileID: 4563013988065306254}
+    - {fileID: 2619345483594727594}
+  - Images:
+    - {fileID: 5366094127677629649}
+    - {fileID: 7795543789533754205}
+  - Images:
+    - {fileID: 5065542146819511211}
+    - {fileID: 6610762730935657732}
+  - Images:
+    - {fileID: 2374823882202840160}
+    - {fileID: 5207517508094755012}
+  - Images:
+    - {fileID: 1098629288277556969}
+    - {fileID: 88516512795888041}
+  FillSection: {fileID: 2121245712}
   FirstSelected: {fileID: 6409263142988336973}
   __Color: {r: 0, g: 0, b: 0, a: 0.49019608}
   __ChangeDirection: 0
   __setColor: 0
---- !u!114 &1027326819
+--- !u!114 &2121245712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1752,31 +1755,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6409263141756164630}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda7e9d998fcb774f9159a1dee62dd22, type: 3}
+  m_Script: {fileID: 11500000, guid: b00a54a17ea910343a2e753284f1876d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentImage: {fileID: 0}
+  CurrentImage:
+    rid: -2
   Target: {x: 0, y: 0}
   OldImages: []
   FillPerSecond: 4
   ShootDart: 0
---- !u!114 &1027326820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409263141756164630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda7e9d998fcb774f9159a1dee62dd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentImage: {fileID: 0}
-  Target: {x: 0, y: 0}
-  OldImages: []
-  FillPerSecond: 4
-  ShootDart: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &6409263141890794825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2032,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6409263141756164624}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2121245712}
+        m_TargetAssemblyTypeName: GroupImageFill, Assembly-CSharp
+        m_MethodName: ClearImages
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
