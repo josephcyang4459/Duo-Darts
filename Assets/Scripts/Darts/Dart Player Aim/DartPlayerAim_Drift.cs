@@ -15,7 +15,7 @@ public class DartPlayerAim_Drift : MonoBehaviour
     float Timer;
 
     public void SetUp(float intoxication, float skill) {
-        float tempSpeed = (intoxication * 1.25f) - skill ;
+        float tempSpeed = ((intoxication * Settings.DriftSpeedIntoxicationWeight) - skill) / Settings.DriftSpeedFactor;
         DriftSpeed = Mathf.Clamp(tempSpeed, Settings.MinDriftSpeed, Settings.MaxDriftSpeed);
         float tempTime = 3 - (intoxication) / 3;
         TimeToNewLocation = Mathf.Clamp(tempTime, .5f, 3);
