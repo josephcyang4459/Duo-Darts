@@ -17,18 +17,12 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
     public int location;
 
-    public Canvas EventListCanvas;
     public Button[] EventButtons;
     public TMP_Text[] btnText;
     public Sprite[] LocationSprites;
     public LocationSelecterUI LocationSelector;
     public EventSelectorUI EventSelector;
-    //public Canvas LocationCanvas;
-    public Image SelectedLocationImage;
 
-    public GameObject DartButtonGameObject;
-
-    public Image LocationLocationImage;
     public AudioClip song0;
 
     public GameObject FirstLocationButton;
@@ -86,17 +80,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
             locals[i].EventsButtonUsed = 0;
             locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
         }
-        //events
-        for (int i = 0; i < available.List.Length; i++)
-        {
-            Locations b = LocationOf(available.List[i]);
-
-            if (b != Locations.none)
-            {
-                locals[(int)b].Events.Add(available.List[i].cutScene);
-                locals[(int)b].EventsButtonUsed++;
-            }
-        }
+        
 
         for (int i = 0; i < 5; i++)
         {
@@ -123,9 +107,15 @@ public class Schedule : MonoBehaviour, SceneEntrance
                     locals[loungeIndex].EventsButtonUsed++;
                 }
             }
+        }
+        //events
+        for (int i = 0; i < available.List.Length; i++) {
+            Locations b = LocationOf(available.List[i]);
 
-
-
+            if (b != Locations.none) {
+                locals[(int)b].Events.Add(available.List[i].cutScene);
+                locals[(int)b].EventsButtonUsed++;
+            }
         }
     }
 
@@ -189,15 +179,9 @@ public class Schedule : MonoBehaviour, SceneEntrance
         Clock.SetTime(hour, minutes);
     }
 
-    public void LocationImage(int b)
-    {
-        LocationLocationImage.sprite = LocationSprites[b];
-    }
 
     public void SetEventsForLocation(int locationIndex)
     {
-        //LocationName.text = locals[b].Name;
-        SelectedLocationImage.sprite = LocationSprites[locationIndex];
         int starting =0;
         if (locationIndex == (int)Locations.darts) {
             btnText[0].text = "DARTS";
@@ -243,16 +227,6 @@ public class Schedule : MonoBehaviour, SceneEntrance
         Clock.SetVisible(false);
         EventSelector.HideUI();
         //LocationCanvas.enabled = false;
-        DartButtonGameObject.SetActive( false);
-    }
-    
-    public void back()
-    {
-        EventListCanvas.enabled = false;
-        //LocationCanvas.enabled = true;
-        DartButtonGameObject.SetActive(false);
-
-        UIState.inst.SetAsSelectedButton(FirstLocationButton);
     }
 
     private bool checkIfValidTime(EventStart t)

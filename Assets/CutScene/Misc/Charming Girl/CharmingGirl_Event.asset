@@ -18,4 +18,4 @@ MonoBehaviour:
   endMinutes: 30
   Location: 1
   cutScene: {fileID: 11400000, guid: 5dfed64b7b4ef9c40a32c8b7c38136e0, type: 2}
-  done: 0
+  done: 1

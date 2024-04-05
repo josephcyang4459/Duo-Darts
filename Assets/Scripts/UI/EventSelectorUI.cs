@@ -19,14 +19,18 @@ public class EventSelectorUI : MonoBehaviour, Caller
     [SerializeField] UIAnimationElement ExitButtons;
     [SerializeField] UIAnimationElement ExitListAnimation;
     [SerializeField] GameObject[] LocationPlates;
-    [SerializeField] Fillable_Image[] FillGroups;
-    [SerializeField] GroupImageFill Fill;
+    [SerializeField] Image[] Fills;
+    [SerializeField] Vector3 DartOffset;
+    [SerializeField] ImageFill Fill;
     [SerializeField] AnimationState State;
     public void Ping() {
 
         switch (State) {
             case AnimationState.EnterList: ShowButtons();return;
-            case AnimationState.EnterButtons: UIState.inst.SetInteractable(true);return;
+            case AnimationState.EnterButtons: 
+                UIState.inst.SetInteractable(true); 
+                PauseMenu.inst.SetEnabled(true); 
+                return;
             case AnimationState.ExitButtons:
                 State = AnimationState.ExitList;
                 ExitListAnimation.Begin(this);
@@ -53,10 +57,13 @@ public class EventSelectorUI : MonoBehaviour, Caller
     }
 
     public void SelectEventButton(int i) {
-        Fill.SetCurrentImageToFill(FillGroups[i]);
+        Fill.SetCurrentImageToFill(Fills[i], Fills[i].transform.position+DartOffset);
     }
     
     public void BackToLocations() {
+        PauseMenu.inst.SetEnabled(false);
+        UIState.inst.SetInteractable(false);
+        DartSticker.inst.SetVisible(false);
         State = AnimationState.ExitButtons;
         ExitButtons.Begin(this);
     }
@@ -64,6 +71,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
 
     public void SetLocation(int locationIndex) {
         UIState.inst.SetInteractable(false);
+        PauseMenu.inst.SetEnabled(false);
         State = AnimationState.EnterList;
         EventSelectorCanvas.enabled = true;
         EventButtonsCanvas.enabled = true;
