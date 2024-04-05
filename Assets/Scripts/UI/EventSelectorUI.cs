@@ -22,6 +22,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
     [SerializeField] Image[] Fills;
     [SerializeField] Vector3 DartOffset;
     [SerializeField] ImageFill Fill;
+    [SerializeField] GameObject FirstSelected;
     [SerializeField] AnimationState State;
     public void Ping() {
 
@@ -29,7 +30,8 @@ public class EventSelectorUI : MonoBehaviour, Caller
             case AnimationState.EnterList: ShowButtons();return;
             case AnimationState.EnterButtons: 
                 UIState.inst.SetInteractable(true); 
-                PauseMenu.inst.SetEnabled(true); 
+                PauseMenu.inst.SetEnabled(true);
+                UIState.inst.SetAsSelectedButton(FirstSelected);
                 return;
             case AnimationState.ExitButtons:
                 State = AnimationState.ExitList;

@@ -16,6 +16,7 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     [SerializeField] Transform[] DartPositions;
     [SerializeField] Image BackgroundImage;
     [SerializeField] SpriteCollection SpriteCollection;
+    [SerializeField] GameObject FirstSelected;
     int SelectedLocation;
     public void Start() {
         State = AnimationState.Passive;
@@ -31,6 +32,7 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
         ExitAnimationHead.ReachEndState();
         SelectedLocation = index;
         LocationSelectorCanvas.enabled = false;
+        Fill.ClearImages();
         Schedule.SetEventsForLocation(index);
         EventSelector.SetLocation(index);
     }
@@ -51,8 +53,10 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     }
 
     void Enter() {
+        
         PauseMenu.inst.SetEnabled(true);
         UIState.inst.SetInteractable(true);
+        UIState.inst.SetAsSelectedButton(FirstSelected);
 
     }
 

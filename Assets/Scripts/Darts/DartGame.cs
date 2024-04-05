@@ -75,6 +75,7 @@ public class DartGame : MonoBehaviour {
 #endif
 
     public void BeginGame() {
+        UIState.inst.SetInteractable(true);
         if (firstTimePlaying) {
             showTutorial();
             return;

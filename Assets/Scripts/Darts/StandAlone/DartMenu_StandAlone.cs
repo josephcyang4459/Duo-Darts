@@ -43,10 +43,11 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
     public void StartGameWithPartner(int i) {
         PartnerIndex = i;
         ScoreCanvas.enabled = true;
+        TurnOffScoreCanvas = false;
         ScoreAnimationEnterHead.Begin(this);
         DartSticker.inst.SetVisible(false);
         Fill.ClearImages();
-        TurnOffScoreCanvas = false;
+        
     }
 
     public void ShowCharacterPortrait(int i) {
@@ -93,13 +94,10 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         PartnerCanvas.enabled = false;
         ScoreCanvas.enabled = false;
         ScoreAnimationLeaveHead.ReachEndState();
+        UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
         DartGame.partnerIndex = PartnerIndex;
-
-        if (DartGame.firstTimePlaying)
-            DartGame.showTutorial();
-        else
-            DartGame.BeginGame();
+        DartGame.BeginGame();
     }
 
     public void Ping() {

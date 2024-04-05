@@ -71,7 +71,11 @@ public enum TimeBlocks
 
 public enum Expressions
 {
-    nuetral, positive, negative, drunk, ForCutscene
+    Nuetral, 
+    Positive, 
+    Negative, 
+    Drunk, 
+    ForCutscene
 }
 
 public enum AudioClips

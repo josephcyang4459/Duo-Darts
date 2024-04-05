@@ -21,6 +21,8 @@ public class CutScene : ScriptableObject
 #if UNITY_EDITOR
     public const int FAIL_VALUE = -10000000;
     public void __resetCutScene(string[] overall) {
+        Debug.Log(name +" Effected");
+        blocks = null;
         string currentCharacter = defaultCharacter;
         List<block> blockList = new List<block>();
 
@@ -107,8 +109,6 @@ public class CutScene : ScriptableObject
                         tempE.expression = (Expressions)(__getNumberFrom(overall[currentLine]) - 1);
                         blockList.Add(tempE);
                     }
-
-
                     break;
                 case __CutsceneActions.ChangeBackground:
                     SwapBackGround bgs  = new SwapBackGround();
@@ -474,10 +474,9 @@ public class CutScene : ScriptableObject
 [System.Serializable]
 public class block
 {
-
     public virtual void action(CutsceneHandler ch) { }
 }
-
+[System.Serializable]
 public class DialougeBlock: block
 {
 
@@ -488,6 +487,7 @@ public class DialougeBlock: block
     }
 }
 
+[System.Serializable]
 public class Response: block
 {
     //3 responses
@@ -499,6 +499,7 @@ public class Response: block
     }
 }
 
+[System.Serializable]
 public class ChangeStat: block
 {
     public CharacterNames Character;
@@ -512,6 +513,7 @@ public class ChangeStat: block
     }
 }
 
+[System.Serializable]
 public class PlayerChangeStat : block
 {
     public PlayerSkills Stat;
@@ -525,6 +527,7 @@ public class PlayerChangeStat : block
     }
 }
 
+[System.Serializable]
 public class ExpressionBlock : block
 {
     public Expressions expression;
@@ -535,10 +538,9 @@ public class ExpressionBlock : block
     }
 
 }
-
+[System.Serializable]
 public class SwapCharacterBlock : block
 {
-
     public string character;
     public Expressions Expression;
     public override void action(CutsceneHandler ch)
@@ -547,7 +549,7 @@ public class SwapCharacterBlock : block
     }
 
 }
-
+[System.Serializable]
 public class SwapBackGround : block
 {
     public string place;
@@ -558,7 +560,7 @@ public class SwapBackGround : block
     }
 
 }
-
+[System.Serializable]
 public class Thought: block
 {
     public string thoughtMessage;
@@ -569,13 +571,11 @@ public class Thought: block
     }
 }
 
-
-
-
 [System.Serializable]
 public class PlayerResponseData
 {
     public string answer;
+    [SerializeField]
     public NPCResponseData[] responses;
 }
 
