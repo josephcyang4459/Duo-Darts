@@ -12,7 +12,9 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] FileUI FileUI;
     [SerializeField] Fillable_Image[] ButtonImages;
     [SerializeField] GroupImageFill FillSection;
-
+    [SerializeField] ColorSwatch CompletionColors;
+    [SerializeField] Image[] CharacterImages;
+    [SerializeField] FileHandler FileHandler;
     [SerializeField] GameObject FirstSelected;
     public void HoverButton(int i)
     {
@@ -23,6 +25,7 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     public void Start()
     {
+        SetCompletion();
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
         TransitionManager.inst.ReadyToEnterScene(this);
@@ -32,6 +35,14 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
         PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(true);
         Ping();
+    }
+
+    void SetCompletion() {
+        CompletionData data = FileHandler.LoadCompletion();
+        if (data == null)
+            return;
+        for (int i = 0; i < data.Endings.Length; i++)
+            CharacterImages[i].color = CompletionColors.colors[data.Endings[i] ? 1 : 0];
     }
 
     public void ShowOptions()

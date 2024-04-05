@@ -28,7 +28,7 @@ public class FileUI : MonoBehaviour, Caller {
         EnterAnimationHead.Begin(this);
         LoadMenuCanvas.enabled = true;
         for (int i = 0; i < SlotInfo.Length; i++) {
-            SaveFile file = FileHandler.LoadFile(i);
+            SaveFile file = FileHandler.LoadSaveFile(i);
             if (file != null) {
                 SlotInfo[i].text = file.GetDisplayData();
             }

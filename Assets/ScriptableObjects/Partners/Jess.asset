@@ -16,13 +16,13 @@ MonoBehaviour:
   Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   textSize: 100
   Composure: 0
-  Intoxication: 4
-  Love: 3
+  Intoxication: 0
+  Love: 0
   RelatedCutScenes:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4

@@ -103,9 +103,6 @@ public class DartGame : MonoBehaviour {
         numberOfDartsThrow = 0;
         dartCanvas.enabled = true;
 
-
-
-
         playerTurn();
     }
 
@@ -116,7 +113,7 @@ public class DartGame : MonoBehaviour {
             if (s.hour == 8)
                 if (s.minutes > 50) {
                     Debug.Log("PLAY BAD ENDING HERE");
-                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
+                    TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
                 }
         }
 
@@ -130,19 +127,19 @@ public class DartGame : MonoBehaviour {
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (s.hour == 8)
-                if (s.minutes > 30) {
+                if (s.minutes >= 30) {
                     switch ((CharacterNames)partnerIndex) {
                         case CharacterNames.Chad:
-                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ChadEnding);
-                            return;
-                        case CharacterNames.Elaine:
-                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.ElaineEnding);
+                            TransitionManager.inst.GoToScene(SceneNumbers.ChadEnding);
                             return;
                         case CharacterNames.Jess:
-                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.JessEnding);
+                            TransitionManager.inst.GoToScene(SceneNumbers.JessEnding);
                             return;
                         case CharacterNames.Faye:
-                            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.FayeEnding);
+                            TransitionManager.inst.GoToScene(SceneNumbers.FayeEnding);
+                            return;
+                        case CharacterNames.Elaine:
+                            TransitionManager.inst.GoToScene(SceneNumbers.ElaineEnding);
                             return;
                     }
                 }

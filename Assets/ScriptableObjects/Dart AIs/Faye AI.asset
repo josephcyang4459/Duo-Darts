@@ -14,25 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseOffset: 0.1
   DoubleRange: {x: 17, y: 20}
+  GamePartner: 0
   Partner: {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}
   StatToUse: 2
   Tiers:
   - StatCutOff: 4
     TierData:
-      Sixty: 0.2
-      Bullseye: 0.3
+      Sixty: 0.1
+      Triple: 0.2
+      Bullseye: 0.2
       Double: 0.5
       Single: 0
   - StatCutOff: 8
     TierData:
       Sixty: 0.4
-      Bullseye: 0.4
+      Triple: 0.2
+      Bullseye: 0.2
       Double: 0.2
       Single: 0
   - StatCutOff: 199999
     TierData:
       Sixty: 0.6
-      Bullseye: 0.4
+      Triple: 0.3
+      Bullseye: 0.1
       Double: 0
       Single: 0
   __rectify: 0

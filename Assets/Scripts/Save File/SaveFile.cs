@@ -40,3 +40,8 @@ public struct PartnerSaveData {
     public float Love;
     public bool[] CutsceneCompletion;
 }
+
+[System.Serializable]
+public class CompletionData {
+    public bool[] Endings = new bool[4];
+}

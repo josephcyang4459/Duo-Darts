@@ -35,9 +35,9 @@ MonoBehaviour:
     Intoxication: 0
     Love: 0
   BasePlayerStats:
-    Intoxication: 1
-    Skill: 1
-    Luck: 1
+    Intoxication: 0
+    Skill: 0
+    Luck: 0
     Points: 0
   Events:
   - {fileID: 11400000, guid: c5f9f65815a54f147862b7f52fd0cf96, type: 2}

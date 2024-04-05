@@ -131,7 +131,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
         if (hour >= 9)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.DidNotWinTheTournament);
+            TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
         }
 
         if (hour >= 8)
@@ -150,7 +150,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
                 if (numberAvailable <= 0)
                 {
                     //Debug.Log("GAME OVER please send to end state");
-                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)SceneNumbers.NoLovers);
+                    TransitionManager.inst.GoToScene(SceneNumbers.NoLovers);
                     return;
                 }
             }

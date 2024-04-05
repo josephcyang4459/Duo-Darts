@@ -27,12 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Good Endings/Chad Good Ending.unity
     guid: 60d8b5077e2a7734d8faa55e24f0b02d
   - enabled: 1
-    path: Assets/Scenes/Good Endings/Elaine Good Ending.unity
-    guid: de3db2c1a90a1cd49a145e26a21f426e
-  - enabled: 1
     path: Assets/Scenes/Good Endings/Jess Good Ending.unity
     guid: e6477d3dd4961e543982ffe8490d3883
   - enabled: 1
     path: Assets/Scenes/Good Endings/Faye Good Ending.unity
     guid: 78af12c05637a204482a43e04350f0f2
+  - enabled: 1
+    path: Assets/Scenes/Good Endings/Elaine Good Ending.unity
+    guid: de3db2c1a90a1cd49a145e26a21f426e
   m_configObjects: {}

@@ -31,15 +31,16 @@ public abstract class DartAI : ScriptableObject {
         switch (action) {
             case DartAIAction.Sixty: game.PartnerTarget(20, (int)PointValueTarget.Triple, BaseOffset); return;
             case DartAIAction.Bullseye: game.PartnerTarget(BaseOffset); return;
-
         }
 
         int pick = Random.Range(low, high+1);
-        int ringTarget;
-        if (action == DartAIAction.Double) ringTarget = (int)PointValueTarget.Double;
-        else ringTarget = Random.Range(0, 10) < 5 ? (int)PointValueTarget.InnerSingle : (int)PointValueTarget.OuterSingle;
+        int ringTarget =0;
+        switch (action) {
+            case DartAIAction.Triple: ringTarget = (int)PointValueTarget.Triple; break;
+            case DartAIAction.Double: ringTarget = (int)PointValueTarget.Double; break;
+            case DartAIAction.Single: ringTarget = Random.Range(0, 10) < 5 ? (int)PointValueTarget.InnerSingle : (int)PointValueTarget.OuterSingle; break;
+        }
         game.PartnerTarget(pick, ringTarget, BaseOffset);
-
         return;
     }
 
@@ -57,27 +58,31 @@ public abstract class DartAI : ScriptableObject {
     [System.Serializable]
     protected class DartAIPercentChance {
         [SerializeField] [Range(0, 1)] float Sixty;
+        [SerializeField] [Range(0, 1)] float Triple;
         [SerializeField] [Range(0, 1)] float Bullseye;
         [SerializeField] [Range(0, 1)] float Double;
         [SerializeField] [Range(0, 1)] float Single;
 
         public DartAIAction GetAction() {
-            float total = Sixty + Bullseye + Double + Single;
+            float total = Sixty +Triple+ Bullseye + Double + Single;
             float temp = Random.Range(0, total);
             if (temp <= Sixty)
                 return DartAIAction.Sixty;
-            if (temp <= Sixty + Bullseye)
+            if (temp <= Sixty + Triple)
+                return DartAIAction.Triple;
+            if (temp <= Sixty + Triple+ Bullseye)
                 return DartAIAction.Bullseye;
-            if (temp <= Sixty + Bullseye + Double)
+            if (temp <= Sixty + Triple + Bullseye + Double)
                 return DartAIAction.Double;
             return DartAIAction.Single;
         }
 
 #if UNITY_EDITOR
         public void __rectifyTiers() {
-            float temp = Sixty + Bullseye + Double + Single;
+            float temp = Sixty + Triple + Bullseye + Double + Single;
             Sixty /= temp;
             Bullseye /= temp;
+            Triple /= temp;
             Double /= temp;
             Single /= temp;
         }
@@ -85,6 +90,7 @@ public abstract class DartAI : ScriptableObject {
     }
     protected enum DartAIAction {
         Sixty,
+        Triple,
         Bullseye,
         Double,
         Single

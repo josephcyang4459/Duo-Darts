@@ -56,7 +56,6 @@ public class TransitionManager : MonoBehaviour, Caller {
     }
 
     public void Ping() {
-        Debug.Log("DOne");
         switch (State) {
             case AnimationState.Entering: EnterScene();break;
             case AnimationState.Exiting: ExitScene(); break;

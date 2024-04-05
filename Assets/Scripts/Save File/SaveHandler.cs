@@ -62,12 +62,12 @@ public class SaveHandler : MonoBehaviour, Caller
             saveFile.EventCompletion[i] = Events.List[i].done;
         }
 
-        FileHandler.SaveFile(fileIndex, saveFile);
+        FileHandler.SaveSaveFile(fileIndex, saveFile);
         FileUI.BeginHideLoadMenu();
     }
 
     public void LoadFromFile(int fileIndex) {
-        SaveFile saveFile = FileHandler.LoadFile(fileIndex);
+        SaveFile saveFile = FileHandler.LoadSaveFile(fileIndex);
         if (saveFile == null) {
             Debug.Log("SHIT IS FUCKED YO");
             return;

@@ -6,12 +6,15 @@ public class FileHandler : MonoBehaviour
 {
     readonly string FileExtension = "sbs";
     readonly string FileName = "SaveFile_{0}";
-
+    readonly string CompletionFile = "Completion";
     string SaveFilePath(int fileIndex) {
         return Application.persistentDataPath + string.Format("/Saves/{0}.{1}", string.Format(FileName, fileIndex), FileExtension);
     }
+    string CompletionFilePath() {
+        return Application.persistentDataPath + string.Format("/{0}.{1}",CompletionFile, FileExtension);
+    }
 
-    public SaveFile LoadFile(int fileIndex)
+    public SaveFile LoadSaveFile(int fileIndex)
     {
         CheckDirectory();
         string filePath = SaveFilePath(fileIndex);
@@ -34,7 +37,7 @@ public class FileHandler : MonoBehaviour
         }
     }
 
-    public void SaveFile(int fileIndex, SaveFile saveFile) {
+    public void SaveSaveFile(int fileIndex, SaveFile saveFile) {
         CheckDirectory();
 
         //Debug.Log(Application.persistentDataPath + string.Format("/Saves/{0}.{1}", fileName, fileExtension));
@@ -44,6 +47,34 @@ public class FileHandler : MonoBehaviour
         var jsonSaveFile = JsonUtility.ToJson(saveFile);
         bf.Serialize(caseFileStream, jsonSaveFile);
         caseFileStream.Close();
+    }
+
+    public void SaveCompletion(CompletionData data) {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream caseFileStream = File.Create(CompletionFilePath());
+        var jsonSaveFile = JsonUtility.ToJson(data);
+        bf.Serialize(caseFileStream, jsonSaveFile);
+        caseFileStream.Close();
+    }
+
+    public CompletionData LoadCompletion() {
+        string filePath = CompletionFilePath();
+        if (!File.Exists(filePath)) {
+            return null;
+        }
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream caseFileStream = File.Open(filePath, FileMode.Open);
+        try {
+            string jsonSaveFile = (string)bf.Deserialize(caseFileStream);
+            caseFileStream.Close();
+            return JsonUtility.FromJson<CompletionData>(jsonSaveFile);
+        }
+        catch {
+            Debug.Log("SOMETHING FUCKED UP YO COULD NOT DESERIALIZE");
+            caseFileStream.Close();
+            return null;
+        }
     }
 
     void CheckDirectory() {

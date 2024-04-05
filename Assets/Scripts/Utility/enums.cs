@@ -58,9 +58,9 @@ public enum SceneNumbers
     NoLovers,
     DidNotWinTheTournament,
     ChadEnding,
-    ElaineEnding,
     JessEnding,
     FayeEnding,
+    ElaineEnding,
 }
 
 public enum TimeBlocks
