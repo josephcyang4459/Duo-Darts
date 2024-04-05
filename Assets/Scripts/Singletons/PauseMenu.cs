@@ -89,6 +89,7 @@ public class PauseMenu : MonoBehaviour, Caller {
         }
         else {
             OptionsMenu.inst.HideOptionsNoCall();
+            DartSticker.inst.SetVisible(false);
             if (setFirstButtonUponUnenable)
                 UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);

@@ -16,7 +16,6 @@ MonoBehaviour:
   minutes: 30
   endHour: 7
   endMinutes: 30
-  location: dance
   Location: 2
   cutScene: {fileID: 11400000, guid: 2f2f76b7f0814724a8348f50a0f0ff24, type: 2}
-  done: 0
+  done: 1

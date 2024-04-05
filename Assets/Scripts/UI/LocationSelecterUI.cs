@@ -11,7 +11,9 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     [SerializeField] UIAnimationElement ExitAnimationHead;
     [SerializeField] AnimationState State;
     [SerializeField] ImageFill Fill;
+    [SerializeField] Vector3 DartOffset;
     [SerializeField] Image[] FillImages;
+    [SerializeField] Transform[] DartPositions;
     [SerializeField] Image BackgroundImage;
     [SerializeField] SpriteCollection SpriteCollection;
     int SelectedLocation;
@@ -22,7 +24,7 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
 
     public void SelectButton(int i) {
         BackgroundImage.sprite = SpriteCollection.Sprites[i];
-        Fill.SetCurrentImageToFill(FillImages[i]);
+        Fill.SetCurrentImageToFill(FillImages[i], DartPositions[i].position+DartOffset);
     }
 
     public void BeginGoToLocation(int index) {
@@ -35,17 +37,21 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
 
     public void BeginEntrance() {
         LocationSelectorCanvas.enabled = true;
+        PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         State = AnimationState.Enter;
         EnterAnimationHead.Begin(this);
     }
 
     public void BeginExit() {
+        PauseMenu.inst.SetEnabled(false);
+        DartSticker.inst.SetVisible(false);
         UIState.inst.SetInteractable(false);
         State = AnimationState.Exit;
     }
 
     void Enter() {
+        PauseMenu.inst.SetEnabled(true);
         UIState.inst.SetInteractable(true);
 
     }

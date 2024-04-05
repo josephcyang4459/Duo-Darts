@@ -457,7 +457,6 @@ MonoBehaviour:
     Events: []
   characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   location: 0
-  EventListCanvas: {fileID: 470360907}
   EventButtons:
   - {fileID: 1867933531}
   - {fileID: 1867933530}
@@ -465,6 +464,7 @@ MonoBehaviour:
   - {fileID: 1867933528}
   - {fileID: 1867933527}
   - {fileID: 1867933526}
+  - {fileID: 1867933514}
   btnText:
   - {fileID: 1867933525}
   - {fileID: 1867933524}
@@ -472,6 +472,7 @@ MonoBehaviour:
   - {fileID: 1867933522}
   - {fileID: 1867933521}
   - {fileID: 1867933520}
+  - {fileID: 1867933513}
   LocationSprites:
   - {fileID: 21300000, guid: 030799451c7d3b2499fe29ac211a55c5, type: 3}
   - {fileID: 21300000, guid: 6264a34009006e24aa23d91cca1fa7a6, type: 3}
@@ -480,9 +481,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ead0a0671943fd4db7b1a22e7fc1861, type: 3}
   LocationSelector: {fileID: 1867933512}
   EventSelector: {fileID: 1867933519}
-  SelectedLocationImage: {fileID: 1696795899}
-  DartButtonGameObject: {fileID: 1426603408}
-  LocationLocationImage: {fileID: 1294976672}
   song0: {fileID: 8300000, guid: 293eb5cc5784d1d4cb69e7ec35a50f19, type: 3}
   FirstLocationButton: {fileID: 0}
   FirstEventButton: {fileID: 0}
@@ -5197,36 +5195,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Location and Event Picker
       objectReference: {fileID: 0}
-    - target: {fileID: 8223975890779022202, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 183543931}
     - target: {fileID: 8223975891725533789, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
       propertyPath: Schedule
-      value: 
-      objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975891857107625, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975892061081774, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975892222719319, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223975892420509183, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975892627846330, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975892693899880, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 183543931}
     m_RemovedComponents: []
@@ -5240,6 +5210,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 231d1dc304d328846bb91f8d5bf44c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1867933513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1524493958288921517, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
+  m_PrefabInstance: {fileID: 1867933511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1867933514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4841468550193244099, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
+  m_PrefabInstance: {fileID: 1867933511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1867933519 stripped
