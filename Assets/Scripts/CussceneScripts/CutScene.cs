@@ -595,7 +595,7 @@ public class NPCResponseData
             handler.ChangeExpression((int)Expression, false);
         if (AdjustValue != 0)
         {
-            handler.Schedule.characters.list[(int)Character].stateChange((int)Stat, AdjustValue);
+            handler.characters.list[(int)Character].stateChange((int)Stat, AdjustValue);
         }
             
         if (AdjustValue < -100)

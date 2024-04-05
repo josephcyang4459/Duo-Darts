@@ -8,7 +8,7 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
     [SerializeField] Player p;
-    [SerializeField] public CharacterList characters;
+    public CharacterList characters;
     [SerializeField] InputActionReference interact;
     [Space]
     [SerializeField] Canvas dialougeCanvas;
