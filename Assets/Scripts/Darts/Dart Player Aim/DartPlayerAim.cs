@@ -16,7 +16,8 @@ public class DartPlayerAim : MonoBehaviour
     [SerializeField] DartPlayerAim_Control Control;
     [SerializeField] DartPlayerAim_Bloom Bloom;
     [SerializeField] DartScript Dart;
-
+    [SerializeField] Vector2 XScreenClamp;
+    [SerializeField] Vector2 YScreenClamp;
     public void ChangeLocation(float x, float y) {
         CurrentLocation.x += x;
         CurrentLocation.y += y;
@@ -71,6 +72,8 @@ public class DartPlayerAim : MonoBehaviour
         Drift.UpdateDrift(Time.deltaTime);
         Control.UpdateMove(Time.deltaTime);
         Bloom.UpdateBloom(Time.deltaTime);
+        CurrentLocation.x = Mathf.Clamp(CurrentLocation.x, XScreenClamp.x, XScreenClamp.y);
+        CurrentLocation.y = Mathf.Clamp(CurrentLocation.y, YScreenClamp.x, YScreenClamp.y);
         AimPosition.position = CurrentLocation;
     }
 

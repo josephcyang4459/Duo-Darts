@@ -14,5 +14,8 @@ public class DartsSettings : ScriptableObject
     public float MinBloomLuckWeight;
     [Header("Skill is divided by this")]
     public float MaxBloomSkillWeight;
-
+    [Header("Intoxication is multipled by this")]
+    public float DriftSpeedIntoxicationWeight;
+    [Header("((Intoxication * IntoxWeight) - Skill) / this")]
+    public float DriftSpeedFactor;
 }

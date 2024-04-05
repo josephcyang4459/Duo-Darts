@@ -46,6 +46,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
     }
 
     public void HideUI() {
+        Fill.ClearImages();
         ExitButtons.ReachEndState();
         ExitListAnimation.ReachEndState();
         EventSelectorCanvas.enabled = false;
@@ -66,6 +67,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
         PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
+        Fill.ClearImages();
         State = AnimationState.ExitButtons;
         ExitButtons.Begin(this);
     }

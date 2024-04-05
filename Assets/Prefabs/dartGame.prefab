@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 8633084338126617388}
   - component: {fileID: 3374237949889440517}
   - component: {fileID: 4708863078273983470}
+  - component: {fileID: 1044588160}
   m_Layer: 5
   m_Name: Button_1
   m_TagString: Untagged
@@ -798,6 +799,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1044588160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074837507982883678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: DartMenu_StandAlone, Assembly-CSharp
+          m_MethodName: hideTutorial
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1240408670597596184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1407,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &5861885327235857230
 MonoBehaviour:
@@ -18153,8 +18183,6 @@ MonoBehaviour:
   numberOfDartsThrow: 0
   maxTurns: 5
   firstTimePlaying: 1
-  NuetralAITargetRange: {x: 17, y: 19}
-  BaseOffset: 0.1
   MaxOffset: 4
   dartCanvas: {fileID: 7917560275768366587}
   c:
@@ -21651,6 +21679,22 @@ PrefabInstance:
       propertyPath: AimSprite
       value: 
       objectReference: {fileID: 2925380134608118579}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: XScreenClamp.x
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: XScreenClamp.y
+      value: 6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: YScreenClamp.x
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: YScreenClamp.y
+      value: 7.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8593354425541238233, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -21710,6 +21754,22 @@ PrefabInstance:
     - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: center.y
       value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: XBounds.x
+      value: -5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: XBounds.y
+      value: 5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: YBounds.x
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: YBounds.y
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 8593354426165874088, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: m_Enabled

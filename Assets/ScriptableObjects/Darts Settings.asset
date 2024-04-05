@@ -16,8 +16,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   MinDriftSpeed: 2
-  MaxDriftSpeed: 3
+  MaxDriftSpeed: 2.9
   BaseBloomDiameter: 0.3
   MaxBloomDiameter: 1.5
   MinBloomLuckWeight: 10
   MaxBloomSkillWeight: 20
+  DriftSpeedIntoxicationWeight: 1.25
+  DriftSpeedFactor: 3

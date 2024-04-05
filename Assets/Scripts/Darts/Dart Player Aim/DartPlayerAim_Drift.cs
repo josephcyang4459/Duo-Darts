@@ -13,9 +13,10 @@ public class DartPlayerAim_Drift : MonoBehaviour
     [SerializeField] float TimeToNewLocation;
     [SerializeField] Vector2 directionMove;
     float Timer;
+    [SerializeField] bool recovering;
 
     public void SetUp(float intoxication, float skill) {
-        float tempSpeed = (intoxication * 1.25f) - skill ;
+        float tempSpeed = ((intoxication * Settings.DriftSpeedIntoxicationWeight) - skill) / Settings.DriftSpeedFactor;
         DriftSpeed = Mathf.Clamp(tempSpeed, Settings.MinDriftSpeed, Settings.MaxDriftSpeed);
         float tempTime = 3 - (intoxication) / 3;
         TimeToNewLocation = Mathf.Clamp(tempTime, .5f, 3);
@@ -23,12 +24,14 @@ public class DartPlayerAim_Drift : MonoBehaviour
     }
 
     public void NewRandomDirection() {
+        recovering = false;
         directionMove.x = Random.Range(-DriftSpeed, DriftSpeed);
         directionMove.y = Random.Range(-DriftSpeed, DriftSpeed);
         Timer = 0;
     }
 
     public void RecoverFromOutOfBounds() {
+        recovering = true;
         directionMove.x = Mathf.Clamp(center.x - Aim.CurrentLocation.x, -DriftSpeed, DriftSpeed);
         directionMove.y = Mathf.Clamp(center.y - Aim.CurrentLocation.y, -DriftSpeed, DriftSpeed);
         Timer = 0;
