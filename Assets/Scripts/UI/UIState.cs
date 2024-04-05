@@ -23,15 +23,16 @@ public class UIState : MonoBehaviour {
         CurrentFirstSelected = gameObject;
         if (IsUsingController) {
             EventSystem.SetSelectedGameObject(gameObject);
+        }
     }
 
-    public void ControllerConnected(bool state)
-    {
+    public void ControllerConnected(bool state) {
         IsUsingController = state;
         if (!state)
             return;
         if (EventSystem.enabled) {
             EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
+        }
     }
 
     public GameObject GetCurrentSelected() {  return EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected; }
