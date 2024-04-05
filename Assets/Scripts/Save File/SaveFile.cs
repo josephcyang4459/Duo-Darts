@@ -8,6 +8,22 @@ public class SaveFile {
     public PlayerSaveData Player;
     public PartnerSaveData[] Characters;
     public bool[] EventCompletion;
+
+    /// <summary>
+    /// Joseph's code Originally from schedule :)
+    /// </summary>
+    /// <param name="hour"></param>
+    /// <param name="minutes"></param>
+    /// <returns></returns>
+    private string TimeAsString(int hour, int minutes) {
+        string minutesString = (minutes < 10) ? "0" : "";
+        minutesString += minutes.ToString();
+        return hour + ":" + minutesString + "PM";
+    }
+
+    public string GetDisplayData() {
+        return TimeAsString(Hour, Minute) + " Score " + Player.TotalPoints;
+    }
 }
 [System.Serializable]
 public struct PlayerSaveData {

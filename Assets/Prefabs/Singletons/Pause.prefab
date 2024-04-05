@@ -4670,9 +4670,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6229294561096951087}
-        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 3854835322319500813}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

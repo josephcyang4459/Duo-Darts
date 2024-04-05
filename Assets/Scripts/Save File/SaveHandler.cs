@@ -1,27 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveHandler : MonoBehaviour
+public class SaveHandler : MonoBehaviour, Caller
 {
     [SerializeField] public static SaveHandler inst;
+    [SerializeField] FileUI FileUI;
     [SerializeField] Schedule Schedule;
     [SerializeField] FileHandler FileHandler;
     [SerializeField] CharacterList Characters;
     [SerializeField] Player Player;
     [SerializeField] EventList Events;
     [SerializeField] int SaveFileVersionNumber;
-    readonly string FileName = "SaveFile_{0}";
+    
 
     public void Start() {
         inst = this;
     }
 
     public void BeginShowSaveMenu() {
-
+        FileUI.BeginShowLoadMenu(this);
     }
 
-    public void SaveToFile(int file) {
+    public void Ping() {
+        System.GC.Collect();
+        PauseMenu.inst.SetEnabled(true);
+    }
+
+    public void SaveToFile(int fileIndex) {
         SaveFile saveFile = new SaveFile();
         int charactersToSendToFile = (int)CharacterNames.Owner+1;
 
@@ -58,17 +62,16 @@ public class SaveHandler : MonoBehaviour
             saveFile.EventCompletion[i] = Events.List[i].done;
         }
 
-        FileHandler.SaveFile(string.Format(FileName,file),SaveFileVersionNumber, saveFile);
-        __SaveFile = saveFile;
+        FileHandler.SaveFile(fileIndex, saveFile);
+        FileUI.BeginHideLoadMenu();
     }
 
-    public void LoadFromFile(int file) {
-        SaveFile saveFile = FileHandler.LoadFile(string.Format(FileName, file));
+    public void LoadFromFile(int fileIndex) {
+        SaveFile saveFile = FileHandler.LoadFile(fileIndex);
         if (saveFile == null) {
             Debug.Log("SHIT IS FUCKED YO");
             return;
         }
-        __SaveFile = saveFile;
 
         Schedule.hour = saveFile.Hour;
         Schedule.minutes = saveFile.Minute;
@@ -94,7 +97,6 @@ public class SaveHandler : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    [SerializeField] SaveFile __SaveFile;
     [SerializeField] bool __test;
     [SerializeField] int __fileNumber;
     private void OnValidate() {

@@ -76,7 +76,7 @@ public abstract class Fillable {
 }
 [System.Serializable]
 public class Fillable_Image : Fillable {
-    [SerializeField] Image[] Images;
+    public Image[] Images;
     public override float GetFill() {
         return Images[0].fillAmount;
     }
