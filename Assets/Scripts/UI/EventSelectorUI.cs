@@ -77,6 +77,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
         UIState.inst.SetInteractable(false);
         PauseMenu.inst.SetEnabled(false);
         State = AnimationState.EnterList;
+        Fill.ClearImages();
         EventSelectorCanvas.enabled = true;
         EventButtonsCanvas.enabled = true;
         foreach (GameObject g in LocationPlates)
