@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Chad
   m_EditorClassIdentifier: 
   Name: Chad
-  Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  textSize: 72
+  Font: {fileID: 11400000, guid: c435344beb3b63c4d950f03ef77bd96f, type: 2}
+  textSize: 100
   Composure: 0
   Intoxication: 0
-  Love: 0
+  Love: 3
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: d83e331b94818354a81eba13e5d59042, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4

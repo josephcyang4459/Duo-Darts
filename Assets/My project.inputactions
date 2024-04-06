@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "__debug",
+                    "type": "Button",
+                    "id": "6eb66b23-3a44-49dd-9b3b-01d98700da44",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -302,6 +311,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ShowHideControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e250b46c-5abd-4fa8-866f-f35a1a76cb3a",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "__debug",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
