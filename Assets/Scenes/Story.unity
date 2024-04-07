@@ -5480,14 +5480,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 183543931}
-    - target: {fileID: 8223975892290776012, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223975892290776012, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8223975892420509183, guid: d70f6d6065ca87c4b96ae077d3e0e4d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
