@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab665fee0c8039944b53d0eb9dcc9333, type: 3}
+  m_Name: Chad Darts
+  m_EditorClassIdentifier: 
+  LineGroups:
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 100
+    Lines:
+    - "I wish I had looked away from that.\r"
+    - "There\u2019s the best and then there\u2019s the worst.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 1
+    MaxScoreRangeExclusive: 70
+    ChanceToUse: 60
+    Lines:
+    - "Effort makes results, you know.\r"
+    - "Happens to everyone, they say.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 140
+    MaxScoreRangeExclusive: 180
+    ChanceToUse: 60
+    Lines:
+    - "A score like that never loses its luster.\r"
+    - "I\u2019m in good company, it seems.\r"
+    - "I\u2019m impressed.\r"
+    - "Near perfect.\r"
+    AlreadyUsed: 00000000
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 100
+    Lines:
+    - "Finally, good company.\r"
+    - "I had a feeling you had that in you.\r"
+    - "I have to return some videotapes.\r"
+    AlreadyUsed: 000000
+    Used: 0
+  CheckOut:
+    MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 0
+    ChanceToUse: 0
+    Lines:
+    - "I had no doubts.\r"
+    - "From the first dart, I knew it was set and done.\r"
+    - "I hope my score didn\u2019t make you uncomfortable.\r"
+    AlreadyUsed: 000000
+    Used: 0
+  groups:
+  - '[0'
+  - '[Below70'
+  - '[Highton'
+  - '[180'
+  - '[Checkout'

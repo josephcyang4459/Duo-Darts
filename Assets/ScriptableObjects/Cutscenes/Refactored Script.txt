@@ -190,6 +190,48 @@ Intermediate Scene Dance Floor (Repeating) (1 Love) (+Intoxication)
 [Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerIntox1]
 
 
+Banter Lines (During Darts)
+[0]I wish I had looked away from that.
+[0]There’s the best and then there’s the worst.
+[Below70]Effort makes results, you know.
+[Below70]Happens to everyone, they say.
+[Highton]A score like that never loses its luster.
+[Highton]I’m in good company, it seems.
+[Highton]I’m impressed.
+[Highton]Near perfect.
+[180]Finally, good company.
+[180]I had a feeling you had that in you.
+[180]I have to return some videotapes.
+[Checkout]I had no doubts.
+[Checkout]From the first dart, I knew it was set and done.
+[Checkout]I hope my score didn’t make you uncomfortable.
+
+
+
+
+
+
+Banter Lines Finals (During Darts Finals)
+[0Final]Don’t back out on me now. I know you have it in you.
+[Below70Final]We both know you can be the best. Time to do it.
+[Below70Final]Greatness won’t wait, chase it.
+[LowtonFinal]One leg at a time. This one’s ours.
+[LowtonFinal]
+[HightonFinal]They’ll remember your name if you keep that up.
+[HightonFinal]I can barely keep up with you.
+[HightonFinal]You’re making the other teams nervous. Incredible.
+[HightonFinal]You’re making me look like an amateur.
+[HightonFinal]There’s always a bigger fish, it seems.
+[180Final]You’re psychotic with those darts.
+[180Final]More stunning than me...
+[180Final]An inspiration...
+[CheckoutFinal]There’s never been greatness like ours.
+[CheckoutFinal]Perfection. I knew you were the right choice.
+[CheckoutFinal]To think I almost missed out on this. Thank you.
+
+
+
+
 
 
 Faye/Faybian Artel (Faye)
@@ -401,7 +443,8 @@ Scene Five (Darts) (17 Love) (Refactored)
 [Faye1]
 [Newln]*Faye looks at you intently.*
 [Newln]You’ve been an incredible listener for me. I think I just needed to get it out.
-[Newln]Please.
+[Newln]When I say it out loud to you, for some reason, it's so much easier to face it all.
+[Newln]So please...
 [Newln]Be my partner for the final round of the tournament.
 [Faye2]
 [Newln]There’s no one else here I can imagine doing it with.
@@ -426,6 +469,48 @@ Intermediate Drinking Scene (Lounge) (+ Intoxication) (1 Love) (Refactored)
 [Newln]A drink?
 [Newln]If you’re paying and bringing them over here then sure.
 [Newln]*You spend time drinking with Faye.* [RaiseFayeLove1][RaiseFayeIntox1][RaisePlayerIntox1]
+
+
+Banter Lines (During Darts)
+[0]Don’t worry... Bad days happen...
+[0]Don’t be embarrassed, I’m pretty sure nobody else saw that.
+[Below70]
+[Below70]Did my radiance blind you? Do better.
+[Highton]Luck isn’t skill.
+[Highton]Well, I’ll be damned.
+[Highton]Don’t think you’re better all of a sudden.
+[Highton]How long can you keep that up?
+[180]Teach me.
+[180]You’re that good?
+[180]You’re drawing attention with that...
+[Checkout]Perfect, now let's get off the plate already.
+[Checkout]Doubles are so much less stressful. Good job.
+[Checkout]
+
+
+
+
+
+
+Banter Lines Finals (During Darts Finals)
+[0Final]Don’t let it get to you. It's our game to win.
+[Below70Final]Focus! I know you’re better than that.
+[Below70Final]I’m not great with encouragement... You’ll do better on the next leg.
+[LowtonFinal]Keep it up.
+[LowtonFinal]Better than most.
+[HightonFinal]Leave some points for me, I want to show off too.
+[HightonFinal]You might just end up divine like me at that rate.
+[HightonFinal]I think I’ve rubbed off on you.
+[HightonFinal]Only I could do better.
+[HightonFinal]You remind me of myself.
+[180Final]Godlike...
+[180Final]I might just learn something from you.
+[180Final]
+[CheckoutFinal]It’s just too easy for us.
+[CheckoutFinal]I think we’ll make the other players cry at this rate.
+[CheckoutFinal]We could’ve done that blindfolded.
+
+
 Jessica Fletcher
 
 
@@ -617,6 +702,27 @@ Intermediate Scene (Lounge Repeating) (+ Intoxication) (1 Love) (refactored)
 [Jess2]
 [Newln]Sure, saves me the trouble.
 [Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerIntox1]
+
+
+
+
+Banter Lines (During Darts)
+[0]I have no words. You’re horrible...
+[0]Not even a goddess could carry you in this game.
+[Below70]At least you hit the board.
+[Below70]Did my radiance blind you? Do better.
+[Highton]Luck isn’t skill.
+[Highton]Well, I’ll be damned.
+[Highton]Don’t think you’re better all of a sudden.
+[Highton]How long can you keep that up?
+[180]...
+[180]What? Should I take a picture or something?
+[180]Yeah, I see it, now move over.
+[Checkout]It’s just too easy for me.
+[Checkout]Well, it wasn’t too hard to carry you to the end at least.
+[Checkout]I doubt you could’ve done that without my help.
+
+
 
 
 
@@ -821,6 +927,7 @@ Intermediate Scene (Darts) (1 Love) (Refactored)
 
 Intermediate Scene (Darts) (1 Love) (Refactored)
 [Newln]*You see Elaine practicing alone.*
+[Elaine1]
 [Newln]Hey.
 [Newln]Come.
 [Newln]You want to buy me drinks?
@@ -828,11 +935,50 @@ Intermediate Scene (Darts) (1 Love) (Refactored)
 [Newln]*You spend time drinking with Elaine.* [RaiseElaineLove1][RaiseElaineIntox1][RaisePlayerIntox1]
 
 
+Banter Lines (During Darts)
+[0]I have no words. You’re horrible...
+[0]Not even a goddess could carry you in this game.
+[Below70]At least you hit the board.
+[Below70]Did my radiance blind you? Do better.
+[Highton]Luck isn’t skill.
+[Highton]Well, I’ll be damned.
+[Highton]Don’t think you’re better all of a sudden.
+[Highton]How long can you keep that up?
+[180]...
+[180]What? Should I take a picture or something?
+[180]Yeah, I see it, now move over.
+[Checkout]It’s just too easy for me.
+[Checkout]Well, it wasn’t too hard to carry you to the end at least.
+[Checkout]I doubt you could’ve done that without my help.
 
 
 
 
-        
+
+
+Banter Lines Finals (During Darts Finals)
+[0Final]Don’t worry. We can just steal the trophy from the winners.
+[Below70Final]Focus! I know you’re better than that.
+[Below70Final]I’m not great with encouragement... You’ll do better on the next leg.
+[LowtonFinal]Keep it up.
+[LowtonFinal]Better than most.
+[HightonFinal]Leave some points for me, I want to show off too.
+[HightonFinal]You might just end up divine like me at that rate.
+[HightonFinal]I think I’ve rubbed off on you.
+[HightonFinal]Only I could do better.
+[HightonFinal]You remind me of myself.
+[180Final]Godlike...
+[180Final]I might just learn something from you.
+[180Final]Truly divine...
+[CheckoutFinal]It’s just too easy for us.
+[CheckoutFinal]I think we’ll make the other players cry at this rate.
+[CheckoutFinal]We could’ve done that blindfolded.
+
+
+
+
+
+
 Miscellaneous Characters
 
 
@@ -927,6 +1073,8 @@ Charming Advice Guy (Lounge Available 730pm - 830pm) (++ Skill) (Refactored)
 [Newln]Haven’t you already fallen for me?
 [Newln]*You get up without saying a word.*
 [Newln]*After finding another seat far away from the man you consider if you are better than you were yesterday.*[RaisePlayerSkill2]
+
+
 
 
 Bathroom Advice Wall (Bathroom Available 7pm-830pm) (+ Skill) (- Intoxication)

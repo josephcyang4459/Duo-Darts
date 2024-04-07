@@ -15,6 +15,8 @@ public class Partner : ScriptableObject {
     public CutScene DefaultDrinkingCutScene;
     public Sprite[] Expressions;
     public DartAI AI;
+    public DartsBanterLines RegularBanterLines;
+    public DartsBanterLines FinalsBanterLines;
     public Sprite TextBox;
     public Sprite textLineTHing;
 
