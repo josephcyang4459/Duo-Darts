@@ -12,8 +12,6 @@ public class EventSelectorUI : MonoBehaviour, Caller
     [SerializeField] Image[] SecondImage;
     [SerializeField] Image[] Banners;
     [SerializeField] UIA_MultiImageFill FillPrimary;
-    [SerializeField] UIA_MultiImageFill FillSecondary;
-    [SerializeField] UIA_MultiImageFill EmptySecondary;
     [SerializeField] UIA_MultiImageFill EmptyBanner;
     [SerializeField] UIAnimationElement EnterButtons;
     [SerializeField] UIAnimationElement ExitButtons;
@@ -82,13 +80,15 @@ public class EventSelectorUI : MonoBehaviour, Caller
         EventButtonsCanvas.enabled = true;
         foreach (GameObject g in LocationPlates)
             g.SetActive(false);
+        foreach(Image i in SecondImage) {
+            i.enabled = false;
+        }
         LocationPlates[locationIndex].SetActive(true);
+        SecondImage[locationIndex].enabled = true;
         Banners[locationIndex].fillAmount = 1;
         FirstImage[locationIndex].fillAmount = 1;
         EmptyBanner.Images[0] = Banners[locationIndex];
         FillPrimary.Images[0] = FirstImage[locationIndex];
-        FillSecondary.Images[0] = SecondImage[locationIndex];
-        EmptySecondary.Images[0] = SecondImage[locationIndex];
         FillPrimary.Begin(this);
     }
 

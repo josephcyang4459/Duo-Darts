@@ -14,33 +14,7 @@ public class DartMen : MonoBehaviour {
     public GameObject FirstSelectButton;
 
     public void ShowPartnerSelectMenu() {
-        dg.ScoreNeededToWin = s.hour < 7 ? 501 : 701;//gets correct score
-        s.off();
-        menue.enabled = true;
-        int UIcharacterSlotUsed = 0;
-
-        //turns on all slots
-        for (int i = 0; i < p.Length; i++) {
-            if (s.hour >= 8 && s.minutes >= 30) {
-                if (p[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
-                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
-                    texts[UIcharacterSlotUsed].text = p[i].Name;
-                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
-                    UIcharacterSlotUsed++;
-                }
-            } else { //normal
-                if (p[i].RelatedCutScenes[0].completed) {
-                    characters[UIcharacterSlotUsed].gameObject.SetActive(true);
-                    texts[UIcharacterSlotUsed].text = p[i].Name;
-                    indices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
-                    UIcharacterSlotUsed++;
-                }
-            }
-        }
-
-        //sets all other slots off
-        for(int i=UIcharacterSlotUsed;i<p.Length;i++)
-            characters[i].gameObject.SetActive(false);
+     
 
         UIState.inst.SetAsSelectedButton(FirstSelectButton);
     }

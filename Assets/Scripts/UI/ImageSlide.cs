@@ -26,6 +26,11 @@ public class ImageSlide : MonoBehaviour
         CurrentImage = newImage;
     }
 
+    public void SetToStart() {
+        enabled = false;
+        CurrentImage.transform.position = StartingLocation;
+    }
+
     public void Update()
     {
         float distanceRemaining = Vector3.Distance(CurrentImage.transform.position, EndLocation);
@@ -48,10 +53,14 @@ public class ImageSlide : MonoBehaviour
 #if UNITY_EDITOR
     [SerializeField] Transform __StartingLocation;
     [SerializeField] Transform __EndLocation;
+    [SerializeField] bool __reset;
     [SerializeField] [Range(.1f,2f)] float __SecondsToTake =1;
     [SerializeField] [Range(.1f, 1f)] float __reachFullAlphaAtPercent =1;
     private void OnValidate()
     {
+        if (!__reset)
+            return;
+        __reset = false;
         StartingLocation = __StartingLocation.position;
         EndLocation = __EndLocation.position;
         TotalDistance = Vector3.Distance(StartingLocation, EndLocation);

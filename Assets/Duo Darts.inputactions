@@ -1,5 +1,5 @@
 {
-    "name": "My project",
+    "name": "Duo Darts",
     "maps": [
         {
             "name": "Player",
@@ -56,7 +56,7 @@
                     "id": "6eb66b23-3a44-49dd-9b3b-01d98700da44",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -373,7 +373,7 @@
                     "id": "7b6dc9f5-eb60-435b-9e24-172101ccad76",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 },
                 {
