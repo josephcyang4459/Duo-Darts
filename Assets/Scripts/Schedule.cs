@@ -125,8 +125,6 @@ public class Schedule : MonoBehaviour, SceneEntrance
         UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(song0);
         LocationSelector.BeginEntrance();
-        if (time == 0)
-            return;
         //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
         IncreaseTimeByMinutes((int)time);
