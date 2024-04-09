@@ -291,7 +291,7 @@ public class DartGame : MonoBehaviour {
         board.enabled = false;
         // PauseMenu.inst.SetEnabled(true);
         if (s != null)
-            s.setTime(TimeBlocks.Short);
+            s.SetTime(TimeBlocks.Short);
         else
             StandAlone.BeginSetUp();
     }

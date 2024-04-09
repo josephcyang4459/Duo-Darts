@@ -18,6 +18,8 @@ public class __DebugMenu : MonoBehaviour
     [SerializeField] Button[] QuickCommands;
     [SerializeField] TMP_Text[] QuickCommandText;
     [SerializeField] AudioClipList Sounds;
+    [SerializeField] CharacterList Partners;
+
     [SerializeField] List<string> OutputQueue;
     [SerializeField] int MaxLines;
     
@@ -94,6 +96,9 @@ public class __DebugMenu : MonoBehaviour
         switch (s[0].ToLower()) {
             case "sound":
                 SendToOutput(AllSoundNames());
+                break;
+            case "partnerstat":
+                ///SendToOutput(AllSoundNames());
                 break;
             case "playsound":
                 if (s.Length > 0)

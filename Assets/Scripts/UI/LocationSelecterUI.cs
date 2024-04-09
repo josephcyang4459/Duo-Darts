@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LocationSelecterUI : MonoBehaviour, Caller {
     [SerializeField] Schedule Schedule;
     [SerializeField] Canvas LocationSelectorCanvas;
+    [SerializeField] Canvas BackGroundImageCanvas;
     [SerializeField] EventSelectorUI EventSelector;
     [SerializeField] UIAnimationElement EnterAnimationHead;
     [SerializeField] UIAnimationElement ExitAnimationHead;
@@ -38,6 +39,7 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     }
 
     public void BeginEntrance() {
+        BackGroundImageCanvas.enabled = true;
         LocationSelectorCanvas.enabled = true;
         PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);

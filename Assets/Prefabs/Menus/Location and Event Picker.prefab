@@ -5712,6 +5712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Schedule: {fileID: 0}
   LocationSelectorCanvas: {fileID: 8223975892222719319}
+  BackGroundImageCanvas: {fileID: 1332036370077909245}
   EventSelector: {fileID: 8223975892037574362}
   EnterAnimationHead: {fileID: 8223975891153876389}
   ExitAnimationHead: {fileID: 8223975890897590840}
@@ -6630,6 +6631,7 @@ MonoBehaviour:
   LocationUI: {fileID: 8223975891725533789}
   EventSelectorCanvas: {fileID: 8223975892438570526}
   EventButtonsCanvas: {fileID: 8223975890921428340}
+  BackGroundImage: {fileID: 1332036370077909245}
   FirstImage:
   - {fileID: 8223975890997771276}
   - {fileID: 8223975891582634692}

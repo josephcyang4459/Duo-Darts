@@ -13,6 +13,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     [SerializeField] CharacterList PartnerList;
     [SerializeField] DartGame DartGame;
     [SerializeField] Schedule Schedule;
+    [SerializeField] EventSelectorUI EventSelector;
     [SerializeField] Canvas DartPartnerCanvas;
     [SerializeField] ImageFill Fill;
     [SerializeField] ImageSlide Slide;
@@ -35,24 +36,18 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     [SerializeField] int CurrentRing;
     [SerializeField] int[] AdjustedIdices = new int[4];
 
-    private void Start() {
-        enabled = false;
-        BeginSetUp();
-    }
-
-    public bool CheckCanPlay(int partnerIndex) {
+    bool CheckCanPlay(int partnerIndex) {
         if (Schedule.hour >= 8 && Schedule.minutes >= 30)
             return PartnerList.list[partnerIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed;
         return PartnerList.list[partnerIndex].RelatedCutScenes[0].completed;
     }
 
     public void BeginSetUp() {
-
-        //DartGame.ScoreNeededToWin = Schedule.hour < 7 ? 501 : 701;//gets correct score
-        //Schedule.off();
+        Fill.ClearImages();
+        UIState.inst.SetInteractable(false);
+            PauseMenu.inst.SetEnabled(false);
         DartPartnerCanvas.enabled = true;
         int UIcharacterSlotUsed = 0;
-
         //turns on all slots
         for (int i = 0; i < (int)CharacterNames.Owner; i++) {
             if (CheckCanPlay(i)) {
@@ -63,18 +58,13 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
                 AdjustedIdices[UIcharacterSlotUsed] = i;//used to align the internal character list with the UI representation
                 UIcharacterSlotUsed++;
             }
-
-
         }
-
         //sets all other slots off
         for (int i = UIcharacterSlotUsed; i < (int)CharacterNames.Owner; i++) {
             PlayerButtons[i].SetActive(false);
             Buttons[i + 2].gameObject.SetActive(false);
         }
            
-
-
         State = AnimationState.Entering;
         EnterDefaultHead.Begin(this);
     }
@@ -85,7 +75,6 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             MousePosition = Mouse.position.ReadValue();
         else
             return CurrentRing;
-
         float distance = Vector2.Distance(MousePosition, Corner);
         for (int i = 0; i < DistanceRings.Length; i++) {
             if (distance < DistanceRings[i])
@@ -96,16 +85,18 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
 
     void IsUsingController(bool b) {
         UsingController = b;
-        //enabled = !UsingController;
     }
 
     void SetActive(bool state) {
         if (!state) {
             enabled = false;
+            DartPartnerCanvas.enabled = false;
             ControlState.UsingController -= IsUsingController;
             UnenableClick();
             return;
         }
+        UIState.inst.SetInteractable(true);
+        PauseMenu.inst.SetEnabled(true);
         enabled = true;
         EnableClick();
         ControlState.UsingController += IsUsingController;
@@ -132,32 +123,43 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
 
 
     public void SelectButton(int index) {
-        
         if (Buttons[index].IsActive()) {
-            if (index-2 >= 0) {
-                CharacterImage.sprite = Partners.list[AdjustedIdices[index-2]].Expressions[0];
-                Slide.BeginSlide();
+            if (index - 2 >= 0) {
+                if (CharacterImage.sprite != Partners.list[AdjustedIdices[index - 2]].Expressions[0]) {
+                    CharacterImage.sprite = Partners.list[AdjustedIdices[index - 2]].Expressions[0];
+                    Slide.BeginSlide();
+                }
             }
             else
                 Slide.SetToStart();
-                
+
             Fill.SetCurrentImageToFill(ButtonFills[index], DartPositions[index].position);
         }
-            
     }
 
     public void ShowTutorial() {
-
+        Debug.Log("SHOW TUTORIAL");
     }
 
     public void BackToEventPicker() {
-
-        State = AnimationState.Exiting;
+        State = AnimationState.ExitingToEvent;
+        UIState.inst.SetInteractable(false);
+        PauseMenu.inst.SetEnabled(false);
         ExitDefaultHead.Begin(this);
     }
 
     public void SetPartner(int i) {
+
+        DartGame.ScoreNeededToWin = Schedule.hour < 7 ? 501 : 701;
         DartGame.partnerIndex = AdjustedIdices[i];
+        State = AnimationState.ExitingToGame;
+        ExitDefaultHead.Begin(this);
+    }
+
+    public void ForceDartsException(int characterIndex, int currentHour) {
+        Schedule.off();
+        DartGame.ScoreNeededToWin = currentHour < 7 ? 501 : 701;
+        DartGame.partnerIndex = characterIndex;
         DartGame.BeginGame();
     }
 
@@ -181,15 +183,24 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             SetActive(true);
             return;
         }
-        if(State == AnimationState.Exiting) {
+        if(State == AnimationState.ExitingToEvent) {
             SetActive(false);
+            UIState.inst.SetInteractable(true);
+            PauseMenu.inst.SetEnabled(true);
+            EventSelector.SelectEventButton(0);
             return;
+        }
+        if(State == AnimationState.ExitingToGame) {
+            SetActive(false);
+            DartGame.BeginGame();
+            Schedule.off();
         }
     }
 
     enum AnimationState {
         Entering,
-        Exiting
+        ExitingToEvent,
+        ExitingToGame,
     }
 
 #if UNITY_EDITOR
