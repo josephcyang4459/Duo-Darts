@@ -22,7 +22,7 @@ MonoBehaviour:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4

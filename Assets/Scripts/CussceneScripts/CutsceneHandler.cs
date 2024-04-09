@@ -32,7 +32,7 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
 
-    public DartMen DartsMenu;
+    public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
 
     public void Awake() {
@@ -56,7 +56,7 @@ public class CutsceneHandler : MonoBehaviour {
         ResponsePortrait.sprite = CharacterPortraits[i];
     }
 
-    public void SetUpForMainGame(DartMen dartsMenu, Schedule schedule) {
+    public void SetUpForMainGame(DartPartnerStoryUI dartsMenu, Schedule schedule) {
         DartsMenu = dartsMenu;
         Schedule = schedule;
     }
@@ -108,7 +108,7 @@ public class CutsceneHandler : MonoBehaviour {
         responseCanvas.enabled = false;
         interact.action.Disable();
         interact.action.performed -= takeAction;
-        Schedule!.setTime(TimeBlocks.Long);
+        Schedule!.SetTime(TimeBlocks.Long);
     }
 
     public void PresentChoices() {
@@ -164,7 +164,7 @@ public class CutsceneHandler : MonoBehaviour {
 
             EndCutscene();
             if (cutscene.ForceDarts)// force play darts
-                DartsMenu.exception(characterIndex, Schedule.hour);
+                DartsMenu.ForceDartsException(characterIndex, Schedule.hour);
             return;
         }
 

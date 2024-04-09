@@ -19,7 +19,6 @@ public class Schedule : MonoBehaviour, SceneEntrance
 
     public Button[] EventButtons;
     public TMP_Text[] btnText;
-    public Sprite[] LocationSprites;
     public LocationSelecterUI LocationSelector;
     public EventSelectorUI EventSelector;
 
@@ -29,10 +28,11 @@ public class Schedule : MonoBehaviour, SceneEntrance
     public GameObject FirstEventButton;
     public GameObject GenderChoiceButton;
   
-    public DartMen DartsMenu;
+    public DartPartnerStoryUI DartsMenu;
     public ResetStats ResetStats;
     public SaveHandler SaveHandler;
     public Canvas GenderChoiceCanvas;
+
     public void Start()
     {
         Audio.inst.PlaySong(song0);
@@ -54,7 +54,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
         if(TransitionManager.inst.GetFileIndex() > -1)
         {
             PauseMenu.inst.SetEnabled(true);
-            setTime(0);
+            SetTime(0);
         }
         UIState.inst.SetInteractable(true);
         CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
@@ -69,7 +69,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
     {
         CutsceneHandler.inst.SetCharacterSprite(i);
         PauseMenu.inst.SetEnabled(true);
-        setTime(0);
+        SetTime(0);
         
     }
 
@@ -78,9 +78,9 @@ public class Schedule : MonoBehaviour, SceneEntrance
         for (int i = 0; i < locals.Length; i++)
         {
             locals[i].EventsButtonUsed = 0;
-            locals[i].Events = new();//eww gross why would josh have done this GROSSS ~josh
+            while (locals[i].Events.Count > 0)
+                locals[i].Events.RemoveAt(0);
         }
-        
 
         for (int i = 0; i < 5; i++)
         {
@@ -119,12 +119,14 @@ public class Schedule : MonoBehaviour, SceneEntrance
         }
     }
 
-    public void setTime(TimeBlocks time)
+    public void SetTime(TimeBlocks time)
     {
         CharacterStatUI.inst.UpdateUI();
         UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(song0);
         LocationSelector.BeginEntrance();
+        if (time == 0)
+            return;
         //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE
         //UI_Helper.SetSelectedUIElement(LocationFirstButton);
         IncreaseTimeByMinutes((int)time);
@@ -209,8 +211,8 @@ public class Schedule : MonoBehaviour, SceneEntrance
     {
         if(location == (int)Locations.darts) {
             if (eventIndex == 0) {
-                EventSelector.HideUI();
-                DartsMenu.ShowPartnerSelectMenu();
+                //EventSelector.HideUI();
+                DartsMenu.BeginSetUp();
                 return;
             }
             eventIndex -= 1;
@@ -229,7 +231,7 @@ public class Schedule : MonoBehaviour, SceneEntrance
         //LocationCanvas.enabled = false;
     }
 
-    private bool checkIfValidTime(EventStart t)
+    private bool CheckIfValidTime(EventStart t)
     {
         if (hour < t.hour)
             return false;
@@ -253,9 +255,8 @@ public class Schedule : MonoBehaviour, SceneEntrance
         if (eventP.done)
             return Locations.none;
 
-        if (checkIfValidTime(eventP))
+        if (CheckIfValidTime(eventP))
         {
-
             return eventP.Location;
         }
         return Locations.none;
@@ -269,7 +270,7 @@ public class Location
 
     public string Name;
 
-    public byte EventsButtonUsed = 0;
+    public int EventsButtonUsed = 0;
   
     public List<CutScene> Events = new();
 }
