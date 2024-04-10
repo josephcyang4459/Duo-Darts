@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     [SerializeField] Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
-    [SerializeField] bool CurrentState;
+    public bool CurrentState;
     [SerializeField] bool IsInStory;
     [SerializeField] GameObject FirstSelected;
     [SerializeField] GameObject StoryFirstSelected;

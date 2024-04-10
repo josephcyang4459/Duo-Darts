@@ -30,6 +30,7 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
+    public bool InCutscene;
     public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
 
@@ -60,7 +61,8 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
-        PauseMenu.inst.SetEnabled(false);
+        InCutscene = true;
+        //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         index = 0;
         cutscene = c;
@@ -101,6 +103,8 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void TakeAction(InputAction.CallbackContext c) {
+        if (PauseMenu.inst.CurrentState)
+            return;
         if (responding)// resnponding to quesation
         {
             if (responseIndex < 0)
@@ -136,7 +140,7 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void EndCutscene() {
-        PauseMenu.inst.SetEnabled(true);
+        InCutscene = false;
         UIState.inst.SetInteractable(true);
         DialougeCanvas.enabled = false;
         responseCanvas.enabled = false;

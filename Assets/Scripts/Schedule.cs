@@ -177,6 +177,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
     }
 
     public void SelectEvent(int eventIndex) {
+        UIState.inst.SetInteractable(false);
         if (location == (int)Locations.darts) {
             if (eventIndex == 0) {
                 //EventSelector.HideUI();

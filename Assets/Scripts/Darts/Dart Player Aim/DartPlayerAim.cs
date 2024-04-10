@@ -39,6 +39,8 @@ public class DartPlayerAim : MonoBehaviour
     }
 
     public void Shoot(InputAction.CallbackContext c) {
+        if (PauseMenu.inst.CurrentState)
+            return;
         Vector3 temp = CurrentLocation;
         float bloomRange = Bloom.GetCurrentBloom()/2;
         float xOffset = Random.Range(-bloomRange, bloomRange);
