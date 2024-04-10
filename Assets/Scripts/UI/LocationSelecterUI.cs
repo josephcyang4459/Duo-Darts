@@ -29,6 +29,11 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
         Fill.SetCurrentImageToFill(FillImages[i], DartPositions[i].position+DartOffset);
     }
 
+    public void HideUI() {
+        LocationSelectorCanvas.enabled = false; 
+        BackGroundImageCanvas.enabled =false;
+    }
+
     public void BeginGoToLocation(int index) {
         ExitAnimationHead.ReachEndState();
         SelectedLocation = index;

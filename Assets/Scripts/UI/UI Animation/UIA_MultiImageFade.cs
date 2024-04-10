@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIA_MultiImageFade : UIAnimationElement
-{
+public class UIA_MultiImageFade : UIAnimationElement {
     [SerializeField] Image[] Images;
     float CurrentFill;
     float TargetFill;
     [SerializeField] float Speed;
-    [SerializeField] [Range(0, 2)] float SubsequentOffset;
+    float ChangeDirection;
+    [SerializeField] [Range(-2, 2)] float SubsequentOffset;
     [SerializeField] Direction Behavior = Direction.Auto;
 
-    float GetDirection() {
+    float GetTarget() {
         if (Behavior == Direction.Auto)
             return CurrentFill < .1 ? 1 : 0;
         if (Behavior == Direction.Fill) {
@@ -27,8 +27,9 @@ public class UIA_MultiImageFade : UIAnimationElement
 
     public override void Begin(Caller caller) {
         Caller = caller;
+        TargetFill = GetTarget();
         CurrentFill = Images[0].color.a;
-        TargetFill = GetDirection();
+        ChangeDirection = TargetFill > .5 ? 1 : -1;
         enabled = true;
     }
 
@@ -38,7 +39,7 @@ public class UIA_MultiImageFade : UIAnimationElement
     }
 
     public override void ReachEndState() {
-        CurrentFill = GetDirection();
+        CurrentFill = GetTarget();
         for (int i = 0; i < Images.Length; i++)
             SetImageAlpha(Images[i], CurrentFill);
         PassToNextEndState();
@@ -51,10 +52,10 @@ public class UIA_MultiImageFade : UIAnimationElement
     }
 
     public void Update() {
-        CurrentFill = Mathf.MoveTowards(CurrentFill, TargetFill, Speed * Time.deltaTime);
+        CurrentFill += Speed * Time.deltaTime * ChangeDirection;
         for (int i = 0; i < Images.Length; i++)
             SetImageAlpha(Images[i], Mathf.Clamp01(CurrentFill * (1 + (SubsequentOffset * i))));
-        if (CurrentFill == TargetFill)
+        if (Images[0].color.a == TargetFill && Images[^1].color.a == TargetFill)
             End();
     }
 

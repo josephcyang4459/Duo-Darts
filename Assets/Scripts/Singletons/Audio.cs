@@ -10,6 +10,10 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioReverbZone ReverbZone;
     [SerializeField] AudioClip ClickSound;
     [SerializeField] AudioClipList DartClips;
+    [SerializeField] AudioClipList SoftDarts;
+    [SerializeField] AudioClipList MediumDarts;
+    [SerializeField] AudioClipList HardDarts;
+
 
     private void Awake()
     {
@@ -50,8 +54,15 @@ public class Audio : MonoBehaviour
     }
 
     public void PlayDartClipReverb(DartAudioClips clip, AudioReverbPreset preset) {
+        AudioClipList GetList(DartAudioClips clip) {
+            switch (clip) {
+                case DartAudioClips.Medium: return SoftDarts;
+                case DartAudioClips.Hard: return SoftDarts;
+            }
+            return SoftDarts;
+        }
         ReverbZone.reverbPreset = preset;
-        ReverbSource.PlayOneShot(DartClips.List[(int)clip]);
+        ReverbSource.PlayOneShot(GetList(clip).List[Random.Range(0, GetList(clip).List.Length)]);
     }
 
     public void PlayClip(AudioClip clip)

@@ -148,6 +148,9 @@ MonoBehaviour:
   ReverbZone: {fileID: 156362719}
   ClickSound: {fileID: 8300000, guid: eac0a837ff027ab419a80d1a28269be4, type: 3}
   DartClips: {fileID: 11400000, guid: 40bed4585efef544282c56eb1f11c32f, type: 2}
+  SoftDarts: {fileID: 11400000, guid: a80d32b527e56d34987dfe0ae45e9ccd, type: 2}
+  MediumDarts: {fileID: 11400000, guid: ee96b1220b194af48aa33124d536c782, type: 2}
+  HardDarts: {fileID: 11400000, guid: 566ba22877e3ed44eabdb39bed46e9e2, type: 2}
 --- !u!167 &156362719
 AudioReverbZone:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class EventSelectorUI : MonoBehaviour, Caller
     [SerializeField] LocationSelecterUI LocationUI;
     [SerializeField] Canvas EventSelectorCanvas;
     [SerializeField] Canvas EventButtonsCanvas;
-    [SerializeField] Canvas BackGroundImage;
     [SerializeField] Image[] FirstImage;
     [SerializeField] Image[] SecondImage;
     [SerializeField] Image[] Banners;
@@ -48,7 +47,6 @@ public class EventSelectorUI : MonoBehaviour, Caller
         Fill.ClearImages();
         ExitButtons.ReachEndState();
         ExitListAnimation.ReachEndState();
-        BackGroundImage.enabled = false;
         EventSelectorCanvas.enabled = false;
         EventButtonsCanvas.enabled = false;
     }
@@ -61,6 +59,10 @@ public class EventSelectorUI : MonoBehaviour, Caller
 
     public void SelectEventButton(int i) {
         Fill.SetCurrentImageToFill(Fills[i], Fills[i].transform.position+DartOffset);
+    }
+
+    public void SelectFirstButton() {
+        UIState.inst.SetAsSelectedButton(FirstSelected);
     }
     
     public void BackToLocations() {
