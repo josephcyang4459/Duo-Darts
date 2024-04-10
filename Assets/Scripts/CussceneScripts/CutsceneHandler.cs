@@ -30,7 +30,6 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
-
     public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
 

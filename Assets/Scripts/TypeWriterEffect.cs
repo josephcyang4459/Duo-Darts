@@ -20,12 +20,17 @@ public class TypeWriterEffect : MonoBehaviour {
 
     public void TextSpeedChange(float value)
     {
-        CustomWriteSpeed = 5/value;
+        CustomWriteSpeed = 1/(value*10);
     }
 
     public void Run(string textToType, TMP_Text textLabel) {
+        if (textToType == null)
+            return;
+        if (textToType.Length == 0)
+            return;
         Writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
         TextToType = textToType;
+
         Textlabel = textLabel;
         Textlabel.text = string.Empty;
         CurrentTime = 0;
@@ -42,7 +47,6 @@ public class TypeWriterEffect : MonoBehaviour {
     }
 
     void FixedUpdate() {
-
         if (TextToType[CharIndex] == ' ')
             CurrentTime += .02f * 4;
         else
@@ -50,6 +54,7 @@ public class TypeWriterEffect : MonoBehaviour {
 
         if (CurrentTime >= CustomWriteSpeed) {
             CharIndex++;
+            CurrentTime = 0;
             Textlabel.text = TextToType.Substring(0, CharIndex);
 
             if (CharIndex >= TextToType.Length) {

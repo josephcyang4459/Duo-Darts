@@ -147,6 +147,7 @@ i figure it would randomly read off lines. though we should not let lines be rea
                 LineGroups[i] = temp;
             }
             CheckOut = new();
+            CheckOut.ChanceToUse = 100;
             CheckOut.Lines = new string[linesInGroup[__groups.Count - 1]];
             CheckOut.AlreadyUsed = new bool[linesInGroup[__groups.Count - 1]];
         }
@@ -171,7 +172,9 @@ i figure it would randomly read off lines. though we should not let lines be rea
             }
         }
 
-        for(int i = 0; i < __groups.Count; i++) {
+       
+
+        for (int i = 0; i < __groups.Count; i++) {
             SetScoreRange(i, __groups[i]);
         }
 

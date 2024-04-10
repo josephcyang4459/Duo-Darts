@@ -92,7 +92,7 @@ MonoBehaviour:
   Fill: {fileID: 3201836003294332785}
   Slide: {fileID: 3201836003294332786}
   CharacterImage: {fileID: 3201836004159866744}
-  Corner: {x: 1920, y: 0}
+  Corner: {fileID: 3201836003514206540}
   Buttons:
   - {fileID: 3201836004466231922}
   - {fileID: 3201836004700880803}
@@ -143,9 +143,10 @@ MonoBehaviour:
   UsingController: 0
   MousePosition: {x: 0, y: 0}
   CurrentRing: 0
+  UIcharacterSlotUsed: 0
   AdjustedIdices: 00000000000000000000000000000000
+  ScreenRatio: 0
   __set: 0
-  __Corner: {fileID: 3201836003514206540}
 --- !u!114 &3201836003294332785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentImage: {fileID: 3201836004159866744}
-  StartingLocation: {x: -482, y: 467, z: 0}
-  EndLocation: {x: 463, y: 467, z: 0}
+  StartingLocation: {fileID: 3201836003749409051}
+  EndLocation: {fileID: 3201836004804278425}
   MoveSpeed:
     serializedVersion: 2
     m_Curve:
@@ -1460,8 +1461,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3201836003514206540}
   m_Layer: 5
-  m_Name: __Corner
-  m_TagString: EditorOnly
+  m_Name: Corner
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3754,7 +3755,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &3201836004683743228
 MonoBehaviour:

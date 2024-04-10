@@ -18,7 +18,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     [SerializeField] ImageFill Fill;
     [SerializeField] ImageSlide Slide;
     [SerializeField] Image CharacterImage;
-    [SerializeField] Vector2 Corner;
+    [SerializeField] Transform Corner;
     [SerializeField] Button[] Buttons;
     [SerializeField] Transform[] DartPositions;
     [SerializeField] Image[] ButtonFills;
@@ -36,6 +36,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     [SerializeField] int CurrentRing;
     [SerializeField] int UIcharacterSlotUsed;
     [SerializeField] int[] AdjustedIdices = new int[4];
+    [SerializeField] float ScreenRatio;
 
     bool CheckCanPlay(int partnerIndex) {
         if (Schedule.hour >= 8 && Schedule.minutes >= 30)
@@ -76,12 +77,12 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             MousePosition = Mouse.position.ReadValue();
         else
             return CurrentRing;
-        float distance = Vector2.Distance(MousePosition, Corner);
+        float distance = Vector2.Distance(MousePosition, Corner.position);
         for (int i = 0; i < UIcharacterSlotUsed+2; i++) {
-            if (distance < DistanceRings[i] && Buttons[i].isActiveAndEnabled)
+            if (distance < DistanceRings[i]*ScreenRatio && Buttons[i].isActiveAndEnabled)
                 return i;
         }
-        return UIcharacterSlotUsed + 2;
+        return UIcharacterSlotUsed + 1;
     }
 
     void IsUsingController(bool b) {
@@ -152,7 +153,6 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     }
 
     public void SetPartner(int i) {
-
         DartGame.ScoreNeededToWin = Schedule.hour < 7 ? 501 : 701;
         DartGame.PartnerIndex = AdjustedIdices[i];
         State = AnimationState.ExitingToGame;
@@ -167,6 +167,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     }
 
     private void FixedUpdate() {
+        ScreenRatio = Screen.width / 1920f;
         int temp = DistanceFromCorner();
         if (temp != CurrentRing) {
             CurrentRing = temp;
@@ -211,11 +212,10 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
 
 #if UNITY_EDITOR
     [SerializeField] bool __set;
-    [SerializeField] Transform __Corner;
+
     private void OnValidate() {
         if (__set) {
             __set = false;
-            Corner = __Corner.position;
         }
     }
 

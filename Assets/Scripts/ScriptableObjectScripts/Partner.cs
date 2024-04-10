@@ -62,6 +62,10 @@ public class Partner : ScriptableObject {
         }
     }
     
+    public void ResetBanterLineUsage() {
+        RegularBanterLines.ResetAllGroups();
+        FinalsBanterLines.ResetAllGroups();
+    }
 
     public void ResetValues(float love, float intox, float compose)
     {

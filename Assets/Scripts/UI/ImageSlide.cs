@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class ImageSlide : MonoBehaviour
 {
     [SerializeField] Image CurrentImage;
-    [SerializeField] Vector3 StartingLocation;
-    [SerializeField] Vector3 EndLocation;
+    [SerializeField] Transform StartingLocation;
+    [SerializeField] Transform EndLocation;
     [SerializeField] AnimationCurve MoveSpeed;
     [SerializeField] float TotalDistance;
     [SerializeField] float AlphaSpeed;
 
     public void BeginSlide()
     {
-        CurrentImage.transform.position = StartingLocation;
+        TotalDistance = Vector3.Distance(StartingLocation.position, EndLocation.position);// * Screen.width / 1920f;
+        CurrentImage.transform.position = StartingLocation.position;
         Color c = CurrentImage.color;
         c.a = 0;
         CurrentImage.color = c;
@@ -28,23 +29,23 @@ public class ImageSlide : MonoBehaviour
 
     public void SetToStart() {
         enabled = false;
-        CurrentImage.transform.position = StartingLocation;
+        CurrentImage.transform.position = StartingLocation.position;
     }
 
     public bool IsAtStart() {
         if (enabled)
             return false;
-        return Vector3.Distance(CurrentImage.transform.position, StartingLocation) <= .00005f;
+        return Vector3.Distance(CurrentImage.transform.position, StartingLocation.position) <= .00005f;
     }
 
     public void Update()
     {
-        float distanceRemaining = Vector3.Distance(CurrentImage.transform.position, EndLocation);
+        float distanceRemaining = Vector3.Distance(CurrentImage.transform.position, EndLocation.position);
         if (distanceRemaining < .005f)
             enabled = false;
         float dTime = Time.deltaTime;
-      
-        CurrentImage.transform.position = Vector3.MoveTowards(CurrentImage.transform.position, EndLocation, MoveSpeed.Evaluate(distanceRemaining/TotalDistance) * dTime);
+        float speed = MoveSpeed.Evaluate(distanceRemaining / TotalDistance) * Screen.width / 1920f * dTime;
+        CurrentImage.transform.position = Vector3.MoveTowards(CurrentImage.transform.position, EndLocation.position, speed);
         if (CurrentImage.color.a < 1)
         {
             Color c = CurrentImage.color;
@@ -67,9 +68,6 @@ public class ImageSlide : MonoBehaviour
         if (!__reset)
             return;
         __reset = false;
-        StartingLocation = __StartingLocation.position;
-        EndLocation = __EndLocation.position;
-        TotalDistance = Vector3.Distance(StartingLocation, EndLocation);
         float temp = 1 / __SecondsToTake / __reachFullAlphaAtPercent;
         AlphaSpeed = temp;
     }

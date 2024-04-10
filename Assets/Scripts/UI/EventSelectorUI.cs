@@ -58,7 +58,7 @@ public class EventSelectorUI : MonoBehaviour, Caller
     }
 
     public void SelectEventButton(int i) {
-        Fill.SetCurrentImageToFill(Fills[i], Fills[i].transform.position+DartOffset);
+        Fill.SetCurrentImageToFill(Fills[i], Fills[i].transform.position + DartOffset * Screen.width / 1920f);
     }
 
     public void SelectFirstButton() {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
@@ -85,7 +86,7 @@ public class PauseMenu : MonoBehaviour, Caller {
             else {
                 UIState.inst.SetAsSelectedButton(FirstSelected);
             }
-
+           
         }
         else {
             UI[0].ClearFill();

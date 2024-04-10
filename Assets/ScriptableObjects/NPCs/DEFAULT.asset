@@ -29,6 +29,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
   AI: {fileID: 0}
-  RegularBanterLines: {fileID: 0}
-  FinalsBanterLines: {fileID: 0}
+  RegularBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
+  FinalsBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
   TextBoxColors: {fileID: 11400000, guid: d14ee8397fb44b44cb40705b91c7cdea, type: 2}

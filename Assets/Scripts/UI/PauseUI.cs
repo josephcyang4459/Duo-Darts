@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class PauseUI : MonoBehaviour
 {
     [SerializeField] Image[] ButtonImages;
-    [SerializeField] Vector3[] DartLocations;
+    [SerializeField] Transform[] DartLocations;
     
     [SerializeField] ImageFill Fill;
     public void SelectButton(int i)
     {
-        Fill.SetCurrentImageToFill(ButtonImages[i], DartLocations[i]);
+        Fill.SetCurrentImageToFill(ButtonImages[i], DartLocations[i].position);
     }
     public void ClearFill() {
         Fill.ClearImages();
@@ -25,9 +25,8 @@ public class PauseUI : MonoBehaviour
         {
             __set = false;
             //ButtonImages = __ButtonHolder.GetComponentsInChildren<Image>();
-            DartLocations = new Vector3[ButtonImages.Length];
             for (int i = 0; i < ButtonImages.Length; i++)
-                DartLocations[i] = ((RectTransform)__TargetLocations[i]).position+__Offset;
+                DartLocations[i] = __TargetLocations[i];
         }
     }
 
