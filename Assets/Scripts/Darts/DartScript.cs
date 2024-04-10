@@ -18,8 +18,8 @@ public class DartScript : MonoBehaviour
     public AnimationCurve curve;
     public int points;
     public DartGame DartsGame;
-    public WaitForSeconds WaitTime = new WaitForSeconds(3);
-
+    [SerializeField] Timer WaitTimer;
+    [SerializeField] float WaitInBetweenDarts;
     public void SetUp(int partnerIndex)
     {
         PartnerIndex = partnerIndex;
@@ -86,15 +86,9 @@ public class DartScript : MonoBehaviour
         if (CurrentDartTransform.position == destination)
         {
             enabled = false;
-            StartCoroutine(wiat());
+            DartsGame.AddPoints(points);
+            WaitTimer.BeginTimer(WaitInBetweenDarts);
         }
-    }
-
-    public IEnumerator wiat()
-    {
-        DartsGame.AddPoints(points);
-        yield return WaitTime;
-        DartsGame.CheckForBust();
     }
 #if UNITY_EDITOR
     [SerializeField] Transform __player;

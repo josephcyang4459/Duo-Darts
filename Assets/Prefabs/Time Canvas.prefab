@@ -547,6 +547,13 @@ MonoBehaviour:
   HoursOnes: {fileID: 8363467734823615519}
   MinutesTens: {fileID: 8363467734801477873}
   MinutesOnes: {fileID: 8363467735019650084}
+  AllSpritesToColor:
+  - {fileID: 8363467735228876787}
+  - {fileID: 8363467734823615519}
+  - {fileID: 8363467734279860618}
+  - {fileID: 8363467734801477873}
+  - {fileID: 8363467735019650084}
+  - {fileID: 8363467733432971031}
   SevenSegmentSprites: {fileID: 11400000, guid: 48bdf03a4bda4014184d398f88af02b6, type: 2}
   TimeColors: {fileID: 11400000, guid: cdd0a3cfa47ae984f9b0af9691ac6593, type: 2}
   __hour: 8

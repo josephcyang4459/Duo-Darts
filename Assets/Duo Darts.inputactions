@@ -294,6 +294,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9cdf3e60-b885-49bf-b850-72e3da7f9bfb",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8be1a187-087c-424b-8ad4-7a9ac8b30f75",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

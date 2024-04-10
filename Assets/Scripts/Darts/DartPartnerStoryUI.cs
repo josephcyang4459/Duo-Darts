@@ -34,6 +34,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     [SerializeField] Mouse Mouse;
     [SerializeField] Vector2 MousePosition;
     [SerializeField] int CurrentRing;
+    [SerializeField] int UIcharacterSlotUsed;
     [SerializeField] int[] AdjustedIdices = new int[4];
 
     bool CheckCanPlay(int partnerIndex) {
@@ -47,7 +48,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
         UIState.inst.SetInteractable(false);
             PauseMenu.inst.SetEnabled(false);
         DartPartnerCanvas.enabled = true;
-        int UIcharacterSlotUsed = 0;
+        UIcharacterSlotUsed = 0;
         //turns on all slots
         for (int i = 0; i < (int)CharacterNames.Owner; i++) {
             if (CheckCanPlay(i)) {
@@ -76,11 +77,11 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
         else
             return CurrentRing;
         float distance = Vector2.Distance(MousePosition, Corner);
-        for (int i = 0; i < DistanceRings.Length; i++) {
-            if (distance < DistanceRings[i])
+        for (int i = 0; i < UIcharacterSlotUsed+2; i++) {
+            if (distance < DistanceRings[i] && Buttons[i].isActiveAndEnabled)
                 return i;
         }
-        return DistanceRings.Length - 1;
+        return UIcharacterSlotUsed + 2;
     }
 
     void IsUsingController(bool b) {
@@ -91,6 +92,8 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
         if (!state) {
             enabled = false;
             DartPartnerCanvas.enabled = false;
+            Fill.ClearImages();
+            Slide.SetToStart();
             ControlState.UsingController -= IsUsingController;
             UnenableClick();
             return;
@@ -102,9 +105,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
         ControlState.UsingController += IsUsingController;
         Mouse = Mouse.current;
         UsingController = ControlState.inst.IsUsingController();
-        if (UsingController) {
-            UIState.inst.SetAsSelectedButton(Buttons[1].gameObject);
-        }
+        UIState.inst.SetAsSelectedButton(Buttons[1].gameObject);
     }
 
     void ClickFunction(InputAction.CallbackContext c) {
@@ -125,13 +126,15 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     public void SelectButton(int index) {
         if (Buttons[index].IsActive()) {
             if (index - 2 >= 0) {
-                if (CharacterImage.sprite != Partners.list[AdjustedIdices[index - 2]].Expressions[0]) {
+                if (CharacterImage.sprite != Partners.list[AdjustedIdices[index - 2]].Expressions[0] || Slide.IsAtStart()) {
                     CharacterImage.sprite = Partners.list[AdjustedIdices[index - 2]].Expressions[0];
                     Slide.BeginSlide();
                 }
             }
-            else
+            else {
                 Slide.SetToStart();
+            }
+              
 
             Fill.SetCurrentImageToFill(ButtonFills[index], DartPositions[index].position);
         }
@@ -157,7 +160,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     }
 
     public void ForceDartsException(int characterIndex, int currentHour) {
-        Schedule.off();
+        Schedule.TurnLocationAndEventSelectorUIOff();
         DartGame.ScoreNeededToWin = currentHour < 7 ? 501 : 701;
         DartGame.partnerIndex = characterIndex;
         DartGame.BeginGame();
@@ -187,13 +190,16 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             SetActive(false);
             UIState.inst.SetInteractable(true);
             PauseMenu.inst.SetEnabled(true);
-            EventSelector.SelectEventButton(0);
+            EventSelector.SelectFirstButton();
             return;
         }
         if(State == AnimationState.ExitingToGame) {
             SetActive(false);
+            UIState.inst.SetInteractable(false);
+            DartSticker.inst.SetVisible(false);
             DartGame.BeginGame();
-            Schedule.off();
+            Schedule.TurnLocationAndEventSelectorUIOff();
+            return;
         }
     }
 

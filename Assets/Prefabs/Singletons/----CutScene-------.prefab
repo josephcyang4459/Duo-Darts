@@ -547,6 +547,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0a5531d834c82840b8da0c6406524f1, type: 3}
   characterIndex: 0
   index: 0
+  respon:
+    responses: []
   responding: 0
   responseIndex: 0
   responseIndexIndex: 0
@@ -1143,7 +1145,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1349318527703410615
 MonoBehaviour:

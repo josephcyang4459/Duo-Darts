@@ -31,6 +31,12 @@ public class ImageSlide : MonoBehaviour
         CurrentImage.transform.position = StartingLocation;
     }
 
+    public bool IsAtStart() {
+        if (enabled)
+            return false;
+        return Vector3.Distance(CurrentImage.transform.position, StartingLocation) <= .00005f;
+    }
+
     public void Update()
     {
         float distanceRemaining = Vector3.Distance(CurrentImage.transform.position, EndLocation);

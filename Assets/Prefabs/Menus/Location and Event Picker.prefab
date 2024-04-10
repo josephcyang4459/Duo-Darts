@@ -7519,8 +7519,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: BATHROOM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f8233e4c28b245c4f92c8d38d62bb07c, type: 2}
+  m_sharedMaterial: {fileID: -417650277066936942, guid: f8233e4c28b245c4f92c8d38d62bb07c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8544,6 +8544,7 @@ MonoBehaviour:
   - {fileID: 8223975892420509168}
   - {fileID: 8223975892061081775}
   - {fileID: 8223975890779022203}
+  - {fileID: 5718975072146682408}
   Speed: 4
   SubsequentOffset: 0.166
   Behavior: 2

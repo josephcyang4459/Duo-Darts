@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 8633084338126617388}
   - component: {fileID: 3374237949889440517}
   - component: {fileID: 4708863078273983470}
-  - component: {fileID: 1044588160}
+  - component: {fileID: 1057797077862040416}
   m_Layer: 5
   m_Name: Button_1
   m_TagString: Untagged
@@ -799,7 +799,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1044588160
+--- !u!114 &1057797077862040416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17335,6 +17335,8 @@ GameObject:
   - component: {fileID: 7917560275646839228}
   - component: {fileID: 7917560275646839230}
   - component: {fileID: 7917560275646839229}
+  - component: {fileID: 1044588159}
+  - component: {fileID: 1044588160}
   m_Layer: 0
   m_Name: dartGame
   m_TagString: Untagged
@@ -17424,6 +17426,8 @@ MonoBehaviour:
   - {fileID: 7917560275280031204}
   bullseye: {fileID: 1923462898247035485}
   Miss: {fileID: 7917560275204523332}
+  EndTimer: {fileID: 1044588160}
+  WaitForEndTime: 5
   winc: {fileID: 7917560275057393033}
   losec: {fileID: 7917560276996041007}
   ac: {fileID: 8300000, guid: a1dd567813813ac4ea7df707099d3517, type: 3}
@@ -17523,12 +17527,72 @@ MonoBehaviour:
     m_RotationOrder: 4
   points: 0
   DartsGame: {fileID: 7917560275646839228}
+  WaitTimer: {fileID: 1044588159}
+  WaitInBetweenDarts: 3
   __player: {fileID: 7917560276302188034}
   __chad: {fileID: 7917560276223923129}
   __jess: {fileID: 7917560276295096928}
   __faye: {fileID: 7917560276516288254}
   __elaine: {fileID: 7917560276004334512}
   __reset: 0
+--- !u!114 &1044588159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917560275646839217}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370c89b381279145ac7cd97d5e27b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsToWaitFor: 0
+  CurrentTime: 0
+  Complete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7917560275646839228}
+        m_TargetAssemblyTypeName: DartGame, Assembly-CSharp
+        m_MethodName: CheckForBust
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1044588160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917560275646839217}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370c89b381279145ac7cd97d5e27b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsToWaitFor: 0
+  CurrentTime: 0
+  Complete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7917560275646839228}
+        m_TargetAssemblyTypeName: DartGame, Assembly-CSharp
+        m_MethodName: EndDartsGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7917560275763359306
 GameObject:
   m_ObjectHideFlags: 0

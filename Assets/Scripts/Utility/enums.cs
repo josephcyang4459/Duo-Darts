@@ -86,8 +86,8 @@ public enum AudioClips
 
 public enum DartAudioClips {
     Soft,
-    Flat,
-    Sharp
+    Medium,
+    Hard
 }
 
 public enum Locations

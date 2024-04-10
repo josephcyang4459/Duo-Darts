@@ -31,7 +31,7 @@ public class UIState : MonoBehaviour {
         if (!state)
             return;
         if (EventSystem.enabled) {
-            EventSystem.SetSelectedGameObject(EventSystem.currentSelectedGameObject != null ? EventSystem.currentSelectedGameObject : CurrentFirstSelected);
+            EventSystem.SetSelectedGameObject(CurrentFirstSelected);
         }
     }
 

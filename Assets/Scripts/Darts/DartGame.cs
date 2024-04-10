@@ -27,7 +27,8 @@ public class DartGame : MonoBehaviour {
     public BoardCollider bullseye;
     public BoardCollider Miss;
 
-    public WaitForSeconds sec = new WaitForSeconds(5);
+    [SerializeField] Timer EndTimer;
+    [SerializeField] float WaitForEndTime;
     public Canvas winc;
     public Canvas losec;
     public AudioClip ac;
@@ -117,8 +118,7 @@ public class DartGame : MonoBehaviour {
                 }
         }
 
-
-        StartCoroutine(WaitToEnd());
+        EndTimer.BeginTimer(WaitForEndTime);
     }
 
     public void Win() {
@@ -144,7 +144,7 @@ public class DartGame : MonoBehaviour {
                     }
                 }
         }
-        StartCoroutine(WaitToEnd());
+        EndTimer.BeginTimer(WaitForEndTime);
     }
 
     void GameEnd() {
@@ -233,10 +233,10 @@ public class DartGame : MonoBehaviour {
     /// </summary>
     public void AddPoints(int newPoints) {
         if (newPoints == 50) {
-            Audio.inst.PlayDartClipReverb(DartAudioClips.Sharp, AudioReverbPreset.Cave);
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Medium, AudioReverbPreset.Cave);
         }
         else if(newPoints == 60) {
-            Audio.inst.PlayDartClipReverb(DartAudioClips.Flat, AudioReverbPreset.Drugged);
+            Audio.inst.PlayDartClipReverb(DartAudioClips.Hard, AudioReverbPreset.Drugged);
         }
         else if(newPoints==0){
             Audio.inst.PlayDartClipReverb(DartAudioClips.Soft, AudioReverbPreset.Bathroom);
@@ -283,9 +283,10 @@ public class DartGame : MonoBehaviour {
         }
     }
 
-    public IEnumerator WaitToEnd() {
-        yield return sec;
-
+    /// <summary>
+    /// Called By Timer
+    /// </summary>
+    public void EndDartsGame() {
         winc.enabled = false;
         losec.enabled = false;
         board.enabled = false;
