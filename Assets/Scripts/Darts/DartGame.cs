@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class DartGame : MonoBehaviour {
-    public CharacterList characters;
-    public Player stats;
-    public DartVisual Visuals;
+    [SerializeField] CharacterList characters;
+    [SerializeField] Player stats;
+    [SerializeField] DartVisual Visuals;
     public DartScript Dart;
-    public DartPlayerAim Aim;
-
+    [SerializeField] DartPlayerAim Aim;
+    [SerializeField] DartsPartnerBanterDisplay Banter;
+    public int PartnerIndex;
     [SerializeField] DartsSettings Settings;
 
-    public int partnerIndex = 0;
+    public Partner CurrentPartner;
     public int turnSum = 0;
     public int ScoreNeededToWin = 501;
     public int points;
@@ -21,7 +22,7 @@ public class DartGame : MonoBehaviour {
     public bool firstTimePlaying;
 
     [SerializeField] float MaxOffset = 4;
-    public Canvas dartCanvas;
+    [SerializeField] Canvas dartCanvas;
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -29,13 +30,13 @@ public class DartGame : MonoBehaviour {
 
     [SerializeField] Timer EndTimer;
     [SerializeField] float WaitForEndTime;
-    public Canvas winc;
-    public Canvas losec;
-    public AudioClip ac;
-    public SpriteRenderer board;
+    [SerializeField] Canvas winc;
+    [SerializeField] Canvas losec;
+    [SerializeField] AudioClip ac;
+    [SerializeField] SpriteRenderer board;
 
-    public Schedule s;
-    public DartMenu_StandAlone StandAlone;
+    [SerializeField] Schedule s;
+    [SerializeField] DartMenu_StandAlone StandAlone;
     [SerializeField] GameObject Tutorial;
 
 #if UNITY_EDITOR
@@ -75,27 +76,37 @@ public class DartGame : MonoBehaviour {
     }
 #endif
 
+    bool IsFinals() {
+        if (s == null)
+            return false;
+        if (s.hour < 8)
+            return false;
+        if (s.hour > 8)
+            return true;
+        if (s.hour == 8)
+            if (s.minutes >= 30)
+                return true;
+        return false;
+    }
+
+
+
     public void BeginGame() {
-        UIState.inst.SetInteractable(true);
+
+        CurrentPartner = characters.list[PartnerIndex];
+        points = ScoreNeededToWin > 600 ? 10 : 5;
+        board.enabled = true;
+
         if (firstTimePlaying) {
             showTutorial();
             return;
         }
 
         Aim.SetUpDependants();
-        /*DartSticker.inst.SetVisible(false);
-        PauseMenu.inst.SetEnabled(false);*/
         Audio.inst.PlaySong(ac);
-        //UI_Helper.SetSelectedUIElement(s.c.voiddd);
-        board.enabled = true;
-        points = ScoreNeededToWin > 600 ? 10 : 5;
-        //Debug.Log(Accuracy);
-        //float Stability = Math.Clamp((30/stats.Skill) + ((stats.Intoxication/3) / 10), 1,100);// gooffy ass
-        //aim.driftSpeed = driftDefault * Stability;
-        //aim.driftSpeed = driftDefault;
-        //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
-        
-        Dart.SetUp(partnerIndex);
+
+        Dart.SetUp(PartnerIndex);
+        Banter.SetPartner(CurrentPartner, IsFinals());
         Dart.reset_position();
         Visuals.SetDartScore();
         currentTurn = 0;
@@ -109,41 +120,40 @@ public class DartGame : MonoBehaviour {
 
     public void Lose() {
         GameEnd();
-        losec.enabled = true;
         if (s != null) {
             if (s.hour == 8)
-                if (s.minutes > 50) {
-                    Debug.Log("PLAY BAD ENDING HERE");
+                if (s.minutes >= 50) {
                     TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
+                    return;
                 }
         }
-
+        losec.enabled = true;
         EndTimer.BeginTimer(WaitForEndTime);
     }
 
     public void Win() {
         GameEnd();
-        winc.enabled = true;
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
-            if (s.hour == 8)
-                if (s.minutes >= 30) {
-                    switch ((CharacterNames)partnerIndex) {
-                        case CharacterNames.Chad:
-                            TransitionManager.inst.GoToScene(SceneNumbers.ChadEnding);
-                            return;
-                        case CharacterNames.Jess:
-                            TransitionManager.inst.GoToScene(SceneNumbers.JessEnding);
-                            return;
-                        case CharacterNames.Faye:
-                            TransitionManager.inst.GoToScene(SceneNumbers.FayeEnding);
-                            return;
-                        case CharacterNames.Elaine:
-                            TransitionManager.inst.GoToScene(SceneNumbers.ElaineEnding);
-                            return;
-                    }
+            if (IsFinals()) {
+                switch ((CharacterNames)PartnerIndex) {
+                    case CharacterNames.Chad:
+                        TransitionManager.inst.GoToScene(SceneNumbers.ChadEnding);
+                        return;
+                    case CharacterNames.Jess:
+                        TransitionManager.inst.GoToScene(SceneNumbers.JessEnding);
+                        return;
+                    case CharacterNames.Faye:
+                        TransitionManager.inst.GoToScene(SceneNumbers.FayeEnding);
+                        return;
+                    case CharacterNames.Elaine:
+                        TransitionManager.inst.GoToScene(SceneNumbers.ElaineEnding);
+                        return;
                 }
+            }
         }
+        winc.enabled = true;
+        Banter.GetDialougeFromScore();
         EndTimer.BeginTimer(WaitForEndTime);
     }
 
@@ -154,22 +164,19 @@ public class DartGame : MonoBehaviour {
 
     public void SwitchTurn() {
         Dart.reset_position();
-        //Debug.Log("swap");
         Visuals.SetDartScore();
-
+        if (currentTurn % 2 == 0)
+            Banter.GetDialougeFromScore(turnSum);
         ScoreNeededToWin -= turnSum;
         turnSum = 0;
         numberOfDartsThrow = 0;
         currentTurn++;
         Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
 
-       
-       
         if (currentTurn >= maxTurns) {
             Lose();
             return;
         }
-
         if (currentTurn % 2 == 0)
             playerTurn();
         else
@@ -194,7 +201,7 @@ public class DartGame : MonoBehaviour {
 
     void Adjust(Vector3 location, float baseOffset) {
         float OffsetMath() {
-            float f = Random.Range((characters.list[partnerIndex].Intoxication / -7) - baseOffset, (characters.list[partnerIndex].Intoxication / 7) + baseOffset);
+            float f = Random.Range((CurrentPartner.Intoxication / -7) - baseOffset, (CurrentPartner.Intoxication / 7) + baseOffset);
             f = Mathf.Clamp(f, -MaxOffset, MaxOffset);
             return f;
         }
@@ -202,10 +209,7 @@ public class DartGame : MonoBehaviour {
         float offsetX = OffsetMath();
         float offsetY = OffsetMath();
         location.x += offsetX;
-        //Mathf.Clamp(location.x, -MissClamp.x, MissClamp.x);
         location.y += offsetY;
-        //Mathf.Clamp(location.y, -MissClamp.y, MissClamp.y);
-        //location.z = -15;
         PartnerShootDart(location);
     }
 
@@ -216,15 +220,13 @@ public class DartGame : MonoBehaviour {
     /// </summary>
     /// <param name="baseOffset"></param>
     public void PartnerTarget(float baseOffset) {
-        Debug.Log(50);
         Adjust(bullseye.transform.position, baseOffset);
     }
 
-    private void PartnerTurn() //wow really hideous
-    {
+    private void PartnerTurn() {
         Dart.SetCurrentDart(numberOfDartsThrow, false);
         int tempScore = ScoreNeededToWin - turnSum;
-        characters.list[partnerIndex].AI.SelectTarget(tempScore, this);
+        CurrentPartner.AI.SelectTarget(tempScore, this);
         return;
     }
 
@@ -235,25 +237,26 @@ public class DartGame : MonoBehaviour {
         if (newPoints == 50) {
             Audio.inst.PlayDartClipReverb(DartAudioClips.Medium, AudioReverbPreset.Cave);
         }
-        else if(newPoints == 60) {
+        else if (newPoints == 60) {
             Audio.inst.PlayDartClipReverb(DartAudioClips.Hard, AudioReverbPreset.Drugged);
         }
-        else if(newPoints==0){
+        else if (newPoints == 0) {
             Audio.inst.PlayDartClipReverb(DartAudioClips.Soft, AudioReverbPreset.Bathroom);
         }
         else {
             Audio.inst.PlayClip(AudioClips.RandomDart);
         }
-       
+
         turnSum += newPoints;
         Visuals.SetTurnScore(turnSum);
         Visuals.SetDartScore(numberOfDartsThrow, newPoints);
     }
 
     /// <summary>
-    /// called by DartScript for some reason
+    /// Called By Darts Timer
     /// </summary>
     public void CheckForBust() {
+        Banter.HideDialouge();
         if (ScoreNeededToWin - turnSum < 0) {
             turnSum = 0;
             SwitchTurn();
@@ -261,6 +264,7 @@ public class DartGame : MonoBehaviour {
         }
 
         if (ScoreNeededToWin - turnSum == 0) {
+            Banter.GetDialougeFromScore();
             Dart.reset_position();
             Win();
             return;
@@ -284,7 +288,7 @@ public class DartGame : MonoBehaviour {
     }
 
     /// <summary>
-    /// Called By Timer
+    /// Called By End Timer
     /// </summary>
     public void EndDartsGame() {
         winc.enabled = false;
@@ -297,7 +301,10 @@ public class DartGame : MonoBehaviour {
             StandAlone.BeginSetUp();
     }
 
-    public void showTutorial() { Tutorial.SetActive(true); }
+    public void showTutorial() {
+        UIState.inst.SetInteractable(true);
+        Tutorial.SetActive(true);
+    }
 
     public void hideTutorial() {
         Tutorial.SetActive(false);

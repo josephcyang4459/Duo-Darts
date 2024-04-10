@@ -17,50 +17,59 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 1
     ChanceToUse: 100
     Lines:
-    - "I wish I had looked away from that.\r"
-    - "There\u2019s the best and then there\u2019s the worst.\r"
-    AlreadyUsed: 0000
+    - "Don\u2019t back out on me now. I know you have it in you.\r"
+    AlreadyUsed: 00
     Used: 0
   - MinScoreRangeInclusive: 1
     MaxScoreRangeExclusive: 70
     ChanceToUse: 60
     Lines:
-    - "Effort makes results, you know.\r"
-    - "Happens to everyone, they say.\r"
+    - "We both know you can be the best. Time to do it.\r"
+    - "Greatness won\u2019t wait, chase it.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 0
+    ChanceToUse: 0
+    Lines:
+    - "One leg at a time. This one\u2019s ours.\r"
+    - "\r"
     AlreadyUsed: 0000
     Used: 0
   - MinScoreRangeInclusive: 140
     MaxScoreRangeExclusive: 180
     ChanceToUse: 60
     Lines:
-    - "A score like that never loses its luster.\r"
-    - "I\u2019m in good company, it seems.\r"
-    - "I\u2019m impressed.\r"
-    - "Near perfect.\r"
-    AlreadyUsed: 00000000
+    - "They\u2019ll remember your name if you keep that up.\r"
+    - "I can barely keep up with you.\r"
+    - "You\u2019re making the other teams nervous. Incredible.\r"
+    - "You\u2019re making me look like an amateur.\r"
+    - "There\u2019s always a bigger fish, it seems.\r"
+    AlreadyUsed: 0000000000
     Used: 0
   - MinScoreRangeInclusive: 180
     MaxScoreRangeExclusive: 181
     ChanceToUse: 100
     Lines:
-    - "Finally, good company.\r"
-    - "I had a feeling you had that in you.\r"
-    - "I have to return some videotapes.\r"
+    - "You\u2019re psychotic with those darts.\r"
+    - "More stunning than me...\r"
+    - "An inspiration...\r"
     AlreadyUsed: 000000
     Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
+    ChanceToUse: 100
     Lines:
-    - "I had no doubts.\r"
-    - "From the first dart, I knew it was set and done.\r"
-    - "I hope my score didn\u2019t make you uncomfortable.\r"
+    - "There\u2019s never been greatness like ours.\r"
+    - "Perfection. I knew you were the right choice.\r"
+    - "To think I almost missed out on this. Thank you.\r"
     AlreadyUsed: 000000
     Used: 0
-  groups:
-  - '[0'
-  - '[Below70'
-  - '[Highton'
-  - '[180'
-  - '[Checkout'
+  __groups:
+  - '[0Final'
+  - '[Below70Final'
+  - '[LowtonFinal'
+  - '[HightonFinal'
+  - '[180Final'
+  - '[CheckoutFinal'

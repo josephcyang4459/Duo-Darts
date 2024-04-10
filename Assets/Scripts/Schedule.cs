@@ -71,7 +71,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 locals[i].Events.RemoveAt(0);
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < (int)CharacterNames.Owner; i++) {
             int availableCutSceneIndex = characters.list[i].GetCutScene();
 
             if (availableCutSceneIndex >= 0) {
@@ -85,7 +85,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 }
             }
             else {
-                if (characters.list[i].DefaultCutScene != null) {
+                if (characters.list[i].Love >= 0 && !characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
                     int loungeIndex = (int)Locations.lounge;
                     locals[loungeIndex].Events.Add(characters.list[i].DefaultCutScene);
                     locals[loungeIndex].EventsButtonUsed++;
@@ -94,11 +94,11 @@ public class Schedule : MonoBehaviour, SceneEntrance {
         }
         //events
         for (int i = 0; i < available.List.Length; i++) {
-            Locations b = LocationOf(available.List[i]);
+            Locations locationIndex = LocationOf(available.List[i]);
 
-            if (b != Locations.none) {
-                locals[(int)b].Events.Add(available.List[i].cutScene);
-                locals[(int)b].EventsButtonUsed++;
+            if (locationIndex != Locations.none) {
+                locals[(int)locationIndex].Events.Add(available.List[i].cutScene);
+                locals[(int)locationIndex].EventsButtonUsed++;
             }
         }
     }

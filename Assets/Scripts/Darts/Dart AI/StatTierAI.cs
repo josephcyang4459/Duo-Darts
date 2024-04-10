@@ -20,7 +20,7 @@ public class StatTierAI : DartAI {
 
     public override void SelectTarget(int neededToWin, DartGame game) {
         if (neededToWin >= 60) {
-            float stat = GetStat(GamePartner ? game.characters.list[game.partnerIndex] : Partner);
+            float stat = GetStat(GamePartner ? game.CurrentPartner : Partner);
             for (int i = 0; i < Tiers.Length; i++) {
                 if (Tiers[i].CanUse(stat)) {
                     UseTier(DoubleRange.x, DoubleRange.y, Tiers[i].TierData, game);

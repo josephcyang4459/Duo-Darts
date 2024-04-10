@@ -9,6 +9,9 @@ public class Player : ScriptableObject {
 
     public int TotalPointsScoredAcrossAllDartMatches;
 
+    public Color TextBoxForegroundColor;
+    public Color TextBoxBackgroundColor;
+
     public void UpdateAttribute(string attribute, float value) {
         attribute = attribute.ToLower();
         switch (attribute) {

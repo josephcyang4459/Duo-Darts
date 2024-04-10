@@ -5,8 +5,10 @@ using UnityEngine;
 public class ImageJiggle : MonoBehaviour
 {
     [SerializeField] RectTransform Transform;
-    [SerializeField] Vector3 OriginalPosition;
+    [SerializeField] Transform OriginalPosition;
     [SerializeField] Vector3 NewPosition;
+    [SerializeField] Vector3 AdjustedNewPosition;
+    [SerializeField] Vector3 AdjustedOriginalPosition;
     [SerializeField] float speed = .05f;
     [SerializeField] Vector2 Limits;
     [SerializeField] bool Jiggling;
@@ -18,13 +20,12 @@ public class ImageJiggle : MonoBehaviour
 
     void Jiggle()
     {
-        
         Transform.position = Vector3.MoveTowards(Transform.position, NewPosition, speed * Time.deltaTime);
         if(Vector3.Distance(Transform.position, NewPosition) < .0005f)
         {
             if (!Jiggling)
             {
-                Transform.position = OriginalPosition;
+                Transform.position = OriginalPosition.position;
                 enabled = false;
                 return;
             }
@@ -34,8 +35,8 @@ public class ImageJiggle : MonoBehaviour
     
     void SetNewPosition()
     {
-        NewPosition.x = OriginalPosition.x + Random.Range(-Limits.x, Limits.x);
-        NewPosition.y = OriginalPosition.y + Random.Range(-Limits.y, Limits.y);
+        NewPosition.x = OriginalPosition.position.x + Random.Range(-Limits.x, Limits.x);
+        NewPosition.y = OriginalPosition.position.y + Random.Range(-Limits.y, Limits.y);
     }
 
     public void StartJiggle()
@@ -47,8 +48,8 @@ public class ImageJiggle : MonoBehaviour
 
     public void EndJiggle()
     {
-        NewPosition.x = OriginalPosition.x;
-        NewPosition.y = OriginalPosition.y;
+        NewPosition.x = OriginalPosition.position.x;
+        NewPosition.y = OriginalPosition.position.y;
         Jiggling = false;
     }
 
@@ -58,8 +59,7 @@ public class ImageJiggle : MonoBehaviour
         if (Transform == null)
             Transform = (RectTransform)gameObject.transform;
 
-        OriginalPosition = Transform.position;
-        NewPosition = OriginalPosition;
+        NewPosition = OriginalPosition.position;
     }
 #endif
 

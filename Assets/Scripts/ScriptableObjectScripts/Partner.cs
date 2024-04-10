@@ -17,8 +17,7 @@ public class Partner : ScriptableObject {
     public DartAI AI;
     public DartsBanterLines RegularBanterLines;
     public DartsBanterLines FinalsBanterLines;
-    public Sprite TextBox;
-    public Sprite textLineTHing;
+    public ColorSwatch TextBoxColors;
 
     /// <summary>
     /// Index of next available Cutscene or -1 if default
@@ -63,6 +62,10 @@ public class Partner : ScriptableObject {
         }
     }
     
+    public void ResetBanterLineUsage() {
+        RegularBanterLines.ResetAllGroups();
+        FinalsBanterLines.ResetAllGroups();
+    }
 
     public void ResetValues(float love, float intox, float compose)
     {

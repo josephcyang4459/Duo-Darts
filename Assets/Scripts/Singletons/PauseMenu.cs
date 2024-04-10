@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
@@ -8,7 +9,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     [SerializeField] Canvas PauseOptionsCanvas;
     [SerializeField] Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
-
+    [SerializeField] PauseUI[] UI;
     [SerializeField] bool CurrentState;
     [SerializeField] bool IsInStory;
     [SerializeField] GameObject FirstSelected;
@@ -85,9 +86,11 @@ public class PauseMenu : MonoBehaviour, Caller {
             else {
                 UIState.inst.SetAsSelectedButton(FirstSelected);
             }
-            
+           
         }
         else {
+            UI[0].ClearFill();
+            UI[1].ClearFill();
             OptionsMenu.inst.HideOptionsNoCall();
             DartSticker.inst.SetVisible(false);
             if (setFirstButtonUponUnenable)

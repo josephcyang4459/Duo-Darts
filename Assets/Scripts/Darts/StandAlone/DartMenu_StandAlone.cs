@@ -57,7 +57,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         Audio.inst.PlayClip(AudioClips.Click);
         Portrait.sprite = Partners.list[i].Expressions[0];
         Slide.BeginSlide();
-        Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset);
+        Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset* Screen.width/1920f);
         float fill = (float)i / (float)(Partners.list.Length - 2);
 
         foreach (ImageSmoothFill image in BorderFills)
@@ -66,7 +66,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
 
     public void HoverScoreButton(int i) {
         Audio.inst.PlayClip(AudioClips.Click);
-        Fill.SetCurrentImageToFill(ScoreButtonImages[i], ((RectTransform)ScoreButtonImages[i].transform).position + ScoreLocationOffset);
+        Fill.SetCurrentImageToFill(ScoreButtonImages[i], ((RectTransform)ScoreButtonImages[i].transform).position + ScoreLocationOffset * Screen.width / 1920f);
     }
 
     public void BackToPartnerScreen() {
@@ -96,7 +96,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         ScoreAnimationLeaveHead.ReachEndState();
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
-        DartGame.partnerIndex = PartnerIndex;
+        DartGame.PartnerIndex = PartnerIndex;
         DartGame.BeginGame();
     }
 

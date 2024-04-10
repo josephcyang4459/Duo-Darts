@@ -43,5 +43,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   - {fileID: 21300000, guid: e1e60354e85d4724db079a39cc82a66c, type: 3}
   AI: {fileID: 11400000, guid: 1b7421afe6f94e9409aefddab0b86745, type: 2}
-  TextBox: {fileID: 21300000, guid: af3d0f2d7262aa44cb43ddef42a230dc, type: 3}
-  textLineTHing: {fileID: 21300000, guid: 001edf5aaf0efa4489823fa456932d87, type: 3}
+  RegularBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
+  FinalsBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
+  TextBoxColors: {fileID: 11400000, guid: d14ee8397fb44b44cb40705b91c7cdea, type: 2}

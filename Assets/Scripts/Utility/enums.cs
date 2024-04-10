@@ -107,12 +107,10 @@ public enum ControllerState
     ForceController
 }
 
-public enum SystemFileParse {
-    VersionNumber,
-    Hour,
-    Minute
+public enum TextboxColorIndex {
+    Foreground,
+    Background
 }
-
 #if UNITY_EDITOR
 
 public enum __CutsceneActions

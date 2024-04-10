@@ -9,6 +9,7 @@ public class CharacterStatUI : MonoBehaviour
     [SerializeField] Player Player;
     [SerializeField] Image[] PartnerImages;
     [SerializeField] Color NotYetInteractedWith;
+
     [Header("TEMP-------------------------------")]
     [SerializeField] TMP_Text PlayerText;
     [Header("TEMP")]
@@ -31,7 +32,7 @@ public class CharacterStatUI : MonoBehaviour
             PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Negative];
             return;
         }
-        if (Characters.list[i].RelatedCutScenes[Characters.list[i].RelatedCutScenes.Length - 1].completed) {
+        if (Characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
             PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Positive];
             return;
         }

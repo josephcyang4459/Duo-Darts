@@ -5145,10 +5145,10 @@ MonoBehaviour:
   - {fileID: 1350647533068600329}
   - {fileID: 2634454290823773629}
   DartLocations:
-  - {x: 1898.7274, y: 374.47073, z: 0}
-  - {x: 1792.6614, y: 268.40472, z: 0}
-  - {x: 1686.5953, y: 162.33868, z: 0}
-  - {x: 1580.5293, y: 56.272705, z: 0}
+  - {fileID: 4975424711644845164}
+  - {fileID: 1173975225054258083}
+  - {fileID: 3716277244084331050}
+  - {fileID: 7691025746828052151}
   Fill: {fileID: 479960009374663659}
   __ButtonHolder: {fileID: 2461925951097719319}
   __TargetLocations:
@@ -6215,6 +6215,9 @@ MonoBehaviour:
   PauseOptionsCanvas: {fileID: 6669384920222108966}
   StoryOptionsCanvas: {fileID: 5095675360234980418}
   BackGround: {fileID: 7017780323128185366}
+  UI:
+  - {fileID: 7765968367545825922}
+  - {fileID: 6229294561096951087}
   CurrentState: 0
   IsInStory: 0
   FirstSelected: {fileID: 8251280711204810145}
@@ -6236,9 +6239,9 @@ MonoBehaviour:
   - {fileID: 4746900550142983223}
   - {fileID: 4761493771545571891}
   DartLocations:
-  - {x: 1895.6943, y: 266.43774, z: 0}
-  - {x: 1789.6284, y: 160.3717, z: 0}
-  - {x: 1683.5623, y: 54.305664, z: 0}
+  - {fileID: 5573683523716167461}
+  - {fileID: 2802483405005538643}
+  - {fileID: 6774523812830850757}
   Fill: {fileID: 479960009374663659}
   __ButtonHolder: {fileID: 8434078704513410935}
   __TargetLocations:
