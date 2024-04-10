@@ -17,3 +17,5 @@ MonoBehaviour:
   Skill: 1
   Luck: 1
   TotalPointsScoredAcrossAllDartMatches: 0
+  TextBoxForegroundColor: {r: 0.23529413, g: 0.2509804, b: 0.2784314, a: 1}
+  TextBoxBackgroundColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}

@@ -154,7 +154,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     public void SetPartner(int i) {
 
         DartGame.ScoreNeededToWin = Schedule.hour < 7 ? 501 : 701;
-        DartGame.partnerIndex = AdjustedIdices[i];
+        DartGame.PartnerIndex = AdjustedIdices[i];
         State = AnimationState.ExitingToGame;
         ExitDefaultHead.Begin(this);
     }
@@ -162,7 +162,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     public void ForceDartsException(int characterIndex, int currentHour) {
         Schedule.TurnLocationAndEventSelectorUIOff();
         DartGame.ScoreNeededToWin = currentHour < 7 ? 501 : 701;
-        DartGame.partnerIndex = characterIndex;
+        DartGame.PartnerIndex = characterIndex;
         DartGame.BeginGame();
     }
 

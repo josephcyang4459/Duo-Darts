@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class DartGame : MonoBehaviour {
-    public CharacterList characters;
-    public Player stats;
-    public DartVisual Visuals;
+    [SerializeField] CharacterList characters;
+    [SerializeField] Player stats;
+    [SerializeField] DartVisual Visuals;
     public DartScript Dart;
-    public DartPlayerAim Aim;
+    [SerializeField] DartPlayerAim Aim;
 
+    public int PartnerIndex;
     [SerializeField] DartsSettings Settings;
 
-    public int partnerIndex = 0;
+    public Partner CurrentPartner;
     public int turnSum = 0;
     public int ScoreNeededToWin = 501;
     public int points;
@@ -21,7 +22,7 @@ public class DartGame : MonoBehaviour {
     public bool firstTimePlaying;
 
     [SerializeField] float MaxOffset = 4;
-    public Canvas dartCanvas;
+    [SerializeField] Canvas dartCanvas;
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -29,13 +30,13 @@ public class DartGame : MonoBehaviour {
 
     [SerializeField] Timer EndTimer;
     [SerializeField] float WaitForEndTime;
-    public Canvas winc;
-    public Canvas losec;
-    public AudioClip ac;
-    public SpriteRenderer board;
+    [SerializeField] Canvas winc;
+    [SerializeField] Canvas losec;
+    [SerializeField] AudioClip ac;
+    [SerializeField] SpriteRenderer board;
 
-    public Schedule s;
-    public DartMenu_StandAlone StandAlone;
+    [SerializeField] Schedule s;
+    [SerializeField] DartMenu_StandAlone StandAlone;
     [SerializeField] GameObject Tutorial;
 
 #if UNITY_EDITOR
@@ -81,7 +82,7 @@ public class DartGame : MonoBehaviour {
             showTutorial();
             return;
         }
-
+        CurrentPartner = characters.list[PartnerIndex];
         Aim.SetUpDependants();
         /*DartSticker.inst.SetVisible(false);
         PauseMenu.inst.SetEnabled(false);*/
@@ -95,7 +96,7 @@ public class DartGame : MonoBehaviour {
         //aim.driftSpeed = driftDefault;
         //aim.moveSpeed = (1.35f -(stats.Intoxication / 5)) / 10 * aim.driftSpeed;// more goofy ass math
         
-        Dart.SetUp(partnerIndex);
+        Dart.SetUp(PartnerIndex);
         Dart.reset_position();
         Visuals.SetDartScore();
         currentTurn = 0;
@@ -128,7 +129,7 @@ public class DartGame : MonoBehaviour {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (s.hour == 8)
                 if (s.minutes >= 30) {
-                    switch ((CharacterNames)partnerIndex) {
+                    switch ((CharacterNames)PartnerIndex) {
                         case CharacterNames.Chad:
                             TransitionManager.inst.GoToScene(SceneNumbers.ChadEnding);
                             return;
@@ -194,7 +195,7 @@ public class DartGame : MonoBehaviour {
 
     void Adjust(Vector3 location, float baseOffset) {
         float OffsetMath() {
-            float f = Random.Range((characters.list[partnerIndex].Intoxication / -7) - baseOffset, (characters.list[partnerIndex].Intoxication / 7) + baseOffset);
+            float f = Random.Range((CurrentPartner.Intoxication / -7) - baseOffset, (CurrentPartner.Intoxication / 7) + baseOffset);
             f = Mathf.Clamp(f, -MaxOffset, MaxOffset);
             return f;
         }
@@ -220,11 +221,11 @@ public class DartGame : MonoBehaviour {
         Adjust(bullseye.transform.position, baseOffset);
     }
 
-    private void PartnerTurn() //wow really hideous
+    private void PartnerTurn()
     {
         Dart.SetCurrentDart(numberOfDartsThrow, false);
         int tempScore = ScoreNeededToWin - turnSum;
-        characters.list[partnerIndex].AI.SelectTarget(tempScore, this);
+        CurrentPartner.AI.SelectTarget(tempScore, this);
         return;
     }
 
@@ -251,7 +252,7 @@ public class DartGame : MonoBehaviour {
     }
 
     /// <summary>
-    /// called by DartScript for some reason
+    /// Called By Timer
     /// </summary>
     public void CheckForBust() {
         if (ScoreNeededToWin - turnSum < 0) {

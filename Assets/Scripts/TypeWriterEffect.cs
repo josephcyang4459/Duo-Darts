@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class TypeWriterEffect : MonoBehaviour {
     [SerializeField] private bool UseCustomSpeed;
-    public float CustomWriteSpeed = 10f;
-    [SerializeField] private Slider TextSpeedSlider;
-    public TMP_Text textlable;
-    public string ttt;
-    public Coroutine typer;
-    public bool writing;
+    [SerializeField] float CustomWriteSpeed = 10f;
+    [SerializeField] TMP_Text Textlabel;
+    [SerializeField] string TextToType;
+    public bool Writing;
+    [SerializeField] float CurrentTime;
+    [SerializeField] int CharIndex;
 
     public void Awake()
     {
@@ -20,50 +20,43 @@ public class TypeWriterEffect : MonoBehaviour {
 
     public void TextSpeedChange(float value)
     {
-        CustomWriteSpeed = value;
+        CustomWriteSpeed = 5/value;
     }
 
-    public void Run(string TextToType, TMP_Text textLabel) {
-        writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
-        typer = StartCoroutine(TypeText(TextToType, textLabel));
+    public void Run(string textToType, TMP_Text textLabel) {
+        Writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
+        TextToType = textToType;
+        Textlabel = textLabel;
+        Textlabel.text = string.Empty;
+        CurrentTime = 0;
+        CharIndex = 0;
+        enabled = true;
     }
 
     public void Stop()
     {
-        if (typer != null)
-            StopAllCoroutines();
-        writing = false;
-        typer = null;
-        textlable.text = ttt;
+        enabled = false;
+        Writing = false;
+        Textlabel.text = TextToType;
 
     }
 
-    private IEnumerator TypeText(string TextToType, TMP_Text textLabel) {
-      
-        textlable = textLabel;
-        ttt = TextToType;
-        float t = 0;
-        int charIndex = 0;
+    void FixedUpdate() {
 
-        while (charIndex < TextToType.Length) {
-            if (!UseCustomSpeed)
-                CustomWriteSpeed = TextSpeedSlider.value;
+        if (TextToType[CharIndex] == ' ')
+            CurrentTime += .02f * 4;
+        else
+            CurrentTime += .02f;
 
-            if (TextToType[charIndex] == ' ')
-                t += Time.deltaTime * CustomWriteSpeed * 4;
-            else
-                t += Time.deltaTime * CustomWriteSpeed;
+        if (CurrentTime >= CustomWriteSpeed) {
+            CharIndex++;
+            Textlabel.text = TextToType.Substring(0, CharIndex);
 
-
-            charIndex = Mathf.FloorToInt(t);
-            charIndex = Mathf.Clamp(charIndex, 0, TextToType.Length);
-
-            textLabel.text = TextToType.Substring(0, charIndex);
-
-            yield return null;
+            if (CharIndex >= TextToType.Length) {
+                Stop();
+            }
         }
         
-        typer = null;
-        writing = false;
+    
     }
 }

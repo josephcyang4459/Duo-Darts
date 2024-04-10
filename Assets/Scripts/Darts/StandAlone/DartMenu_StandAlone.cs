@@ -96,7 +96,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
         ScoreAnimationLeaveHead.ReachEndState();
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
-        DartGame.partnerIndex = PartnerIndex;
+        DartGame.PartnerIndex = PartnerIndex;
         DartGame.BeginGame();
     }
 

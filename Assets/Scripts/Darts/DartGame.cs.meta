@@ -3,7 +3,27 @@ guid: 2b38d7c715342c74bb039d241cec15c3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
+  - stats: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
+  - Visuals: {instanceID: 0}
+  - Dart: {instanceID: 0}
+  - Aim: {instanceID: 0}
+  - Settings: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
+  - CurrentPartner: {instanceID: 0}
+  - dartCanvas: {instanceID: 0}
+  - bullseye: {instanceID: 0}
+  - Miss: {instanceID: 0}
+  - EndTimer: {instanceID: 0}
+  - winc: {instanceID: 0}
+  - losec: {instanceID: 0}
+  - ac: {instanceID: 0}
+  - board: {instanceID: 0}
+  - s: {instanceID: 0}
+  - StandAlone: {instanceID: 0}
+  - Tutorial: {instanceID: 0}
+  - g: {instanceID: 0}
+  - slice: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

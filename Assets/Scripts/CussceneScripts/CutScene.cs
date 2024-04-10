@@ -483,7 +483,7 @@ public class DialougeBlock: block
     public string message;
     public override void action(CutsceneHandler ch)
     {
-        ch.dialouge(message);
+        ch.Dialouge(message);
     }
 }
 
@@ -495,7 +495,7 @@ public class Response: block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.response(this);
+        ch.Response(this);
     }
 }
 
@@ -509,7 +509,7 @@ public class ChangeStat: block
     public override void action(CutsceneHandler ch)
     {
         ch.Schedule.characters.list[(int)Character].stateChange((int)Stat, Adjust);
-        ch.nextBlock();
+        ch.NextBlock();
     }
 }
 
@@ -523,7 +523,7 @@ public class PlayerChangeStat : block
     {
         AttributeUpdate.inst.UpdateAttribute(Stat, Adjust);
         //ch.p.UpdateAttribute(Stat, Adjust);
-        ch.nextBlock();
+        ch.NextBlock();
     }
 }
 
@@ -556,7 +556,7 @@ public class SwapBackGround : block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.changeBackground(place);
+        ch.ChangeBackground(place);
     }
 
 }

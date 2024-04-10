@@ -55,5 +55,4 @@ MonoBehaviour:
   AI: {fileID: 11400000, guid: 2a8cc263ac454d54d8d7d5e94b02517e, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 7309d5e3b9a59344a9a032cc7cbab39a, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: 56019ea05853afd499cd3e1c02d3d172, type: 2}
-  TextBox: {fileID: 21300000, guid: e0a18bd70045dfc4f96de9e490e1eff4, type: 3}
-  textLineTHing: {fileID: 21300000, guid: a45dd30a3c5eb874482a6ee9131c14e1, type: 3}
+  TextBoxColors: {fileID: 11400000, guid: cc39c60b31297a948885fd2a491c188d, type: 2}
