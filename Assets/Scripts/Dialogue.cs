@@ -8,7 +8,5 @@ public class Dialogue : MonoBehaviour {
     public TMP_Text textLabel;
     public TypeWriterEffect Script;
 
-    public void WriteDialogue(string String) {
-        Script.Run(String, textLabel);
-    }
+    public void WriteDialogue(string String) { Script.Run(String, textLabel); }
 }
