@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     [SerializeField] bool Enabled;
     [SerializeField] Canvas PauseOptionsCanvas;
     [SerializeField] Canvas StoryOptionsCanvas;
+    [SerializeField] GameObject TutorialCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
@@ -17,6 +18,8 @@ public class PauseMenu : MonoBehaviour, Caller {
     bool returnState;
 
     public void IsInStoryScene(bool isInStory) { IsInStory = isInStory; }
+
+    public void SetTutorialActive(bool active) { TutorialCanvas.SetActive(active); }
 
     public void Awake() {
         if (inst != null) {
