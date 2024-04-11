@@ -31,7 +31,6 @@ public class DialougeBox : MonoBehaviour
         foreach(Canvas c in ExpressionCanvases) {
             c.enabled = false;
         }
-       
     }
 
     public void SetCharacterColors(int characterIndex) {

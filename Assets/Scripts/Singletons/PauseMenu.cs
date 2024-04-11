@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
@@ -80,19 +79,19 @@ public class PauseMenu : MonoBehaviour, Caller {
             returnState = UIState.inst.GetCurrentState();
             OptionsMenu.inst.HideOptionsNoCall();
             UIState.inst.SetInteractable(true);
+            DartSticker.inst.SetVisible(false);
             if (IsInStory) {
                 UIState.inst.SetAsSelectedButton(StoryFirstSelected);
             }
             else {
                 UIState.inst.SetAsSelectedButton(FirstSelected);
             }
-           
         }
         else {
             UI[0].ClearFill();
             UI[1].ClearFill();
-            OptionsMenu.inst.HideOptionsNoCall();
             DartSticker.inst.SetVisible(false);
+            OptionsMenu.inst.HideOptionsNoCall();
             if (setFirstButtonUponUnenable)
                 UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);
@@ -112,6 +111,8 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     public void ExitToMain() {
+        if (CutsceneHandler.inst.InCutscene)
+            CutsceneHandler.inst.HideUI();
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
@@ -120,7 +121,10 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     public void Save() {
-        SaveHandler.inst.BeginShowSaveMenu();
+        if (!CutsceneHandler.inst.InCutscene)
+            SaveHandler.inst.BeginShowSaveMenu();
+        else
+            Audio.inst.PlayClip(AudioClips.Click);
     }
 
     public void Ping() {

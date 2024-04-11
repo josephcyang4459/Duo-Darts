@@ -299,8 +299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -649.99976, y: -649.99976}
-  m_SizeDelta: {x: 100, y: 150}
+  m_AnchoredPosition: {x: -629.9999, y: -649.99976}
+  m_SizeDelta: {x: 60.000244, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3372232966946688904
 CanvasRenderer:
@@ -4127,10 +4127,10 @@ RectTransform:
   m_Father: {fileID: 8908813691208785554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 950, y: 0.000055206816}
-  m_SizeDelta: {x: 400, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 975, y: 0.00005340576}
+  m_SizeDelta: {x: -1150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8223975891316595954
 CanvasRenderer:
@@ -4601,8 +4601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
-  m_SizeDelta: {x: 1500, y: 150}
+  m_AnchoredPosition: {x: 25, y: 0.000030517578}
+  m_SizeDelta: {x: 1550, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8223975891392156834
 CanvasRenderer:
@@ -6631,7 +6631,6 @@ MonoBehaviour:
   LocationUI: {fileID: 8223975891725533789}
   EventSelectorCanvas: {fileID: 8223975892438570526}
   EventButtonsCanvas: {fileID: 8223975890921428340}
-  BackGroundImage: {fileID: 1332036370077909245}
   FirstImage:
   - {fileID: 8223975890997771276}
   - {fileID: 8223975891582634692}
@@ -7486,8 +7485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 450, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchoredPosition: {x: 424.99997, y: 0.000038146973}
+  m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8223975892290776013
 CanvasRenderer:

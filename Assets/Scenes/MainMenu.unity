@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1139586883528941368, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: CustomWriteSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 1139586883989616646, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -501,6 +505,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2276035159422509460, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cbdfcb7210aa3e4799cfce7ba634bf1, type: 3}
     - target: {fileID: 2351303857841222100, guid: 9a1e1da73ffdb1d468a9e0c2f851c5c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2466,7 +2474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 977564480}
   OriginalPosition: {fileID: 1137826142}
-  NewPosition: {x: 126.5625, y: 107.125, z: 0}
+  NewPosition: {x: 225, y: 190, z: 0}
   AdjustedNewPosition: {x: 0, y: 0, z: 0}
   AdjustedOriginalPosition: {x: 0, y: 0, z: 0}
   speed: 10
@@ -2740,7 +2748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 1205292088}
   OriginalPosition: {fileID: 1371647176}
-  NewPosition: {x: 703.125, y: 107.125, z: 0}
+  NewPosition: {x: 1250, y: 190, z: 0}
   AdjustedNewPosition: {x: 0, y: 0, z: 0}
   AdjustedOriginalPosition: {x: 0, y: 0, z: 0}
   speed: 10
@@ -3146,7 +3154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 1388165906}
   OriginalPosition: {fileID: 701764086}
-  NewPosition: {x: 953.4375, y: 107.125, z: 0}
+  NewPosition: {x: 1695, y: 190, z: 0}
   AdjustedNewPosition: {x: 0, y: 0, z: 0}
   AdjustedOriginalPosition: {x: 0, y: 0, z: 0}
   speed: 10
@@ -3471,7 +3479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 1489824898}
   OriginalPosition: {fileID: 1415759436}
-  NewPosition: {x: 376.875, y: 107.125, z: 0}
+  NewPosition: {x: 670, y: 190, z: 0}
   AdjustedNewPosition: {x: 0, y: 0, z: 0}
   AdjustedOriginalPosition: {x: 0, y: 0, z: 0}
   speed: 10
@@ -3540,10 +3548,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8797325770496796953, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b0dc5fba3426db46b5f2d7bd6a414ef, type: 3}
+    - target: {fileID: 8797325770496796959, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797325770496796959, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797325770496796959, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797325770496796959, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797325770496796959, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
     - target: {fileID: 8797325770765431298, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
       propertyPath: m_Name
       value: StickerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8797325770765431299, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: StuckSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b0dc5fba3426db46b5f2d7bd6a414ef, type: 3}
+    - target: {fileID: 8797325770765431299, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
+      propertyPath: FlyingSprite
+      value: 
+      objectReference: {fileID: 11400000, guid: 21b2c8a8930fcce4bb58f67cc8b4721e, type: 2}
     - target: {fileID: 8797325770765431303, guid: 691bbbd73b72b634194e7de328bb5c43, type: 3}
       propertyPath: m_Pivot.x
       value: 0

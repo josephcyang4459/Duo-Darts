@@ -41,7 +41,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     bool CheckCanPlay(int partnerIndex) {
         if (Schedule.hour >= 8 && Schedule.minutes >= 30)
             return PartnerList.list[partnerIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed;
-        return PartnerList.list[partnerIndex].RelatedCutScenes[0].completed;
+        return PartnerList.list[partnerIndex].RelatedCutScenes[1].completed;
     }
 
     public void BeginSetUp() {

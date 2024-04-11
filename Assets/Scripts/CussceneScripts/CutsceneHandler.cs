@@ -64,6 +64,7 @@ public class CutsceneHandler : MonoBehaviour {
         InCutscene = true;
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
+        DartSticker.inst.SetVisible(false);
         index = 0;
         cutscene = c;
         CompleteThisCutscene();
@@ -138,16 +139,23 @@ public class CutsceneHandler : MonoBehaviour {
 
         NextBlock();
     }
-
-    public void EndCutscene() {
+    
+    public void HideUI() {
         InCutscene = false;
-        UIState.inst.SetInteractable(true);
         DialougeCanvas.enabled = false;
         responseCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
+        UIState.inst.SetInteractable(true);
         interact.action.Disable();
         interact.action.performed -= TakeAction;
-        Schedule!.SetTime(TimeBlocks.Long);
+    }
+
+
+    public void EndCutscene() {
+        HideUI();
+       
+        if (Schedule != null)
+            Schedule.SetTime(TimeBlocks.Long);
     }
 
     public void PresentChoices() {

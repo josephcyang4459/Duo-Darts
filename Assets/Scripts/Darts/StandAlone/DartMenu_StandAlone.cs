@@ -7,6 +7,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] CharacterList Partners;
     [SerializeField] DartGame DartGame;
     [SerializeField] DartMenu_StandAlone_Options Options;
+    [SerializeField] ResetStats ResetStats;
     [SerializeField] float TipsyIntoxValue;
     [SerializeField] ImageFill Fill;
     [SerializeField] ImageSlide Slide;

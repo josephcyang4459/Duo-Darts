@@ -7,8 +7,8 @@ public class DartSticker : MonoBehaviour
     public static DartSticker inst;
     [SerializeField] Transform Location;
     [SerializeField] Image DartImage;
-    [SerializeField] Sprite StuckSprite;
-    [SerializeField] Sprite FlyingSprite;
+    //[SerializeField] Sprite StuckSprite;
+    [SerializeField] SpriteCollection FlyingSprite;
     [SerializeField] Vector2 StartingDistanceFromTargetInPixels;
     [SerializeField] float PixelsTraveledPerSecond;
     Vector2 TargetLocation;
@@ -65,7 +65,7 @@ public class DartSticker : MonoBehaviour
         }
             
         DartImage.enabled = true;
-        DartImage.sprite = FlyingSprite;
+        DartImage.sprite = FlyingSprite.Sprites[Random.Range(0, FlyingSprite.Sprites.Length)];
         TargetLocation = newLocation;
         //Location.SetPositionAndRotation(newLocation + StartingDistanceFromTargetInPixels, Location.rotation);
         Location.position = newLocation + StartingDistanceFromTargetInPixels;
@@ -83,7 +83,7 @@ public class DartSticker : MonoBehaviour
         Location.position = Vector2.MoveTowards(Location.position, TargetLocation, PixelsTraveledPerSecond * Time.deltaTime);
         if(Vector2.Distance(Location.position, TargetLocation) <.005f)
         {
-            DartImage.sprite = StuckSprite;
+            //DartImage.sprite = StuckSprite;
             //Audio.inst.PlayDartClipReverb((DartAudioClips)Random.Range(0,3), AudioReverbPreset.Bathroom);
             Audio.inst.PlayClip(AudioClips.RandomDart);
             enabled = false;

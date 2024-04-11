@@ -32,7 +32,7 @@ public class OptionsMenu : MonoBehaviour
         DontDestroyOnLoad(this);
 
         VolumeSlider.value = PlayerPrefs.GetFloat("volume", .5f)*10;
-        TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 10);
+        TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 5);
         VolumeText.text = VolumeSlider.value.ToString();
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));

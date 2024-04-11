@@ -101,7 +101,6 @@ public class DartGame : MonoBehaviour {
             showTutorial();
             return;
         }
-
         Aim.SetUpDependants();
         Audio.inst.PlaySong(ac);
 
