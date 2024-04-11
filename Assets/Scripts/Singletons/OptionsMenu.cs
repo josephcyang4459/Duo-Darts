@@ -34,7 +34,9 @@ public class OptionsMenu : MonoBehaviour
         VolumeSlider.value = PlayerPrefs.GetFloat("volume", .5f)*10;
         TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 5);
         VolumeText.text = VolumeSlider.value.ToString();
+        VolumeChange(VolumeSlider.value / 10);
         TextSpeedText.text = TextSpeedSlider.value.ToString();
+        TextSpeedChange(TextSpeedSlider.value);
         ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));
     }
 

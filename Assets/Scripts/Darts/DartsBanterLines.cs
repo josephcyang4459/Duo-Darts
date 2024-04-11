@@ -29,6 +29,8 @@ i figure it would randomly read off lines. though we should not let lines be rea
     }
 
     public string GetCheckoutLine() {
+        if (CheckOut == null)
+            return null;
         return CheckOut.GetUnusedLine();
     }
 

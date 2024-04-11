@@ -8,7 +8,9 @@ public class ResetStats : ScriptableObject
     [SerializeField] Player Player;
     [SerializeField] BaseStats[] BaseStats = new BaseStats[5];
     [SerializeField] BasePlayerStats BasePlayerStats;
-    [SerializeField] EventStart[] Events;
+    [SerializeField] EventList Events;
+    [SerializeField] EventList PlayerNotification;
+    [SerializeField] EventList BadEndings;
     [SerializeField] CharacterList characters;
 
 
@@ -33,11 +35,12 @@ public class ResetStats : ScriptableObject
 
     private void resetEvents()
     {
-
-        for (int i = 0; i < Events.Length; i++)
-        {
-            Events[i].done = false;
-        }
+        foreach (EventStart e in BadEndings.List)
+            e.done = false;
+        foreach (EventStart e in PlayerNotification.List)
+            e.done = false;
+        foreach (EventStart e in Events.List)
+            e.done = false;
     }
 
 #if UNITY_EDITOR

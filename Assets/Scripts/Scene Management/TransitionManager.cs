@@ -30,6 +30,7 @@ public class TransitionManager : MonoBehaviour, Caller {
         PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
+
         NextScene = nextScene;
         State = AnimationState.Exiting;
         TransitionAnimationHeads[(int)NextScene].Enter(this);
@@ -56,9 +57,10 @@ public class TransitionManager : MonoBehaviour, Caller {
     }
 
     public void Ping() {
+        Debug.Log(NextScene +" " + State);
         switch (State) {
-            case AnimationState.Entering: EnterScene();break;
-            case AnimationState.Exiting: ExitScene(); break;
+            case AnimationState.Entering: EnterScene();return;
+            case AnimationState.Exiting: ExitScene(); return;
         }
         State = AnimationState.Passive;
     }
