@@ -9,6 +9,7 @@ public class ImageFill : MonoBehaviour
     [SerializeField] List<Image> OldImages;
     [SerializeField] float FillPerSecond;
     [SerializeField] bool ShootDart;
+    [SerializeField] bool PauseWhenStart;
     public void SetCurrentImageToFill(Image newImage, Vector2 newTarget)
     {
         Target = newTarget;
@@ -21,6 +22,7 @@ public class ImageFill : MonoBehaviour
     {
         if (CurrentImage == newImage)
             return;
+        PauseWhenStart = PauseMenu.inst.CurrentState;
         DartSticker.inst.SetVisible(false);
         if (OldImages.Contains(newImage))
             OldImages.Remove(newImage);
@@ -61,7 +63,8 @@ public class ImageFill : MonoBehaviour
             if (CurrentImage.fillAmount >= 1)
             {
                 if (ShootDart)
-                    DartSticker.inst.NewLocation(Target);
+                    if (PauseWhenStart == PauseMenu.inst.CurrentState)
+                        DartSticker.inst.NewLocation(Target);
                 Complete = true;
             }
             

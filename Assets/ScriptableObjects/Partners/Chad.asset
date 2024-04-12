@@ -42,7 +42,7 @@ MonoBehaviour:
   - Location: bathroom
     CutsceneLocation: 3
     CutScene: {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 13
   DefaultCutScene: {fileID: 11400000, guid: 5fcccc1e348025545966f489b9d40460, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}

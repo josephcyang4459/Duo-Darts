@@ -61,6 +61,10 @@ public class Partner : ScriptableObject {
                 return;
         }
     }
+
+    public bool FinalRoundEligable() {
+        return RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && Love >= 0;
+    }
     
     public void ResetBanterLineUsage() {
         RegularBanterLines.ResetAllGroups();

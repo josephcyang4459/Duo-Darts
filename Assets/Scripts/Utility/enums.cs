@@ -49,6 +49,12 @@ public enum PartnerCutscenes
     FinalScene
 }
 
+public enum BadEndingIndicies {
+    NotEnoughPoints,
+    NoLovers,
+    DidNotWin
+}
+
 public enum SceneNumbers
 {
     MainMenu,
@@ -65,6 +71,7 @@ public enum SceneNumbers
 
 public enum TimeBlocks
 {
+    Notification=0,
     Short =5,
     Long = 10
 }

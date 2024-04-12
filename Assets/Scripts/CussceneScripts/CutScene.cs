@@ -10,7 +10,7 @@ public class CutScene : ScriptableObject
     public string defaultCharacter;
 
     public bool ForceDarts = false;
-
+    public TimeBlocks TimeLength = TimeBlocks.Long;
     //public bool AnotherFuckingException = false;
 
     public virtual CutScene GetDefaultScene(int index)
@@ -128,13 +128,13 @@ public class CutScene : ScriptableObject
     }
 
 
-    string __GetPlace(string s) {
+    protected string __GetPlace(string s) {
         if (s.Contains("Lounge"))
             return "Lounge";
         return "Lounge";
     }
 
-    Stats __GetSkill(string s)
+    protected Stats __GetSkill(string s)
     {
        
         if (s.Contains("Intox"))
@@ -149,7 +149,7 @@ public class CutScene : ScriptableObject
         return Stats.Composure;
     }
 
-    PlayerSkills __GetPSkill(string s)
+    protected PlayerSkills __GetPSkill(string s)
     {
         if (s.Contains("Intox"))
             return PlayerSkills.Intoxication;
@@ -163,13 +163,13 @@ public class CutScene : ScriptableObject
         return PlayerSkills.Luck;
     }
 
-    int __GetSign(string s) {
+    protected int __GetSign(string s) {
         if(s.Contains("Lower")) 
             return -1;
         return 1;
     }
 
-    block __getDialougeOrThoughtAttachment(string ss)
+    protected block __getDialougeOrThoughtAttachment(string ss)
     {
         var g = __getAction(ss);
         //Debug.Log(g);
@@ -207,7 +207,7 @@ public class CutScene : ScriptableObject
         return null;
     }
 
-    NPCResponseData __getNPCResponse(string line)
+    protected NPCResponseData __getNPCResponse(string line)
     {
         NPCResponseData NPCR = new();
         NPCR.Message = __removeTags(line);
@@ -244,7 +244,7 @@ public class CutScene : ScriptableObject
         return NPCR;
     }
 
-    int __getNumberFrom(string fullText)
+    protected int __getNumberFrom(string fullText)
     {
         char[] aca = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         List<char> chars = new(aca);
@@ -261,7 +261,7 @@ public class CutScene : ScriptableObject
         return int.Parse(temp);
     }
 
-    private CharacterNames __getCharactersFrom(string fullText)
+    protected CharacterNames __getCharactersFrom(string fullText)
     {
         if (fullText.Contains("Chad"))
             return CharacterNames.Chad;
@@ -282,7 +282,7 @@ public class CutScene : ScriptableObject
         return CharacterNames.Player;
     }
 
-    private string __getCharactersNameFrom(string fullText)
+    protected string __getCharactersNameFrom(string fullText)
     {
         if (fullText.Contains("Chad"))
             return "Chad";
@@ -309,7 +309,7 @@ public class CutScene : ScriptableObject
         return "";
     }
 
-    private string[] __getAllTags(string s)
+    protected string[] __getAllTags(string s)
     {
         List<string> h = new(s.Split(']'));
 
@@ -326,7 +326,7 @@ public class CutScene : ScriptableObject
         return h.ToArray();
     }
 
-    List<int>  __allCharIndex(string s, char c) {
+    protected List<int>  __allCharIndex(string s, char c) {
         List<int> temp = new();
         for (int i = 0; i < s.Length; i++)
             if (s[i] == c)
@@ -334,7 +334,7 @@ public class CutScene : ScriptableObject
         return temp;
     }
 
-    string __inbetween(string s, List<int> open, List<int> closed) {
+    protected string __inbetween(string s, List<int> open, List<int> closed) {
         string temp = "";
         for(int i = 1; i < open.Count; i++) {
             if (open[i] - closed[i - 1] != 0)
@@ -344,7 +344,7 @@ public class CutScene : ScriptableObject
         return temp;
     }
 
-    private string __removeTags(string s)
+    protected string __removeTags(string s)
     {
         List<int> open = __allCharIndex(s, '[');
         if(open.Count == 1) {
@@ -365,7 +365,7 @@ public class CutScene : ScriptableObject
         return "";
     }
 
-    private string __firstTag(string s)
+    protected string __firstTag(string s)
     { int firstindex = s.IndexOf('[');
         int nextIndex;
         for( nextIndex=firstindex+1;nextIndex<s.Length; nextIndex++)
@@ -378,7 +378,7 @@ public class CutScene : ScriptableObject
         return s.Substring(firstindex, nextIndex);
     }
 
-    private __CutsceneActions __getAction(string s)
+    protected __CutsceneActions __getAction(string s)
     {
         if (s.Length <= 0)
             return __CutsceneActions.ERROR;
@@ -508,7 +508,7 @@ public class ChangeStat: block
 
     public override void action(CutsceneHandler ch)
     {
-        ch.Schedule.characters.list[(int)Character].stateChange((int)Stat, Adjust);
+        ch.characters.list[(int)Character].stateChange((int)Stat, Adjust);
         ch.NextBlock();
     }
 }

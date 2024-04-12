@@ -14,6 +14,7 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] Image CharacterPortrait;
     [SerializeField] TMP_Text CharacterName;
+    [SerializeField] GameObject CharacterNamePlate;
     [SerializeField] DialougeBox DialougeBox;
     [SerializeField] Canvas responseCanvas;
     [SerializeField] Image ResponsePortrait;
@@ -139,7 +140,7 @@ public class CutsceneHandler : MonoBehaviour {
 
         NextBlock();
     }
-    
+
     public void HideUI() {
         InCutscene = false;
         DialougeCanvas.enabled = false;
@@ -153,9 +154,9 @@ public class CutsceneHandler : MonoBehaviour {
 
     public void EndCutscene() {
         HideUI();
-       
+
         if (Schedule != null)
-            Schedule.SetTime(TimeBlocks.Long);
+            Schedule.SetTime(cutscene.TimeLength);
     }
 
     public void PresentChoices() {
@@ -221,10 +222,10 @@ public class CutsceneHandler : MonoBehaviour {
             Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock =true) {
+    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock = true) {
         if (CharacterPortrait.enabled == false)
             CharacterPortrait.enabled = true;
-        CharacterName.enabled = true;
+        CharacterNamePlate.SetActive(true);
         CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
         DialougeBox.SetExpression(ExpressionIndex, true);
         if (GoToNextBlock)
@@ -249,7 +250,7 @@ public class CutsceneHandler : MonoBehaviour {
         CharacterName.text = characters.list[partnerIndex].Name;
         CharacterName.font = characters.list[partnerIndex].Font;
         CharacterName.fontSize = characters.list[partnerIndex].textSize;
-        CharacterName.enabled = showPartnerVisual;
+        CharacterNamePlate.SetActive(showPartnerVisual);
 
         DialougeBox.SetCharacterColors(partnerIndex);
     }
@@ -275,7 +276,7 @@ public class CutsceneHandler : MonoBehaviour {
         }
     }
 
-    private void DecideCharacter(string s, bool showPartner =true) {
+    private void DecideCharacter(string s, bool showPartner = true) {
         switch (s.ToLower()) {
             case "faye":
                 SetPartnerVisual(2, showPartner);

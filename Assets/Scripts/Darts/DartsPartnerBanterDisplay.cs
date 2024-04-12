@@ -23,7 +23,17 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
         DialougeForeGround.color = Partner.TextBoxColors.colors[(int)TextboxColorIndex.Foreground];
     }
 
+    bool NullCheck() {
+        if (IsFinal && Partner.FinalsBanterLines == null)
+            return true;
+        if (!IsFinal && Partner.RegularBanterLines == null)
+            return true;
+        return false;
+    }
+
     public void GetDialougeFromScore() {
+        if (NullCheck())
+            return;
         string message = (IsFinal ? Partner.FinalsBanterLines : Partner.RegularBanterLines).GetCheckoutLine();
         SetImageFromScore(15000);
         SetDialouge(message);
@@ -38,9 +48,12 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
             PartnerImage.sprite = Partner.Expressions[(int)Expressions.Positive];
             return;
         }
+        PartnerImage.sprite = Partner.Expressions[(int)Expressions.Nuetral];
     }
 
     public void GetDialougeFromScore(int score) {
+        if (NullCheck())
+            return;
         string message = (IsFinal ? Partner.FinalsBanterLines : Partner.RegularBanterLines).GetLineFromScoreGroup(score);
         SetImageFromScore(score);
         SetDialouge(message);

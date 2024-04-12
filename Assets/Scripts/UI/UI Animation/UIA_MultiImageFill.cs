@@ -37,11 +37,11 @@ public class UIA_MultiImageFill : UIAnimationElement
         Pass();
     }
 
-    public override void ReachEndState()
-    {
+    public override void ReachEndState() {
         CurrentFill = GetTargetFill();
         for (int i = 0; i < Images.Length; i++)
-            Images[i].fillAmount = CurrentFill;
+            if (Images[i] != null)
+                Images[i].fillAmount = CurrentFill;
         PassToNextEndState();
     }
 
