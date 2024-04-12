@@ -16,15 +16,14 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] Image[] CharacterImages;
     [SerializeField] FileHandler FileHandler;
     [SerializeField] GameObject FirstSelected;
-    public void HoverButton(int i)
-    {
+
+    public void HoverButton(int i) {
         Audio.inst.PlayClip(AudioClips.Click);
         FillSection.SetCurrentImageToFill(ButtonImages[i], (ButtonImages[i].Images[1].transform).position + ButtonOffset);
     }
 
 
-    public void Start()
-    {
+    public void Start() {
         SetCompletion();
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
@@ -39,56 +38,42 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     void SetCompletion() {
         CompletionData data = FileHandler.LoadCompletion();
-        if (data == null)
-            return;
+        if (data == null) return;
+
         for (int i = 0; i < data.Endings.Length; i++)
             CharacterImages[i].color = CompletionColors.colors[data.Endings[i] ? 1 : 0];
     }
 
-    public void ShowOptions()
-    {
+    public void ShowOptions() {
         DartSticker.inst.SetVisible(false);
         MainMenueCanvas.enabled = false;
         OptionsMenu.inst.ShowOptions(this);
     }
 
-    public void ShowCredits()
-    {
-        TransitionManager.inst.GoToScene(SceneNumbers.Credits);
-    }
+    public void ShowCredits() { TransitionManager.inst.GoToScene(SceneNumbers.Credits); }
 
-    public void PlayDarts()
-    {
-        TransitionManager.inst.GoToScene(SceneNumbers.Darts);
-    }
+    public void PlayDarts() { TransitionManager.inst.GoToScene(SceneNumbers.Darts); }
 
-    public void PlayGame() {
-        FileUI.BeginShowLoadMenu(this);
-    }
+    public void PlayGame() { FileUI.BeginShowLoadMenu(this); }
 
     public void SetLoadFileAndGoToStory(int index) {
         TransitionManager.inst.SetFileIndex(index);
         TransitionManager.inst.GoToScene(SceneNumbers.Story);
     }
 
-    public void QuitGame() {
-        Application.Quit();
-    }
+    public void QuitGame() { Application.Quit(); }
 
-    private void Update()
-    {
+    private void Update() {
        text.color= Vector4.MoveTowards(text.color, Colors[Index], Speed*Time.deltaTime);
-        if(Vector4.Distance(text.color, Colors[Index]) < 0.005)
-        {
+
+        if(Vector4.Distance(text.color, Colors[Index]) < 0.005) {
             Index++;
             if (Index >= Colors.Length)
                 Index = 0;
         }
-
     }
 
-    public void Ping()
-    {
+    public void Ping() {
         MainMenueCanvas.enabled = true;
         UIState.inst.SetAsSelectedButton(FirstSelected);
     }
@@ -99,32 +84,26 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] bool __setColor;
 
 
-    void __swapDirection()
-    {
+    void __swapDirection() {
         int newRightDirection = ButtonImages[0].Images[0].fillOrigin;
         int newLeftDirection = ButtonImages[0].Images[1].fillOrigin;
 
-        for (int i = 0; i < ButtonImages.Length; i++)
-        {
+        for (int i = 0; i < ButtonImages.Length; i++) {
             ButtonImages[i].Images[0].fillOrigin = newLeftDirection;
             ButtonImages[i].Images[1].fillOrigin = newRightDirection;
         }
     }
 
-    private void OnValidate()
-    {
-        if (__ChangeDirection)
-        {
+    private void OnValidate() {
+        if (__ChangeDirection) {
             __ChangeDirection = false;
             __swapDirection();
-
         }
 
-        if (__setColor)
-        {
+        if (__setColor) {
             __setColor = false;
-            for (int i = 0; i < ButtonImages.Length; i++)
-            {
+
+            for (int i = 0; i < ButtonImages.Length; i++) {
                 ButtonImages[i].Images[0].color = __Color;
                 ButtonImages[i].Images[1].color = __Color;
             }
