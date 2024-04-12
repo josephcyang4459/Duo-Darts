@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e1feae9f74b084080a827a82e1a74f, type: 3}
   m_Name: Elaine AI
   m_EditorClassIdentifier: 
-  BaseOffset: 0.1
+  BaseOffset: 0.05
