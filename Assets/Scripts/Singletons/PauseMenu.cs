@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour, Caller {
             EnablePause();
         else
             UnenablePause(setFirstButtonUponUnenable);
+
         Enabled = enabled;
     }
 
