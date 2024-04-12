@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518f34ee2634c3c42bb518b616dcb59a, type: 3}
   m_Name: Faye AI
   m_EditorClassIdentifier: 
-  BaseOffset: 0.1
+  BaseOffset: 0.08
   DoubleRange: {x: 17, y: 20}
   GamePartner: 0
   Partner: {fileID: 11400000, guid: b40eaeb6809cdc1469211f5c6e25b2ce, type: 2}

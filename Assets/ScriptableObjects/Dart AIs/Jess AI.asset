@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518f34ee2634c3c42bb518b616dcb59a, type: 3}
   m_Name: Jess AI
   m_EditorClassIdentifier: 
-  BaseOffset: 0.1
+  BaseOffset: 0.75
   DoubleRange: {x: 18, y: 20}
   GamePartner: 0
   Partner: {fileID: 11400000, guid: 2ab207ae24ac95646911cd954cb7a522, type: 2}

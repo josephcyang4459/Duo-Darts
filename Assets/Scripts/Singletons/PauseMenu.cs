@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     [SerializeField] bool Enabled;
     [SerializeField] Canvas PauseOptionsCanvas;
     [SerializeField] Canvas StoryOptionsCanvas;
+    [SerializeField] GameObject TutorialCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
@@ -16,15 +17,16 @@ public class PauseMenu : MonoBehaviour, Caller {
     GameObject returnGameObjectButton;
     bool returnState;
 
-    public void IsInStoryScene(bool isInStory) {
-        IsInStory = isInStory;
-    }
+    public void IsInStoryScene(bool isInStory) { IsInStory = isInStory; }
+
+    public void SetTutorialActive(bool active) { TutorialCanvas.SetActive(active); }
 
     public void Awake() {
         if (inst != null) {
             Destroy(gameObject);
             return;
         }
+
         DontDestroyOnLoad(this);
         inst = this;
     }
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour, Caller {
             EnablePause();
         else
             UnenablePause(setFirstButtonUponUnenable);
+
         Enabled = enabled;
     }
 
@@ -51,9 +54,7 @@ public class PauseMenu : MonoBehaviour, Caller {
         PauseInput.action.performed -= ActivatePauseMenu;
     }
 
-    void ActivatePauseMenu(InputAction.CallbackContext c) {
-        PauseMenueStateChange();
-    }
+    void ActivatePauseMenu(InputAction.CallbackContext c) { PauseMenueStateChange(); }
 
     void PauseMenueStateChange() {
         CurrentState = !CurrentState;
@@ -61,12 +62,8 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     void SetCorrectCanvas(bool state) {
-        if (IsInStory) {
-            StoryOptionsCanvas.enabled = state;
-        }
-        else {
-            PauseOptionsCanvas.enabled = state;
-        }
+        Canvas canvas = (IsInStory) ? StoryOptionsCanvas : PauseOptionsCanvas;
+        canvas.enabled = state;
     }
 
     void ConsequencesOfCurrentState(bool setFirstButtonUponUnenable = true) {
@@ -74,18 +71,14 @@ public class PauseMenu : MonoBehaviour, Caller {
         SetCorrectCanvas(CurrentState);
 
         if (CurrentState) {
-
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
             returnState = UIState.inst.GetCurrentState();
             OptionsMenu.inst.HideOptionsNoCall();
             UIState.inst.SetInteractable(true);
             DartSticker.inst.SetVisible(false);
-            if (IsInStory) {
-                UIState.inst.SetAsSelectedButton(StoryFirstSelected);
-            }
-            else {
-                UIState.inst.SetAsSelectedButton(FirstSelected);
-            }
+
+            GameObject firstSelected = (IsInStory) ? StoryFirstSelected : FirstSelected;
+            UIState.inst.SetAsSelectedButton(firstSelected);
         }
         else {
             UI[0].ClearFill();
@@ -113,12 +106,11 @@ public class PauseMenu : MonoBehaviour, Caller {
     public void ExitToMain() {
         if (CutsceneHandler.inst.InCutscene)
             CutsceneHandler.inst.HideUI();
+
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
-    public void ExitToDesktop() {
-        Application.Quit();
-    }
+    public void ExitToDesktop() { Application.Quit(); }
 
     public void Save() {
         if (!CutsceneHandler.inst.InCutscene)

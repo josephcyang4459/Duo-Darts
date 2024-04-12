@@ -119,13 +119,13 @@ public class DartGame : MonoBehaviour {
 
     public void Lose() {
         GameEnd();
-        if (s != null) {
+        if (s != null)
             if (s.hour == 8)
                 if (s.minutes >= 50) {
                     TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
                     return;
                 }
-        }
+
         losec.enabled = true;
         EndTimer.BeginTimer(WaitForEndTime);
     }
@@ -151,6 +151,7 @@ public class DartGame : MonoBehaviour {
                 }
             }
         }
+
         winc.enabled = true;
         Banter.GetDialougeFromScore();
         EndTimer.BeginTimer(WaitForEndTime);
@@ -164,8 +165,10 @@ public class DartGame : MonoBehaviour {
     public void SwitchTurn() {
         Dart.reset_position();
         Visuals.SetDartScore();
+
         if (currentTurn % 2 == 0)
             Banter.GetDialougeFromScore(turnSum);
+
         ScoreNeededToWin -= turnSum;
         turnSum = 0;
         numberOfDartsThrow = 0;
@@ -176,6 +179,7 @@ public class DartGame : MonoBehaviour {
             Lose();
             return;
         }
+
         if (currentTurn % 2 == 0)
             playerTurn();
         else
