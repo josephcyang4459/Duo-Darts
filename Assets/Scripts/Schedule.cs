@@ -11,6 +11,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
     [SerializeField] TimeClock Clock;
     [SerializeField] LocationSelecterUI LocationSelector;
     [SerializeField] EventSelectorUI EventSelector;
+    [SerializeField] FinalRoundPartnerSelector FinalRoundSelector;
     [SerializeField] int PointsNeededToPlayFinalRound;
     public int hour = 4;
     public int minutes = 0;
@@ -121,7 +122,6 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             if(!PlayerNotifications.List[i].done)
                 if (CheckIfValidTime(PlayerNotifications.List[i])) {
                     PlayerNotifications.List[i].done = true;
-                    Debug.Log("NOTIFICATION");
                     CutsceneHandler.inst.PlayCutScene(PlayerNotifications.List[i].cutScene, (int)Locations.lounge);
                     return true;
                 }
@@ -156,7 +156,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
 
                 int numberAvailable = 0;
                 for (int i = 0; i < 4; i++) {
-                    if (characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && characters.list[i].Love > 0) {
+                    if (characters.list[i].FinalRoundEligable()) {
                         numberAvailable++;
                     }
                 }
@@ -171,6 +171,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                     return;
                 }
 
+                FinalRoundSelector.ShowUI();
                 Debug.Log("Show Final Round Partner Selector");
                 return;
             }
@@ -243,6 +244,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
     }
 
     public void TurnLocationAndEventSelectorUIOff() {
+        FinalRoundSelector.HideUI();
         Clock.SetVisible(false);
         EventSelector.HideUI();
         LocationSelector.HideUI();
