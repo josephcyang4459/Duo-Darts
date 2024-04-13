@@ -965,6 +965,7 @@ MonoBehaviour:
   Partners: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   DartGame: {fileID: 666911031}
   Options: {fileID: 2052289147}
+  ResetStats: {fileID: 0}
   TipsyIntoxValue: 3
   Fill: {fileID: 201597169}
   Slide: {fileID: 201597170}
@@ -1039,6 +1040,7 @@ MonoBehaviour:
   OldImages: []
   FillPerSecond: 4
   ShootDart: 0
+  PauseWhenStart: 0
 --- !u!114 &201597170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,6 +3655,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3824750175660484986, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824750175660484986, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824750175660484986, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824750175660484986, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4138025833525292949, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3750,6 +3768,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8389125353865430874, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938410537833442497, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938410537833442497, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938410537833442497, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938410537833442497, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -8510,6 +8544,7 @@ MonoBehaviour:
   OldImages: []
   FillPerSecond: 8
   ShootDart: 0
+  PauseWhenStart: 0
 --- !u!1 &2062838508
 GameObject:
   m_ObjectHideFlags: 0

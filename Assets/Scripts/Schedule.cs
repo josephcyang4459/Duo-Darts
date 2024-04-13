@@ -172,7 +172,6 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 }
 
                 FinalRoundSelector.ShowUI();
-                Debug.Log("Show Final Round Partner Selector");
                 return;
             }
         }
