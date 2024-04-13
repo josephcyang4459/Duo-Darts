@@ -11,12 +11,17 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     [SerializeField] UIAnimationElement EnterHead;
     [SerializeField] UIAnimationElement ExitHead;
     [SerializeField] Partner Partner;
+    [SerializeField] DartGame DartGame;
     [SerializeField] bool IsFinal;
+    [SerializeField] Timer PartnerBanterTimer;
+    [SerializeField] float TimeToWait;
+    [SerializeField] bool CheckOut;
 
     public void SetPartner(Partner partner, bool isFinal) {
         Partner = partner;
         IsFinal = isFinal;
         DialougeCanvas.enabled = false;
+        CheckOut = false;
         foreach(Image i in DialougeBackGround) {
             i.color = Partner.TextBoxColors.colors[(int)TextboxColorIndex.Background];
         }
@@ -36,6 +41,7 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
             return;
         string message = (IsFinal ? Partner.FinalsBanterLines : Partner.RegularBanterLines).GetCheckoutLine();
         SetImageFromScore(15000);
+        CheckOut = true;
         SetDialouge(message);
     }
 
@@ -62,9 +68,17 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     void SetDialouge(string message) {
         if (message == null)
             return;
-
         DialougeCanvas.enabled = true;
         Dialouge.text = message;
+        PartnerBanterTimer.BeginTimer(TimeToWait);
+    }
+
+    public void EndDisplay() {
+        if (CheckOut && IsFinal)
+            DartGame.GoToCorrectEnding();
+        else {
+            HideDialouge();
+        }
     }
 
     public void HideDialouge() {
