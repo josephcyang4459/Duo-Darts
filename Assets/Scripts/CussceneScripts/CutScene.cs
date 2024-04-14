@@ -273,12 +273,16 @@ public class CutScene : ScriptableObject
             return CharacterNames.Elaine;
         if (fullText.Contains("Owner"))
             return CharacterNames.Owner;
-        if (fullText.Contains("BarGuy"))
-            return CharacterNames.BarGuy;
         if (fullText.Contains("BarAdviceGirl"))
             return CharacterNames.CharmingGirl;
-        if (fullText.Contains("BarGuy"))
+        if (fullText.Contains("BarAdviceGuy"))
             return CharacterNames.BarGuy;
+        if (fullText.Contains("CharmAdviceGuy"))
+            return CharacterNames.CharmingGuy;
+        if (fullText.Contains("LoungeAdviceGuy"))
+            return CharacterNames.LoungeGuy;
+        if (fullText.Contains("DanceAdviceGirl"))
+            return CharacterNames.DanceGirl;
         return CharacterNames.Player;
     }
 
@@ -418,7 +422,7 @@ public class CutScene : ScriptableObject
 
         if (tempActionName.Contains("Chad") || tempActionName.Contains("Faye") || tempActionName.Contains("Elaine") || tempActionName.Contains("Jess") || tempActionName.Contains("Owner")
             || tempActionName.Contains("BarAdviceGuy") || tempActionName.Contains("BarAdviceGirl") || tempActionName.Contains("CharmAdviceGuy")
-            || tempActionName.Contains("DanceAdviceGirl") || tempActionName.Contains("LoungeAdviceGuy"))
+            || tempActionName.Contains("DanceAdviceGirl") || tempActionName.Contains("LoungeAdviceGuy")|| tempActionName.Contains("None"))
             return __CutsceneActions.Expression;
 
         if (tempActionName.Contains("Area"))

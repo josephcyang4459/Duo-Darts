@@ -312,7 +312,11 @@ public class CutsceneHandler : MonoBehaviour {
 #if UNITY_EDITOR
                 Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
 #endif
-                SetPartnerVisual(10, showPartner);
+                
+                if(s.Length<=0)
+                    SetPartnerVisual(10, false);
+                else
+                    SetPartnerVisual(10, showPartner);
                 CharacterName.text = s;
                 break;
         }

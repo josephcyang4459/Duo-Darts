@@ -109,6 +109,12 @@ i figure it would randomly read off lines. though we should not let lines be rea
             LineGroups[groupIndex].ChanceToUse = 60;
             return;
         }
+        if (name.ToLower().Contains("low")) {
+            LineGroups[groupIndex].MinScoreRangeInclusive = 100;
+            LineGroups[groupIndex].MaxScoreRangeExclusive = 139;
+            LineGroups[groupIndex].ChanceToUse = 60;
+            return;
+        }
         if (name.ToLower().Contains("180")) {
             LineGroups[groupIndex].MinScoreRangeInclusive = 180;
             LineGroups[groupIndex].MaxScoreRangeExclusive = 181;
