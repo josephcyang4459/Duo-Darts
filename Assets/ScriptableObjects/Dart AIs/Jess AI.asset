@@ -27,8 +27,8 @@ MonoBehaviour:
       Single: 0
   - StatCutOff: 199999
     TierData:
-      Sixty: 0.7
-      Triple: 0.1
+      Sixty: 0.5
+      Triple: 0.3
       Bullseye: 0.2
       Double: 0
       Single: 0
