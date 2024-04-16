@@ -29,6 +29,8 @@ i figure it would randomly read off lines. though we should not let lines be rea
     }
 
     public string GetCheckoutLine() {
+        if (CheckOut == null)
+            return null;
         return CheckOut.GetUnusedLine();
     }
 
@@ -104,6 +106,12 @@ i figure it would randomly read off lines. though we should not let lines be rea
         if (name.ToLower().Contains("70")) {
             LineGroups[groupIndex].MinScoreRangeInclusive = 1;
             LineGroups[groupIndex].MaxScoreRangeExclusive = 70;
+            LineGroups[groupIndex].ChanceToUse = 60;
+            return;
+        }
+        if (name.ToLower().Contains("low")) {
+            LineGroups[groupIndex].MinScoreRangeInclusive = 100;
+            LineGroups[groupIndex].MaxScoreRangeExclusive = 139;
             LineGroups[groupIndex].ChanceToUse = 60;
             return;
         }

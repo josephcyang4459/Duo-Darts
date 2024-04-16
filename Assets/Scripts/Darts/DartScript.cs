@@ -23,6 +23,7 @@ public class DartScript : MonoBehaviour
     public void SetUp(int partnerIndex)
     {
         PartnerIndex = partnerIndex;
+        ResetDartPositions();
     }
 
     public void SetCurrentDart(int dartIndex, bool playerTurn)
@@ -53,7 +54,7 @@ public class DartScript : MonoBehaviour
         enabled = true;
     }
 
-    public void reset_position()
+    public void ResetDartPositions()
     {
         Transform[] getPartnerArray()
         {

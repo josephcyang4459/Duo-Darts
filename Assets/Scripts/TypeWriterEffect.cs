@@ -13,14 +13,12 @@ public class TypeWriterEffect : MonoBehaviour {
     [SerializeField] float CurrentTime;
     [SerializeField] int CharIndex;
 
-    public void Awake()
-    {
-        OptionsMenu.TextSpeedChange += TextSpeedChange; 
+    public void Awake() {
+        OptionsMenu.TextSpeedChange += TextSpeedChange;
     }
 
-    public void TextSpeedChange(float value)
-    {
-        CustomWriteSpeed = 1/(value*10);
+    public void TextSpeedChange(float value) {
+        CustomWriteSpeed = Mathf.Clamp(1 / (value * 10), .001f, .5f);
     }
 
     public void Run(string textToType, TMP_Text textLabel) {
@@ -38,12 +36,10 @@ public class TypeWriterEffect : MonoBehaviour {
         enabled = true;
     }
 
-    public void Stop()
-    {
+    public void Stop() {
         enabled = false;
         Writing = false;
         Textlabel.text = TextToType;
-
     }
 
     void FixedUpdate() {
@@ -61,7 +57,6 @@ public class TypeWriterEffect : MonoBehaviour {
                 Stop();
             }
         }
-        
-    
+
     }
 }

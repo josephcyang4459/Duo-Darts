@@ -42,7 +42,7 @@ MonoBehaviour:
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 5f5ac865462a22a4d990c66d58e4adf4, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 17
   DefaultCutScene: {fileID: 11400000, guid: 2bd5b328f4aa0c14abd37a462972f761, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: d89d6071d0c6f6c43834f84b3e1b9738, type: 2}

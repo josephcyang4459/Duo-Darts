@@ -91,7 +91,6 @@ public class DartGame : MonoBehaviour {
 
 
     public void BeginGame() {
-
         CurrentPartner = characters.list[PartnerIndex];
         points = ScoreNeededToWin > 600 ? 10 : 5;
         board.enabled = true;
@@ -108,7 +107,6 @@ public class DartGame : MonoBehaviour {
 
         Dart.SetUp(PartnerIndex);
         Banter.SetPartner(CurrentPartner, IsFinals());
-        Dart.reset_position();
         Visuals.SetDartScore();
         currentTurn = 0;
         turnSum = 0;
@@ -134,6 +132,16 @@ public class DartGame : MonoBehaviour {
 
     public void Win() {
         GameEnd();
+        if (IsFinals())
+            Banter.GetDialougeFromScore();
+        else {
+            winc.enabled = true;
+            EndTimer.BeginTimer(WaitForEndTime);
+        }
+            
+    }
+
+    public void GoToCorrectEnding() {
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (IsFinals()) {
@@ -153,10 +161,6 @@ public class DartGame : MonoBehaviour {
                 }
             }
         }
-
-        winc.enabled = true;
-        Banter.GetDialougeFromScore();
-        EndTimer.BeginTimer(WaitForEndTime);
     }
 
     void GameEnd() {
@@ -165,11 +169,11 @@ public class DartGame : MonoBehaviour {
     }
 
     public void SwitchTurn() {
-        Dart.reset_position();
+        Dart.ResetDartPositions();
         Visuals.SetDartScore();
 
-        if (currentTurn % 2 == 0)
-            Banter.GetDialougeFromScore(turnSum);
+
+        int currentTurnSum = turnSum;
 
         ScoreNeededToWin -= turnSum;
         turnSum = 0;
@@ -181,6 +185,8 @@ public class DartGame : MonoBehaviour {
             Lose();
             return;
         }
+        if (currentTurn-1 % 2 == 0)
+            Banter.GetDialougeFromScore(currentTurnSum);
 
         if (currentTurn % 2 == 0)
             playerTurn();
@@ -261,7 +267,7 @@ public class DartGame : MonoBehaviour {
     /// Called By Darts Timer
     /// </summary>
     public void CheckForBust() {
-        Banter.HideDialouge();
+        //Banter.HideDialouge();
         if (ScoreNeededToWin - turnSum < 0) {
             turnSum = 0;
             SwitchTurn();
@@ -269,8 +275,7 @@ public class DartGame : MonoBehaviour {
         }
 
         if (ScoreNeededToWin - turnSum == 0) {
-            Banter.GetDialougeFromScore();
-            Dart.reset_position();
+            Dart.ResetDartPositions();
             Win();
             return;
         }
@@ -299,6 +304,7 @@ public class DartGame : MonoBehaviour {
         winc.enabled = false;
         losec.enabled = false;
         board.enabled = false;
+        Banter.HideDialouge();
         // PauseMenu.inst.SetEnabled(true);
         if (s != null)
             s.SetTime(TimeBlocks.Short);

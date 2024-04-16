@@ -39,13 +39,9 @@ MonoBehaviour:
     Skill: 0
     Luck: 0
     Points: 0
-  Events:
-  - {fileID: 11400000, guid: c5f9f65815a54f147862b7f52fd0cf96, type: 2}
-  - {fileID: 11400000, guid: 2d16e0a8f84fa5f48894a413f74e084d, type: 2}
-  - {fileID: 11400000, guid: 5a37f1c783c402b44af12c3487995640, type: 2}
-  - {fileID: 11400000, guid: 7cd9fdab6679fe7439705395669096f8, type: 2}
-  - {fileID: 11400000, guid: 0d83e6a13c25a5d4085cf32fba91742e, type: 2}
-  - {fileID: 11400000, guid: 8d4ced04145ad914396622f25f24bcf3, type: 2}
+  Events: {fileID: 11400000, guid: 65f0fcf24c388e24ead99f7bef1e1e14, type: 2}
+  PlayerNotification: {fileID: 11400000, guid: 5cd6019f88f7f574bb8b0cf3d7661cab, type: 2}
+  BadEndings: {fileID: 11400000, guid: 4acf6f5361e76ad4c9d817814e2266b4, type: 2}
   characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   ResetToBase: 0
   ResetToZero: 0

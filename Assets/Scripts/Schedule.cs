@@ -4,22 +4,24 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Schedule : MonoBehaviour, SceneEntrance {
+    [SerializeField] Player Player;
+    [SerializeField] CharacterList characters;
+    [SerializeField] EventList MiscNPCEvents;
+    [SerializeField] EventList PlayerNotifications;
+    [SerializeField] TimeClock Clock;
+    [SerializeField] LocationSelecterUI LocationSelector;
+    [SerializeField] EventSelectorUI EventSelector;
+    [SerializeField] FinalRoundPartnerSelector FinalRoundSelector;
+    [SerializeField] int PointsNeededToPlayFinalRound;
     public int hour = 4;
     public int minutes = 0;
-    [SerializeField] TimeClock Clock;
-
-    public EventList available;
-
-    public Location[] locals;
-
-    public CharacterList characters;
+    [SerializeField] Location[] locals;
 
     public int location;
 
-    public Button[] EventButtons;
-    public TMP_Text[] btnText;
-    public LocationSelecterUI LocationSelector;
-    public EventSelectorUI EventSelector;
+    [SerializeField] Button[] EventButtons;
+    [SerializeField] TMP_Text[] btnText;
+    [SerializeField] EventList BadEndings;
 
     public AudioClip song0;
 
@@ -34,17 +36,29 @@ public class Schedule : MonoBehaviour, SceneEntrance {
 
     public void Start() {
         Audio.inst.PlaySong(song0);
+        
         int fileIndex = TransitionManager.inst.GetFileIndex();
-        if (fileIndex > -1) {
-            SaveHandler.LoadFromFile(fileIndex);
-            GenderChoiceCanvas.enabled = false;
-            System.GC.Collect();
-        }
+        if (fileIndex > -1)
+            LoadFromFile(fileIndex);
         else
             ResetStats.ResetStatsAndCompletionToBase();
-
+        Clock.SetVisible(true);
+        Clock.SetTime(hour, minutes);
         TransitionManager.inst.ReadyToEnterScene(this);
+    }
 
+    void LoadFromFile(int fileIndex) {
+        SaveHandler.LoadFromFile(fileIndex);
+        GenderChoiceCanvas.enabled = false;
+        System.GC.Collect();
+        foreach (EventStart e in BadEndings.List)
+            e.done = false;
+        for (int i = 0; i < PlayerNotifications.List.Length; i++) {
+            if (CheckIfValidTime(PlayerNotifications.List[i]))
+                PlayerNotifications.List[i].done = true;
+            else
+                PlayerNotifications.List[i].done = false;
+        }
     }
 
     public void EnterScene() {
@@ -93,24 +107,36 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             }
         }
         //events
-        for (int i = 0; i < available.List.Length; i++) {
-            Locations locationIndex = LocationOf(available.List[i]);
+        for (int i = 0; i < MiscNPCEvents.List.Length; i++) {
+            Locations locationIndex = LocationOf(MiscNPCEvents.List[i]);
 
             if (locationIndex != Locations.none) {
-                locals[(int)locationIndex].Events.Add(available.List[i].cutScene);
+                locals[(int)locationIndex].Events.Add(MiscNPCEvents.List[i].cutScene);
                 locals[(int)locationIndex].EventsButtonUsed++;
             }
         }
+    }
+
+    bool CheckForNotification() {
+        for (int i = 0; i < PlayerNotifications.List.Length; i++) {
+            if(!PlayerNotifications.List[i].done)
+                if (CheckIfValidTime(PlayerNotifications.List[i])) {
+                    PlayerNotifications.List[i].done = true;
+                    CutsceneHandler.inst.PlayCutScene(PlayerNotifications.List[i].cutScene, (int)Locations.lounge);
+                    return true;
+                }
+        }
+        return false;
     }
 
     public void SetTime(TimeBlocks time) {
         CharacterStatUI.inst.UpdateUI();
         UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(song0);
-        LocationSelector.BeginEntrance();
-        //---------------------------------------------------------------------------------------------------------------------SET BUTTON HERE
-        //UI_Helper.SetSelectedUIElement(LocationFirstButton);
+       
         IncreaseTimeByMinutes((int)time);
+        if (CheckForNotification())
+            return;
 
         if (hour >= 9) {
             TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
@@ -118,28 +144,51 @@ public class Schedule : MonoBehaviour, SceneEntrance {
 
         if (hour >= 8) {
             if (minutes >= 30) {
-                Debug.Log("Now only duo dates should be available if they are not that is bug ");
+                if (Player.TotalPointsScoredAcrossAllDartMatches <= PointsNeededToPlayFinalRound) {
+                    if (!BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].done) {
+                        BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].done = true;
+                        CutsceneHandler.inst.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].cutScene, (int)Locations.lounge);
+                        return;
+                    }
+                        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
+                    return;
+                }
+
                 int numberAvailable = 0;
                 for (int i = 0; i < 4; i++) {
-                    if (characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && characters.list[i].Love > 0) {
+                    if (characters.list[i].FinalRoundEligable()) {
                         numberAvailable++;
                     }
                 }
                 if (numberAvailable <= 0) {
-                    //Debug.Log("GAME OVER please send to end state");
-                    TransitionManager.inst.GoToScene(SceneNumbers.NoLovers);
+                    if (!BadEndings.List[(int)BadEndingIndicies.NoLovers].done) {
+                        BadEndings.List[(int)BadEndingIndicies.NoLovers].done = true;
+                        CutsceneHandler.inst.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NoLovers].cutScene, (int)Locations.lounge);
+                        return;
+                    }
+
+                    TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
                     return;
                 }
+
+                FinalRoundSelector.ShowUI();
+                return;
             }
         }
 
+
+        LocationSelector.BeginEntrance();
         SetLocationEventLists();
     }
-
+    
+    /// <summary>
+    /// Jank AF Yuck
+    /// </summary>
+    /// <param name="c"></param>
     private void SetEventCutsceneComplete(CutScene c) {
-        for (int i = 0; i < available.List.Length; i++)
-            if (available.List[i].cutScene == c)
-                available.List[i].done = true;
+        for (int i = 0; i < MiscNPCEvents.List.Length; i++)
+            if (MiscNPCEvents.List[i].cutScene == c)
+                MiscNPCEvents.List[i].done = true;
     }
 
     private void IncreaseTimeByMinutes(int times) {
@@ -194,6 +243,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
     }
 
     public void TurnLocationAndEventSelectorUIOff() {
+        FinalRoundSelector.HideUI();
         Clock.SetVisible(false);
         EventSelector.HideUI();
         LocationSelector.HideUI();

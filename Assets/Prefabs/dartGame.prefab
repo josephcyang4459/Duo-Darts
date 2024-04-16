@@ -17533,6 +17533,7 @@ GameObject:
   - component: {fileID: 1044588159}
   - component: {fileID: 1044588160}
   - component: {fileID: 3278886359313823982}
+  - component: {fileID: 7052043080631276667}
   m_Layer: 0
   m_Name: dartGame
   m_TagString: Untagged
@@ -17813,7 +17814,40 @@ MonoBehaviour:
   EnterHead: {fileID: 0}
   ExitHead: {fileID: 0}
   Partner: {fileID: 0}
+  DartGame: {fileID: 7917560275646839228}
   IsFinal: 0
+  PartnerBanterTimer: {fileID: 7052043080631276667}
+  TimeToWait: 5
+  CheckOut: 0
+--- !u!114 &7052043080631276667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917560275646839217}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3370c89b381279145ac7cd97d5e27b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsToWaitFor: 0
+  CurrentTime: 0
+  Complete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3278886359313823982}
+        m_TargetAssemblyTypeName: DartsPartnerBanterDisplay, Assembly-CSharp
+        m_MethodName: EndDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7917560275763359306
 GameObject:
   m_ObjectHideFlags: 0

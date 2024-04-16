@@ -20,6 +20,6 @@ MonoBehaviour:
   BaseBloomDiameter: 0.3
   MaxBloomDiameter: 1.5
   MinBloomLuckWeight: 10
-  MaxBloomSkillWeight: 20
+  MaxBloomSkillWeight: 16
   DriftSpeedIntoxicationWeight: 1.25
   DriftSpeedFactor: 3
