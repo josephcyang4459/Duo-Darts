@@ -1,0 +1,32 @@
+All scenes now display character portaits using commands in the format of "[CharacterNameX]"
+	"CharacterName" being the name associated with the character you are displaying
+		Chad = Chadrick || Faye = Faye || Jess = Jessica || Elaine = Elaine
+	"X" being the number associated with the expression being displayed
+		1 = nuetral expression || 2 = positive expression || 3 = negative expression || 4 = drunk expression
+	There is a expression call near the start of every scene so **scenes should start with no portrait displayed**
+
+"<" has been changed to "[Newln] and functions the same as before
+
+"$" has been changed to "[Answer]" and fucntions the same as before
+
+"&" has been changed to "[Display]" and functions the same as before
+
+Any increase in any stat has now been changed from "(+)" variants to their own flags as follows (using the same "CharacterName" abbreviations)
+	Love increases now follow the flag "[RaiseCharacterNameLoveX]"
+	Intoxication increases now follow the flag "[RaiseCharacterNameIntoxX]"
+	Intoxication decreases now follow the flag "[LowerPlayerIntoxX]"
+	Skill increases now follow the flag "[RaisePlayerSkillX]
+	Intoxication decreases now follow the flag "[LowerPlayerIntoxX]"
+	
+There is now a flag to reset a character's intoxication "[ResetCharacterNameIntox]"
+
+There is now a flag to exit scenes midway "[SceneExit]"
+	This is used for fail scenarios
+
+There is now a flag when a character is available to play the final round of darts with the player "[CharacterNameSuccess]"
+
+There is now a flag when a character is removed from the game due to a fail scenario "[CharacterNameFail]"
+
+There is now a flag when a background changes midscene "[AreaName]"
+	This is used once in the whole script as [Lounge]
+

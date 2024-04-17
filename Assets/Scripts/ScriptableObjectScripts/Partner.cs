@@ -65,10 +65,12 @@ public class Partner : ScriptableObject {
     public bool FinalRoundEligable() {
         return RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed && Love >= 0;
     }
-    
+
     public void ResetBanterLineUsage() {
-        RegularBanterLines.ResetAllGroups();
-        FinalsBanterLines.ResetAllGroups();
+        if (RegularBanterLines != null)
+            RegularBanterLines.ResetAllGroups();
+        if (FinalsBanterLines != null)
+            FinalsBanterLines.ResetAllGroups();
     }
 
     public void ResetValues(float love, float intox, float compose)

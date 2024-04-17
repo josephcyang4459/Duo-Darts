@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 72
   Composure: 0
   Intoxication: 0
-  Love: -1500000
+  Love: 0
   RelatedCutScenes:
   - Location: bar
     CutsceneLocation: 1
@@ -32,12 +32,12 @@ MonoBehaviour:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c2ecdc124adbf624193f562947fec5a3, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 6
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 10
   - Location: bar
     CutsceneLocation: 1

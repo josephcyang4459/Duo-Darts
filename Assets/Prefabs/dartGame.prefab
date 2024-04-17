@@ -20121,6 +20121,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7917560275646839229}
     - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: __SIxty
+      value: 
+      objectReference: {fileID: -3800215462100984028, guid: 0436482055235fb43825f893cacf9475, type: 3}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: Settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: AimSprite
       value: 
       objectReference: {fileID: 2925380134608118579}
@@ -20140,6 +20148,10 @@ PrefabInstance:
       propertyPath: YScreenClamp.y
       value: 7.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
+      propertyPath: __sixtyLocation
+      value: 
+      objectReference: {fileID: 7239586940975653249}
     - target: {fileID: 8593354425541238233, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: m_RootOrder
       value: 5

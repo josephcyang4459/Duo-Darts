@@ -107,6 +107,7 @@ public class DartGame : MonoBehaviour {
 
         Dart.SetUp(PartnerIndex);
         Banter.SetPartner(CurrentPartner, IsFinals());
+        CurrentPartner.ResetBanterLineUsage();
         Visuals.SetDartScore();
         currentTurn = 0;
         turnSum = 0;
@@ -185,8 +186,10 @@ public class DartGame : MonoBehaviour {
             Lose();
             return;
         }
-        if (currentTurn-1 % 2 == 0)
+        if ((currentTurn - 1) % 2 == 0) {
             Banter.GetDialougeFromScore(currentTurnSum);
+        }
+           
 
         if (currentTurn % 2 == 0)
             playerTurn();

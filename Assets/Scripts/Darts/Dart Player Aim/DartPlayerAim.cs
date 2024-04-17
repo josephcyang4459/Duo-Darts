@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class DartPlayerAim : MonoBehaviour
 {
+    [SerializeField] DartsSettings Settings;
     [SerializeField] Player Player;
     [SerializeField] SpriteRenderer AimSprite;
     [SerializeField] Transform AimPosition;
     public Vector3 CurrentLocation = new Vector3(0, 0, -.2f);
     [SerializeField] Vector3 StartingLocation = new Vector3(0, 0, -.2f);
-    [SerializeField] LayerMask layer;
     [SerializeField] InputActionReference fire;
     [SerializeField] DartPlayerAim_Drift Drift;
     [SerializeField] DartPlayerAim_Control Control;
@@ -18,6 +18,10 @@ public class DartPlayerAim : MonoBehaviour
     [SerializeField] DartScript Dart;
     [SerializeField] Vector2 XScreenClamp;
     [SerializeField] Vector2 YScreenClamp;
+#if UNITY_EDITOR
+    [SerializeField] InputActionReference __SIxty;
+    [SerializeField] Transform __sixtyLocation;
+#endif
     public void ChangeLocation(float x, float y) {
         CurrentLocation.x += x;
         CurrentLocation.y += y;
@@ -28,6 +32,22 @@ public class DartPlayerAim : MonoBehaviour
         Bloom.SetUp();
     }
 
+#if UNITY_EDITOR
+    public void __setup() {
+        __SIxty.action.Enable();
+        __SIxty.action.performed += __sixty;
+    }
+
+    public void __unsetup() {
+        __SIxty.action.Disable();
+        __SIxty.action.performed -= __sixty;
+    }
+
+    public void __sixty(InputAction.CallbackContext c) {
+        ShootDart(__sixtyLocation.position-Vector3.forward);
+    }
+#endif
+
     public void BeginPlayerAim() {
         AimSprite.enabled = true;
         CurrentLocation = StartingLocation;
@@ -36,6 +56,9 @@ public class DartPlayerAim : MonoBehaviour
         fire.action.Enable();
         fire.action.performed += Shoot;
         enabled = true;
+#if UNITY_EDITOR
+        __setup();
+#endif
     }
 
     public void Shoot(InputAction.CallbackContext c) {
@@ -53,7 +76,7 @@ public class DartPlayerAim : MonoBehaviour
 
     public void ShootDart(Vector3 location) {
         EndPlayerAim();
-        if (Physics.Raycast(location, Vector3.forward, out RaycastHit hit,12, layer)) {
+        if (Physics.Raycast(location, Vector3.forward, out RaycastHit hit,12, Settings.DartsLayerMask)) {
             hit.collider.gameObject.GetComponent<BoardCollider>().hit(location);
         }
         else {
@@ -63,6 +86,9 @@ public class DartPlayerAim : MonoBehaviour
     }
 
     public void EndPlayerAim() {
+#if UNITY_EDITOR
+        __unsetup();
+#endif
         Control.End();
         fire.action.Disable();
         fire.action.performed -= Shoot;

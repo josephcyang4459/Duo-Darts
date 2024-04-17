@@ -1,80 +1,33 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AttributeUpdate : MonoBehaviour {
+public class AttributeUpdate : MonoBehaviour, Caller {
     public static AttributeUpdate inst;
     [SerializeField] private Player Player;
-    [SerializeField] private CanvasGroup CanvasGroup;
-    [SerializeField] private RectTransform AttributePopUp;
-    [SerializeField] private RectTransform OriginalPosition;
-    [SerializeField] private RectTransform PopUpPosition;
     [SerializeField] private TMP_Text PopUpTextUI;
-    [SerializeField] private float FadeSpeed = 1f;
-    [SerializeField] private float StayDuration = 1f;
-    private bool FadeIn = false;
-    private bool FadeOut = false;
-    private bool InView = false;
-    private float InViewStartTime;
-    private float transformMuliplier;
-    public Queue<info> info = new();
+    [SerializeField] bool Active = false;
+    [SerializeField] Queue<StatChangeInfo> StatChangeQueue = new();
+    [SerializeField] UIAnimationElement AnimationHead;
 
     public void Start() {
         inst = this;
-        AttributePopUp.position = OriginalPosition.position;
-        transformMuliplier = MathF.Abs(PopUpPosition.position.y - OriginalPosition.position.y);
-    }
-
-    public void ShowUI() { FadeIn = true; }
-
-    public void HideUI() { FadeOut = true; }
-
-    private void Update() {
-        if(FadeIn)
-            if(CanvasGroup.alpha < 1) {
-                CanvasGroup.alpha += Time.deltaTime * FadeSpeed;
-                AttributePopUp.position = Vector3.MoveTowards(AttributePopUp.position, PopUpPosition.position, Time.deltaTime * transformMuliplier);
-                if (CanvasGroup.alpha >= 1) {
-                    FadeIn = false;
-                    InView = true;
-                    InViewStartTime = Time.time;
-                }
-            }
-        if (FadeOut)
-            if (CanvasGroup.alpha >= 0) {
-                CanvasGroup.alpha -= Time.deltaTime * FadeSpeed;
-                AttributePopUp.position = Vector3.MoveTowards(AttributePopUp.position, OriginalPosition.position, Time.deltaTime * transformMuliplier);
-                if (CanvasGroup.alpha == 0) {
-                    FadeOut = false;
-                    InView = false;
-
-                    if (info.Count > 0) {
-                        UpdateAttribute(info.Peek().stat, info.Peek().change);
-                        info.Dequeue();
-                    }
-                }
-            }
-
-        if(InView && Time.time >= InViewStartTime + StayDuration)
-            HideUI();
-    }
+    } 
 
     public void UpdateAttribute(string attribute, int value) {
-        if(FadeIn || FadeOut || InView) {
-            info t = new info { stat = attribute, change = value };
-            info.Enqueue(t);
+        if(Active) {
+            StatChangeInfo t = new StatChangeInfo { stat = attribute, change = value };
+            StatChangeQueue.Enqueue(t);
             return;
         }
             
         PopUpTextUI.text = "";
-        PopUpTextUI.text += attribute + " has been ";
-        PopUpTextUI.text += (value > 0) ? "increased by " : "decreased by ";
-        PopUpTextUI.text += Mathf.Abs(value);
+        PopUpTextUI.text += attribute.ToUpper() + ((value > 0) ? " +" : " -") + Mathf.Abs(value); 
 
         Player.UpdateAttribute(attribute, value);
-        ShowUI();
+        Active = true;
+        AnimationHead.Begin(this);
     }
 
     string AttributeName(PlayerSkills skill) {
@@ -102,10 +55,17 @@ public class AttributeUpdate : MonoBehaviour {
         UpdateAttribute(AttributeString, AttributeValue);
     }
 
-    
+    public void Ping() {
+        Active = false;
+        if (StatChangeQueue.Count > 0) {
+            StatChangeInfo temp = StatChangeQueue.Dequeue();
+            UpdateAttribute(temp.stat, temp.change);
+        }
+    }
+
+    class StatChangeInfo {
+        public string stat;
+        public int change;
+    }
 }
 
-public class info {
-    public string stat;
-    public int change;
-}
