@@ -9,9 +9,10 @@ public class DialougeBox : MonoBehaviour
     [SerializeField] CharacterList Characters;
     [SerializeField] Image[] ForegroundImages;
     [SerializeField] Image[] BackgroundImages;
-    [SerializeField] Canvas[] ExpressionCanvases;
+    [SerializeField] DialougeBoxData[] ExpressionCanvases;
     [SerializeField] Canvas ThoughtCanvas;
     [SerializeField] Canvas DialougeCanvas;
+    [SerializeField] RotateTransform LineData;
     [SerializeField] Image Line;
     [SerializeField] int CurrentExpression = -1;
     [SerializeField] TypeWriterEffect TypeWriter;
@@ -28,8 +29,9 @@ public class DialougeBox : MonoBehaviour
         ThoughtCanvas.enabled = false;
         DialougeCanvas.enabled = false;
         Line.enabled = false;
-        foreach(Canvas c in ExpressionCanvases) {
-            c.enabled = false;
+        LineData.SetRotate(false);
+        foreach(DialougeBoxData c in ExpressionCanvases) {
+            c.SetVisible(false);
         }
     }
 
@@ -51,8 +53,9 @@ public class DialougeBox : MonoBehaviour
     }
 
     public void SetDialouge(string s) {
-        ExpressionCanvases[CurrentExpression].enabled = true;
-        Line.enabled = true;
+        ExpressionCanvases[CurrentExpression].SetVisible(true);
+        Line.enabled = true; 
+        LineData.SetRotate(true);
         DialougeCanvas.enabled = true;
         TypeWriter.Run(s, DialougeText);
     }
@@ -61,11 +64,27 @@ public class DialougeBox : MonoBehaviour
         if (CurrentExpression == Expression)
             return;
         if (CurrentExpression >= 0)
-            ExpressionCanvases[CurrentExpression].enabled = false;
+            ExpressionCanvases[CurrentExpression].SetVisible(false);
         CurrentExpression = Expression;
         Line.enabled = showCanvas;
-        ExpressionCanvases[CurrentExpression].enabled = showCanvas;
+        LineData.SetRotate(showCanvas);
+        ExpressionCanvases[CurrentExpression].SetVisible(showCanvas);
         DialougeCanvas.enabled = showCanvas;
+    }
+
+    [System.Serializable]
+    class DialougeBoxData {
+        public Canvas DialougeCanvas;
+        public ImageJiggle Jiggle;
+
+        public void SetVisible(bool state) {
+            DialougeCanvas.enabled = state;
+            if (state) {
+                Jiggle.StartJiggle();
+            }
+            else
+                Jiggle.EndJiggle();
+        }
     }
 
 #if UNITY_EDITOR

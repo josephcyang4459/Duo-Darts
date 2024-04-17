@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elaine_2
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 3415138152484438148
+  - rid: 3415138152484438149
+  - rid: 3415138152484438150
+  - rid: 3415138152484438151
+  - rid: 3415138152484438152
+  - rid: 3415138152484438153
+  - rid: 3415138152484438154
+  - rid: 3415138152484438155
+  - rid: 3415138152484438156
+  - rid: 3415138152484438157
+  - rid: 3415138152484438158
+  - rid: 3415138152484438159
+  - rid: 3415138152484438160
+  - rid: 3415138152484438161
+  - rid: 3415138152484438162
+  - rid: 3415138152484438163
+  - rid: 3415138152484438164
+  defaultCharacter: Elaine
+  exception: 0
+  playerS:
+    stats: []
+    values: 
+  partnerS:
+    stats: 
+    values: 
+  AnotherFuckingException: 0
+  aa: {fileID: 4900000, guid: 5c313a4ce879c2d4e89eae66198ea9bd, type: 3}
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3415138152484438148
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You walk up to Elaine who is again fidgeting with a few
+          darts on the table in front of her.*'
+    - rid: 3415138152484438149
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 3415138152484438150
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Sit.
+    - rid: 3415138152484438151
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I was thinking about the tournament.
+    - rid: 3415138152484438152
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Is it really fair for me to even be here?
+    - rid: 3415138152484438153
+      type: {class: Response, ns: , asm: Assembly-CSharp}
+      data:
+        name: Call & Response
+        responses:
+        - answer: Not even a little.
+          responses:
+          - Message: 
+            Character: 3
+            Expression: 2
+            Stat: 0
+            AdjustValue: 3
+            exemption: 0
+        - answer: It's fair.
+          responses:
+          - Message: 
+            Character: 3
+            Expression: 3
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+          - Message: I'm killing it.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+        - answer: ...
+          responses:
+          - Message: 
+            Character: 3
+            Expression: 2
+            Stat: 0
+            AdjustValue: 2
+            exemption: 1
+          - Message: You're allowed to speak you know.
+            Character: 0
+            Expression: 4
+            Stat: 0
+            AdjustValue: 0
+            exemption: 0
+    - rid: 3415138152484438154
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This tournament bothers me.
+    - rid: 3415138152484438155
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's a professional tournament, but it's not enough for me.
+    - rid: 3415138152484438156
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I want to go international.
+    - rid: 3415138152484438157
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Bumming it in these bars and easily winning these tournaments is
+          beneath me.
+    - rid: 3415138152484438158
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She pats your head.*'
+    - rid: 3415138152484438159
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And belittling underachievers like yourself has lost its charm.
+    - rid: 3415138152484438160
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You know what, I have you to thank for this eureka.
+    - rid: 3415138152484438161
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I really do owe you one.
+    - rid: 3415138152484438162
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways. Can you leave now?
+    - rid: 3415138152484438163
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You honestly smell horrible and it's definitely noticeable.
+    - rid: 3415138152484438164
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You leave Elaine to enjoy her fantasizations of international
+          fame.*'

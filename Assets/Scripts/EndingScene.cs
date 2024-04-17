@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndingScene : MonoBehaviour, SceneEntrance
 {
     [SerializeField] FileHandler FileHandler;
+    [SerializeField] CutScene EndingCutscene;
+    [SerializeField] Image Background;
+
     private void Start() {
         TransitionManager.inst.ReadyToEnterScene(this);
     }
@@ -31,5 +35,12 @@ public class EndingScene : MonoBehaviour, SceneEntrance
         }
         data.Endings[currentEnding] = true;
         FileHandler.SaveCompletion(data);
+        CutsceneHandler.inst.SetUpForEnding(this);
+        CutsceneHandler.inst.PlayCutScene(EndingCutscene, (int)Locations.darts);
+    }
+
+    public void CutsceneComplete() {
+        Background.sprite = CutsceneHandler.inst.cutSceneBackGround.sprite;
+        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 }

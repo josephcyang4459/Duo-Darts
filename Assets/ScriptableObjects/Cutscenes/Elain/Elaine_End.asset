@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elaine_End
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 7527442783781257236
+  - rid: 7527442783781257237
+  - rid: 7527442783781257238
+  - rid: 7527442783781257239
+  - rid: 7527442783781257240
+  - rid: 7527442783781257241
+  - rid: 7527442783781257242
+  - rid: 7527442783781257243
+  - rid: 7527442783781257244
+  - rid: 7527442783781257245
+  - rid: 7527442783781257246
+  - rid: 7527442783781257247
+  - rid: 7527442783781257248
+  - rid: 7527442783781257249
+  - rid: 7527442783781257250
+  - rid: 7527442783781257251
+  - rid: 7527442783781257252
+  - rid: 7527442783781257253
+  - rid: 7527442783781257254
+  - rid: 7527442783781257255
+  - rid: 7527442783781257256
+  - rid: 7527442783781257257
+  - rid: 7527442783781257258
+  - rid: 7527442783781257259
+  - rid: 7527442783781257260
+  - rid: 7527442783781257261
+  - rid: 7527442783781257262
+  - rid: 7527442783781257263
+  defaultCharacter: Elaine
+  ForceDarts: 0
+  TimeLength: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 7527442783781257236
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: "*The tournament is yours. It\u2019s done.*"
+    - rid: 7527442783781257237
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442783781257238
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Don\u2019t look so surprised."
+    - rid: 7527442783781257239
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: The trophy was ours the second we walked in this dump.
+    - rid: 7527442783781257240
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Elaine walks over to the trophy, dragging you along with
+          her.*'
+    - rid: 7527442783781257241
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She raises it high above her head, with you under her other
+          arm.*'
+    - rid: 7527442783781257242
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: "*Camera flashes blare off.\u201D"
+    - rid: 7527442783781257243
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Don\u2019t you people have enough pictures of me already?"
+    - rid: 7527442783781257244
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Elaine is thoroughly enjoying herself. You are surviving,
+          just barely.*'
+    - rid: 7527442783781257245
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*The pictures go on for several minutes until they all eventually
+          disperse.*'
+    - rid: 7527442783781257246
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Finally, my arms were getting tired.
+    - rid: 7527442783781257247
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She lowers the trophy and lets you out of her death hold.*'
+    - rid: 7527442783781257248
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "I\u2019d say I couldn\u2019t have done it without you, but then
+          again, I probably could have."
+    - rid: 7527442783781257249
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "That said, doing this with anyone else wouldn\u2019t have felt
+          nearly as good."
+    - rid: 7527442783781257250
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Here.
+    - rid: 7527442783781257251
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She grabs your hand, opening it, and places one of her
+          darts onto your palm.*'
+    - rid: 7527442783781257252
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Call that a divine gift.
+    - rid: 7527442783781257253
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "Don\u2019t forget tonight, because I sure as hell won\u2019t."
+    - rid: 7527442783781257254
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This is my last dart tournament.
+    - rid: 7527442783781257255
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Strong conviction overtakes her look.*'
+    - rid: 7527442783781257256
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "The next time you see me, it\u2019ll be on TV."
+    - rid: 7527442783781257257
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And you better be one the screen with me.
+    - rid: 7527442783781257258
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She gives you a strong pat on the back then walks off towards
+          the exit.*'
+    - rid: 7527442783781257259
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: 
+        Expression: 0
+    - rid: 7527442783781257260
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She took the trophy with her.*'
+    - rid: 7527442783781257261
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You look down at the dart in your hand.*'
+    - rid: 7527442783781257262
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Something about feels blessed.*'
+    - rid: 7527442783781257263
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: "*Maybe she wasn\u2019t just kidding.*"

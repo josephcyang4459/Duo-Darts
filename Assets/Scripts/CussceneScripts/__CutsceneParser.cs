@@ -265,18 +265,21 @@ public class __CutsceneParser : ScriptableObject
     string PartnerScene(string name, int chunkIndex) {
         if(IsPartner(name.ToLower())) {
             int number= FindSceneIndexInHeader(ChunkData[chunkIndex].Header.ToLower());
-
+            ChunkData[chunkIndex].CharacterName = name;
             if (number > -1) {
                 ChunkData[chunkIndex].CutsceneIndex = number-1;
-                ChunkData[chunkIndex].CharacterName = name;
                 return name + " Scene " + number;
             }
             else {
-                ChunkData[chunkIndex].CharacterName = name;
-                ChunkData[chunkIndex].CutsceneIndex = GetRepeatIndexFromFinalLine(ChunkData[chunkIndex].LastLine);
-                return name + " " + GetStatFromFinalLine(ChunkData[chunkIndex].LastLine) + " Scene";
-            }
-               
+                if (ChunkData[chunkIndex].Header.ToLower().Contains("final")) {
+                    ChunkData[chunkIndex].CutsceneIndex = RepeatingHangoutSceneIndex + 2;
+                    return name + " Final Scene";
+                }
+                else {
+                    ChunkData[chunkIndex].CutsceneIndex = GetRepeatIndexFromFinalLine(ChunkData[chunkIndex].LastLine);
+                    return name + " " + GetStatFromFinalLine(ChunkData[chunkIndex].LastLine) + " Scene";
+                }
+            } 
         }
         if (name.ToLower().Contains("owner")) {
             int number = FindSceneIndexInHeader(ChunkData[chunkIndex].Header.ToLower())-1

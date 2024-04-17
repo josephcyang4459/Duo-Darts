@@ -85,23 +85,24 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 locals[i].Events.RemoveAt(0);
         }
 
-        for (int i = 0; i < (int)CharacterNames.Owner; i++) {
-            int availableCutSceneIndex = characters.list[i].GetCutScene();
+        for (int characterIndex = 0; characterIndex < (int)CharacterNames.Owner; characterIndex++) {
+            int availableCutSceneIndex = characters.list[characterIndex].GetCutScene();
 
             if (availableCutSceneIndex >= 0) {
-                Locations locationIndex = characters.list[i].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
+                Locations locationIndex = characters.list[characterIndex].RelatedCutScenes[availableCutSceneIndex].CutsceneLocation;
 
                 if (locationIndex != Locations.none) {
 
-                    locals[(int)locationIndex].Events.Add(characters.list[i].RelatedCutScenes[availableCutSceneIndex].CutScene);
+                    locals[(int)locationIndex].Events.Add(characters.list[characterIndex].RelatedCutScenes[availableCutSceneIndex].CutScene);
 
                     locals[(int)locationIndex].EventsButtonUsed++;
                 }
             }
             else {
-                if (characters.list[i].Love >= 0 && !characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
-                    int loungeIndex = (int)Locations.lounge;
-                    locals[loungeIndex].Events.Add(characters.list[i].DefaultCutScene);
+                if (characters.list[characterIndex].Love >= 0 && !characters.list[characterIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
+
+                    int loungeIndex = (characterIndex == (int)CharacterNames.Elaine) ? (int)Locations.darts : (int)Locations.lounge;
+                    locals[loungeIndex].Events.Add(characters.list[characterIndex].DefaultCutScene);
                     locals[loungeIndex].EventsButtonUsed++;
                 }
             }

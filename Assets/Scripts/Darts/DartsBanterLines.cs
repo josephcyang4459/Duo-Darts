@@ -61,10 +61,8 @@ i figure it would randomly read off lines. though we should not let lines be rea
         public string GetUnusedLine() {
             if (ChanceToUse < Random.Range(0, 100))
                 return null;
-
             if (Used == Lines.Length)
                 return null;
-
             int lineIndex = Random.Range(0, Lines.Length);
             while (AlreadyUsed[lineIndex]) {
                 lineIndex++;

@@ -11,6 +11,7 @@ public class CutsceneHandler : MonoBehaviour {
     public CharacterList characters;
     [SerializeField] InputActionReference interact;
     [Space]
+    [SerializeField] CharacterPortraitAnimation PortraitAnimation;
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] Image CharacterPortrait;
     [SerializeField] TMP_Text CharacterName;
@@ -21,7 +22,7 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] GameObject responseButton;
     [SerializeField] TMP_Text[] responses;
     [SerializeField] Canvas DefaultCanvass;
-    [SerializeField] Image cutSceneBackGround;
+    public Image cutSceneBackGround;
     [SerializeField] SpriteCollection BackgroundSprites;
     [SerializeField] Sprite[] CharacterPortraits;
     [Space]
@@ -32,8 +33,9 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
     public bool InCutscene;
-    public DartPartnerStoryUI DartsMenu;
-    public Schedule Schedule;
+    [SerializeField] DartPartnerStoryUI DartsMenu;
+    [SerializeField] Schedule Schedule;
+    [SerializeField] EndingScene EndingScene;
 
     public void Awake() {
         if (inst != null) {
@@ -59,6 +61,10 @@ public class CutsceneHandler : MonoBehaviour {
     public void SetUpForMainGame(DartPartnerStoryUI dartsMenu, Schedule schedule) {
         DartsMenu = dartsMenu;
         Schedule = schedule;
+    }
+
+    public void SetUpForEnding(EndingScene endingScene) {
+        EndingScene = endingScene;
     }
 
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
@@ -157,6 +163,8 @@ public class CutsceneHandler : MonoBehaviour {
 
         if (Schedule != null)
             Schedule.SetTime(cutscene.TimeLength);
+        if (EndingScene != null)
+            EndingScene.CutsceneComplete();
     }
 
     public void PresentChoices() {
@@ -201,8 +209,9 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
-        DecideCharacter(character);
-        ChangeExpression((int)expression);
+        if(DecideCharacter(character))
+            ChangeExpression((int)expression);
+
     }
 
     public void UI_Response(int i) {
@@ -222,12 +231,13 @@ public class CutsceneHandler : MonoBehaviour {
             Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock = true) {
+    public void ChangeExpression(int expressionIndex, bool GoToNextBlock = true) {
         if (CharacterPortrait.enabled == false)
             CharacterPortrait.enabled = true;
         CharacterNamePlate.SetActive(true);
-        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
-        DialougeBox.SetExpression(ExpressionIndex, true);
+        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[expressionIndex];
+        PortraitAnimation.ChangeExpression((Expressions)expressionIndex);
+        DialougeBox.SetExpression(expressionIndex, true);
         if (GoToNextBlock)
             NextBlock();
     }
@@ -246,13 +256,14 @@ public class CutsceneHandler : MonoBehaviour {
 
         CharacterPortrait.sprite = characters.list[partnerIndex].Expressions[0];
         DialougeBox.SetExpression(0, showPartnerVisual);
+        DialougeBox.SetCharacterColors(partnerIndex);
         CharacterPortrait.enabled = showPartnerVisual;
         CharacterName.text = characters.list[partnerIndex].Name;
         CharacterName.font = characters.list[partnerIndex].Font;
         CharacterName.fontSize = characters.list[partnerIndex].textSize;
         CharacterNamePlate.SetActive(showPartnerVisual);
 
-        DialougeBox.SetCharacterColors(partnerIndex);
+
     }
 
     private void SetBackGroundVisual(int i) {
@@ -270,55 +281,57 @@ public class CutsceneHandler : MonoBehaviour {
             case "dance":
                 SetBackGroundVisual(2);
                 break;
-            case "elaine":
-                SetBackGroundVisual(0);
+            case "bathroom":
+                SetBackGroundVisual(3);
+                break;
+            case "darts":
+                SetBackGroundVisual(4);
                 break;
         }
     }
 
-    private void DecideCharacter(string s, bool showPartner = true) {
+    private bool DecideCharacter(string s, bool showPartner = true) {
         switch (s.ToLower()) {
             case "faye":
                 SetPartnerVisual(2, showPartner);
-                break;
+                return true;
             case "chad":
                 SetPartnerVisual(0, showPartner);
-                break;
+                return true;
             case "jess":
                 SetPartnerVisual(1, showPartner);
-                break;
+                return true;
             case "elaine":
                 SetPartnerVisual(3, showPartner);
-                break;
+                return true;
             case "owner":
                 SetPartnerVisual(4, showPartner);
-                break;
+                return true;
             case "bar guy":
                 SetPartnerVisual(5, showPartner);
-                break;
+                return true;
             case "charming girl":
                 SetPartnerVisual(6, showPartner);
-                break;
+                return true;
             case "charming guy":
                 SetPartnerVisual(7, showPartner);
-                break;
+                return true;
             case "dance girl":
                 SetPartnerVisual(8, showPartner);
-                break;
+                return true;
             case "lounge guy":
                 SetPartnerVisual(9, showPartner);
-                break;
+                return true;
             default:
-#if UNITY_EDITOR
-                Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
-#endif
-                
-                if(s.Length<=0)
+                if (s.Length <= 0) {
+                    Debug.Log("HERE");
                     SetPartnerVisual(10, false);
-                else
+                }
+                else {
                     SetPartnerVisual(10, showPartner);
-                CharacterName.text = s;
-                break;
+                    CharacterName.text = s;
+                }
+                return false;
         }
     }
 }

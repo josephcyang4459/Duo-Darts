@@ -54,8 +54,12 @@ public class ImageJiggle : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    [SerializeField] bool __reset;
     private void OnValidate()
     {
+        if (!__reset)
+            return;
+        __reset = false;
         if (Transform == null)
             Transform = (RectTransform)gameObject.transform;
 
