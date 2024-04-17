@@ -37,7 +37,6 @@ public class DartGame : MonoBehaviour {
 
     [SerializeField] Schedule s;
     [SerializeField] DartMenu_StandAlone StandAlone;
-    [SerializeField] GameObject Tutorial;
 
 #if UNITY_EDITOR
     [Header("||-----EDITOR ONLY-----||")]
@@ -97,9 +96,12 @@ public class DartGame : MonoBehaviour {
         board.enabled = true;
 
         if (firstTimePlaying) {
-            showTutorial();
+            TutorialHandler.inst.EnableDartsTutorial(true);
+            UIState.inst.SetInteractable(true);
             return;
         }
+
+        UIState.inst.SetInteractable(false);
         Aim.SetUpDependants();
         Audio.inst.PlaySong(ac);
 
@@ -310,15 +312,5 @@ public class DartGame : MonoBehaviour {
             StandAlone.BeginSetUp();
     }
 
-    public void showTutorial() {
-        UIState.inst.SetInteractable(true);
-        Tutorial.SetActive(true);
-    }
-
-    public void hideTutorial() {
-        Tutorial.SetActive(false);
-        firstTimePlaying = false;
-        UIState.inst.SetInteractable(false);
-        BeginGame();
-    }
+    public void setFirstTimePlaying(bool firstTimePlaying) { this.firstTimePlaying = firstTimePlaying; }
 }

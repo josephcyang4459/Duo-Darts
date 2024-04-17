@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
     [SerializeField] InputActionReference PauseInput;
-    [SerializeField] bool Enabled;
-    [SerializeField] Canvas PauseOptionsCanvas;
-    [SerializeField] Canvas StoryOptionsCanvas;
-    [SerializeField] GameObject TutorialCanvas;
+    [SerializeField] public bool Enabled;
+    [SerializeField] public Canvas PauseOptionsCanvas;
+    [SerializeField] public Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
@@ -19,7 +18,12 @@ public class PauseMenu : MonoBehaviour, Caller {
 
     public void IsInStoryScene(bool isInStory) { IsInStory = isInStory; }
 
-    public void SetTutorialActive(bool active) { TutorialCanvas.SetActive(active); }
+    public void SetTutorialActive(bool active) {
+        if (IsInStory)
+            TutorialHandler.inst.EnableTutorialChoices(active);
+        else 
+            TutorialHandler.inst.EnableDartsTutorial(active);
+    }
 
     public void Awake() {
         if (inst != null) {
