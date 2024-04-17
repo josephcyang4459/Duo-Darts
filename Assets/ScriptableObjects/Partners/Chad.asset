@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 100
   Composure: 0
   Intoxication: 0
-  Love: 10
+  Love: 2
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
     completed: 0
     loveRequirement: 13
   DefaultCutScene: {fileID: 11400000, guid: 5fcccc1e348025545966f489b9d40460, type: 2}
-  DefaultRepeatingScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
-  DefaultDrinkingCutScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  DefaultRepeatingScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  DefaultDrinkingCutScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
   Expressions:
   - {fileID: 21300000, guid: 07d179330ed9fd74f800a5d457b070b4, type: 3}
   - {fileID: 21300000, guid: 193cfd2a572733a489518819c74606f7, type: 3}

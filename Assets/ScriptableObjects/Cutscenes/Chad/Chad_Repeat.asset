@@ -13,56 +13,48 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276541
-  - rid: 3415138150063276542
-  - rid: 3415138150063276543
-  - rid: 3415138150063276544
-  - rid: 3415138150063276545
-  - rid: 3415138150063276546
-  - rid: 3415138150063276547
-  - rid: 3415138150063276548
+  - rid: 3415138150063276549
+  - rid: 3415138150063276550
+  - rid: 3415138150063276551
+  - rid: 3415138150063276552
+  - rid: 3415138150063276553
+  - rid: 3415138150063276554
+  - rid: 3415138150063276555
   defaultCharacter: Chad
   exception: 0
   AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: e8efc09b89131e247837dbd6d0e63e11, type: 3}
+  aa: {fileID: 4900000, guid: d41c0aaa9ab99e544b8da86a5a0ca4e3, type: 3}
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276541
+    - rid: 3415138150063276549
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You join Chad in people watching.*'
-    - rid: 3415138150063276542
+    - rid: 3415138150063276550
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 3415138150063276551
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Drinking?
-    - rid: 3415138150063276543
+        message: Still ridiculous right?
+    - rid: 3415138150063276552
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I can say for sure that\u2019s better than dancing."
-    - rid: 3415138150063276544
-      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
-      data:
-        message: "If you\u2019re paying I\u2019ll have a few."
-    - rid: 3415138150063276545
+        message: Anyways, got time for a few questions?
+    - rid: 3415138150063276553
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You spend time drinking with Chad.*'
-    - rid: 3415138150063276546
+        thoughtMessage: '*You spend time talking with Chad.*'
+    - rid: 3415138150063276554
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He seems to value the company.*'
+    - rid: 3415138150063276555
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0
         Stat: 2
-        Adjust: 1
-    - rid: 3415138150063276547
-      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
-      data:
-        Character: 0
-        Stat: 1
-        Adjust: 1
-    - rid: 3415138150063276548
-      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
-      data:
-        Stat: 0
-        Adjust: 1
+        Adjust: 2
