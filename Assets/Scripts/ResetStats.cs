@@ -31,6 +31,7 @@ public class ResetStats : ScriptableObject
         Player.Intoxication = BasePlayerStats.Intoxication;
         Player.Luck = BasePlayerStats.Luck;
         Player.Skill = BasePlayerStats.Skill;
+        Player.TotalPointsScoredAcrossAllDartMatches = BasePlayerStats.Points;
     }
 
     private void resetEvents()
@@ -129,5 +130,5 @@ class BasePlayerStats
     public float Intoxication = 0f;
     public float Skill = 0f;
     public float Luck = 0f;
-    public float Points =0f;
+    public int Points =0;
 }

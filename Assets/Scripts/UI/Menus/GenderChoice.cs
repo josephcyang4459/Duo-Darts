@@ -15,7 +15,6 @@ public class GenderChoice : MonoBehaviour, Caller
     }
 
     public void SelectButton(int i) {
-        Debug.Log("here");
         if (i == 0) {
             Fill.SetCurrentImageToFill(FemMask, FemTarget.position);
         }
