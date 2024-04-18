@@ -7,6 +7,7 @@ public class DartSticker : MonoBehaviour
     public static DartSticker inst;
     [SerializeField] Transform Location;
     [SerializeField] Image DartImage;
+    [SerializeField] Image DartShadow;
     //[SerializeField] Sprite StuckSprite;
     [SerializeField] SpriteCollection FlyingSprite;
     [SerializeField] Vector2 StartingDistanceFromTargetInPixels;
@@ -64,8 +65,9 @@ public class DartSticker : MonoBehaviour
                 return;
         }
             
-        DartImage.enabled = true;
+        SetVisible(true);
         DartImage.sprite = FlyingSprite.Sprites[Random.Range(0, FlyingSprite.Sprites.Length)];
+        DartShadow.sprite = DartImage.sprite;
         TargetLocation = newLocation;
         //Location.SetPositionAndRotation(newLocation + StartingDistanceFromTargetInPixels, Location.rotation);
         Location.position = newLocation + StartingDistanceFromTargetInPixels;
@@ -76,6 +78,7 @@ public class DartSticker : MonoBehaviour
     public void SetVisible(bool b)
     {
         DartImage.enabled = b;
+        DartShadow.enabled = b;
     }
 
     public void Update()
