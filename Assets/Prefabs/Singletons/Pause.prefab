@@ -7591,7 +7591,6 @@ MonoBehaviour:
   Enabled: 0
   PauseOptionsCanvas: {fileID: 6669384920222108966}
   StoryOptionsCanvas: {fileID: 5095675360234980418}
-  TutorialCanvas: {fileID: 0}
   BackGround: {fileID: 7017780323128185366}
   UI:
   - {fileID: 7765968367545825922}
@@ -7648,6 +7647,7 @@ MonoBehaviour:
   OldImages: []
   FillPerSecond: 4
   ShootDart: 0
+  PauseWhenStart: 0
 --- !u!114 &1832767919
 MonoBehaviour:
   m_ObjectHideFlags: 0
