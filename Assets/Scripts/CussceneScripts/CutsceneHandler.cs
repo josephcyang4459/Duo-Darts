@@ -96,10 +96,9 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void choice(int i) {
-        if (i == 0)
-            cutscene = characters.list[CurrentCharacterIndex].DefaultRepeatingScene;
-        else
-            cutscene = characters.list[CurrentCharacterIndex].DefaultDrinkingCutScene;
+        Partner partner = characters.list[CurrentCharacterIndex];
+        cutscene = (i == 0) ? partner.DefaultRepeatingScene : partner.DefaultDrinkingCutScene;
+
         UIState.inst.SetInteractable(false);
         Schedule.enabled = false;
         index = 0;
