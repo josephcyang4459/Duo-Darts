@@ -13,103 +13,101 @@ MonoBehaviour:
   m_Name: LoungeAdviceGuy
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 6642624351303631141
-  - rid: 6642624351303631142
-  - rid: 6642624351303631143
-  - rid: 6642624351303631144
-  - rid: 6642624351303631145
-  - rid: 6642624351303631146
-  - rid: 6642624351303631147
-  - rid: 6642624351303631148
-  - rid: 6642624351303631149
-  - rid: 6642624351303631150
-  - rid: 6642624351303631151
-  - rid: 6642624351303631152
-  - rid: 6642624351303631153
-  - rid: 6642624351303631154
-  - rid: 6642624351303631155
-  - rid: 6642624351303631156
-  - rid: 6642624351303631157
-  - rid: 6642624351303631158
+  - rid: 7527442909745906672
+  - rid: 7527442909745906673
+  - rid: 7527442909745906674
+  - rid: 7527442909745906675
+  - rid: 7527442909745906676
+  - rid: 7527442909745906677
+  - rid: 7527442909745906678
+  - rid: 7527442909745906679
+  - rid: 7527442909745906680
+  - rid: 7527442909745906681
+  - rid: 7527442909745906682
+  - rid: 7527442909745906683
+  - rid: 7527442909745906684
+  - rid: 7527442909745906685
+  - rid: 7527442909745906686
+  - rid: 7527442909745906687
+  - rid: 7527442909778411520
+  - rid: 7527442909778411521
   defaultCharacter: Lounge Guy
   ForceDarts: 0
-  aa: {fileID: 4900000, guid: a8bca4d1df2927e45ba84f082ccade6d, type: 3}
-  reset: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 6642624351303631141
+    - rid: 7527442909745906672
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A sketchy looking man motions to a seat next to him at
           a table.'
-    - rid: 6642624351303631142
+    - rid: 7527442909745906673
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 6642624351303631143
+    - rid: 7527442909745906674
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yo. Sit.
-    - rid: 6642624351303631144
+    - rid: 7527442909745906675
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit.*'
-    - rid: 6642624351303631145
+    - rid: 7527442909745906676
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "These fools. They just don\u2019t get the art of the dart, you
-          know?"
-    - rid: 6642624351303631146
+        message: These fools. They just don't get the art of the dart, you know?
+    - rid: 7527442909745906677
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "But you... I can tell you\u2019re from a different flock."
-    - rid: 6642624351303631147
+        message: But you... I can tell you're from a different flock.
+    - rid: 7527442909745906678
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You understand.
-    - rid: 6642624351303631148
+    - rid: 7527442909745906679
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He pats your back a little too hard.*'
-    - rid: 6642624351303631149
+    - rid: 7527442909745906680
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "You\u2019re the right stuff."
-    - rid: 6642624351303631150
+        message: You're the right stuff.
+    - rid: 7527442909745906681
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I\u2019ll be cheering for you."
-    - rid: 6642624351303631151
+        message: I'll be cheering for you.
+    - rid: 7527442909745906682
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "And I\u2019ll even give you some free advice."
-    - rid: 6642624351303631152
+        message: And I'll even give you some free advice.
+    - rid: 7527442909745906683
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: When going for a high ton, always think about cargo ships.
-    - rid: 6642624351303631153
+    - rid: 7527442909745906684
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Those babies can hold so many tons of darts. It\u2019s incredible."
-    - rid: 6642624351303631154
+        message: Those babies can hold so many tons of darts. It's incredible.
+    - rid: 7527442909745906685
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that you needed that advice, but now you have it.
-    - rid: 6642624351303631155
+    - rid: 7527442909745906686
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He pats your back even harder.*'
-    - rid: 6642624351303631156
+    - rid: 7527442909745906687
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Off you go. To victory and triumph.
-    - rid: 6642624351303631157
+    - rid: 7527442909778411520
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave your seat feeling motivated by the art of the
           dart.*'
-    - rid: 6642624351303631158
+    - rid: 7527442909778411521
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 1

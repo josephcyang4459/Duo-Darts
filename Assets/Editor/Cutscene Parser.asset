@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58c99b5db0254e94cbfb3ceeda7550c8, type: 2}
   - {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
   - {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
-  - {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
   - {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+  - {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
   - {fileID: 11400000, guid: c4dfed969452951468178461bf30a220, type: 2}
   - {fileID: 11400000, guid: 4a37a56e6224b454eab247739d2e6487, type: 2}
   - {fileID: 11400000, guid: c9a08ff73aecc614d993a9b126d99b66, type: 2}
@@ -57,6 +57,7 @@ MonoBehaviour:
   EventList: {fileID: 11400000, guid: 65f0fcf24c388e24ead99f7bef1e1e14, type: 2}
   Script: {fileID: 4900000, guid: b8f7a73b6da87c34d8508268ca0eb1c1, type: 3}
   NotFound:
+  - {fileID: 11400000, guid: adaf0d923d9143e44880e5f3720ec782, type: 2}
   - {fileID: 11400000, guid: f776c8878f89d6e428bda2f630463aa7, type: 2}
   - {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}
   TryParse: 0
@@ -136,8 +137,8 @@ MonoBehaviour:
     FirstLine: "[Newln]*You join Chad in people watching.*\r"
     LastLine: "[Newln]*He seems to value the company.*[RaiseChadLove2]\r"
     CharacterName: Chad
-    CutsceneIndex: 5
-    AssociatedCutscene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
+    CutsceneIndex: 6
+    AssociatedCutscene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Chad Drinking Scene
     IsCutscene: 1
@@ -148,8 +149,8 @@ MonoBehaviour:
     FirstLine: "[Newln]*You join Chad in people watching.*\r"
     LastLine: "[Newln]*You spend time drinking with Chad.*[RaiseChadLove1][RaiseChadIntox1][RaisePlayerIntox1]\r"
     CharacterName: Chad
-    CutsceneIndex: 6
-    AssociatedCutscene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
+    CutsceneIndex: 7
+    AssociatedCutscene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Chad  Banter
     IsCutscene: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
     LastLine: "[Newln]*You're not sure when he did, but he marked one of the fins
       with your first initial.*\r"
     CharacterName: Chad
-    CutsceneIndex: 7
+    CutsceneIndex: 8
     AssociatedCutscene: {fileID: 11400000, guid: fcf96eb0e8d84cc418d7eba6b9ea6878, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Faye Scene 1
@@ -261,7 +262,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You go to Faye's booth.*\r"
     LastLine: "[Newln]*You spend time with Faye. She seems relieved.* [RaiseFayeLove2]\r"
     CharacterName: Faye
-    CutsceneIndex: 5
+    CutsceneIndex: 6
     AssociatedCutscene: {fileID: 11400000, guid: d89d6071d0c6f6c43834f84b3e1b9738, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Faye Drinking Scene
@@ -273,7 +274,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You go to Faye's booth.*\r"
     LastLine: "[Newln]*You spend time drinking with Faye.* [RaiseFayeLove1][RaiseFayeIntox1][RaisePlayerIntox1]\r"
     CharacterName: Faye
-    CutsceneIndex: 6
+    CutsceneIndex: 7
     AssociatedCutscene: {fileID: 11400000, guid: 78736f0a7a0b21846ae49128799bee2c, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Faye  Banter
@@ -311,7 +312,7 @@ MonoBehaviour:
     LastLine: "[Newln]*As you're about to leave, you see Faye talking with some crowd
       members, taking pictures with her and the trophy. All smiles.*\r"
     CharacterName: Faye
-    CutsceneIndex: 7
+    CutsceneIndex: 8
     AssociatedCutscene: {fileID: 11400000, guid: 9d2092e43d574fb4fb806d9f729b6f16, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Jess Scene 1
@@ -386,7 +387,7 @@ MonoBehaviour:
     LastLine: "[Newln]*You spend time talking with Jessica. She seems appreciative.*
       [RaiseJessLove2]\r"
     CharacterName: Jess
-    CutsceneIndex: 5
+    CutsceneIndex: 6
     AssociatedCutscene: {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Jess Drinking Scene
@@ -399,7 +400,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You sit next to Jessica.*\r"
     LastLine: "[Newln]*You spend time drinking with Jessica.* [RaiseJessLove1][RaiseJessIntox1][RaisePlayerIntox1]\r"
     CharacterName: Jess
-    CutsceneIndex: 6
+    CutsceneIndex: 7
     AssociatedCutscene: {fileID: 11400000, guid: afe9e1ce4b603eb48bb054d97aa5e68a, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Jess  Banter
@@ -436,7 +437,7 @@ MonoBehaviour:
     LastLine: "[Newln]*You feel confident it'll find its way back to its rightful
       owner soon enough.*\r"
     CharacterName: Jess
-    CutsceneIndex: 7
+    CutsceneIndex: 8
     AssociatedCutscene: {fileID: 11400000, guid: c134065451ed4a04fae7fb2d8edc848e, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Elaine Scene 1
@@ -514,7 +515,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You see Elaine practicing alone.*\r"
     LastLine: "[Newln]*You spend time watching Elaine practice and gloat.* [RaiseElaineLove2]\r"
     CharacterName: Elaine
-    CutsceneIndex: 5
+    CutsceneIndex: 6
     AssociatedCutscene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Elaine Drinking Scene
@@ -526,7 +527,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*You see Elaine practicing alone.*\r"
     LastLine: "[Newln]*You spend time drinking with Elaine.* [RaiseElaineLove1][RaiseElaineIntox1][RaisePlayerIntox1]\r"
     CharacterName: Elaine
-    CutsceneIndex: 6
+    CutsceneIndex: 7
     AssociatedCutscene: {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Elaine  Banter
@@ -562,7 +563,7 @@ MonoBehaviour:
     FirstLine: "[Newln]*The tournament is yours. It's done.*\r"
     LastLine: "[Newln]*Maybe she wasn't just kidding.*\r"
     CharacterName: Elaine
-    CutsceneIndex: 7
+    CutsceneIndex: 8
     AssociatedCutscene: {fileID: 11400000, guid: fcb6784248342894ea52c16a9d41f15e, type: 2}
     Banter: {fileID: 0}
   - BestGuess: Lounge Guy
@@ -686,5 +687,4 @@ MonoBehaviour:
     CutsceneIndex: 2
     AssociatedCutscene: {fileID: 11400000, guid: dd39ab6df9b216c45ba74df6f4f21977, type: 2}
     Banter: {fileID: 0}
-  RepeatingHangoutSceneIndex: 5
   Characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}

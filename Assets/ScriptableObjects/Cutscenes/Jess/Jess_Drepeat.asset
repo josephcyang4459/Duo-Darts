@@ -13,60 +13,58 @@ MonoBehaviour:
   m_Name: Jess_Drepeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438493
-  - rid: 3415138152484438494
-  - rid: 3415138152484438495
-  - rid: 3415138152484438496
-  - rid: 3415138152484438497
-  - rid: 3415138152484438498
-  - rid: 3415138152484438499
-  - rid: 3415138152484438500
-  - rid: 3415138152484438501
+  - rid: 7527442909745906360
+  - rid: 7527442909745906361
+  - rid: 7527442909745906362
+  - rid: 7527442909745906363
+  - rid: 7527442909745906364
+  - rid: 7527442909745906365
+  - rid: 7527442909745906366
+  - rid: 7527442909745906367
+  - rid: 7527442909745906368
   defaultCharacter: Jess
-  exception: 0
-  AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: 575824675cd4f924b98c64a8ee1780f7, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438493
+    - rid: 7527442909745906360
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to Jessica.*'
-    - rid: 3415138152484438494
+    - rid: 7527442909745906361
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        expression: 1
-    - rid: 3415138152484438495
+        expression: 0
+    - rid: 7527442909745906362
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You want to buy me drinks?
-    - rid: 3415138152484438496
+    - rid: 7527442909745906363
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        expression: 2
-    - rid: 3415138152484438497
+        expression: 1
+    - rid: 7527442909745906364
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sure, saves me the trouble.
-    - rid: 3415138152484438498
+    - rid: 7527442909745906365
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You spend time drinking with Jessica.* '
-    - rid: 3415138152484438499
+        thoughtMessage: '*You spend time drinking with Jessica.*'
+    - rid: 7527442909745906366
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1
         Stat: 2
         Adjust: 1
-    - rid: 3415138152484438500
+    - rid: 7527442909745906367
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1
         Stat: 1
         Adjust: 1
-    - rid: 3415138152484438501
+    - rid: 7527442909745906368
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 0

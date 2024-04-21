@@ -13,6 +13,7 @@ public class Partner : ScriptableObject {
     public CutScene DefaultCutScene;
     public CutScene DefaultRepeatingScene;
     public CutScene DefaultDrinkingCutScene;
+    public CutScene FinalCutscene; 
     public Sprite[] Expressions;
     public DartAI AI;
     public DartsBanterLines RegularBanterLines;
@@ -89,6 +90,8 @@ public class Partner : ScriptableObject {
         {
             RelatedCutScenes[i].Location = RelatedCutScenes[i].CutsceneLocation.ToString();
         }
+        UnityEditor.EditorUtility.SetDirty(this);
+
     }
 
     public void __resetValues() {

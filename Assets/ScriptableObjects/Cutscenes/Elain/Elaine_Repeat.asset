@@ -13,50 +13,51 @@ MonoBehaviour:
   m_Name: Elaine_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438228
-  - rid: 3415138152484438229
-  - rid: 3415138152484438230
-  - rid: 3415138152484438231
-  - rid: 3415138152484438232
-  - rid: 3415138152484438233
+  - rid: 7527442909778411641
+  - rid: 7527442909778411642
+  - rid: 7527442909778411643
+  - rid: 7527442909778411644
+  - rid: 7527442909778411645
+  - rid: 7527442909778411646
+  - rid: 7527442909778411647
+  - rid: 7527442909778411648
   defaultCharacter: Elaine
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 02000000
-    values: 02000000
-  AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: f4620f001b4a6894c93d0dd09fc217fb, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438228
+    - rid: 7527442909778411641
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Elaine practicing alone.*'
-    - rid: 3415138152484438229
+    - rid: 7527442909778411642
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411643
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 3415138152484438230
+    - rid: 7527442909778411644
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come here.
-    - rid: 3415138152484438231
+    - rid: 7527442909778411645
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778411646
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Check this trick out.
-    - rid: 3415138152484438232
+    - rid: 7527442909778411647
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You spend time watching Elaine practice and gloat.* '
-    - rid: 3415138152484438233
+        thoughtMessage: '*You spend time watching Elaine practice and gloat.*'
+    - rid: 7527442909778411648
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 3
         Stat: 2
         Adjust: 2

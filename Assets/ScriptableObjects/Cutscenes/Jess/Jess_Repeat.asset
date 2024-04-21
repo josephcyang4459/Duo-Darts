@@ -13,40 +13,44 @@ MonoBehaviour:
   m_Name: Jess_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438487
-  - rid: 3415138152484438488
-  - rid: 3415138152484438489
-  - rid: 3415138152484438490
-  - rid: 3415138152484438491
-  - rid: 3415138152484438492
+  - rid: 7527442909745906549
+  - rid: 7527442909745906550
+  - rid: 7527442909745906551
+  - rid: 7527442909745906552
+  - rid: 7527442909745906553
+  - rid: 7527442909745906554
+  - rid: 7527442909745906555
   defaultCharacter: Jess
   ForceDarts: 0
-  aa: {fileID: 4900000, guid: ad9b55d26cb6c394c8013109d47c4546, type: 3}
-  reset: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438487
+    - rid: 7527442909745906549
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to Jessica and strike up a conversation.*'
-    - rid: 3415138152484438488
+    - rid: 7527442909745906550
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        expression: 1
-    - rid: 3415138152484438489
+        expression: 0
+    - rid: 7527442909745906551
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I suppose it's nice to see you again.
-    - rid: 3415138152484438490
+    - rid: 7527442909745906552
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909745906553
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You have something interesting to say?
-    - rid: 3415138152484438491
+    - rid: 7527442909745906554
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You spend time talking with Jessica. She seems appreciative.* '
-    - rid: 3415138152484438492
+        thoughtMessage: '*You spend time talking with Jessica. She seems appreciative.*'
+    - rid: 7527442909745906555
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1

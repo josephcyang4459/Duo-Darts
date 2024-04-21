@@ -28,6 +28,7 @@ public class DefaultScene : CutScene
             reset = false;
             blocks[0] = new PresentOptions();
         }
+        UnityEditor.EditorUtility.SetDirty(this);
     }
 #endif
 }

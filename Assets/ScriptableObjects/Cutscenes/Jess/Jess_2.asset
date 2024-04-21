@@ -13,155 +13,168 @@ MonoBehaviour:
   m_Name: Jess_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438412
-  - rid: 3415138152484438413
-  - rid: 3415138152484438414
-  - rid: 3415138152484438415
-  - rid: 3415138152484438416
-  - rid: 3415138152484438417
-  - rid: 3415138152484438418
-  - rid: 3415138152484438419
-  - rid: 3415138152484438420
-  - rid: 3415138152484438421
-  - rid: 3415138152484438422
-  - rid: 3415138152484438423
-  - rid: 3415138152484438424
-  - rid: 3415138152484438425
-  - rid: 3415138152484438426
-  - rid: 3415138152484438427
-  - rid: 3415138152484438428
-  - rid: 3415138152484438429
-  - rid: 3415138152484438430
-  - rid: 3415138152484438431
-  - rid: 3415138152484438432
-  - rid: 3415138152484438433
-  - rid: 3415138152484438434
+  - rid: 7527442909745906144
+  - rid: 7527442909745906145
+  - rid: 7527442909745906146
+  - rid: 7527442909745906147
+  - rid: 7527442909745906148
+  - rid: 7527442909745906149
+  - rid: 7527442909745906150
+  - rid: 7527442909745906151
+  - rid: 7527442909745906152
+  - rid: 7527442909745906153
+  - rid: 7527442909745906154
+  - rid: 7527442909745906155
+  - rid: 7527442909745906156
+  - rid: 7527442909745906157
+  - rid: 7527442909745906158
+  - rid: 7527442909745906159
+  - rid: 7527442909745906160
+  - rid: 7527442909745906161
+  - rid: 7527442909745906162
+  - rid: 7527442909745906163
+  - rid: 7527442909745906164
+  - rid: 7527442909745906165
+  - rid: 7527442909745906166
+  - rid: 7527442909745906167
+  - rid: 7527442909745906168
+  - rid: 7527442909745906169
+  - rid: 7527442909745906170
+  - rid: 7527442909745906171
   defaultCharacter: Jess
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
-  aa: {fileID: 4900000, guid: 172eb73922c795f4a906c92328c6f934, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438412
+    - rid: 7527442909745906144
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You find Jessica sitting at the bar.*'
-    - rid: 3415138152484438413
+    - rid: 7527442909745906145
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You notice how much she stands out from others.*'
-    - rid: 3415138152484438414
+        thoughtMessage: '*You notice how much she stands out from others. She looks
+          like blood in blue water.*'
+    - rid: 7527442909745906146
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438415
+        expression: 0
+    - rid: 7527442909745906147
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You again?
-    - rid: 3415138152484438416
+    - rid: 7527442909745906148
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should've seen it coming.
-    - rid: 3415138152484438417
+    - rid: 7527442909745906149
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know drinking will only worsen your game.
-    - rid: 3415138152484438418
+    - rid: 7527442909745906150
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of darts...
-    - rid: 3415138152484438419
+    - rid: 7527442909745906151
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've never heard of you before tonight.
-    - rid: 3415138152484438420
+    - rid: 7527442909745906152
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Truthfully, I thought you might be some lucky startup to make it
           here.
-    - rid: 3415138152484438421
+    - rid: 7527442909745906153
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I guess we will see by the end of the night.
-    - rid: 3415138152484438422
+        message: I guess we will see by the end of the event.
+    - rid: 7527442909745906154
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909745906155
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: If we both make it that far. Though, I feel confident enough with
+          my share of that.
+    - rid: 7527442909745906156
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906157
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So. What do you want to talk about?
-    - rid: 3415138152484438423
+    - rid: 7527442909745906158
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Love.
           responses:
-          - Message: 
+          - Message: Maybe after I've had more to drink.
             Character: 1
-            Expression: 2
-            Stat: 0
+            Expression: 1
+            Stat: 2
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Death.
           responses:
-          - Message: 
+          - Message: '*She laughs lightly.*'
             Character: 1
-            Expression: 2
-            Stat: 0
+            Expression: 1
+            Stat: 2
             AdjustValue: 3
-            exemption: 1
-          - Message: I could've expected you to say something macabre or shocking
+            ResponseIsPlayerThought: 1
+          - Message: I could've expected you to say something macabre and shocking
               like that.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Taxes.
           responses:
-          - Message: 
+          - Message: God help us.
             Character: 1
             Expression: 4
-            Stat: 0
+            Stat: 2
             AdjustValue: 1
-            exemption: 0
-    - rid: 3415138152484438424
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909745906159
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906160
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Maybe I should have asked why you keep coming up to socialize with
           me.
-    - rid: 3415138152484438425
+    - rid: 7527442909745906161
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yes. That's a much better question.
-    - rid: 3415138152484438426
+    - rid: 7527442909745906162
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Jessica faces you and waits for an answer.*'
-    - rid: 3415138152484438427
+    - rid: 7527442909745906163
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So?
-    - rid: 3415138152484438428
+    - rid: 7527442909745906164
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Your skill.
           responses:
-          - Message: 
+          - Message: It's refreshing that someone sees past the beauty to see the
+              darts player that I truly am.
             Character: 1
-            Expression: 2
-            Stat: 0
+            Expression: 1
+            Stat: 2
             AdjustValue: 3
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: Your beauty.
           responses:
           - Message: '*She sighs.*'
@@ -169,54 +182,57 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 1
+            ResponseIsPlayerThought: 1
           - Message: At least you're trying.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: No reason in particular.
           responses:
-          - Message: 
+          - Message: I'll call that a lie.
             Character: 1
-            Expression: 2
-            Stat: 0
+            Expression: 1
+            Stat: 2
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
           - Message: But fine, keep the reason to yourself.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
-    - rid: 3415138152484438429
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909745906165
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906166
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Jessica faces away from you toward the bar.*'
-    - rid: 3415138152484438430
+    - rid: 7527442909745906167
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've changed my mind again.
-    - rid: 3415138152484438431
+    - rid: 7527442909745906168
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Let's talk about what you mentioned before.
-    - rid: 3415138152484438432
+        message: Let's talk about what you mentioned before, as irrelevant as it
+          is.
+    - rid: 7527442909745906169
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You and Jessica talk for a while.*'
-    - rid: 3415138152484438433
+    - rid: 7527442909745906170
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 1
         Adjust: 1
-    - rid: 3415138152484438434
+    - rid: 7527442909745906171
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 1
         Adjust: 1
