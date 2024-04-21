@@ -13,159 +13,157 @@ MonoBehaviour:
   m_Name: Faye_End
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442783781257325
-  - rid: 7527442783781257326
-  - rid: 7527442783781257327
-  - rid: 7527442783781257328
-  - rid: 7527442783781257329
-  - rid: 7527442783781257330
-  - rid: 7527442783781257331
-  - rid: 7527442783781257332
-  - rid: 7527442783781257333
-  - rid: 7527442783781257334
-  - rid: 7527442783781257335
-  - rid: 7527442783781257336
-  - rid: 7527442783781257337
-  - rid: 7527442783781257338
-  - rid: 7527442783781257339
-  - rid: 7527442783781257340
-  - rid: 7527442783781257341
-  - rid: 7527442783781257342
-  - rid: 7527442783781257343
-  - rid: 7527442783781257344
-  - rid: 7527442783781257345
-  - rid: 7527442783781257346
-  - rid: 7527442783781257347
-  - rid: 7527442783781257348
-  - rid: 7527442783781257349
-  - rid: 7527442783781257350
-  - rid: 7527442783781257351
-  - rid: 7527442783781257352
+  - rid: 7527442909745906464
+  - rid: 7527442909745906465
+  - rid: 7527442909745906466
+  - rid: 7527442909745906467
+  - rid: 7527442909745906468
+  - rid: 7527442909745906469
+  - rid: 7527442909745906470
+  - rid: 7527442909745906471
+  - rid: 7527442909745906472
+  - rid: 7527442909745906473
+  - rid: 7527442909745906474
+  - rid: 7527442909745906475
+  - rid: 7527442909745906476
+  - rid: 7527442909745906477
+  - rid: 7527442909745906478
+  - rid: 7527442909745906479
+  - rid: 7527442909745906480
+  - rid: 7527442909745906481
+  - rid: 7527442909745906482
+  - rid: 7527442909745906483
+  - rid: 7527442909745906484
+  - rid: 7527442909745906485
+  - rid: 7527442909745906486
+  - rid: 7527442909745906487
+  - rid: 7527442909745906488
+  - rid: 7527442909745906489
+  - rid: 7527442909745906490
+  - rid: 7527442909745906491
   defaultCharacter: Faye
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442783781257325
+    - rid: 7527442909745906464
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The game is yours. And so is the trophy.*'
-    - rid: 7527442783781257326
+    - rid: 7527442909745906465
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442783781257327
+    - rid: 7527442909745906466
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: We did it!
-    - rid: 7527442783781257328
+    - rid: 7527442909745906467
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye is quick to go to the side of the trophy.*'
-    - rid: 7527442783781257329
+    - rid: 7527442909745906468
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see her beckon you over.*'
-    - rid: 7527442783781257330
+    - rid: 7527442909745906469
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come on, you get to hold it.
-    - rid: 7527442783781257331
+    - rid: 7527442909745906470
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You take hold of the prize and Faye stands at your side
           facing the crowd.*'
-    - rid: 7527442783781257332
+    - rid: 7527442909745906471
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Cameras begin to flash off.*'
-    - rid: 7527442783781257333
+    - rid: 7527442909745906472
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: The crowd was one thing, but if I see my picture posted in this
           bar next time...
-    - rid: 7527442783781257334
+    - rid: 7527442909745906473
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Before many more pictures can be taken, Faye leads you
           away and back to her booth.*'
-    - rid: 7527442783781257335
+    - rid: 7527442909745906474
       type: {class: SwapBackGround, ns: , asm: Assembly-CSharp}
       data:
         place: Lounge
-    - rid: 7527442783781257336
+    - rid: 7527442909745906475
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I think we lost them.
-    - rid: 7527442783781257337
+    - rid: 7527442909745906476
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I don\u2019t know if I\u2019m ready to have my picture plastered
-          everywhere."
-    - rid: 7527442783781257338
+        message: I don't know if I'm ready to have my picture plastered everywhere.
+    - rid: 7527442909745906477
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Well, at least you\u2019re in it with me."
-    - rid: 7527442783781257339
+        message: Well, at least you're in it with me.
+    - rid: 7527442909745906478
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She looks at the booth.*'
-    - rid: 7527442783781257340
+    - rid: 7527442909745906479
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Taking one of her darts from its holster, Faye leaves it
           on the table.*'
-    - rid: 7527442783781257341
+    - rid: 7527442909745906480
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I think I should go back there. Maybe it\u2019s good for me to
-          be seen."
-    - rid: 7527442783781257342
+        message: I think I should go back there. Maybe it's good for me to be seen.
+    - rid: 7527442909745906481
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Then she reaches for the trophy. You hand it over.*'
-    - rid: 7527442783781257343
+    - rid: 7527442909745906482
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yeah. But, I need to do it on my own.
-    - rid: 7527442783781257344
+    - rid: 7527442909745906483
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I can\u2019t always rely on you for support."
-    - rid: 7527442783781257345
+        message: I can't always rely on you for support.
+    - rid: 7527442909745906484
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Even if I know you\u2019d always give it."
-    - rid: 7527442783781257346
+        message: Even if I know you'd always give it.
+    - rid: 7527442909745906485
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She nods, confident, then walks away, back into the crowd.*'
-    - rid: 7527442783781257347
+    - rid: 7527442909745906486
       type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
       data:
         character: 
         Expression: 0
-    - rid: 7527442783781257348
+    - rid: 7527442909745906487
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: "*You look back to the dart she left behind. There\u2019s
-          a small piece of paper wrapped around it.*"
-    - rid: 7527442783781257349
+        thoughtMessage: '*You look back to the dart she left behind. There''s a small
+          piece of paper wrapped around it.*'
+    - rid: 7527442909745906488
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: "*It\u2019s a note.*"
-    - rid: 7527442783781257350
+        thoughtMessage: '*It''s a note.*'
+    - rid: 7527442909745906489
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: "*It reads, \u201CThanks for everything. I\u2019m no good
-          with goodbyes. See you next tournament. - Faye\u201D*"
-    - rid: 7527442783781257351
+        thoughtMessage: "*It reads, \u201CThanks for everything. I'm no good with
+          goodbyes. See you next tournament. - Faye\u201D*"
+    - rid: 7527442909745906490
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You decide to keep both the dart and note as mementos.*'
-    - rid: 7527442783781257352
+    - rid: 7527442909745906491
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: "*As you\u2019re about to leave, you see Faye talking with
-          some crowd members, taking pictures with her and the trophy. All smiles.*"
+        thoughtMessage: '*As you''re about to leave, you see Faye talking with some
+          crowd members, taking pictures with her and the trophy. All smiles.*'

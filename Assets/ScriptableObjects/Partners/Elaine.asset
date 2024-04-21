@@ -47,6 +47,7 @@ MonoBehaviour:
   DefaultCutScene: {fileID: 11400000, guid: 60cc4457f891ae44bace0b7a75fd278e, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}
   DefaultDrinkingCutScene: {fileID: 11400000, guid: 181da43c4ba3dad4186b50ffecf396d7, type: 2}
+  FinalCutscene: {fileID: 11400000, guid: fcb6784248342894ea52c16a9d41f15e, type: 2}
   Expressions:
   - {fileID: 21300000, guid: 3d1e3133f0c5e0848b0173923dd38862, type: 3}
   - {fileID: 21300000, guid: f3032383f45496046a33ae14e8b2f1ec, type: 3}

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class TypeWriterEffect : MonoBehaviour {
     [SerializeField] private bool UseCustomSpeed;
@@ -26,7 +23,7 @@ public class TypeWriterEffect : MonoBehaviour {
             return;
         if (textToType.Length == 0)
             return;
-        Writing = true;//maybe check if there is already an active coroutine here because my god was it fucked up
+        Writing = true;
         TextToType = textToType;
 
         Textlabel = textLabel;

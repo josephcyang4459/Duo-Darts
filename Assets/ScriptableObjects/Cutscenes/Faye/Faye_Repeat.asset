@@ -13,51 +13,41 @@ MonoBehaviour:
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438379
-  - rid: 3415138152484438380
-  - rid: 3415138152484438381
-  - rid: 3415138152484438382
-  - rid: 3415138152484438383
-  - rid: 3415138152484438384
+  - rid: 7527442909745906516
+  - rid: 7527442909745906517
+  - rid: 7527442909745906518
+  - rid: 7527442909745906519
+  - rid: 7527442909745906520
+  - rid: 7527442909745906521
   defaultCharacter: Faye
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 02000000
-    values: 02000000
-  AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: dbebe3ab05b5e3246b7c8377ca3934fe, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438379
+    - rid: 7527442909745906516
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You go to Faye''s booth.*'
-    - rid: 3415138152484438380
+    - rid: 7527442909745906517
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438381
+        expression: 0
+    - rid: 7527442909745906518
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey it's you.
-    - rid: 3415138152484438382
+    - rid: 7527442909745906519
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's talk for a while.
-    - rid: 3415138152484438383
+    - rid: 7527442909745906520
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: '*You spend time with Faye. She seems relieved.* '
-    - rid: 3415138152484438384
+        thoughtMessage: '*You spend time with Faye. She seems relieved.*'
+    - rid: 7527442909745906521
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 2
         Stat: 2
         Adjust: 2

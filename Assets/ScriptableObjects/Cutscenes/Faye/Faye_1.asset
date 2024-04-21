@@ -13,48 +13,49 @@ MonoBehaviour:
   m_Name: Faye_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442542450442240
-  - rid: 7527442542450442241
-  - rid: 7527442542450442242
-  - rid: 7527442542450442243
-  - rid: 7527442542450442244
-  - rid: 7527442542450442245
-  - rid: 7527442542450442246
-  - rid: 7527442542450442247
-  - rid: 7527442542450442248
-  - rid: 7527442542450442249
-  - rid: 7527442542450442250
+  - rid: 7527442909745906412
+  - rid: 7527442909745906413
+  - rid: 7527442909745906414
+  - rid: 7527442909745906415
+  - rid: 7527442909745906416
+  - rid: 7527442909745906417
+  - rid: 7527442909745906418
+  - rid: 7527442909745906419
+  - rid: 7527442909745906420
+  - rid: 7527442909745906421
+  - rid: 7527442909745906422
   defaultCharacter: Faye
   ForceDarts: 1
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442542450442240
+    - rid: 7527442909745906412
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442542450442241
+    - rid: 7527442909745906413
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye looks nervous.*'
-    - rid: 7527442542450442242
+    - rid: 7527442909745906414
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Make your turns quick please.
-    - rid: 7527442542450442243
+    - rid: 7527442909745906415
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I don\u2019t like being up and about, especially with a crowd."
-    - rid: 7527442542450442244
+        message: I don't like being up and about, especially with a crowd.
+    - rid: 7527442909745906416
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And yeah, I was meaning to ask if you ever attended any other tournaments.
-    - rid: 7527442542450442245
+    - rid: 7527442909745906417
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "You didn\u2019t look familiar, but people don\u2019t always look
-          the same from one meet to the next."
-    - rid: 7527442542450442246
+        message: You didn't look familiar, but people don't always look the same
+          from one meet to the next.
+    - rid: 7527442909745906418
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -66,13 +67,13 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 3
             ResponseIsPlayerThought: 0
-          - Message: "We must\u2019ve just missed each other then."
+          - Message: We must've just missed each other then.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-        - answer: "I\u2019m a regular."
+        - answer: I'm a regular.
           responses:
           - Message: Really?
             Character: 2
@@ -80,7 +81,7 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
-          - Message: "I\u2019ve seen just about everyone here before."
+          - Message: I've seen just about everyone here before.
             Character: 0
             Expression: 4
             Stat: 0
@@ -94,25 +95,25 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 2
             ResponseIsPlayerThought: 0
-          - Message: "Don\u2019t worry. You\u2019ll probably do ok."
+          - Message: Don't worry. You'll probably do ok.
             Character: 2
             Expression: 1
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442542450442247
+    - rid: 7527442909745906419
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442542450442248
+    - rid: 7527442909745906420
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye focuses up.*'
-    - rid: 7527442542450442249
+    - rid: 7527442909745906421
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I apologize in advance that I'm not the best player here.
-    - rid: 7527442542450442250
+    - rid: 7527442909745906422
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, you go first.

@@ -16,8 +16,8 @@ MonoBehaviour:
   Font: {fileID: 11400000, guid: c435344beb3b63c4d950f03ef77bd96f, type: 2}
   textSize: 100
   Composure: 0
-  Intoxication: 0
-  Love: 2
+  Intoxication: 3
+  Love: 0
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 10
   - Location: bathroom
     CutsceneLocation: 3
@@ -47,6 +47,7 @@ MonoBehaviour:
   DefaultCutScene: {fileID: 11400000, guid: 5fcccc1e348025545966f489b9d40460, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
   DefaultDrinkingCutScene: {fileID: 11400000, guid: 810520246b2fb3e46853efe645ec4968, type: 2}
+  FinalCutscene: {fileID: 11400000, guid: fcf96eb0e8d84cc418d7eba6b9ea6878, type: 2}
   Expressions:
   - {fileID: 21300000, guid: 07d179330ed9fd74f800a5d457b070b4, type: 3}
   - {fileID: 21300000, guid: 193cfd2a572733a489518819c74606f7, type: 3}

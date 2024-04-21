@@ -13,157 +13,161 @@ MonoBehaviour:
   m_Name: Jess_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438435
-  - rid: 3415138152484438436
-  - rid: 3415138152484438437
-  - rid: 3415138152484438438
-  - rid: 3415138152484438439
-  - rid: 3415138152484438440
-  - rid: 3415138152484438441
-  - rid: 3415138152484438442
-  - rid: 3415138152484438443
-  - rid: 3415138152484438444
-  - rid: 3415138152484438445
-  - rid: 3415138152484438446
-  - rid: 3415138152484438447
-  - rid: 3415138152484438448
-  - rid: 3415138152484438449
-  - rid: 3415138152484438450
-  - rid: 3415138152484438451
-  - rid: 3415138152484438452
-  - rid: 3415138152484438453
-  - rid: 3415138152484438454
-  - rid: 3415138152484438455
+  - rid: 7527442909745906556
+  - rid: 7527442909745906557
+  - rid: 7527442909745906558
+  - rid: 7527442909745906559
+  - rid: 7527442909745906560
+  - rid: 7527442909745906561
+  - rid: 7527442909745906562
+  - rid: 7527442909745906563
+  - rid: 7527442909745906564
+  - rid: 7527442909745906565
+  - rid: 7527442909745906566
+  - rid: 7527442909745906567
+  - rid: 7527442909745906568
+  - rid: 7527442909745906569
+  - rid: 7527442909745906570
+  - rid: 7527442909745906571
+  - rid: 7527442909745906572
+  - rid: 7527442909745906573
+  - rid: 7527442909745906574
+  - rid: 7527442909745906575
+  - rid: 7527442909745906576
+  - rid: 7527442909745906577
+  - rid: 7527442909745906578
+  - rid: 7527442909745906579
   defaultCharacter: Jess
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 01000000
-    values: f0d8ffff
-  AnotherFuckingException: 0
-  aa: {fileID: 4900000, guid: a1fb2ffeabaed1a419842b9fd8d73a9c, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438435
+    - rid: 7527442909745906556
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 4
-    - rid: 3415138152484438436
+        expression: 3
+    - rid: 7527442909745906557
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You run into Jessica as you walk into the bathroom.*'
-    - rid: 3415138152484438437
+    - rid: 7527442909745906558
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh. It's you.
-    - rid: 3415138152484438438
+    - rid: 7527442909745906559
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't tell anybody, but I just made a girl cry in the bathroom.
-    - rid: 3415138152484438439
+    - rid: 7527442909745906560
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just told her her dartplay is like art.
-    - rid: 3415138152484438440
+    - rid: 7527442909745906561
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She gasps.*'
-    - rid: 3415138152484438441
+    - rid: 7527442909745906562
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I might've said something other than art.
-    - rid: 3415138152484438442
+    - rid: 7527442909745906563
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She stares at you for a second'
-    - rid: 3415138152484438443
+    - rid: 7527442909745906564
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Jessica burps.*'
-    - rid: 3415138152484438444
+    - rid: 7527442909745906565
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Rumbles of worse things sound out from her as well.*'
+    - rid: 7527442909745906566
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Oh God.
-    - rid: 3415138152484438445
+        message: Oh god.
+    - rid: 7527442909745906567
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: I'm going back inside. People can't see me this drunk.
-    - rid: 3415138152484438446
+        message: I'm going back inside. People can't see me get sick.
+    - rid: 7527442909745906568
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs your arm and pulls you all the way into a stall.*'
-    - rid: 3415138152484438447
+    - rid: 7527442909745906569
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Unceremoniously, she drops down over the porcelain.*'
+    - rid: 7527442909745906570
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hold my hair please...
-    - rid: 3415138152484438448
+    - rid: 7527442909745906571
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She vomits into the toilet.*'
-    - rid: 3415138152484438449
+    - rid: 7527442909745906572
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This is your fault.
-    - rid: 3415138152484438450
+    - rid: 7527442909745906573
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Buying me drinks all night long.
-    - rid: 3415138152484438451
+    - rid: 7527442909745906574
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: I didn't force you to drink them.
           responses:
-          - Message: 
+          - Message: Semantics are fallacious, you know.
             Character: 1
             Expression: 4
-            Stat: 0
+            Stat: 2
             AdjustValue: 1
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: I'm taking responsibility.
           responses:
-          - Message: 
+          - Message: I'd say you're doing the bare minimum by being here.
             Character: 1
             Expression: 4
-            Stat: 0
+            Stat: 2
             AdjustValue: 2
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: You're not enjoying this?
           responses:
-          - Message: 
+          - Message: '*She laughs.*'
             Character: 1
             Expression: 4
-            Stat: 0
+            Stat: 2
             AdjustValue: 3
-            exemption: 1
+            ResponseIsPlayerThought: 1
           - Message: I think you are scum, you know.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
-    - rid: 3415138152484438452
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909745906575
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica vomits again.*'
+    - rid: 7527442909745906576
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Just stay here for a little while longer.
-    - rid: 3415138152484438453
+    - rid: 7527442909745906577
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I have to say you are a lovely hair holder by the way.
-    - rid: 3415138152484438454
+    - rid: 7527442909745906578
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You stay with Jessica for a while until she feels better.*'
-    - rid: 3415138152484438455
+    - rid: 7527442909745906579
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
-        name: Change Stat Block
         Character: 1
         Stat: 1
         Adjust: -1000000
