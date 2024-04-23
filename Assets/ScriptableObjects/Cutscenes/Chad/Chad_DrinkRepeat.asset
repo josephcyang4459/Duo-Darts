@@ -13,55 +13,58 @@ MonoBehaviour:
   m_Name: Chad_DrinkRepeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138150063276541
-  - rid: 3415138150063276542
-  - rid: 3415138150063276543
-  - rid: 3415138150063276544
-  - rid: 3415138150063276545
-  - rid: 3415138150063276546
-  - rid: 3415138150063276547
-  - rid: 3415138150063276548
+  - rid: 7527442909745906522
+  - rid: 7527442909745906523
+  - rid: 7527442909745906524
+  - rid: 7527442909745906525
+  - rid: 7527442909745906526
+  - rid: 7527442909745906527
+  - rid: 7527442909745906528
+  - rid: 7527442909745906529
+  - rid: 7527442909745906530
   defaultCharacter: Chad
-  exception: 0
-  AnotherFuckingException: 1
-  aa: {fileID: 4900000, guid: e8efc09b89131e247837dbd6d0e63e11, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138150063276541
+    - rid: 7527442909745906522
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You join Chad in people watching.*'
-    - rid: 3415138150063276542
+    - rid: 7527442909745906523
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906524
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Drinking?
-    - rid: 3415138150063276543
+    - rid: 7527442909745906525
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I can say for sure that\u2019s better than dancing."
-    - rid: 3415138150063276544
+        message: I can say for sure that's better than dancing.
+    - rid: 7527442909745906526
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "If you\u2019re paying I\u2019ll have a few."
-    - rid: 3415138150063276545
+        message: If you're paying I'll have a few.
+    - rid: 7527442909745906527
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time drinking with Chad.*'
-    - rid: 3415138150063276546
+    - rid: 7527442909745906528
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0
         Stat: 2
         Adjust: 1
-    - rid: 3415138150063276547
+    - rid: 7527442909745906529
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0
         Stat: 1
         Adjust: 1
-    - rid: 3415138150063276548
+    - rid: 7527442909745906530
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 0

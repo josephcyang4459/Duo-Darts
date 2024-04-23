@@ -2334,6 +2334,7 @@ MonoBehaviour:
   OldImages: []
   FillPerSecond: 4
   ShootDart: 0
+  PauseWhenStart: 0
 --- !u!114 &1373499021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2351,6 +2352,7 @@ MonoBehaviour:
   OldImages: []
   FillPerSecond: 4
   ShootDart: 0
+  PauseWhenStart: 0
 --- !u!114 &1373499022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,7 +2370,6 @@ MonoBehaviour:
   - Technical Lead
   - Programming
   - UI
-  - 3D Art
   TimerOnEachString: 3
   FadeSpeed: 1
 --- !u!114 &1373499023
@@ -2387,7 +2388,6 @@ MonoBehaviour:
   Strings:
   - Programming
   - QA
-  - UI
   TimerOnEachString: 3
   FadeSpeed: 1
 --- !u!114 &1373499024
@@ -2406,7 +2406,6 @@ MonoBehaviour:
   Strings:
   - Character Design
   - Art
-  - UI
   TimerOnEachString: 3
   FadeSpeed: 1
 --- !u!114 &1373499025

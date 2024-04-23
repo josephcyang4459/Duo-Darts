@@ -13,7 +13,8 @@ public class __CutsceneParser : ScriptableObject
     [SerializeField] bool TryParse;
     [SerializeField] bool SendToCutscenes;
     [SerializeField] List<ParserChunk> ChunkData = new();
-    [SerializeField] int RepeatingHangoutSceneIndex;
+    const int RepeatingHangoutSceneIndex = 6;
+    const int FinalCutsceneIndex = 8;
     [SerializeField] CharacterList Characters;
     private void OnValidate() {
         if (TryParse) {
@@ -46,7 +47,7 @@ public class __CutsceneParser : ScriptableObject
                 Debug.Log(chunkIndex + " NOT SENT ---------------------------------------------------");
             }
         }
-
+        UnityEditor.AssetDatabase.SaveAssets();
     }
 
     int FindNextChunkStart(int currentEnd, string[] s) {
@@ -250,15 +251,15 @@ public class __CutsceneParser : ScriptableObject
 
     int GetPartnerIndex(string full) {
         if (full.ToLower().Contains("chad"))
-            return 0;
+            return (int)CharacterNames.Chad;
         if (full.ToLower().Contains("faye"))
-            return 1;
+            return (int)CharacterNames.Faye;
         if (full.ToLower().Contains("jess"))
-            return 2;
+            return (int)CharacterNames.Jess;
         if (full.ToLower().Contains("elaine"))
-            return 3;
+            return (int)CharacterNames.Elaine;
         if (full.ToLower().Contains("owner"))
-            return 4;
+            return (int)CharacterNames.Owner;
         return -1;
     }
 
@@ -297,7 +298,28 @@ public class __CutsceneParser : ScriptableObject
         for (int chunkIndex = 0; chunkIndex < ChunkData.Count; chunkIndex++) {
 
             if (ChunkData[chunkIndex].IsCutscene) {
-                if (ChunkData[chunkIndex].CutsceneIndex > -1) {
+                int characterIndex = GetPartnerIndex(ChunkData[chunkIndex].CharacterName);
+                if (characterIndex != -1) {
+                    if (ChunkData[chunkIndex].CutsceneIndex == RepeatingHangoutSceneIndex) {
+                        ChunkData[chunkIndex].AssociatedCutscene = Characters.list[characterIndex].DefaultRepeatingScene;
+                        NotFound.Remove(Characters.list[characterIndex].DefaultRepeatingScene);
+                    }
+                    else if (ChunkData[chunkIndex].CutsceneIndex == RepeatingHangoutSceneIndex+1) {
+                        ChunkData[chunkIndex].AssociatedCutscene = Characters.list[characterIndex].DefaultDrinkingCutScene;
+                        NotFound.Remove(Characters.list[characterIndex].DefaultDrinkingCutScene);
+                    }
+                    else if (ChunkData[chunkIndex].CutsceneIndex == FinalCutsceneIndex) {
+                        ChunkData[chunkIndex].AssociatedCutscene = Characters.list[characterIndex].FinalCutscene;
+                        NotFound.Remove(Characters.list[characterIndex].FinalCutscene);
+                    }
+                    else if (ChunkData[chunkIndex].CutsceneIndex>-1 ){
+                        Debug.Log(ChunkData[chunkIndex].CutsceneIndex);
+                        ChunkData[chunkIndex].AssociatedCutscene = Characters.list[characterIndex].RelatedCutScenes[ChunkData[chunkIndex].CutsceneIndex].CutScene;
+                        NotFound.Remove(Characters.list[characterIndex].RelatedCutScenes[ChunkData[chunkIndex].CutsceneIndex].CutScene);
+                    }
+                }
+                else if (ChunkData[chunkIndex].CutsceneIndex > -1) {
+                    
                     int characterCutsceneIndex = 0;
                     for (int cutSceneIndex = 0; cutSceneIndex < Cutscenes.Length; cutSceneIndex++) {
                         if (Cutscenes[cutSceneIndex].defaultCharacter.ToLower().CompareTo(ChunkData[chunkIndex].CharacterName.ToLower()) == 0) {

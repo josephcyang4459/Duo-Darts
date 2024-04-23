@@ -13,76 +13,84 @@ MonoBehaviour:
   m_Name: Elaine_4
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 3415138152484438196
-  - rid: 3415138152484438197
-  - rid: 3415138152484438198
-  - rid: 3415138152484438199
-  - rid: 3415138152484438200
-  - rid: 3415138152484438201
-  - rid: 3415138152484438202
-  - rid: 3415138152484438203
-  - rid: 3415138152484438204
-  - rid: 3415138152484438205
-  - rid: 3415138152484438206
-  - rid: 3415138152484438207
-  - rid: 3415138152484438208
-  - rid: 3415138152484438209
-  - rid: 3415138152484438210
-  - rid: 3415138152484438211
-  - rid: 3415138152484438212
-  - rid: 3415138152484438213
-  - rid: 3415138152484438214
-  - rid: 3415138152484438215
-  - rid: 3415138152484438216
-  - rid: 3415138152484438217
-  - rid: 3415138152484438218
-  - rid: 3415138152484438219
-  - rid: 3415138152484438220
-  - rid: 3415138152484438221
-  - rid: 3415138152484438222
-  - rid: 3415138152484438223
-  - rid: 3415138152484438224
-  - rid: 3415138152484438225
-  - rid: 3415138152484438226
-  - rid: 3415138152484438227
+  - rid: 7527442909745906603
+  - rid: 7527442909745906604
+  - rid: 7527442909745906605
+  - rid: 7527442909745906606
+  - rid: 7527442909745906607
+  - rid: 7527442909745906608
+  - rid: 7527442909745906609
+  - rid: 7527442909745906610
+  - rid: 7527442909745906611
+  - rid: 7527442909745906612
+  - rid: 7527442909745906613
+  - rid: 7527442909745906614
+  - rid: 7527442909745906615
+  - rid: 7527442909745906616
+  - rid: 7527442909745906617
+  - rid: 7527442909745906618
+  - rid: 7527442909745906619
+  - rid: 7527442909745906620
+  - rid: 7527442909745906621
+  - rid: 7527442909745906622
+  - rid: 7527442909745906623
+  - rid: 7527442909745906624
+  - rid: 7527442909745906625
+  - rid: 7527442909745906626
+  - rid: 7527442909745906627
+  - rid: 7527442909745906628
+  - rid: 7527442909745906629
+  - rid: 7527442909745906630
+  - rid: 7527442909745906631
+  - rid: 7527442909745906632
+  - rid: 7527442909745906633
+  - rid: 7527442909745906634
+  - rid: 7527442909745906635
+  - rid: 7527442909745906636
+  - rid: 7527442909745906637
+  - rid: 7527442909745906638
+  - rid: 7527442909745906639
   defaultCharacter: Elaine
-  exception: 0
-  playerS:
-    stats: []
-    values: 
-  partnerS:
-    stats: 
-    values: 
-  AnotherFuckingException: 0
-  aa: {fileID: 4900000, guid: 17c34e3d9b97e82488bf766a980c85f6, type: 3}
-  reset: 0
+  ForceDarts: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 3415138152484438196
+    - rid: 7527442909745906603
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906604
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine is sitting at the bar.*'
-    - rid: 3415138152484438197
+    - rid: 7527442909745906605
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to her.*'
-    - rid: 3415138152484438198
+    - rid: 7527442909745906606
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909745906607
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh. It's you.
-    - rid: 3415138152484438199
+    - rid: 7527442909745906608
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906609
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm not really in the mood to put you down right now.
-    - rid: 3415138152484438200
+    - rid: 7527442909745906610
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come back later.
-    - rid: 3415138152484438201
+    - rid: 7527442909745906611
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: I'm staying.
           responses:
@@ -91,7 +99,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 1
+            ResponseIsPlayerThought: 1
         - answer: No.
           responses:
           - Message: '*Elaine looks genuinely surprised at your response.*'
@@ -99,7 +107,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 1
+            ResponseIsPlayerThought: 1
         - answer: Well if you say so...
           responses:
           - Message: '*Elaine grabs your arm before you can leave and makes you remain
@@ -108,147 +116,153 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 1
-    - rid: 3415138152484438202
+            ResponseIsPlayerThought: 1
+    - rid: 7527442909745906612
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't know what sick game you've been playing all night spending
+          time with me just to get treated poorly.
+    - rid: 7527442909745906613
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: But, it has gotten me thinking about what I'm really doing to you.
-    - rid: 3415138152484438203
+    - rid: 7527442909745906614
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's not been for good fun or some reason like that.
-    - rid: 3415138152484438204
+    - rid: 7527442909745906615
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I genuinely think of you as less than me at all levels.
-    - rid: 3415138152484438205
+    - rid: 7527442909745906616
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: That's what I think of everyone here.
-    - rid: 3415138152484438206
+    - rid: 7527442909745906617
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine looks at you with a look of concern.*'
-    - rid: 3415138152484438207
+    - rid: 7527442909745906618
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Am I just a great dart player with no other redeeming qualities?
-    - rid: 3415138152484438208
+    - rid: 7527442909745906619
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
-        name: Call & Response
         responses:
         - answer: Yes.
           responses:
           - Message: '*Elaine looks disturbed.*'
-            Character: 0
-            Expression: 4
+            Character: 3
+            Expression: 2
             Stat: 0
             AdjustValue: 0
-            exemption: 1
+            ResponseIsPlayerThought: 1
           - Message: Just go away.
             Character: 0
             Expression: 4
             Stat: 0
             AdjustValue: 0
-            exemption: 0
+            ResponseIsPlayerThought: 0
           - Message: 
             Character: 3
             Expression: 4
             Stat: 0
             AdjustValue: -10000000
-            exemption: 0
+            ResponseIsPlayerThought: 0
         - answer: You've been great.
           responses:
-          - Message: 
+          - Message: '*She looks dumbfounded.*'
             Character: 3
-            Expression: 2
+            Expression: 1
             Stat: 0
             AdjustValue: 0
-            exemption: 1
-        - answer: 
+            ResponseIsPlayerThought: 1
+        - answer: You have redeeming qualities.
           responses:
           - Message: '*She looks at you like you just saved her life.'
-            Character: 0
-            Expression: 4
+            Character: 3
+            Expression: 1
             Stat: 0
             AdjustValue: 0
-            exemption: 1
-    - rid: 3415138152484438209
+            ResponseIsPlayerThought: 1
+    - rid: 7527442909745906620
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909745906621
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You think so?
-    - rid: 3415138152484438210
+    - rid: 7527442909745906622
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: After all the things I've said to you?
-    - rid: 3415138152484438211
+    - rid: 7527442909745906623
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's not just you either, I'm terrible to everyone.
-    - rid: 3415138152484438212
+    - rid: 7527442909745906624
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You nod.*'
-    - rid: 3415138152484438213
+    - rid: 7527442909745906625
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 2
-    - rid: 3415138152484438214
+        expression: 1
+    - rid: 7527442909745906626
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Wow.
-    - rid: 3415138152484438215
+    - rid: 7527442909745906627
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: You're the first person to be appreciative of me in'
-    - rid: 3415138152484438216
+        message: You're the first person to be appreciative of me in...
+    - rid: 7527442909745906628
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't even know. Maybe my whole life.
-    - rid: 3415138152484438217
+    - rid: 7527442909745906629
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs a dart from one of her pockets.*'
-    - rid: 3415138152484438218
+    - rid: 7527442909745906630
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This is for you.
-    - rid: 3415138152484438219
+    - rid: 7527442909745906631
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're not beneath me anymore.
-    - rid: 3415138152484438220
+    - rid: 7527442909745906632
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're someone worth my respect.
-    - rid: 3415138152484438221
+    - rid: 7527442909745906633
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She smiles.*'
-    - rid: 3415138152484438222
+    - rid: 7527442909745906634
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: Sometimes'
-    - rid: 3415138152484438223
+        message: Sometimes...
+    - rid: 7527442909745906635
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
-        name: Expression Block
-        expression: 1
-    - rid: 3415138152484438224
+        expression: 0
+    - rid: 7527442909745906636
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know.
-    - rid: 3415138152484438225
+    - rid: 7527442909745906637
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'd like to be your partner for the final round.
-    - rid: 3415138152484438226
+    - rid: 7527442909745906638
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nobody else around here gets me like you do.
-    - rid: 3415138152484438227
+    - rid: 7527442909745906639
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend some time with the now slightly more merciful

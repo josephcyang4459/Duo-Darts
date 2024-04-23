@@ -10,19 +10,19 @@ public class PauseMenu : MonoBehaviour, Caller {
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
-    [SerializeField] bool IsInStory;
+    [SerializeField] SceneNumbers CurrentScene;
     [SerializeField] GameObject FirstSelected;
     [SerializeField] GameObject StoryFirstSelected;
     GameObject returnGameObjectButton;
     bool returnState;
 
-    public void IsInStoryScene(bool isInStory) { IsInStory = isInStory; }
+    public void SetCurrentScene(SceneNumbers curretnScene) { CurrentScene = curretnScene; }
 
     public void SetTutorialActive(bool active) {
-        if (IsInStory)
-            TutorialHandler.inst.EnableTutorialChoices(active);
-        else 
-            TutorialHandler.inst.EnableDartsTutorial(active);
+        switch (CurrentScene) {
+            case SceneNumbers.Story: TutorialHandler.inst.EnableTutorialChoices(active);return;
+            case SceneNumbers.Darts: TutorialHandler.inst.EnableDartsTutorial(active);return;
+        }
     }
 
     public void Awake() {
@@ -66,7 +66,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     void SetCorrectCanvas(bool state) {
-        Canvas canvas = (IsInStory) ? StoryOptionsCanvas : PauseOptionsCanvas;
+        Canvas canvas = (CurrentScene == SceneNumbers.Story) ? StoryOptionsCanvas : PauseOptionsCanvas;
         canvas.enabled = state;
     }
 
@@ -81,7 +81,7 @@ public class PauseMenu : MonoBehaviour, Caller {
             UIState.inst.SetInteractable(true);
             DartSticker.inst.SetVisible(false);
 
-            GameObject firstSelected = (IsInStory) ? StoryFirstSelected : FirstSelected;
+            GameObject firstSelected = (CurrentScene == SceneNumbers.Story) ? StoryFirstSelected : FirstSelected;
             UIState.inst.SetAsSelectedButton(firstSelected);
         }
         else {

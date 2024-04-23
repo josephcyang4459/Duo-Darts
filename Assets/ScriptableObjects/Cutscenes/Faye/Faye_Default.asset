@@ -16,7 +16,7 @@ MonoBehaviour:
   - rid: 6642624353882079235
   defaultCharacter: Faye
   ForceDarts: 0
-  aa: {fileID: 0}
+  TimeLength: 10
   reset: 0
   references:
     version: 2

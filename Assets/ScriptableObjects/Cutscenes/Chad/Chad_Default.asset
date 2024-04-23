@@ -16,6 +16,7 @@ MonoBehaviour:
   - rid: 7527442639493792340
   defaultCharacter: Chad
   ForceDarts: 0
+  TimeLength: 10
   reset: 0
   references:
     version: 2

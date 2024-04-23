@@ -124,7 +124,7 @@ public class CutScene : ScriptableObject
         blocks = blockList.ToArray();
 
         Debug.Log(name +" Reset Is Complete");
-
+        UnityEditor.EditorUtility.SetDirty(this);
     }
 
 

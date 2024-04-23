@@ -13,50 +13,49 @@ MonoBehaviour:
   m_Name: Jess_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 6642624351303631076
-  - rid: 6642624351303631077
-  - rid: 6642624351303631078
-  - rid: 6642624351303631079
-  - rid: 6642624351303631080
-  - rid: 6642624351303631081
-  - rid: 6642624351303631082
-  - rid: 6642624351303631083
-  - rid: 6642624351303631084
-  - rid: 6642624351303631085
-  - rid: 6642624351303631086
-  - rid: 6642624351303631087
-  - rid: 6642624351303631088
-  - rid: 6642624351303631089
-  - rid: 6642624351303631090
-  - rid: 6642624351303631091
-  - rid: 6642624351303631092
-  - rid: 6642624351303631093
-  - rid: 6642624351303631094
+  - rid: 7527442909778411522
+  - rid: 7527442909778411523
+  - rid: 7527442909778411524
+  - rid: 7527442909778411525
+  - rid: 7527442909778411526
+  - rid: 7527442909778411527
+  - rid: 7527442909778411528
+  - rid: 7527442909778411529
+  - rid: 7527442909778411530
+  - rid: 7527442909778411531
+  - rid: 7527442909778411532
+  - rid: 7527442909778411533
+  - rid: 7527442909778411534
+  - rid: 7527442909778411535
+  - rid: 7527442909778411536
+  - rid: 7527442909778411537
+  - rid: 7527442909778411538
+  - rid: 7527442909778411539
+  - rid: 7527442909778411540
   defaultCharacter: Jess
   ForceDarts: 0
-  aa: {fileID: 4900000, guid: e33b234e3c9177241abc0d08d97fe1e9, type: 3}
-  reset: 0
+  TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 6642624351303631076
+    - rid: 7527442909778411522
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see a unique woman dancing.*'
-    - rid: 6642624351303631077
+    - rid: 7527442909778411523
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Your eyes meet briefly and she walks over to you shortly
           after.*'
-    - rid: 6642624351303631078
+    - rid: 7527442909778411524
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 6642624351303631079
+    - rid: 7527442909778411525
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Is there something you want?
-    - rid: 6642624351303631080
+    - rid: 7527442909778411526
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -84,60 +83,60 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
-    - rid: 6642624351303631081
+    - rid: 7527442909778411527
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 6642624351303631082
+    - rid: 7527442909778411528
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just came to ask you to stop staring.
-    - rid: 6642624351303631083
+    - rid: 7527442909778411529
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "It\u2019s off putting."
-    - rid: 6642624351303631084
+        message: It's off putting.
+    - rid: 7527442909778411530
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She begins to return to her dancing, but stops and returns
           to you.*'
-    - rid: 6642624351303631085
+    - rid: 7527442909778411531
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I need a dance partner.
-    - rid: 6642624351303631086
+    - rid: 7527442909778411532
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She waits for a moment.*'
-    - rid: 6642624351303631087
+    - rid: 7527442909778411533
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well...
-    - rid: 6642624351303631088
+    - rid: 7527442909778411534
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "Aren\u2019t you going to ask me to dance?"
-    - rid: 6642624351303631089
+        message: Aren't you going to ask me to dance?
+    - rid: 7527442909778411535
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You take her onto the dance floor and dance with her.'
-    - rid: 6642624351303631090
+    - rid: 7527442909778411536
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "You\u2019re quite good at this."
-    - rid: 6642624351303631091
+        message: You're quite good at this.
+    - rid: 7527442909778411537
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She smirks.*'
-    - rid: 6642624351303631092
+    - rid: 7527442909778411538
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
-        message: "I\u2019m Jessica Fletcher."
-    - rid: 6642624351303631093
+        message: I'm Jessica Fletcher.
+    - rid: 7527442909778411539
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I asked you to stop staring...
-    - rid: 6642624351303631094
+    - rid: 7527442909778411540
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You and Jessica dance for a while.*'
