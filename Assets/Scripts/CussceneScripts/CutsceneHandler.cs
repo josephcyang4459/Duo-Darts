@@ -16,18 +16,22 @@ public class CutsceneHandler : MonoBehaviour {
     [SerializeField] TMP_Text CharacterName;
     [SerializeField] GameObject CharacterNamePlate;
     [SerializeField] DialougeBox DialougeBox;
-    [SerializeField] Canvas responseCanvas;
+    [SerializeField] DefaultCutsceneUI ResponseUI;
     [SerializeField] Image ResponsePortrait;
-    [SerializeField] GameObject responseButton;
     [SerializeField] TMP_Text[] responses;
+<<<<<<< Updated upstream
     [SerializeField] Canvas DefaultCanvass;
     [SerializeField] Image cutSceneBackGround;
+=======
+    [SerializeField] DefaultCutsceneUI DefaultCutscene;
+    public Image cutSceneBackGround;
+>>>>>>> Stashed changes
     [SerializeField] SpriteCollection BackgroundSprites;
     [SerializeField] Sprite[] CharacterPortraits;
     [Space]
     [SerializeField] int CurrentCharacterIndex;
     [SerializeField] int index;
-    [SerializeField] Response respon;
+    [SerializeField] Response CurrentResponseGroup;
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
@@ -89,7 +93,7 @@ public class CutsceneHandler : MonoBehaviour {
         }
     }
 
-    public void choice(int i) {
+    public void DefaultCutsceneSelection(int i) {
         if (i == 0)
             cutscene = characters.list[CurrentCharacterIndex].DefaultRepeatingScene;
         else
@@ -97,7 +101,6 @@ public class CutsceneHandler : MonoBehaviour {
         UIState.inst.SetInteractable(false);
         Schedule.enabled = false;
         index = 0;
-        DefaultCanvass.enabled = false;
         DialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += TakeAction;
@@ -119,7 +122,7 @@ public class CutsceneHandler : MonoBehaviour {
 
             responseIndexIndex++;
 
-            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length) {
+            if (responseIndexIndex >= CurrentResponseGroup.responses[responseIndex].responses.Length) {
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
@@ -144,7 +147,6 @@ public class CutsceneHandler : MonoBehaviour {
     public void HideUI() {
         InCutscene = false;
         DialougeCanvas.enabled = false;
-        responseCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
         UIState.inst.SetInteractable(true);
         interact.action.Disable();
@@ -160,9 +162,7 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void PresentChoices() {
-        UIState.inst.SetInteractable(true);
-        //-----------------------------------------------------------------------------------------******-----+++++++------------Set BUTTON HERE
-        DefaultCanvass.enabled = true;
+        DefaultCutscene.BeginEnter();
         DialougeCanvas.enabled = false;
         DialougeCanvas.enabled = false;
         interact.action.Disable();
@@ -191,13 +191,13 @@ public class CutsceneHandler : MonoBehaviour {
     public void Response(Response r) {
         //-------------------------**********------------------------------+++++++++++++--------------------------------------Set BUTTON HERE
         UIState.inst.SetInteractable(true);
-        respon = r;
+        CurrentResponseGroup = r;
         responding = true;
         responseIndex = -1;
         for (int i = 0; i < 3; i++)
-            responses[i].text = respon.responses[i].answer;
+            responses[i].text = CurrentResponseGroup.responses[i].answer;
 
-        responseCanvas.enabled = true;
+        ResponseUI.BeginEnter();
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
@@ -207,7 +207,6 @@ public class CutsceneHandler : MonoBehaviour {
 
     public void UI_Response(int i) {
         UIState.inst.SetInteractable(false);
-        responseCanvas.enabled = false;
         responseIndex = i;
         responseIndexIndex = 0;
 
@@ -215,11 +214,11 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     private void DisplayResponse() {
-        respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
-        if (!respon.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
-            Dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+        CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
+        if (!CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
+            Dialouge(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
         else
-            Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+            Thought(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
     public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock = true) {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Faye_Drepeat
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438371
   - rid: 3415138152484438372
   - rid: 3415138152484438373
@@ -21,6 +22,16 @@ MonoBehaviour:
   - rid: 3415138152484438376
   - rid: 3415138152484438377
   - rid: 3415138152484438378
+=======
+  - rid: 7527442909778411978
+  - rid: 7527442909778411979
+  - rid: 7527442909778411980
+  - rid: 7527442909778411981
+  - rid: 7527442909778411982
+  - rid: 7527442909778411983
+  - rid: 7527442909778411984
+  - rid: 7527442909778411985
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   exception: 0
   AnotherFuckingException: 1
@@ -29,6 +40,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438371
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -50,18 +62,49 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You spend time drinking with Faye.* '
     - rid: 3415138152484438376
+=======
+    - rid: 7527442909778411978
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You go to Faye''s booth.*'
+    - rid: 7527442909778411979
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411980
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: A drink?
+    - rid: 7527442909778411981
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: If you're paying and bringing them over here then sure.
+    - rid: 7527442909778411982
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time drinking with Faye.*'
+    - rid: 7527442909778411983
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2
         Stat: 2
         Adjust: 1
+<<<<<<< Updated upstream
     - rid: 3415138152484438377
+=======
+    - rid: 7527442909778411984
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2
         Stat: 1
         Adjust: 1
+<<<<<<< Updated upstream
     - rid: 3415138152484438378
+=======
+    - rid: 7527442909778411985
+>>>>>>> Stashed changes
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 0

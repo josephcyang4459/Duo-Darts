@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LoungeAdviceGuy
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624351303631141
   - rid: 6642624351303631142
   - rid: 6642624351303631143
@@ -31,6 +32,26 @@ MonoBehaviour:
   - rid: 6642624351303631156
   - rid: 6642624351303631157
   - rid: 6642624351303631158
+=======
+  - rid: 7527442909778412102
+  - rid: 7527442909778412103
+  - rid: 7527442909778412104
+  - rid: 7527442909778412105
+  - rid: 7527442909778412106
+  - rid: 7527442909778412107
+  - rid: 7527442909778412108
+  - rid: 7527442909778412109
+  - rid: 7527442909778412110
+  - rid: 7527442909778412111
+  - rid: 7527442909778412112
+  - rid: 7527442909778412113
+  - rid: 7527442909778412114
+  - rid: 7527442909778412115
+  - rid: 7527442909778412116
+  - rid: 7527442909778412117
+  - rid: 7527442909778412118
+  - rid: 7527442909778412119
+>>>>>>> Stashed changes
   defaultCharacter: Lounge Guy
   ForceDarts: 0
   aa: {fileID: 4900000, guid: a8bca4d1df2927e45ba84f082ccade6d, type: 3}
@@ -38,11 +59,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624351303631141
+=======
+    - rid: 7527442909778412102
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A sketchy looking man motions to a seat next to him at
           a table.'
+<<<<<<< Updated upstream
     - rid: 6642624351303631142
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -105,11 +131,78 @@ MonoBehaviour:
       data:
         message: Off you go. To victory and triumph.
     - rid: 6642624351303631157
+=======
+    - rid: 7527442909778412103
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412104
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Yo. Sit.
+    - rid: 7527442909778412105
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You sit.*'
+    - rid: 7527442909778412106
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: These fools. They just don't get the art of the dart, you know?
+    - rid: 7527442909778412107
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: But you... I can tell you're from a different flock.
+    - rid: 7527442909778412108
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You understand.
+    - rid: 7527442909778412109
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He pats your back a little too hard.*'
+    - rid: 7527442909778412110
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're the right stuff.
+    - rid: 7527442909778412111
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'll be cheering for you.
+    - rid: 7527442909778412112
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I'll even give you some free advice.
+    - rid: 7527442909778412113
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: When going for a high ton, always think about cargo ships.
+    - rid: 7527442909778412114
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Those babies can hold so many tons of darts. It's incredible.
+    - rid: 7527442909778412115
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Not that you needed that advice, but now you have it.
+    - rid: 7527442909778412116
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He pats your back even harder.*'
+    - rid: 7527442909778412117
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Off you go. To victory and triumph.
+    - rid: 7527442909778412118
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave your seat feeling motivated by the art of the
           dart.*'
+<<<<<<< Updated upstream
     - rid: 6642624351303631158
+=======
+    - rid: 7527442909778412119
+>>>>>>> Stashed changes
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 1

@@ -13,12 +13,22 @@ MonoBehaviour:
   m_Name: Jess_Repeat
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438487
   - rid: 3415138152484438488
   - rid: 3415138152484438489
   - rid: 3415138152484438490
   - rid: 3415138152484438491
   - rid: 3415138152484438492
+=======
+  - rid: 7527442909778411935
+  - rid: 7527442909778411936
+  - rid: 7527442909778411937
+  - rid: 7527442909778411938
+  - rid: 7527442909778411939
+  - rid: 7527442909778411940
+  - rid: 7527442909778411941
+>>>>>>> Stashed changes
   defaultCharacter: Jess
   ForceDarts: 0
   aa: {fileID: 4900000, guid: ad9b55d26cb6c394c8013109d47c4546, type: 3}
@@ -26,6 +36,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438487
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -47,6 +58,33 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You spend time talking with Jessica. She seems appreciative.* '
     - rid: 3415138152484438492
+=======
+    - rid: 7527442909778411935
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You sit next to Jessica and strike up a conversation.*'
+    - rid: 7527442909778411936
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411937
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I suppose it's nice to see you again.
+    - rid: 7527442909778411938
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778411939
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You have something interesting to say?
+    - rid: 7527442909778411940
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time talking with Jessica. She seems appreciative.*'
+    - rid: 7527442909778411941
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1

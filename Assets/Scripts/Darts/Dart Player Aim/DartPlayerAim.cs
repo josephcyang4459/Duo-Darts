@@ -18,6 +18,14 @@ public class DartPlayerAim : MonoBehaviour
     [SerializeField] DartScript Dart;
     [SerializeField] Vector2 XScreenClamp;
     [SerializeField] Vector2 YScreenClamp;
+<<<<<<< Updated upstream
+=======
+    [SerializeField] DartBoard Board;
+#if UNITY_EDITOR
+    [SerializeField] InputActionReference __SIxty;
+    [SerializeField] Transform __sixtyLocation;
+#endif
+>>>>>>> Stashed changes
     public void ChangeLocation(float x, float y) {
         CurrentLocation.x += x;
         CurrentLocation.y += y;
@@ -52,14 +60,21 @@ public class DartPlayerAim : MonoBehaviour
     }
 
     public void ShootDart(Vector3 location) {
+        enabled = false;
         EndPlayerAim();
+<<<<<<< Updated upstream
         if (Physics.Raycast(location, Vector3.forward, out RaycastHit hit,12, layer)) {
+=======
+        int points = Board.GetScoreFromLocation(location.x, location.y);
+        Dart.ShootDart(location, points);
+        if (Physics.Raycast(location, Vector3.forward, out RaycastHit hit,12, Settings.DartsLayerMask)) {
+>>>>>>> Stashed changes
             hit.collider.gameObject.GetComponent<BoardCollider>().hit(location);
         }
         else {
             Dart.ShootDart(location, 0);
         }
-        enabled = false;
+       
     }
 
     public void EndPlayerAim() {

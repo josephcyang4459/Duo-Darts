@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138150063276541
   - rid: 3415138150063276542
   - rid: 3415138150063276543
@@ -21,6 +22,15 @@ MonoBehaviour:
   - rid: 3415138150063276546
   - rid: 3415138150063276547
   - rid: 3415138150063276548
+=======
+  - rid: 7527442909778412120
+  - rid: 7527442909778412121
+  - rid: 7527442909778412122
+  - rid: 7527442909778412123
+  - rid: 7527442909778412124
+  - rid: 7527442909778412125
+  - rid: 7527442909778412126
+>>>>>>> Stashed changes
   defaultCharacter: Chad
   exception: 0
   AnotherFuckingException: 1
@@ -29,6 +39,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138150063276541
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -50,6 +61,33 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You spend time drinking with Chad.*'
     - rid: 3415138150063276546
+=======
+    - rid: 7527442909778412120
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You join Chad in people watching.*'
+    - rid: 7527442909778412121
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412122
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Always fun to watch.
+    - rid: 7527442909778412123
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways, got time for a few questions?
+    - rid: 7527442909778412124
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time talking with Chad.*'
+    - rid: 7527442909778412125
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He seems to value the company.*'
+    - rid: 7527442909778412126
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0

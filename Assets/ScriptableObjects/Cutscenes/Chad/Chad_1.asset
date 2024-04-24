@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624258973368539
   - rid: 6642624258973368540
   - rid: 6642624258973368541
@@ -22,6 +23,18 @@ MonoBehaviour:
   - rid: 6642624258973368545
   - rid: 6642624258973368546
   - rid: 6642624258973368547
+=======
+  - rid: 7527442909778411756
+  - rid: 7527442909778411757
+  - rid: 7527442909778411758
+  - rid: 7527442909778411759
+  - rid: 7527442909778411760
+  - rid: 7527442909778411761
+  - rid: 7527442909778411762
+  - rid: 7527442909778411763
+  - rid: 7527442909778411764
+  - rid: 7527442909778411765
+>>>>>>> Stashed changes
   defaultCharacter: Chad
   ForceDarts: 1
   aa: {fileID: 4900000, guid: 327b5d729bf135f43acd9152f8f6492c, type: 3}
@@ -29,6 +42,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624258973368539
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -50,11 +64,39 @@ MonoBehaviour:
       data:
         message: And you better hold up your end of the game.
     - rid: 6642624258973368544
+=======
+    - rid: 7527442909778411756
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411757
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I can't say I've always been the one to give an upstart a chance.
+    - rid: 7527442909778411758
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Then again, great men can always be greater, so I'll call this a
+          social experiment for myself.
+    - rid: 7527442909778411759
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Nothing more and nothing less.
+    - rid: 7527442909778411760
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And you better hold up your end of the game.
+    - rid: 7527442909778411761
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that I would need your points. I could check out alone if they'd
           let me.
+<<<<<<< Updated upstream
     - rid: 6642624258973368545
+=======
+    - rid: 7527442909778411762
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -82,11 +124,23 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 3
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 6642624258973368546
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Now, we're up.
     - rid: 6642624258973368547
+=======
+    - rid: 7527442909778411763
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411764
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Now, we're up.
+    - rid: 7527442909778411765
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's see what you got.

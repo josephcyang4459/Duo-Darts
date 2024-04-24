@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Jess_3
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438435
   - rid: 3415138152484438436
   - rid: 3415138152484438437
@@ -34,6 +35,32 @@ MonoBehaviour:
   - rid: 3415138152484438453
   - rid: 3415138152484438454
   - rid: 3415138152484438455
+=======
+  - rid: 7527442909778411986
+  - rid: 7527442909778411987
+  - rid: 7527442909778411988
+  - rid: 7527442909778411989
+  - rid: 7527442909778411990
+  - rid: 7527442909778411991
+  - rid: 7527442909778411992
+  - rid: 7527442909778411993
+  - rid: 7527442909778411994
+  - rid: 7527442909778411995
+  - rid: 7527442909778411996
+  - rid: 7527442909778411997
+  - rid: 7527442909778411998
+  - rid: 7527442909778411999
+  - rid: 7527442909778412000
+  - rid: 7527442909778412001
+  - rid: 7527442909778412002
+  - rid: 7527442909778412003
+  - rid: 7527442909778412004
+  - rid: 7527442909778412005
+  - rid: 7527442909778412006
+  - rid: 7527442909778412007
+  - rid: 7527442909778412008
+  - rid: 7527442909778412009
+>>>>>>> Stashed changes
   defaultCharacter: Jess
   exception: 0
   playerS:
@@ -48,6 +75,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438435
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -114,6 +142,81 @@ MonoBehaviour:
       data:
         message: Buying me drinks all night long.
     - rid: 3415138152484438451
+=======
+    - rid: 7527442909778411986
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 3
+    - rid: 7527442909778411987
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You run into Jessica as you walk into the bathroom.*'
+    - rid: 7527442909778411988
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Oh. It's you.
+    - rid: 7527442909778411989
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Don't tell anybody, but I just made a girl cry in the bathroom.
+    - rid: 7527442909778411990
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just told her her dartplay is like art.
+    - rid: 7527442909778411991
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She gasps.*'
+    - rid: 7527442909778411992
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I might've said something other than art.
+    - rid: 7527442909778411993
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She stares at you for a second'
+    - rid: 7527442909778411994
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica burps.*'
+    - rid: 7527442909778411995
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Rumbles of worse things sound out from her as well.*'
+    - rid: 7527442909778411996
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Oh god.
+    - rid: 7527442909778411997
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm going back inside. People can't see me get sick.
+    - rid: 7527442909778411998
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She grabs your arm and pulls you all the way into a stall.*'
+    - rid: 7527442909778411999
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Unceremoniously, she drops down over the porcelain.*'
+    - rid: 7527442909778412000
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hold my hair please...
+    - rid: 7527442909778412001
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She vomits into the toilet.*'
+    - rid: 7527442909778412002
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This is your fault.
+    - rid: 7527442909778412003
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Buying me drinks all night long.
+    - rid: 7527442909778412004
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -147,6 +250,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 3415138152484438452
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -161,6 +265,26 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You stay with Jessica for a while until she feels better.*'
     - rid: 3415138152484438455
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412005
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica vomits again.*'
+    - rid: 7527442909778412006
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Just stay here for a little while longer.
+    - rid: 7527442909778412007
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I have to say you are a lovely hair holder by the way.
+    - rid: 7527442909778412008
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You stay with Jessica for a while until she feels better.*'
+    - rid: 7527442909778412009
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         name: Change Stat Block

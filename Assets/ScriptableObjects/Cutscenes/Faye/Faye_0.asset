@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Faye_0
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 7527442542056178018
   - rid: 7527442542056178019
   - rid: 7527442542056178020
@@ -49,11 +50,50 @@ MonoBehaviour:
   - rid: 7527442542056178051
   - rid: 7527442542056178052
   - rid: 7527442542056178053
+=======
+  - rid: 7527442909778411942
+  - rid: 7527442909778411943
+  - rid: 7527442909778411944
+  - rid: 7527442909778411945
+  - rid: 7527442909778411946
+  - rid: 7527442909778411947
+  - rid: 7527442909778411948
+  - rid: 7527442909778411949
+  - rid: 7527442909778411950
+  - rid: 7527442909778411951
+  - rid: 7527442909778411952
+  - rid: 7527442909778411953
+  - rid: 7527442909778411954
+  - rid: 7527442909778411955
+  - rid: 7527442909778411956
+  - rid: 7527442909778411957
+  - rid: 7527442909778411958
+  - rid: 7527442909778411959
+  - rid: 7527442909778411960
+  - rid: 7527442909778411961
+  - rid: 7527442909778411962
+  - rid: 7527442909778411963
+  - rid: 7527442909778411964
+  - rid: 7527442909778411965
+  - rid: 7527442909778411966
+  - rid: 7527442909778411967
+  - rid: 7527442909778411968
+  - rid: 7527442909778411969
+  - rid: 7527442909778411970
+  - rid: 7527442909778411971
+  - rid: 7527442909778411972
+  - rid: 7527442909778411973
+  - rid: 7527442909778411974
+  - rid: 7527442909778411975
+  - rid: 7527442909778411976
+  - rid: 7527442909778411977
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   ForceDarts: 0
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 7527442542056178018
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -64,33 +104,69 @@ MonoBehaviour:
       data:
         expression: 0
     - rid: 7527442542056178020
+=======
+    - rid: 7527442909778411942
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*While walking past a booth, you accidentally trip on someone''s
+          leg. You fall face first onto the ground.'
+    - rid: 7527442909778411943
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411944
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A young woman is the culprit. She kneels down next to you
           and sits you up.*'
+<<<<<<< Updated upstream
     - rid: 7527442542056178021
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Ugh, me and my long legs. Here, that looks painful.
     - rid: 7527442542056178022
+=======
+    - rid: 7527442909778411945
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Ugh, me and my long legs. Here, that looks painful.
+    - rid: 7527442909778411946
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs a drink from her table and puts the cold glass
           onto your forehead.*'
+<<<<<<< Updated upstream
     - rid: 7527442542056178023
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: For the swelling.
     - rid: 7527442542056178024
+=======
+    - rid: 7527442909778411947
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: For the swelling.
+    - rid: 7527442909778411948
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The woman tending your blunder looks away whenever you
           look at her face.*'
+<<<<<<< Updated upstream
     - rid: 7527442542056178025
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Something about her face is catching your attention.*'
     - rid: 7527442542056178026
+=======
+    - rid: 7527442909778411949
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Something about her face is catching your attention.*'
+    - rid: 7527442909778411950
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -118,6 +194,7 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 7527442542056178027
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -139,10 +216,34 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You notice the upholstery to be only average in quality.*'
     - rid: 7527442542056178032
+=======
+    - rid: 7527442909778411951
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411952
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She helps you off the ground onto your feet.*'
+    - rid: 7527442909778411953
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Just come sit with me for a minute to recover.
+    - rid: 7527442909778411954
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You sit in the booth.*'
+    - rid: 7527442909778411955
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You notice the upholstery to be only average in quality.*'
+    - rid: 7527442909778411956
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The woman sighs and moves further into the shadow of the
           booth.*'
+<<<<<<< Updated upstream
     - rid: 7527442542056178033
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -173,6 +274,38 @@ MonoBehaviour:
         message: "I\u2019m a woman. Or, you know, transitioned to a woman if that
           makes more sense to you."
     - rid: 7527442542056178040
+=======
+    - rid: 7527442909778411957
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Everyone's looking this way now because of you.
+    - rid: 7527442909778411958
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well, really it's my fault. Should've watched my reach.
+    - rid: 7527442909778411959
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I wish this was easier...
+    - rid: 7527442909778411960
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You stare blankly at her, a look lacking context.*'
+    - rid: 7527442909778411961
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're new aren't you.
+    - rid: 7527442909778411962
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well I'll tell you since everyone else knows anyway.
+    - rid: 7527442909778411963
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm a woman. Or, you know, transitioned to a woman if that makes
+          more sense to you.
+    - rid: 7527442909778411964
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -200,6 +333,7 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 7527442542056178041
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -217,10 +351,30 @@ MonoBehaviour:
       data:
         message: "I just haven\u2019t found the time to legally change it."
     - rid: 7527442542056178045
+=======
+    - rid: 7527442909778411965
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411966
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyway. My tournament name is Faybian Artel.
+    - rid: 7527442909778411967
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Call me Faye though please.
+    - rid: 7527442909778411968
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just haven't found the time to legally change it.
+    - rid: 7527442909778411969
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She bumps her head against the back of the booth in a small
           concession.*'
+<<<<<<< Updated upstream
     - rid: 7527442542056178046
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -250,6 +404,37 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You leave Faye to her booth.*'
     - rid: 7527442542056178053
+=======
+    - rid: 7527442909778411970
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Or the money...
+    - rid: 7527442909778411971
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's not cheap doing this.
+    - rid: 7527442909778411972
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye motions away from the booth.*'
+    - rid: 7527442909778411973
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: If you're interested in talking then come back later.
+    - rid: 7527442909778411974
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: People have their eyes on you and it's bothering me.
+    - rid: 7527442909778411975
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Sorry.
+    - rid: 7527442909778411976
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You leave Faye to her booth.*'
+    - rid: 7527442909778411977
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You notice how hard it is to see her even just a few feet

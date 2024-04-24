@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chad_0
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624258973368524
   - rid: 6642624258973368525
   - rid: 6642624258973368526
@@ -28,6 +29,28 @@ MonoBehaviour:
   - rid: 6642624258973368536
   - rid: 6642624258973368537
   - rid: 6642624258973368538
+=======
+  - rid: 7527442909778412340
+  - rid: 7527442909778412341
+  - rid: 7527442909778412342
+  - rid: 7527442909778412343
+  - rid: 7527442909778412344
+  - rid: 7527442909778412345
+  - rid: 7527442909778412346
+  - rid: 7527442909778412347
+  - rid: 7527442909778412348
+  - rid: 7527442909778412349
+  - rid: 7527442909778412350
+  - rid: 7527442909778412351
+  - rid: 7527442909778412352
+  - rid: 7527442909778412353
+  - rid: 7527442909778412354
+  - rid: 7527442909778412355
+  - rid: 7527442909778412356
+  - rid: 7527442909778412357
+  - rid: 7527442909778412358
+  - rid: 7527442909778412359
+>>>>>>> Stashed changes
   defaultCharacter: Chad
   exception: 0
   AnotherFuckingException: 0
@@ -36,6 +59,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624258973368524
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -73,6 +97,55 @@ MonoBehaviour:
       data:
         message: So. Tell me more about yourself.
     - rid: 6642624258973368533
+=======
+    - rid: 7527442909778412340
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*A man with intense, striking features catches your attention.
+          He catches the glance, motioning you to come closer.*'
+    - rid: 7527442909778412341
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412342
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Haven't met you before. Who're you?
+    - rid: 7527442909778412343
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hmm...
+    - rid: 7527442909778412344
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I can't remember meeting anyone with your name.
+    - rid: 7527442909778412345
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You must be nobody then. For now at least. Don't worry, even I started
+          from the bottom.
+    - rid: 7527442909778412346
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412347
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: That and you're here so I suppose you've got to have some potential.
+    - rid: 7527442909778412348
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Take a seat.
+    - rid: 7527442909778412349
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412350
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: So. Tell me more about yourself.
+    - rid: 7527442909778412351
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -100,6 +173,7 @@ MonoBehaviour:
             Expression: 1
             Stat: 0
             AdjustValue: 2
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 6642624258973368534
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -110,10 +184,31 @@ MonoBehaviour:
       data:
         message: You should already know my name, but I'm Chadrick Basedman.
     - rid: 6642624258973368536
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412352
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412353
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well, you've piqued my interest for better or worse.
+    - rid: 7527442909778412354
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You really should already know my name, but I'm Chadrick Basedman.
+    - rid: 7527442909778412355
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412356
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*When he says his name he seems to warp his face in a way
           that highlights his incredible facial features.*'
+<<<<<<< Updated upstream
     - rid: 6642624258973368537
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -123,3 +218,18 @@ MonoBehaviour:
       data:
         thoughtMessage: '*Momentarily mesmerized you spend a while talking with Chadrick
           answering questions.*'
+=======
+    - rid: 7527442909778412357
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Let me ask you a few more questions.
+    - rid: 7527442909778412358
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Momentarily mesmerized you spend a while listening to Chadrick.*'
+    - rid: 7527442909778412359
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Despite saying he would ask you questions, he finds ways
+          to bring himself up more than anything.*'
+>>>>>>> Stashed changes

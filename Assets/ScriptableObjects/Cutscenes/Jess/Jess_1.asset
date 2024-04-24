@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Jess_1
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438403
   - rid: 3415138152484438404
   - rid: 3415138152484438405
@@ -22,6 +23,18 @@ MonoBehaviour:
   - rid: 3415138152484438409
   - rid: 3415138152484438410
   - rid: 3415138152484438411
+=======
+  - rid: 7527442909778411881
+  - rid: 7527442909778411882
+  - rid: 7527442909778411883
+  - rid: 7527442909778411884
+  - rid: 7527442909778411885
+  - rid: 7527442909778411886
+  - rid: 7527442909778411887
+  - rid: 7527442909778411888
+  - rid: 7527442909778411889
+  - rid: 7527442909778411890
+>>>>>>> Stashed changes
   defaultCharacter: Jess
   ForceDarts: 1
   aa: {fileID: 4900000, guid: c8907fa3944846340a74cf42e17e13ae, type: 3}
@@ -29,25 +42,43 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438403
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
     - rid: 3415138152484438404
+=======
+    - rid: 7527442909778411881
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411882
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I wouldn't typically partner up with someone I don't know rather
           well.
+<<<<<<< Updated upstream
     - rid: 3415138152484438405
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: However, with my skills I don't mind the possibility of losing a
           few points.
     - rid: 3415138152484438406
+=======
+    - rid: 7527442909778411883
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: However, with my skills I don't mind the possibility of losing out
+          on a few points.
+    - rid: 7527442909778411884
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Even if you missed the board with most of your throws I still think
           we could pull through.
+<<<<<<< Updated upstream
     - rid: 3415138152484438407
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -57,6 +88,17 @@ MonoBehaviour:
       data:
         message: Will you hold up your end of the game?
     - rid: 3415138152484438409
+=======
+    - rid: 7527442909778411885
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: What about you?
+    - rid: 7527442909778411886
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Will you hold up your end of the game?
+    - rid: 7527442909778411887
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -90,11 +132,23 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 3415138152484438410
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'll let you go first.
     - rid: 3415138152484438411
+=======
+    - rid: 7527442909778411888
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411889
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'll let you go first.
+    - rid: 7527442909778411890
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I would very much appreciate it if you didn't make me work too hard

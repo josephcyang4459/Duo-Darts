@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chad_3
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624351303631538
   - rid: 6642624351303631539
   - rid: 6642624351303631540
@@ -30,6 +31,25 @@ MonoBehaviour:
   - rid: 6642624351303631552
   - rid: 6642624351303631553
   - rid: 6642624351303631554
+=======
+  - rid: 7527442909778411864
+  - rid: 7527442909778411865
+  - rid: 7527442909778411866
+  - rid: 7527442909778411867
+  - rid: 7527442909778411868
+  - rid: 7527442909778411869
+  - rid: 7527442909778411870
+  - rid: 7527442909778411871
+  - rid: 7527442909778411872
+  - rid: 7527442909778411873
+  - rid: 7527442909778411874
+  - rid: 7527442909778411875
+  - rid: 7527442909778411876
+  - rid: 7527442909778411877
+  - rid: 7527442909778411878
+  - rid: 7527442909778411879
+  - rid: 7527442909778411880
+>>>>>>> Stashed changes
   defaultCharacter: Chad
   ForceDarts: 0
   aa: {fileID: 4900000, guid: 7111ce1b648f487418341afa90b080a6, type: 3}
@@ -37,6 +57,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624351303631538
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -74,6 +95,45 @@ MonoBehaviour:
       data:
         message: You. Me. Dance. Now.
     - rid: 6642624351303631547
+=======
+    - rid: 7527442909778411864
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chadrick is dancing...*'
+    - rid: 7527442909778411865
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He''s clearly obliterated...*'
+    - rid: 7527442909778411866
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 3
+    - rid: 7527442909778411867
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey, it's you.
+    - rid: 7527442909778411868
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Impressed? You should be.
+    - rid: 7527442909778411869
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I've got moves.
+    - rid: 7527442909778411870
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think...
+    - rid: 7527442909778411871
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*He stares intently at you for a second.*'
+    - rid: 7527442909778411872
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You. Me. Dance. Now.
+    - rid: 7527442909778411873
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -101,6 +161,7 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 2
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 6642624351303631548
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -127,6 +188,34 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You and Chad dance away. He trips up often.*'
     - rid: 6642624351303631554
+=======
+    - rid: 7527442909778411874
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad grabs your arm and dances with you for a time.*'
+    - rid: 7527442909778411875
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey you're pretty good at this.
+    - rid: 7527442909778411876
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: To think if you hadn't drowned me at the bar I'd never get this
+          chance.
+    - rid: 7527442909778411877
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I owe you one.
+    - rid: 7527442909778411878
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: If you're lucky that is.
+    - rid: 7527442909778411879
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You and Chad dance away. He trips up often.*'
+    - rid: 7527442909778411880
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0

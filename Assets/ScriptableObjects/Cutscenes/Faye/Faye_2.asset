@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Faye_2
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438289
   - rid: 3415138152484438290
   - rid: 3415138152484438291
@@ -46,6 +47,49 @@ MonoBehaviour:
   - rid: 3415138152484438319
   - rid: 3415138152484438320
   - rid: 3415138152484438321
+=======
+  - rid: 7527442909778412285
+  - rid: 7527442909778412286
+  - rid: 7527442909778412287
+  - rid: 7527442909778412288
+  - rid: 7527442909778412289
+  - rid: 7527442909778412290
+  - rid: 7527442909778412291
+  - rid: 7527442909778412292
+  - rid: 7527442909778412293
+  - rid: 7527442909778412294
+  - rid: 7527442909778412295
+  - rid: 7527442909778412296
+  - rid: 7527442909778412297
+  - rid: 7527442909778412298
+  - rid: 7527442909778412299
+  - rid: 7527442909778412300
+  - rid: 7527442909778412301
+  - rid: 7527442909778412302
+  - rid: 7527442909778412303
+  - rid: 7527442909778412304
+  - rid: 7527442909778412305
+  - rid: 7527442909778412306
+  - rid: 7527442909778412307
+  - rid: 7527442909778412308
+  - rid: 7527442909778412309
+  - rid: 7527442909778412310
+  - rid: 7527442909778412311
+  - rid: 7527442909778412312
+  - rid: 7527442909778412313
+  - rid: 7527442909778412314
+  - rid: 7527442909778412315
+  - rid: 7527442909778412316
+  - rid: 7527442909778412317
+  - rid: 7527442909778412318
+  - rid: 7527442909778412319
+  - rid: 7527442909778412320
+  - rid: 7527442909778412321
+  - rid: 7527442909778412322
+  - rid: 7527442909778412323
+  - rid: 7527442909778412324
+  - rid: 7527442909778412325
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   exception: 0
   playerS:
@@ -60,6 +104,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438289
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -130,6 +175,83 @@ MonoBehaviour:
       data:
         message: Can I get you something?
     - rid: 3415138152484438305
+=======
+    - rid: 7527442909778412285
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see Faye at the bar.*'
+    - rid: 7527442909778412286
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*The owner is talking with her while she orders a drink.*'
+    - rid: 7527442909778412287
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You move closer to hear what they''re saying.*'
+    - rid: 7527442909778412288
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Owner
+        Expression: 0
+    - rid: 7527442909778412289
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Going on your tab, right Fabyian?
+    - rid: 7527442909778412290
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 0
+    - rid: 7527442909778412291
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Umm, it's actually Faye now.
+    - rid: 7527442909778412292
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Owner
+        Expression: 0
+    - rid: 7527442909778412293
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's easier for me to call you Faybian though.
+    - rid: 7527442909778412294
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I've known that name for years. You and my daughter have been friends
+          since you were little, you know.
+    - rid: 7527442909778412295
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Can't I just call you that?
+    - rid: 7527442909778412296
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You walk up to the conversation.*'
+    - rid: 7527442909778412297
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 1
+    - rid: 7527442909778412298
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye notices you, looking over.*'
+    - rid: 7527442909778412299
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's you.
+    - rid: 7527442909778412300
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Owner
+        Expression: 0
+    - rid: 7527442909778412301
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Can I get you something?
+    - rid: 7527442909778412302
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -182,12 +304,23 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 3415138152484438306
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412303
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 0
+    - rid: 7527442909778412304
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye grabs your arm with one hand and grabs her drink with
           the other. Leading you back to her lounge booth.*'
+<<<<<<< Updated upstream
     - rid: 3415138152484438307
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -202,15 +335,40 @@ MonoBehaviour:
         name: Expression Block
         expression: 3
     - rid: 3415138152484438310
+=======
+    - rid: 7527442909778412305
+      type: {class: SwapBackGround, ns: , asm: Assembly-CSharp}
+      data:
+        place: Lounge
+    - rid: 7527442909778412306
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You both sit down in the booth.*'
+    - rid: 7527442909778412307
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 2
+    - rid: 7527442909778412308
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye looks irritated.*'
+    - rid: 7527442909778412309
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I hate this league. No matter who I talk to, it's always the same
           question.
+<<<<<<< Updated upstream
     - rid: 3415138152484438311
+=======
+    - rid: 7527442909778412310
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Like, do they think they can just determine who I am and I just
           have to deal with that?
+<<<<<<< Updated upstream
     - rid: 3415138152484438312
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -229,6 +387,26 @@ MonoBehaviour:
       data:
         message: Where nobody knew me before.
     - rid: 3415138152484438316
+=======
+    - rid: 7527442909778412311
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 0
+    - rid: 7527442909778412312
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She sighs and drinks.*'
+    - rid: 7527442909778412313
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Maybe I should just quit and go somewhere else.
+    - rid: 7527442909778412314
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Where nobody knew me before.
+    - rid: 7527442909778412315
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -281,6 +459,7 @@ MonoBehaviour:
           responses: []
         - answer: 
           responses: []
+<<<<<<< Updated upstream
     - rid: 3415138152484438317
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -298,6 +477,48 @@ MonoBehaviour:
       data:
         message: Thanks for getting me away from that idiot by the way.
     - rid: 3415138152484438321
+=======
+    - rid: 7527442909778412316
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 0
+    - rid: 7527442909778412317
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I worry too much about it. It's almost obsessive.
+    - rid: 7527442909778412318
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think I'm better off just being who I am.
+    - rid: 7527442909778412319
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's time to get over worrying about all the little things that
+          come with that.
+    - rid: 7527442909778412320
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye becomes recomposed.*'
+    - rid: 7527442909778412321
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'll keep going. Things will get better.
+    - rid: 7527442909778412322
+      type: {class: SwapCharacterBlock, ns: , asm: Assembly-CSharp}
+      data:
+        character: Faye
+        Expression: 1
+    - rid: 7527442909778412323
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I love this game too much.
+    - rid: 7527442909778412324
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Thanks for helping get me away from that idiot by the way.
+    - rid: 7527442909778412325
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend some time with Faye in her booth.*'

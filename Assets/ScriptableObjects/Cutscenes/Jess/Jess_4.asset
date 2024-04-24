@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Jess_4
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438456
   - rid: 3415138152484438457
   - rid: 3415138152484438458
@@ -44,6 +45,48 @@ MonoBehaviour:
   - rid: 3415138152484438484
   - rid: 3415138152484438485
   - rid: 3415138152484438486
+=======
+  - rid: 7527442909778412206
+  - rid: 7527442909778412207
+  - rid: 7527442909778412208
+  - rid: 7527442909778412209
+  - rid: 7527442909778412210
+  - rid: 7527442909778412211
+  - rid: 7527442909778412212
+  - rid: 7527442909778412213
+  - rid: 7527442909778412214
+  - rid: 7527442909778412215
+  - rid: 7527442909778412216
+  - rid: 7527442909778412217
+  - rid: 7527442909778412218
+  - rid: 7527442909778412219
+  - rid: 7527442909778412220
+  - rid: 7527442909778412221
+  - rid: 7527442909778412222
+  - rid: 7527442909778412223
+  - rid: 7527442909778412224
+  - rid: 7527442909778412225
+  - rid: 7527442909778412226
+  - rid: 7527442909778412227
+  - rid: 7527442909778412228
+  - rid: 7527442909778412229
+  - rid: 7527442909778412230
+  - rid: 7527442909778412231
+  - rid: 7527442909778412232
+  - rid: 7527442909778412233
+  - rid: 7527442909778412234
+  - rid: 7527442909778412235
+  - rid: 7527442909778412236
+  - rid: 7527442909778412237
+  - rid: 7527442909778412238
+  - rid: 7527442909778412239
+  - rid: 7527442909778412240
+  - rid: 7527442909778412241
+  - rid: 7527442909778412242
+  - rid: 7527442909778412243
+  - rid: 7527442909778412244
+  - rid: 7527442909778412245
+>>>>>>> Stashed changes
   defaultCharacter: Jess
   exception: 0
   playerS:
@@ -58,6 +101,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438456
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -128,6 +172,85 @@ MonoBehaviour:
       data:
         message: What do you think of me?
     - rid: 3415138152484438473
+=======
+    - rid: 7527442909778412206
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You sit next to Jessica at a lounge table.*'
+    - rid: 7527442909778412207
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412208
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hello.
+    - rid: 7527442909778412209
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412210
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm glad you found some time for another visit.
+    - rid: 7527442909778412211
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412212
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: There's something I've been meaning to ask you.
+    - rid: 7527442909778412213
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Let's talk for a moment before that though.
+    - rid: 7527442909778412214
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica sighs.*'
+    - rid: 7527442909778412215
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It seems that nobody will be my partner for the final round.
+    - rid: 7527442909778412216
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Unfortunately, it appears I scare everyone away.
+    - rid: 7527442909778412217
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Except you.
+    - rid: 7527442909778412218
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: "I think people would call me \u201Codd\u201D."
+    - rid: 7527442909778412219
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I think those people are odd.
+    - rid: 7527442909778412220
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Or maybe just intelligent.
+    - rid: 7527442909778412221
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: They don't even know who I really am.
+    - rid: 7527442909778412222
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: They don't bother to try to get to know me.
+    - rid: 7527442909778412223
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: That's what I wanted to ask you.
+    - rid: 7527442909778412224
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: What do you think of me?
+    - rid: 7527442909778412225
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -185,6 +308,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 3415138152484438474
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -207,10 +331,47 @@ MonoBehaviour:
       data:
         message: Interesting at best.
     - rid: 3415138152484438479
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412226
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412227
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well, I think you're great.
+    - rid: 7527442909778412228
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't know why.
+    - rid: 7527442909778412229
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Frankly, you're a complete idiot.
+    - rid: 7527442909778412230
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And your dart skills are...
+    - rid: 7527442909778412231
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412232
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Interesting at best.
+    - rid: 7527442909778412233
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412234
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: However, despite all the negatives, you seem to be a diamond in
           the rough.
+<<<<<<< Updated upstream
     - rid: 3415138152484438480
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -236,6 +397,51 @@ MonoBehaviour:
       data:
         message: Thank you for hearing me out.
     - rid: 3415138152484438486
+=======
+    - rid: 7527442909778412235
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica looks at you intently.*'
+    - rid: 7527442909778412236
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Please.
+    - rid: 7527442909778412237
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Consider me to be your partner for the final round.
+    - rid: 7527442909778412238
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Jessica relaxes.*'
+    - rid: 7527442909778412239
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: With that off my chest you can go. I don't need an answer this minute.
+          It's smart to think over a big choice like that.
+    - rid: 7527442909778412240
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412241
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I didn't have to though.
+    - rid: 7527442909778412242
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412243
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Thank you for hearing me out either way. I hope it's not too unexpected
+          of a request.
+    - rid: 7527442909778412244
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412245
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Really.

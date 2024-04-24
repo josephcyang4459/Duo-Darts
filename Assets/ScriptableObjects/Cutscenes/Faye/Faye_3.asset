@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Faye_3
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624351303631039
   - rid: 6642624351303631040
   - rid: 6642624351303631041
@@ -36,6 +37,31 @@ MonoBehaviour:
   - rid: 6642624351303631059
   - rid: 6642624351303631060
   - rid: 6642624351303631061
+=======
+  - rid: 7527442909778412010
+  - rid: 7527442909778412011
+  - rid: 7527442909778412012
+  - rid: 7527442909778412013
+  - rid: 7527442909778412014
+  - rid: 7527442909778412015
+  - rid: 7527442909778412016
+  - rid: 7527442909778412017
+  - rid: 7527442909778412018
+  - rid: 7527442909778412019
+  - rid: 7527442909778412020
+  - rid: 7527442909778412021
+  - rid: 7527442909778412022
+  - rid: 7527442909778412023
+  - rid: 7527442909778412024
+  - rid: 7527442909778412025
+  - rid: 7527442909778412026
+  - rid: 7527442909778412027
+  - rid: 7527442909778412028
+  - rid: 7527442909778412029
+  - rid: 7527442909778412030
+  - rid: 7527442909778412031
+  - rid: 7527442909778412032
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   ForceDarts: 0
   aa: {fileID: 4900000, guid: 9665caf683c3e024392583b5ff60d973, type: 3}
@@ -43,6 +69,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624351303631039
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -92,6 +119,57 @@ MonoBehaviour:
       data:
         message: "Isn\u2019t it beautiful?"
     - rid: 6642624351303631051
+=======
+    - rid: 7527442909778412010
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You walk up to Faye''s booth, but she''s not there.'
+    - rid: 7527442909778412011
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Suddenly, you feel a pull on your leg.*'
+    - rid: 7527442909778412012
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 3
+    - rid: 7527442909778412013
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey. Down here.
+    - rid: 7527442909778412014
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You look down to see Faye hiding underneath the table.*'
+    - rid: 7527442909778412015
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come down here.
+    - rid: 7527442909778412016
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's so nice down here.
+    - rid: 7527442909778412017
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You find yourself huddled with Faye underneath the table.*'
+    - rid: 7527442909778412018
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She has lined empty glasses along the wall.*'
+    - rid: 7527442909778412019
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*The total is staggering.*'
+    - rid: 7527442909778412020
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Look! My masterpiece.
+    - rid: 7527442909778412021
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Isn't it beautiful?
+    - rid: 7527442909778412022
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -138,6 +216,7 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 6642624351303631052
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -147,10 +226,22 @@ MonoBehaviour:
       data:
         message: "I\u2019d like to dedicate my masterpiece to this jerk."
     - rid: 6642624351303631054
+=======
+    - rid: 7527442909778412023
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She sways a bit, but then she straightens herself out.*'
+    - rid: 7527442909778412024
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'd like to dedicate my masterpiece to this jerk.
+    - rid: 7527442909778412025
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye points to you while holding one of the glasses like
           a microphone.*'
+<<<<<<< Updated upstream
     - rid: 6642624351303631055
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -177,6 +268,34 @@ MonoBehaviour:
         thoughtMessage: "*You spend some time attending Faye\u2019s imaginary award
           ceremony under the table.*"
     - rid: 6642624351303631061
+=======
+    - rid: 7527442909778412026
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Without them I'd never have gotten this drunk.
+    - rid: 7527442909778412027
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: They are my inspiration.
+    - rid: 7527442909778412028
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I'd also like to thank...
+    - rid: 7527442909778412029
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She pauses, lost in thought.*'
+    - rid: 7527442909778412030
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: What was their name?
+    - rid: 7527442909778412031
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend some time attending Faye''s imaginary award ceremony
+          under the table.*'
+    - rid: 7527442909778412032
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2

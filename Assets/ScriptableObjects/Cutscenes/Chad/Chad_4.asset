@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chad_4
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624258973368584
   - rid: 6642624258973368585
   - rid: 6642624258973368586
@@ -43,6 +44,40 @@ MonoBehaviour:
   - rid: 6642624258973368611
   - rid: 6642624258973368612
   - rid: 6642624258973368613
+=======
+  - rid: 7527442909778411822
+  - rid: 7527442909778411823
+  - rid: 7527442909778411824
+  - rid: 7527442909778411825
+  - rid: 7527442909778411826
+  - rid: 7527442909778411827
+  - rid: 7527442909778411828
+  - rid: 7527442909778411829
+  - rid: 7527442909778411830
+  - rid: 7527442909778411831
+  - rid: 7527442909778411832
+  - rid: 7527442909778411833
+  - rid: 7527442909778411834
+  - rid: 7527442909778411835
+  - rid: 7527442909778411836
+  - rid: 7527442909778411837
+  - rid: 7527442909778411838
+  - rid: 7527442909778411839
+  - rid: 7527442909778411840
+  - rid: 7527442909778411841
+  - rid: 7527442909778411842
+  - rid: 7527442909778411843
+  - rid: 7527442909778411844
+  - rid: 7527442909778411845
+  - rid: 7527442909778411846
+  - rid: 7527442909778411847
+  - rid: 7527442909778411848
+  - rid: 7527442909778411849
+  - rid: 7527442909778411850
+  - rid: 7527442909778411851
+  - rid: 7527442909778411852
+  - rid: 7527442909778411853
+>>>>>>> Stashed changes
   defaultCharacter: Chad
   exception: 0
   AnotherFuckingException: 0
@@ -51,6 +86,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624258973368584
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -92,6 +128,49 @@ MonoBehaviour:
       data:
         message: I don't think I can win.
     - rid: 6642624258973368594
+=======
+    - rid: 7527442909778411822
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You hear someone vomiting in the stall*'
+    - rid: 7527442909778411823
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411824
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Oh god...
+    - rid: 7527442909778411825
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*It''s Chad''s voice.*'
+    - rid: 7527442909778411826
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's you isn't it?
+    - rid: 7527442909778411827
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Don't let anyone else into the bathroom.
+    - rid: 7527442909778411828
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I came in here to relax for a minute and the pressure got to me.
+    - rid: 7527442909778411829
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: If anyone else finds out about this my reputation will be destroyed.
+    - rid: 7527442909778411830
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad sniffles and spits into the toilet.*'
+    - rid: 7527442909778411831
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't think I can win.
+    - rid: 7527442909778411832
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -136,12 +215,22 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 6642624258973368595
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778411833
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's no use.
+    - rid: 7527442909778411834
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: No matter what anyone does or says to me I'd still be the one who
           needed someone else.
+<<<<<<< Updated upstream
     - rid: 6642624258973368596
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -151,6 +240,17 @@ MonoBehaviour:
       data:
         message: And that is just unacceptable!
     - rid: 6642624258973368598
+=======
+    - rid: 7527442909778411835
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad hits the stall wall.*'
+    - rid: 7527442909778411836
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And that is just unacceptable.
+    - rid: 7527442909778411837
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -201,6 +301,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream
             exemption: 0
     - rid: 6642624258973368599
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
@@ -227,15 +328,56 @@ MonoBehaviour:
       data:
         message: We can win.
     - rid: 6642624258973368605
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778411838
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad flushes the toilet.*'
+    - rid: 7527442909778411839
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411840
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: We're at a duo's tournament, you know.
+    - rid: 7527442909778411841
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad emerges from the stall with regained composure.*'
+    - rid: 7527442909778411842
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I need you.
+    - rid: 7527442909778411843
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I'm ok with that if it means I can win.
+    - rid: 7527442909778411844
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: We can win.
+    - rid: 7527442909778411845
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chadrick lowers his head and gets down onto one knee before
           you.*'
+<<<<<<< Updated upstream
     - rid: 6642624258973368606
+=======
+    - rid: 7527442909778411846
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778411847
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He raises his face to reveal the most chiseled and perfectly
           conformed facial expression you''ve ever seen.*'
+<<<<<<< Updated upstream
     - rid: 6642624258973368607
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -249,10 +391,22 @@ MonoBehaviour:
       data:
         expression: 1
     - rid: 6642624258973368610
+=======
+    - rid: 7527442909778411848
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Please.
+    - rid: 7527442909778411849
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Let me be your partner for the final round.
+    - rid: 7527442909778411850
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You don't have to answer right now, but thank you for being here
           either way.
+<<<<<<< Updated upstream
     - rid: 6642624258973368611
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -262,6 +416,17 @@ MonoBehaviour:
       data:
         thoughtMessage: '*Chad gets up and walks past you out of the bathroom.*'
     - rid: 6642624258973368613
+=======
+    - rid: 7527442909778411851
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411852
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Chad gets up and walks past you out of the bathroom.*'
+    - rid: 7527442909778411853
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He didn''t wash his hands''*'

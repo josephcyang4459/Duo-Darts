@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Elain_3
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_3.asset
   - rid: 3415138152484438165
   - rid: 3415138152484438166
   - rid: 3415138152484438167
@@ -44,6 +45,40 @@ MonoBehaviour:
   - rid: 3415138152484438193
   - rid: 3415138152484438194
   - rid: 3415138152484438195
+=======
+  - rid: 7527442909778412070
+  - rid: 7527442909778412071
+  - rid: 7527442909778412072
+  - rid: 7527442909778412073
+  - rid: 7527442909778412074
+  - rid: 7527442909778412075
+  - rid: 7527442909778412076
+  - rid: 7527442909778412077
+  - rid: 7527442909778412078
+  - rid: 7527442909778412079
+  - rid: 7527442909778412080
+  - rid: 7527442909778412081
+  - rid: 7527442909778412082
+  - rid: 7527442909778412083
+  - rid: 7527442909778412084
+  - rid: 7527442909778412085
+  - rid: 7527442909778412086
+  - rid: 7527442909778412087
+  - rid: 7527442909778412088
+  - rid: 7527442909778412089
+  - rid: 7527442909778412090
+  - rid: 7527442909778412091
+  - rid: 7527442909778412092
+  - rid: 7527442909778412093
+  - rid: 7527442909778412094
+  - rid: 7527442909778412095
+  - rid: 7527442909778412096
+  - rid: 7527442909778412097
+  - rid: 7527442909778412098
+  - rid: 7527442909778412099
+  - rid: 7527442909778412100
+  - rid: 7527442909778412101
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_3.asset
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -58,6 +93,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_3.asset
     - rid: 3415138152484438165
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -84,10 +120,38 @@ MonoBehaviour:
       data:
         thoughtMessage: '*Elaine sets up a throw with all three darts in hand.*'
     - rid: 3415138152484438171
+=======
+    - rid: 7527442909778412070
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 3
+    - rid: 7527442909778412071
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see Elaine throwing dart after dart at a board nearby.*'
+    - rid: 7527442909778412072
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey! Doggie!
+    - rid: 7527442909778412073
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She''s plastered.*'
+    - rid: 7527442909778412074
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come here and look. Look at this trick.
+    - rid: 7527442909778412075
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Elaine sets up a throw with all three darts in hand.*'
+    - rid: 7527442909778412076
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_3.asset
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She throws all three at once. One hits the bullseye and
           the rest bounce off.*'
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_3.asset
     - rid: 3415138152484438172
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -97,6 +161,17 @@ MonoBehaviour:
       data:
         message: Hey, go stand in front of the board for me.
     - rid: 3415138152484438174
+=======
+    - rid: 7527442909778412077
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come on!
+    - rid: 7527442909778412078
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey, go stand in front of the board for me.
+    - rid: 7527442909778412079
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_3.asset
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -124,6 +199,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 3
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_3.asset
             exemption: 0
     - rid: 3415138152484438175
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -134,10 +210,23 @@ MonoBehaviour:
       data:
         message: Now.
     - rid: 3415138152484438177
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412080
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Get in place.
+    - rid: 7527442909778412081
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Now.
+    - rid: 7527442909778412082
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_3.asset
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You stand in front of the board with your head covering
           most of it.*'
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_3.asset
     - rid: 3415138152484438178
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -208,6 +297,82 @@ MonoBehaviour:
         thoughtMessage: '*You spend some time getting a mix of praise and beration
           from Elaine.*'
     - rid: 3415138152484438195
+=======
+    - rid: 7527442909778412083
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*A small crowd has gathered.*'
+    - rid: 7527442909778412084
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You contemplate the actions that have led you to this moment.*'
+    - rid: 7527442909778412085
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: So I just have to land these darts without disfiguring you.
+    - rid: 7527442909778412086
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: One next to each ear and one right above the head.
+    - rid: 7527442909778412087
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Easy.
+    - rid: 7527442909778412088
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Elaine readies her three dart trick again.*'
+    - rid: 7527442909778412089
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She throws. You close your eyes.*'
+    - rid: 7527442909778412090
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Yes! I did it!
+    - rid: 7527442909778412091
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*The darts landed just as she had called.*'
+    - rid: 7527442909778412092
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Aren't you impressed? I'm a real deal dart goddess.
+    - rid: 7527442909778412093
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*The crowd claps and then they disperse.*'
+    - rid: 7527442909778412094
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Elaine walks over to you with a wide smile.*'
+    - rid: 7527442909778412095
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 7527442909778412096
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You weren't worried were you?
+    - rid: 7527442909778412097
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She gives you a strangle-like hug.*'
+    - rid: 7527442909778412098
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This is your reward for Intoxicating this goddess.
+    - rid: 7527442909778412099
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Keep acting like that and you might just win my divine favor.
+    - rid: 7527442909778412100
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend some time getting a mix of praise and beration
+          from her.*'
+    - rid: 7527442909778412101
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_3.asset
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         name: Change Stat Block

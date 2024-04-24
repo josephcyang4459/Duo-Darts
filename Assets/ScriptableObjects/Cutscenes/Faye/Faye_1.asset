@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Faye_1
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 7527442542450442240
   - rid: 7527442542450442241
   - rid: 7527442542450442242
@@ -24,11 +25,25 @@ MonoBehaviour:
   - rid: 7527442542450442248
   - rid: 7527442542450442249
   - rid: 7527442542450442250
+=======
+  - rid: 7527442909778412246
+  - rid: 7527442909778412247
+  - rid: 7527442909778412248
+  - rid: 7527442909778412249
+  - rid: 7527442909778412250
+  - rid: 7527442909778412251
+  - rid: 7527442909778412252
+  - rid: 7527442909778412253
+  - rid: 7527442909778412254
+  - rid: 7527442909778412255
+  - rid: 7527442909778412256
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   ForceDarts: 1
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 7527442542450442240
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -55,6 +70,34 @@ MonoBehaviour:
         message: "You didn\u2019t look familiar, but people don\u2019t always look
           the same from one meet to the next."
     - rid: 7527442542450442246
+=======
+    - rid: 7527442909778412246
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412247
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye looks nervous.*'
+    - rid: 7527442909778412248
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Make your turns quick please.
+    - rid: 7527442909778412249
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I don't like being up and about, especially with a crowd.
+    - rid: 7527442909778412250
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And yeah, I was meaning to ask if you ever attended any other tournaments.
+    - rid: 7527442909778412251
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You didn't look familiar, but people don't always look the same
+          from one meet to the next.
+    - rid: 7527442909778412252
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -100,6 +143,7 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 7527442542450442247
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -113,6 +157,21 @@ MonoBehaviour:
       data:
         message: I apologize in advance that I'm not the best player here.
     - rid: 7527442542450442250
+=======
+    - rid: 7527442909778412253
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412254
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*Faye focuses up.*'
+    - rid: 7527442909778412255
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I apologize in advance that I'm not the best player here.
+    - rid: 7527442909778412256
+>>>>>>> Stashed changes
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, you go first.

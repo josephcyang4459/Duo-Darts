@@ -13,12 +13,21 @@ MonoBehaviour:
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 3415138152484438379
   - rid: 3415138152484438380
   - rid: 3415138152484438381
   - rid: 3415138152484438382
   - rid: 3415138152484438383
   - rid: 3415138152484438384
+=======
+  - rid: 7527442909778412334
+  - rid: 7527442909778412335
+  - rid: 7527442909778412336
+  - rid: 7527442909778412337
+  - rid: 7527442909778412338
+  - rid: 7527442909778412339
+>>>>>>> Stashed changes
   defaultCharacter: Faye
   exception: 0
   playerS:
@@ -33,6 +42,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 3415138152484438379
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -55,6 +65,29 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You spend time with Faye. She seems relieved.* '
     - rid: 3415138152484438384
+=======
+    - rid: 7527442909778412334
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You go to Faye''s booth.*'
+    - rid: 7527442909778412335
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412336
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey it's you.
+    - rid: 7527442909778412337
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Let's talk for a while.
+    - rid: 7527442909778412338
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time with Faye. She seems relieved.*'
+    - rid: 7527442909778412339
+>>>>>>> Stashed changes
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         name: Change Stat Block

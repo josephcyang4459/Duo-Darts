@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e908929cdd55e964ba52b1a8446d7be4, type: 3}
+  m_Name: Elaine_Drepeat
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 7527442909778411854
+  - rid: 7527442909778411855
+  - rid: 7527442909778411856
+  - rid: 7527442909778411857
+  - rid: 7527442909778411858
+  - rid: 7527442909778411859
+  - rid: 7527442909778411860
+  - rid: 7527442909778411861
+  - rid: 7527442909778411862
+  - rid: 7527442909778411863
+  defaultCharacter: Elaine
+  ForceDarts: 0
+  TimeLength: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 7527442909778411854
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see Elaine practicing alone.*'
+    - rid: 7527442909778411855
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411856
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 7527442909778411857
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come.
+    - rid: 7527442909778411858
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You want to buy me drinks?
+    - rid: 7527442909778411859
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Good.
+    - rid: 7527442909778411860
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time drinking with Elaine.*'
+    - rid: 7527442909778411861
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Character: 3
+        Stat: 2
+        Adjust: 1
+    - rid: 7527442909778411862
+      type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Character: 3
+        Stat: 1
+        Adjust: 1
+    - rid: 7527442909778411863
+      type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
+      data:
+        Stat: 0
+        Adjust: 1

@@ -13,12 +13,23 @@ MonoBehaviour:
   m_Name: Elain_Drepeat
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_Drepeat.asset
   - rid: 3415138152484438240
   - rid: 3415138152484438241
   - rid: 3415138152484438242
   - rid: 3415138152484438243
   - rid: 3415138152484438244
   - rid: 3415138152484438245
+=======
+  - rid: 7527442909778412326
+  - rid: 7527442909778412327
+  - rid: 7527442909778412328
+  - rid: 7527442909778412329
+  - rid: 7527442909778412330
+  - rid: 7527442909778412331
+  - rid: 7527442909778412332
+  - rid: 7527442909778412333
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_Repeat.asset
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -33,6 +44,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_Drepeat.asset
     - rid: 3415138152484438240
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -54,6 +66,37 @@ MonoBehaviour:
       data:
         thoughtMessage: '*You spend time watching Elaine practice and gloat.* '
     - rid: 3415138152484438245
+=======
+    - rid: 7527442909778412326
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see Elaine practicing alone.*'
+    - rid: 7527442909778412327
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412328
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 7527442909778412329
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Come here.
+    - rid: 7527442909778412330
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412331
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Check this trick out.
+    - rid: 7527442909778412332
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You spend time watching Elaine practice and gloat.*'
+    - rid: 7527442909778412333
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_Repeat.asset
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         name: Change Stat Block

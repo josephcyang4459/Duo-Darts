@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Elain_2
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_2.asset
   - rid: 3415138152484438148
   - rid: 3415138152484438149
   - rid: 3415138152484438150
@@ -30,6 +31,32 @@ MonoBehaviour:
   - rid: 3415138152484438162
   - rid: 3415138152484438163
   - rid: 3415138152484438164
+=======
+  - rid: 7527442909778412360
+  - rid: 7527442909778412361
+  - rid: 7527442909778412362
+  - rid: 7527442909778412363
+  - rid: 7527442909778412364
+  - rid: 7527442909778412365
+  - rid: 7527442909778412366
+  - rid: 7527442909778412367
+  - rid: 7527442909778412368
+  - rid: 7527442909778412369
+  - rid: 7527442909778412370
+  - rid: 7527442909778412371
+  - rid: 7527442909778412372
+  - rid: 7527442909778412373
+  - rid: 7527442909778412374
+  - rid: 7527442909778412375
+  - rid: 7527442909778412376
+  - rid: 7527442909778412377
+  - rid: 7527442909778412378
+  - rid: 7527442909778412379
+  - rid: 7527442909778412380
+  - rid: 7527442909778412381
+  - rid: 7527442909778412382
+  - rid: 7527442909778412383
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_2.asset
   defaultCharacter: Elaine
   exception: 0
   playerS:
@@ -44,11 +71,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_2.asset
     - rid: 3415138152484438148
+=======
+    - rid: 7527442909778412360
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_2.asset
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You walk up to Elaine who is again fidgeting with a few
           darts on the table in front of her.*'
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_2.asset
     - rid: 3415138152484438149
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -66,6 +98,34 @@ MonoBehaviour:
       data:
         message: Is it really fair for me to even be here?
     - rid: 3415138152484438153
+=======
+    - rid: 7527442909778412361
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412362
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Hey.
+    - rid: 7527442909778412363
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She seems like she''s out of fire, simmering rather than
+          the usual crackling.*'
+    - rid: 7527442909778412364
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Sit.
+    - rid: 7527442909778412365
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I was thinking about the tournament.
+    - rid: 7527442909778412366
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Is it really fair for me to even be here?
+    - rid: 7527442909778412367
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_2.asset
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         name: Call & Response
@@ -105,6 +165,7 @@ MonoBehaviour:
             Expression: 4
             Stat: 0
             AdjustValue: 0
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_2.asset
             exemption: 0
     - rid: 3415138152484438154
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
@@ -119,10 +180,31 @@ MonoBehaviour:
       data:
         message: I want to go international.
     - rid: 3415138152484438157
+=======
+            ResponseIsPlayerThought: 0
+    - rid: 7527442909778412368
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412369
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: This tournament bothers me.
+    - rid: 7527442909778412370
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's a professional tournament, but it's not enough for me.
+    - rid: 7527442909778412371
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I want to go international.
+    - rid: 7527442909778412372
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_2.asset
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Bumming it in these bars and easily winning these tournaments is
           beneath me.
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_2.asset
     - rid: 3415138152484438158
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
@@ -148,6 +230,49 @@ MonoBehaviour:
       data:
         message: You honestly smell horrible and it's definitely noticeable.
     - rid: 3415138152484438164
+=======
+    - rid: 7527442909778412373
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778412374
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She pats your head.*'
+    - rid: 7527442909778412375
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And belittling underachievers like yourself has lost its charm.
+    - rid: 7527442909778412376
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You know what, I have you to thank for this eureka.
+    - rid: 7527442909778412377
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412378
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I really do owe you one.
+    - rid: 7527442909778412379
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Anyways. Can you leave now?
+    - rid: 7527442909778412380
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 2
+    - rid: 7527442909778412381
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You honestly smell horrible and it's definitely noticeable.
+    - rid: 7527442909778412382
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412383
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_2.asset
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave Elaine to enjoy her fantasizations of international

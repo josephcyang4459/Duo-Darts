@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Jess_0
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream
   - rid: 6642624351303631076
   - rid: 6642624351303631077
   - rid: 6642624351303631078
@@ -32,6 +33,27 @@ MonoBehaviour:
   - rid: 6642624351303631092
   - rid: 6642624351303631093
   - rid: 6642624351303631094
+=======
+  - rid: 7527442909778412127
+  - rid: 7527442909778412128
+  - rid: 7527442909778412129
+  - rid: 7527442909778412130
+  - rid: 7527442909778412131
+  - rid: 7527442909778412132
+  - rid: 7527442909778412133
+  - rid: 7527442909778412134
+  - rid: 7527442909778412135
+  - rid: 7527442909778412136
+  - rid: 7527442909778412137
+  - rid: 7527442909778412138
+  - rid: 7527442909778412139
+  - rid: 7527442909778412140
+  - rid: 7527442909778412141
+  - rid: 7527442909778412142
+  - rid: 7527442909778412143
+  - rid: 7527442909778412144
+  - rid: 7527442909778412145
+>>>>>>> Stashed changes
   defaultCharacter: Jess
   ForceDarts: 0
   aa: {fileID: 4900000, guid: e33b234e3c9177241abc0d08d97fe1e9, type: 3}
@@ -39,15 +61,24 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream
     - rid: 6642624351303631076
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see a unique woman dancing.*'
     - rid: 6642624351303631077
+=======
+    - rid: 7527442909778412127
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You see a unique woman dancing.*'
+    - rid: 7527442909778412128
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Your eyes meet briefly and she walks over to you shortly
           after.*'
+<<<<<<< Updated upstream
     - rid: 6642624351303631078
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -57,6 +88,17 @@ MonoBehaviour:
       data:
         message: Is there something you want?
     - rid: 6642624351303631080
+=======
+    - rid: 7527442909778412129
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412130
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Is there something you want?
+    - rid: 7527442909778412131
+>>>>>>> Stashed changes
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -84,6 +126,7 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream
     - rid: 6642624351303631081
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -97,10 +140,26 @@ MonoBehaviour:
       data:
         message: "It\u2019s off putting."
     - rid: 6642624351303631084
+=======
+    - rid: 7527442909778412132
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778412133
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I just came to ask you to stop staring.
+    - rid: 7527442909778412134
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: It's off putting.
+    - rid: 7527442909778412135
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She begins to return to her dancing, but stops and returns
           to you.*'
+<<<<<<< Updated upstream
     - rid: 6642624351303631085
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -138,6 +197,45 @@ MonoBehaviour:
       data:
         message: And I asked you to stop staring...
     - rid: 6642624351303631094
+=======
+    - rid: 7527442909778412136
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I need a dance partner.
+    - rid: 7527442909778412137
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She waits for a moment.*'
+    - rid: 7527442909778412138
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Well...
+    - rid: 7527442909778412139
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Aren't you going to ask me to dance?
+    - rid: 7527442909778412140
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*You take her onto the dance floor and dance with her.'
+    - rid: 7527442909778412141
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: You're quite good at this.
+    - rid: 7527442909778412142
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: '*She smirks.*'
+    - rid: 7527442909778412143
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: I'm Jessica Fletcher.
+    - rid: 7527442909778412144
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I asked you to stop staring...
+    - rid: 7527442909778412145
+>>>>>>> Stashed changes
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You and Jessica dance for a while.*'

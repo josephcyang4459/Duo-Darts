@@ -19,7 +19,17 @@ public class PauseMenu : MonoBehaviour, Caller {
 
     public void IsInStoryScene(bool isInStory) { IsInStory = isInStory; }
 
+<<<<<<< Updated upstream
     public void SetTutorialActive(bool active) { TutorialCanvas.SetActive(active); }
+=======
+    public void SetTutorialActive(bool active) {
+        DartSticker.inst.SetVisible(false);
+        switch (CurrentScene) {
+            case SceneNumbers.Story: TutorialHandler.inst.EnableTutorialChoices(active);return;
+            case SceneNumbers.Darts: TutorialHandler.inst.EnableDartsTutorial(active);return;
+        }
+    }
+>>>>>>> Stashed changes
 
     public void Awake() {
         if (inst != null) {
@@ -100,13 +110,14 @@ public class PauseMenu : MonoBehaviour, Caller {
 
     public void ShowOptions() {
         SetCorrectCanvas(false);
+        DartSticker.inst.SetVisible(false);
         OptionsMenu.inst.ShowOptions(this);
     }
 
     public void ExitToMain() {
         if (CutsceneHandler.inst.InCutscene)
             CutsceneHandler.inst.HideUI();
-
+        DartSticker.inst.SetVisible(false);
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 

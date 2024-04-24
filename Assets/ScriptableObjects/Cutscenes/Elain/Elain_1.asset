@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Elain_1
   m_EditorClassIdentifier: 
   blocks:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_1.asset
   - rid: 3415138152484438140
   - rid: 3415138152484438141
   - rid: 3415138152484438142
@@ -21,6 +22,19 @@ MonoBehaviour:
   - rid: 3415138152484438145
   - rid: 3415138152484438146
   - rid: 3415138152484438147
+=======
+  - rid: 7527442909778411745
+  - rid: 7527442909778411746
+  - rid: 7527442909778411747
+  - rid: 7527442909778411748
+  - rid: 7527442909778411749
+  - rid: 7527442909778411750
+  - rid: 7527442909778411751
+  - rid: 7527442909778411752
+  - rid: 7527442909778411753
+  - rid: 7527442909778411754
+  - rid: 7527442909778411755
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_1.asset
   defaultCharacter: Elaine
   ForceDarts: 1
   aa: {fileID: 4900000, guid: 57aa404884aec9d40994c3f6b1961f6d, type: 3}
@@ -28,11 +42,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_1.asset
     - rid: 3415138152484438140
+=======
+    - rid: 7527442909778411745
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_1.asset
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine holds a trio of darts in her hands and appears to
           give a brief prayer before speaking to you.*'
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_1.asset
     - rid: 3415138152484438141
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -46,6 +65,25 @@ MonoBehaviour:
       data:
         message: Think you can do that?
     - rid: 3415138152484438144
+=======
+    - rid: 7527442909778411746
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411747
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Alright. My prayers to myself are finished.
+    - rid: 7527442909778411748
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Now try and fetch me some points this game.
+    - rid: 7527442909778411749
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Think you can do that?
+    - rid: 7527442909778411750
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_1.asset
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -79,6 +117,7 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Cutscenes/Elain/Elain_1.asset
     - rid: 3415138152484438145
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
@@ -89,6 +128,26 @@ MonoBehaviour:
         message: And I'll need time to stop the hysterical laughter your dartplay
           will cause me too.
     - rid: 3415138152484438147
+=======
+    - rid: 7527442909778411751
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 0
+    - rid: 7527442909778411752
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: Alright you first.
+    - rid: 7527442909778411753
+      type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
+      data:
+        message: And I'll need time to stop the hysterical laughter your dartplay
+          will bring out of me.
+    - rid: 7527442909778411754
+      type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
+      data:
+        expression: 1
+    - rid: 7527442909778411755
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Cutscenes/Elain/Elaine_1.asset
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So be ready for a long game.
