@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float SecondsToWaitFor;
     [SerializeField] float CurrentTime;
     [SerializeField] UnityEvent Complete;
+
     public void BeginTimer(float wait) {
         SecondsToWaitFor = wait;
         BeginTimer();
