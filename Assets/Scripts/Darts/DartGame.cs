@@ -22,7 +22,6 @@ public class DartGame : MonoBehaviour {
     public bool firstTimePlaying;
 
     [SerializeField] float MaxOffset = 4;
-    [SerializeField] Canvas dartCanvas;
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -113,8 +112,7 @@ public class DartGame : MonoBehaviour {
         turnSum = 0;
         Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
         numberOfDartsThrow = 0;
-        dartCanvas.enabled = true;
-
+        Visuals.ShowCanvas(true);
         playerTurn();
     }
 
@@ -166,7 +164,7 @@ public class DartGame : MonoBehaviour {
 
     void GameEnd() {
         board.enabled = false;
-        dartCanvas.enabled = false;
+        Visuals.ShowCanvas(false);
     }
 
     public void SwitchTurn() {

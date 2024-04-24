@@ -11,32 +11,30 @@ public class CutsceneHandler : MonoBehaviour {
     public CharacterList characters;
     [SerializeField] InputActionReference interact;
     [Space]
-    [SerializeField] CharacterPortraitAnimation PortraitAnimation;
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] Image CharacterPortrait;
     [SerializeField] TMP_Text CharacterName;
     [SerializeField] GameObject CharacterNamePlate;
     [SerializeField] DialougeBox DialougeBox;
-    [SerializeField] Canvas responseCanvas;
+    [SerializeField] DefaultCutsceneUI ResponseUI;
     [SerializeField] Image ResponsePortrait;
-    [SerializeField] GameObject responseButton;
     [SerializeField] TMP_Text[] responses;
-    [SerializeField] Canvas DefaultCanvass;
+    [SerializeField] DefaultCutsceneUI DefaultCutscene;
     public Image cutSceneBackGround;
+
     [SerializeField] SpriteCollection BackgroundSprites;
     [SerializeField] Sprite[] CharacterPortraits;
     [Space]
     [SerializeField] int CurrentCharacterIndex;
     [SerializeField] int index;
-    [SerializeField] Response respon;
+    [SerializeField] Response CurrentResponseGroup;
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
     public bool InCutscene;
-    [SerializeField] DartPartnerStoryUI DartsMenu;
-    [SerializeField] Schedule Schedule;
-    [SerializeField] EndingScene EndingScene;
-
+    public DartPartnerStoryUI DartsMenu;
+    public Schedule Schedule;
+    public EndingScene Ending;
     public void Awake() {
         if (inst != null) {
             Destroy(gameObject);
@@ -58,13 +56,13 @@ public class CutsceneHandler : MonoBehaviour {
         ResponsePortrait.sprite = CharacterPortraits[i];
     }
 
+    public void SetUpForEnding(EndingScene e) {
+        Ending = e;
+    }
+
     public void SetUpForMainGame(DartPartnerStoryUI dartsMenu, Schedule schedule) {
         DartsMenu = dartsMenu;
         Schedule = schedule;
-    }
-
-    public void SetUpForEnding(EndingScene endingScene) {
-        EndingScene = endingScene;
     }
 
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
@@ -95,7 +93,7 @@ public class CutsceneHandler : MonoBehaviour {
         }
     }
 
-    public void choice(int i) {
+    public void DefaultCutsceneSelection(int i) {
         if (i == 0)
             cutscene = characters.list[CurrentCharacterIndex].DefaultRepeatingScene;
         else
@@ -103,7 +101,6 @@ public class CutsceneHandler : MonoBehaviour {
         UIState.inst.SetInteractable(false);
         Schedule.enabled = false;
         index = 0;
-        DefaultCanvass.enabled = false;
         DialougeCanvas.enabled = true;
         interact.action.Enable();
         interact.action.performed += TakeAction;
@@ -125,7 +122,7 @@ public class CutsceneHandler : MonoBehaviour {
 
             responseIndexIndex++;
 
-            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length) {
+            if (responseIndexIndex >= CurrentResponseGroup.responses[responseIndex].responses.Length) {
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
@@ -150,7 +147,6 @@ public class CutsceneHandler : MonoBehaviour {
     public void HideUI() {
         InCutscene = false;
         DialougeCanvas.enabled = false;
-        responseCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
         UIState.inst.SetInteractable(true);
         interact.action.Disable();
@@ -163,14 +159,13 @@ public class CutsceneHandler : MonoBehaviour {
 
         if (Schedule != null)
             Schedule.SetTime(cutscene.TimeLength);
-        if (EndingScene != null)
-            EndingScene.CutsceneComplete();
+        if(Ending!= null) {
+            Ending.CutsceneComplete();
+        }
     }
 
     public void PresentChoices() {
-        UIState.inst.SetInteractable(true);
-        //-----------------------------------------------------------------------------------------******-----+++++++------------Set BUTTON HERE
-        DefaultCanvass.enabled = true;
+        DefaultCutscene.BeginEnter();
         DialougeCanvas.enabled = false;
         DialougeCanvas.enabled = false;
         interact.action.Disable();
@@ -199,24 +194,22 @@ public class CutsceneHandler : MonoBehaviour {
     public void Response(Response r) {
         //-------------------------**********------------------------------+++++++++++++--------------------------------------Set BUTTON HERE
         UIState.inst.SetInteractable(true);
-        respon = r;
+        CurrentResponseGroup = r;
         responding = true;
         responseIndex = -1;
         for (int i = 0; i < 3; i++)
-            responses[i].text = respon.responses[i].answer;
+            responses[i].text = CurrentResponseGroup.responses[i].answer;
 
-        responseCanvas.enabled = true;
+        ResponseUI.BeginEnter();
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
-        if(DecideCharacter(character))
-            ChangeExpression((int)expression);
-
+        DecideCharacter(character);
+        ChangeExpression((int)expression);
     }
 
     public void UI_Response(int i) {
         UIState.inst.SetInteractable(false);
-        responseCanvas.enabled = false;
         responseIndex = i;
         responseIndexIndex = 0;
 
@@ -224,20 +217,19 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     private void DisplayResponse() {
-        respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
-        if (!respon.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
-            Dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+        CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
+        if (!CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
+            Dialouge(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
         else
-            Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+            Thought(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int expressionIndex, bool GoToNextBlock = true) {
+    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock = true) {
         if (CharacterPortrait.enabled == false)
             CharacterPortrait.enabled = true;
         CharacterNamePlate.SetActive(true);
-        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[expressionIndex];
-        PortraitAnimation.ChangeExpression((Expressions)expressionIndex);
-        DialougeBox.SetExpression(expressionIndex, true);
+        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
+        DialougeBox.SetExpression(ExpressionIndex, true);
         if (GoToNextBlock)
             NextBlock();
     }
@@ -256,14 +248,13 @@ public class CutsceneHandler : MonoBehaviour {
 
         CharacterPortrait.sprite = characters.list[partnerIndex].Expressions[0];
         DialougeBox.SetExpression(0, showPartnerVisual);
-        DialougeBox.SetCharacterColors(partnerIndex);
         CharacterPortrait.enabled = showPartnerVisual;
         CharacterName.text = characters.list[partnerIndex].Name;
         CharacterName.font = characters.list[partnerIndex].Font;
         CharacterName.fontSize = characters.list[partnerIndex].textSize;
         CharacterNamePlate.SetActive(showPartnerVisual);
 
-
+        DialougeBox.SetCharacterColors(partnerIndex);
     }
 
     private void SetBackGroundVisual(int i) {
@@ -281,57 +272,51 @@ public class CutsceneHandler : MonoBehaviour {
             case "dance":
                 SetBackGroundVisual(2);
                 break;
-            case "bathroom":
-                SetBackGroundVisual(3);
-                break;
-            case "darts":
-                SetBackGroundVisual(4);
+            case "elaine":
+                SetBackGroundVisual(0);
                 break;
         }
     }
 
-    private bool DecideCharacter(string s, bool showPartner = true) {
+    private void DecideCharacter(string s, bool showPartner = true) {
         switch (s.ToLower()) {
             case "faye":
                 SetPartnerVisual(2, showPartner);
-                return true;
+                break;
             case "chad":
                 SetPartnerVisual(0, showPartner);
-                return true;
+                break;
             case "jess":
                 SetPartnerVisual(1, showPartner);
-                return true;
+                break;
             case "elaine":
                 SetPartnerVisual(3, showPartner);
-                return true;
+                break;
             case "owner":
                 SetPartnerVisual(4, showPartner);
-                return true;
+                break;
             case "bar guy":
                 SetPartnerVisual(5, showPartner);
-                return true;
+                break;
             case "charming girl":
                 SetPartnerVisual(6, showPartner);
-                return true;
+                break;
             case "charming guy":
                 SetPartnerVisual(7, showPartner);
-                return true;
+                break;
             case "dance girl":
                 SetPartnerVisual(8, showPartner);
-                return true;
+                break;
             case "lounge guy":
                 SetPartnerVisual(9, showPartner);
-                return true;
+                break;
             default:
-                if (s.Length <= 0) {
-                    Debug.Log("HERE");
-                    SetPartnerVisual(10, false);
-                }
-                else {
-                    SetPartnerVisual(10, showPartner);
-                    CharacterName.text = s;
-                }
-                return false;
+#if UNITY_EDITOR
+                Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
+#endif
+                SetPartnerVisual(10, showPartner);
+                CharacterName.text = s;
+                break;
         }
     }
 }
