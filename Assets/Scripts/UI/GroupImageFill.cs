@@ -86,3 +86,19 @@ public class Fillable_Image : Fillable {
             Images[i].fillAmount = value;
     }
 }
+[System.Serializable]
+public class Fillable_SeeSaw : Fillable {
+    public Image[] Images;
+    public Image[] Images1;
+
+    public override float GetFill() {
+        return Images[0].fillAmount;
+    }
+
+    public override void SetFill(float value) {
+        for (int i = 0; i < Images.Length; i++)
+            Images[i].fillAmount = value;
+        for (int i = 0; i < Images.Length; i++)
+            Images1[i].fillAmount = 1 - value;
+    }
+}

@@ -12,7 +12,8 @@ public class TutorialHandler : MonoBehaviour {
     // Enable/Disable Tutorial Canvas
     public void EnableDartsTutorial(bool enable) {
         DartsTutorialCanvas.enabled = enable;
-        dartgame.setFirstTimePlaying(false);
+        //dartgame.setFirstTimePlaying(false);
+        dartgame.firstTimePlaying = false;
         bool anyOptionsEnabled = (!PauseMenu.inst.PauseOptionsCanvas.enabled && !PauseMenu.inst.StoryOptionsCanvas.enabled);
 
         if (!enable && anyOptionsEnabled)

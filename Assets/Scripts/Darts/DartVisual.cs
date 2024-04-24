@@ -1,34 +1,67 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DartVisual : MonoBehaviour {
+    [SerializeField] SpriteCollection Darts;
+    [SerializeField] Canvas Canvas;
     [SerializeField] TMP_Text remainingScoreText;
     [SerializeField] TMP_Text currentScoreText;
     [SerializeField] TMP_Text turnText;
-    public Image[] dartimages;
-    public TMP_Text[] scoreTexts;
+    [SerializeField] Image[] DartImages;
+    [SerializeField] TMP_Text[] scoreTexts;
+    [SerializeField] Fillable_SeeSaw[] DartPlaques;
+    [SerializeField] [Range(1, 7)] float FillSpeed =3;
+    List<Fillable_SeeSaw> CurrentlyFilling = new();
 
-
-    public void SetTurnAndOverallScores(int turnScore, int overallScore, int currentTurn, int maxTurn) {
-        remainingScoreText.text = "Remaining: " + overallScore.ToString();
-        currentScoreText.text = "Current: " + turnScore.ToString();
-        turnText.text = "Turns Remaining: " + (maxTurn - (currentTurn+1)); ;
-    }
-
-    public void SetDartScore(int dartIndex, int score) {
-        scoreTexts[dartIndex].text = "Dart " + (dartIndex + 1).ToString() + ": " + score.ToString();
-        dartimages[dartIndex].enabled = false;
-    }
-
-    public void SetDartScore() {
+    public void RandomizeDartImages() {
+        int temp = Random.Range(0,Darts.Sprites.Length);
         for (int i = 0; i < 3; i++) {
-            scoreTexts[i].text = "";
-            dartimages[i].enabled = true;
+            DartImages[i].sprite = Darts.Sprites[temp];
         }
     }
 
-    public void SetTurnScore(int turnScore) { currentScoreText.text = "Current: " + turnScore.ToString(); }
+    public void ShowCanvas(bool b) {
+        Canvas.enabled = b;
+    }
+
+    public void SetTurnAndOverallScores(int turnScore, int overallScore, int currentTurn, int maxTurn) {
+        remainingScoreText.text = overallScore.ToString();
+        currentScoreText.text = turnScore.ToString();
+        turnText.text = (maxTurn - (currentTurn + 1)).ToString();
+    }
+
+    public void SetDartScore(int dartIndex, int score) {
+        scoreTexts[dartIndex].text = score.ToString();
+        enabled = true;
+        CurrentlyFilling.Add(DartPlaques[dartIndex]);
+    }
+
+    public void SetDartScore() {
+        RandomizeDartImages();
+        for (int i = 0; i < 3; i++) {
+            DartPlaques[i].SetFill(0);
+        }
+        while (CurrentlyFilling.Count > 0)
+            CurrentlyFilling.RemoveAt(0);
+    }
+
+    public void SetTurnScore(int turnScore) { currentScoreText.text = turnScore.ToString(); }
+
+    private void Update() {
+        if (CurrentlyFilling.Count <= 0)
+            enabled = false;
+        float dTime = Time.deltaTime * FillSpeed;
+        for(int i=CurrentlyFilling.Count-1;i>=0;i--) {
+            float temp = CurrentlyFilling[i].GetFill();
+            if (temp >= 1) {
+                CurrentlyFilling.RemoveAt(i);
+            }
+            else
+                CurrentlyFilling[i].SetFill(Mathf.MoveTowards(temp, 1, dTime));
+        }
+        if (CurrentlyFilling.Count <= 0)
+            enabled = false;
+    }
 }
