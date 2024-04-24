@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Elaine_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909778411641
-  - rid: 7527442909778411642
-  - rid: 7527442909778411643
-  - rid: 7527442909778411644
-  - rid: 7527442909778411645
-  - rid: 7527442909778411646
-  - rid: 7527442909778411647
-  - rid: 7527442909778411648
+  - rid: 7527442982135399065
+  - rid: 7527442982135399066
+  - rid: 7527442982135399067
+  - rid: 7527442982135399068
+  - rid: 7527442982135399069
+  - rid: 7527442982135399070
+  - rid: 7527442982135399071
+  - rid: 7527442982135399072
   defaultCharacter: Elaine
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909778411641
+    - rid: 7527442982135399065
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Elaine practicing alone.*'
-    - rid: 7527442909778411642
+    - rid: 7527442982135399066
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909778411643
+    - rid: 7527442982135399067
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 7527442909778411644
+    - rid: 7527442982135399068
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come here.
-    - rid: 7527442909778411645
+    - rid: 7527442982135399069
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442909778411646
+    - rid: 7527442982135399070
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Check this trick out.
-    - rid: 7527442909778411647
+    - rid: 7527442982135399071
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time watching Elaine practice and gloat.*'
-    - rid: 7527442909778411648
+    - rid: 7527442982135399072
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 3

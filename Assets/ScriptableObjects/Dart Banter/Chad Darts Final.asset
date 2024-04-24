@@ -17,7 +17,7 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 1
     ChanceToUse: 100
     Lines:
-    - "Don\u2019t back out on me now. I know you have it in you.\r"
+    - "Don't back out on me now. I know you have it in you.\r"
     AlreadyUsed: 00
     Used: 0
   - MinScoreRangeInclusive: 1
@@ -25,14 +25,14 @@ MonoBehaviour:
     ChanceToUse: 60
     Lines:
     - "We both know you can be the best. Time to do it.\r"
-    - "Greatness won\u2019t wait, chase it.\r"
+    - "Greatness won't wait, chase it.\r"
     AlreadyUsed: 0000
     Used: 0
-  - MinScoreRangeInclusive: 0
-    MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
+  - MinScoreRangeInclusive: 100
+    MaxScoreRangeExclusive: 139
+    ChanceToUse: 60
     Lines:
-    - "One leg at a time. This one\u2019s ours.\r"
+    - "One leg at a time. This one's ours.\r"
     - "\r"
     AlreadyUsed: 0000
     Used: 0
@@ -40,18 +40,18 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 180
     ChanceToUse: 60
     Lines:
-    - "They\u2019ll remember your name if you keep that up.\r"
+    - "They'll remember your name if you keep that up.\r"
     - "I can barely keep up with you.\r"
-    - "You\u2019re making the other teams nervous. Incredible.\r"
-    - "You\u2019re making me look like an amateur.\r"
-    - "There\u2019s always a bigger fish, it seems.\r"
+    - "You're making the other teams nervous. Incredible.\r"
+    - "You're making me look like an amateur.\r"
+    - "There's always a bigger fish, it seems.\r"
     AlreadyUsed: 0000000000
     Used: 0
   - MinScoreRangeInclusive: 180
     MaxScoreRangeExclusive: 181
     ChanceToUse: 100
     Lines:
-    - "You\u2019re psychotic with those darts.\r"
+    - "You're psychotic with those darts.\r"
     - "More stunning than me...\r"
     - "An inspiration...\r"
     AlreadyUsed: 000000
@@ -61,7 +61,7 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 0
     ChanceToUse: 100
     Lines:
-    - "There\u2019s never been greatness like ours.\r"
+    - "There's never been greatness like ours.\r"
     - "Perfection. I knew you were the right choice.\r"
     - "To think I almost missed out on this. Thank you.\r"
     AlreadyUsed: 000000

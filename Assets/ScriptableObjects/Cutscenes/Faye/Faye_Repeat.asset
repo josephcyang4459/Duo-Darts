@@ -13,39 +13,39 @@ MonoBehaviour:
   m_Name: Faye_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906516
-  - rid: 7527442909745906517
-  - rid: 7527442909745906518
-  - rid: 7527442909745906519
-  - rid: 7527442909745906520
-  - rid: 7527442909745906521
+  - rid: 7527442982135398772
+  - rid: 7527442982135398773
+  - rid: 7527442982135398774
+  - rid: 7527442982135398775
+  - rid: 7527442982135398776
+  - rid: 7527442982135398777
   defaultCharacter: Faye
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906516
+    - rid: 7527442982135398772
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You go to Faye''s booth.*'
-    - rid: 7527442909745906517
+    - rid: 7527442982135398773
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906518
+    - rid: 7527442982135398774
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey it's you.
-    - rid: 7527442909745906519
+    - rid: 7527442982135398775
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's talk for a while.
-    - rid: 7527442909745906520
+    - rid: 7527442982135398776
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time with Faye. She seems relieved.*'
-    - rid: 7527442909745906521
+    - rid: 7527442982135398777
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2

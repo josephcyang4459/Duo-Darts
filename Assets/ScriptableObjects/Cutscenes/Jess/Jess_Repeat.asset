@@ -13,44 +13,44 @@ MonoBehaviour:
   m_Name: Jess_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906549
-  - rid: 7527442909745906550
-  - rid: 7527442909745906551
-  - rid: 7527442909745906552
-  - rid: 7527442909745906553
-  - rid: 7527442909745906554
-  - rid: 7527442909745906555
+  - rid: 7527442982135398805
+  - rid: 7527442982135398806
+  - rid: 7527442982135398807
+  - rid: 7527442982135398808
+  - rid: 7527442982135398809
+  - rid: 7527442982135398810
+  - rid: 7527442982135398811
   defaultCharacter: Jess
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906549
+    - rid: 7527442982135398805
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit next to Jessica and strike up a conversation.*'
-    - rid: 7527442909745906550
+    - rid: 7527442982135398806
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906551
+    - rid: 7527442982135398807
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I suppose it's nice to see you again.
-    - rid: 7527442909745906552
+    - rid: 7527442982135398808
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442909745906553
+    - rid: 7527442982135398809
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You have something interesting to say?
-    - rid: 7527442909745906554
+    - rid: 7527442982135398810
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time talking with Jessica. She seems appreciative.*'
-    - rid: 7527442909745906555
+    - rid: 7527442982135398811
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1

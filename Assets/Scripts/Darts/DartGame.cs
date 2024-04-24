@@ -141,6 +141,7 @@ public class DartGame : MonoBehaviour {
     }
 
     public void GoToCorrectEnding() {
+        Debug.Log("END HERE");
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (IsFinals()) {

@@ -204,8 +204,8 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
-        DecideCharacter(character);
-        ChangeExpression((int)expression);
+        if (DecideCharacter(character))
+            ChangeExpression((int)expression);
     }
 
     public void UI_Response(int i) {
@@ -278,45 +278,51 @@ public class CutsceneHandler : MonoBehaviour {
         }
     }
 
-    private void DecideCharacter(string s, bool showPartner = true) {
+    private bool DecideCharacter(string s, bool showPartner = true) {
         switch (s.ToLower()) {
             case "faye":
                 SetPartnerVisual(2, showPartner);
-                break;
+                return true;
             case "chad":
                 SetPartnerVisual(0, showPartner);
-                break;
+                return true;
             case "jess":
                 SetPartnerVisual(1, showPartner);
-                break;
+                return true;
             case "elaine":
                 SetPartnerVisual(3, showPartner);
                 break;
             case "owner":
                 SetPartnerVisual(4, showPartner);
-                break;
+                return true;
             case "bar guy":
                 SetPartnerVisual(5, showPartner);
-                break;
+                return true;
             case "charming girl":
                 SetPartnerVisual(6, showPartner);
-                break;
+                return true;
             case "charming guy":
                 SetPartnerVisual(7, showPartner);
-                break;
+                return true;
             case "dance girl":
                 SetPartnerVisual(8, showPartner);
-                break;
+                return true;
             case "lounge guy":
                 SetPartnerVisual(9, showPartner);
-                break;
+                return true;
             default:
 #if UNITY_EDITOR
                 Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
 #endif
+                if(s.Length == 0) {
+                    SetPartnerVisual(10, false);
+                    return false;
+                }
+                   
                 SetPartnerVisual(10, showPartner);
                 CharacterName.text = s;
-                break;
+                return false;
         }
+        return false;
     }
 }

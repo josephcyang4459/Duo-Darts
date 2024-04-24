@@ -13,67 +13,67 @@ MonoBehaviour:
   m_Name: Elaine_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906492
-  - rid: 7527442909745906493
-  - rid: 7527442909745906494
-  - rid: 7527442909745906495
-  - rid: 7527442909745906496
-  - rid: 7527442909745906497
-  - rid: 7527442909745906498
-  - rid: 7527442909745906499
-  - rid: 7527442909745906500
-  - rid: 7527442909745906501
-  - rid: 7527442909745906502
-  - rid: 7527442909745906503
-  - rid: 7527442909745906504
-  - rid: 7527442909745906505
-  - rid: 7527442909745906506
-  - rid: 7527442909745906507
-  - rid: 7527442909745906508
-  - rid: 7527442909745906509
-  - rid: 7527442909745906510
-  - rid: 7527442909745906511
-  - rid: 7527442909745906512
-  - rid: 7527442909745906513
-  - rid: 7527442909745906514
-  - rid: 7527442909745906515
+  - rid: 7527442982135398748
+  - rid: 7527442982135398749
+  - rid: 7527442982135398750
+  - rid: 7527442982135398751
+  - rid: 7527442982135398752
+  - rid: 7527442982135398753
+  - rid: 7527442982135398754
+  - rid: 7527442982135398755
+  - rid: 7527442982135398756
+  - rid: 7527442982135398757
+  - rid: 7527442982135398758
+  - rid: 7527442982135398759
+  - rid: 7527442982135398760
+  - rid: 7527442982135398761
+  - rid: 7527442982135398762
+  - rid: 7527442982135398763
+  - rid: 7527442982135398764
+  - rid: 7527442982135398765
+  - rid: 7527442982135398766
+  - rid: 7527442982135398767
+  - rid: 7527442982135398768
+  - rid: 7527442982135398769
+  - rid: 7527442982135398770
+  - rid: 7527442982135398771
   defaultCharacter: Elaine
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906492
+    - rid: 7527442982135398748
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You walk up to Elaine who is again fidgeting with a few
           darts on the table in front of her.*'
-    - rid: 7527442909745906493
+    - rid: 7527442982135398749
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906494
+    - rid: 7527442982135398750
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 7527442909745906495
+    - rid: 7527442982135398751
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She seems like she''s out of fire, simmering rather than
           the usual crackling.*'
-    - rid: 7527442909745906496
+    - rid: 7527442982135398752
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sit.
-    - rid: 7527442909745906497
+    - rid: 7527442982135398753
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I was thinking about the tournament.
-    - rid: 7527442909745906498
+    - rid: 7527442982135398754
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Is it really fair for me to even be here?
-    - rid: 7527442909745906499
+    - rid: 7527442982135398755
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -113,68 +113,68 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906500
+    - rid: 7527442982135398756
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906501
+    - rid: 7527442982135398757
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This tournament bothers me.
-    - rid: 7527442909745906502
+    - rid: 7527442982135398758
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's a professional tournament, but it's not enough for me.
-    - rid: 7527442909745906503
+    - rid: 7527442982135398759
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I want to go international.
-    - rid: 7527442909745906504
+    - rid: 7527442982135398760
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Bumming it in these bars and easily winning these tournaments is
           beneath me.
-    - rid: 7527442909745906505
+    - rid: 7527442982135398761
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442909745906506
+    - rid: 7527442982135398762
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She pats your head.*'
-    - rid: 7527442909745906507
+    - rid: 7527442982135398763
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And belittling underachievers like yourself has lost its charm.
-    - rid: 7527442909745906508
+    - rid: 7527442982135398764
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You know what, I have you to thank for this eureka.
-    - rid: 7527442909745906509
+    - rid: 7527442982135398765
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906510
+    - rid: 7527442982135398766
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I really do owe you one.
-    - rid: 7527442909745906511
+    - rid: 7527442982135398767
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways. Can you leave now?
-    - rid: 7527442909745906512
+    - rid: 7527442982135398768
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 2
-    - rid: 7527442909745906513
+    - rid: 7527442982135398769
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You honestly smell horrible and it's definitely noticeable.
-    - rid: 7527442909745906514
+    - rid: 7527442982135398770
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906515
+    - rid: 7527442982135398771
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave Elaine to enjoy her fantasizations of international

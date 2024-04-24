@@ -13,177 +13,177 @@ MonoBehaviour:
   m_Name: Chad_End
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909778411541
-  - rid: 7527442909778411542
-  - rid: 7527442909778411543
-  - rid: 7527442909778411544
-  - rid: 7527442909778411545
-  - rid: 7527442909778411546
-  - rid: 7527442909778411547
-  - rid: 7527442909778411548
-  - rid: 7527442909778411549
-  - rid: 7527442909778411550
-  - rid: 7527442909778411551
-  - rid: 7527442909778411552
-  - rid: 7527442909778411553
-  - rid: 7527442909778411554
-  - rid: 7527442909778411555
-  - rid: 7527442909778411556
-  - rid: 7527442909778411557
-  - rid: 7527442909778411558
-  - rid: 7527442909778411559
-  - rid: 7527442909778411560
-  - rid: 7527442909778411561
-  - rid: 7527442909778411562
-  - rid: 7527442909778411563
-  - rid: 7527442909778411564
-  - rid: 7527442909778411565
-  - rid: 7527442909778411566
-  - rid: 7527442909778411567
-  - rid: 7527442909778411568
-  - rid: 7527442909778411569
-  - rid: 7527442909778411570
-  - rid: 7527442909778411571
-  - rid: 7527442909778411572
+  - rid: 7527442982135398965
+  - rid: 7527442982135398966
+  - rid: 7527442982135398967
+  - rid: 7527442982135398968
+  - rid: 7527442982135398969
+  - rid: 7527442982135398970
+  - rid: 7527442982135398971
+  - rid: 7527442982135398972
+  - rid: 7527442982135398973
+  - rid: 7527442982135398974
+  - rid: 7527442982135398975
+  - rid: 7527442982135398976
+  - rid: 7527442982135398977
+  - rid: 7527442982135398978
+  - rid: 7527442982135398979
+  - rid: 7527442982135398980
+  - rid: 7527442982135398981
+  - rid: 7527442982135398982
+  - rid: 7527442982135398983
+  - rid: 7527442982135398984
+  - rid: 7527442982135398985
+  - rid: 7527442982135398986
+  - rid: 7527442982135398987
+  - rid: 7527442982135398988
+  - rid: 7527442982135398989
+  - rid: 7527442982135398990
+  - rid: 7527442982135398991
+  - rid: 7527442982135398992
+  - rid: 7527442982135398993
+  - rid: 7527442982135398994
+  - rid: 7527442982135398995
+  - rid: 7527442982135398996
   defaultCharacter: Chad
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909778411541
+    - rid: 7527442982135398965
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You did it.*'
-    - rid: 7527442909778411542
+    - rid: 7527442982135398966
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Chad wasted no time preparing himself for pictures.*'
-    - rid: 7527442909778411543
+    - rid: 7527442982135398967
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He waits for you next to the trophy.*'
-    - rid: 7527442909778411544
+    - rid: 7527442982135398968
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442909778411545
+    - rid: 7527442982135398969
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come on, this trophy is as much mine as it is yours.
-    - rid: 7527442909778411546
+    - rid: 7527442982135398970
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You place a hand on one side and you both hoist it high
           above you.*'
-    - rid: 7527442909778411547
+    - rid: 7527442982135398971
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You mostly lose your grip on it due to Chad''s incredible
           height and wingspan.*'
-    - rid: 7527442909778411548
+    - rid: 7527442982135398972
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh, apologies.
-    - rid: 7527442909778411549
+    - rid: 7527442982135398973
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He lowers it, just, letting you get your grip back.*'
-    - rid: 7527442909778411550
+    - rid: 7527442982135398974
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Cameras flash and catch your shared pose.*'
-    - rid: 7527442909778411551
+    - rid: 7527442982135398975
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You notice more flashes land on Chad than yourself.*'
-    - rid: 7527442909778411552
+    - rid: 7527442982135398976
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well, that's not quite right.
-    - rid: 7527442909778411553
+    - rid: 7527442982135398977
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He switches your pose, dragging you next to him with his
           arm around you.*'
-    - rid: 7527442909778411554
+    - rid: 7527442982135398978
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're fit for the cameras too. You are no one no more.
-    - rid: 7527442909778411555
+    - rid: 7527442982135398979
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: We're the best. There's no other way to see it.
-    - rid: 7527442909778411556
+    - rid: 7527442982135398980
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Soon, the flashes stop and people start to flock around
           the place at random.*'
-    - rid: 7527442909778411557
+    - rid: 7527442982135398981
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: They'll know your name now.
-    - rid: 7527442909778411558
+    - rid: 7527442982135398982
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Who knows, maybe your name will be known even more than mine.
-    - rid: 7527442909778411559
+    - rid: 7527442982135398983
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Surprisingly, I don't think that would bother me at all.
-    - rid: 7527442909778411560
+    - rid: 7527442982135398984
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If you hadn't come tonight I'm not sure I would've even been standing
           here.
-    - rid: 7527442909778411561
+    - rid: 7527442982135398985
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I wanted to walk out earlier, but you kept me on the path.
-    - rid: 7527442909778411562
+    - rid: 7527442982135398986
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see the tiniest drop of a tear form on the corner of
           his eye.*'
-    - rid: 7527442909778411563
+    - rid: 7527442982135398987
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Please, take this.
-    - rid: 7527442909778411564
+    - rid: 7527442982135398988
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's the least I can offer.
-    - rid: 7527442909778411565
+    - rid: 7527442982135398989
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He extends his hand out toward you, offering one of his
           darts to you.*'
-    - rid: 7527442909778411566
+    - rid: 7527442982135398990
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I've got to get going. You know, my life is a fast one.
-    - rid: 7527442909778411567
+    - rid: 7527442982135398991
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: But rest assured, I'll never forget your name.
-    - rid: 7527442909778411568
+    - rid: 7527442982135398992
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He shares one last incredible smile, framed to perfection
           by his features.*'
-    - rid: 7527442909778411569
+    - rid: 7527442982135398993
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Until the next tournament.
-    - rid: 7527442909778411570
+    - rid: 7527442982135398994
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He takes his leave and the trophy along with him.*'
-    - rid: 7527442909778411571
+    - rid: 7527442982135398995
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You examine the dart he gave you.*'
-    - rid: 7527442909778411572
+    - rid: 7527442982135398996
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You''re not sure when he did, but he marked one of the
