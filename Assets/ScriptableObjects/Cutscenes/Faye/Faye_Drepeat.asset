@@ -13,53 +13,53 @@ MonoBehaviour:
   m_Name: Faye_Drepeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135398797
-  - rid: 7527442982135398798
-  - rid: 7527442982135398799
-  - rid: 7527442982135398800
-  - rid: 7527442982135398801
-  - rid: 7527442982135398802
-  - rid: 7527442982135398803
-  - rid: 7527442982135398804
+  - rid: 7527443076320330678
+  - rid: 7527443076320330679
+  - rid: 7527443076320330680
+  - rid: 7527443076320330681
+  - rid: 7527443076320330682
+  - rid: 7527443076320330683
+  - rid: 7527443076320330684
+  - rid: 7527443076320330685
   defaultCharacter: Faye
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135398797
+    - rid: 7527443076320330678
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You go to Faye''s booth.*'
-    - rid: 7527442982135398798
+    - rid: 7527443076320330679
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135398799
+    - rid: 7527443076320330680
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: A drink?
-    - rid: 7527442982135398800
+    - rid: 7527443076320330681
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If you're paying and bringing them over here then sure.
-    - rid: 7527442982135398801
+    - rid: 7527443076320330682
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time drinking with Faye.*'
-    - rid: 7527442982135398802
+    - rid: 7527443076320330683
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2
         Stat: 2
         Adjust: 1
-    - rid: 7527442982135398803
+    - rid: 7527443076320330684
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2
         Stat: 1
         Adjust: 1
-    - rid: 7527442982135398804
+    - rid: 7527443076320330685
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 0

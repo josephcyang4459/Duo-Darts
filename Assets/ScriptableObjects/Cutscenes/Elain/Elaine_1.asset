@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Elaine_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135399093
-  - rid: 7527442982135399094
-  - rid: 7527442982135399095
-  - rid: 7527442982135399096
-  - rid: 7527442982135399097
-  - rid: 7527442982135399098
-  - rid: 7527442982135399099
-  - rid: 7527442982135399100
-  - rid: 7527442982135399101
-  - rid: 7527442982135399102
-  - rid: 7527442982135399103
+  - rid: 7527443076320330497
+  - rid: 7527443076320330498
+  - rid: 7527443076320330499
+  - rid: 7527443076320330500
+  - rid: 7527443076320330501
+  - rid: 7527443076320330502
+  - rid: 7527443076320330503
+  - rid: 7527443076320330504
+  - rid: 7527443076320330505
+  - rid: 7527443076320330506
+  - rid: 7527443076320330507
   defaultCharacter: Elaine
   ForceDarts: 1
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135399093
+    - rid: 7527443076320330497
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine holds a trio of darts in her hands and appears to
           give a brief prayer before speaking to you.*'
-    - rid: 7527442982135399094
+    - rid: 7527443076320330498
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399095
+    - rid: 7527443076320330499
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Alright. My prayers to myself are finished.
-    - rid: 7527442982135399096
+    - rid: 7527443076320330500
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Now try and fetch me some points this game.
-    - rid: 7527442982135399097
+    - rid: 7527443076320330501
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Think you can do that?
-    - rid: 7527442982135399098
+    - rid: 7527443076320330502
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -85,24 +85,24 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442982135399099
+    - rid: 7527443076320330503
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399100
+    - rid: 7527443076320330504
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Alright you first.
-    - rid: 7527442982135399101
+    - rid: 7527443076320330505
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I'll need time to stop the hysterical laughter your dartplay
           will bring out of me.
-    - rid: 7527442982135399102
+    - rid: 7527443076320330506
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442982135399103
+    - rid: 7527443076320330507
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So be ready for a long game.

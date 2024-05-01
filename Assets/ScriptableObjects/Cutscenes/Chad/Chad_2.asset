@@ -13,57 +13,57 @@ MonoBehaviour:
   m_Name: Chad_2
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135398997
-  - rid: 7527442982135398998
-  - rid: 7527442982135398999
-  - rid: 7527442982135399000
-  - rid: 7527442982135399001
-  - rid: 7527442982135399002
-  - rid: 7527442982135399003
-  - rid: 7527442982135399004
-  - rid: 7527442982135399005
-  - rid: 7527442982135399006
-  - rid: 7527442982135399007
-  - rid: 7527442982135399008
-  - rid: 7527442982135399009
-  - rid: 7527442982135399010
-  - rid: 7527442982135399011
-  - rid: 7527442982135399012
-  - rid: 7527442982135399013
-  - rid: 7527442982135399014
-  - rid: 7527442982135399015
-  - rid: 7527442982135399016
-  - rid: 7527442982135399017
-  - rid: 7527442982135399018
-  - rid: 7527442982135399019
-  - rid: 7527442982135399020
-  - rid: 7527442982135399021
-  - rid: 7527442982135399022
-  - rid: 7527442982135399023
-  - rid: 7527442982135399024
+  - rid: 7527443076338417842
+  - rid: 7527443076338417843
+  - rid: 7527443076338417844
+  - rid: 7527443076338417845
+  - rid: 7527443076338417846
+  - rid: 7527443076338417847
+  - rid: 7527443076338417848
+  - rid: 7527443076338417849
+  - rid: 7527443076338417850
+  - rid: 7527443076338417851
+  - rid: 7527443076338417852
+  - rid: 7527443076338417853
+  - rid: 7527443076338417854
+  - rid: 7527443076338417855
+  - rid: 7527443076338417856
+  - rid: 7527443076338417857
+  - rid: 7527443076338417858
+  - rid: 7527443076338417859
+  - rid: 7527443076338417860
+  - rid: 7527443076338417861
+  - rid: 7527443076338417862
+  - rid: 7527443076338417863
+  - rid: 7527443076338417864
+  - rid: 7527443076338417865
+  - rid: 7527443076338417866
+  - rid: 7527443076338417867
+  - rid: 7527443076338417868
+  - rid: 7527443076338417869
   defaultCharacter: Chad
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135398997
+    - rid: 7527443076338417842
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135398998
+    - rid: 7527443076338417843
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You approach Chad watching people dance from the sidelines.*'
-    - rid: 7527442982135398999
+    - rid: 7527443076338417844
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He notices you and nods.*'
-    - rid: 7527442982135399000
+    - rid: 7527443076338417845
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You need something?
-    - rid: 7527442982135399001
+    - rid: 7527443076338417846
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -109,28 +109,28 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442982135399002
+    - rid: 7527443076338417847
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399003
+    - rid: 7527443076338417848
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Even outside of a tournament I'm not a fan of dancing.
-    - rid: 7527442982135399004
+    - rid: 7527443076338417849
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I think it just gives good players something to do while they wait
           for the final call.
-    - rid: 7527442982135399005
+    - rid: 7527443076338417850
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Speaking of which.
-    - rid: 7527442982135399006
+    - rid: 7527443076338417851
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Do you think you have what it takes to win this whole thing?
-    - rid: 7527442982135399007
+    - rid: 7527443076338417852
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -159,73 +159,73 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
-    - rid: 7527442982135399008
+    - rid: 7527443076338417853
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399009
+    - rid: 7527443076338417854
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let me give you some free advice.
-    - rid: 7527442982135399010
+    - rid: 7527443076338417855
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You'll need some good luck with this crowd.
-    - rid: 7527442982135399011
+    - rid: 7527443076338417856
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442982135399012
+    - rid: 7527443076338417857
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Chadrick raises an eyebrow and smirks.*'
-    - rid: 7527442982135399013
+    - rid: 7527443076338417858
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And against me of course.
-    - rid: 7527442982135399014
+    - rid: 7527443076338417859
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I always find myself a bit luckier after taking a second in the
           bathroom to calm down.
-    - rid: 7527442982135399015
+    - rid: 7527443076338417860
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399016
+    - rid: 7527443076338417861
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And if you're tipsy you might just sober up a bit from the chill
           in there.
-    - rid: 7527442982135399017
+    - rid: 7527443076338417862
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that I'd know from personal experience.
-    - rid: 7527442982135399018
+    - rid: 7527443076338417863
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 1
-    - rid: 7527442982135399019
+    - rid: 7527443076338417864
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I hold my drinks better than anyone
-    - rid: 7527442982135399020
+    - rid: 7527443076338417865
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135399021
+    - rid: 7527443076338417866
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: But, for the average person, that's my advice.
-    - rid: 7527442982135399022
+    - rid: 7527443076338417867
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways, I have a few more questions for you.
-    - rid: 7527442982135399023
+    - rid: 7527443076338417868
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You and Chad spend time talking.*'
-    - rid: 7527442982135399024
+    - rid: 7527443076338417869
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Unlike before, he focuses the conversation on you. His

@@ -186,6 +186,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             SetActive(true);
             return;
         }
+
         if(State == AnimationState.ExitingToEvent) {
             SetActive(false);
             UIState.inst.SetInteractable(true);

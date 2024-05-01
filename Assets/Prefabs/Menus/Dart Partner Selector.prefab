@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KeyColors: {fileID: 11400000, guid: 078dfabbd0eb4da47b9bb6f80e84d980, type: 2}
   Partners: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
-  Click: {fileID: -1082342369172753474, guid: 0436482055235fb43825f893cacf9475, type: 3}
+  Click: {fileID: 5397263617353153915, guid: 0436482055235fb43825f893cacf9475, type: 3}
   PartnerList: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   DartGame: {fileID: 0}
   Schedule: {fileID: 0}

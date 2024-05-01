@@ -501,6 +501,15 @@ public class Response: block
     {
         ch.Response(this);
     }
+#if UNITY_EDITOR
+    public int __numLines() {
+        int result = responses.Length;
+        foreach (PlayerResponseData p in responses) {
+            result += p.responses.Length+1;
+        }
+        return result;
+    }
+#endif
 }
 
 [System.Serializable]

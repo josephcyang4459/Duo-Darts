@@ -4,11 +4,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour {
-    public static CutsceneHandler inst;
+    public static CutsceneHandler Instance;
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
     [SerializeField] Player p;
     public CharacterList characters;
+    [SerializeField] CutsceneLog Log;
     [SerializeField] InputActionReference interact;
     [Space]
     [SerializeField] Canvas DialougeCanvas;
@@ -35,13 +36,29 @@ public class CutsceneHandler : MonoBehaviour {
     public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
     public EndingScene Ending;
+
     public void Awake() {
-        if (inst != null) {
+        if (Instance != null) {
             Destroy(gameObject);
             return;
         }
-        inst = this;
+        Instance = this;
         DontDestroyOnLoad(this);
+    }
+
+    public void EnableControls() {
+        interact.action.Enable();
+        interact.action.performed += TakeAction;
+        Log.EnableLog();
+      
+    }
+
+    public void UnenableControls() {
+        interact.action.Reset();
+        interact.action.Disable();
+        interact.action.performed -= TakeAction;
+        Log.UnenableLog();
+        
     }
 
     public int PlayerPortriatIndex() {
@@ -67,20 +84,22 @@ public class CutsceneHandler : MonoBehaviour {
 
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
         InCutscene = true;
+        Log.ResetLog();
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
         index = 0;
         cutscene = c;
+        EnableControls();
         CompleteThisCutscene();
         DialougeBox.HideDialougeBox();
         DecideCharacter(c.defaultCharacter, false);
         SetBackGroundVisual(BackgroundIndex);
 
         DialougeCanvas.enabled = true;
-        interact.action.Enable();
-        interact.action.performed += TakeAction;
+        
         cutscene.blocks[index].action(this);
+      
     }
 
     void CompleteThisCutscene() {
@@ -102,13 +121,12 @@ public class CutsceneHandler : MonoBehaviour {
         Schedule.enabled = false;
         index = 0;
         DialougeCanvas.enabled = true;
-        interact.action.Enable();
-        interact.action.performed += TakeAction;
+        EnableControls();
         cutscene.blocks[index].action(this);
     }
 
     public void TakeAction(InputAction.CallbackContext c) {
-        if (PauseMenu.inst.CurrentState)
+        if (Log.State)//yucky
             return;
         if (responding)// resnponding to quesation
         {
@@ -149,14 +167,12 @@ public class CutsceneHandler : MonoBehaviour {
         DialougeCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
         UIState.inst.SetInteractable(true);
-        interact.action.Disable();
-        interact.action.performed -= TakeAction;
     }
 
 
     public void EndCutscene() {
+        UnenableControls();
         HideUI();
-
         if (Schedule != null)
             Schedule.SetTime(cutscene.TimeLength);
         if(Ending!= null) {
@@ -168,8 +184,7 @@ public class CutsceneHandler : MonoBehaviour {
         DefaultCutscene.BeginEnter();
         DialougeCanvas.enabled = false;
         DialougeCanvas.enabled = false;
-        interact.action.Disable();
-        interact.action.performed += TakeAction;
+        UnenableControls();
     }
 
     public void NextBlock() {
@@ -187,6 +202,7 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void Dialouge(string message) {
+        Log.SetLog(characters.list[CurrentCharacterIndex].Name, message);
         DialougeBox.SetCharacterColors(CurrentCharacterIndex);
         DialougeBox.SetDialouge(message);
     }
@@ -212,7 +228,7 @@ public class CutsceneHandler : MonoBehaviour {
         UIState.inst.SetInteractable(false);
         responseIndex = i;
         responseIndexIndex = 0;
-
+        Log.SetLog("You", CurrentResponseGroup.responses[responseIndex].answer);
         DisplayResponse();
     }
 
@@ -234,8 +250,9 @@ public class CutsceneHandler : MonoBehaviour {
             NextBlock();
     }
 
-    public void Thought(string s) {
-        DialougeBox.SetThought(s);
+    public void Thought(string message) {
+        Log.SetLog("", message);
+        DialougeBox.SetThought(message);
     }
 
     public void ChangeBackground(string s) {

@@ -388,9 +388,9 @@ Scene Three (Bar) (8 Love) (Refactored)
         [Display]Maybe.
                 [Answer][RaiseFayeLove1]*She frowns.*
                 [Answer]I hate ‘maybe's'.
-        [Answer]Is it really that bad?
+        [Display]Is it really that bad?
                 [Answer][Faye3]Yes.
-        [Answer]Screw that.
+        [Display]Screw that.
                 [Answer][RaiseFayeLove2][Faye2]*Faye smiles lightly.*
                 [Answer]I'm a darts player first after all.
 [Faye1]

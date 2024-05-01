@@ -13,63 +13,63 @@ MonoBehaviour:
   m_Name: Elaine_Drepeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135398571
-  - rid: 7527442982135398572
-  - rid: 7527442982135398573
-  - rid: 7527442982135398574
-  - rid: 7527442982135398575
-  - rid: 7527442982135398576
-  - rid: 7527442982135398577
-  - rid: 7527442982135398578
-  - rid: 7527442982135398579
-  - rid: 7527442982135398580
+  - rid: 7527443076320330606
+  - rid: 7527443076320330607
+  - rid: 7527443076320330608
+  - rid: 7527443076320330609
+  - rid: 7527443076320330610
+  - rid: 7527443076320330611
+  - rid: 7527443076320330612
+  - rid: 7527443076320330613
+  - rid: 7527443076320330614
+  - rid: 7527443076320330615
   defaultCharacter: Elaine
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135398571
+    - rid: 7527443076320330606
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Elaine practicing alone.*'
-    - rid: 7527442982135398572
+    - rid: 7527443076320330607
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135398573
+    - rid: 7527443076320330608
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 7527442982135398574
+    - rid: 7527443076320330609
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come.
-    - rid: 7527442982135398575
+    - rid: 7527443076320330610
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You want to buy me drinks?
-    - rid: 7527442982135398576
+    - rid: 7527443076320330611
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Good.
-    - rid: 7527442982135398577
+    - rid: 7527443076320330612
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time drinking with Elaine.*'
-    - rid: 7527442982135398578
+    - rid: 7527443076320330613
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 3
         Stat: 2
         Adjust: 1
-    - rid: 7527442982135398579
+    - rid: 7527443076320330614
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 3
         Stat: 1
         Adjust: 1
-    - rid: 7527442982135398580
+    - rid: 7527443076320330615
       type: {class: PlayerChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Stat: 0

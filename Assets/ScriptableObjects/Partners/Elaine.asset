@@ -17,32 +17,32 @@ MonoBehaviour:
   textSize: 72
   Composure: 0
   Intoxication: 0
-  Love: 1500
+  Love: 0
   RelatedCutScenes:
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: 7558c8147eb4bc444a0b57fc213cc70a, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 1a0742d3a6e97b248aa52ccb53ec947e, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 1
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c2ecdc124adbf624193f562947fec5a3, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 6
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 10
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: c1e8044e3aa34134dbb9c3daa02b2b4f, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 14
   DefaultCutScene: {fileID: 11400000, guid: 60cc4457f891ae44bace0b7a75fd278e, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: 3752d333a410a274cb0793391cc5f1e1, type: 2}

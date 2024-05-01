@@ -13,44 +13,44 @@ MonoBehaviour:
   m_Name: Chad_Repeat
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135398661
-  - rid: 7527442982135398662
-  - rid: 7527442982135398663
-  - rid: 7527442982135398664
-  - rid: 7527442982135398665
-  - rid: 7527442982135398666
-  - rid: 7527442982135398667
+  - rid: 7527443076338417784
+  - rid: 7527443076338417785
+  - rid: 7527443076338417786
+  - rid: 7527443076338417787
+  - rid: 7527443076338417788
+  - rid: 7527443076338417789
+  - rid: 7527443076338417790
   defaultCharacter: Chad
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135398661
+    - rid: 7527443076338417784
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You join Chad in people watching.*'
-    - rid: 7527442982135398662
+    - rid: 7527443076338417785
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442982135398663
+    - rid: 7527443076338417786
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Always fun to watch.
-    - rid: 7527442982135398664
+    - rid: 7527443076338417787
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyways, got time for a few questions?
-    - rid: 7527442982135398665
+    - rid: 7527443076338417788
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend time talking with Chad.*'
-    - rid: 7527442982135398666
+    - rid: 7527443076338417789
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*He seems to value the company.*'
-    - rid: 7527442982135398667
+    - rid: 7527443076338417790
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 0

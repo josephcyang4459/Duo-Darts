@@ -26,29 +26,26 @@ public class DefaultCutsceneUI : MonoBehaviour, Caller {
     public void BeginEnter() {
         UI.enabled = true;
         UIState.inst.SetInteractable(false);
-        PauseMenu.inst.SetEnabled(false);
         State = AnimationState.Entering;
         EnterHead.Begin(this);
     }
 
     public void BeginExit() {
         UIState.inst.SetInteractable(false);
-        PauseMenu.inst.SetEnabled(false);
         State = AnimationState.Exiting;
         ExitHead.Begin(this);
     }
 
     void Enter() {
         UIState.inst.SetInteractable(true);
-        PauseMenu.inst.SetEnabled(true);
         UIState.inst.SetAsSelectedButton(FirstSelectedButton);
     }
 
     void Exit() {
         UI.enabled = false;
         switch (Type) {
-            case UIType.Default: CutsceneHandler.inst.DefaultCutsceneSelection(Choice);return;
-            case UIType.Response: CutsceneHandler.inst.UI_Response(Choice); return;
+            case UIType.Default: CutsceneHandler.Instance.DefaultCutsceneSelection(Choice);return;
+            case UIType.Response: CutsceneHandler.Instance.UI_Response(Choice); return;
         }
        
     }

@@ -31,8 +31,8 @@ public class SaveHandler : MonoBehaviour, Caller
 
         saveFile.Hour = Schedule.hour;
         saveFile.Minute = Schedule.minutes;
-        if (CutsceneHandler.inst != null)
-            saveFile.MascFemPortraitIndex = CutsceneHandler.inst.PlayerPortriatIndex();
+        if (CutsceneHandler.Instance != null)
+            saveFile.MascFemPortraitIndex = CutsceneHandler.Instance.PlayerPortriatIndex();
         else
             saveFile.MascFemPortraitIndex = 0;
 
@@ -75,7 +75,7 @@ public class SaveHandler : MonoBehaviour, Caller
 
         Schedule.hour = saveFile.Hour;
         Schedule.minutes = saveFile.Minute;
-        CutsceneHandler.inst.SetCharacterSprite(saveFile.MascFemPortraitIndex);
+        CutsceneHandler.Instance.SetCharacterSprite(saveFile.MascFemPortraitIndex);
         Player.Skill = saveFile.Player.Skill;
         Player.Intoxication = saveFile.Player.Intoxication;
         Player.Luck = saveFile.Player.Luck;

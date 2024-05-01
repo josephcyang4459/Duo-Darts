@@ -13,109 +13,109 @@ MonoBehaviour:
   m_Name: Jess_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442982135398812
-  - rid: 7527442982135398813
-  - rid: 7527442982135398814
-  - rid: 7527442982135398815
-  - rid: 7527442982135398816
-  - rid: 7527442982135398817
-  - rid: 7527442982135398818
-  - rid: 7527442982135398819
-  - rid: 7527442982135398820
-  - rid: 7527442982135398821
-  - rid: 7527442982135398822
-  - rid: 7527442982135398823
-  - rid: 7527442982135398824
-  - rid: 7527442982135398825
-  - rid: 7527442982135398826
-  - rid: 7527442982135398827
-  - rid: 7527442982135398828
-  - rid: 7527442982135398829
-  - rid: 7527442982135398830
-  - rid: 7527442982135398831
-  - rid: 7527442982135398832
-  - rid: 7527442982135398833
-  - rid: 7527442982135398834
-  - rid: 7527442982135398835
+  - rid: 7527443076338417673
+  - rid: 7527443076338417674
+  - rid: 7527443076338417675
+  - rid: 7527443076338417676
+  - rid: 7527443076338417677
+  - rid: 7527443076338417678
+  - rid: 7527443076338417679
+  - rid: 7527443076338417680
+  - rid: 7527443076338417681
+  - rid: 7527443076338417682
+  - rid: 7527443076338417683
+  - rid: 7527443076338417684
+  - rid: 7527443076338417685
+  - rid: 7527443076338417686
+  - rid: 7527443076338417687
+  - rid: 7527443076338417688
+  - rid: 7527443076338417689
+  - rid: 7527443076338417690
+  - rid: 7527443076338417691
+  - rid: 7527443076338417692
+  - rid: 7527443076338417693
+  - rid: 7527443076338417694
+  - rid: 7527443076338417695
+  - rid: 7527443076338417696
   defaultCharacter: Jess
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442982135398812
+    - rid: 7527443076338417673
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 3
-    - rid: 7527442982135398813
+    - rid: 7527443076338417674
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You run into Jessica as you walk into the bathroom.*'
-    - rid: 7527442982135398814
+    - rid: 7527443076338417675
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh. It's you.
-    - rid: 7527442982135398815
+    - rid: 7527443076338417676
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Don't tell anybody, but I just made a girl cry in the bathroom.
-    - rid: 7527442982135398816
+    - rid: 7527443076338417677
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just told her her dartplay is like art.
-    - rid: 7527442982135398817
+    - rid: 7527443076338417678
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She gasps.*'
-    - rid: 7527442982135398818
+    - rid: 7527443076338417679
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I might've said something other than art.
-    - rid: 7527442982135398819
+    - rid: 7527443076338417680
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She stares at you for a second'
-    - rid: 7527442982135398820
+    - rid: 7527443076338417681
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Jessica burps.*'
-    - rid: 7527442982135398821
+    - rid: 7527443076338417682
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Rumbles of worse things sound out from her as well.*'
-    - rid: 7527442982135398822
+    - rid: 7527443076338417683
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Oh god.
-    - rid: 7527442982135398823
+    - rid: 7527443076338417684
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm going back inside. People can't see me get sick.
-    - rid: 7527442982135398824
+    - rid: 7527443076338417685
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs your arm and pulls you all the way into a stall.*'
-    - rid: 7527442982135398825
+    - rid: 7527443076338417686
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Unceremoniously, she drops down over the porcelain.*'
-    - rid: 7527442982135398826
+    - rid: 7527443076338417687
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hold my hair please...
-    - rid: 7527442982135398827
+    - rid: 7527443076338417688
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She vomits into the toilet.*'
-    - rid: 7527442982135398828
+    - rid: 7527443076338417689
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This is your fault.
-    - rid: 7527442982135398829
+    - rid: 7527443076338417690
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Buying me drinks all night long.
-    - rid: 7527442982135398830
+    - rid: 7527443076338417691
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -149,23 +149,23 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442982135398831
+    - rid: 7527443076338417692
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Jessica vomits again.*'
-    - rid: 7527442982135398832
+    - rid: 7527443076338417693
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Just stay here for a little while longer.
-    - rid: 7527442982135398833
+    - rid: 7527443076338417694
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I have to say you are a lovely hair holder by the way.
-    - rid: 7527442982135398834
+    - rid: 7527443076338417695
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You stay with Jessica for a while until she feels better.*'
-    - rid: 7527442982135398835
+    - rid: 7527443076338417696
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 1
