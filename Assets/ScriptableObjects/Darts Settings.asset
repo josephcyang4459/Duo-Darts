@@ -15,7 +15,7 @@ MonoBehaviour:
   DartsLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  MinDriftSpeed: 2
+  MinDriftSpeed: 1.75
   MaxDriftSpeed: 2.9
   BaseBloomDiameter: 0.3
   MaxBloomDiameter: 1.5

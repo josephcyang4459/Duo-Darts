@@ -13,7 +13,10 @@ public class SteamOverlay : MonoBehaviour
 	}
 
     private void OnDestroy() {
-		m_GameOverlayActivated.Dispose();
+		if (SteamManager.Initialized) {
+			if (m_GameOverlayActivated != null)
+				m_GameOverlayActivated.Dispose();
+		}
 	}
 
     private void OnGameOverlayActivated(GameOverlayActivated_t pCallback) {

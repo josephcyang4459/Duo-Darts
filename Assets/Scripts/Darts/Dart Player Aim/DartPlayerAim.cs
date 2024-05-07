@@ -18,6 +18,7 @@ public class DartPlayerAim : MonoBehaviour
     [SerializeField] DartScript Dart;
     [SerializeField] Vector2 XScreenClamp;
     [SerializeField] Vector2 YScreenClamp;
+    [SerializeField] DartBoard Board;
 #if UNITY_EDITOR
     [SerializeField] InputActionReference __SIxty;
     [SerializeField] Transform __sixtyLocation;
@@ -76,13 +77,17 @@ public class DartPlayerAim : MonoBehaviour
 
     public void ShootDart(Vector3 location) {
         EndPlayerAim();
+        Dart.ShootDart(location, Board.GetScoreFromLocation(location.x, location.y));
+        enabled = false;
+        /*
         if (Physics.Raycast(location, Vector3.forward, out RaycastHit hit,12, Settings.DartsLayerMask)) {
             hit.collider.gameObject.GetComponent<BoardCollider>().hit(location);
         }
         else {
             Dart.ShootDart(location, 0);
         }
-        enabled = false;
+        */
+
     }
 
     public void EndPlayerAim() {
