@@ -12,8 +12,6 @@ public class DartPlayerAim_Control : MonoBehaviour
     public Vector2 cache = Vector2.zero;
 
     public void BeginMovement() {
-        
-
         move.action.Enable();
         move.action.performed += Move;
         move.action.canceled += StopMovement;
@@ -44,6 +42,5 @@ public class DartPlayerAim_Control : MonoBehaviour
 
     public void UpdateMove(float dTime) {
         Aim.ChangeLocation(cache.x * dTime, cache.y * dTime);
-        
     }
 }

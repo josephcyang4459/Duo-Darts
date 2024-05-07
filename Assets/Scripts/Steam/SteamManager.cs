@@ -86,8 +86,9 @@ public class SteamManager : MonoBehaviour {
 		if (!DllCheck.Test()) {
 			Debug.LogError("[Steamworks.NET] DllCheck Test returned false, One or more of the Steamworks binaries seems to be the wrong version.", this);
 		}
-		
-		
+
+#if !UNITY_EDITOR
+
 		try {
 			// If Steam is not running or the game wasn't started through Steam, SteamAPI_RestartAppIfNecessary starts the
 			// Steam client and also launches this game again if the User owns it. This can act as a rudimentary form of DRM.
@@ -108,6 +109,7 @@ public class SteamManager : MonoBehaviour {
 			return;
 		}
 
+#endif
 		// Initializes the Steamworks API.
 		// If this returns false then this indicates one of the following conditions:
 		// [*] The Steam client isn't running. A running Steam client is required to provide implementations of the various Steamworks interfaces.

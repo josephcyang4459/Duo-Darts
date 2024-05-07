@@ -21513,7 +21513,7 @@ MonoBehaviour:
     Multiplier: 2
   BoardCenter: {fileID: 7917560276893073952}
   CenterReference: {x: 0, y: 2.34}
-  CacheReference: {x: 0.105000004, y: 2.25}
+  CacheReference: {x: 0, y: 6.0374994}
   __RingReference:
   - {fileID: 900392566}
   - {fileID: 418832515}

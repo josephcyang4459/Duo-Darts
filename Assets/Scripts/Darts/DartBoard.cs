@@ -36,7 +36,7 @@ public class DartBoard : MonoBehaviour
        
         if (targetAngle < 0)
             targetAngle = 360 + targetAngle;
-        Debug.Log("ANGLE: " + targetAngle);
+
         foreach (DartBoardSlice Slice in PointValues) {
             if (Slice.IsInbetween(targetAngle))
                 return Slice.BasePointValue;
