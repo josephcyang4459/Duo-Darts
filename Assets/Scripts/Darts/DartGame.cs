@@ -94,12 +94,6 @@ public class DartGame : MonoBehaviour {
         points = ScoreNeededToWin > 600 ? 10 : 5;
         board.enabled = true;
 
-        if (firstTimePlaying) {
-            TutorialHandler.inst.EnableDartsTutorial(true);
-            UIState.inst.SetInteractable(true);
-            return;
-        }
-
         UIState.inst.SetInteractable(false);
         Aim.SetUpDependants();
         Audio.inst.PlaySong(ac);
