@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Fire",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "e8801413-b3fc-463f-999f-29bc64b4e715",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pause",
@@ -39,21 +39,30 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "ShowHideControls",
+                    "name": "Log",
                     "type": "Button",
                     "id": "bdb53524-4545-41bd-97b0-71bb0cb0e309",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "__debug",
+                    "type": "Button",
+                    "id": "6eb66b23-3a44-49dd-9b3b-01d98700da44",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "__debug",
-                    "type": "Button",
-                    "id": "6eb66b23-3a44-49dd-9b3b-01d98700da44",
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "eaf76a7c-8585-421e-9d7b-d2bc59f8e43d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
@@ -332,7 +341,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "ShowHideControls",
+                    "action": "Log",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08c468e8-980e-4ef6-99d7-7f8a495cfc34",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Log",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -344,6 +364,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "__debug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4fe3121-45b6-43ea-8b6b-6965d55dbe46",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -369,7 +400,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Cancel",
@@ -387,7 +418,7 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Click",
@@ -396,7 +427,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ScrollWheel",

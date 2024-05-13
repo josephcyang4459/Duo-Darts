@@ -13,85 +13,85 @@ MonoBehaviour:
   m_Name: Faye_0
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906369
-  - rid: 7527442909745906370
-  - rid: 7527442909745906371
-  - rid: 7527442909745906372
-  - rid: 7527442909745906373
-  - rid: 7527442909745906374
-  - rid: 7527442909745906375
-  - rid: 7527442909745906376
-  - rid: 7527442909745906377
-  - rid: 7527442909745906378
-  - rid: 7527442909745906379
-  - rid: 7527442909745906380
-  - rid: 7527442909745906381
-  - rid: 7527442909745906382
-  - rid: 7527442909745906383
-  - rid: 7527442909745906384
-  - rid: 7527442909745906385
-  - rid: 7527442909745906386
-  - rid: 7527442909745906387
-  - rid: 7527442909745906388
-  - rid: 7527442909745906389
-  - rid: 7527442909745906390
-  - rid: 7527442909745906391
-  - rid: 7527442909745906392
-  - rid: 7527442909745906393
-  - rid: 7527442909745906394
-  - rid: 7527442909745906395
-  - rid: 7527442909745906396
-  - rid: 7527442909745906397
-  - rid: 7527442909745906398
-  - rid: 7527442909745906399
-  - rid: 7527442909745906400
-  - rid: 7527442909745906401
-  - rid: 7527442909745906402
-  - rid: 7527442909745906403
-  - rid: 7527442909745906404
+  - rid: 7527443076320330686
+  - rid: 7527443076320330687
+  - rid: 7527443076320330688
+  - rid: 7527443076320330689
+  - rid: 7527443076320330690
+  - rid: 7527443076320330691
+  - rid: 7527443076320330692
+  - rid: 7527443076320330693
+  - rid: 7527443076320330694
+  - rid: 7527443076320330695
+  - rid: 7527443076320330696
+  - rid: 7527443076320330697
+  - rid: 7527443076320330698
+  - rid: 7527443076320330699
+  - rid: 7527443076320330700
+  - rid: 7527443076320330701
+  - rid: 7527443076320330702
+  - rid: 7527443076320330703
+  - rid: 7527443076320330704
+  - rid: 7527443076320330705
+  - rid: 7527443076320330706
+  - rid: 7527443076320330707
+  - rid: 7527443076320330708
+  - rid: 7527443076320330709
+  - rid: 7527443076320330710
+  - rid: 7527443076320330711
+  - rid: 7527443076320330712
+  - rid: 7527443076320330713
+  - rid: 7527443076320330714
+  - rid: 7527443076320330715
+  - rid: 7527443076320330716
+  - rid: 7527443076320330717
+  - rid: 7527443076320330718
+  - rid: 7527443076320330719
+  - rid: 7527443076320330720
+  - rid: 7527443076320330721
   defaultCharacter: Faye
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906369
+    - rid: 7527443076320330686
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*While walking past a booth, you accidentally trip on someone''s
           leg. You fall face first onto the ground.'
-    - rid: 7527442909745906370
+    - rid: 7527443076320330687
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906371
+    - rid: 7527443076320330688
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A young woman is the culprit. She kneels down next to you
           and sits you up.*'
-    - rid: 7527442909745906372
+    - rid: 7527443076320330689
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Ugh, me and my long legs. Here, that looks painful.
-    - rid: 7527442909745906373
+    - rid: 7527443076320330690
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She grabs a drink from her table and puts the cold glass
           onto your forehead.*'
-    - rid: 7527442909745906374
+    - rid: 7527443076320330691
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: For the swelling.
-    - rid: 7527442909745906375
+    - rid: 7527443076320330692
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The woman tending your blunder looks away whenever you
           look at her face.*'
-    - rid: 7527442909745906376
+    - rid: 7527443076320330693
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Something about her face is catching your attention.*'
-    - rid: 7527442909745906377
+    - rid: 7527443076320330694
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -119,61 +119,61 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906378
+    - rid: 7527443076320330695
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906379
+    - rid: 7527443076320330696
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She helps you off the ground onto your feet.*'
-    - rid: 7527442909745906380
+    - rid: 7527443076320330697
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Just come sit with me for a minute to recover.
-    - rid: 7527442909745906381
+    - rid: 7527443076320330698
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You sit in the booth.*'
-    - rid: 7527442909745906382
+    - rid: 7527443076320330699
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You notice the upholstery to be only average in quality.*'
-    - rid: 7527442909745906383
+    - rid: 7527443076320330700
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The woman sighs and moves further into the shadow of the
           booth.*'
-    - rid: 7527442909745906384
+    - rid: 7527443076320330701
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Everyone's looking this way now because of you.
-    - rid: 7527442909745906385
+    - rid: 7527443076320330702
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well, really it's my fault. Should've watched my reach.
-    - rid: 7527442909745906386
+    - rid: 7527443076320330703
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I wish this was easier...
-    - rid: 7527442909745906387
+    - rid: 7527443076320330704
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You stare blankly at her, a look lacking context.*'
-    - rid: 7527442909745906388
+    - rid: 7527443076320330705
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You're new aren't you.
-    - rid: 7527442909745906389
+    - rid: 7527443076320330706
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Well I'll tell you since everyone else knows anyway.
-    - rid: 7527442909745906390
+    - rid: 7527443076320330707
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'm a woman. Or, you know, transitioned to a woman if that makes
           more sense to you.
-    - rid: 7527442909745906391
+    - rid: 7527443076320330708
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -201,56 +201,56 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 1
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906392
+    - rid: 7527443076320330709
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906393
+    - rid: 7527443076320330710
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Anyway. My tournament name is Faybian Artel.
-    - rid: 7527442909745906394
+    - rid: 7527443076320330711
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Call me Faye though please.
-    - rid: 7527442909745906395
+    - rid: 7527443076320330712
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I just haven't found the time to legally change it.
-    - rid: 7527442909745906396
+    - rid: 7527443076320330713
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She bumps her head against the back of the booth in a small
           concession.*'
-    - rid: 7527442909745906397
+    - rid: 7527443076320330714
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Or the money...
-    - rid: 7527442909745906398
+    - rid: 7527443076320330715
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's not cheap doing this.
-    - rid: 7527442909745906399
+    - rid: 7527443076320330716
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye motions away from the booth.*'
-    - rid: 7527442909745906400
+    - rid: 7527443076320330717
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: If you're interested in talking then come back later.
-    - rid: 7527442909745906401
+    - rid: 7527443076320330718
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: People have their eyes on you and it's bothering me.
-    - rid: 7527442909745906402
+    - rid: 7527443076320330719
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Sorry.
-    - rid: 7527442909745906403
+    - rid: 7527443076320330720
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You leave Faye to her booth.*'
-    - rid: 7527442909745906404
+    - rid: 7527443076320330721
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You notice how hard it is to see her even just a few feet

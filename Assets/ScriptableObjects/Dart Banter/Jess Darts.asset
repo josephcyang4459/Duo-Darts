@@ -17,48 +17,48 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 1
     ChanceToUse: 100
     Lines:
-    - "I wish I had looked away from that.\r"
-    - "There\u2019s the best and then there\u2019s the worst.\r"
+    - "Interesting, but not in a good way...\r"
+    - "I think I've seen worse, but not entirely sure.\r"
     AlreadyUsed: 0000
     Used: 0
   - MinScoreRangeInclusive: 1
     MaxScoreRangeExclusive: 70
     ChanceToUse: 60
     Lines:
-    - "Effort makes results, you know.\r"
-    - "Happens to everyone, they say.\r"
+    - "Is that everything you have to show me?\r"
+    - "Mediocrity is death, luckily there's still time to change.\r"
     AlreadyUsed: 0000
     Used: 0
   - MinScoreRangeInclusive: 140
     MaxScoreRangeExclusive: 180
     ChanceToUse: 60
     Lines:
-    - "A score like that never loses its luster.\r"
-    - "I\u2019m in good company, it seems.\r"
-    - "I\u2019m impressed.\r"
-    - "Near perfect.\r"
+    - "Those throws were almost like art. Almost.\r"
+    - "Would you say that a high score is unique for you or expected?\r"
+    - "For some reason, part of me thinks you're cheating.\r"
+    - "Talk about a big fish.\r"
     AlreadyUsed: 00000000
     Used: 0
   - MinScoreRangeInclusive: 180
     MaxScoreRangeExclusive: 181
     ChanceToUse: 100
     Lines:
-    - "Finally, good company.\r"
-    - "I had a feeling you had that in you.\r"
-    - "I have to return some videotapes.\r"
+    - "Am I seeing that right?\r"
+    - "Well that's humbling.\r"
+    - "The longer I spend around you the more interesting you become.\r"
     AlreadyUsed: 000000
     Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
+    ChanceToUse: 100
     Lines:
-    - "I had no doubts.\r"
-    - "From the first dart, I knew it was set and done.\r"
-    - "I hope my score didn\u2019t make you uncomfortable.\r"
+    - "It's just too easy for me.\r"
+    - "Well, it wasn't too hard to carry you to the end at least.\r"
+    - "I doubt you could've done that without my help.\r"
     AlreadyUsed: 000000
     Used: 0
-  groups:
+  __groups:
   - '[0'
   - '[Below70'
   - '[Highton'

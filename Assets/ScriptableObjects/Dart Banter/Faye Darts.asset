@@ -12,12 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab665fee0c8039944b53d0eb9dcc9333, type: 3}
   m_Name: Faye Darts
   m_EditorClassIdentifier: 
-  LineGroups: []
+  LineGroups:
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 100
+    Lines:
+    - "Don't worry... Bad days happen...\r"
+    - "Don't be embarrassed, I'm pretty sure nobody else saw that.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 1
+    MaxScoreRangeExclusive: 70
+    ChanceToUse: 60
+    Lines:
+    - "At least play like that won't grab any attention.\r"
+    - "I think we can still win.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 140
+    MaxScoreRangeExclusive: 180
+    ChanceToUse: 60
+    Lines:
+    - "I can't take my eyes off your darts...\r"
+    - "You're setting the bar kind of high, aren't you?\r"
+    - "People are starting to watch...\r"
+    AlreadyUsed: 000000
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 100
+    Lines:
+    - "Teach me.\r"
+    - "You're that good?\r"
+    - "You're drawing attention with that...\r"
+    AlreadyUsed: 000000
+    Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    ChanceToUse: 100
+    Lines:
+    - "Perfect, now let's get off the plate already.\r"
+    - "Doubles put so much less pressure on me... Good job.\r"
+    - "I'm checked out in more ways than one. I'm heading back to the booth.\r"
+    AlreadyUsed: 000000
     Used: 0
-  groups: []
+  __groups:
+  - '[0'
+  - '[Below70'
+  - '[Highton'
+  - '[180'
+  - '[Checkout'

@@ -5,8 +5,8 @@ public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
     [SerializeField] InputActionReference PauseInput;
     [SerializeField] public bool Enabled;
-    [SerializeField] public Canvas PauseOptionsCanvas;
-    [SerializeField] public Canvas StoryOptionsCanvas;
+    [SerializeField] Canvas PauseOptionsCanvas;
+    [SerializeField] Canvas StoryOptionsCanvas;
     [SerializeField] Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour, Caller {
         PauseInput.action.performed -= ActivatePauseMenu;
     }
 
-    void ActivatePauseMenu(InputAction.CallbackContext c) { PauseMenueStateChange(); }
+    void ActivatePauseMenu(InputAction.CallbackContext c) {PauseMenueStateChange(); }
 
     void PauseMenueStateChange() {
         CurrentState = !CurrentState;
@@ -71,12 +71,15 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     void ConsequencesOfCurrentState(bool setFirstButtonUponUnenable = true) {
+       // UIState.inst.ResetClick();
         BackGround.enabled = CurrentState;
         SetCorrectCanvas(CurrentState);
 
         if (CurrentState) {
             returnGameObjectButton = UIState.inst.GetCurrentSelected();
             returnState = UIState.inst.GetCurrentState();
+            if (CutsceneHandler.Instance.InCutscene)
+                CutsceneHandler.Instance.UnenableControls();
             OptionsMenu.inst.HideOptionsNoCall();
             UIState.inst.SetInteractable(true);
             DartSticker.inst.SetVisible(false);
@@ -89,6 +92,8 @@ public class PauseMenu : MonoBehaviour, Caller {
             UI[1].ClearFill();
             DartSticker.inst.SetVisible(false);
             OptionsMenu.inst.HideOptionsNoCall();
+            if (CutsceneHandler.Instance.InCutscene)
+                CutsceneHandler.Instance.EnableControls();
             if (setFirstButtonUponUnenable)
                 UIState.inst.SetAsSelectedButton(returnGameObjectButton);
             UIState.inst.SetInteractable(returnState);
@@ -108,8 +113,8 @@ public class PauseMenu : MonoBehaviour, Caller {
     }
 
     public void ExitToMain() {
-        if (CutsceneHandler.inst.InCutscene)
-            CutsceneHandler.inst.HideUI();
+        if (CutsceneHandler.Instance.InCutscene)
+            CutsceneHandler.Instance.HideUI();
 
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
@@ -117,10 +122,7 @@ public class PauseMenu : MonoBehaviour, Caller {
     public void ExitToDesktop() { Application.Quit(); }
 
     public void Save() {
-        if (!CutsceneHandler.inst.InCutscene)
-            SaveHandler.inst.BeginShowSaveMenu();
-        else
-            Audio.inst.PlayClip(AudioClips.Click);
+        SaveHandler.inst.BeginShowSaveMenu();
     }
 
     public void Ping() {

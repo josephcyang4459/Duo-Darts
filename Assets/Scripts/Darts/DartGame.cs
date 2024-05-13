@@ -22,7 +22,6 @@ public class DartGame : MonoBehaviour {
     public bool firstTimePlaying;
 
     [SerializeField] float MaxOffset = 4;
-    [SerializeField] Canvas dartCanvas;
 
     [SerializeReference] public BoardSlice[] c;
     public BoardCollider bullseye;
@@ -95,12 +94,6 @@ public class DartGame : MonoBehaviour {
         points = ScoreNeededToWin > 600 ? 10 : 5;
         board.enabled = true;
 
-        if (firstTimePlaying) {
-            TutorialHandler.inst.EnableDartsTutorial(true);
-            UIState.inst.SetInteractable(true);
-            return;
-        }
-
         UIState.inst.SetInteractable(false);
         Aim.SetUpDependants();
         Audio.inst.PlaySong(ac);
@@ -113,8 +106,7 @@ public class DartGame : MonoBehaviour {
         turnSum = 0;
         Visuals.SetTurnAndOverallScores(turnSum, ScoreNeededToWin, currentTurn, maxTurns);
         numberOfDartsThrow = 0;
-        dartCanvas.enabled = true;
-
+        Visuals.ShowCanvas(true);
         playerTurn();
     }
 
@@ -143,6 +135,7 @@ public class DartGame : MonoBehaviour {
     }
 
     public void GoToCorrectEnding() {
+        Debug.Log("END HERE");
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (IsFinals()) {
@@ -166,7 +159,7 @@ public class DartGame : MonoBehaviour {
 
     void GameEnd() {
         board.enabled = false;
-        dartCanvas.enabled = false;
+        Visuals.ShowCanvas(false);
     }
 
     public void SwitchTurn() {

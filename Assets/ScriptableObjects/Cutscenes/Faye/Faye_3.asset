@@ -13,84 +13,84 @@ MonoBehaviour:
   m_Name: Faye_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906580
-  - rid: 7527442909745906581
-  - rid: 7527442909745906582
-  - rid: 7527442909745906583
-  - rid: 7527442909745906584
-  - rid: 7527442909745906585
-  - rid: 7527442909745906586
-  - rid: 7527442909745906587
-  - rid: 7527442909745906588
-  - rid: 7527442909745906589
-  - rid: 7527442909745906590
-  - rid: 7527442909745906591
-  - rid: 7527442909745906592
-  - rid: 7527442909745906593
-  - rid: 7527442909745906594
-  - rid: 7527442909745906595
-  - rid: 7527442909745906596
-  - rid: 7527442909745906597
-  - rid: 7527442909745906598
-  - rid: 7527442909745906599
-  - rid: 7527442909745906600
-  - rid: 7527442909745906601
-  - rid: 7527442909745906602
+  - rid: 7527443076320330738
+  - rid: 7527443076320330739
+  - rid: 7527443076320330740
+  - rid: 7527443076320330741
+  - rid: 7527443076320330742
+  - rid: 7527443076320330743
+  - rid: 7527443076320330744
+  - rid: 7527443076320330745
+  - rid: 7527443076320330746
+  - rid: 7527443076320330747
+  - rid: 7527443076320330748
+  - rid: 7527443076320330749
+  - rid: 7527443076320330750
+  - rid: 7527443076320330751
+  - rid: 7527443076338417664
+  - rid: 7527443076338417665
+  - rid: 7527443076338417666
+  - rid: 7527443076338417667
+  - rid: 7527443076338417668
+  - rid: 7527443076338417669
+  - rid: 7527443076338417670
+  - rid: 7527443076338417671
+  - rid: 7527443076338417672
   defaultCharacter: Faye
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906580
+    - rid: 7527443076320330738
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You walk up to Faye''s booth, but she''s not there.'
-    - rid: 7527442909745906581
+    - rid: 7527443076320330739
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Suddenly, you feel a pull on your leg.*'
-    - rid: 7527442909745906582
+    - rid: 7527443076320330740
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 3
-    - rid: 7527442909745906583
+    - rid: 7527443076320330741
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey. Down here.
-    - rid: 7527442909745906584
+    - rid: 7527443076320330742
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You look down to see Faye hiding underneath the table.*'
-    - rid: 7527442909745906585
+    - rid: 7527443076320330743
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come down here.
-    - rid: 7527442909745906586
+    - rid: 7527443076320330744
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: It's so nice down here.
-    - rid: 7527442909745906587
+    - rid: 7527443076320330745
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You find yourself huddled with Faye underneath the table.*'
-    - rid: 7527442909745906588
+    - rid: 7527443076320330746
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She has lined empty glasses along the wall.*'
-    - rid: 7527442909745906589
+    - rid: 7527443076320330747
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The total is staggering.*'
-    - rid: 7527442909745906590
+    - rid: 7527443076320330748
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Look! My masterpiece.
-    - rid: 7527442909745906591
+    - rid: 7527443076320330749
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Isn't it beautiful?
-    - rid: 7527442909745906592
+    - rid: 7527443076320330750
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -137,45 +137,45 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906593
+    - rid: 7527443076320330751
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She sways a bit, but then she straightens herself out.*'
-    - rid: 7527442909745906594
+    - rid: 7527443076338417664
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I'd like to dedicate my masterpiece to this jerk.
-    - rid: 7527442909745906595
+    - rid: 7527443076338417665
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye points to you while holding one of the glasses like
           a microphone.*'
-    - rid: 7527442909745906596
+    - rid: 7527443076338417666
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Without them I'd never have gotten this drunk.
-    - rid: 7527442909745906597
+    - rid: 7527443076338417667
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: They are my inspiration.
-    - rid: 7527442909745906598
+    - rid: 7527443076338417668
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And I'd also like to thank...
-    - rid: 7527442909745906599
+    - rid: 7527443076338417669
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She pauses, lost in thought.*'
-    - rid: 7527442909745906600
+    - rid: 7527443076338417670
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: What was their name?
-    - rid: 7527442909745906601
+    - rid: 7527443076338417671
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend some time attending Faye''s imaginary award ceremony
           under the table.*'
-    - rid: 7527442909745906602
+    - rid: 7527443076338417672
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 2

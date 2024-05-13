@@ -12,12 +12,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab665fee0c8039944b53d0eb9dcc9333, type: 3}
   m_Name: Elaine Darts Finals
   m_EditorClassIdentifier: 
-  LineGroups: []
+  LineGroups:
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 100
+    Lines:
+    - "Don't worry. We can just steal the trophy from the winners.\r"
+    AlreadyUsed: 00
+    Used: 0
+  - MinScoreRangeInclusive: 1
+    MaxScoreRangeExclusive: 70
+    ChanceToUse: 60
+    Lines:
+    - "Focus! I know you're better than that.\r"
+    - "I'm not great with encouragement... You'll do better on the next leg.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 100
+    MaxScoreRangeExclusive: 139
+    ChanceToUse: 60
+    Lines:
+    - "Keep it up.\r"
+    - "Better than most.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 140
+    MaxScoreRangeExclusive: 180
+    ChanceToUse: 60
+    Lines:
+    - "Leave some points for me, I want to show off too.\r"
+    - "You might just end up divine like me at that rate.\r"
+    - "I think I've rubbed off on you.\r"
+    - "Only I could do better.\r"
+    - "You remind me of myself.\r"
+    AlreadyUsed: 0000000000
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 100
+    Lines:
+    - "Godlike...\r"
+    - "I might just learn something from you.\r"
+    - "Truly divine...\r"
+    AlreadyUsed: 000000
+    Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    ChanceToUse: 100
+    Lines:
+    - "It's just too easy for us.\r"
+    - "I think we'll make the other players cry at this rate.\r"
+    - "We could've done that blindfolded.\r"
+    AlreadyUsed: 000000
     Used: 0
-  groups: []
+  __groups:
+  - '[0Final'
+  - '[Below70Final'
+  - '[LowtonFinal'
+  - '[HightonFinal'
+  - '[180Final'
+  - '[CheckoutFinal'

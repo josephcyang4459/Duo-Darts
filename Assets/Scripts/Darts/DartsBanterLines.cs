@@ -185,6 +185,7 @@ i figure it would randomly read off lines. though we should not let lines be rea
         }
 
         Debug.Log(name + " RESET ======>");
+        UnityEditor.EditorUtility.SetDirty(this);
     }
 
 #endif

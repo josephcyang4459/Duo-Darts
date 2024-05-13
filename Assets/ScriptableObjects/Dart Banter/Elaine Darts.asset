@@ -12,12 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab665fee0c8039944b53d0eb9dcc9333, type: 3}
   m_Name: Elaine Darts
   m_EditorClassIdentifier: 
-  LineGroups: []
+  LineGroups:
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 100
+    Lines:
+    - "I have no words. You're horrible...\r"
+    - "Not even a goddess could carry you in this game.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 1
+    MaxScoreRangeExclusive: 70
+    ChanceToUse: 60
+    Lines:
+    - "At least you hit the board.\r"
+    - "Did my radiance blind you? Do better.\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 140
+    MaxScoreRangeExclusive: 180
+    ChanceToUse: 60
+    Lines:
+    - "Luck isn't skill.\r"
+    - "Well, I'll be damned.\r"
+    - "Don't think you're better all of a sudden.\r"
+    - "How long can you keep that up?\r"
+    AlreadyUsed: 00000000
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 100
+    Lines:
+    - "...\r"
+    - "What? Should I take a picture or something?\r"
+    - "Yeah, I see it, now move over.\r"
+    AlreadyUsed: 000000
+    Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    ChanceToUse: 100
+    Lines:
+    - "It's just too easy for me.\r"
+    - "Well, it wasn't too hard to carry you to the end at least.\r"
+    - "I doubt you could've done that without my help.\r"
+    AlreadyUsed: 000000
     Used: 0
-  groups: []
+  __groups:
+  - '[0'
+  - '[Below70'
+  - '[Highton'
+  - '[180'
+  - '[Checkout'

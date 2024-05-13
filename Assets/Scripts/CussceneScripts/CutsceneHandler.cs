@@ -4,46 +4,61 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour {
-    public static CutsceneHandler inst;
+    public static CutsceneHandler Instance;
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
     [SerializeField] Player p;
     public CharacterList characters;
+    [SerializeField] CutsceneLog Log;
     [SerializeField] InputActionReference interact;
     [Space]
-    [SerializeField] CharacterPortraitAnimation PortraitAnimation;
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] Image CharacterPortrait;
     [SerializeField] TMP_Text CharacterName;
     [SerializeField] GameObject CharacterNamePlate;
     [SerializeField] DialougeBox DialougeBox;
-    [SerializeField] Canvas responseCanvas;
+    [SerializeField] DefaultCutsceneUI ResponseUI;
     [SerializeField] Image ResponsePortrait;
-    [SerializeField] GameObject responseButton;
     [SerializeField] TMP_Text[] responses;
-    [SerializeField] Canvas DefaultCanvass;
+    [SerializeField] DefaultCutsceneUI DefaultCutscene;
     public Image cutSceneBackGround;
+
     [SerializeField] SpriteCollection BackgroundSprites;
     [SerializeField] Sprite[] CharacterPortraits;
     [Space]
     [SerializeField] int CurrentCharacterIndex;
     [SerializeField] int index;
-    [SerializeField] Response respon;
+    [SerializeField] Response CurrentResponseGroup;
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
     public bool InCutscene;
-    [SerializeField] DartPartnerStoryUI DartsMenu;
-    [SerializeField] Schedule Schedule;
-    [SerializeField] EndingScene EndingScene;
+    public DartPartnerStoryUI DartsMenu;
+    public Schedule Schedule;
+    public EndingScene Ending;
 
     public void Awake() {
-        if (inst != null) {
+        if (Instance != null) {
             Destroy(gameObject);
             return;
         }
-        inst = this;
+        Instance = this;
         DontDestroyOnLoad(this);
+    }
+
+    public void EnableControls() {
+        interact.action.Enable();
+        interact.action.performed += TakeAction;
+        Log.EnableLog();
+      
+    }
+
+    public void UnenableControls() {
+        interact.action.Reset();
+        interact.action.Disable();
+        interact.action.performed -= TakeAction;
+        Log.UnenableLog();
+        
     }
 
     public int PlayerPortriatIndex() {
@@ -58,31 +73,33 @@ public class CutsceneHandler : MonoBehaviour {
         ResponsePortrait.sprite = CharacterPortraits[i];
     }
 
+    public void SetUpForEnding(EndingScene e) {
+        Ending = e;
+    }
+
     public void SetUpForMainGame(DartPartnerStoryUI dartsMenu, Schedule schedule) {
         DartsMenu = dartsMenu;
         Schedule = schedule;
     }
 
-    public void SetUpForEnding(EndingScene endingScene) {
-        EndingScene = endingScene;
-    }
-
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
         InCutscene = true;
+        Log.ResetLog();
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
         index = 0;
         cutscene = c;
+        EnableControls();
         CompleteThisCutscene();
         DialougeBox.HideDialougeBox();
         DecideCharacter(c.defaultCharacter, false);
         SetBackGroundVisual(BackgroundIndex);
 
         DialougeCanvas.enabled = true;
-        interact.action.Enable();
-        interact.action.performed += TakeAction;
+        
         cutscene.blocks[index].action(this);
+      
     }
 
     void CompleteThisCutscene() {
@@ -95,22 +112,21 @@ public class CutsceneHandler : MonoBehaviour {
         }
     }
 
-    public void choice(int i) {
-        Partner partner = characters.list[CurrentCharacterIndex];
-        cutscene = (i == 0) ? partner.DefaultRepeatingScene : partner.DefaultDrinkingCutScene;
-
+    public void DefaultCutsceneSelection(int i) {
+        if (i == 0)
+            cutscene = characters.list[CurrentCharacterIndex].DefaultRepeatingScene;
+        else
+            cutscene = characters.list[CurrentCharacterIndex].DefaultDrinkingCutScene;
         UIState.inst.SetInteractable(false);
         Schedule.enabled = false;
         index = 0;
-        DefaultCanvass.enabled = false;
         DialougeCanvas.enabled = true;
-        interact.action.Enable();
-        interact.action.performed += TakeAction;
+        EnableControls();
         cutscene.blocks[index].action(this);
     }
 
     public void TakeAction(InputAction.CallbackContext c) {
-        if (PauseMenu.inst.CurrentState)
+        if (Log.State)//yucky
             return;
         if (responding)// resnponding to quesation
         {
@@ -124,7 +140,7 @@ public class CutsceneHandler : MonoBehaviour {
 
             responseIndexIndex++;
 
-            if (responseIndexIndex >= respon.responses[responseIndex].responses.Length) {
+            if (responseIndexIndex >= CurrentResponseGroup.responses[responseIndex].responses.Length) {
                 responseIndexIndex = 0;
                 responseIndex = -1;
                 responding = false;
@@ -149,31 +165,26 @@ public class CutsceneHandler : MonoBehaviour {
     public void HideUI() {
         InCutscene = false;
         DialougeCanvas.enabled = false;
-        responseCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
         UIState.inst.SetInteractable(true);
-        interact.action.Disable();
-        interact.action.performed -= TakeAction;
     }
 
 
     public void EndCutscene() {
+        UnenableControls();
         HideUI();
-
         if (Schedule != null)
             Schedule.SetTime(cutscene.TimeLength);
-        if (EndingScene != null)
-            EndingScene.CutsceneComplete();
+        if(Ending!= null) {
+            Ending.CutsceneComplete();
+        }
     }
 
     public void PresentChoices() {
-        UIState.inst.SetInteractable(true);
-        //-----------------------------------------------------------------------------------------******-----+++++++------------Set BUTTON HERE
-        DefaultCanvass.enabled = true;
+        DefaultCutscene.BeginEnter();
         DialougeCanvas.enabled = false;
         DialougeCanvas.enabled = false;
-        interact.action.Disable();
-        interact.action.performed += TakeAction;
+        UnenableControls();
     }
 
     public void NextBlock() {
@@ -191,6 +202,7 @@ public class CutsceneHandler : MonoBehaviour {
     }
 
     public void Dialouge(string message) {
+        Log.SetLog(characters.list[CurrentCharacterIndex].Name, message);
         DialougeBox.SetCharacterColors(CurrentCharacterIndex);
         DialougeBox.SetDialouge(message);
     }
@@ -198,51 +210,49 @@ public class CutsceneHandler : MonoBehaviour {
     public void Response(Response r) {
         //-------------------------**********------------------------------+++++++++++++--------------------------------------Set BUTTON HERE
         UIState.inst.SetInteractable(true);
-        respon = r;
+        CurrentResponseGroup = r;
         responding = true;
         responseIndex = -1;
         for (int i = 0; i < 3; i++)
-            responses[i].text = respon.responses[i].answer;
+            responses[i].text = CurrentResponseGroup.responses[i].answer;
 
-        responseCanvas.enabled = true;
+        ResponseUI.BeginEnter();
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
-        if(DecideCharacter(character))
+        if (DecideCharacter(character))
             ChangeExpression((int)expression);
-
     }
 
     public void UI_Response(int i) {
         UIState.inst.SetInteractable(false);
-        responseCanvas.enabled = false;
         responseIndex = i;
         responseIndexIndex = 0;
-
+        Log.SetLog("You", CurrentResponseGroup.responses[responseIndex].answer);
         DisplayResponse();
     }
 
     private void DisplayResponse() {
-        respon.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
-        if (!respon.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
-            Dialouge(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+        CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
+        if (!CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
+            Dialouge(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
         else
-            Thought(respon.responses[responseIndex].responses[responseIndexIndex].Message);
+            Thought(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);
     }
 
-    public void ChangeExpression(int expressionIndex, bool GoToNextBlock = true) {
+    public void ChangeExpression(int ExpressionIndex, bool GoToNextBlock = true) {
         if (CharacterPortrait.enabled == false)
             CharacterPortrait.enabled = true;
         CharacterNamePlate.SetActive(true);
-        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[expressionIndex];
-        PortraitAnimation.ChangeExpression((Expressions)expressionIndex);
-        DialougeBox.SetExpression(expressionIndex, true);
+        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
+        DialougeBox.SetExpression(ExpressionIndex, true);
         if (GoToNextBlock)
             NextBlock();
     }
 
-    public void Thought(string s) {
-        DialougeBox.SetThought(s);
+    public void Thought(string message) {
+        Log.SetLog("", message);
+        DialougeBox.SetThought(message);
     }
 
     public void ChangeBackground(string s) {
@@ -255,14 +265,13 @@ public class CutsceneHandler : MonoBehaviour {
 
         CharacterPortrait.sprite = characters.list[partnerIndex].Expressions[0];
         DialougeBox.SetExpression(0, showPartnerVisual);
-        DialougeBox.SetCharacterColors(partnerIndex);
         CharacterPortrait.enabled = showPartnerVisual;
         CharacterName.text = characters.list[partnerIndex].Name;
         CharacterName.font = characters.list[partnerIndex].Font;
         CharacterName.fontSize = characters.list[partnerIndex].textSize;
         CharacterNamePlate.SetActive(showPartnerVisual);
 
-
+        DialougeBox.SetCharacterColors(partnerIndex);
     }
 
     private void SetBackGroundVisual(int i) {
@@ -280,11 +289,8 @@ public class CutsceneHandler : MonoBehaviour {
             case "dance":
                 SetBackGroundVisual(2);
                 break;
-            case "bathroom":
-                SetBackGroundVisual(3);
-                break;
-            case "darts":
-                SetBackGroundVisual(4);
+            case "elaine":
+                SetBackGroundVisual(0);
                 break;
         }
     }
@@ -302,7 +308,7 @@ public class CutsceneHandler : MonoBehaviour {
                 return true;
             case "elaine":
                 SetPartnerVisual(3, showPartner);
-                return true;
+                break;
             case "owner":
                 SetPartnerVisual(4, showPartner);
                 return true;
@@ -322,15 +328,18 @@ public class CutsceneHandler : MonoBehaviour {
                 SetPartnerVisual(9, showPartner);
                 return true;
             default:
-                if (s.Length <= 0) {
-                    Debug.Log("HERE");
+#if UNITY_EDITOR
+                Debug.Log("UNLESS THIS IS BATHROOM WALL SOMETHING WENT WRONG");
+#endif
+                if(s.Length == 0) {
                     SetPartnerVisual(10, false);
+                    return false;
                 }
-                else {
-                    SetPartnerVisual(10, showPartner);
-                    CharacterName.text = s;
-                }
+                   
+                SetPartnerVisual(10, showPartner);
+                CharacterName.text = s;
                 return false;
         }
+        return false;
     }
 }

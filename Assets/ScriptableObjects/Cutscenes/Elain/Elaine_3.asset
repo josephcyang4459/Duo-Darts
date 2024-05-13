@@ -13,82 +13,82 @@ MonoBehaviour:
   m_Name: Elaine_3
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906640
-  - rid: 7527442909745906641
-  - rid: 7527442909745906642
-  - rid: 7527442909745906643
-  - rid: 7527442909745906644
-  - rid: 7527442909745906645
-  - rid: 7527442909745906646
-  - rid: 7527442909745906647
-  - rid: 7527442909745906648
-  - rid: 7527442909745906649
-  - rid: 7527442909745906650
-  - rid: 7527442909745906651
-  - rid: 7527442909745906652
-  - rid: 7527442909745906653
-  - rid: 7527442909745906654
-  - rid: 7527442909745906655
-  - rid: 7527442909745906656
-  - rid: 7527442909745906657
-  - rid: 7527442909745906658
-  - rid: 7527442909745906659
-  - rid: 7527442909745906660
-  - rid: 7527442909745906661
-  - rid: 7527442909745906662
-  - rid: 7527442909745906663
-  - rid: 7527442909745906664
-  - rid: 7527442909745906665
-  - rid: 7527442909745906666
-  - rid: 7527442909745906667
-  - rid: 7527442909745906668
-  - rid: 7527442909745906669
-  - rid: 7527442909745906670
-  - rid: 7527442909745906671
+  - rid: 7527443076338417734
+  - rid: 7527443076338417735
+  - rid: 7527443076338417736
+  - rid: 7527443076338417737
+  - rid: 7527443076338417738
+  - rid: 7527443076338417739
+  - rid: 7527443076338417740
+  - rid: 7527443076338417741
+  - rid: 7527443076338417742
+  - rid: 7527443076338417743
+  - rid: 7527443076338417744
+  - rid: 7527443076338417745
+  - rid: 7527443076338417746
+  - rid: 7527443076338417747
+  - rid: 7527443076338417748
+  - rid: 7527443076338417749
+  - rid: 7527443076338417750
+  - rid: 7527443076338417751
+  - rid: 7527443076338417752
+  - rid: 7527443076338417753
+  - rid: 7527443076338417754
+  - rid: 7527443076338417755
+  - rid: 7527443076338417756
+  - rid: 7527443076338417757
+  - rid: 7527443076338417758
+  - rid: 7527443076338417759
+  - rid: 7527443076338417760
+  - rid: 7527443076338417761
+  - rid: 7527443076338417762
+  - rid: 7527443076338417763
+  - rid: 7527443076338417764
+  - rid: 7527443076338417765
   defaultCharacter: Elaine
   ForceDarts: 0
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906640
+    - rid: 7527443076338417734
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 3
-    - rid: 7527442909745906641
+    - rid: 7527443076338417735
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You see Elaine throwing dart after dart at a board nearby.*'
-    - rid: 7527442909745906642
+    - rid: 7527443076338417736
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey! Doggie!
-    - rid: 7527442909745906643
+    - rid: 7527443076338417737
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She''s plastered.*'
-    - rid: 7527442909745906644
+    - rid: 7527443076338417738
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come here and look. Look at this trick.
-    - rid: 7527442909745906645
+    - rid: 7527443076338417739
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine sets up a throw with all three darts in hand.*'
-    - rid: 7527442909745906646
+    - rid: 7527443076338417740
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She throws all three at once. One hits the bullseye and
           the rest bounce off.*'
-    - rid: 7527442909745906647
+    - rid: 7527443076338417741
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Come on!
-    - rid: 7527442909745906648
+    - rid: 7527443076338417742
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey, go stand in front of the board for me.
-    - rid: 7527442909745906649
+    - rid: 7527443076338417743
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -116,93 +116,93 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 3
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906650
+    - rid: 7527443076338417744
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Get in place.
-    - rid: 7527442909745906651
+    - rid: 7527443076338417745
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Now.
-    - rid: 7527442909745906652
+    - rid: 7527443076338417746
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You stand in front of the board with your head covering
           most of it.*'
-    - rid: 7527442909745906653
+    - rid: 7527443076338417747
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*A small crowd has gathered.*'
-    - rid: 7527442909745906654
+    - rid: 7527443076338417748
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You contemplate the actions that have led you to this moment.*'
-    - rid: 7527442909745906655
+    - rid: 7527443076338417749
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: So I just have to land these darts without disfiguring you.
-    - rid: 7527442909745906656
+    - rid: 7527443076338417750
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: One next to each ear and one right above the head.
-    - rid: 7527442909745906657
+    - rid: 7527443076338417751
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Easy.
-    - rid: 7527442909745906658
+    - rid: 7527443076338417752
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine readies her three dart trick again.*'
-    - rid: 7527442909745906659
+    - rid: 7527443076338417753
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She throws. You close your eyes.*'
-    - rid: 7527442909745906660
+    - rid: 7527443076338417754
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Yes! I did it!
-    - rid: 7527442909745906661
+    - rid: 7527443076338417755
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The darts landed just as she had called.*'
-    - rid: 7527442909745906662
+    - rid: 7527443076338417756
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Aren't you impressed? I'm a real deal dart goddess.
-    - rid: 7527442909745906663
+    - rid: 7527443076338417757
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*The crowd claps and then they disperse.*'
-    - rid: 7527442909745906664
+    - rid: 7527443076338417758
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Elaine walks over to you with a wide smile.*'
-    - rid: 7527442909745906665
+    - rid: 7527443076338417759
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Hey.
-    - rid: 7527442909745906666
+    - rid: 7527443076338417760
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You weren't worried were you?
-    - rid: 7527442909745906667
+    - rid: 7527443076338417761
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*She gives you a strangle-like hug.*'
-    - rid: 7527442909745906668
+    - rid: 7527443076338417762
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: This is your reward for Intoxicating this goddess.
-    - rid: 7527442909745906669
+    - rid: 7527443076338417763
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Keep acting like that and you might just win my divine favor.
-    - rid: 7527442909745906670
+    - rid: 7527443076338417764
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*You spend some time getting a mix of praise and beration
           from her.*'
-    - rid: 7527442909745906671
+    - rid: 7527443076338417765
       type: {class: ChangeStat, ns: , asm: Assembly-CSharp}
       data:
         Character: 3

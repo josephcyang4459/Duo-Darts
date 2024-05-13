@@ -35,12 +35,12 @@ public class EndingScene : MonoBehaviour, SceneEntrance
         }
         data.Endings[currentEnding] = true;
         FileHandler.SaveCompletion(data);
-        CutsceneHandler.inst.SetUpForEnding(this);
-        CutsceneHandler.inst.PlayCutScene(EndingCutscene, (int)Locations.darts);
+        CutsceneHandler.Instance.SetUpForEnding(this);
+        CutsceneHandler.Instance.PlayCutScene(EndingCutscene, (int)Locations.darts);
     }
 
     public void CutsceneComplete() {
-        Background.sprite = CutsceneHandler.inst.cutSceneBackGround.sprite;
+        Background.sprite = CutsceneHandler.Instance.cutSceneBackGround.sprite;
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 }

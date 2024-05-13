@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Chad_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906172
-  - rid: 7527442909745906173
-  - rid: 7527442909745906174
-  - rid: 7527442909745906175
-  - rid: 7527442909745906176
-  - rid: 7527442909745906177
-  - rid: 7527442909745906178
-  - rid: 7527442909745906179
-  - rid: 7527442909745906180
-  - rid: 7527442909745906181
+  - rid: 7527443076320330508
+  - rid: 7527443076320330509
+  - rid: 7527443076320330510
+  - rid: 7527443076320330511
+  - rid: 7527443076320330512
+  - rid: 7527443076320330513
+  - rid: 7527443076320330514
+  - rid: 7527443076320330515
+  - rid: 7527443076320330516
+  - rid: 7527443076320330517
   defaultCharacter: Chad
   ForceDarts: 1
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906172
+    - rid: 7527443076320330508
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906173
+    - rid: 7527443076320330509
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I can't say I've always been the one to give an upstart a chance.
-    - rid: 7527442909745906174
+    - rid: 7527443076320330510
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Then again, great men can always be greater, so I'll call this a
           social experiment for myself.
-    - rid: 7527442909745906175
+    - rid: 7527443076320330511
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Nothing more and nothing less.
-    - rid: 7527442909745906176
+    - rid: 7527443076320330512
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And you better hold up your end of the game.
-    - rid: 7527442909745906177
+    - rid: 7527443076320330513
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Not that I would need your points. I could check out alone if they'd
           let me.
-    - rid: 7527442909745906178
+    - rid: 7527443076320330514
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -84,15 +84,15 @@ MonoBehaviour:
             Stat: 2
             AdjustValue: 3
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906179
+    - rid: 7527443076320330515
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906180
+    - rid: 7527443076320330516
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Now, we're up.
-    - rid: 7527442909745906181
+    - rid: 7527443076320330517
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Let's see what you've got.

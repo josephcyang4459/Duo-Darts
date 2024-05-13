@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Faye_1
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442909745906412
-  - rid: 7527442909745906413
-  - rid: 7527442909745906414
-  - rid: 7527442909745906415
-  - rid: 7527442909745906416
-  - rid: 7527442909745906417
-  - rid: 7527442909745906418
-  - rid: 7527442909745906419
-  - rid: 7527442909745906420
-  - rid: 7527442909745906421
-  - rid: 7527442909745906422
+  - rid: 7527443076338417910
+  - rid: 7527443076338417911
+  - rid: 7527443076338417912
+  - rid: 7527443076338417913
+  - rid: 7527443076338417914
+  - rid: 7527443076338417915
+  - rid: 7527443076338417916
+  - rid: 7527443076338417917
+  - rid: 7527443076338417918
+  - rid: 7527443076338417919
+  - rid: 7527443076338417920
   defaultCharacter: Faye
   ForceDarts: 1
   TimeLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 7527442909745906412
+    - rid: 7527443076338417910
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906413
+    - rid: 7527443076338417911
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye looks nervous.*'
-    - rid: 7527442909745906414
+    - rid: 7527443076338417912
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Make your turns quick please.
-    - rid: 7527442909745906415
+    - rid: 7527443076338417913
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I don't like being up and about, especially with a crowd.
-    - rid: 7527442909745906416
+    - rid: 7527443076338417914
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: And yeah, I was meaning to ask if you ever attended any other tournaments.
-    - rid: 7527442909745906417
+    - rid: 7527443076338417915
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: You didn't look familiar, but people don't always look the same
           from one meet to the next.
-    - rid: 7527442909745906418
+    - rid: 7527443076338417916
       type: {class: Response, ns: , asm: Assembly-CSharp}
       data:
         responses:
@@ -101,19 +101,19 @@ MonoBehaviour:
             Stat: 0
             AdjustValue: 0
             ResponseIsPlayerThought: 0
-    - rid: 7527442909745906419
+    - rid: 7527443076338417917
       type: {class: ExpressionBlock, ns: , asm: Assembly-CSharp}
       data:
         expression: 0
-    - rid: 7527442909745906420
+    - rid: 7527443076338417918
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: '*Faye focuses up.*'
-    - rid: 7527442909745906421
+    - rid: 7527443076338417919
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: I apologize in advance that I'm not the best player here.
-    - rid: 7527442909745906422
+    - rid: 7527443076338417920
       type: {class: DialougeBlock, ns: , asm: Assembly-CSharp}
       data:
         message: Here, you go first.

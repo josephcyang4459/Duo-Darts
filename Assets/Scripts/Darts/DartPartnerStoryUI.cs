@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -94,7 +96,6 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             Fill.ClearImages();
             Slide.SetToStart();
             ControlState.UsingController -= IsUsingController;
-            UnenableClick();
             return;
         }
         UIState.inst.SetInteractable(true);
@@ -117,6 +118,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     }
 
     void UnenableClick() {
+        Click.action.Reset();
         Click.action.Disable();
         Click.action.performed -= ClickFunction;
     }
@@ -133,17 +135,16 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             else {
                 Slide.SetToStart();
             }
-              
-
             Fill.SetCurrentImageToFill(ButtonFills[index], DartPositions[index].position);
         }
     }
 
     public void ShowTutorial() {
-        Debug.Log("SHOW TUTORIAL");
+        TutorialHandler.inst.EnableDartsTutorial(true);
     }
 
     public void BackToEventPicker() {
+        UnenableClick();
         State = AnimationState.ExitingToEvent;
         UIState.inst.SetInteractable(false);
         PauseMenu.inst.SetEnabled(false);
@@ -185,6 +186,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
             SetActive(true);
             return;
         }
+
         if(State == AnimationState.ExitingToEvent) {
             SetActive(false);
             UIState.inst.SetInteractable(true);

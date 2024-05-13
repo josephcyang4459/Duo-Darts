@@ -18,7 +18,7 @@ MonoBehaviour:
     ChanceToUse: 100
     Lines:
     - "I wish I had looked away from that.\r"
-    - "There\u2019s the best and then there\u2019s the worst.\r"
+    - "There's the best and then there's the worst.\r"
     AlreadyUsed: 0000
     Used: 0
   - MinScoreRangeInclusive: 1
@@ -34,8 +34,8 @@ MonoBehaviour:
     ChanceToUse: 60
     Lines:
     - "A score like that never loses its luster.\r"
-    - "I\u2019m in good company, it seems.\r"
-    - "I\u2019m impressed.\r"
+    - "I'm in good company, it seems.\r"
+    - "I'm impressed.\r"
     - "Near perfect.\r"
     AlreadyUsed: 00000000
     Used: 0
@@ -51,14 +51,14 @@ MonoBehaviour:
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
+    ChanceToUse: 100
     Lines:
     - "I had no doubts.\r"
     - "From the first dart, I knew it was set and done.\r"
-    - "I hope my score didn\u2019t make you uncomfortable.\r"
+    - "I hope my score didn't make you uncomfortable.\r"
     AlreadyUsed: 000000
     Used: 0
-  groups:
+  __groups:
   - '[0'
   - '[Below70'
   - '[Highton'

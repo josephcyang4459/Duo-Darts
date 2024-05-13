@@ -12,12 +12,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab665fee0c8039944b53d0eb9dcc9333, type: 3}
   m_Name: Faye Darts Finals
   m_EditorClassIdentifier: 
-  LineGroups: []
+  LineGroups:
+  - MinScoreRangeInclusive: 0
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 100
+    Lines:
+    - "I can get us back, we can do this.\r"
+    AlreadyUsed: 00
+    Used: 0
+  - MinScoreRangeInclusive: 1
+    MaxScoreRangeExclusive: 70
+    ChanceToUse: 60
+    Lines:
+    - "Don't be shy, score high!\r"
+    - "Forget the crowd, just focus on the board. That's all that matters!\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 100
+    MaxScoreRangeExclusive: 139
+    ChanceToUse: 60
+    Lines:
+    - "Come on, let's give them a show.\r"
+    AlreadyUsed: 00
+    Used: 0
+  - MinScoreRangeInclusive: 140
+    MaxScoreRangeExclusive: 180
+    ChanceToUse: 60
+    Lines:
+    - "Perfect, show them what we've got.\r"
+    - "Everyone's eyes went wide watching that one.\r"
+    - "It's like you and the darts are in your own world.\r"
+    - "Wicked. \r"
+    AlreadyUsed: 00000000
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 100
+    Lines:
+    - "Seriously, you have to teach me some time.\r"
+    - "Are you playing to entertain? You're giving them a show.\r"
+    - "Let them watch. We've got this!\r"
+    AlreadyUsed: 000000
+    Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    ChanceToUse: 100
+    Lines:
+    - "I hope everyone saw that.\r"
+    AlreadyUsed: 00
     Used: 0
-  groups: []
+  __groups:
+  - '[0Final'
+  - '[Below70Final'
+  - '[LowtonFinal'
+  - '[HightonFinal'
+  - '[180Final'
+  - '[CheckoutFinal'

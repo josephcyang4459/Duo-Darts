@@ -17,50 +17,56 @@ MonoBehaviour:
     MaxScoreRangeExclusive: 1
     ChanceToUse: 100
     Lines:
-    - "I wish I had looked away from that.\r"
-    - "There\u2019s the best and then there\u2019s the worst.\r"
-    AlreadyUsed: 0000
+    - "Well, I'm sure we both have enough awards already anyways.\r"
+    AlreadyUsed: 00
     Used: 0
   - MinScoreRangeInclusive: 1
     MaxScoreRangeExclusive: 70
     ChanceToUse: 60
     Lines:
-    - "Effort makes results, you know.\r"
-    - "Happens to everyone, they say.\r"
+    - "Slow and steady, there's hope yet.\r"
+    - "Did something take your focus?\r"
+    AlreadyUsed: 0000
+    Used: 0
+  - MinScoreRangeInclusive: 100
+    MaxScoreRangeExclusive: 139
+    ChanceToUse: 60
+    Lines:
+    - "Any less than that and I'd be worried about you.\r"
+    - "We both know you're better than middle of the road.\r"
     AlreadyUsed: 0000
     Used: 0
   - MinScoreRangeInclusive: 140
     MaxScoreRangeExclusive: 180
     ChanceToUse: 60
     Lines:
-    - "A score like that never loses its luster.\r"
-    - "I\u2019m in good company, it seems.\r"
-    - "I\u2019m impressed.\r"
-    - "Near perfect.\r"
+    - "That was interesting at worst.\r"
+    - "That's nearly masterwork.\r"
+    - "You're certainly the good kind of unnatural.\r"
+    - "Show them who you really are.\r"
     AlreadyUsed: 00000000
     Used: 0
   - MinScoreRangeInclusive: 180
     MaxScoreRangeExclusive: 181
     ChanceToUse: 100
     Lines:
-    - "Finally, good company.\r"
-    - "I had a feeling you had that in you.\r"
-    - "I have to return some videotapes.\r"
+    - "That was art.\r"
+    - "The other's are terrified, and they should be. You're a monster.\r"
+    - "It's darts that she wrote.\r"
     AlreadyUsed: 000000
     Used: 0
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
+    ChanceToUse: 100
     Lines:
-    - "I had no doubts.\r"
-    - "From the first dart, I knew it was set and done.\r"
-    - "I hope my score didn\u2019t make you uncomfortable.\r"
-    AlreadyUsed: 000000
+    - "And that's all we wrote!\r"
+    AlreadyUsed: 00
     Used: 0
-  groups:
-  - '[0'
-  - '[Below70'
-  - '[Highton'
-  - '[180'
-  - '[Checkout'
+  __groups:
+  - '[0Final'
+  - '[Below70Final'
+  - '[LowtonFinal'
+  - '[HightonFinal'
+  - '[180Final'
+  - '[CheckoutFinal'

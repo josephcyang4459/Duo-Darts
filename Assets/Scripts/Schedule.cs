@@ -68,11 +68,11 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             SetTime(0);
         }
         UIState.inst.SetInteractable(true);
-        CutsceneHandler.inst.SetUpForMainGame(DartsMenu, this);
+        CutsceneHandler.Instance.SetUpForMainGame(DartsMenu, this);
     }
 
     public void ChooseCharacterGender(int i) {
-        CutsceneHandler.inst.SetCharacterSprite(i);
+        CutsceneHandler.Instance.SetCharacterSprite(i);
         PauseMenu.inst.SetEnabled(true);
         SetTime(0);
 
@@ -123,7 +123,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             if(!PlayerNotifications.List[i].done)
                 if (CheckIfValidTime(PlayerNotifications.List[i])) {
                     PlayerNotifications.List[i].done = true;
-                    CutsceneHandler.inst.PlayCutScene(PlayerNotifications.List[i].cutScene, (int)Locations.lounge);
+                    CutsceneHandler.Instance.PlayCutScene(PlayerNotifications.List[i].cutScene, (int)Locations.lounge);
                     return true;
                 }
         }
@@ -148,7 +148,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 if (Player.TotalPointsScoredAcrossAllDartMatches <= PointsNeededToPlayFinalRound) {
                     if (!BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].done) {
                         BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].done = true;
-                        CutsceneHandler.inst.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].cutScene, (int)Locations.lounge);
+                        CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].cutScene, (int)Locations.lounge);
                         return;
                     }
                         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
@@ -164,7 +164,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                 if (numberAvailable <= 0) {
                     if (!BadEndings.List[(int)BadEndingIndicies.NoLovers].done) {
                         BadEndings.List[(int)BadEndingIndicies.NoLovers].done = true;
-                        CutsceneHandler.inst.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NoLovers].cutScene, (int)Locations.lounge);
+                        CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NoLovers].cutScene, (int)Locations.lounge);
                         return;
                     }
 
@@ -240,7 +240,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
 
         SetEventCutsceneComplete(locals[location].Events[eventIndex]);
         EventSelector.HideUI();
-        CutsceneHandler.inst.PlayCutScene(locals[location].Events[eventIndex], location);
+        CutsceneHandler.Instance.PlayCutScene(locals[location].Events[eventIndex], location);
     }
 
     public void TurnLocationAndEventSelectorUIOff() {
