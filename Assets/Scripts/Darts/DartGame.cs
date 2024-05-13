@@ -19,7 +19,6 @@ public class DartGame : MonoBehaviour {
     public int currentTurn = 0;
     public int numberOfDartsThrow = 0;
     public int maxTurns;
-    public bool firstTimePlaying;
 
     [SerializeField] float MaxOffset = 4;
 
@@ -307,6 +306,4 @@ public class DartGame : MonoBehaviour {
         else
             StandAlone.BeginSetUp();
     }
-
-    public void setFirstTimePlaying(bool firstTimePlaying) { this.firstTimePlaying = firstTimePlaying; }
 }

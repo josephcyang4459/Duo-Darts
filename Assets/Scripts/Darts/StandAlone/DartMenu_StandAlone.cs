@@ -29,7 +29,8 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
     public void Start() { TransitionManager.inst.ReadyToEnterScene(this); }
 
     public void EnterScene() {
-        PauseMenu.inst.SetEnabled(true);
+        PauseMenu.inst.SetEnabled(!Player.firstTimePlaying);
+        if (Player.firstTimePlaying) { Debug.Log("Pause Enabled for first time;");  PauseMenu.inst.PauseInput.action.Enable(); }
         BeginSetUp();
     }
 

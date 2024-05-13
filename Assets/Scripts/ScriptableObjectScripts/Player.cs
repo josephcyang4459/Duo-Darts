@@ -6,6 +6,7 @@ public class Player : ScriptableObject {
     public float Intoxication = 1f;
     public float Skill = 1f;
     public float Luck = 1f;
+    public bool firstTimePlaying = true;
 
     public int TotalPointsScoredAcrossAllDartMatches;
 

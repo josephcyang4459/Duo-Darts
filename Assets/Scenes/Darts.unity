@@ -8034,11 +8034,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1607627e3bf108d499d23ed608467a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   PauseInput: {fileID: -554653628451453331, guid: 0436482055235fb43825f893cacf9475, type: 3}
   DartsTutorialCanvas: {fileID: 1948179880}
   StoryTutorialCanvas: {fileID: 1183537898}
   TutorialChoicesCanvas: {fileID: 1479853885}
-  dartgame: {fileID: 666911031}
 --- !u!4 &1702722474
 Transform:
   m_ObjectHideFlags: 0
@@ -9477,11 +9477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -9513,7 +9513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EnableDartsTutorial
+      value: DisableTutorials
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
