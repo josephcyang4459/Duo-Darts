@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TutorialHandler : MonoBehaviour {
-    [SerializeField] Player Player;
     [SerializeField] public static TutorialHandler inst;
     [SerializeField] public InputActionReference PauseInput;
     [SerializeField] Canvas DartsTutorialCanvas;
@@ -19,7 +18,7 @@ public class TutorialHandler : MonoBehaviour {
         DontDestroyOnLoad(this);
 
         SceneNumbers currentSceneName = TransitionManager.inst.GetCurrentScene();
-        if (Player.firstTimePlaying) {
+        if (PlayerPrefs.GetInt("hasReadDartsTutorial") == 0) {
             switch(currentSceneName) {
                 case SceneNumbers.Story: EnableStoryTutorial(true); return;
                 case SceneNumbers.Darts: EnableDartsTutorial(true); return;
@@ -37,11 +36,6 @@ public class TutorialHandler : MonoBehaviour {
         }
     }
 
-    public void EnableStoryTutorial(bool enable, Caller caller = null) {
-        if (caller != null) { Caller = caller; }
-        EnableStoryTutorial(enable);
-    }
-
     public void EnableDartsTutorial(bool enable) {
         DartsTutorialCanvas.enabled = enable;
 
@@ -52,11 +46,6 @@ public class TutorialHandler : MonoBehaviour {
         }
     }
 
-    public void EnableDartsTutorial(bool enable, Caller caller = null) {
-        if (caller != null) { Caller = caller; }
-        EnableDartsTutorial(enable);
-    }
-
     public void EnableTutorialChoices(bool enable) {
         TutorialChoicesCanvas.enabled = enable;
 
@@ -65,6 +54,16 @@ public class TutorialHandler : MonoBehaviour {
             PauseMenu.inst.SetEnabled(false);
             PauseInput.action.Enable();
         }
+    }
+
+    public void EnableStoryTutorial(bool enable, Caller caller = null) {
+        if (caller != null) { Caller = caller; }
+        EnableStoryTutorial(enable);
+    }
+
+    public void EnableDartsTutorial(bool enable, Caller caller = null) {
+        if (caller != null) { Caller = caller; }
+        EnableDartsTutorial(enable);
     }
 
     public void EnableTutorialChoices(bool enable, Caller caller = null) {
@@ -86,7 +85,7 @@ public class TutorialHandler : MonoBehaviour {
         }
 
         PauseInput.action.performed -= DisableTutorials;
-        Player.firstTimePlaying = false;
+        PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
     }
 
     // This overload method is for player input
