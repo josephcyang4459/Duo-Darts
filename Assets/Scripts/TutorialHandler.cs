@@ -9,6 +9,7 @@ public class TutorialHandler : MonoBehaviour {
     [SerializeField] Canvas TutorialChoicesCanvas;
     [SerializeField] Caller Caller;
 
+    // TODO We still need to do the story tutorial
     public void Start() {
         if (inst != null) {
             Destroy(gameObject);
