@@ -17,12 +17,12 @@ MonoBehaviour:
   textSize: 72
   Composure: 0
   Intoxication: 0
-  Love: 0
+  Love: 3
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: c4dfed969452951468178461bf30a220, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4

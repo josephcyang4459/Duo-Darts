@@ -80,7 +80,7 @@ public class DartBoard : MonoBehaviour
         }
         if (__Test) {
             __Test = false;
-            GetScoreFromLocation(__Position.position.x, __Position.position.y);
+            Debug.Log(GetScoreFromLocation(__Position.position.x, __Position.position.y));
         }
     }
 

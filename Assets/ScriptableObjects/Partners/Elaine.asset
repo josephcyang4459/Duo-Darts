@@ -22,12 +22,12 @@ MonoBehaviour:
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: 7558c8147eb4bc444a0b57fc213cc70a, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 1a0742d3a6e97b248aa52ccb53ec947e, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 1
   - Location: lounge
     CutsceneLocation: 0

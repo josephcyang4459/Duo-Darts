@@ -330,7 +330,7 @@ public class CutScene : ScriptableObject
         return h.ToArray();
     }
 
-    protected List<int>  __allCharIndex(string s, char c) {
+    protected static List<int>  __allCharIndex(string s, char c) {
         List<int> temp = new();
         for (int i = 0; i < s.Length; i++)
             if (s[i] == c)
@@ -338,7 +338,7 @@ public class CutScene : ScriptableObject
         return temp;
     }
 
-    protected string __inbetween(string s, List<int> open, List<int> closed) {
+    protected static string __inbetween(string s, List<int> open, List<int> closed) {
         string temp = "";
         for(int i = 1; i < open.Count; i++) {
             if (open[i] - closed[i - 1] != 0)
@@ -348,7 +348,7 @@ public class CutScene : ScriptableObject
         return temp;
     }
 
-    protected string __removeTags(string s)
+    public static string __removeTags(string s)
     {
         List<int> open = __allCharIndex(s, '[');
         if(open.Count == 1) {
@@ -436,7 +436,7 @@ public class CutScene : ScriptableObject
     }
 
 
-    public string __removeBrokenChars(string s)
+    public static string __removeBrokenChars(string s)
     {
         if (s.Length <= 0)
             return null;
