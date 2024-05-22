@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class CutsceneHandler : MonoBehaviour {
+public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     public static CutsceneHandler Instance;
     [SerializeField] CutScene cutscene;
     [SerializeField] Dialogue dh;
@@ -169,13 +169,18 @@ public class CutsceneHandler : MonoBehaviour {
         UIState.inst.SetInteractable(true);
     }
 
-
-    public void EndCutscene() {
-        UnenableControls();
+    public void NowHidden() {
         HideUI();
         if (Schedule != null)
             Schedule.SetTime(cutscene.TimeLength);
-        if(Ending!= null) {
+    }
+
+    public void EndCutscene() {
+        UnenableControls();
+        if (Schedule != null) {
+            Schedule.Transition.BeginTransition(this);
+        }
+        if (Ending != null) {
             Ending.CutsceneComplete();
         }
     }
