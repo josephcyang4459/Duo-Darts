@@ -142,7 +142,13 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
             return;
 
         if (hour >= 9) {
-            TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
+            if (!BadEndings.List[(int)BadEndingIndicies.DidNotWin].done) {
+                BadEndings.List[(int)BadEndingIndicies.DidNotWin].done = true;
+                CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.DidNotWin].cutScene, (int)Locations.lounge);
+                return;
+            }
+            TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
+            return;
         }
 
         if (hour >= 8) {
@@ -153,7 +159,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
                         CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].cutScene, (int)Locations.lounge);
                         return;
                     }
-                        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
+                    TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
                     return;
                 }
 

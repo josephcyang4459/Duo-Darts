@@ -76,12 +76,6 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void Lose() {
         GameEnd();
-        if (s != null)
-            if (s.hour == 8)
-                if (s.minutes >= 50) {
-                    TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
-                    return;
-                }
 
         losec.enabled = true;
         EndTimer.BeginTimer(WaitForEndTime);
