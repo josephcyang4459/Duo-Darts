@@ -6,7 +6,7 @@ public class EndingScene : MonoBehaviour, SceneEntrance
     [SerializeField] FileHandler FileHandler;
     [SerializeField] CutScene EndingCutscene;
     [SerializeField] Image Background;
-
+    string[] AchievementNames = { "Chad_Story", "Jess_Story", "Faye_Story", "Elaine_Story" }; 
     private void Start() {
         TransitionManager.inst.ReadyToEnterScene(this);
     }
@@ -22,6 +22,7 @@ public class EndingScene : MonoBehaviour, SceneEntrance
         return -1;
     }
 
+
     public void EnterScene() {
         int currentEnding = GetCurrentEnding();
         if (currentEnding == -1)
@@ -34,6 +35,11 @@ public class EndingScene : MonoBehaviour, SceneEntrance
                 data.Endings[i] = false;
         }
         data.Endings[currentEnding] = true;
+        if(Steamworks.SteamUserStats.GetAchievement(AchievementNames[currentEnding],out bool achieved)) {
+            Debug.Log(AchievementNames[currentEnding] + " " + achieved);
+            if (!achieved)
+                Steamworks.SteamUserStats.SetAchievement(AchievementNames[currentEnding]);
+        }
         FileHandler.SaveCompletion(data);
         CutsceneHandler.Instance.SetUpForEnding(this);
         CutsceneHandler.Instance.PlayCutScene(EndingCutscene, (int)Locations.darts);

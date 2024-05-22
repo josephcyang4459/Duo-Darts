@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FinalRoundPartnerSelector : MonoBehaviour
+public class FinalRoundPartnerSelector : MonoBehaviour, TransitionCaller
 {
+    [SerializeField] InSceneTransition Transition;
     [SerializeField] CharacterList Partners;
     [SerializeField] Schedule Schedule;
     [SerializeField] DartPartnerStoryUI PartnerSelector;
@@ -12,6 +13,7 @@ public class FinalRoundPartnerSelector : MonoBehaviour
     [SerializeField] Image[] PartnerImageMasks;
     [SerializeField] Transform[] DartTargets;
     [SerializeField] ImageFill Fill;
+    [SerializeField] int Partner;
     public void ShowUI() {
         SelectionCanvas.enabled = true;
         UIState.inst.SetAsSelectedButton(FirstSelected);
@@ -32,8 +34,13 @@ public class FinalRoundPartnerSelector : MonoBehaviour
     }
 
     public void ChoosePartner(int characterIndex) {
-        PartnerSelector.ForceDartsException(characterIndex, Schedule.hour);
+        Partner = characterIndex;
+        Transition.BeginTransition(this);
         DartSticker.inst.SetVisible(false);
+    }
+
+    public void NowHidden() {
+        PartnerSelector.ForceDartsException(Partner, Schedule.hour);
     }
 
 #if UNITY_EDITOR

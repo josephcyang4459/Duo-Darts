@@ -5523,7 +5523,9 @@ MonoBehaviour:
     Jiggle: {fileID: 3498479724586058801}
   - DialougeCanvas: {fileID: 1973532558804114201}
     Jiggle: {fileID: 8394694727527215041}
-  ThoughtCanvas: {fileID: 3069244716721522292}
+  ThoughtCanvas:
+    DialougeCanvas: {fileID: 3069244716721522292}
+    Jiggle: {fileID: 5065996894663958241}
   DialougeCanvas: {fileID: 3723137230488251834}
   LineData: {fileID: 7562559493362747101}
   Line: {fileID: 8730275042759964689}
@@ -6667,13 +6669,13 @@ RectTransform:
   m_Children:
   - {fileID: 943710728868210269}
   - {fileID: 7237499061965492553}
-  m_Father: {fileID: 3207055517334479520}
-  m_RootOrder: 1
+  m_Father: {fileID: 8131652129782773247}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8051496505128583610
 Canvas:
@@ -14851,6 +14853,7 @@ GameObject:
   - component: {fileID: 3069244716721522292}
   - component: {fileID: 6338992638150969589}
   - component: {fileID: 7283423098304519559}
+  - component: {fileID: 5065996894663958241}
   m_Layer: 5
   m_Name: Thought Canvas
   m_TagString: Untagged
@@ -14871,6 +14874,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3207055517334479520}
+  - {fileID: 4369012009723599888}
+  - {fileID: 5231401359336380354}
   m_Father: {fileID: 1139586884359883697}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14940,6 +14945,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5065996894663958241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694564561104486063}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cc4c68130c53244999ee2a9a0ac43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Transform: {fileID: 4369012009723599888}
+  OriginalPosition: {fileID: 3207055517334479520}
+  NewPosition: {x: 0, y: 0, z: 0}
+  AdjustedNewPosition: {x: 0, y: 0, z: 0}
+  AdjustedOriginalPosition: {x: 0, y: 0, z: 0}
+  speed: 10
+  Limits: {x: 5, y: 5}
+  Jiggling: 0
+  __reset: 0
 --- !u!1 &4707411258749966856
 GameObject:
   m_ObjectHideFlags: 0
@@ -23755,7 +23781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3207055517334479520}
   m_Layer: 5
-  m_Name: Nuetral Dialouge Box
+  m_Name: Original position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23772,15 +23798,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4369012009723599888}
-  - {fileID: 5231401359336380354}
+  m_Children: []
   m_Father: {fileID: 8131652129782773247}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7480131074961025782
@@ -26164,8 +26188,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 243141360412946808}
-  m_Father: {fileID: 3207055517334479520}
-  m_RootOrder: 0
+  m_Father: {fileID: 8131652129782773247}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27008,10 +27032,10 @@ RectTransform:
   m_Father: {fileID: 5231401359336380354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 325, y: 133}
-  m_SizeDelta: {x: -873, y: -573}
+  m_SizeDelta: {x: 873, y: 573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2764639854670538626
 CanvasRenderer:
