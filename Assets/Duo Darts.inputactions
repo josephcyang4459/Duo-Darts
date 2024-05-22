@@ -30,7 +30,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Pause",
@@ -39,7 +39,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Log",
@@ -48,7 +48,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "__debug",
