@@ -32,6 +32,7 @@ public class PlayerNotification : CutScene
             else
                 UsingArray();
         }
+        UnityEditor.EditorUtility.SetDirty(this);
     }
 #endif
 }

@@ -13,6 +13,7 @@ public class InSceneTransition : MonoBehaviour, Caller
         Destination = caller;
         Canvas.enabled = true;
         State = AnimationState.Entering;
+        DartSticker.inst.SetVisible(false);
         EnterAnimationHead.Begin(this);
     }
 

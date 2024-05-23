@@ -11473,6 +11473,7 @@ MonoBehaviour:
   losec: {fileID: 7917560276996041007}
   ac: {fileID: 8300000, guid: a1dd567813813ac4ea7df707099d3517, type: 3}
   board: {fileID: 7917560276893073959}
+  Transition: {fileID: 0}
   s: {fileID: 0}
   StandAlone: {fileID: 0}
 --- !u!114 &7917560275646839230
