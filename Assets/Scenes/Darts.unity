@@ -1289,6 +1289,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &309061386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 309061387}
+  - component: {fileID: 309061388}
+  m_Layer: 0
+  m_Name: StoryUIAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &309061387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309061386}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 287.05957, y: -206.14441, z: -174.03603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1702722474}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309061388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309061386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1fb8e0553cfce4daf00117f0513b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CallWhenComplete: {fileID: 0}
+  Images:
+  - {fileID: 1222220886}
+  Speed: 1
+  SubsequentOffset: 0
+  Behavior: 1
 --- !u!1 &364947310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3468,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691160052}
   m_CullTransparentMesh: 1
+--- !u!1 &715001003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715001004}
+  - component: {fileID: 715001005}
+  m_Layer: 0
+  m_Name: DartsUIAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &715001004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715001003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 287.05957, y: -206.14441, z: -174.03603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1702722474}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715001005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715001003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1fb8e0553cfce4daf00117f0513b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CallWhenComplete: {fileID: 0}
+  Images:
+  - {fileID: 1948179883}
+  Speed: 1
+  SubsequentOffset: 0
+  Behavior: 1
 --- !u!1 &715429830
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,7 +5557,7 @@ GameObject:
   - component: {fileID: 1222220887}
   - component: {fileID: 1222220886}
   m_Layer: 5
-  m_Name: Tutorial
+  m_Name: StoryTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5503,7 +5603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac782d0e9cdb38043b1a1985462b9fe8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb1ca6599b1188d4085878ff9796515d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8034,7 +8134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1607627e3bf108d499d23ed608467a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   PauseInput: {fileID: -554653628451453331, guid: 0436482055235fb43825f893cacf9475, type: 3}
   DartsTutorialCanvas: {fileID: 1948179880}
   StoryTutorialCanvas: {fileID: 1183537898}
@@ -8054,6 +8153,8 @@ Transform:
   - {fileID: 1948179881}
   - {fileID: 1183537901}
   - {fileID: 1479853888}
+  - {fileID: 715001004}
+  - {fileID: 309061387}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9552,8 +9653,16 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7187618675247728047, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1708e5d699c9cb4e98b75cd08a66f62, type: 3}
+    - target: {fileID: 7187618675247728047, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217298290669969275, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
+      propertyPath: m_Name
+      value: DartsTutorial
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3411104911984203106, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
@@ -9571,6 +9680,17 @@ RectTransform:
 --- !u!114 &1948179882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1092987709670833415, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
+  m_PrefabInstance: {fileID: 1948179879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1948179883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7187618675247728047, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
   m_PrefabInstance: {fileID: 1948179879}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class TutorialHandler : MonoBehaviour {
     [SerializeField] public static TutorialHandler inst;
     [SerializeField] public InputActionReference PauseInput;
+    [SerializeField] UIAnimationElement DartsAnimationHead;
+    [SerializeField] UIAnimationElement StoryAnimationHead;
     [SerializeField] Canvas DartsTutorialCanvas;
     [SerializeField] Canvas StoryTutorialCanvas;
     [SerializeField] Canvas TutorialChoicesCanvas;
