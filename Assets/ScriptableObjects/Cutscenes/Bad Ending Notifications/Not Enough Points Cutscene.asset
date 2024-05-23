@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: Not Enough Points Cutscene
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442683988017758
-  - rid: 7527442683988017759
+  - rid: 5300240302294171654
+  - rid: 5300240302294171655
   defaultCharacter: 
   ForceDarts: 0
   TimeLength: 0
   TextAsset: {fileID: 0}
   ThoughtStrings:
   - I don't have enough points to participate in the final round...
-  - I guess I'll just leave
+  - I guess I'll just leave.
   UseTextFile: 0
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 7527442683988017758
+    - rid: 5300240302294171654
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: I don't have enough points to participate in the final round...
-    - rid: 7527442683988017759
+    - rid: 5300240302294171655
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: I guess I'll just leave
+        thoughtMessage: I guess I'll just leave.

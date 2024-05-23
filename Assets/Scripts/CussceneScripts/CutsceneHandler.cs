@@ -171,14 +171,16 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
 
     public void NowHidden() {
         HideUI();
-        if (Schedule != null)
-            Schedule.SetTime(cutscene.TimeLength);
+        Schedule.SetTime(cutscene.TimeLength);
     }
 
     public void EndCutscene() {
         UnenableControls();
         if (Schedule != null) {
-            Schedule.Transition.BeginTransition(this);
+            if (cutscene.TimeLength != TimeBlocks.Notification)
+                Schedule.Transition.BeginTransition(this);
+            else
+                NowHidden();
         }
         if (Ending != null) {
             Ending.CutsceneComplete();
