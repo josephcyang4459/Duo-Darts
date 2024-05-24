@@ -15,19 +15,19 @@ MonoBehaviour:
   Name: Jess
   Font: {fileID: 11400000, guid: 8a8eac59992111d47a2662899c266bf8, type: 2}
   textSize: 100
-  Composure: 2
+  Composure: 0
   Intoxication: 0
-  Love: 15
+  Love: 0
   RelatedCutScenes:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 1
   - Location: bar
     CutsceneLocation: 1
@@ -42,7 +42,7 @@ MonoBehaviour:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: 3eeae9dfe138f8541b2906d9a349ada5, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 14
   DefaultCutScene: {fileID: 11400000, guid: 13fb5b3be8524354da6fc2bc63e7ce58, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
