@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour, Caller {
     public static PauseMenu inst;
-    [SerializeField] InputActionReference PauseInput;
+    [SerializeField] public InputActionReference PauseInput;
     [SerializeField] public bool Enabled;
-    [SerializeField] Canvas PauseOptionsCanvas;
-    [SerializeField] Canvas StoryOptionsCanvas;
-    [SerializeField] Canvas BackGround;
+    [SerializeField] public Canvas PauseOptionsCanvas;
+    [SerializeField] public Canvas StoryOptionsCanvas;
+    [SerializeField] public Canvas BackGround;
     [SerializeField] PauseUI[] UI;
     public bool CurrentState;
     [SerializeField] SceneNumbers CurrentScene;
@@ -16,14 +16,11 @@ public class PauseMenu : MonoBehaviour, Caller {
     GameObject returnGameObjectButton;
     bool returnState;
 
-    public void SetCurrentScene(SceneNumbers curretnScene) { CurrentScene = curretnScene; }
+    public void SetCurrentScene(SceneNumbers currentScene) { CurrentScene = currentScene; }
 
-    public void SetTutorialActive(bool active) {
-        switch (CurrentScene) {
-            case SceneNumbers.Story: TutorialHandler.inst.EnableTutorialChoices(active);return;
-            case SceneNumbers.Darts: TutorialHandler.inst.EnableDartsTutorial(active);return;
-        }
-    }
+    public void SetDartsTutorialActive(bool active) { TutorialHandler.inst.EnableDartsTutorial(active, this); }
+
+    public void SetStoryTutorialActive(bool active) { TutorialHandler.inst.EnableStoryTutorial(active, this); }
 
     public void Awake() {
         if (inst != null) {
@@ -52,10 +49,10 @@ public class PauseMenu : MonoBehaviour, Caller {
 
     void UnenablePause(bool setFirstButtonUponUnenable = true) {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
-        CurrentState = false;
-        ConsequencesOfCurrentState(setFirstButtonUponUnenable);
         PauseInput.action.Disable();
         PauseInput.action.performed -= ActivatePauseMenu;
+        CurrentState = false;
+        ConsequencesOfCurrentState(setFirstButtonUponUnenable);
     }
 
     void ActivatePauseMenu(InputAction.CallbackContext c) {PauseMenueStateChange(); }
