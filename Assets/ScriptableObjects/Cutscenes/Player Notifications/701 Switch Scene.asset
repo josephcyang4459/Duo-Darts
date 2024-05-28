@@ -16,6 +16,7 @@ MonoBehaviour:
   - rid: 7527442683988017748
   defaultCharacter: 
   ForceDarts: 0
+  TimeLength: 0
   TextAsset: {fileID: 0}
   ThoughtStrings:
   - It's 7, all games are now at 701

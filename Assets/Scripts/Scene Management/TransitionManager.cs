@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour, Caller {
     public static TransitionManager inst;
-    [SerializeField] AnimationState State;
     [SerializeField] SceneNumbers NextScene;
     [SerializeField] SceneEntrance CurrentSceneEntrance;
     [SerializeField] SceneTransitionAnimation[] TransitionAnimationHeads;
     [SerializeField] int FileIndex;
+    [SerializeField] AnimationState State;
     void Awake() {
         if (inst != null) {
             Destroy(gameObject);

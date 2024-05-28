@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8671a7400da184aa3d748f8afe6d55, type: 3}
+  m_Name: Did Not Win Cutscene
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 5300240302294171658
+  - rid: 5300240302294171659
+  defaultCharacter: 
+  ForceDarts: 0
+  TimeLength: 0
+  TextAsset: {fileID: 0}
+  ThoughtStrings:
+  - I couldn't win the final game...
+  - I guess I'll just leave.
+  UseTextFile: 0
+  reset: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5300240302294171658
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: I couldn't win the final game...
+    - rid: 5300240302294171659
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: I guess I'll just leave.

@@ -1,12 +1,12 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
 
-public class DartGame : MonoBehaviour {
+public class DartGame : MonoBehaviour, TransitionCaller {
     [SerializeField] CharacterList characters;
     [SerializeField] Player stats;
     [SerializeField] DartVisual Visuals;
     public DartScript Dart;
+    [SerializeField] DartBoardAI DartBoardTarget;
+    [SerializeField] DartBoard DartBoard;
     [SerializeField] DartPlayerAim Aim;
     [SerializeField] DartsPartnerBanterDisplay Banter;
     public int PartnerIndex;
@@ -22,7 +22,7 @@ public class DartGame : MonoBehaviour {
 
     [SerializeField] float MaxOffset = 4;
 
-    [SerializeReference] public BoardSlice[] c;
+
     public BoardCollider bullseye;
     public BoardCollider Miss;
 
@@ -32,46 +32,10 @@ public class DartGame : MonoBehaviour {
     [SerializeField] Canvas losec;
     [SerializeField] AudioClip ac;
     [SerializeField] SpriteRenderer board;
+    [SerializeField] InSceneTransition Transition;
 
     [SerializeField] Schedule s;
     [SerializeField] DartMenu_StandAlone StandAlone;
-
-#if UNITY_EDITOR
-    [Header("||-----EDITOR ONLY-----||")]
-    public byte[] order;
-    public byte[] multiplication;
-    public bool reset;
-    public GameObject g;
-    public GameObject slice;
-
-    public void OnValidate() {
-        if (reset) {
-            c = new BoardSlice[20];
-
-            for (int i = 0; i < 20; i++) {
-                GameObject obj = Instantiate(slice, g.transform);
-                obj.transform.rotation = Quaternion.Euler(-18 * i, -90, 0);
-
-                for (int j = 0; j < 4; j++) {
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().point = (order[i] * multiplication[j]);
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().gameState = this;
-                    obj.transform.GetChild(j).GetComponent<BoardCollider>().mr = obj.transform.GetChild(j).GetComponent<MeshRenderer>();
-                }
-
-                c[i] = obj.GetComponent<BoardSlice>();
-            }
-
-            System.Array.Sort(c, new comparer());
-            reset = false;
-        }
-    }
-
-    public class comparer : IComparer<BoardSlice> {
-        public int Compare(BoardSlice a, BoardSlice b) {
-            return a.colliders[0].point - b.colliders[0].point;
-        }
-    }
-#endif
 
     bool IsFinals() {
         if (s == null)
@@ -111,12 +75,6 @@ public class DartGame : MonoBehaviour {
 
     public void Lose() {
         GameEnd();
-        if (s != null)
-            if (s.hour == 8)
-                if (s.minutes >= 50) {
-                    TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
-                    return;
-                }
 
         losec.enabled = true;
         EndTimer.BeginTimer(WaitForEndTime);
@@ -134,7 +92,6 @@ public class DartGame : MonoBehaviour {
     }
 
     public void GoToCorrectEnding() {
-        Debug.Log("END HERE");
         if (s != null) {
             stats.TotalPointsScoredAcrossAllDartMatches += points;
             if (IsFinals()) {
@@ -197,12 +154,7 @@ public class DartGame : MonoBehaviour {
     //used to hit the board
     private void PartnerShootDart(Vector3 h) {
         h.z = -.2f;
-        if (Physics.Raycast(h, Vector3.forward, out RaycastHit hit, 12, Settings.DartsLayerMask)) {
-            ///Debug.Log(aim.t.position);
-            hit.collider.gameObject.GetComponent<BoardCollider>().hit(h);
-        }
-        else
-            Miss.hit(h);
+        Dart.ShootDart(h, DartBoard.GetScoreFromLocation(h.x, h.y));
     }
 
     void Adjust(Vector3 location, float baseOffset) {
@@ -219,14 +171,14 @@ public class DartGame : MonoBehaviour {
         PartnerShootDart(location);
     }
 
-    public void PartnerTarget(int score, int ring, float baseOffset) { Adjust(c[score - 1].colliders[ring].target.position, baseOffset); }
+    public void PartnerTarget(int score, int ring, float baseOffset) { Adjust(DartBoardTarget.GetTarget(score,ring), baseOffset); }
 
     /// <summary>
     /// Bullseye
     /// </summary>
     /// <param name="baseOffset"></param>
     public void PartnerTarget(float baseOffset) {
-        Adjust(bullseye.transform.position, baseOffset);
+        Adjust(DartBoardTarget.GetTarget(), baseOffset);
     }
 
     private void PartnerTurn() {
@@ -292,6 +244,13 @@ public class DartGame : MonoBehaviour {
         }
     }
 
+    public void NowHidden() {
+        if (s != null)
+            s.SetTime(TimeBlocks.Short);
+        else
+            StandAlone.BeginSetUp();
+    }
+
     /// <summary>
     /// Called By End Timer
     /// </summary>
@@ -301,9 +260,6 @@ public class DartGame : MonoBehaviour {
         board.enabled = false;
         Banter.HideDialouge();
         // PauseMenu.inst.SetEnabled(true);
-        if (s != null)
-            s.SetTime(TimeBlocks.Short);
-        else
-            StandAlone.BeginSetUp();
+        Transition.BeginTransition(this);
     }
 }

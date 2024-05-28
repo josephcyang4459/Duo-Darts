@@ -1,10 +1,9 @@
 
-public enum PointValueTarget
-{
-    Double,
-    OuterSingle,
+public enum PointValueTarget {
+    InnerSingle,
     Triple,
-    InnerSingle
+    OuterSingle,
+    Double,
 }
 
 public enum DartTargetBias
@@ -120,8 +119,7 @@ public enum TextboxColorIndex {
 }
 #if UNITY_EDITOR
 
-public enum __CutsceneActions
-{
+public enum __CutsceneActions {
     Dialouge,
     Thought,
     Expression,

@@ -124,6 +124,7 @@ public class PauseMenu : MonoBehaviour, Caller {
 
     public void Ping() {
         SetCorrectCanvas(true);
-        UIState.inst.SetAsSelectedButton(FirstSelected);
+        GameObject firstSelected = (CurrentScene == SceneNumbers.Story) ? StoryFirstSelected : FirstSelected;
+        UIState.inst.SetAsSelectedButton(firstSelected);
     }
 }

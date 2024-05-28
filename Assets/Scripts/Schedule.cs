@@ -3,12 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Schedule : MonoBehaviour, SceneEntrance {
+public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
     [SerializeField] Player Player;
     [SerializeField] CharacterList characters;
     [SerializeField] EventList MiscNPCEvents;
     [SerializeField] EventList PlayerNotifications;
     [SerializeField] TimeClock Clock;
+    public InSceneTransition Transition;
     [SerializeField] LocationSelecterUI LocationSelector;
     [SerializeField] EventSelectorUI EventSelector;
     [SerializeField] FinalRoundPartnerSelector FinalRoundSelector;
@@ -17,6 +18,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
     public int minutes = 0;
     [SerializeField] Location[] locals;
 
+    [SerializeField] int EventSelected;
     public int location;
 
     [SerializeField] Button[] EventButtons;
@@ -140,7 +142,13 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             return;
 
         if (hour >= 9) {
-            TransitionManager.inst.GoToScene(SceneNumbers.DidNotWinTheTournament);
+            if (!BadEndings.List[(int)BadEndingIndicies.DidNotWin].done) {
+                BadEndings.List[(int)BadEndingIndicies.DidNotWin].done = true;
+                CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.DidNotWin].cutScene, (int)Locations.lounge);
+                return;
+            }
+            TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
+            return;
         }
 
         if (hour >= 8) {
@@ -151,7 +159,7 @@ public class Schedule : MonoBehaviour, SceneEntrance {
                         CutsceneHandler.Instance.PlayCutScene(BadEndings.List[(int)BadEndingIndicies.NotEnoughPoints].cutScene, (int)Locations.lounge);
                         return;
                     }
-                        TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
+                    TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
                     return;
                 }
 
@@ -237,10 +245,14 @@ public class Schedule : MonoBehaviour, SceneEntrance {
             eventIndex -= 1;
         }
 
-
+        EventSelected = eventIndex;
         SetEventCutsceneComplete(locals[location].Events[eventIndex]);
+        Transition.BeginTransition(this);
+    }
+
+    public void NowHidden() {
         EventSelector.HideUI();
-        CutsceneHandler.Instance.PlayCutScene(locals[location].Events[eventIndex], location);
+        CutsceneHandler.Instance.PlayCutScene(locals[location].Events[EventSelected], location);
     }
 
     public void TurnLocationAndEventSelectorUIOff() {

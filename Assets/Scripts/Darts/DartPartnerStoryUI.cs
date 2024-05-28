@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class DartPartnerStoryUI : MonoBehaviour, Caller
+public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
 {
+    [SerializeField] InSceneTransition Transition;
     [SerializeField] ColorSwatch KeyColors;
     [SerializeField] CharacterList Partners;
     [SerializeField] InputActionReference Click;
@@ -152,8 +151,11 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
     }
 
     public void SetPartner(int i) {
+        UnenableClick();
         DartGame.ScoreNeededToWin = Schedule.hour < 7 ? 501 : 701;
         DartGame.PartnerIndex = AdjustedIdices[i];
+        UIState.inst.SetInteractable(false);
+        DartSticker.inst.SetVisible(false);
         State = AnimationState.ExitingToGame;
         ExitDefaultHead.Begin(this);
     }
@@ -196,12 +198,15 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller
         }
         if(State == AnimationState.ExitingToGame) {
             SetActive(false);
-            UIState.inst.SetInteractable(false);
-            DartSticker.inst.SetVisible(false);
-            DartGame.BeginGame();
-            Schedule.TurnLocationAndEventSelectorUIOff();
+            Transition.BeginTransition(this);
             return;
         }
+    }
+
+    public void NowHidden() {
+       
+        DartGame.BeginGame();
+        Schedule.TurnLocationAndEventSelectorUIOff();
     }
 
     enum AnimationState {

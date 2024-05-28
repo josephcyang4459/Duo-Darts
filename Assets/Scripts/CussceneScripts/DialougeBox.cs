@@ -10,7 +10,7 @@ public class DialougeBox : MonoBehaviour
     [SerializeField] Image[] ForegroundImages;
     [SerializeField] Image[] BackgroundImages;
     [SerializeField] DialougeBoxData[] ExpressionCanvases;
-    [SerializeField] Canvas ThoughtCanvas;
+    [SerializeField] DialougeBoxData ThoughtCanvas;
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] RotateTransform LineData;
     [SerializeField] Image Line;
@@ -21,12 +21,12 @@ public class DialougeBox : MonoBehaviour
 
     public void SetThought(string dialouge) {
         HideDialougeBox();
-        ThoughtCanvas.enabled = true;
+        ThoughtCanvas.SetVisible(true);
         TypeWriter.Run(dialouge, ThoughtText);   
     }
 
     public void HideDialougeBox() {
-        ThoughtCanvas.enabled = false;
+        ThoughtCanvas.SetVisible(false);
         DialougeCanvas.enabled = false;
         Line.enabled = false;
         LineData.SetRotate(false);
@@ -36,7 +36,7 @@ public class DialougeBox : MonoBehaviour
     }
 
     public void SetCharacterColors(int characterIndex) {
-        ThoughtCanvas.enabled = false;
+        ThoughtCanvas.SetVisible(false);
         Color foreground = Characters.list[characterIndex].TextBoxColors.colors[(int)TextboxColorIndex.Foreground];
         Color background = Characters.list[characterIndex].TextBoxColors.colors[(int)TextboxColorIndex.Background];
         foreach (Image i in ForegroundImages) {

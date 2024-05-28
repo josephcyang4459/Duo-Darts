@@ -1,10 +1,10 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
+public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, TransitionCaller {
     [SerializeField] Player Player;
     [SerializeField] CharacterList Partners;
+    [SerializeField] InSceneTransition Transition;
     [SerializeField] DartGame DartGame;
     [SerializeField] DartMenu_StandAlone_Options Options;
     [SerializeField] ResetStats ResetStats;
@@ -98,12 +98,16 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance {
 
         Player.Intoxication = Options.TipsyPlayer ? TipsyIntoxValue : 0;
         DartGame.ScoreNeededToWin = (i == 0 ? 501 : 701);
-        PartnerCanvas.enabled = false;
-        ScoreCanvas.enabled = false;
-        ScoreAnimationLeaveHead.ReachEndState();
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
         DartGame.PartnerIndex = PartnerIndex;
+        Transition.BeginTransition(this);
+    }
+
+    public void NowHidden() {
+        PartnerCanvas.enabled = false;
+        ScoreCanvas.enabled = false;
+        ScoreAnimationLeaveHead.ReachEndState();
         DartGame.BeginGame();
     }
 
