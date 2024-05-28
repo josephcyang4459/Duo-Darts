@@ -16,14 +16,11 @@ public class PauseMenu : MonoBehaviour, Caller {
     GameObject returnGameObjectButton;
     bool returnState;
 
-    public void SetCurrentScene(SceneNumbers curretnScene) { CurrentScene = curretnScene; }
+    public void SetCurrentScene(SceneNumbers currentScene) { CurrentScene = currentScene; }
 
-    public void SetTutorialActive(bool active) {
-        switch (CurrentScene) {
-            case SceneNumbers.Story: TutorialHandler.inst.EnableTutorialChoices(active, this);return;
-            case SceneNumbers.Darts: TutorialHandler.inst.EnableDartsTutorial(active, this);return;
-        }
-    }
+    public void SetDartsTutorialActive(bool active) { TutorialHandler.inst.EnableDartsTutorial(active, this); }
+
+    public void SetStoryTutorialActive(bool active) { TutorialHandler.inst.EnableStoryTutorial(active, this); }
 
     public void Awake() {
         if (inst != null) {

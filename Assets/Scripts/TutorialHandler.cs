@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public class TutorialHandler : MonoBehaviour {
+public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] public static TutorialHandler inst;
     [SerializeField] public InputActionReference PauseInput;
-    [SerializeField] UIAnimationElement DartsAnimationHead;
-    [SerializeField] UIAnimationElement StoryAnimationHead;
-    [SerializeField] Canvas DartsTutorialCanvas;
-    [SerializeField] Canvas StoryTutorialCanvas;
+    [SerializeField] UIAnimationElement TutorialAnimation;
+    [SerializeField] Canvas TutorialCanvas;
+    [SerializeField] Image TutorialImage;
     [SerializeField] Canvas TutorialChoicesCanvas;
+    [SerializeField] Canvas TutorialOvershadow;
+    [SerializeField] Sprite DartsTutorialImage;
+    [SerializeField] Sprite StoryTutorialImage;
     [SerializeField] Caller Caller;
 
     // TODO We still need to do the story tutorial
@@ -23,24 +26,17 @@ public class TutorialHandler : MonoBehaviour {
         SceneNumbers currentSceneName = TransitionManager.inst.GetCurrentScene();
         if (PlayerPrefs.GetInt("hasReadDartsTutorial") == 0) {
             switch(currentSceneName) {
-                case SceneNumbers.Story: EnableStoryTutorial(true); return;
-                case SceneNumbers.Darts: EnableDartsTutorial(true); return;
+                case SceneNumbers.Story: EnableTutorial(true, StoryTutorialImage); return;
+                case SceneNumbers.Darts: EnableTutorial(true, DartsTutorialImage); return;
             }
         }
     }
 
-    public void EnableStoryTutorial(bool enable) {
-        StoryTutorialCanvas.enabled = enable;
-
-        if (enable) {
-            PauseInput.action.performed += DisableTutorials;
-            PauseMenu.inst.SetEnabled(false);
-            PauseInput.action.Enable();
-        }
-    }
-
-    public void EnableDartsTutorial(bool enable) {
-        DartsTutorialCanvas.enabled = enable;
+    public void EnableTutorial(bool enable, Sprite sprite) {
+        TutorialImage.sprite = sprite;
+        TutorialCanvas.enabled = enable;
+        TutorialOvershadow.enabled = enable;
+        TutorialAnimation.Begin(this);
 
         if (enable) {
             PauseInput.action.performed += DisableTutorials;
@@ -61,12 +57,12 @@ public class TutorialHandler : MonoBehaviour {
 
     public void EnableStoryTutorial(bool enable, Caller caller = null) {
         if (caller != null) { Caller = caller; }
-        EnableStoryTutorial(enable);
+        EnableTutorial(enable, StoryTutorialImage);
     }
 
     public void EnableDartsTutorial(bool enable, Caller caller = null) {
         if (caller != null) { Caller = caller; }
-        EnableDartsTutorial(enable);
+        EnableTutorial(enable, DartsTutorialImage);
     }
 
     public void EnableTutorialChoices(bool enable, Caller caller = null) {
@@ -74,9 +70,13 @@ public class TutorialHandler : MonoBehaviour {
         EnableTutorialChoices(enable);
     }
 
+    public void EnableStoryTutorial(bool enable) { EnableTutorial(enable, StoryTutorialImage); }
+
+    public void EnableDartsTutorial(bool enable) { EnableTutorial(enable, DartsTutorialImage); }
+
+
     public void DisableTutorials() {
-        EnableStoryTutorial(false);
-        EnableDartsTutorial(false);
+        EnableTutorial(false, DartsTutorialImage);
         EnableTutorialChoices(false);
         PauseMenu.inst.SetEnabled(true);
 
@@ -88,9 +88,13 @@ public class TutorialHandler : MonoBehaviour {
         }
 
         PauseInput.action.performed -= DisableTutorials;
-        PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
+        if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
+            PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
     }
 
     // This overload method is for player input
     public void DisableTutorials(InputAction.CallbackContext c) { DisableTutorials(); }
+
+    // Empty method just for Caller purposes
+    public void Ping() { }
 }
