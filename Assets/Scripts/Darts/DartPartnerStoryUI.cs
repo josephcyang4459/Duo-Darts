@@ -113,13 +113,14 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
 
     void EnableClick() {
         Click.action.Enable();
-        Click.action.performed += ClickFunction;
+        Click.action.canceled += ClickFunction;
     }
 
     void UnenableClick() {
         Click.action.Reset();
         Click.action.Disable();
-        Click.action.performed -= ClickFunction;
+        Click.action.canceled -= ClickFunction;
+        Click.action.Reset();
     }
 
 

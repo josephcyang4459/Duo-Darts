@@ -4826,6 +4826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4376234813236781706, guid: 55222d1f6ed2bee4d80c660d0dcde52c, type: 3}
+      propertyPath: m_DeselectOnBackgroundClick
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55222d1f6ed2bee4d80c660d0dcde52c, type: 3}
 --- !u!1001 &5328223166651807919
