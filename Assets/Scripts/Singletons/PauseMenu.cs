@@ -35,25 +35,27 @@ public class PauseMenu : MonoBehaviour, Caller {
     public void SetEnabled(bool enabled, bool setFirstButtonUponUnenable = true) {
         if (enabled)
             EnablePause();
-        else
-            UnenablePause(setFirstButtonUponUnenable);
+        else {
+            UnenablePause();
+            CurrentState = false;
+            ConsequencesOfCurrentState(setFirstButtonUponUnenable);
+        }
+        
 
         Enabled = enabled;
     }
 
-    void EnablePause() {
+    public void UnenablePause() {
+        PauseInput.action.Disable();
+        PauseInput.action.performed -= ActivatePauseMenu;
+    }
+
+    public void EnablePause() {
         //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, true);
         PauseInput.action.Enable();
         PauseInput.action.performed += ActivatePauseMenu;
     }
 
-    void UnenablePause(bool setFirstButtonUponUnenable = true) {
-        //ControlTutuorialUI.inst.SetControl((int)Controls.Pause, false);
-        PauseInput.action.Disable();
-        PauseInput.action.performed -= ActivatePauseMenu;
-        CurrentState = false;
-        ConsequencesOfCurrentState(setFirstButtonUponUnenable);
-    }
 
     void ActivatePauseMenu(InputAction.CallbackContext c) {PauseMenueStateChange(); }
 

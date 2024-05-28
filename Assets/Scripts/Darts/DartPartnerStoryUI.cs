@@ -140,7 +140,9 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
     }
 
     public void ShowTutorial() {
-        TutorialHandler.inst.EnableDartsTutorial(true);
+        State = AnimationState.Tutorial;
+        enabled = false;
+        TutorialHandler.inst.EnableDartsTutorial(true, this);
     }
 
     public void BackToEventPicker() {
@@ -202,6 +204,15 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
             Transition.BeginTransition(this);
             return;
         }
+
+        if(State == AnimationState.Tutorial) {
+            enabled = true;
+            if (UsingController)
+                UIState.inst.SetAsSelectedButton(Buttons[CurrentRing].gameObject);
+            else
+                SelectButton(CurrentRing);
+            return;
+        }
     }
 
     public void NowHidden() {
@@ -214,6 +225,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
         Entering,
         ExitingToEvent,
         ExitingToGame,
+        Tutorial,
     }
 
 #if UNITY_EDITOR

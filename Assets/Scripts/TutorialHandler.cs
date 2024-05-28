@@ -39,7 +39,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
 
         if (enable) {
             PauseInput.action.performed += DisableTutorials;
-            PauseMenu.inst.SetEnabled(false);
+            PauseMenu.inst.UnenablePause();
             PauseInput.action.Enable();
         }
     }
@@ -61,12 +61,10 @@ public class TutorialHandler : MonoBehaviour, Caller {
 
     public void DisableTutorials() {
         EnableTutorial(false, DartsTutorialImage);
-        PauseMenu.inst.SetEnabled(true);
+        PauseMenu.inst.EnablePause();
 
         if (Caller != null) {
             Caller.Ping();
-            PauseMenu.inst.BackGround.enabled = true;
-            PauseMenu.inst.CurrentState = !PauseMenu.inst.CurrentState;
             Caller = null;
         }
 
