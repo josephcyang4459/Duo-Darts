@@ -8,7 +8,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] UIAnimationElement TutorialAnimation;
     [SerializeField] Canvas TutorialCanvas;
     [SerializeField] Image TutorialImage;
-    [SerializeField] Canvas TutorialChoicesCanvas;
     [SerializeField] Canvas TutorialOvershadow;
     [SerializeField] Sprite DartsTutorialImage;
     [SerializeField] Sprite StoryTutorialImage;
@@ -45,16 +44,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
         }
     }
 
-    public void EnableTutorialChoices(bool enable) {
-        TutorialChoicesCanvas.enabled = enable;
-
-        if (enable) {
-            PauseInput.action.performed += DisableTutorials;
-            PauseMenu.inst.SetEnabled(false);
-            PauseInput.action.Enable();
-        }
-    }
-
     public void EnableStoryTutorial(bool enable, Caller caller = null) {
         if (caller != null) { Caller = caller; }
         EnableTutorial(enable, StoryTutorialImage);
@@ -65,11 +54,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
         EnableTutorial(enable, DartsTutorialImage);
     }
 
-    public void EnableTutorialChoices(bool enable, Caller caller = null) {
-        if (caller != null) { Caller = caller; }
-        EnableTutorialChoices(enable);
-    }
-
     public void EnableStoryTutorial(bool enable) { EnableTutorial(enable, StoryTutorialImage); }
 
     public void EnableDartsTutorial(bool enable) { EnableTutorial(enable, DartsTutorialImage); }
@@ -77,7 +61,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
 
     public void DisableTutorials() {
         EnableTutorial(false, DartsTutorialImage);
-        EnableTutorialChoices(false);
         PauseMenu.inst.SetEnabled(true);
 
         if (Caller != null) {
