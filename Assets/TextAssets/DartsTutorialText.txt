@@ -1,0 +1,9 @@
+Overview: The goal of a game of -01 is to ‘checkout’. Checkout occurs when you score exactly the amount of points that remain. A player has three throws per round before the next player is given their throws. When there are no more rounds remaining, the game is a loss and no points will be given.
+
+Throwing Darts: Using WASD or your Control Stick, move your ‘target zone’ around to the location of your preference. Press SPACE or A to throw.
+
+Luck and Nerves: Even the most precise aim will leave you at the hands of luck. After a dart is thrown, it will land on a random point within the zone. And even the most steady handed player will drift their aim. As you aim, the zone will shift at random. Control the zone while keeping your target fully within it for the best chance at hitting your mark.
+
+Scoring points: Numbers surrounding the board mark which columns award which points. For example - at the top of the board is ‘20’ the column beneath it all the way to the bullseye will award 20 points. However, if a player lands their dart in the zone at the edge of the board, it will double the score of that column, awarding 40 points instead of 20. The same is for the smaller zone half way down a column, except that will triple the value. The bullseye is always 50 points!
+
+Conclusion: Controlling your aim while also understanding what zones you need to hit to bring your score down to 0 is the key to winning a game of -01.
