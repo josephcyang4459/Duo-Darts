@@ -1,0 +1,9 @@
+<b><size=22px>Overview:</b><size=17px> The goal of a game is to ‘checkout’. Checkout occurs when you score exactly the amount of points that remain. Each player has three throws per round, throwing all three darts in succession, then letting their partner throw their darts. When there are no more rounds and there are still points remaining, the game results in a loss with no points being given.
+
+<b><size=22px>Darts:</b><size=17px> Use WASD or your Control Stick to move your ‘target zone’. Press SPACE or A to throw a dart.
+
+<b><size=22px>Luck:</b><size=17px> Even the most precise aim will leave you at the hands of luck. After a dart is thrown, it will land on a random point within the zone. As you aim, the zone will change at random. Controlling the zone while aiming for your target is the best chance at hitting your mark.
+
+<b><size=22px>Scoring:</b><size=17px> Numbers to the outside of a section indicate how much points that section gives. For example, the number, 20, above the top section indicates that the section will award 20 points. However, if a player lands their dart in the small section at the edge of the board, that player will be awarded double the amount of points. The same can be said for the small section half way into any column, with the score being tripled instead. The bullseye always awards 50 points.
+
+<b><size=22px>Conclusion:</b><size=17px> Controlling your aim while also understanding what zones need to be hit is the key to winning!

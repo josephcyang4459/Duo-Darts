@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3926922255699748139, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 6963021369029719532, guid: 59fc23f866800b34286feb54b412cb20, type: 3}
       propertyPath: m_TargetGraphic
@@ -1670,8 +1670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1870,10 +1870,12 @@ MonoBehaviour:
   TutorialAnimation: {fileID: 1338771294}
   TutorialCanvas: {fileID: 1159057151}
   TutorialImage: {fileID: 362943459}
-  TutorialChoicesCanvas: {fileID: 0}
   TutorialOvershadow: {fileID: 199641822}
   DartsTutorialImage: {fileID: 21300000, guid: c1708e5d699c9cb4e98b75cd08a66f62, type: 3}
   StoryTutorialImage: {fileID: 21300000, guid: bb1ca6599b1188d4085878ff9796515d, type: 3}
+  TutorialText: {fileID: 438127593}
+  DartsTutorialText: {fileID: 4900000, guid: ae1d13d8278ec984fb9734cff1751fd8, type: 3}
+  StoryTutorialText: {fileID: 4900000, guid: 798126c5528eaec4c9f9adc0445c840e, type: 3}
 --- !u!4 &693918607
 Transform:
   m_ObjectHideFlags: 0
