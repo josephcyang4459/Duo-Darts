@@ -166,6 +166,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         InCutscene = false;
         DialougeCanvas.enabled = false;
         DialougeBox.HideDialougeBox();
+        ResponseUI.HideUI();
+        DefaultCutscene.HideUI();
         UIState.inst.SetInteractable(true);
     }
 

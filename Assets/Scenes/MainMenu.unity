@@ -3272,6 +3272,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 194199067, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168389947, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 5810099514185457, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_text
       value: Darts Rulebook
@@ -3411,6 +3419,10 @@ PrefabInstance:
     - target: {fileID: 2138857842953456411, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1045
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240710609112909013, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     - target: {fileID: 2317797806991004956, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3748,6 +3760,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6699353674570885812, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 6937934901305609244, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetDartsTutorialActive
@@ -3855,6 +3871,10 @@ PrefabInstance:
     - target: {fileID: 8436014295681210843, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_Name
       value: Invitation End
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548233164596756582, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     - target: {fileID: 8938410537833442497, guid: b6a283e759c55b84f8aaf2f8cc706a48, type: 3}
       propertyPath: m_AnchorMax.y

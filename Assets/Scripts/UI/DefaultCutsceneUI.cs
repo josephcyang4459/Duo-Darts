@@ -13,6 +13,10 @@ public class DefaultCutsceneUI : MonoBehaviour, Caller {
     [SerializeField] UIType Type;
     [SerializeField] GameObject FirstSelectedButton;
     
+    public void HideUI(){
+        UI.enabled = false;
+    }
+
     public void SelectButton(int index) {
         Fill.SetCurrentImageToFill(ImageFills[index], DartTargets[index].position);
     }
