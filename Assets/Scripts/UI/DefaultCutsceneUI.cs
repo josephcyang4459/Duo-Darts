@@ -15,6 +15,7 @@ public class DefaultCutsceneUI : MonoBehaviour, Caller {
     
     public void HideUI(){
         UI.enabled = false;
+        ExitHead.ReachEndState();
     }
 
     public void SelectButton(int index) {
