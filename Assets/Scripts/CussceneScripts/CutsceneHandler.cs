@@ -200,10 +200,15 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         index++;
 
         if (index >= cutscene.blocks.Length) {
-
-            EndCutscene();
-            if (cutscene.ForceDarts)// force play darts
+            if (cutscene.ForceDarts)// force play darts{
+                {
+                UnenableControls();
+                HideUI();
                 DartsMenu.ForceDartsException(CurrentCharacterIndex, Schedule.hour);
+                return;
+            }
+            EndCutscene();
+
             return;
         }
 
