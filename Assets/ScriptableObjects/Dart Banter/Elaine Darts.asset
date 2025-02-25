@@ -47,7 +47,7 @@ MonoBehaviour:
     - "What? Should I take a picture or something?\r"
     - "Yeah, I see it, now move over.\r"
     AlreadyUsed: 000000
-    Used: 0
+    Used: 1
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0

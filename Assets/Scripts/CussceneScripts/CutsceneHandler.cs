@@ -33,6 +33,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
     public bool InCutscene;
+    [Header("Some Story Stuff no need to touch")]
     public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
     public EndingScene Ending;
@@ -85,6 +86,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
         InCutscene = true;
         Log.ResetLog();
+        if (c.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
+            Audio.inst.PlaySong(MusicTrack.LocationSelect);
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);
@@ -178,13 +181,14 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
 
     public void EndCutscene() {
         UnenableControls();
-        if (Schedule != null) {
-            if (cutscene.TimeLength != TimeBlocks.Notification)
+        if (Schedule != null) {//make sure we are in story mode
+            if (cutscene.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
                 Schedule.Transition.BeginTransition(this);
             else
                 NowHidden();
+            return;
         }
-        if (Ending != null) {
+        if (Ending != null) {// Check if we are in and ending cutscene.
             Ending.CutsceneComplete();
         }
     }
@@ -246,7 +250,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         DisplayResponse();
     }
 
-    private void DisplayResponse() {
+    private void DisplayResponse() {// ugly ASs code - Xico
         CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Adjust(this);
         if (!CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].ResponseIsPlayerThought)
             Dialouge(CurrentResponseGroup.responses[responseIndex].responses[responseIndexIndex].Message);

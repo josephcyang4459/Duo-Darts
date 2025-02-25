@@ -18,6 +18,8 @@ public class UIState : MonoBehaviour {
 
         DontDestroyOnLoad(this);
         ControlState.UsingController += ControllerConnected;
+        if (ControlState.inst != null)
+            ControllerConnected(ControlState.inst.IsUsingController());
         inst = this;
     }
 

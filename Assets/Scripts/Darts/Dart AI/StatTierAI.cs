@@ -4,6 +4,7 @@ using UnityEngine;
 public class StatTierAI : DartAI {
 
     [SerializeField] Vector2Int DoubleRange;
+    [Header("Use Supplied partner stats or use Current Game Partner")]
     [SerializeField] bool GamePartner;
     [SerializeField] Partner Partner;
     [SerializeField] Stats StatToUse;

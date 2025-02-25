@@ -43,7 +43,8 @@ public class SteamOverlay : MonoBehaviour
 		if (SteamManager.Initialized) {
 			string name = SteamFriends.GetPersonaName();
 			Debug.Log(name);
-			//Debug.Log("Is Installed " + SteamApps.BIsAppInstalled((AppId_t)2956430));
+			//Debug.Log()
+			Debug.Log("Does"+ (SteamApps.BIsSubscribedApp((AppId_t)374320)?" ":"n't ") + "Own Dark Souls 3");
 		}
 #endif
 	}

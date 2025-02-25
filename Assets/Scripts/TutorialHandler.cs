@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] public static TutorialHandler inst;
     [SerializeField] public InputActionReference PauseInput;
+    [SerializeField] GameObject ExitButton;
     [SerializeField] UIAnimationElement TutorialAnimation;
     [SerializeField] Canvas TutorialCanvas;
     [SerializeField] Image TutorialImage;
@@ -25,13 +26,10 @@ public class TutorialHandler : MonoBehaviour, Caller {
         inst = this;
         DontDestroyOnLoad(this);
 
-        SceneNumbers currentSceneName = TransitionManager.inst.GetCurrentScene();
-        if (PlayerPrefs.GetInt("hasReadDartsTutorial") == 0) {
-            switch(currentSceneName) {
-                case SceneNumbers.Story: EnableTutorial(true, StoryTutorialImage, StoryTutorialText); return;
-                case SceneNumbers.Darts: EnableTutorial(true, DartsTutorialImage, DartsTutorialText); return;
-            }
-        }
+    }
+
+    public bool ShouldDisplayTutorial() {
+        return PlayerPrefs.GetInt("hasReadDartsTutorial") == 0;
     }
 
     public void EnableTutorial(bool enable, Sprite sprite, TextAsset textFile = null) {
@@ -47,17 +45,20 @@ public class TutorialHandler : MonoBehaviour, Caller {
             PauseInput.action.performed += DisableTutorials;
             PauseMenu.inst.UnenablePause();
             PauseInput.action.Enable();
+            UIState.inst.SetAsSelectedButton(ExitButton);// for controller compatibility
+            DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         } else {
             PauseInput.action.performed -= DisableTutorials;
             PauseMenu.inst.SetEnabled(true);
 
             if (Caller != null) {
-                Caller.Ping();
-                PauseMenu.inst.BackGround.enabled = true;
-                PauseMenu.inst.CurrentState = !PauseMenu.inst.CurrentState;
+                Caller.Ping();// pause menue handles all of this itself with ping()
+                //PauseMenu.inst.BackGround.enabled = true;
+               // PauseMenu.inst.CurrentState = !PauseMenu.inst.CurrentState;
                 Caller = null;
             }
-
+            if (sprite == StoryTutorialImage)// makes sure we are only setting flag if player reads Darts and not story tutorial
+                return;
             if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
                 PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
         }
@@ -77,7 +78,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
 
     public void EnableDartsTutorial(bool enable) { EnableTutorial(enable, DartsTutorialImage, DartsTutorialText); }
 
-    public void DisableTutorials() { EnableTutorial(false, DartsTutorialImage); }
+    public void DisableTutorials() {EnableTutorial(false, DartsTutorialImage); }
 
     // This overload method is for player input
     public void DisableTutorials(InputAction.CallbackContext c) { DisableTutorials(); }

@@ -13,7 +13,7 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioClipList SoftDarts;
     [SerializeField] AudioClipList MediumDarts;
     [SerializeField] AudioClipList HardDarts;
-
+    [SerializeField] AudioClipList Music;
 
     private void Awake()
     {
@@ -70,14 +70,14 @@ public class Audio : MonoBehaviour
         MainSource.PlayOneShot(clip);
     }
 
-    public void PlaySong(AudioClip clip)
+    public void PlaySong(MusicTrack trackID)
     {
-        return;
-        if (MainSource.clip == clip)
+        if (MainSource.clip == Music.List[(int)trackID])
             if (MainSource.isPlaying)
                 return;
 
-        MainSource.clip = clip;
+        MainSource.clip = Music.List[(int)trackID];
+        if(MainSource.clip!=null)
         MainSource.Play();
      
     }
@@ -86,4 +86,13 @@ public class Audio : MonoBehaviour
     {
         MainSource.Stop();
     }
+}
+
+
+public enum MusicTrack {
+    MainMenu,
+    LocationSelect,
+    Cutscene,
+    Darts
+    
 }

@@ -29,13 +29,13 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     public void Start() { TransitionManager.inst.ReadyToEnterScene(this); }
 
     public void EnterScene() {
-        if (PlayerPrefs.GetInt("hasReadDartsTutorial") == 0) {
-            PauseMenu.inst.SetEnabled(false);
-            PauseMenu.inst.PauseInput.action.Enable();
-        } else {
-            PauseMenu.inst.SetEnabled(true);
-        }
-
+        /* if (PlayerPrefs.GetInt("hasReadDartsTutorial") == 0) {
+             PauseMenu.inst.SetEnabled(false);
+             PauseMenu.inst.PauseInput.action.Enable();
+         } else {
+             PauseMenu.inst.SetEnabled(true);
+         }*/
+        Debug.Log("need to handle displaying tutorial here");
         BeginSetUp();
     }
 

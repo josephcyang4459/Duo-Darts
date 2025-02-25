@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
+public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     [SerializeField] Player Player;
     [SerializeField] CharacterList characters;
     [SerializeField] EventList MiscNPCEvents;
@@ -25,7 +25,6 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
     [SerializeField] TMP_Text[] btnText;
     [SerializeField] EventList BadEndings;
 
-    public AudioClip song0;
 
     public GameObject FirstLocationButton;
     public GameObject FirstEventButton;
@@ -37,7 +36,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
     public Canvas GenderChoiceCanvas;
 
     public void Start() {
-        Audio.inst.PlaySong(song0);
+        Audio.inst.PlaySong(MusicTrack.LocationSelect);
         
         int fileIndex = TransitionManager.inst.GetFileIndex();
         if (fileIndex > -1)
@@ -75,9 +74,14 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
 
     public void ChooseCharacterGender(int i) {
         CutsceneHandler.Instance.SetCharacterSprite(i);
+        DartSticker.inst.SetVisible(false);
+        TutorialHandler.inst.EnableStoryTutorial(true, this);
+
+    }
+
+    public void Ping() {
         PauseMenu.inst.SetEnabled(true);
         SetTime(0);
-
     }
 
     private void SetLocationEventLists() {
@@ -135,7 +139,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller {
     public void SetTime(TimeBlocks time) {
         CharacterStatUI.inst.UpdateUI();
         UIState.inst.SetInteractable(true);
-        Audio.inst.PlaySong(song0);
+        Audio.inst.PlaySong(MusicTrack.LocationSelect);
        
         IncreaseTimeByMinutes((int)time);
         if (CheckForNotification())

@@ -30,7 +30,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     [SerializeField] float WaitForEndTime;
     [SerializeField] Canvas winc;
     [SerializeField] Canvas losec;
-    [SerializeField] AudioClip ac;
+
     [SerializeField] SpriteRenderer board;
     [SerializeField] InSceneTransition Transition;
 
@@ -59,7 +59,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
         UIState.inst.SetInteractable(false);
         Aim.SetUpDependants();
-        Audio.inst.PlaySong(ac);
+        Audio.inst.PlaySong(MusicTrack.Darts);
 
         Dart.SetUp(PartnerIndex);
         Banter.SetPartner(CurrentPartner, IsFinals());

@@ -35,10 +35,11 @@ public class EndingScene : MonoBehaviour, SceneEntrance
                 data.Endings[i] = false;
         }
         data.Endings[currentEnding] = true;
-        if(Steamworks.SteamUserStats.GetAchievement(AchievementNames[currentEnding],out bool achieved)) {
+        if(Steamworks.SteamUserStats.GetUserAchievement(Steamworks.SteamUser.GetSteamID(), AchievementNames[currentEnding],out bool achieved)) {
             Debug.Log(AchievementNames[currentEnding] + " " + achieved);
             if (!achieved)
                 Steamworks.SteamUserStats.SetAchievement(AchievementNames[currentEnding]);
+           
         }
         FileHandler.SaveCompletion(data);
         CutsceneHandler.Instance.SetUpForEnding(this);

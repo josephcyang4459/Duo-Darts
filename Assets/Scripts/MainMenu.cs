@@ -25,6 +25,10 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     public void Start() {
         SetCompletion();
+        Audio.inst.PlaySong(MusicTrack.MainMenu);
+#if UNITY_EDITOR
+        PlayerPrefs.SetInt("hasReadDartsTutorial", 0);
+#endif
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
         TransitionManager.inst.ReadyToEnterScene(this);

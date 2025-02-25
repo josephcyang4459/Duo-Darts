@@ -110,6 +110,7 @@ public class SteamManager : MonoBehaviour {
 		}
 
 #endif
+
 		// Initializes the Steamworks API.
 		// If this returns false then this indicates one of the following conditions:
 		// [*] The Steam client isn't running. A running Steam client is required to provide implementations of the various Steamworks interfaces.
