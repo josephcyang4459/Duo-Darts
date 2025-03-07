@@ -46,12 +46,14 @@ public class CutsceneLog : MonoBehaviour
     }
 
     void EnableScroll() {
+        enabled = true;
         ScrollLog.action.Enable();
         ScrollLog.action.performed += Scroll;
         ScrollLog.action.canceled += Scroll;
     }
 
     void UnenableScroll() {
+        enabled = false;
         ScrollLog.action.Disable();
         ScrollLog.action.performed -= Scroll;
         ScrollLog.action.canceled -= Scroll;

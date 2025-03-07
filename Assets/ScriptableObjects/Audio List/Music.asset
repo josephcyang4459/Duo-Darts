@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Music
   m_EditorClassIdentifier: 
   List:
-  - {fileID: 8300000, guid: 3591a22f1da8ab048aa370e872c30f4b, type: 3}
-  - {fileID: 8300000, guid: 3591a22f1da8ab048aa370e872c30f4b, type: 3}
-  - {fileID: 8300000, guid: 3591a22f1da8ab048aa370e872c30f4b, type: 3}
-  - {fileID: 8300000, guid: 3591a22f1da8ab048aa370e872c30f4b, type: 3}
+  - {fileID: 8300000, guid: fa4ff02f3fe2a844ca0fd2a9373420b0, type: 3}
+  - {fileID: 8300000, guid: e6c6db3460e1d224ebbd63def3da2f48, type: 3}
+  - {fileID: 8300000, guid: 72a952e0f50b85f4fb31773a884434b1, type: 3}
+  - {fileID: 8300000, guid: b967cb08297d50d4fbc6f72f8dbcea6a, type: 3}
   - {fileID: 8300000, guid: 3591a22f1da8ab048aa370e872c30f4b, type: 3}

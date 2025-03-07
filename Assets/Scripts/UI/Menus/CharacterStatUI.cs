@@ -9,6 +9,7 @@ public class CharacterStatUI : MonoBehaviour
     [SerializeField] Player Player;
     [SerializeField] Image[] PartnerImages;
     [SerializeField] Color NotYetInteractedWith;
+    [SerializeField] TMP_Text CharacterPoints;
 
     [Header("TEMP-------------------------------")]
     [SerializeField] TMP_Text PlayerText;
@@ -48,9 +49,11 @@ public class CharacterStatUI : MonoBehaviour
     }
 
     public void UpdateUI() {
+        CharacterPoints.text = Player.TotalPointsScoredAcrossAllDartMatches.ToString();
         for (int i = 0; i < 4; i++) {
             CheckCharacter(i);
         }
+
         TEMPUI();
     }
 

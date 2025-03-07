@@ -62,9 +62,11 @@ public class ImageFill : MonoBehaviour
             Complete = false;
             if (CurrentImage.fillAmount >= 1)
             {
-                if (ShootDart)
+                if (ShootDart) {
                     if (PauseWhenStart == PauseMenu.inst.CurrentState)
                         DartSticker.inst.NewLocation(Target);
+                }
+                   
                 Complete = true;
             }
             

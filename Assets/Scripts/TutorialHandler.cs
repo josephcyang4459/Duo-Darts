@@ -33,6 +33,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
     }
 
     public void EnableTutorial(bool enable, Sprite sprite, TextAsset textFile = null) {
+        DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         TutorialImage.sprite = sprite;
         TutorialCanvas.enabled = enable;
         TutorialOvershadow.enabled = enable;

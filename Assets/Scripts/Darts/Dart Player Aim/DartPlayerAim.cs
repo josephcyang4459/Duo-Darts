@@ -11,6 +11,7 @@ public class DartPlayerAim : MonoBehaviour
     [SerializeField] Transform AimPosition;
     public Vector3 CurrentLocation = new Vector3(0, 0, -.2f);
     [SerializeField] Vector3 StartingLocation = new Vector3(0, 0, -.2f);
+    [SerializeField] Transform[] StartingLocations;
     [SerializeField] InputActionReference fire;
     [SerializeField] DartPlayerAim_Drift Drift;
     [SerializeField] DartPlayerAim_Control Control;
@@ -51,7 +52,9 @@ public class DartPlayerAim : MonoBehaviour
 
     public void BeginPlayerAim() {
         AimSprite.enabled = true;
-        CurrentLocation = StartingLocation;
+        Vector3 position= StartingLocations[Random.Range(0, StartingLocations.Length)].position;
+        CurrentLocation.x = position.x;
+        CurrentLocation.y = position.y;
         AimPosition.position = CurrentLocation;
         Control.BeginMovement();
         fire.action.Enable();

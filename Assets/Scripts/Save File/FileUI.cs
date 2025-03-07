@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FileUI : MonoBehaviour, Caller {
-    [SerializeField] FileHandler FileHandler;
     [SerializeField] Canvas LoadMenuCanvas;
     [SerializeField] Transform[] DartPositions;
     [SerializeField] TMP_Text[] SlotInfo;
     [SerializeField] Button[] SlotButtons;
-    [SerializeField] bool SetStateOnNoFile;
     [SerializeField] UIAnimationElement EnterAnimationHead;
     [SerializeField] UIAnimationElement ExitAnimationHead;
     [SerializeField] GroupImageFill Fill;
@@ -30,10 +26,11 @@ public class FileUI : MonoBehaviour, Caller {
         for (int i = 0; i < SlotInfo.Length; i++) {
             SaveFile file = FileHandler.LoadSaveFile(i);
             if (file != null) {
+                Debug.Log("File Here");
                 SlotInfo[i].text = file.GetDisplayData();
             }
             else {
-                SlotButtons[i].interactable = SetStateOnNoFile;
+                SlotButtons[i].interactable = false;
                 SlotInfo[i].text = NoFile;
             }
 

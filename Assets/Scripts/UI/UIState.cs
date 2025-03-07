@@ -20,6 +20,9 @@ public class UIState : MonoBehaviour {
         ControlState.UsingController += ControllerConnected;
         if (ControlState.inst != null)
             ControllerConnected(ControlState.inst.IsUsingController());
+        else {
+            ControllerConnected(false);
+        }
         inst = this;
     }
 
@@ -29,12 +32,19 @@ public class UIState : MonoBehaviour {
         if (IsUsingController) {
             EventSystem.SetSelectedGameObject(gameObject);
         }
+        
     }
 
     public void ControllerConnected(bool state) {
         IsUsingController = state;
-        if (!state)
+        if (!IsUsingController) {
+           // UI.enabled = false;
+            EventSystem.sendNavigationEvents = false;
+            Debug.Log("Move no");
             return;
+        }
+        EventSystem.sendNavigationEvents = true;
+        Debug.Log("Move Yes");
         if (EventSystem.enabled) {
             EventSystem.SetSelectedGameObject(CurrentFirstSelected);
         }

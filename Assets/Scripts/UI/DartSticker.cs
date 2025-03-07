@@ -79,6 +79,9 @@ public class DartSticker : MonoBehaviour
     {
         DartImage.enabled = b;
         DartShadow.enabled = b;
+        if (!b) {
+            enabled = false;
+        }
     }
 
     public void Update()

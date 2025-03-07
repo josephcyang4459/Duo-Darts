@@ -29,6 +29,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     public GameObject FirstLocationButton;
     public GameObject FirstEventButton;
     public GameObject GenderChoiceButton;
+    [SerializeField] ImageFill GenderFill;
 
     public DartPartnerStoryUI DartsMenu;
     public ResetStats ResetStats;
@@ -63,6 +64,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     }
 
     public void EnterScene() {
+        DartSticker.inst.SetVisible(false);
         UIState.inst.SetAsSelectedButton(GenderChoiceButton);
         if (TransitionManager.inst.GetFileIndex() > -1) {
             PauseMenu.inst.SetEnabled(true);
@@ -73,6 +75,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     }
 
     public void ChooseCharacterGender(int i) {
+        GenderFill.enabled = false;
         CutsceneHandler.Instance.SetCharacterSprite(i);
         DartSticker.inst.SetVisible(false);
         TutorialHandler.inst.EnableStoryTutorial(true, this);
@@ -91,7 +94,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
                 locals[i].Events.RemoveAt(0);
         }
 
-        for (int characterIndex = 0; characterIndex < (int)CharacterNames.Owner; characterIndex++) {
+        for (int characterIndex = 0; characterIndex <= (int)CharacterNames.Owner; characterIndex++) {
             int availableCutSceneIndex = characters.list[characterIndex].GetCutScene();
 
             if (availableCutSceneIndex >= 0) {
@@ -105,12 +108,13 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
                 }
             }
             else {
-                if (characters.list[characterIndex].Love >= 0 && !characters.list[characterIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
+                if (characterIndex != (int)CharacterNames.Owner)
+                    if (characters.list[characterIndex].Love >= 0 && !characters.list[characterIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
 
-                    int loungeIndex = (characterIndex == (int)CharacterNames.Elaine) ? (int)Locations.darts : (int)Locations.lounge;
-                    locals[loungeIndex].Events.Add(characters.list[characterIndex].DefaultCutScene);
-                    locals[loungeIndex].EventsButtonUsed++;
-                }
+                        int loungeIndex = (characterIndex == (int)CharacterNames.Elaine) ? (int)Locations.darts : (int)Locations.lounge;
+                        locals[loungeIndex].Events.Add(characters.list[characterIndex].DefaultCutScene);
+                        locals[loungeIndex].EventsButtonUsed++;
+                    }
             }
         }
         //events

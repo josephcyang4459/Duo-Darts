@@ -25,10 +25,9 @@ MonoBehaviour:
   FinalCutscene: {fileID: 0}
   Expressions:
   - {fileID: 21300000, guid: d77b18aaf6fee1343b6b3be0fc1716dc, type: 3}
-  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
-  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
-  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
-  - {fileID: 21300000, guid: 565d6c8ca9a6019499f45832c830ee9e, type: 3}
+  - {fileID: 21300000, guid: d77b18aaf6fee1343b6b3be0fc1716dc, type: 3}
+  - {fileID: 21300000, guid: d77b18aaf6fee1343b6b3be0fc1716dc, type: 3}
+  - {fileID: 21300000, guid: d77b18aaf6fee1343b6b3be0fc1716dc, type: 3}
   AI: {fileID: 11400000, guid: 1b7421afe6f94e9409aefddab0b86745, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}

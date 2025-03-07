@@ -35,14 +35,14 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
          } else {
              PauseMenu.inst.SetEnabled(true);
          }*/
+      
         Debug.Log("need to handle displaying tutorial here");
         BeginSetUp();
     }
 
     public void BeginSetUp() {
-        Audio.inst.StopSong();
+        Audio.inst.PlaySong(MusicTrack.LocationSelect);
         PartnerCanvas.enabled = true;
-        //EventSystem.current.enabled = true;
         UIState.inst.SetInteractable(true);
         UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }

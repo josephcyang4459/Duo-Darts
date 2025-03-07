@@ -186,7 +186,8 @@ PrefabInstance:
       propertyPath: EndingCutscene
       value: 
       objectReference: {fileID: 11400000, guid: fcb6784248342894ea52c16a9d41f15e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3024113212399191784, guid: 259acda251419c24e9f1015b3e38f714, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 259acda251419c24e9f1015b3e38f714, type: 3}
 --- !u!1 &1110593629
 GameObject:

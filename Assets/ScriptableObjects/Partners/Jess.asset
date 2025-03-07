@@ -17,17 +17,17 @@ MonoBehaviour:
   textSize: 100
   Composure: 0
   Intoxication: 0
-  Love: 0
+  Love: 150
   RelatedCutScenes:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
-    completed: 0
+    completed: 1
     loveRequirement: 1
   - Location: bar
     CutsceneLocation: 1

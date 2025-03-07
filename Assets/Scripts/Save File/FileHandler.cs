@@ -2,19 +2,19 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class FileHandler : MonoBehaviour
+public class FileHandler
 {
-    readonly string FileExtension = "sbs";
-    readonly string FileName = "SaveFile_{0}";
-    readonly string CompletionFile = "Completion";
-    string SaveFilePath(int fileIndex) {
+    readonly static string FileExtension = "sbs";
+    readonly static string FileName = "SaveFile_{0}";
+    readonly static string CompletionFile = "Completion";
+    static string SaveFilePath(int fileIndex) {
         return Application.persistentDataPath + string.Format("/Saves/{0}.{1}", string.Format(FileName, fileIndex), FileExtension);
     }
-    string CompletionFilePath() {
+    static string CompletionFilePath() {
         return Application.persistentDataPath + string.Format("/{0}.{1}",CompletionFile, FileExtension);
     }
 
-    public SaveFile LoadSaveFile(int fileIndex)
+    public static SaveFile LoadSaveFile(int fileIndex)
     {
         CheckDirectory();
         string filePath = SaveFilePath(fileIndex);
@@ -37,7 +37,7 @@ public class FileHandler : MonoBehaviour
         }
     }
 
-    public void SaveSaveFile(int fileIndex, SaveFile saveFile) {
+    public static void SaveSaveFile(int fileIndex, SaveFile saveFile) {
         CheckDirectory();
 
         //Debug.Log(Application.persistentDataPath + string.Format("/Saves/{0}.{1}", fileName, fileExtension));
@@ -49,7 +49,7 @@ public class FileHandler : MonoBehaviour
         caseFileStream.Close();
     }
 
-    public void SaveCompletion(CompletionData data) {
+    public static void SaveCompletion(CompletionData data) {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream caseFileStream = File.Create(CompletionFilePath());
         var jsonSaveFile = JsonUtility.ToJson(data);
@@ -57,7 +57,7 @@ public class FileHandler : MonoBehaviour
         caseFileStream.Close();
     }
 
-    public CompletionData LoadCompletion() {
+    public static CompletionData LoadCompletion() {
         string filePath = CompletionFilePath();
         if (!File.Exists(filePath)) {
             return null;
@@ -77,24 +77,10 @@ public class FileHandler : MonoBehaviour
         }
     }
 
-    void CheckDirectory() {
+    static void CheckDirectory() {
         if (!Directory.Exists(Application.persistentDataPath + string.Format("/Saves"))) {
             Directory.CreateDirectory(Application.persistentDataPath + string.Format("/Saves"));
         }
     }
-
-#if UNITY_EDITOR
-    [SerializeField] bool __test;
-    private void OnValidate() {
-        if (__test) {
-            __test = false;
-           
-            string[] temp =Directory.GetFiles(Application.persistentDataPath + string.Format("/Saves"));
-            foreach(string s in temp) {
-                Debug.Log(s);
-            }
-        }
-    }
-#endif
 
 }

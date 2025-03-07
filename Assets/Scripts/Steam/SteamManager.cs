@@ -11,7 +11,6 @@
 
 using UnityEngine;
 #if !DISABLESTEAMWORKS
-using System.Collections;
 using Steamworks;
 #endif
 
@@ -88,7 +87,6 @@ public class SteamManager : MonoBehaviour {
 		}
 
 #if !UNITY_EDITOR
-
 		try {
 			// If Steam is not running or the game wasn't started through Steam, SteamAPI_RestartAppIfNecessary starts the
 			// Steam client and also launches this game again if the User owns it. This can act as a rudimentary form of DRM.

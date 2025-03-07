@@ -70,16 +70,16 @@ public class Audio : MonoBehaviour
         MainSource.PlayOneShot(clip);
     }
 
-    public void PlaySong(MusicTrack trackID)
-    {
+    public void PlaySong(MusicTrack trackID) {
+        if (Music.List[(int)trackID] == null)
+            return;
         if (MainSource.clip == Music.List[(int)trackID])
             if (MainSource.isPlaying)
                 return;
 
         MainSource.clip = Music.List[(int)trackID];
-        if(MainSource.clip!=null)
         MainSource.Play();
-     
+
     }
 
     public void StopSong()
@@ -93,6 +93,6 @@ public enum MusicTrack {
     MainMenu,
     LocationSelect,
     Cutscene,
-    Darts
-    
+    Darts,
+    Credits
 }

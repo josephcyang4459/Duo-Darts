@@ -87,7 +87,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         InCutscene = true;
         Log.ResetLog();
         if (c.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
-            Audio.inst.PlaySong(MusicTrack.LocationSelect);
+            Audio.inst.PlaySong(MusicTrack.Cutscene);
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);

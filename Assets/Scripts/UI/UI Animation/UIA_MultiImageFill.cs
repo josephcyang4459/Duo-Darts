@@ -17,9 +17,14 @@ public class UIA_MultiImageFill : UIAnimationElement
         if (Behavior == Direction.Auto)
             return CurrentFill < .1 ? 1 : 0;
         if (Behavior == Direction.Fill) {
+            for(int i = 0; i < Images.Length; i++) {
+                Images[i].fillAmount = 0;
+            }
             return 1;
         }
-          
+        for (int i = 0; i < Images.Length; i++) {
+            Images[i].fillAmount = 1;
+        }
         return 0;
     }
 

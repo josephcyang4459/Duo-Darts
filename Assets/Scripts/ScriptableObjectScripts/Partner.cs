@@ -19,7 +19,7 @@ public class Partner : ScriptableObject {
     public DartsBanterLines RegularBanterLines;
     public DartsBanterLines FinalsBanterLines;
     public ColorSwatch TextBoxColors;
-
+    
     /// <summary>
     /// Index of next available Cutscene or -1 if default
     /// </summary>
@@ -61,6 +61,12 @@ public class Partner : ScriptableObject {
                 Love += change;
                 return;
         }
+    }
+
+    public Sprite GetExpression(int i) {
+        if (i > Expressions.Length)
+            return Expressions[0];
+        return Expressions[i];
     }
 
     public bool FinalRoundEligable() {

@@ -9,7 +9,6 @@ public class SaveHandler : MonoBehaviour, Caller
     [SerializeField] CharacterList Characters;
     [SerializeField] Player Player;
     [SerializeField] EventList Events;
-    [SerializeField] int SaveFileVersionNumber;
     
 
     public void Start() {
@@ -28,7 +27,6 @@ public class SaveHandler : MonoBehaviour, Caller
     public void SaveToFile(int fileIndex) {
         SaveFile saveFile = new SaveFile();
         int charactersToSendToFile = (int)CharacterNames.Owner+1;
-
         saveFile.Hour = Schedule.hour;
         saveFile.Minute = Schedule.minutes;
         if (CutsceneHandler.Instance != null)

@@ -649,10 +649,10 @@ MonoBehaviour:
   - {fileID: 1867933520}
   - {fileID: 1867933513}
   BadEndings: {fileID: 11400000, guid: 4acf6f5361e76ad4c9d817814e2266b4, type: 2}
-  song0: {fileID: 8300000, guid: 293eb5cc5784d1d4cb69e7ec35a50f19, type: 3}
   FirstLocationButton: {fileID: 0}
   FirstEventButton: {fileID: 0}
   GenderChoiceButton: {fileID: 1288483499}
+  GenderFill: {fileID: 2042875226}
   DartsMenu: {fileID: 1155729091}
   ResetStats: {fileID: 11400000, guid: 67b7c963547ceac4a958ba5570236c36, type: 2}
   SaveHandler: {fileID: 1843783254}
@@ -5552,7 +5552,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1843783255}
   - component: {fileID: 1843783254}
-  - component: {fileID: 1843783253}
   - component: {fileID: 1843783256}
   - component: {fileID: 1843783257}
   m_Layer: 0
@@ -5562,19 +5561,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1843783253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843783252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4fd15e24ab675499b65cce103cb911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  __test: 0
 --- !u!114 &1843783254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5589,11 +5575,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileUI: {fileID: 1843783256}
   Schedule: {fileID: 183543931}
-  FileHandler: {fileID: 1843783253}
   Characters: {fileID: 11400000, guid: 677cbc79ebc148f4988434c222bdcee3, type: 2}
   Player: {fileID: 11400000, guid: 1e1890b65448ce34c8fac84e7a1e7a74, type: 2}
   Events: {fileID: 11400000, guid: 65f0fcf24c388e24ead99f7bef1e1e14, type: 2}
-  SaveFileVersionNumber: 0
   __test: 0
   __fileNumber: 1
 --- !u!4 &1843783255
@@ -5625,7 +5609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010d87f09d589c74a8313d38c64eaca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileHandler: {fileID: 1843783253}
   LoadMenuCanvas: {fileID: 9049637971238829679}
   DartPositions:
   - {fileID: 9049637971608863559}
@@ -5640,7 +5623,6 @@ MonoBehaviour:
   - {fileID: 9049637971153559601}
   - {fileID: 9049637972487901933}
   - {fileID: 9049637970564102506}
-  SetStateOnNoFile: 1
   EnterAnimationHead: {fileID: 1300349606}
   ExitAnimationHead: {fileID: 139547838}
   Fill: {fileID: 1843783257}

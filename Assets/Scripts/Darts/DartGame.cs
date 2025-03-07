@@ -15,7 +15,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     public Partner CurrentPartner;
     public int turnSum = 0;
     public int ScoreNeededToWin = 501;
-    public int points;
+    public int PointsAwardedToPlayerAddedForWin;
     public int currentTurn = 0;
     public int numberOfDartsThrow = 0;
     public int maxTurns;
@@ -27,16 +27,15 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     public BoardCollider Miss;
 
     [SerializeField] Timer EndTimer;
+   
     [SerializeField] float WaitForEndTime;
-    [SerializeField] Canvas winc;
-    [SerializeField] Canvas losec;
 
     [SerializeField] SpriteRenderer board;
     [SerializeField] InSceneTransition Transition;
 
     [SerializeField] Schedule s;
     [SerializeField] DartMenu_StandAlone StandAlone;
-
+    
     bool IsFinals() {
         if (s == null)
             return false;
@@ -54,7 +53,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void BeginGame() {
         CurrentPartner = characters.list[PartnerIndex];
-        points = ScoreNeededToWin > 600 ? 10 : 5;
+        PointsAwardedToPlayerAddedForWin = ScoreNeededToWin > 600 ? 10 : 5;
         board.enabled = true;
 
         UIState.inst.SetInteractable(false);
@@ -75,17 +74,18 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void Lose() {
         GameEnd();
-
-        losec.enabled = true;
+        Visuals.SetResultScreen(false, CurrentPartner);
         EndTimer.BeginTimer(WaitForEndTime);
     }
 
     public void Win() {
         GameEnd();
+        if(s!=null)
+            stats.TotalPointsScoredAcrossAllDartMatches += PointsAwardedToPlayerAddedForWin;
         if (IsFinals())
             Banter.GetDialougeFromScore();
         else {
-            winc.enabled = true;
+            Visuals.SetResultScreen(true, CurrentPartner);
             EndTimer.BeginTimer(WaitForEndTime);
         }
             
@@ -93,7 +93,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void GoToCorrectEnding() {
         if (s != null) {
-            stats.TotalPointsScoredAcrossAllDartMatches += points;
+           
             if (IsFinals()) {
                 switch ((CharacterNames)PartnerIndex) {
                     case CharacterNames.Chad:
@@ -114,6 +114,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     }
 
     void GameEnd() {
+        PauseMenu.inst.SetEnabled(false);
         board.enabled = false;
         Visuals.ShowCanvas(false);
     }
@@ -121,7 +122,6 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     public void SwitchTurn() {
         Dart.ResetDartPositions();
         Visuals.SetDartScore();
-
 
         int currentTurnSum = turnSum;
 
@@ -255,9 +255,8 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     /// Called By End Timer
     /// </summary>
     public void EndDartsGame() {
-        winc.enabled = false;
-        losec.enabled = false;
         board.enabled = false;
+        Visuals.SetResultScreen();
         Banter.HideDialouge();
         // PauseMenu.inst.SetEnabled(true);
         Transition.BeginTransition(this);

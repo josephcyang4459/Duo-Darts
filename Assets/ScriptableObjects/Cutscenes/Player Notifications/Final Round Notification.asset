@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: Final Round Notification
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 7527442683988017749
-  - rid: 7527442683988017750
+  - rid: 8632543033584254976
+  - rid: 8632543033584254977
   defaultCharacter: 
   ForceDarts: 0
   TimeLength: 0
   TextAsset: {fileID: 0}
   ThoughtStrings:
   - It is time for the final round.
-  - The only thing left to do is to win a game
+  - The only thing left to do is to win a game.
   UseTextFile: 0
   reset: 0
   references:
     version: 2
     RefIds:
-    - rid: 7527442683988017749
+    - rid: 8632543033584254976
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
         thoughtMessage: It is time for the final round.
-    - rid: 7527442683988017750
+    - rid: 8632543033584254977
       type: {class: Thought, ns: , asm: Assembly-CSharp}
       data:
-        thoughtMessage: The only thing left to do is to win a game
+        thoughtMessage: The only thing left to do is to win a game.

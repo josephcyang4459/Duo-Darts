@@ -15,10 +15,17 @@ public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
     [SerializeField] UIAnimationElement AnimationHead;
     [SerializeField] GameObject FirstSelectedButton;
     [SerializeField] TextCycle[] TextCycles;
+    [SerializeField] Transform MusicCreditsDartTarget;
+    [SerializeField] Canvas MusicCredits;
+    [SerializeField] GameObject CloseMusicButton;
+    [SerializeField] Canvas LicenseCanvas;
+    [SerializeField] GameObject CloseLicenseButton;
+    [SerializeField] LicenseReader Reader;
 
     public void Start()
     {
         TransitionManager.inst.ReadyToEnterScene(this);
+        Audio.inst.PlaySong(MusicTrack.Credits);
     }
 
     public void EnterScene() {
@@ -26,6 +33,33 @@ public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
         foreach (TextCycle t in TextCycles)
             t.SetText(0);
         AnimationHead.Begin(this);
+    }
+
+    public void HoverShowMusicCredits() {
+        DartSticker.inst.NewLocation(MusicCreditsDartTarget.position);
+    }
+
+    public void ShowLicense() {
+        Reader.Open();
+        LicenseCanvas.enabled = true;
+        UIState.inst.SetAsSelectedButton(CloseLicenseButton);
+    }
+
+    public void HideLisence() {
+        Reader.Open();
+        LicenseCanvas.enabled = false;
+        UIState.inst.SetAsSelectedButton(CloseMusicButton);
+    }
+
+    public void ShowMusicCredits() {
+        MusicCredits.enabled = true;
+        DartSticker.inst.SetVisible(false);
+        UIState.inst.SetAsSelectedButton(CloseMusicButton);
+    }
+
+    public void HideMusicCredits() {
+        MusicCredits.enabled = false;
+        UIState.inst.SetAsSelectedButton(FirstSelectedButton);
     }
 
     public void SelectButton()

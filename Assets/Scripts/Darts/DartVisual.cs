@@ -13,6 +13,14 @@ public class DartVisual : MonoBehaviour {
     [SerializeField] TMP_Text[] scoreTexts;
     [SerializeField] Fillable_SeeSaw[] DartPlaques;
     [SerializeField] [Range(1, 7)] float FillSpeed =3;
+    [SerializeField] UIAnimationElement EndScreneAnimationhead;
+    [SerializeField] UIAnimationElement EndScreenResetHead;
+    [SerializeField] TMP_Text ResultText;
+    [SerializeField] Image[] CharacterPortraits;
+    [SerializeField] Image[] ColorFills;
+    [SerializeField] string[] VictorySayings;
+    [SerializeField] string[] LoseSayings;
+    [SerializeField] Canvas ResultCanvas;
     List<Fillable_SeeSaw> CurrentlyFilling = new();
 
     public void RandomizeDartImages() {
@@ -48,6 +56,23 @@ public class DartVisual : MonoBehaviour {
     }
 
     public void SetTurnScore(int turnScore) { currentScoreText.text = turnScore.ToString(); }
+
+    public void SetResultScreen(bool win, Partner partner) {
+        ResultCanvas.enabled = true;
+        EndScreenResetHead.ReachEndState();
+        ResultText.text = win ? VictorySayings[Random.Range(0,VictorySayings.Length)] : LoseSayings[Random.Range(0, LoseSayings.Length)];
+        for(int i = 0; i < CharacterPortraits.Length; i++) {
+            CharacterPortraits[i].sprite = partner.GetExpression(win ? (int)Expressions.Positive : (int)Expressions.Negative);
+        }
+        for (int i = 0; i < ColorFills.Length; i++) {
+            ColorFills[i].color = partner.TextBoxColors.colors[(int)TextboxColorIndex.Background];
+        }
+        EndScreneAnimationhead.Begin(null);
+    }
+
+    public void SetResultScreen() {
+        ResultCanvas.enabled = false;
+    }
 
     private void Update() {
         if (CurrentlyFilling.Count <= 0)

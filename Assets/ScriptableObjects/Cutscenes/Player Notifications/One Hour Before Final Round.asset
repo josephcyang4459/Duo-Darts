@@ -15,7 +15,7 @@ MonoBehaviour:
   blocks: []
   defaultCharacter: 
   ForceDarts: 0
-  TimeLength: 10
+  TimeLength: 0
   TextAsset: {fileID: 0}
   ThoughtStrings: []
   UseTextFile: 0
