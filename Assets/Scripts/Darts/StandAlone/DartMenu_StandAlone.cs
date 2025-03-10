@@ -6,26 +6,36 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     [SerializeField] CharacterList Partners;
     [SerializeField] InSceneTransition Transition;
     [SerializeField] DartGame DartGame;
-    [SerializeField] DartMenu_StandAlone_Options Options;
+  
     [SerializeField] ResetStats ResetStats;
     [SerializeField] float TipsyIntoxValue;
+
+    [SerializeField] UIAnimationElement OverallEnterAnimationHead;
+    [SerializeField] Canvas OverallCanvas;
+    [SerializeField] GameObject FirstOverallButton;
+    [SerializeField] Image[] OverallMenuFills;
+    [SerializeField] Transform[] OverallDartTargets;
+    [Header("Partner Select")]
+    [SerializeField] Canvas PartnerCanvas;
+    [SerializeField] GameObject FirstPartnerButton;
+    [SerializeField] Image[] PartnerButtonImages;
+    [SerializeField] Vector3 PartnerLocationOffset;
     [SerializeField] ImageFill Fill;
     [SerializeField] ImageSlide Slide;
     [SerializeField] ImageSmoothFill[] BorderFills;
+    [Header("Score/ Settings")]
+    [SerializeField] DartMenu_StandAlone_Options Options;
     [SerializeField] UIAnimationElement ScoreAnimationEnterHead;
     [SerializeField] UIAnimationElement ScoreAnimationLeaveHead;
-    [SerializeField] Canvas PartnerCanvas;
+    [SerializeField] GameObject FirstScoreButton;
     [SerializeField] Canvas ScoreCanvas;
-    [SerializeField] Image[] PartnerButtonImages;
-    [SerializeField] Vector3 PartnerLocationOffset;
     [SerializeField] Image[] ScoreButtonImages;
     [SerializeField] Vector3 ScoreLocationOffset;
+
     [SerializeField] Image Portrait;
     [SerializeField] int PartnerIndex;
-    [SerializeField] bool TurnOffScoreCanvas;
-    [SerializeField] GameObject FirstPartnerButton;
-    [SerializeField] GameObject FirstScoreButton;
 
+    [SerializeField] PingState AnimationState;
     public void Start() { TransitionManager.inst.ReadyToEnterScene(this); }
 
     public void EnterScene() {
@@ -42,33 +52,77 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
 
     public void BeginSetUp() {
         Audio.inst.PlaySong(MusicTrack.LocationSelect);
-        PartnerCanvas.enabled = true;
+        //PartnerCanvas.enabled = true;
         UIState.inst.SetInteractable(true);
+        OverallCanvas.enabled = true;
+        AnimationState = PingState.EnterMain;
+        OverallEnterAnimationHead.Begin(null);
+       
+    
+    
+        //UIState.inst.SetAsSelectedButton(FirstPartnerButton);
+    }
+
+    public void Overall_SelectButton(int index) {
+        Fill.SetCurrentImageToFill(OverallMenuFills[index], OverallDartTargets[index].position);
+    }
+
+    public void SelectPartnerButton() {
+        Fill.ClearImages();
+        OverallCanvas.enabled = false;
+        PartnerCanvas.enabled = true;
+        DartSticker.inst.SetVisible(false);
         UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }
 
     public void StartGameWithPartner(int i) {
         PartnerIndex = i;
+        OverallCanvas.enabled = false;
         ScoreCanvas.enabled = true;
-        TurnOffScoreCanvas = false;
+        AnimationState = PingState.EnterScore;
         ScoreAnimationEnterHead.Begin(this);
         DartSticker.inst.SetVisible(false);
         Fill.ClearImages();
-        
+       
     }
 
     public void ShowCharacterPortrait(int i) {
+        Fill.SetCurrentImageToFill(PartnerButtonImages[i], ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset * Screen.width / 1920f);
+       
+       // Audio.inst.PlayClip(AudioClips.RandomDart);
+        if (i >= (int)CharacterNames.Player) {
+            Portrait.sprite = Partners.list[0].Expressions[2];
+            Slide.SetToStart();
+            return;
+        }
+           
+
         if (Portrait.sprite == Partners.list[i].Expressions[0])
             return;
-
-        Audio.inst.PlayClip(AudioClips.Click);
-        Portrait.sprite = Partners.list[i].Expressions[0];
-        Slide.BeginSlide();
-        Fill.SetCurrentImageToFill(PartnerButtonImages[i] , ((RectTransform)PartnerButtonImages[i].transform).position + PartnerLocationOffset* Screen.width/1920f);
-        float fill = (float)i / (float)(Partners.list.Length - 2);
-
+        float fill = (float)i / (float)(Partners.list.Length - 2);// bruh this the top and bottom things duh
         foreach (ImageSmoothFill image in BorderFills)
             image.FillTo(fill);
+
+        Portrait.sprite = Partners.list[i].Expressions[0];
+        Slide.BeginSlide();     
+    }
+
+    public void Back() {
+        Fill.ClearImages();
+        DartSticker.inst.SetVisible(false);
+        OverallCanvas.enabled = true;
+        PartnerCanvas.enabled = false;
+        UIState.inst.SetAsSelectedButton(FirstOverallButton);
+        
+    }
+
+    public void BackToMenu() {
+        PauseMenu.inst.ExitToMain();
+    }
+
+    public void Tutorial() {
+        AnimationState = PingState.Tutorial;
+        TutorialHandler.inst.EnableDartsTutorial(true, this);
     }
 
     public void HoverScoreButton(int i) {
@@ -79,7 +133,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     public void BackToPartnerScreen() {
         Fill.ClearImages();
         DartSticker.inst.SetVisible(false);
-        TurnOffScoreCanvas = true;
+        AnimationState = PingState.ExitScore;
         ScoreAnimationLeaveHead.Begin(this);
     }
 
@@ -112,11 +166,26 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     }
 
     public void Ping() {
-        if (TurnOffScoreCanvas) {
-            ScoreCanvas.enabled = false;
-            UIState.inst.SetAsSelectedButton(FirstPartnerButton);
-        } else
-            UIState.inst.SetAsSelectedButton(FirstScoreButton);
+        switch (AnimationState) {
+            case PingState.Tutorial:
+            case PingState.EnterMain:
+                UIState.inst.SetAsSelectedButton(FirstOverallButton);
+                break;
+            case PingState.EnterScore:
+                    UIState.inst.SetAsSelectedButton(FirstScoreButton);
+                    break;
+            case PingState.ExitScore:
+                    ScoreCanvas.enabled = false;
+                    UIState.inst.SetAsSelectedButton(FirstPartnerButton);
+                    break;
+        }
+    }
+
+    enum PingState {
+        EnterMain,
+        EnterScore,
+        ExitScore,
+        Tutorial,
     }
 
 #if UNITY_EDITOR

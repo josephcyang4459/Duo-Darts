@@ -29,6 +29,9 @@ public class ImageSlide : MonoBehaviour
 
     public void SetToStart() {
         enabled = false;
+        Color c = CurrentImage.color;
+        c.a = 0;
+        CurrentImage.color = c;
         CurrentImage.transform.position = StartingLocation.position;
     }
 

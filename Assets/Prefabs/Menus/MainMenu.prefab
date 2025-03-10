@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 131.25, y: 0}
-  m_SizeDelta: {x: 262.5, y: 125}
+  m_AnchoredPosition: {x: 175, y: 0}
+  m_SizeDelta: {x: 350, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1751079929241997434
 CanvasRenderer:
@@ -480,7 +480,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 525, y: 125}
+  m_SizeDelta: {x: 700, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5295183722634088630
 CanvasRenderer:
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DARTS
+  m_text: 'DARTS FREEPLAY
 
 '
   m_isRightToLeft: 0
@@ -1300,8 +1300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -131.25, y: 0}
-  m_SizeDelta: {x: 262.5, y: 125}
+  m_AnchoredPosition: {x: -175, y: 0}
+  m_SizeDelta: {x: 350, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8274300497812485316
 CanvasRenderer:
@@ -1724,6 +1724,7 @@ MonoBehaviour:
   text: {fileID: 1486877067}
   MainMenueCanvas: {fileID: 0}
   ButtonOffset: {x: 75, y: 20, z: 0}
+  DartsOffset: {x: 185, y: 20, z: 0}
   FileUI: {fileID: 0}
   ButtonImages:
   - Images:
@@ -1742,9 +1743,12 @@ MonoBehaviour:
     - {fileID: 1098629288277556969}
     - {fileID: 88516512795888041}
   FillSection: {fileID: 2121245712}
-  CompletionColors: {fileID: 0}
-  CharacterImages: []
-  FileHandler: {fileID: 0}
+  CompletionColors: {fileID: 11400000, guid: 439990464d1d13b41ae6061dd162a488, type: 2}
+  CharacterImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   FirstSelected: {fileID: 6409263142988336973}
   __Color: {r: 0, g: 0, b: 0, a: 0.49019608}
   __ChangeDirection: 0

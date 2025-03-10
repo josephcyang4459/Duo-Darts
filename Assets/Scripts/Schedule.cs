@@ -93,7 +93,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
             while (locals[i].Events.Count > 0)
                 locals[i].Events.RemoveAt(0);
         }
-
+        // include owner
         for (int characterIndex = 0; characterIndex <= (int)CharacterNames.Owner; characterIndex++) {
             int availableCutSceneIndex = characters.list[characterIndex].GetCutScene();
 
@@ -108,7 +108,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
                 }
             }
             else {
-                if (characterIndex != (int)CharacterNames.Owner)
+                if (characterIndex != (int)CharacterNames.Owner)//exclude owner
                     if (characters.list[characterIndex].Love >= 0 && !characters.list[characterIndex].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
 
                         int loungeIndex = (characterIndex == (int)CharacterNames.Elaine) ? (int)Locations.darts : (int)Locations.lounge;

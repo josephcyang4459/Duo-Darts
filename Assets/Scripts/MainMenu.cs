@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] TMP_Text text;
     [SerializeField] Canvas MainMenueCanvas;
     [SerializeField] Vector3 ButtonOffset;
+    [SerializeField] Vector3 DartsOffset;
     [SerializeField] FileUI FileUI;
     [SerializeField] Fillable_Image[] ButtonImages;
     [SerializeField] GroupImageFill FillSection;
@@ -19,7 +20,7 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
 
     public void HoverButton(int i) {
         Audio.inst.PlayClip(AudioClips.Click);
-        FillSection.SetCurrentImageToFill(ButtonImages[i], (ButtonImages[i].Images[1].transform).position + ButtonOffset);
+        FillSection.SetCurrentImageToFill(ButtonImages[i], (ButtonImages[i].Images[1].transform).position + (i == 1 ? DartsOffset : ButtonOffset));
     }
 
 
