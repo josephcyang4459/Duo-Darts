@@ -26,7 +26,6 @@ public class FileUI : MonoBehaviour, Caller {
         for (int i = 0; i < SlotInfo.Length; i++) {
             SaveFile file = FileHandler.LoadSaveFile(i);
             if (file != null) {
-                Debug.Log("File Here");
                 SlotInfo[i].text = file.GetDisplayData();
             }
             else {

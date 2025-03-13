@@ -50,16 +50,17 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     }
 
     public void ShowOptions() {
+        FillSection.ClearImages();
         DartSticker.inst.SetVisible(false);
         MainMenueCanvas.enabled = false;
         OptionsMenu.inst.ShowOptions(this);
     }
 
-    public void ShowCredits() { TransitionManager.inst.GoToScene(SceneNumbers.Credits); }
+    public void ShowCredits() { FillSection.ClearImages(); TransitionManager.inst.GoToScene(SceneNumbers.Credits); }
 
-    public void PlayDarts() { TransitionManager.inst.GoToScene(SceneNumbers.Darts); }
+    public void PlayDarts() { FillSection.ClearImages(); TransitionManager.inst.GoToScene(SceneNumbers.Darts); }
 
-    public void PlayGame() { FileUI.BeginShowLoadMenu(this); }
+    public void PlayGame() { FillSection.ClearImages(); FileUI.BeginShowLoadMenu(this); }
 
     public void SetLoadFileAndGoToStory(int index) {
         TransitionManager.inst.SetFileIndex(index);

@@ -14,7 +14,7 @@ public class CutsceneLog : MonoBehaviour
     [SerializeField] TMP_Text[] NameTexts;
     [SerializeField] TMP_Text[] MessageTexts;
     [SerializeField] RectTransform Mask;
-    [SerializeField] float StartY;
+    [SerializeField] Transform MinPos;
     [SerializeField] float YMin;
     [SerializeField] float YMax;
     [SerializeField] float MaxMultiplier;
@@ -25,7 +25,7 @@ public class CutsceneLog : MonoBehaviour
     [SerializeField] int CurrentLog;
     [SerializeField] int Direction;
     [SerializeField] Vector3 CachePosition;
-
+    [SerializeField] Canvas LogButton;
     public void ResetLog() {
         State = false;
 
@@ -36,11 +36,13 @@ public class CutsceneLog : MonoBehaviour
     }
 
     public void EnableLog() {
+        LogButton.enabled = true;
         OpenLog.action.Enable();
         OpenLog.action.performed += Open;
     }
 
     public void UnenableLog() {
+        LogButton.enabled = false;
         OpenLog.action.Disable();
         OpenLog.action.performed -= Open;
     }
@@ -63,9 +65,11 @@ public class CutsceneLog : MonoBehaviour
         State = !State;
         LogCanvas.enabled = State;
         if (State) {
+            YMin = MinPos.position.y;
             YMax = YMin + (MaxMultiplier * CurrentLog) - Mask.rect.height;
             if (YMax < YMin)
                 YMax = YMin;
+            CachePosition.x = MinPos.position.x;
             CachePosition.y = YMax;
             Position.position = CachePosition;
             UpArrow.enabled = (CachePosition.y != YMax);
@@ -86,9 +90,6 @@ public class CutsceneLog : MonoBehaviour
         MessageTexts[CurrentLog].text = message;
         LogEntry[CurrentLog].SetActive(true);
         CurrentLog++;
-        YMax = YMin + (MaxMultiplier * CurrentLog) - Mask.rect.height;
-        if (YMax < YMin)
-            YMax = YMin;
     }
 
     public void Update() {

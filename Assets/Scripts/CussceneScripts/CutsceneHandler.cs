@@ -12,6 +12,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     [SerializeField] CutsceneLog Log;
     [SerializeField] InputActionReference interact;
     [Space]
+    [SerializeField] CharacterPortraitAnimation ExpressionAnimation;
     [SerializeField] Canvas DialougeCanvas;
     [SerializeField] Image CharacterPortrait;
     [SerializeField] TMP_Text CharacterName;
@@ -32,6 +33,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     [SerializeField] bool responding;
     [SerializeField] int responseIndex = 0;
     [SerializeField] int responseIndexIndex = 0;
+    [SerializeField] ControlVisual[] ControlVisuals;
     public bool InCutscene;
     [Header("Some Story Stuff no need to touch")]
     public DartPartnerStoryUI DartsMenu;
@@ -84,6 +86,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     }
 
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
+        foreach (ControlVisual v in ControlVisuals)
+            v.Begin();
         InCutscene = true;
         Log.ResetLog();
         if (c.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
@@ -181,6 +185,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
 
     public void EndCutscene() {
         UnenableControls();
+        foreach (ControlVisual v in ControlVisuals)
+            v.End();
         if (Schedule != null) {//make sure we are in story mode
             if (cutscene.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
                 Schedule.Transition.BeginTransition(this);
@@ -235,6 +241,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
             responses[i].text = CurrentResponseGroup.responses[i].answer;
 
         ResponseUI.BeginEnter();
+        Log.UnenableLog();
     }
 
     public void ChangeCharacter(string character, Expressions expression) {
@@ -244,6 +251,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
 
     public void UI_Response(int i) {
         UIState.inst.SetInteractable(false);
+        Log.EnableLog();
         responseIndex = i;
         responseIndexIndex = 0;
         Log.SetLog("You", CurrentResponseGroup.responses[responseIndex].answer);
@@ -262,8 +270,11 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         if (CharacterPortrait.enabled == false)
             CharacterPortrait.enabled = true;
         CharacterNamePlate.SetActive(true);
+       
         CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
+        ExpressionAnimation.SetExpression((Expressions)ExpressionIndex);
         DialougeBox.SetExpression(ExpressionIndex, true);
+
         if (GoToNextBlock)
             NextBlock();
     }

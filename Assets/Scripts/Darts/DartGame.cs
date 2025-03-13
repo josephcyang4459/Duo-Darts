@@ -21,7 +21,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     public int maxTurns;
 
     [SerializeField] float MaxOffset = 4;
-
+    [SerializeField] ControlVisual[] ControlVisuals;
 
     public BoardCollider bullseye;
     public BoardCollider Miss;
@@ -52,6 +52,8 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
 
     public void BeginGame() {
+        foreach (ControlVisual v in ControlVisuals)
+            v.Begin();
         CurrentPartner = characters.list[PartnerIndex];
         PointsAwardedToPlayerAddedForWin = ScoreNeededToWin > 600 ? 10 : 5;
         board.enabled = true;
@@ -255,6 +257,8 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     /// Called By End Timer
     /// </summary>
     public void EndDartsGame() {
+        foreach (ControlVisual v in ControlVisuals)
+            v.End();
         board.enabled = false;
         Visuals.SetResultScreen();
         Banter.HideDialouge();

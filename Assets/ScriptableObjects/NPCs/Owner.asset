@@ -22,17 +22,17 @@ MonoBehaviour:
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: 73aff19725ff198409c04147c0f4f74c, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: -1
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: eafc0d680af7dd747afee4b15ba243a5, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: -1
   - Location: bar
     CutsceneLocation: 1
     CutScene: {fileID: 11400000, guid: dd39ab6df9b216c45ba74df6f4f21977, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: -1
   DefaultCutScene: {fileID: 0}
   DefaultRepeatingScene: {fileID: 0}

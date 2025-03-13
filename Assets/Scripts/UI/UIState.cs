@@ -40,11 +40,10 @@ public class UIState : MonoBehaviour {
         if (!IsUsingController) {
            // UI.enabled = false;
             EventSystem.sendNavigationEvents = false;
-            Debug.Log("Move no");
             return;
         }
         EventSystem.sendNavigationEvents = true;
-        Debug.Log("Move Yes");
+      
         if (EventSystem.enabled) {
             EventSystem.SetSelectedGameObject(CurrentFirstSelected);
         }

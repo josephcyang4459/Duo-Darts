@@ -13,19 +13,18 @@ public class CharacterPortraitAnimation : MonoBehaviour
     [SerializeField] Expressions Expression;
     float Timer = 0;
     [SerializeField] Vector3 Cache;
-    public void ChangeExpression(Expressions expression) {
+
+    public void SetExpression(Expressions expression) {
         Expression = expression;
         switch (expression) {
-            case Expressions.Nuetral:
-                return;
-            case Expressions.Positive: CurrentCurve = HappyCurve;break;
-                     case Expressions.Negative:
-                CurrentCurve = NegativeCurve; break;
-            case Expressions.Drunk:
-                CurrentCurve = DrunkCurve; break;
+            case Expressions.ForCutscene: return;
+            case Expressions.Nuetral:   return;
+            case Expressions.Positive:  CurrentCurve = HappyCurve; break;
+            case Expressions.Negative:  CurrentCurve = NegativeCurve; break;
+            case Expressions.Drunk:     CurrentCurve = DrunkCurve; break;
         }
         Timer = 0;
-    
+
         enabled = true;
     }
 

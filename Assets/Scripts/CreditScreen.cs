@@ -6,8 +6,8 @@ public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
 
     [SerializeField] Vector3 Offset;
 
-    [SerializeField] ImageFill LeftFill;
-    [SerializeField] ImageFill RightFill;
+    [SerializeField] ImageFill LeftFill;// lol this predates group image fill so i raw dogged this shit with 2 seperate image fills
+    [SerializeField] ImageFill RightFill;// this could be migrated to a single GroupImageFill but... why bother at this point lol
     [SerializeField] Image Left;
     [SerializeField] Image Right;
     [SerializeField] Image Hidden0;

@@ -9,12 +9,14 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
   
     [SerializeField] ResetStats ResetStats;
     [SerializeField] float TipsyIntoxValue;
-
+    [Header("Entry Menu")]
     [SerializeField] UIAnimationElement OverallEnterAnimationHead;
     [SerializeField] Canvas OverallCanvas;
     [SerializeField] GameObject FirstOverallButton;
-    [SerializeField] Image[] OverallMenuFills;
+    [SerializeField] GroupImageFill EntryMenuFill;
+    [SerializeField] Fillable_Image[] EntryMenuImageGroups;
     [SerializeField] Transform[] OverallDartTargets;
+
     [Header("Partner Select")]
     [SerializeField] Canvas PartnerCanvas;
     [SerializeField] GameObject FirstPartnerButton;
@@ -56,7 +58,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
         UIState.inst.SetInteractable(true);
         OverallCanvas.enabled = true;
         AnimationState = PingState.EnterMain;
-        OverallEnterAnimationHead.Begin(null);
+        OverallEnterAnimationHead.Begin(this);
        
     
     
@@ -64,7 +66,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     }
 
     public void Overall_SelectButton(int index) {
-        Fill.SetCurrentImageToFill(OverallMenuFills[index], OverallDartTargets[index].position);
+        EntryMenuFill.SetCurrentImageToFill(EntryMenuImageGroups[index], OverallDartTargets[index].position);
     }
 
     public void SelectPartnerButton() {
@@ -169,6 +171,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
         switch (AnimationState) {
             case PingState.Tutorial:
             case PingState.EnterMain:
+                Debug.Log("here");
                 UIState.inst.SetAsSelectedButton(FirstOverallButton);
                 break;
             case PingState.EnterScore:
