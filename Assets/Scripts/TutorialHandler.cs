@@ -43,6 +43,10 @@ public class TutorialHandler : MonoBehaviour, Caller {
             TutorialText.text = textFile.text;
 
         if (enable) {
+            if (sprite == StoryTutorialImage)// makes sure we are only setting flag if player reads Darts and not story tutorial
+                return;
+            if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
+                PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
             PauseInput.action.performed += DisableTutorials;
             PauseMenu.inst.UnenablePause();
             PauseInput.action.Enable();
@@ -58,10 +62,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
                // PauseMenu.inst.CurrentState = !PauseMenu.inst.CurrentState;
                 Caller = null;
             }
-            if (sprite == StoryTutorialImage)// makes sure we are only setting flag if player reads Darts and not story tutorial
-                return;
-            if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
-                PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
+           
         }
     }
 

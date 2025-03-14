@@ -49,15 +49,14 @@ public class FileHandler
         caseFileStream.Close();
     }
 
-    public static void SaveCompletion(CompletionData data) {
+    public static void SaveCompletion(string data) {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream caseFileStream = File.Create(CompletionFilePath());
-        var jsonSaveFile = JsonUtility.ToJson(data);
-        bf.Serialize(caseFileStream, jsonSaveFile);
+        bf.Serialize(caseFileStream, data);
         caseFileStream.Close();
     }
 
-    public static CompletionData LoadCompletion() {
+    public static string LoadCompletion() {
         string filePath = CompletionFilePath();
         if (!File.Exists(filePath)) {
             return null;
@@ -66,9 +65,9 @@ public class FileHandler
         BinaryFormatter bf = new BinaryFormatter();
         FileStream caseFileStream = File.Open(filePath, FileMode.Open);
         try {
-            string jsonSaveFile = (string)bf.Deserialize(caseFileStream);
+            string completionData = (string)bf.Deserialize(caseFileStream);
             caseFileStream.Close();
-            return JsonUtility.FromJson<CompletionData>(jsonSaveFile);
+            return completionData;
         }
         catch {
             Debug.Log("SOMETHING FUCKED UP YO COULD NOT DESERIALIZE");

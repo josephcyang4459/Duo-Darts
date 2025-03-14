@@ -47,14 +47,14 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
 
     void SetImageFromScore(int score) {
         if (score < 70) {
-            PartnerImage.sprite = Partner.Expressions[(int)Expressions.Negative];
+            PartnerImage.sprite = Partner.GetExpression((int)Expressions.Negative);
             return;
         }
         if (score >= 150) {
-            PartnerImage.sprite = Partner.Expressions[(int)Expressions.Positive];
+            PartnerImage.sprite = Partner.GetExpression((int)Expressions.Positive);
             return;
         }
-        PartnerImage.sprite = Partner.Expressions[(int)Expressions.Nuetral];
+        PartnerImage.sprite = Partner.GetExpression((int)Expressions.Nuetral);
     }
 
     public void GetDialougeFromScore(int score) {

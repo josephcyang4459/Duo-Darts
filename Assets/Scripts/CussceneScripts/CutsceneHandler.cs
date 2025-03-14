@@ -271,7 +271,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
             CharacterPortrait.enabled = true;
         CharacterNamePlate.SetActive(true);
        
-        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].Expressions[ExpressionIndex];
+        CharacterPortrait.sprite = characters.list[CurrentCharacterIndex].GetExpression(ExpressionIndex);
         ExpressionAnimation.SetExpression((Expressions)ExpressionIndex);
         DialougeBox.SetExpression(ExpressionIndex, true);
 
@@ -292,7 +292,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     private void SetPartnerVisual(int partnerIndex, bool showPartnerVisual) {
         CurrentCharacterIndex = partnerIndex;
 
-        CharacterPortrait.sprite = characters.list[partnerIndex].Expressions[0];
+        CharacterPortrait.sprite = characters.list[partnerIndex].GetExpression(0);
         DialougeBox.SetExpression(0, showPartnerVisual);
         CharacterPortrait.enabled = showPartnerVisual;
         CharacterName.text = characters.list[partnerIndex].Name;

@@ -46,3 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EndingCutscene: {fileID: 0}
   Background: {fileID: 0}
+  EndingAchievements:
+  - {fileID: 11400000, guid: d711276824ebb1d45b5172a90c17840e, type: 2}
+  - {fileID: 11400000, guid: e95d33c191ce49247935ecf36aff8da5, type: 2}
+  - {fileID: 11400000, guid: a9ced090429ecb1429b09b768184ee90, type: 2}
+  - {fileID: 11400000, guid: 3662d18e4e9959548a32fc3f6495b707, type: 2}

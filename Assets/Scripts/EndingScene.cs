@@ -6,7 +6,7 @@ public class EndingScene : MonoBehaviour, SceneEntrance
     [SerializeField] FileHandler FileHandler;
     [SerializeField] CutScene EndingCutscene;
     [SerializeField] Image Background;
-    string[] AchievementNames = { "Chad_Story", "Jess_Story", "Faye_Story", "Elaine_Story" }; 
+    [SerializeField] Achievement[] EndingAchievements;
     private void Start() {
         TransitionManager.inst.ReadyToEnterScene(this);
     }
@@ -27,21 +27,14 @@ public class EndingScene : MonoBehaviour, SceneEntrance
         int currentEnding = GetCurrentEnding();
         if (currentEnding == -1)
             return;
-        CompletionData data = FileHandler.LoadCompletion();
-        if (data == null) {
-            data = new CompletionData();
-            data.Endings = new bool[4];
-            for (int i = 0; i < 4; i++)
-                data.Endings[i] = false;
-        }
-        data.Endings[currentEnding] = true;
-       
-        FileHandler.SaveCompletion(data);
+        EndingAchievements[currentEnding].TrySetAchievement(true);
+        Achievements.Instance.SaveLocalToDisk();
         CutsceneHandler.Instance.SetUpForEnding(this);
         CutsceneHandler.Instance.PlayCutScene(EndingCutscene, (int)Locations.darts);
     }
 
     public void CutsceneComplete() {
+        CutsceneHandler.Instance.HideUI();
         Background.sprite = CutsceneHandler.Instance.cutSceneBackGround.sprite;
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }

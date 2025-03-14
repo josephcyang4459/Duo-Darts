@@ -36,7 +36,8 @@ public class GroupImageFill : MonoBehaviour
 
     public void ClearImages() {
         enabled = false;
-        CurrentImage.SetFill(0);
+        if (CurrentImage != null)
+            CurrentImage.SetFill(0);
         CurrentImage = null;
         for (int i = OldImages.Count - 1; i >= 0; i--) {
             OldImages[i].SetFill(0);

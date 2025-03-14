@@ -14,7 +14,7 @@ public class Partner : ScriptableObject {
     public CutScene DefaultRepeatingScene;
     public CutScene DefaultDrinkingCutScene;
     public CutScene FinalCutscene; 
-    public Sprite[] Expressions;
+    [SerializeField] Sprite[] Expressions;
     public DartAI AI;
     public DartsBanterLines RegularBanterLines;
     public DartsBanterLines FinalsBanterLines;
@@ -64,6 +64,9 @@ public class Partner : ScriptableObject {
     }
 
     public Sprite GetExpression(int i) {
+        if (Achievements.Instance.IsAllChad())
+            return Achievements.Instance.GetChadExpression(i);
+
         if (i > Expressions.Length)
             return Expressions[0];
         return Expressions[i];

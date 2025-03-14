@@ -127,8 +127,8 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
     public void SelectButton(int index) {
         if (Buttons[index].IsActive()) {
             if (index - 2 >= 0) {
-                if (CharacterImage.sprite != Partners.list[AdjustedIdices[index - 2]].Expressions[0] || Slide.IsAtStart()) {
-                    CharacterImage.sprite = Partners.list[AdjustedIdices[index - 2]].Expressions[0];
+                if (CharacterImage.sprite != Partners.list[AdjustedIdices[index - 2]].GetExpression(0) || Slide.IsAtStart()) {
+                    CharacterImage.sprite = Partners.list[AdjustedIdices[index - 2]].GetExpression(0);
                     Slide.BeginSlide();
                 }
             }

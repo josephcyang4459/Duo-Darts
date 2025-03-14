@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,13 +15,15 @@ public class UIA_MultiImageFill : UIAnimationElement
         if (Behavior == Direction.Auto)
             return CurrentFill < .1 ? 1 : 0;
         if (Behavior == Direction.Fill) {
-            for(int i = 0; i < Images.Length; i++) {
+            for (int i = 0; i < Images.Length; i++) {
                 Images[i].fillAmount = 0;
             }
             return 1;
         }
+
         for (int i = 0; i < Images.Length; i++) {
-            Images[i].fillAmount = 1;
+            if (Images[i] != null)//Why is this ever Null? what? this causes crash in only one place idk why
+                Images[i].fillAmount = 1;// this crashes on trying to load final darts game
         }
         return 0;
     }

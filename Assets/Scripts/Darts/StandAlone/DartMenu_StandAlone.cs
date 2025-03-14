@@ -48,7 +48,7 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
              PauseMenu.inst.SetEnabled(true);
          }*/
       
-        Debug.Log("need to handle displaying tutorial here");
+     
         BeginSetUp();
     }
 
@@ -93,19 +93,19 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
        
        // Audio.inst.PlayClip(AudioClips.RandomDart);
         if (i >= (int)CharacterNames.Player) {
-            Portrait.sprite = Partners.list[0].Expressions[2];
+            Portrait.sprite = Partners.list[0].GetExpression(2);
             Slide.SetToStart();
             return;
         }
            
 
-        if (Portrait.sprite == Partners.list[i].Expressions[0])
+        if (Portrait.sprite == Partners.list[i].GetExpression(0))
             return;
         float fill = (float)i / (float)(Partners.list.Length - 2);// bruh this the top and bottom things duh
         foreach (ImageSmoothFill image in BorderFills)
             image.FillTo(fill);
 
-        Portrait.sprite = Partners.list[i].Expressions[0];
+        Portrait.sprite = Partners.list[i].GetExpression(0);
         Slide.BeginSlide();     
     }
 
@@ -171,8 +171,10 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
         switch (AnimationState) {
             case PingState.Tutorial:
             case PingState.EnterMain:
-                Debug.Log("here");
+               // Debug.Log("here");
                 UIState.inst.SetAsSelectedButton(FirstOverallButton);
+                if (TutorialHandler.inst.ShouldDisplayTutorial())
+                    Tutorial();
                 break;
             case PingState.EnterScore:
                     UIState.inst.SetAsSelectedButton(FirstScoreButton);

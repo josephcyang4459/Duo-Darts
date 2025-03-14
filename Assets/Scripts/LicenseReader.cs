@@ -6,6 +6,7 @@ public class LicenseReader : MonoBehaviour
 {
     [SerializeField] float ScrollSpeed;
     [SerializeField] float StartY;
+    [SerializeField] Transform StartPosition;
     [SerializeField] float YMin;
     [SerializeField] float YMax;
     [SerializeField] Transform Position;
@@ -39,7 +40,9 @@ public class LicenseReader : MonoBehaviour
         State = !State;
         LogCanvas.enabled = State;
         if (State) {
-            CachePosition.y = StartY;
+            YMin = StartPosition.position.y;
+            CachePosition.x = StartPosition.position.x;
+            CachePosition.y = StartPosition.position.y;
             Position.position = CachePosition;
             UpArrow.enabled = (CachePosition.y != YMax);
             DownArrow.enabled = (CachePosition.y != YMin);

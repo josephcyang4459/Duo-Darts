@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class InSceneTransition : MonoBehaviour, Caller
-{
+public class InSceneTransition : MonoBehaviour, Caller {
 
     [SerializeField] Canvas Canvas;
     [SerializeField] UIAnimationElement EnterAnimationHead;
@@ -18,7 +17,7 @@ public class InSceneTransition : MonoBehaviour, Caller
     }
 
     public void Ping() {
-        if(State == AnimationState.Entering) {//scene is now hidden
+        if (State == AnimationState.Entering) {//scene is now hidden
             Destination.NowHidden();
             State = AnimationState.Exiting;
             ExitAnimationHead.Begin(this);
@@ -28,17 +27,9 @@ public class InSceneTransition : MonoBehaviour, Caller
         }
     }
 
-enum AnimationState {
+    enum AnimationState {
         Entering,
         Exiting,
-    }    
+    }
 
-}
-
-
-
-public enum Destination {
-    CutScene,
-    Darts,
-    DartsFinals
 }

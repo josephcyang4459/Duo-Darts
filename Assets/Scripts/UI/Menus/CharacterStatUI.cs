@@ -30,19 +30,19 @@ public class CharacterStatUI : MonoBehaviour
     public void CheckCharacter(int i) {
         PartnerImages[i].color = Color.white;
         if (Characters.list[i].Love < -100) {
-            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Negative];
+            PartnerImages[i].sprite = Characters.list[i].GetExpression((int)Expressions.Negative);
             return;
         }
         if (Characters.list[i].RelatedCutScenes[(int)PartnerCutscenes.FinalScene].completed) {
-            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Positive];
+            PartnerImages[i].sprite = Characters.list[i].GetExpression((int)Expressions.Positive);
             return;
         }
         if (Characters.list[i].Intoxication >= 3) {
-            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Drunk];
+            PartnerImages[i].sprite = Characters.list[i].GetExpression((int)Expressions.Drunk);
             return;
         }
         if (Characters.list[i].RelatedCutScenes[0].completed) {
-            PartnerImages[i].sprite = Characters.list[i].Expressions[(int)Expressions.Nuetral];
+            PartnerImages[i].sprite = Characters.list[i].GetExpression((int)Expressions.Nuetral);
             return;
         }
         PartnerImages[i].color = NotYetInteractedWith;

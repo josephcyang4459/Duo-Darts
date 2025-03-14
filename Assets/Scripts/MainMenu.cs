@@ -8,30 +8,32 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] float Speed;
     [SerializeField] TMP_Text text;
     [SerializeField] Canvas MainMenueCanvas;
-    [SerializeField] Vector3 ButtonOffset;
-    [SerializeField] Vector3 DartsOffset;
     [SerializeField] FileUI FileUI;
     [SerializeField] Fillable_Image[] ButtonImages;
+    [SerializeField] Transform[] ButtonTargets;
     [SerializeField] GroupImageFill FillSection;
     [SerializeField] ColorSwatch CompletionColors;
     [SerializeField] Image[] CharacterImages;
     [SerializeField] FileHandler FileHandler;
     [SerializeField] GameObject FirstSelected;
+    [SerializeField] Achievement[] EndingAchievements;
 
     public void HoverButton(int i) {
-        Audio.inst.PlayClip(AudioClips.Click);
-        FillSection.SetCurrentImageToFill(ButtonImages[i], (ButtonImages[i].Images[1].transform).position + (i == 1 ? DartsOffset : ButtonOffset));
+        //Audio.inst.PlayClip(AudioClips.Click);
+        FillSection.SetCurrentImageToFill(ButtonImages[i], ButtonTargets[i].position);
     }
 
 
     public void Start() {
-        SetCompletion();
+       
         Audio.inst.PlaySong(MusicTrack.MainMenu);
 #if UNITY_EDITOR
         PlayerPrefs.SetInt("hasReadDartsTutorial", 0);
 #endif
         PauseMenu.inst.SetEnabled(false);
         Application.targetFrameRate = 60;
+        Achievements.Instance.LoadLocalAchievements();
+        SetCompletion();
         TransitionManager.inst.ReadyToEnterScene(this);
     }
 
@@ -42,11 +44,9 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     }
 
     void SetCompletion() {
-        CompletionData data = FileHandler.LoadCompletion();
-        if (data == null) return;
 
-        for (int i = 0; i < data.Endings.Length; i++)
-            CharacterImages[i].color = CompletionColors.colors[data.Endings[i] ? 1 : 0];
+        for (int i = 0; i < EndingAchievements.Length; i++)
+            CharacterImages[i].color = CompletionColors.colors[EndingAchievements[i].IsComplete() ? 1 : 0];
     }
 
     public void ShowOptions() {
