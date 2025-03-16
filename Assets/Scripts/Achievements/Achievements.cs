@@ -13,6 +13,7 @@ public class Achievements : MonoBehaviour {
 #if UNITY_EDITOR
     [SerializeField] bool SaveAfterLoad;
 #endif
+
     public void Start() {
         if (Instance != null) {
             Destroy(gameObject);
@@ -20,6 +21,10 @@ public class Achievements : MonoBehaviour {
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public Achievement[] GetAllAchivements() {
+        return AllAchievements;
     }
 
     public bool IsAllChad() {

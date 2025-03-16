@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
     [SerializeField] FileHandler FileHandler;
     [SerializeField] GameObject FirstSelected;
     [SerializeField] Achievement[] EndingAchievements;
-
+    [SerializeField] AccomplishmentsUI Accomplishments;
     public void HoverButton(int i) {
         //Audio.inst.PlayClip(AudioClips.Click);
         FillSection.SetCurrentImageToFill(ButtonImages[i], ButtonTargets[i].position);
@@ -54,6 +54,11 @@ public class MainMenu : MonoBehaviour, Caller, SceneEntrance {
         DartSticker.inst.SetVisible(false);
         MainMenueCanvas.enabled = false;
         OptionsMenu.inst.ShowOptions(this);
+    }
+
+    public void ShowAccomplishments() {
+        FillSection.ClearImages();
+        Accomplishments.Begin();
     }
 
     public void ShowCredits() { FillSection.ClearImages(); TransitionManager.inst.GoToScene(SceneNumbers.Credits); }

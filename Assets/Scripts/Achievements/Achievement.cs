@@ -9,8 +9,13 @@ public class Achievement : ScriptableObject {
     [SerializeField] string DisplayName;
     [SerializeField] [TextArea (2,5)] string Description;
     [SerializeField] bool Completed;
+    [SerializeField] bool Secret;
     [SerializeField] Sprite IncompleteIcon;
     [SerializeField] Sprite CompleteIcon;
+  
+    public Sprite GetCorrectIcon() {
+        return Completed ? CompleteIcon : IncompleteIcon;
+    }
 
     /// <summary>
     /// API Call Name
