@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InternalName: All_NPCs
   DisplayName: Social Butterfly
-  Description: Meet all side characters
-  Completed: 0
+  Description: Meet all characters in a single playthrough
+  Completed: 1
+  Secret: 0
   IncompleteIcon: {fileID: 21300000, guid: 80820a521597fab4da49074b1daf769e, type: 3}
-  CompleteIcon: {fileID: 21300000, guid: 9b8c09a6e584cf04293b4a6155f97611, type: 3}
+  CompleteIcon: {fileID: 21300000, guid: 972dd56cea03edc4494a72a84d2dbb2a, type: 3}

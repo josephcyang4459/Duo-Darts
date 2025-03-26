@@ -6,4 +6,11 @@ using UnityEngine;
 public class EventList : ScriptableObject
 {
     public EventStart[] List;
+
+    public bool AllComplete() {
+        foreach (EventStart e in List)
+            if (!e.done)
+                return false;
+        return true;
+    }
 }

@@ -13,7 +13,12 @@ public class DefaultCutsceneUI : MonoBehaviour, Caller {
     [SerializeField] UIType Type;
     [SerializeField] GameObject FirstSelectedButton;
     
+    public void ClearFill() {
+        Fill.ClearImages();
+    }
+
     public void HideUI(){
+        ClearFill();
         UI.enabled = false;
         ExitHead.ReachEndState();
     }

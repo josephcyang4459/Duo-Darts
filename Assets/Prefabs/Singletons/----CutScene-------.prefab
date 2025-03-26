@@ -5577,6 +5577,12 @@ MonoBehaviour:
   - {fileID: 8908070176899216627}
   - {fileID: 6007428726111855480}
   InCutscene: 0
+  SpecialCutscenes:
+  - {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
+  - {fileID: 11400000, guid: adaf0d923d9143e44880e5f3720ec782, type: 2}
+  - {fileID: 11400000, guid: ec390762b3506ec4480c726b0b003747, type: 2}
+  - {fileID: 11400000, guid: c32e579fbfed8f148b49289c4e0946a4, type: 2}
+  ViewSpecial: {fileID: 0}
   DartsMenu: {fileID: 0}
   Schedule: {fileID: 0}
   Ending: {fileID: 0}

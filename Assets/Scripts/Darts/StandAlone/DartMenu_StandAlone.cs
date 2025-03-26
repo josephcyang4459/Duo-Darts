@@ -172,9 +172,13 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
             case PingState.Tutorial:
             case PingState.EnterMain:
                // Debug.Log("here");
-                UIState.inst.SetAsSelectedButton(FirstOverallButton);
-                if (TutorialHandler.inst.ShouldDisplayTutorial())
+               
+                if (TutorialHandler.inst.ShouldDisplayTutorial()) {
                     Tutorial();
+                    return;
+                }
+                   
+                UIState.inst.SetAsSelectedButton(FirstOverallButton);
                 break;
             case PingState.EnterScore:
                     UIState.inst.SetAsSelectedButton(FirstScoreButton);

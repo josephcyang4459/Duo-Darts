@@ -56,4 +56,7 @@ public class TypeWriterEffect : MonoBehaviour {
         }
 
     }
+    private void OnDestroy() {
+        OptionsMenu.TextSpeedChange -= TextSpeedChange;
+    }
 }

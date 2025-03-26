@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Notification List
   m_EditorClassIdentifier: 
   List:
+  - {fileID: 11400000, guid: cb0c5df58e5a914478ba92cb9cef6a6b, type: 2}
   - {fileID: 11400000, guid: 4ff48033816c9d447982d1e5739eef98, type: 2}
   - {fileID: 11400000, guid: f2833abbd699146418203068e264d56e, type: 2}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78487141e88f8948a16d340be3cb9c4, type: 3}
   m_Name: One Hour til Final Round Event
   m_EditorClassIdentifier: 
-  hour: 0
-  minutes: 0
-  endHour: 0
+  hour: 7
+  minutes: 30
+  endHour: 255
   endMinutes: 0
   Location: 0
-  cutScene: {fileID: 0}
+  cutScene: {fileID: 11400000, guid: 29bc92e9bbb57544d95af6e9464f564c, type: 2}
   done: 0

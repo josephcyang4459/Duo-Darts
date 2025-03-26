@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 72
   Composure: 0
   Intoxication: 0
-  Love: 17
+  Love: 0
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 5f5ac865462a22a4d990c66d58e4adf4, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 17
   DefaultCutScene: {fileID: 11400000, guid: 2bd5b328f4aa0c14abd37a462972f761, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: d89d6071d0c6f6c43834f84b3e1b9738, type: 2}
@@ -56,4 +56,5 @@ MonoBehaviour:
   AI: {fileID: 11400000, guid: 770533c78b1e8324583fb2faae852cf3, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 0afc9fa466b71e54caa5f963c4bd7fad, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: 4bd3420255cf361478625e16f8add426, type: 2}
+  Victories: {fileID: 11400000, guid: 80b87425d0e538d4eb04c2d99c82dbfb, type: 2}
   TextBoxColors: {fileID: 11400000, guid: d11b8797a3468b64fa27f12b2e45f505, type: 2}

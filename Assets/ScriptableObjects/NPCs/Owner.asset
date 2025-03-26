@@ -46,4 +46,5 @@ MonoBehaviour:
   AI: {fileID: 11400000, guid: 1b7421afe6f94e9409aefddab0b86745, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: 527f9bffb081d75499337637578ecb64, type: 2}
+  Victories: {fileID: 11400000, guid: 9ac4d2e434c16bf4eab2c44f61a7a9cd, type: 2}
   TextBoxColors: {fileID: 11400000, guid: d14ee8397fb44b44cb40705b91c7cdea, type: 2}

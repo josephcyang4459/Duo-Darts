@@ -15,6 +15,7 @@ MonoBehaviour:
   InternalName: Drunk_Scene
   DisplayName: Cocktail Confidant
   Description: View a character's secret cutscene
-  Completed: 0
+  Completed: 1
+  Secret: 0
   IncompleteIcon: {fileID: 21300000, guid: 80820a521597fab4da49074b1daf769e, type: 3}
-  CompleteIcon: {fileID: 21300000, guid: 9b8c09a6e584cf04293b4a6155f97611, type: 3}
+  CompleteIcon: {fileID: 21300000, guid: 47b6b2080ee75024795a9fdd3f203f19, type: 3}

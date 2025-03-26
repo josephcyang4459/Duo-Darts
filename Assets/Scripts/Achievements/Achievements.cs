@@ -1,17 +1,18 @@
 using UnityEngine;
-#if !DISABLESTEAMWORKS
-using Steamworks;
-#endif
+
 public class Achievements : MonoBehaviour {
     public static Achievements Instance;
    
     [SerializeField] Achievement[] AllAchievements;
+    [SerializeField] Statistic[] AllStatistics;
     [SerializeField] bool OopsAllChad;
     [SerializeField] SpriteCollection ChadSprites;
     [SerializeField] DecodingState State;
     string AchievementHeader = "achievements";
+    string StatisticsHeader = "statistics";
+    [SerializeField] bool AlreadyLoaded;
 #if UNITY_EDITOR
-    [SerializeField] bool SaveAfterLoad;
+    [SerializeField] bool __SaveAfterLoad;
 #endif
 
     public void Start() {
@@ -19,6 +20,7 @@ public class Achievements : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+        AlreadyLoaded = false;
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -31,20 +33,32 @@ public class Achievements : MonoBehaviour {
         return OopsAllChad;
     }
 
+    public void SetAllChad(bool b) {
+        OopsAllChad = b;
+    }
+
     /// <summary>
     /// Generates Major Garbage
     /// </summary>
     public void LoadLocalAchievements() {
+        if (AlreadyLoaded)
+            return;
+        Debug.Log("here");
         string data = FileHandler.LoadCompletion();
+        if (data == null) {
 
+            Debug.Log("What the fuck");
+            return;
+        }
+        AlreadyLoaded = true;
         string[] lines = data.Split("\n");
 
         for (int i = 0; i < lines.Length; i++) {
-            DecodeLine(lines[0]);
+            DecodeLine(lines[i]);
         }
         TryReconcileSteamAchiements();
 #if UNITY_EDITOR
-        if (SaveAfterLoad)
+        if (__SaveAfterLoad)
             SaveLocalToDisk();
 #endif
     }
@@ -56,11 +70,14 @@ public class Achievements : MonoBehaviour {
     void DecodeLine(string line) {
         if (line.Length == 0)
             return;
+#if UNITY_EDITOR
+        Debug.Log(line);
+#endif
         if (line.Trim().CompareTo(AchievementHeader) == 0) {
             State = DecodingState.Achiements;
             return;
         }
-        if (line.Trim().CompareTo("stats") == 0) {
+        if (line.Trim().CompareTo(StatisticsHeader) == 0) {
             State = DecodingState.Stats;
             return;
         }
@@ -75,16 +92,35 @@ public class Achievements : MonoBehaviour {
 #endif
                     return;
                 }
+#if UNITY_EDITOR
+                Debug.Log("Setting Achievement " + subLine[0].Trim()+" to "+ subLine[1]);
+#endif
                 a.SetLocalState(subLine[1].Trim().CompareTo("T") == 0);
 
                 return;
             case DecodingState.Stats:
+                Statistic s = FindStatistic(subLine[0].Trim());
+                if (s == null) {
+#if UNITY_EDITOR
+                    Debug.Log("Could not find Statistic " + subLine[0].Trim());
+#endif
+                    return;
+                }
+                s.SetLocalData(subLine);
                 return;
         }
     }
 
     Achievement FindAchievement(string name) {
         foreach (Achievement a in AllAchievements) {
+            if (a.GetInternalName().CompareTo(name) == 0)
+                return a;
+        }
+        return null;
+    }
+
+    Statistic FindStatistic(string name) {
+        foreach (Statistic a in AllStatistics) {
             if (a.GetInternalName().CompareTo(name) == 0)
                 return a;
         }
@@ -106,6 +142,9 @@ public class Achievements : MonoBehaviour {
         result += "\n" + AchievementHeader + "\n";
         foreach (Achievement a in AllAchievements)
             result += a.Data();
+        result += "\n" + StatisticsHeader + "\n";
+        foreach (Statistic a in AllStatistics)
+            result += a.GetData();
         FileHandler.SaveCompletion(result);
     }
 
@@ -113,4 +152,28 @@ public class Achievements : MonoBehaviour {
         Achiements,
         Stats,
     }
+    private void OnDestroy() {
+        SaveLocalToDisk();
+    }
+#if UNITY_EDITOR
+    [SerializeField] bool __resetAll;
+    [SerializeField] bool __grab;
+
+    private void OnValidate() {
+        if (__grab) {
+            __grab = false;
+            AllStatistics = (Statistic[])Resources.FindObjectsOfTypeAll(typeof(Statistic));
+            AllAchievements = (Achievement[])Resources.FindObjectsOfTypeAll(typeof(Achievement));
+        }
+        if (__resetAll) {
+            __resetAll = false;
+            foreach (Achievement a in AllAchievements) {
+                a.SetLocalState(false);
+            }
+            foreach (Statistic a in AllStatistics) {
+                a.ResetStatistic();
+            }
+        }
+    }
+#endif
 }

@@ -12,14 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8671a7400da184aa3d748f8afe6d55, type: 3}
   m_Name: One Hour Before Final Round
   m_EditorClassIdentifier: 
-  blocks: []
+  blocks:
+  - rid: 8632543314113462275
+  - rid: 8632543314113462276
   defaultCharacter: 
   ForceDarts: 0
   TimeLength: 0
   TextAsset: {fileID: 0}
-  ThoughtStrings: []
+  ThoughtStrings:
+  - One hour until the final round begins.
+  - Looks like I'll need at least 30 points to make the finals.
   UseTextFile: 0
   reset: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8632543314113462275
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: One hour until the final round begins.
+    - rid: 8632543314113462276
+      type: {class: Thought, ns: , asm: Assembly-CSharp}
+      data:
+        thoughtMessage: Looks like I'll need at least 30 points to make the finals.

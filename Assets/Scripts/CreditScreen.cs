@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
-{
+public class CreditScreen : MonoBehaviour, Caller, SceneEntrance {
 
     [SerializeField] Vector3 Offset;
 
@@ -22,8 +21,7 @@ public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
     [SerializeField] GameObject CloseLicenseButton;
     [SerializeField] LicenseReader Reader;
 
-    public void Start()
-    {
+    public void Start() {
         TransitionManager.inst.ReadyToEnterScene(this);
         Audio.inst.PlaySong(MusicTrack.Credits);
     }
@@ -62,27 +60,22 @@ public class CreditScreen : MonoBehaviour, Caller, SceneEntrance
         UIState.inst.SetAsSelectedButton(FirstSelectedButton);
     }
 
-    public void SelectButton()
-    {
-        Audio.inst.PlayClip(AudioClips.Click);
+    public void SelectButton() {
         LeftFill.SetCurrentImageToFill(Left);
-        RightFill.SetCurrentImageToFill(Right, Right.transform.position+Offset);
+        RightFill.SetCurrentImageToFill(Right, Right.transform.position + Offset);
     }
 
-    public void UnSelectButton()
-    {
+    public void UnSelectButton() {
         LeftFill.SetCurrentImageToFill(Hidden0);
         RightFill.SetCurrentImageToFill(Hidden1);
     }
 
 
-    public void ReturnToMain()
-    {
+    public void ReturnToMain() {
         TransitionManager.inst.GoToScene(SceneNumbers.MainMenu);
     }
 
-    public void Ping()
-    {
+    public void Ping() {
         foreach (TextCycle t in TextCycles)
             t.Begin();
     }

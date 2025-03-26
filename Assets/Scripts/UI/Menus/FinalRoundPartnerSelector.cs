@@ -24,8 +24,6 @@ public class FinalRoundPartnerSelector : MonoBehaviour, TransitionCaller
     }
 
     public void SelectButton(int i) {
-        if (!Buttons[i].interactable)
-            return;
         Fill.SetCurrentImageToFill(PartnerImageMasks[i], DartTargets[i].position);
     }
 

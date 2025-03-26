@@ -35,7 +35,13 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     [SerializeField] Schedule s;
     [SerializeField] DartMenu_StandAlone StandAlone;
-    
+    [SerializeField] Achievement WinWIthAll;
+    [SerializeField] Achievement Bullseyes;
+    [SerializeField] Statistic_Int PlayerBullseyes;
+    [SerializeField] Statistic_Int TotalWins;
+    [SerializeField] Statistic_Int PlayerSixties;
+    [SerializeField] Statistic_Int PlayerMisses;
+
     bool IsFinals() {
         if (s == null)
             return false;
@@ -82,6 +88,8 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void Win() {
         GameEnd();
+        CurrentPartner.Victories.IncreaseNumber();
+        TotalWins.IncreaseNumber();
         if(s!=null)
             stats.TotalPointsScoredAcrossAllDartMatches += PointsAwardedToPlayerAddedForWin;
         if (IsFinals())
@@ -91,6 +99,21 @@ public class DartGame : MonoBehaviour, TransitionCaller {
             EndTimer.BeginTimer(WaitForEndTime);
         }
             
+    }
+
+    void CheckForAchievements() {
+        if (AllWin()) {
+            WinWIthAll.TrySetAchievement(true);
+        }
+    }
+
+    bool AllWin() {
+        int um = characters.NumPartners();
+        for (int i = 0; i < um; i++) {
+            if (characters.list[i].Victories.GetNumber() <= 0)
+                return false;
+        }
+        return true;
     }
 
     public void GoToCorrectEnding() {
@@ -195,12 +218,18 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     /// </summary>
     public void AddPoints(int newPoints) {
         if (newPoints == 50) {
+            if (currentTurn % 2 == 0)
+                PlayerBullseyes.IncreaseNumber();
             Audio.inst.PlayDartClipReverb(DartAudioClips.Medium, AudioReverbPreset.Cave);
         }
         else if (newPoints == 60) {
+            if (currentTurn % 2 == 0)
+               PlayerSixties.IncreaseNumber();
             Audio.inst.PlayDartClipReverb(DartAudioClips.Hard, AudioReverbPreset.Drugged);
         }
         else if (newPoints == 0) {
+            if (currentTurn % 2 == 0)
+                PlayerMisses.IncreaseNumber();
             Audio.inst.PlayDartClipReverb(DartAudioClips.Soft, AudioReverbPreset.Bathroom);
         }
         else {
@@ -259,6 +288,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     public void EndDartsGame() {
         foreach (ControlVisual v in ControlVisuals)
             v.End();
+        CheckForAchievements();
         board.enabled = false;
         Visuals.SetResultScreen();
         Banter.HideDialouge();

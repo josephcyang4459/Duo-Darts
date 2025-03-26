@@ -35,6 +35,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     [SerializeField] int responseIndexIndex = 0;
     [SerializeField] ControlVisual[] ControlVisuals;
     public bool InCutscene;
+    [SerializeField] CutScene[] SpecialCutscenes;
+    [SerializeField] Achievement ViewSpecial;
     [Header("Some Story Stuff no need to touch")]
     public DartPartnerStoryUI DartsMenu;
     public Schedule Schedule;
@@ -69,7 +71,7 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
     }
 
     public void PlayClickSound() {
-        Audio.inst.PlayClip(AudioClips.Click);
+        //Audio.inst.PlayClip(AudioClips.Click);
     }
 
     public void SetCharacterSprite(int i) {
@@ -85,6 +87,16 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         Schedule = schedule;
     }
 
+    void CheckAcievements(CutScene c) {
+        if (!ViewSpecial.IsComplete()) {
+            foreach (CutScene ch in SpecialCutscenes)
+                if (ch == c) {
+                    ViewSpecial.TrySetAchievement(true);
+                    break;
+                }
+        }
+    }
+
     public void PlayCutScene(CutScene c, int BackgroundIndex) {
         foreach (ControlVisual v in ControlVisuals)
             v.Begin();
@@ -92,6 +104,8 @@ public class CutsceneHandler : MonoBehaviour, TransitionCaller {
         Log.ResetLog();
         if (c.TimeLength != TimeBlocks.Notification)// make sure we are playing a real cutscene and not a notification
             Audio.inst.PlaySong(MusicTrack.Cutscene);
+        CheckAcievements(c);
+
         //PauseMenu.inst.SetEnabled(false);
         UIState.inst.SetInteractable(false);
         DartSticker.inst.SetVisible(false);

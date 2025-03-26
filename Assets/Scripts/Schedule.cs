@@ -25,9 +25,6 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     [SerializeField] TMP_Text[] btnText;
     [SerializeField] EventList BadEndings;
 
-
-    public GameObject FirstLocationButton;
-    public GameObject FirstEventButton;
     public GameObject GenderChoiceButton;
     [SerializeField] ImageFill GenderFill;
 
@@ -35,6 +32,7 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
     public ResetStats ResetStats;
     public SaveHandler SaveHandler;
     public Canvas GenderChoiceCanvas;
+    [SerializeField] Achievement MeetAll;
 
     public void Start() {
         Audio.inst.PlaySong(MusicTrack.LocationSelect);
@@ -42,8 +40,12 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
         int fileIndex = TransitionManager.inst.GetFileIndex();
         if (fileIndex > -1)
             LoadFromFile(fileIndex);
-        else
+        else {
+            hour = 5;
+            minutes = 0;
             ResetStats.ResetStatsAndCompletionToBase();
+        }
+            
         Clock.SetVisible(true);
         Clock.SetTime(hour, minutes);
         TransitionManager.inst.ReadyToEnterScene(this);
@@ -139,15 +141,30 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
         }
         return false;
     }
+    bool CheckMetCharacters() {
+        for (int i = 0; i <= (int)CharacterNames.Owner; i++)
+            if (!characters.list[i].HasMet())
+                return false;
+        return true;
+    }
 
     public void SetTime(TimeBlocks time) {
+
+        if (time == TimeBlocks.Long) {// achievement check
+            if (!MeetAll.IsComplete())
+                if (MiscNPCEvents.AllComplete()) {
+                    if (CheckMetCharacters()) {
+                        MeetAll.TrySetAchievement(true);
+                    }
+                }
+        }
+
         CharacterStatUI.inst.UpdateUI();
         UIState.inst.SetInteractable(true);
         Audio.inst.PlaySong(MusicTrack.LocationSelect);
        
         IncreaseTimeByMinutes((int)time);
-        if (CheckForNotification())
-            return;
+       
 
         if (hour >= 9) {
             if (!BadEndings.List[(int)BadEndingIndicies.DidNotWin].done) {
@@ -192,6 +209,9 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
                 return;
             }
         }
+
+        if (CheckForNotification())
+            return;
 
 
         LocationSelector.BeginEntrance();
@@ -292,6 +312,9 @@ public class Schedule : MonoBehaviour, SceneEntrance, TransitionCaller, Caller {
             return eventP.Location;
         }
         return Locations.none;
+    }
+    private void OnDestroy() {
+        Achievements.Instance.SaveLocalToDisk();
     }
 }
 [System.Serializable]

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] public static TutorialHandler inst;
-    [SerializeField] public InputActionReference PauseInput;
     [SerializeField] GameObject ExitButton;
     [SerializeField] UIAnimationElement TutorialAnimation;
     [SerializeField] Canvas TutorialCanvas;
@@ -32,6 +31,13 @@ public class TutorialHandler : MonoBehaviour, Caller {
         return PlayerPrefs.GetInt("hasReadDartsTutorial") == 0;
     }
 
+    public void TrySetFlag(Sprite sprite) {
+        if (sprite == StoryTutorialImage)// makes sure we are only setting flag if player reads Darts and not story tutorial
+            return;
+        if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
+            PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
+    }
+
     public void EnableTutorial(bool enable, Sprite sprite, TextAsset textFile = null) {
         DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         TutorialImage.sprite = sprite;
@@ -43,17 +49,11 @@ public class TutorialHandler : MonoBehaviour, Caller {
             TutorialText.text = textFile.text;
 
         if (enable) {
-            if (sprite == StoryTutorialImage)// makes sure we are only setting flag if player reads Darts and not story tutorial
-                return;
-            if (PlayerPrefs.GetInt("hasReadDartsTutorial") != 1)
-                PlayerPrefs.SetInt("hasReadDartsTutorial", 1);
-            PauseInput.action.performed += DisableTutorials;
+            TrySetFlag(sprite);
             PauseMenu.inst.UnenablePause();
-            PauseInput.action.Enable();
             UIState.inst.SetAsSelectedButton(ExitButton);// for controller compatibility
             DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         } else {
-            PauseInput.action.performed -= DisableTutorials;
             PauseMenu.inst.SetEnabled(true);
 
             if (Caller != null) {
@@ -81,9 +81,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
     public void EnableDartsTutorial(bool enable) { EnableTutorial(enable, DartsTutorialImage, DartsTutorialText); }
 
     public void DisableTutorials() {EnableTutorial(false, DartsTutorialImage); }
-
-    // This overload method is for player input
-    public void DisableTutorials(InputAction.CallbackContext c) { DisableTutorials(); }
 
     // Empty method just for Caller purposes
     public void Ping() { }

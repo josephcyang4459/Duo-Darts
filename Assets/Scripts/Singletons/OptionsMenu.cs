@@ -12,6 +12,10 @@ public class OptionsMenu : MonoBehaviour
     public Slider VolumeSlider;
     public TMP_Text VolumeText;
 
+    public Slider SFXVolumeSlider;
+    public TMP_Text SFXVolumeText;
+
+
     [SerializeField] UIToggle[] Toggles;
 
     [SerializeField] Caller Caller;
@@ -20,6 +24,7 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] GameObject ReturnButton;
     public delegate void SettingChange(float value);
     public static event SettingChange VolumeChange;
+    public static event SettingChange SFXVolumeChange;
     public static event SettingChange TextSpeedChange;
 
     private void Start(){
@@ -32,6 +37,7 @@ public class OptionsMenu : MonoBehaviour
         DontDestroyOnLoad(this);
 
         VolumeSlider.value = PlayerPrefs.GetFloat("volume", .5f)*10;
+        SFXVolumeSlider.value = PlayerPrefs.GetFloat("sfx_volume", .5f) * 10;
         TextSpeedSlider.value = PlayerPrefs.GetFloat("textSpeed", 5);
         VolumeText.text = VolumeSlider.value.ToString();
         VolumeChange(VolumeSlider.value / 10);
@@ -71,6 +77,14 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("volume", realVolume);
         Audio.inst.PlayClip(AudioClips.Click);
         VolumeChange(realVolume);
+    }
+
+    public void SFXVolumeSliderFunction() {
+        SFXVolumeText.text = SFXVolumeSlider.value.ToString();
+        float realVolume = SFXVolumeSlider.value / 10f;
+        PlayerPrefs.SetFloat("sfx_volume", realVolume);
+        Audio.inst.PlayClip(AudioClips.Click);
+        SFXVolumeChange(realVolume);
     }
 
     public void TextSpeedSliderFunction(){

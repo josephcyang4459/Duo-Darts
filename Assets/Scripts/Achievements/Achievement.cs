@@ -17,6 +17,10 @@ public class Achievement : ScriptableObject {
         return Completed ? CompleteIcon : IncompleteIcon;
     }
 
+    public Sprite GetCompletedIcon() {
+        return CompleteIcon;
+    }
+
     /// <summary>
     /// API Call Name
     /// </summary>

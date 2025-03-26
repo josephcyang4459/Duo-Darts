@@ -12723,6 +12723,12 @@ MonoBehaviour:
   Transition: {fileID: 0}
   s: {fileID: 0}
   StandAlone: {fileID: 0}
+  WinWIthAll: {fileID: 11400000, guid: ab6cb21e19d96f04f84fae4eae39340a, type: 2}
+  Bullseyes: {fileID: 0}
+  PlayerBullseyes: {fileID: 11400000, guid: b40cfadc9936aa94eac6a1f26d256e5b, type: 2}
+  TotalWins: {fileID: 11400000, guid: 373acd5be00d29849aefbd1458a65de7, type: 2}
+  PlayerSixties: {fileID: 11400000, guid: c1d3fed71257ba143a9a6631250839f5, type: 2}
+  PlayerMisses: {fileID: 11400000, guid: 829a737787c13234c8458f7d7310c6cf, type: 2}
 --- !u!114 &7917560275646839230
 MonoBehaviour:
   m_ObjectHideFlags: 0

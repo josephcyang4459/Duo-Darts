@@ -8,6 +8,7 @@ public class UIState : MonoBehaviour {
     [SerializeField] InputSystemUIInputModule UI;
     [SerializeField] GameObject CurrentFirstSelected;
     [SerializeField] bool IsUsingController;
+
     public void Awake()
     {
         if(inst != null)

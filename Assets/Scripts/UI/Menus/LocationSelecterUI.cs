@@ -37,13 +37,15 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     public void BeginGoToLocation(int index) {
         ExitAnimationHead.ReachEndState();
         SelectedLocation = index;
+        BackgroundImage.sprite = SpriteCollection.Sprites[SelectedLocation];//to make sure hopefull fix whatever issue i was having
         LocationSelectorCanvas.enabled = false;
-        Fill.ClearImages();
+        DartSticker.inst.SetVisible(false);
         Schedule.SetEventsForLocation(index);
         EventSelector.SetLocation(index);
     }
 
     public void BeginEntrance() {
+        Fill.ClearImages();
         BackGroundImageCanvas.enabled = true;
         LocationSelectorCanvas.enabled = true;
         PauseMenu.inst.SetEnabled(false);
@@ -60,7 +62,6 @@ public class LocationSelecterUI : MonoBehaviour, Caller {
     }
 
     void Enter() {
-        
         PauseMenu.inst.SetEnabled(true);
         UIState.inst.SetInteractable(true);
         UIState.inst.SetAsSelectedButton(FirstSelected);

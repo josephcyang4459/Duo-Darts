@@ -15,19 +15,19 @@ MonoBehaviour:
   Name: Jess
   Font: {fileID: 11400000, guid: 8a8eac59992111d47a2662899c266bf8, type: 2}
   textSize: 100
-  Composure: 2
+  Composure: 0
   Intoxication: 0
-  Love: 15
+  Love: 0
   RelatedCutScenes:
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: f9a4b719951978844959a91afbab90f9, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 0
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: a07df6bd7743e3945af58791745ac6d8, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 1
   - Location: bar
     CutsceneLocation: 1
@@ -42,7 +42,7 @@ MonoBehaviour:
   - Location: lounge
     CutsceneLocation: 0
     CutScene: {fileID: 11400000, guid: 3eeae9dfe138f8541b2906d9a349ada5, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 14
   DefaultCutScene: {fileID: 11400000, guid: 13fb5b3be8524354da6fc2bc63e7ce58, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: 90a42bbabeeabd44aa1d393678f82b4b, type: 2}
@@ -56,4 +56,5 @@ MonoBehaviour:
   AI: {fileID: 11400000, guid: 30480f6efe9dec043bb303b5b8b30671, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 3cbd0691977b4094bb7d92652447726f, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: f36f0e31f3a5b744a9c512b39363e71d, type: 2}
+  Victories: {fileID: 11400000, guid: 7b9b1141ae77d65439e82bde6aceaae0, type: 2}
   TextBoxColors: {fileID: 11400000, guid: 31d6fa6ef009a8548b16f07aa4418e7a, type: 2}

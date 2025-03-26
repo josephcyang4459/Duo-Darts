@@ -5,7 +5,8 @@ using UnityEngine;
 public class Audio : MonoBehaviour
 {
     public static Audio inst;
-    [SerializeField] AudioSource MainSource;
+    [SerializeField] AudioSource MusicSource;
+    [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource ReverbSource;
     [SerializeField] AudioReverbZone ReverbZone;
     [SerializeField] AudioClip ClickSound;
@@ -26,19 +27,37 @@ public class Audio : MonoBehaviour
         DontDestroyOnLoad(this);
         inst = this;
         OptionsMenu.VolumeChange += ChangeVolume;
+        OptionsMenu.SFXVolumeChange += ChangeSFXVolume;
         ChangeVolume(PlayerPrefs.GetFloat("volume", .5f));
+        ChangeVolume(PlayerPrefs.GetFloat("sfx_volume", .5f));
+    }
+
+    private void OnDestroy() {
+        OptionsMenu.VolumeChange -= ChangeVolume;
+        OptionsMenu.SFXVolumeChange -= ChangeSFXVolume;
     }
 
     public void ChangeVolume(float value) {
         if (Mathf.Approximately(value, 0)) {
-            MainSource.mute = true;
+            MusicSource.mute = true;
+            return;
+        }
+
+        if (MusicSource.mute)
+            MusicSource.mute = false;
+        MusicSource.volume = value;
+    }
+
+    public void ChangeSFXVolume(float value) {
+        if (Mathf.Approximately(value, 0)) {
+            SFXSource.mute = true;
             ReverbSource.mute = true;
             return;
         }
 
-        if (MainSource.mute)
-            MainSource.mute = false;
-        MainSource.volume = value;
+        if (SFXSource.mute)
+            SFXSource.mute = false;
+        SFXSource.volume = value;
         if (ReverbSource.mute)
             ReverbSource.mute = false;
         ReverbSource.volume = value;
@@ -48,7 +67,7 @@ public class Audio : MonoBehaviour
     {
         switch (clip)
         {
-            //case AudioClips.Click: PlayClip(ClickSound);return;
+            case AudioClips.Click: PlayClip(ClickSound);return;
             case AudioClips.RandomDart: PlayClip(DartClips.List[Random.Range(0,DartClips.List.Length)]);return;
         }
     }
@@ -67,24 +86,24 @@ public class Audio : MonoBehaviour
 
     public void PlayClip(AudioClip clip)
     {
-        MainSource.PlayOneShot(clip);
+        SFXSource.PlayOneShot(clip);
     }
 
     public void PlaySong(MusicTrack trackID) {
         if (Music.List[(int)trackID] == null)
             return;
-        if (MainSource.clip == Music.List[(int)trackID])
-            if (MainSource.isPlaying)
+        if (MusicSource.clip == Music.List[(int)trackID])
+            if (MusicSource.isPlaying)
                 return;
 
-        MainSource.clip = Music.List[(int)trackID];
-        MainSource.Play();
+        MusicSource.clip = Music.List[(int)trackID];
+        MusicSource.Play();
 
     }
 
     public void StopSong()
     {
-        MainSource.Stop();
+        MusicSource.Stop();
     }
 }
 

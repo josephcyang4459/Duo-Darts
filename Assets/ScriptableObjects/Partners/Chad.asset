@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 100
   Composure: 0
   Intoxication: 0
-  Love: 26
+  Love: 0
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0
@@ -27,22 +27,22 @@ MonoBehaviour:
   - Location: darts
     CutsceneLocation: 4
     CutScene: {fileID: 11400000, guid: 98875e2447f695246a1c33669b932a9b, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 1
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: 58c99b5db0254e94cbfb3ceeda7550c8, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 6
   - Location: dance
     CutsceneLocation: 2
     CutScene: {fileID: 11400000, guid: 310c87f9d93926140bcaee2fb48a887d, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 10
   - Location: bathroom
     CutsceneLocation: 3
     CutScene: {fileID: 11400000, guid: 6795597ceb8d7a34cac59555bff5b7bc, type: 2}
-    completed: 1
+    completed: 0
     loveRequirement: 13
   DefaultCutScene: {fileID: 11400000, guid: 5fcccc1e348025545966f489b9d40460, type: 2}
   DefaultRepeatingScene: {fileID: 11400000, guid: cc796700ef807fd47bdce5c60065d310, type: 2}
@@ -56,4 +56,5 @@ MonoBehaviour:
   AI: {fileID: 11400000, guid: 2a8cc263ac454d54d8d7d5e94b02517e, type: 2}
   RegularBanterLines: {fileID: 11400000, guid: 7309d5e3b9a59344a9a032cc7cbab39a, type: 2}
   FinalsBanterLines: {fileID: 11400000, guid: 56019ea05853afd499cd3e1c02d3d172, type: 2}
+  Victories: {fileID: 11400000, guid: 9bd83ac234b3fc04aac3bfbbf3e8c5b3, type: 2}
   TextBoxColors: {fileID: 11400000, guid: cc39c60b31297a948885fd2a491c188d, type: 2}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Player
   Intoxication: 0
-  Skill: 8
-  Luck: 5
-  TotalPointsScoredAcrossAllDartMatches: 15
+  Skill: 0
+  Luck: 0
+  TotalPointsScoredAcrossAllDartMatches: 0
   TextBoxForegroundColor: {r: 0.23529413, g: 0.2509804, b: 0.2784314, a: 1}
   TextBoxBackgroundColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}

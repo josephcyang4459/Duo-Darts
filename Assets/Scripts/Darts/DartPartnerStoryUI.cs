@@ -147,6 +147,7 @@ public class DartPartnerStoryUI : MonoBehaviour, Caller, TransitionCaller
 
     public void BackToEventPicker() {
         UnenableClick();
+        Fill.ClearImages();
         State = AnimationState.ExitingToEvent;
         UIState.inst.SetInteractable(false);
         PauseMenu.inst.SetEnabled(false);

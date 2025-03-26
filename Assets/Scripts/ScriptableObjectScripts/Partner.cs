@@ -18,8 +18,16 @@ public class Partner : ScriptableObject {
     public DartAI AI;
     public DartsBanterLines RegularBanterLines;
     public DartsBanterLines FinalsBanterLines;
+    public Statistic_Int Victories;
     public ColorSwatch TextBoxColors;
     
+    public bool HasMet() {
+        for (int i = 0; i < RelatedCutScenes.Length; i++)
+            if (RelatedCutScenes[i].completed)
+                return true;
+        return false;
+    }
+
     /// <summary>
     /// Index of next available Cutscene or -1 if default
     /// </summary>
@@ -67,7 +75,18 @@ public class Partner : ScriptableObject {
         if (Achievements.Instance.IsAllChad())
             return Achievements.Instance.GetChadExpression(i);
 
-        if (i > Expressions.Length)
+        if (i >= Expressions.Length)
+            return Expressions[0];
+        return Expressions[i];
+    }
+
+    /// <summary>
+    /// Ignores OopsAllChadChecks
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns></returns>
+    public Sprite GetRawExpression(int i) {
+        if (i >= Expressions.Length)
             return Expressions[0];
         return Expressions[i];
     }
