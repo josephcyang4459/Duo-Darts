@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ControlVisual : MonoBehaviour
 {
@@ -6,6 +8,8 @@ public class ControlVisual : MonoBehaviour
     //this is incredibly simplistic as we do not support specialized graphics for each button
     [SerializeField] GameObject GamepadControlElement;
     [SerializeField] GameObject KeyboardControlElement;
+    [SerializeField] InputActionReference InputAction;
+    [SerializeField] TMP_Text ControlText;
 
     public void Begin() {
         ControlState.UsingController += CheckController;
@@ -13,6 +17,8 @@ public class ControlVisual : MonoBehaviour
     }
 
     public void CheckController(bool isUsingController) {
+        if (InputAction != null)
+            ControlText.text = InputAction.action.GetBindingDisplayString(ControlState.inst.DefaultOptions,"Gamepad");
         GamepadControlElement.SetActive(isUsingController);
         KeyboardControlElement.SetActive(!isUsingController);
     }

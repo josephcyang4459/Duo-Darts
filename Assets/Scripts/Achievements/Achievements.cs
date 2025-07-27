@@ -11,6 +11,8 @@ public class Achievements : MonoBehaviour {
     string AchievementHeader = "achievements";
     string StatisticsHeader = "statistics";
     [SerializeField] bool AlreadyLoaded;
+    [SerializeField] bool CurrentlyLoading;
+    [SerializeField] AchivementsPopup Popup;
 #if UNITY_EDITOR
     [SerializeField] bool __SaveAfterLoad;
 #endif
@@ -37,17 +39,21 @@ public class Achievements : MonoBehaviour {
         OopsAllChad = b;
     }
 
+    public void ShowAchivementPop(Achievement achieved) {
+        if (CurrentlyLoading)
+            return;
+
+    }
+
     /// <summary>
     /// Generates Major Garbage
     /// </summary>
     public void LoadLocalAchievements() {
         if (AlreadyLoaded)
             return;
-        Debug.Log("here");
+        CurrentlyLoading = true;
         string data = FileHandler.LoadCompletion();
         if (data == null) {
-
-            Debug.Log("What the fuck");
             return;
         }
         AlreadyLoaded = true;
@@ -61,6 +67,7 @@ public class Achievements : MonoBehaviour {
         if (__SaveAfterLoad)
             SaveLocalToDisk();
 #endif
+        CurrentlyLoading = false;
     }
 
     public Sprite GetChadExpression(int index) {
@@ -156,6 +163,7 @@ public class Achievements : MonoBehaviour {
         SaveLocalToDisk();
     }
 #if UNITY_EDITOR
+    [SerializeField] bool __testPopup;
     [SerializeField] bool __resetAll;
     [SerializeField] bool __grab;
 
@@ -173,6 +181,10 @@ public class Achievements : MonoBehaviour {
             foreach (Statistic a in AllStatistics) {
                 a.ResetStatistic();
             }
+        }
+        if (__testPopup) {
+            __testPopup = false;
+            Popup.AddToQueue(AllAchievements[0]);
         }
     }
 #endif

@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13198,6 +13198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamepadControlElement: {fileID: 2906626529111068156}
   KeyboardControlElement: {fileID: 4207731318442933377}
+  InputAction: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  ControlText: {fileID: 8092112787842276803}
 --- !u!114 &2407767557049423863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13212,6 +13214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamepadControlElement: {fileID: 6344710959014172481}
   KeyboardControlElement: {fileID: 2048451400145235642}
+  InputAction: {fileID: 0}
+  ControlText: {fileID: 0}
 --- !u!1 &7917560275763359306
 GameObject:
   m_ObjectHideFlags: 0

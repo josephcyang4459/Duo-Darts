@@ -23,7 +23,7 @@ public class Audio : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
         DontDestroyOnLoad(this);
         inst = this;
         OptionsMenu.VolumeChange += ChangeVolume;

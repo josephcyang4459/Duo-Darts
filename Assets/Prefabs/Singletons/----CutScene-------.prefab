@@ -2263,8 +2263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 282.5, y: -50}
-  m_SizeDelta: {x: 100, y: 75}
+  m_AnchoredPosition: {x: 362.5, y: -50}
+  m_SizeDelta: {x: 150, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4484920215834794053
 CanvasRenderer:
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8233e4c28b245c4f92c8d38d62bb07c, type: 2}
   m_sharedMaterial: {fileID: -417650277066936942, guid: f8233e4c28b245c4f92c8d38d62bb07c, type: 2}
@@ -2321,10 +2321,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 51.8
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: adaf0d923d9143e44880e5f3720ec782, type: 2}
   - {fileID: 11400000, guid: ec390762b3506ec4480c726b0b003747, type: 2}
   - {fileID: 11400000, guid: c32e579fbfed8f148b49289c4e0946a4, type: 2}
-  ViewSpecial: {fileID: 0}
+  ViewSpecial: {fileID: 11400000, guid: 827d4bb8e51d653439bc37a5769c7ad0, type: 2}
   DartsMenu: {fileID: 0}
   Schedule: {fileID: 0}
   Ending: {fileID: 0}
@@ -6690,6 +6690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamepadControlElement: {fileID: 448328565578708042}
   KeyboardControlElement: {fileID: 4274257409289880435}
+  InputAction: {fileID: 2654221516681666237, guid: 0436482055235fb43825f893cacf9475, type: 3}
+  ControlText: {fileID: 3316775325516815898}
 --- !u!1 &1910538233696890834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,8 +7981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -37.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 125, y: -37.5}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8362094487256957971
 CanvasRenderer:
@@ -8037,10 +8039,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 40.3
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -14180,7 +14182,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 75}
+  m_SizeDelta: {x: 150, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5897989418693892851
 CanvasRenderer:
@@ -14237,10 +14239,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 60.45
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -28179,6 +28181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamepadControlElement: {fileID: 2411042970437621142}
   KeyboardControlElement: {fileID: 8417157009345372877}
+  InputAction: {fileID: 3692916027078479289, guid: 0436482055235fb43825f893cacf9475, type: 3}
+  ControlText: {fileID: 318880993229998276}
 --- !u!1 &8251244663277218127
 GameObject:
   m_ObjectHideFlags: 0

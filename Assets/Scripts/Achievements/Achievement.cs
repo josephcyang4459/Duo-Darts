@@ -53,14 +53,17 @@ public class Achievement : ScriptableObject {
         if (state == Completed)
             return;
         Completed = state;
-
+        Achievements.Instance.ShowAchivementPop(this);
         if (!SteamManager.Initialized)
             return;
 #if !DISABLESTEAMWORKS
         if (state) {
             if (SteamUserStats.GetUserAchievement(SteamUser.GetSteamID(), InternalName, out bool achieved)) {
-                if (!achieved)
+                if (!achieved) {
                     SteamUserStats.SetAchievement(InternalName);
+                    SteamUserStats.StoreStats();
+                }
+                   
             }
             return;
         }

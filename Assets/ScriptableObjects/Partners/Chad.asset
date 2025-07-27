@@ -17,7 +17,7 @@ MonoBehaviour:
   textSize: 100
   Composure: 0
   Intoxication: 0
-  Love: 0
+  Love: 3
   RelatedCutScenes:
   - Location: lounge
     CutsceneLocation: 0

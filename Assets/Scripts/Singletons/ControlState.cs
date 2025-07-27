@@ -15,6 +15,8 @@ public class ControlState : MonoBehaviour, Caller {
     public delegate void State(bool state);
     public static event State UsingController;
 
+    public InputBinding.DisplayStringOptions DefaultOptions;
+
     void Awake() {
         if (inst != null) {
             Destroy(gameObject);
