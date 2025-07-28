@@ -16,8 +16,16 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     [SerializeField] Timer PartnerBanterTimer;
     [SerializeField] float TimeToWait;
     [SerializeField] bool CheckOut;
-
+    [SerializeField] float BanterBoxPadding;
+    [SerializeField] Vector2 BanterBoxSize;
+    [SerializeField] RectTransform BanterBoxOutline;
+    [SerializeField] Image[] ToTurnOfForCheckoutbanter;
+    [SerializeField] Image[] ToTurnOnForCheckOutBanter;
     public void SetPartner(Partner partner, bool isFinal) {
+        foreach(Image i in ToTurnOfForCheckoutbanter)
+            i.enabled = true;
+        foreach (Image i in ToTurnOnForCheckOutBanter)
+            i.enabled = false;
         Partner = partner;
         IsFinal = isFinal;
         DialougeCanvas.enabled = false;
@@ -39,6 +47,10 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     public void GetDialougeFromScore() {
         if (NullCheck())
             return;
+        foreach (Image i in ToTurnOfForCheckoutbanter)
+            i.enabled = false;
+        foreach (Image i in ToTurnOnForCheckOutBanter)
+            i.enabled = true;
         string message = (IsFinal ? Partner.FinalsBanterLines : Partner.RegularBanterLines).GetCheckoutLine();
         SetImageFromScore(15000);
         CheckOut = true;
@@ -70,6 +82,8 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
             return;
         DialougeCanvas.enabled = true;
         Dialouge.text = message;
+        BanterBoxSize.x = Dialouge.preferredWidth + BanterBoxPadding;
+        BanterBoxOutline.sizeDelta = BanterBoxSize;
         PartnerBanterTimer.BeginTimer(TimeToWait);
     }
 

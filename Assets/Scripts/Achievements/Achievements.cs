@@ -42,7 +42,7 @@ public class Achievements : MonoBehaviour {
     public void ShowAchivementPop(Achievement achieved) {
         if (CurrentlyLoading)
             return;
-
+        Popup.AddToQueue(achieved);
     }
 
     /// <summary>

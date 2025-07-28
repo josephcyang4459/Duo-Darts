@@ -33,8 +33,7 @@ MonoBehaviour:
     ChanceToUse: 60
     Lines:
     - "One leg at a time. This one's ours.\r"
-    - "\r"
-    AlreadyUsed: 0000
+    AlreadyUsed: 00
     Used: 0
   - MinScoreRangeInclusive: 140
     MaxScoreRangeExclusive: 180

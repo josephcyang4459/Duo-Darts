@@ -14,16 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LineGroups:
   - MinScoreRangeInclusive: 0
-    MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    MaxScoreRangeExclusive: 1
+    ChanceToUse: 38.2
+    Lines:
+    - Uh oh.
+    - Yikes.
+    - ...
+    - Oof.
+    AlreadyUsed: 00000000
     Used: 0
+  - MinScoreRangeInclusive: 12
+    MaxScoreRangeExclusive: 13
+    ChanceToUse: 100
+    Lines:
+    - Were you aiming for 12? Like exactly 12?
+    AlreadyUsed: 00
+    Used: 0
+  - MinScoreRangeInclusive: 137
+    MaxScoreRangeExclusive: 138
+    ChanceToUse: 100
+    Lines:
+    - Great score. The classic 137 turn! Yeah Yeah baby!
+    AlreadyUsed: 00
+    Used: 0
+  - MinScoreRangeInclusive: 180
+    MaxScoreRangeExclusive: 181
+    ChanceToUse: 64.7
+    Lines:
+    - Oh wow!
+    - Nice
+    - Holy Moly!
+    AlreadyUsed: 000100
+    Used: 1
   CheckOut:
     MinScoreRangeInclusive: 0
     MaxScoreRangeExclusive: 0
-    ChanceToUse: 0
-    Lines: []
-    AlreadyUsed: 
+    ChanceToUse: 100
+    Lines:
+    - It's been nice playing with you!
+    - Thanks for the good time!
+    AlreadyUsed: 0000
     Used: 0
   __groups: []

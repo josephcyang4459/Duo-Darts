@@ -21,6 +21,7 @@ public class DartVisual : MonoBehaviour {
     [SerializeField] string[] VictorySayings;
     [SerializeField] string[] LoseSayings;
     [SerializeField] Canvas ResultCanvas;
+    [SerializeField] GameObject ControlsGameObject;//yeah just gonna raw dog the game object IDC at this point
     List<Fillable_SeeSaw> CurrentlyFilling = new();
 
     public void RandomizeDartImages() {
@@ -72,6 +73,10 @@ public class DartVisual : MonoBehaviour {
 
     public void SetResultScreen() {
         ResultCanvas.enabled = false;
+    }
+
+    public void ShowControls(bool b) {
+        ControlsGameObject.SetActive(b);
     }
 
     private void Update() {

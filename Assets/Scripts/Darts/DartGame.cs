@@ -82,23 +82,24 @@ public class DartGame : MonoBehaviour, TransitionCaller {
 
     public void Lose() {
         GameEnd();
+        Banter.HideDialouge();
         Visuals.SetResultScreen(false, CurrentPartner);
         EndTimer.BeginTimer(WaitForEndTime);
     }
 
     public void Win() {
         GameEnd();
+        Banter.HideDialouge();
         CurrentPartner.Victories.IncreaseNumber();
         TotalWins.IncreaseNumber();
-        if(s!=null)
+        if (s != null)
             stats.TotalPointsScoredAcrossAllDartMatches += PointsAwardedToPlayerAddedForWin;
-        if (IsFinals())
-            Banter.GetDialougeFromScore();
-        else {
+        Banter.GetDialougeFromScore();
+        if (!IsFinals()) {
             Visuals.SetResultScreen(true, CurrentPartner);
             EndTimer.BeginTimer(WaitForEndTime);
         }
-            
+
     }
 
     void CheckForAchievements() {
@@ -172,6 +173,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     }
 
     private void playerTurn() {
+        Visuals.ShowControls(true);
         Dart.SetCurrentDart(numberOfDartsThrow, true);
         Aim.BeginPlayerAim();
     }
@@ -207,6 +209,7 @@ public class DartGame : MonoBehaviour, TransitionCaller {
     }
 
     private void PartnerTurn() {
+        Visuals.ShowControls(false);
         Dart.SetCurrentDart(numberOfDartsThrow, false);
         int tempScore = ScoreNeededToWin - turnSum;
         CurrentPartner.AI.SelectTarget(tempScore, this);

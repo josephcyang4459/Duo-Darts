@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class DartScript : MonoBehaviour
 {
@@ -20,6 +20,10 @@ public class DartScript : MonoBehaviour
     public DartGame DartsGame;
     [SerializeField] Timer WaitTimer;
     [SerializeField] float WaitInBetweenDarts;
+    [SerializeField] List<Transform> CurrentDarts;
+    [SerializeField] float TwistDistance;
+    [SerializeField] float RotationOffset;
+
     public void SetUp(int partnerIndex)
     {
         PartnerIndex = partnerIndex;
@@ -48,10 +52,37 @@ public class DartScript : MonoBehaviour
     {
         points = point_value;
         CurrentDartTransform.position = new Vector3(v.x, v.y, -18);
+        
         destination.x = v.x;
         destination.y = v.y;
         speed = maxSpeed;
+        //CurrentDartTransform.rotation = Quaternion.Euler(-90, 0, Random.Range(0, 358));
+      
         enabled = true;
+    }
+
+    float getDirection(float f) {
+        if (f > 0)
+            return 1;
+        if (f < 0)
+            return -1;
+        return (Random.Range(0, 100) > 47) ? 1 : -1;
+
+    }
+
+    void CheckForDestinationDarts() {
+        foreach (Transform t in CurrentDarts) {
+            if (Vector3.Distance(t.position, destination) <= TwistDistance) {
+                float directionx = getDirection(t.position.x - destination.x);
+                float directiony = getDirection(t.position.y - destination.y);
+
+                float xDistance = Mathf.Clamp(t.position.x - destination.x + directionx, -1.5f, 1.5f) * RotationOffset * Random.Range(.8f,.9f);
+                float yDistance = Mathf.Clamp(t.position.y - destination.y + directiony , -1.5f, 1.5f) * RotationOffset * Random.Range(.8f, .9f);
+                Vector3 specialRotation = new(-90 + yDistance, xDistance, 0);
+
+                CurrentDartTransform.rotation = Quaternion.Euler(specialRotation);
+            }
+        }
     }
 
     public void ResetDartPositions()
@@ -76,7 +107,7 @@ public class DartScript : MonoBehaviour
             t.position = ResetPosition;
         }
 
-
+        CurrentDarts.Clear();
         speed = maxSpeed;
     }
 
@@ -86,11 +117,15 @@ public class DartScript : MonoBehaviour
         speed = maxSpeed * curve.Evaluate(CurrentDartTransform.position.z);
         if (CurrentDartTransform.position == destination)
         {
+            CheckForDestinationDarts();
+            CurrentDarts.Add(CurrentDartTransform);
             enabled = false;
             DartsGame.AddPoints(points);
             WaitTimer.BeginTimer(WaitInBetweenDarts);
         }
     }
+
+    
 #if UNITY_EDITOR
     [SerializeField] Transform __player;
 
