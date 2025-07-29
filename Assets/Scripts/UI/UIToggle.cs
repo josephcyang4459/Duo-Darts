@@ -15,6 +15,7 @@ public class UIToggle : MonoBehaviour, Caller
     [SerializeField] TMP_Text Text;
     [SerializeField] ColorSwatch InteractableStateColors;
     [SerializeField] Color SelectedColor;
+    [SerializeField] UIA_MultiImageFill[] Fills;
 
     public bool GetState() {
         return state;
@@ -48,6 +49,8 @@ public class UIToggle : MonoBehaviour, Caller
 
 
     void RemoveOldImages(Image[] image) {
+        foreach (UIA_MultiImageFill fill in Fills)
+            fill.enabled = false;
         foreach (Image i in image)
             i.fillAmount = 0;
     }
@@ -62,12 +65,17 @@ public class UIToggle : MonoBehaviour, Caller
 
     void VisualChangeState(bool b) {
         RemoveOldImages(state ? OnImages : OffImages);
+
         state = b;
-        if (state)
+        if (state) {
             OnAnimation.Begin(this);
-        else
+      
+        }
+        else {
             OffAnimation.Begin(this);
-        
+          
+        }
+
     }
 
     public void ToggleStateInvoke() {

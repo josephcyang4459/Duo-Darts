@@ -687,6 +687,11 @@ MonoBehaviour:
   Text: {fileID: 2592438958753796236}
   InteractableStateColors: {fileID: 11400000, guid: 04ee5b58e0c54364bbcbad2e070617a0, type: 2}
   SelectedColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
+  Animating: 0
+  Fills:
+  - {fileID: 2592438957414669865}
+  - {fileID: 2592438958629813581}
+  - {fileID: 2592438958629813580}
   __OnColor: {r: 0.26968315, g: 0.4716981, b: 0.19357423, a: 1}
   __OffColor: {r: 0.5566038, g: 0.21266466, b: 0.21266466, a: 1}
   __useSwatch: 0

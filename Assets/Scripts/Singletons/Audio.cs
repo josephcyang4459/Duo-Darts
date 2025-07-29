@@ -75,8 +75,8 @@ public class Audio : MonoBehaviour
     public void PlayDartClipReverb(DartAudioClips clip, AudioReverbPreset preset) {
         AudioClipList GetList(DartAudioClips clip) {
             switch (clip) {
-                case DartAudioClips.Medium: return SoftDarts;
-                case DartAudioClips.Hard: return SoftDarts;
+                case DartAudioClips.Medium: return MediumDarts;
+                case DartAudioClips.Hard: return HardDarts;
             }
             return SoftDarts;
         }
