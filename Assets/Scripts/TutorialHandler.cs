@@ -16,7 +16,9 @@ public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] TextAsset DartsTutorialText;
     [SerializeField] TextAsset StoryTutorialText;
     [SerializeField] Caller Caller;
-
+    [SerializeField] ControlVisual Visual;
+    [SerializeField] InputActionReference FireButton;
+    [SerializeField] bool DartsTutorial;
     public void Start() {
         if (inst != null) {
             Destroy(gameObject);
@@ -44,18 +46,36 @@ public class TutorialHandler : MonoBehaviour, Caller {
         TutorialCanvas.enabled = enable;
         TutorialOvershadow.enabled = enable;
         TutorialAnimation.Begin(this);
-
-        if (textFile != null)
+       
+        if (textFile != null) {
+            if(textFile == DartsTutorialText) {
+                UsingController(ControlState.inst.IsUsingController());
+            }  
+            else
             TutorialText.text = textFile.text;
+        }
+            
 
         if (enable) {
+            if(textFile == DartsTutorialText) {
+                if (!DartsTutorial) {
+                    ControlState.UsingController += UsingController;
+                    DartsTutorial = true;
+                }
+                
+            }
+            Visual.Begin();
             TrySetFlag(sprite);
             PauseMenu.inst.UnenablePause();
             UIState.inst.SetAsSelectedButton(ExitButton);// for controller compatibility
             DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         } else {
+            if (DartsTutorial) {
+                DartsTutorial = false;
+                ControlState.UsingController -= UsingController;
+            }
             PauseMenu.inst.SetEnabled(true);
-
+            Visual.End();
             if (Caller != null) {
                 Caller.Ping();// pause menue handles all of this itself with ping()
                 //PauseMenu.inst.BackGround.enabled = true;
@@ -64,6 +84,15 @@ public class TutorialHandler : MonoBehaviour, Caller {
             }
            
         }
+    }
+
+    public void UsingController(bool usingController) {
+#if UNITY_EDITOR
+        Debug.Log("FIRe");
+#endif
+        string moveControl = usingController ? "Left Stick" : "WASD";
+        string fireControl = FireButton.action.GetBindingDisplayString(ControlState.inst.DefaultOptions, ControlState.inst.GetControlString());
+        TutorialText.text = string.Format(DartsTutorialText.text, moveControl, fireControl);
     }
 
     public void EnableStoryTutorial(bool enable, Caller caller = null) {
@@ -84,4 +113,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
 
     // Empty method just for Caller purposes
     public void Ping() { }
+    private void OnDestroy() {
+        ControlState.UsingController -= UsingController;
+    }
 }

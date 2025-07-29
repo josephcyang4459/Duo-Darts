@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DartPlayerAim_Drift : MonoBehaviour
@@ -11,7 +9,9 @@ public class DartPlayerAim_Drift : MonoBehaviour
     [SerializeField] Vector2 XBounds;
     [SerializeField] Vector2 YBounds;
     [SerializeField] float TimeToNewLocation;
+    [SerializeField] float BaseTimeToNewLocation;
     [SerializeField] Vector2 directionMove;
+    [SerializeField] float intox;
     float Timer;
 
     public void SetUp(float intoxication, float skill) {
@@ -19,12 +19,16 @@ public class DartPlayerAim_Drift : MonoBehaviour
         DriftSpeed = Mathf.Clamp(tempSpeed, Settings.MinDriftSpeed, Settings.MaxDriftSpeed);
         float tempTime = 3 - (intoxication) / 3;
         TimeToNewLocation = Mathf.Clamp(tempTime, .5f, 3);
+
+        intox = intoxication;
         NewRandomDirection();
     }
 
     public void NewRandomDirection() {
         directionMove.x = Random.Range(-DriftSpeed, DriftSpeed);
         directionMove.y = Random.Range(-DriftSpeed, DriftSpeed);
+        float multiplier = Mathf.Clamp((Settings.IntoxicationTiers - intox) / Settings.IntoxicationTiers, Settings.IntoxicationTimeChangeMin, 1);
+        TimeToNewLocation = Settings.BaseTimeToNewLocation * multiplier;
         Timer = 0;
     }
 

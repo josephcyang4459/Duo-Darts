@@ -9,6 +9,8 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
   
     [SerializeField] ResetStats ResetStats;
     [SerializeField] float TipsyIntoxValue;
+    [SerializeField] float DefaultSkill;
+    [SerializeField] float DefaultLuck;
     [Header("Entry Menu")]
     [SerializeField] UIAnimationElement OverallEnterAnimationHead;
     [SerializeField] Canvas OverallCanvas;
@@ -56,12 +58,18 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
         Audio.inst.PlaySong(MusicTrack.LocationSelect);
         //PartnerCanvas.enabled = true;
         UIState.inst.SetInteractable(true);
+        Player.Skill = DefaultSkill;
+        Player.Luck = DefaultLuck;
+       
+        if (TutorialHandler.inst.ShouldDisplayTutorial()) {
+            Tutorial();
+            return;
+        }
         OverallCanvas.enabled = true;
         AnimationState = PingState.EnterMain;
         OverallEnterAnimationHead.Begin(this);
-       
-    
-    
+        
+
         //UIState.inst.SetAsSelectedButton(FirstPartnerButton);
     }
 
@@ -170,14 +178,12 @@ public class DartMenu_StandAlone : MonoBehaviour, Caller, SceneEntrance, Transit
     public void Ping() {
         switch (AnimationState) {
             case PingState.Tutorial:
+                AnimationState = PingState.EnterMain;
+                OverallEnterAnimationHead.Begin(this);
+                OverallCanvas.enabled = true;
+                return;
             case PingState.EnterMain:
                // Debug.Log("here");
-               
-                if (TutorialHandler.inst.ShouldDisplayTutorial()) {
-                    Tutorial();
-                    return;
-                }
-                   
                 UIState.inst.SetAsSelectedButton(FirstOverallButton);
                 break;
             case PingState.EnterScore:

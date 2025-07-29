@@ -10,11 +10,14 @@ public class CharacterStatUI : MonoBehaviour
     [SerializeField] Image[] PartnerImages;
     [SerializeField] Color NotYetInteractedWith;
     [SerializeField] TMP_Text CharacterPoints;
+    [SerializeField] TMP_Text Intoxication;
+    [SerializeField] TMP_Text Luck;
+    [SerializeField] TMP_Text Skill;
+    [SerializeField] Transform IntoxTransform;
+    public void HoverStat(int i) {
 
-    [Header("TEMP-------------------------------")]
-    [SerializeField] TMP_Text PlayerText;
-    [Header("TEMP")]
-    [SerializeField] TMP_Text[] Texts;
+    }
+
 
     public void Start() {
         if (inst != null) {
@@ -54,6 +57,9 @@ public class CharacterStatUI : MonoBehaviour
             CheckCharacter(i);
         }
 
+        Intoxication.text = Player.Intoxication.ToString();
+        Luck.text = Player.Luck.ToString();
+        Skill.text = Player.Skill.ToString();
         TEMPUI();
     }
 

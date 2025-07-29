@@ -5398,7 +5398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 247, y: -409}
+  m_AnchoredPosition: {x: 300, y: -409}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3562828168844918924
@@ -7377,7 +7377,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -625, y: -0.000030517578}
-  m_SizeDelta: {x: 1350, y: 150}
+  m_SizeDelta: {x: 1300, y: 150}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3050603844375236913
 CanvasRenderer:
@@ -13128,9 +13128,8 @@ MonoBehaviour:
   - {fileID: 942321961546133547}
   - {fileID: 6413563559068108738}
   - {fileID: 2800544492972634664}
-  ToTurnOnForCheckOutBanter:
-  - {fileID: 1598422511311328628}
-  - {fileID: 7207714199305891578}
+  MinBoxSize: 50
+  MaxBoxSize: 1300
 --- !u!114 &7052043080631276667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13386,7 +13385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamepadControlElement: {fileID: 2906626529111068156}
   KeyboardControlElement: {fileID: 4207731318442933377}
-  InputAction: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  InputAction: {fileID: 6692025020985450312, guid: 0436482055235fb43825f893cacf9475, type: 3}
   ControlText: {fileID: 8092112787842276803}
 --- !u!114 &2407767557049423863
 MonoBehaviour:
@@ -15415,7 +15414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2387169224460596204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16350,41 +16349,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7894424838075024727}
     - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: __SIxty
-      value: 
-      objectReference: {fileID: -3800215462100984028, guid: 0436482055235fb43825f893cacf9475, type: 3}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: Settings
-      value: 
-      objectReference: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: AimSprite
-      value: 
-      objectReference: {fileID: 2925380134608118579}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: XScreenClamp.x
-      value: -6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: XScreenClamp.y
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: YScreenClamp.x
-      value: -4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: YScreenClamp.y
-      value: 7.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: __sixtyLocation
       value: 
       objectReference: {fileID: 129397426980797553}
-    - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: StartingLocations.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8593354425541238232, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: StartingLocations.Array.data[0]
       value: 
@@ -16461,45 +16428,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238235, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: Settings
-      value: 
-      objectReference: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
     - target: {fileID: 8593354425541238238, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
       propertyPath: m_Name
       value: Dart Player Aim
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: Settings
-      value: 
-      objectReference: {fileID: 11400000, guid: 7acabbdceaad0d745a55e89946aa0798, type: 2}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: center.y
-      value: 1.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: XBounds.x
-      value: -5.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: XBounds.y
-      value: 5.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: YBounds.x
-      value: -3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354425541238239, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: YBounds.y
-      value: 7.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354426165874088, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593354426165874088, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
@@ -16519,8 +16450,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968840471847f14418678b86754feea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &2925380134608118579 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8593354426165874088, guid: 30d6cb351f8c9d546bfd481d617b4f70, type: 3}
-  m_PrefabInstance: {fileID: 6906467844513918619}
-  m_PrefabAsset: {fileID: 0}

@@ -18,4 +18,8 @@ public class DartsSettings : ScriptableObject
     public float DriftSpeedIntoxicationWeight;
     [Header("((Intoxication * IntoxWeight) - Skill) / this")]
     public float DriftSpeedFactor;
+    public float BaseTimeToNewLocation;
+    public float IntoxicationTiers;
+    public float IntoxicationTimeChangeMin;
 }
+

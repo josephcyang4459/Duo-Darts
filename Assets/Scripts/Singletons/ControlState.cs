@@ -17,6 +17,12 @@ public class ControlState : MonoBehaviour, Caller {
 
     public InputBinding.DisplayStringOptions DefaultOptions;
 
+    public string GetControlString() {
+        if (IsUsingController())
+            return "Gamepad";
+        return "Keyboard&Mouse";
+    }
+
     void Awake() {
         if (inst != null) {
             Destroy(gameObject);

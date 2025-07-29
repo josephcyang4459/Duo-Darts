@@ -23,3 +23,6 @@ MonoBehaviour:
   MaxBloomSkillWeight: 16
   DriftSpeedIntoxicationWeight: 1.25
   DriftSpeedFactor: 3
+  BaseTimeToNewLocation: 3
+  IntoxicationTiers: 10
+  IntoxicationTimeChangeMin: 0.5
