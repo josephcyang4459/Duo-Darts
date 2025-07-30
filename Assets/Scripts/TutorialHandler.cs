@@ -19,6 +19,9 @@ public class TutorialHandler : MonoBehaviour, Caller {
     [SerializeField] ControlVisual Visual;
     [SerializeField] InputActionReference FireButton;
     [SerializeField] bool DartsTutorial;
+    [SerializeField] AudioClip PageSound;
+    [SerializeField] AudioClip ClosePageSound;
+
     public void Start() {
         if (inst != null) {
             Destroy(gameObject);
@@ -57,6 +60,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
             
 
         if (enable) {
+            Audio.inst.PlayClip(PageSound);
             if(textFile == DartsTutorialText) {
                 if (!DartsTutorial) {
                     ControlState.UsingController += UsingController;
@@ -70,6 +74,7 @@ public class TutorialHandler : MonoBehaviour, Caller {
             UIState.inst.SetAsSelectedButton(ExitButton);// for controller compatibility
             DartSticker.inst.SetVisible(false);// to remove old sticker from screen
         } else {
+            Audio.inst.PlayClip(ClosePageSound);
             if (DartsTutorial) {
                 DartsTutorial = false;
                 ControlState.UsingController -= UsingController;
@@ -87,9 +92,6 @@ public class TutorialHandler : MonoBehaviour, Caller {
     }
 
     public void UsingController(bool usingController) {
-#if UNITY_EDITOR
-        Debug.Log("FIRe");
-#endif
         string moveControl = usingController ? "Left Stick" : "WASD";
         string fireControl = FireButton.action.GetBindingDisplayString(ControlState.inst.DefaultOptions, ControlState.inst.GetControlString());
         TutorialText.text = string.Format(DartsTutorialText.text, moveControl, fireControl);

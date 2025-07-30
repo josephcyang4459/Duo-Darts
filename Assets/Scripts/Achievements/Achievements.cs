@@ -77,9 +77,6 @@ public class Achievements : MonoBehaviour {
     void DecodeLine(string line) {
         if (line.Length == 0)
             return;
-#if UNITY_EDITOR
-        Debug.Log(line);
-#endif
         if (line.Trim().CompareTo(AchievementHeader) == 0) {
             State = DecodingState.Achiements;
             return;
@@ -94,23 +91,14 @@ public class Achievements : MonoBehaviour {
             case DecodingState.Achiements:
                 Achievement a = FindAchievement(subLine[0].Trim());
                 if (a == null) {
-#if UNITY_EDITOR
-                    Debug.Log("Could not find Achievement " + subLine[0].Trim());
-#endif
                     return;
                 }
-#if UNITY_EDITOR
-                Debug.Log("Setting Achievement " + subLine[0].Trim()+" to "+ subLine[1]);
-#endif
                 a.SetLocalState(subLine[1].Trim().CompareTo("T") == 0);
 
                 return;
             case DecodingState.Stats:
                 Statistic s = FindStatistic(subLine[0].Trim());
                 if (s == null) {
-#if UNITY_EDITOR
-                    Debug.Log("Could not find Statistic " + subLine[0].Trim());
-#endif
                     return;
                 }
                 s.SetLocalData(subLine);

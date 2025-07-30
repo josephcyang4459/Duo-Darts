@@ -26,13 +26,13 @@ public class OptionsMenu : MonoBehaviour
     public static event SettingChange VolumeChange;
     public static event SettingChange SFXVolumeChange;
     public static event SettingChange TextSpeedChange;
-
+    [SerializeField] bool SetUp;
     private void Start(){
         if (inst != null){
             Destroy(gameObject);
             return;
         }
-
+        SetUp = true;
         inst = this;
         DontDestroyOnLoad(this);
 
@@ -44,6 +44,7 @@ public class OptionsMenu : MonoBehaviour
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         TextSpeedChange(TextSpeedSlider.value);
         ControllerOptionsFunction(PlayerPrefs.GetInt("controller", 0));
+        SetUp = false;
     }
 
     public void ShowOptions(Caller caller){
@@ -75,7 +76,8 @@ public class OptionsMenu : MonoBehaviour
         VolumeText.text = VolumeSlider.value.ToString();
         float realVolume = VolumeSlider.value / 10f;
         PlayerPrefs.SetFloat("volume", realVolume);
-        Audio.inst.PlayClip(AudioClips.Click);
+        if (!SetUp)
+            Audio.inst.PlayClip(AudioClips.Click);
         VolumeChange(realVolume);
     }
 
@@ -83,14 +85,16 @@ public class OptionsMenu : MonoBehaviour
         SFXVolumeText.text = SFXVolumeSlider.value.ToString();
         float realVolume = SFXVolumeSlider.value / 10f;
         PlayerPrefs.SetFloat("sfx_volume", realVolume);
-        Audio.inst.PlayClip(AudioClips.Click);
+        if (!SetUp)
+            Audio.inst.PlayClip(AudioClips.Click);
         SFXVolumeChange(realVolume);
     }
 
     public void TextSpeedSliderFunction(){
         TextSpeedText.text = TextSpeedSlider.value.ToString();
         PlayerPrefs.SetFloat("textSpeed", TextSpeedSlider.value);
-        Audio.inst.PlayClip(AudioClips.Click);
+        if (!SetUp)
+            Audio.inst.PlayClip(AudioClips.Click);
         TextSpeedChange(TextSpeedSlider.value);
     }
 
@@ -99,7 +103,7 @@ public class OptionsMenu : MonoBehaviour
             Toggles[i].ChangeStateNoInvoke(i == index);
             Toggles[i].SetInteractable(i != index);
         }
-      
+      if(!SetUp)
         Audio.inst.PlayClip(AudioClips.Click);
         PlayerPrefs.SetInt("controller", index);
         switch (index){

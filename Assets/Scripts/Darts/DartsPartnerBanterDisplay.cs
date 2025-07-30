@@ -19,17 +19,21 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     [SerializeField] float BanterBoxPadding;
     [SerializeField] Vector2 BanterBoxSize;
     [SerializeField] RectTransform BanterBoxOutline;
+    [SerializeField] RectTransform BanterBoxOutlineReference;
     [SerializeField] Image[] ToTurnOfForCheckoutbanter;
     [SerializeField] float MinBoxSize;
     [SerializeField] float MaxBoxSize;
+    [SerializeField] RotateTransform LineRotation;
+    [SerializeField] ImageJiggle Outline;
+
     public void SetPartner(Partner partner, bool isFinal) {
-        foreach(Image i in ToTurnOfForCheckoutbanter)
+        foreach (Image i in ToTurnOfForCheckoutbanter)
             i.enabled = true;
         Partner = partner;
         IsFinal = isFinal;
-        DialougeCanvas.enabled = false;
+        HideDialouge();
         CheckOut = false;
-        foreach(Image i in DialougeBackGround) {
+        foreach (Image i in DialougeBackGround) {
             i.color = Partner.TextBoxColors.colors[(int)TextboxColorIndex.Background];
         }
         DialougeForeGround.color = Partner.TextBoxColors.colors[(int)TextboxColorIndex.Foreground];
@@ -77,10 +81,15 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     void SetDialouge(string message) {
         if (message == null)
             return;
+
         DialougeCanvas.enabled = true;
+        LineRotation.SetRotate(true);
+        Outline.StartJiggle();
+        
         Dialouge.text = message;
         BanterBoxSize.x = Mathf.Clamp(Dialouge.preferredWidth + BanterBoxPadding, MinBoxSize, MaxBoxSize);
         BanterBoxOutline.sizeDelta = BanterBoxSize;
+        BanterBoxOutlineReference.sizeDelta = BanterBoxSize;
         PartnerBanterTimer.BeginTimer(TimeToWait);
     }
 
@@ -93,6 +102,8 @@ public class DartsPartnerBanterDisplay : MonoBehaviour {
     }
 
     public void HideDialouge() {
+        Outline.EndJiggle();
+        LineRotation.SetRotate(false);
         DialougeCanvas.enabled = false;
     }
 }

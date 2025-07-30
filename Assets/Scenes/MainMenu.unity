@@ -1552,6 +1552,9 @@ MonoBehaviour:
   StoryTutorialText: {fileID: 4900000, guid: 798126c5528eaec4c9f9adc0445c840e, type: 3}
   Visual: {fileID: 693918608}
   FireButton: {fileID: 6692025020985450312, guid: 0436482055235fb43825f893cacf9475, type: 3}
+  DartsTutorial: 0
+  PageSound: {fileID: 8300000, guid: 13f2f042ae6dfed4993c25982d97bbbe, type: 3}
+  ClosePageSound: {fileID: 8300000, guid: 929f1b4845d7fba4faa62d547f9cb7b9, type: 3}
 --- !u!4 &693918607
 Transform:
   m_ObjectHideFlags: 0
